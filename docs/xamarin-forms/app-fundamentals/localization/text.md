@@ -1,6 +1,6 @@
 ---
-title: title:“Xamarin.Forms 中的字符串和图像本地化”说明：“Xamarin.Forms 应用可以使用 .NET 资源文件进行本地化。”
-description: 'zone_pivot_groups: "platform" ms.prod: xamarin ms.assetid:852B4ED3-2D2D-48A5-A759-A6591F6A1509 ms.technology: xamarin-forms author: profexorgeek ms.author: jusjohns ms.date:2019/11/01 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: Xamarin.Forms 中的字符串和图像本地化
+description: 可使用 .NET 资源文件实现 Xamarin.Forms 应用本地化。
 zone_pivot_groups: platform
 ms.prod: xamarin
 ms.assetid: 852B4ED3-2D2D-48A5-A759-A6591F6A1509
@@ -11,14 +11,14 @@ ms.date: 11/01/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: af15dc5a23404a11be6207bef7b4fc3e4bf9fad7
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.openlocfilehash: d68227fbf4a4c9db8f4ba8858fdeda6637ce4732
+ms.sourcegitcommit: 14d67a2db82e67471584b1749e0d5b9ec0c0c09b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84137593"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88228596"
 ---
-# <a name="xamarinforms-string-and-image-localization"></a>Xamarin.Forms 字符串和图像本地化
+# <a name="no-locxamarinforms-string-and-image-localization"></a>Xamarin.Forms 字符串和图像本地化
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/usingresxlocalization)
 
@@ -59,7 +59,7 @@ ms.locfileid: "84137593"
 
 “访问修饰符”下拉设置确定了 Visual Studio 如何生成用于访问资源的类。 将“访问修饰符”设置为“公共”或“内部”会生成具有指定可访问性级别的类 。 如果将“访问修饰符”设置为“不生成代码”，则不会生成类文件。 默认资源文件应配置为生成类文件，这样即可生成一个扩展名为 .designer.cs 且要添加到项目中的文件。
 
-创建默认资源文件后，可为应用程序支持的每个区域性创建其他文件。 每个其他资源文件都应在文件名中包含翻译区域性，并且应将“访问修饰符”设置为“不生成代码” 。 
+创建默认资源文件后，可为应用程序支持的每个区域性创建其他文件。 每个其他资源文件都应在文件名中包含翻译区域性，并且应将“访问修饰符”设置为“不生成代码” 。
 
 运行时期间，应用程序会按指定顺序尝试解析资源请求。 例如，如果设备区域性是 en-US，应用程序将按以下顺序查找资源文件：
 
@@ -149,7 +149,37 @@ using System.Resources;
 
 要详细了解资源文件，请参阅 [Create resource files for .NET apps](https://docs.microsoft.com/dotnet/framework/resources/creating-resource-files-for-desktop-apps)（为 .NET 应用创建资源文件）。
 
-## <a name="localize-text-in-xamarinforms"></a>在 Xamarin.Forms 中进行文本本地化
+## <a name="specify-supported-languages-on-ios"></a>指定 iOS 上支持的语言
+
+在 iOS 上，必须为项目声明 Info.plist 文件中支持的所有语言。 在 Info.plist 文件中，使用源视图为 `CFBundleLocalizations` 键设置数组，并提供与 Resx 文件相对应的值 。 此外，请确保通过 `CFBundleDevelopmentRegion` 键设置所需的语言：
+
+![显示本地化部分的 Info.plist 编辑器的屏幕截图](text-images/info-plist.png)
+
+或者，在 XML 编辑器中打开 Info.plist 文件并添加以下内容：
+
+```xml
+<key>CFBundleLocalizations</key>
+<array>
+    <string>de</string>
+    <string>es</string>
+    <string>fr</string>
+    <string>ja</string>
+    <string>pt</string> <!-- Brazil -->
+    <string>pt-PT</string> <!-- Portugal -->
+    <string>ru</string>
+    <string>zh-Hans</string>
+    <string>zh-Hant</string>
+</array>
+<key>CFBundleDevelopmentRegion</key>
+<string>en</string>
+```
+
+> [!NOTE]
+> Apple 处理葡萄牙语的方式与你所想的略有不同。 有关详细信息，请参阅 developer.apple.com 上的[添加语言](https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPInternational/LocalizingYourApp/LocalizingYourApp.html#//apple_ref/doc/uid/10000171i-CH5-SW2)。
+
+有关详细信息，请参阅[在 Info.plist 中指定默认语言和支持的语言](~/ios/app-fundamentals/localization/index.md#specifying-default-and-supported-languages-in-infoplist)。
+
+## <a name="localize-text-in-no-locxamarinforms"></a>在 Xamarin.Forms 中进行文本本地化
 
 文本通过在 Xamarin.Forms 中使用生成的 `AppResources` 类进行本地化。 此类根据默认的资源文件名称进行命名。 由于示例项目资源文件名为 AppResources.cs，因此 Visual Studio 会生成名为 `AppResources` 的匹配类。 对资源文件中的每一行，静态属性在 `AppResources` 类中生成。 以下静态属性在示例应用程序的 `AppResources` 类中生成：
 
@@ -178,19 +208,19 @@ public LocalizedCodePage()
         Text = AppResources.NotesLabel,
         // ...
     };
-    
+
     Entry notesEntry = new Entry
     {
         Placeholder = AppResources.NotesPlaceholder,
         //...
     };
-    
+
     Button addButton = new Button
     {
         Text = AppResources.AddButton,
         // ...
     };
-    
+
     Content = new StackLayout
     {
         Children = {

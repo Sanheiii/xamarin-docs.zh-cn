@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 07/23/2018
-ms.openlocfilehash: 1bb0fae73a1e3647cdc0e3266c7b44ac04fcc1ee
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 746433293c52d7071a3289962ea021f716fd0cfe
+ms.sourcegitcommit: f7fe46c0236a7130b63a33d9d1670d5111582dd2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79303665"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88186169"
 ---
 # <a name="file-storage-and-access-with-xamarinandroid"></a>使用 Xamarin.Android 进行文件存储和访问
 
@@ -26,7 +26,7 @@ Android 应用的一个常见要求是对文件执行操作 &ndash; 保存图片
 1. **.NET API（由 Mono 提供、由 Xamarin.Android 包装）** &ndash; 包括 [Xamarin.Essentials](~/essentials/index.md?context=xamarin/android) 提供的[文件系统帮助程序](~/essentials/file-system-helpers.md?context=xamarin/android)。 .NET API 提供最佳的跨平台兼容性，因此本指南的重点是这些 API。
 1. **本机 Java 文件访问 API（由 Java 提供、由 Xamarin.Android 包装）** &ndash; Java 提供自己的 API，用于读取和写入文件。 它们是 .NET API 的完全可接受的替代项，但特定于 Android，不适用于打算跨平台的应用。
 
-在 Xamarin.Android 中，对文件的读取和写入几乎与任何其他 .NET 应用程序完全相同。 Xamarin.Android 应用会确定将操作的文件的路径，然后使用标准 .NET 习惯进行文件访问。 内部和外部存储的实际路径可能因设备或 Android 版本而异，因此不建议对文件路径进行硬编码。 而是建议使用 Xamarin.Android API 来确定文件的路径。 这样，用于读写文件的 .NET API 公开有助于确定内部和外部存储上文件的路径的本机 Android API。
+在 Xamarin.Android 中，对文件的读取和写入几乎与任何其他 .NET 应用程序完全相同。 Xamarin.Android 应用会确定将操作的文件的路径，然后使用标准 .NET 习惯进行文件访问。 由于内部和外部存储的实际路径可能因设备或 Android 版本而异，因此不建议对文件路径进行硬编码。 而是建议使用 Xamarin.Android API 来确定文件的路径。 这样，用于读写文件的 .NET API 公开有助于确定内部和外部存储上文件的路径的本机 Android API。
 
 在讨论与文件访问相关的 API 之前，了解与内外部存储相关的一些详细信息非常重要。 下一节将对此进行讨论。
 
@@ -40,7 +40,7 @@ Android 应用的一个常见要求是对文件执行操作 &ndash; 保存图片
 * 卸载应用时，将删除这些文件。
 * 内部存储上可用的空间可能有限。
 
-外部存储指不在内部存储上，且应用不能以独占方式访问的文件存储。 外部存储的主要用途是提供一个位置，用于放置打算在应用之间共享的文件，或是因太大而导致内部存储无法容纳的文件。 外部存储的优点是它拥有的空间往往比内部存储大得多。 然而，我们不能确保外部存储始终位于设备上，并且可能需要用户提供的特殊特权才能访问它。
+外部存储指不在内部存储上，且应用不能以独占方式访问的文件存储。 外部存储的主要用途是提供一个位置，用于放置打算在应用之间共享的文件，或是太大而无法在内部存储中容纳的文件。 外部存储的优点是它拥有的空间往往比内部存储大得多。 然而，我们不能确保外部存储始终位于设备上，并且可能需要用户提供的特殊特权才能访问它。
 
 > [!NOTE]
 > 对于支持多个用户的设备，Android 将在内外部存储上为每个用户提供自己的目录。 设备上的其他用户无法访问此目录。 只要应用不对内部或外部存储上文件的路径进行硬编码，这种分离对它们就不可见。
@@ -51,13 +51,13 @@ Android 应用的一个常见要求是对文件执行操作 &ndash; 保存图片
 
 ## <a name="working-with-internal-storage"></a>使用内部存储
 
-应用程序的内部存储目录由操作系统确定，并由 `Android.Content.Context.FilesDir` 属性向 Android 应用公开。 这将返回一个 `Java.IO.File` 对象，表示 Android 专用于应用的目录。  例如，包名称为 com.companyname 的应用的内部存储目录可能是  ：
+应用程序的内部存储目录由操作系统确定，并由 `Android.Content.Context.FilesDir` 属性向 Android 应用公开。 这将返回一个 `Java.IO.File` 对象，表示 Android 专用于应用的目录。  例如，包名称为 com.companyname 的应用的内部存储目录可能是：
 
 ```bash
 /data/user/0/com.companyname/files
 ```
 
-本文档将内部存储目录称为 INTERNAL\_STORAGE  。
+本文档将内部存储目录称为 INTERNAL\_STORAGE。
 
 > [!IMPORTANT]
 > 内部存储目录的确切路径可能因设备和 Android 版本而异。 因此，应用不得对内部文件存储目录的路径进行硬编码，而应使用 Xamarin.Android API（例如 `System.Environment.GetFolderPath()`）。
@@ -74,6 +74,10 @@ Android 应用的一个常见要求是对文件执行操作 &ndash; 保存图片
 | `MyPictures` | **_INTERNAL\_STORAGE_/Pictures** |
 | `MyVideos` | **_INTERNAL\_STORAGE_/Videos** |
 | `Personal` | **_INTERNAL\_STORAGE_** |
+| `Fonts` | **_INTERNAL\_STORAGE_/.fonts** |
+| `Templates` | **_INTERNAL\_STORAGE_/Templates** |
+| `CommonApplicationData` | **/usr/share** |
+| `CommonApplicationData` | **/usr/share** |
 
 ### <a name="reading-or-writing-to-files-on-internal-storage"></a>内部存储上的文件读写
 
@@ -139,7 +143,7 @@ var cacheFile = Path.Combine(Xamarin.Essentials.FileSystem.CacheDirectory, "coun
 
 专用文件不会显示为可共享媒体。 例如，如果应用将图片保存到其专用外部存储中，则媒体扫描程序 (`MediaStore`) 不会提取该文件。
 
-`MediaStore` 将提取公用文件。 `MediaStore` 不会扫描拥有扩展名为 .NOMEDIA 的零字节文件的目录  。
+`MediaStore` 将提取公用文件。 `MediaStore` 不会扫描拥有扩展名为 .NOMEDIA 的零字节文件的目录。
 
 ## <a name="related-links"></a>相关链接
 

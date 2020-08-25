@@ -8,12 +8,12 @@ author: davidortinau
 ms.author: daortin
 ms.custom: video
 ms.date: 03/05/2020
-ms.openlocfilehash: 069c40b74876bea1d3a0c8fca23b3d90c4b91635
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 09d20ef2e4fece36ce67a7891892defb05a5f3df
+ms.sourcegitcommit: ca1eca5bcf6c82bc4ec05db12ee1be585006d59f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79510674"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88514624"
 ---
 # <a name="automatic-provisioning-for-xamarinios"></a>Xamarin.iOS 的自动预配
 
@@ -45,30 +45,32 @@ Visual Studio for Mac、Visual Studio 2019 和 Visual Studio 2017（版本 15.7 
 
 2. 打开 Info.plist  文件。
 
-3. 在“签名”部分中，选择“自动设置”   ：
+3. 选择“应用程序”选项卡。
+
+4. 在“签名”部分中，选择“自动设置”********：
 
     ![团队选择器下拉列表](automatic-provisioning-images/image2.png)
 
-4. 从“团队”  下拉列表中选择团队。
+5. 从“团队”**** 下拉列表中选择团队。
 
-5. 几秒后，便会创建签名证书和设置配置文件：
+6. 几秒后，便会创建签名证书和设置配置文件：
 
     ![成功创建证书和配置文件](automatic-provisioning-images/image5.png)
 
-    如果自动签名失败，则“自动签名板”将显示错误的原因  。
+    如果自动签名失败，则“自动签名板”将显示错误的原因****。
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 > [!NOTE]
 > 如果你使用的是 Visual Studio 2017 或 Visual Studio 2019（版本 16.4 及更早版本），需要先[配对到 Mac 生成主机](~/ios/get-started/installation/windows/connecting-to-mac/index.md)，然后才能继续操作。
 
-1. 在“解决方案资源管理器”中，右键单击 iOS 项目名称，然后选择“属性”   。 然后，导航至“iOS 捆绑签名”选项卡  ：
+1. 在“解决方案资源管理器”中，右键单击 iOS 项目名称，然后选择“属性” 。 然后，导航至“iOS 捆绑签名”选项卡：
 
     ![iOS 属性中的“捆绑签名”页的屏幕截图。](automatic-provisioning-images/bundle-signing-win.png)
 
-2. 选择“自动预配”方案  。
+2. 选择“自动预配”方案。
 
-3. 从“团队”下拉菜单中选择团队，启动自动签名过程  。 Visual Studio 将指示该过程是否已成功完成：
+3. 从“团队”下拉菜单中选择团队，启动自动签名过程。 Visual Studio 将指示该过程是否已成功完成：
 
     ![“捆绑签名”页的屏幕截图，其中突出显示消息“自动预配已成功完成”。](automatic-provisioning-images/signing-success-win.png)
 
@@ -88,7 +90,7 @@ Visual Studio for Mac、Visual Studio 2019 和 Visual Studio 2017（版本 15.7 
 
 ## <a name="wildcard-app-ids"></a>通配符应用 ID
 
-在 Visual Studio for Mac 和 Visual Studio 2019（版本 16.5 或更高版本）中，自动预配将默认尝试创建并使用通配符应用 ID 和预配配置文件，而不是基于 Info.plist 中指定的捆绑包标识符的显式应用 ID   。 通配符应用 ID 可减少 Apple 开发人员门户中要维护的配置文件和 ID 的数量。
+在 Visual Studio for Mac 和 Visual Studio 2019（版本 16.5 或更高版本）中，自动预配将默认尝试创建并使用通配符应用 ID 和预配配置文件，而不是基于 Info.plist 中指定的捆绑包标识符的显式应用 ID 。 通配符应用 ID 可减少 Apple 开发人员门户中要维护的配置文件和 ID 的数量。
 
 在某些情况下，应用的权利需要显式应用 ID。 以下权利不支持通配符应用 ID：
 
