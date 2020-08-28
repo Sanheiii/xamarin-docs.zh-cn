@@ -171,13 +171,8 @@ items:
             href: app-fundamentals/behaviors/attached.md
           - name: Xamarin.Forms 行为
             href: app-fundamentals/behaviors/creating.md
-          - name: 可重用行为
-            href: app-fundamentals/behaviors/reusable/index.md
-            items:
-              - name: EffectBehavior
-                href: app-fundamentals/behaviors/reusable/effect-behavior.md
-              - name: EventToCommandBehavior
-                href: app-fundamentals/behaviors/reusable/event-to-command-behavior.md
+          - name: 可重用 EffectBehavior
+            href: app-fundamentals/behaviors/effect-behavior.md
       - name: 自定义呈现器
         href: app-fundamentals/custom-renderer/index.md
         items:
@@ -278,7 +273,7 @@ items:
             href: app-fundamentals/effects/touch-tracking.md
           - name: 可重用 RoundEffect
             href: app-fundamentals/effects/reusable-roundeffect.md
-      - name: 手势
+      - name: 笔势
         href: app-fundamentals/gestures/index.md
         items:
           - name: 点击
