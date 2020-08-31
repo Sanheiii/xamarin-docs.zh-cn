@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/03/2018
-ms.openlocfilehash: edf224428103c318307f3a05dc79e1e8d286f512
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: ce4614f7b21a42945a8541f2b18877e75a200f1a
+ms.sourcegitcommit: f6a2f07d2e689e0cfd01b30008d50c83c63fa70c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86935106"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89052768"
 ---
 # <a name="advanced-user-notifications-in-xamarinios"></a>Xamarin 中的高级用户通知
 
@@ -22,15 +22,15 @@ ms.locfileid: "86935106"
 
 新的用户通知框架允许传递和处理本地和远程通知。 使用此框架，应用或应用扩展可以通过指定一组条件（如位置或一天的时间）来计划本地通知的传送。
 
-此外，在将本地和远程通知发送到用户的 iOS 设备时，该应用或扩展可以接收（并可能修改）这些通知。
+此外，在将本地和远程通知传递给用户的 iOS 设备时，应用或扩展可以接收 (并可能修改) 本地和远程通知。
 
 新用户通知 UI 框架允许应用或应用扩展在向用户显示本地和远程通知时，对其外观进行自定义。
 
 此框架提供了以下方法，应用程序可以向用户提供通知：
 
-- **视觉对象警报**-通知从屏幕顶部滚动为横幅的位置。
+- **视觉对象警报** -通知从屏幕顶部滚动为横幅的位置。
 - **Sound 和 Vibrations** -可与通知相关联。
-- **应用图标添加徽章**-其中，应用图标显示标记为新内容可用的徽章。 如未读电子邮件的数目。
+- **应用图标添加徽章** -其中，应用图标显示标记为新内容可用的徽章。 如未读电子邮件的数目。
 
 此外，根据用户的当前上下文，会有不同的方法显示通知：
 
@@ -40,10 +40,10 @@ ms.locfileid: "86935106"
 
 Xamarin iOS 应用有两种类型的用户通知可以发送：
 
-- **本地通知**-这些应用由本地安装在用户设备上的应用发送。
-- **远程通知**-从远程服务器发送，并显示给用户或触发应用内容的后台更新。
+- **本地通知** -这些应用由本地安装在用户设备上的应用发送。
+- **远程通知** -从远程服务器发送，并显示给用户或触发应用内容的后台更新。
 
-有关详细信息，请参阅我们的[增强用户通知](~/ios/platform/user-notifications/enhanced-user-notifications.md)文档。
+有关详细信息，请参阅我们的 [增强用户通知](~/ios/platform/user-notifications/enhanced-user-notifications.md) 文档。
 
 ## <a name="the-new-user-notification-interface"></a>新用户通知界面
 
@@ -61,9 +61,9 @@ IOS 10 中的用户通知提供了一个新的 UI 设计，提供了更多内容
 
 ## <a name="adding-media-attachments"></a>添加媒体附件
 
-在用户之间共享的较常见的项目之一是照片，因此，iOS 10 添加了直接将媒体项目（如照片）附加到通知的功能，在那里，它将显示并随时供用户使用以及其余通知内容。
+在用户之间共享的较常见的项目之一是照片，因此，iOS 10 添加了将媒体项 (如照片) 直接附加到通知的功能，用户可以在其中向用户显示并随时提供通知内容的其余部分。
 
-但是，因为即使是在发送小图像时所涉及的大小，但将其附加到远程通知有效负载是不切实际的。 若要处理这种情况，开发人员可以在 iOS 10 中使用新的服务扩展，从另一个源（如 CloudKit 数据存储）下载映像，并将其附加到通知的内容，然后将其显示给用户。
+但是，因为即使是在发送小图像时所涉及的大小，但将其附加到远程通知有效负载是不切实际的。 若要处理这种情况，开发人员可以在 iOS 10 中使用新的服务扩展，从另一个源 (（例如 CloudKit 数据存储) 下载图像，并将其附加到通知的内容，然后将其显示给用户。
 
 对于要由服务扩展修改的远程通知，其有效负载必须标记为可变。 例如：
 
@@ -81,7 +81,7 @@ IOS 10 中的用户通知提供了一个新的 UI 设计，提供了更多内容
 
 [![添加媒体附件过程](advanced-user-notifications-images/extension02.png)](advanced-user-notifications-images/extension02.png#lightbox)
 
-将远程通知传递到设备后（通过 APNs），服务扩展即可通过任何所需的方法（如）下载所需的映像 `NSURLSession` ，并在收到映像后，可以修改通知的内容并将其显示给用户。
+通过 APNs) 将远程通知传递到设备 (后，服务扩展可以通过任何所 (需的方式（例如) ）下载所需的映像 `NSURLSession` ，并在收到图像后，它可以修改通知的内容并将其显示给用户。
 
 下面是如何在代码中处理此过程的示例：
 
@@ -96,7 +96,7 @@ namespace MonkeyNotification
     public class NotificationService : UNNotificationServiceExtension
     {
         #region Constructors
-        public NotificationService ()
+        public NotificationService (IntPtr handle) : base(handle)
         {
         }
         #endregion
@@ -134,22 +134,22 @@ namespace MonkeyNotification
 }
 ```
 
-从 APNs 收到通知时，将从内容中读取图像的自定义地址，并从服务器下载文件。 然后， `UNNotificationAttachement` 使用唯一 ID 和映像的本地位置（作为 `NSUrl` ）创建。 将创建通知内容的可变副本并添加媒体附件。 最后，通过调用来向用户显示通知 `contentHandler` 。
+从 APNs 收到通知时，将从内容中读取图像的自定义地址，并从服务器下载文件。 然后， `UNNotificationAttachement` 使用唯一 ID 和图像的本地位置作为)  (创建 `NSUrl` 。 将创建通知内容的可变副本并添加媒体附件。 最后，通过调用来向用户显示通知 `contentHandler` 。
 
 一旦将附件添加到通知，系统就会接管该文件的移动和管理。
 
 除了上面提供的远程通知外，还支持从本地通知创建媒体附件，其中创建了 `UNNotificationAttachement` 通知，并将其内容附加到了通知。
 
-IOS 10 中的通知支持图像（静态和 Gif）、音频或视频的媒体附件，当向用户显示通知时，系统将自动为每种类型的附件显示正确的自定义 UI。
+IOS 10 中的通知支持图像 (静态和 Gif) 、音频或视频的图像附件，并且当向用户显示通知时，系统将自动为每种类型的附件显示正确的自定义 UI。
 
 > [!NOTE]
-> 应注意优化介质大小和从远程服务器下载介质所需的时间（或者为本地通知组装介质），因为系统会在运行应用服务扩展时对两者施加严格限制。 例如，请考虑发送图像的缩小版本或视频的小剪辑，使其显示在通知中。
+> 应注意优化媒体大小和从远程 (服务器下载媒体所需的时间，或将媒体用于本地通知) ，因为系统会在运行应用服务扩展时对这两种情况施加严格限制。 例如，请考虑发送图像的缩小版本或视频的小剪辑，使其显示在通知中。
 
 ## <a name="creating-custom-user-interfaces"></a>创建自定义用户界面
 
-若要为其用户通知创建自定义用户界面，开发人员需要将通知内容扩展（新的 iOS 10）添加到应用的解决方案中。
+若要为其用户通知创建自定义用户界面，开发人员需要将通知内容扩展添加 (新的 iOS 10) 添加到应用的解决方案。
 
-通过通知内容扩展，开发人员可以将他们自己的视图添加到通知 UI，并绘制出所需的任何内容。 从 iOS 12 开始，通知内容扩展支持交互式 UI 控件（如按钮和滑块）。 有关详细信息，请参阅[iOS 12 文档中的交互式通知](~/ios/platform/introduction-to-ios12/notifications/interactive.md)。
+通过通知内容扩展，开发人员可以将他们自己的视图添加到通知 UI，并绘制出所需的任何内容。 从 iOS 12 开始，通知内容扩展支持交互式 UI 控件（如按钮和滑块）。 有关详细信息，请参阅 [iOS 12 文档中的交互式通知](~/ios/platform/introduction-to-ios12/notifications/interactive.md) 。
 
 若要支持用户与用户通知交互，应创建自定义操作，并将其注册到系统，并在将其与系统一起使用之前附加到通知。 将调用通知内容扩展插件来处理这些操作。 有关自定义操作的更多详细信息，请参阅[增强的用户通知](~/ios/platform/user-notifications/enhanced-user-notifications.md)文档中的 "[使用通知操作](~/ios/platform/user-notifications/enhanced-user-notifications.md)" 部分。
 
@@ -157,7 +157,7 @@ IOS 10 中的通知支持图像（静态和 Gif）、音频或视频的媒体附
 
 [![使用自定义 UI 元素的用户通知](advanced-user-notifications-images/customui01.png)](advanced-user-notifications-images/customui01.png#lightbox)
 
-如果用户与自定义操作（如下所示）交互，则可以更新用户界面，以便向用户提供反馈，就像调用给定操作时所发生的情况。
+如果用户与在通知) 下显示的自定义操作 (进行交互，则可以更新用户界面，以便向用户提供反馈，就像调用给定操作时所发生的情况。
 
 ### <a name="adding-a-notification-content-extension"></a>添加通知内容扩展
 
@@ -172,29 +172,29 @@ IOS 10 中的通知支持图像（静态和 Gif）、音频或视频的媒体附
 3. 选择 " **iOS**  >  **扩展**  >  **通知内容扩展**"，然后单击 "**下一步**" 按钮： 
 
     [![选择通知内容扩展](advanced-user-notifications-images/notify01.png)](advanced-user-notifications-images/notify01.png#lightbox)
-4. 输入扩展的**名称**，然后单击 "**下一步**" 按钮： 
+4. 输入扩展的 **名称** ，然后单击 " **下一步** " 按钮： 
 
     [![输入扩展的名称](advanced-user-notifications-images/notify02.png)](advanced-user-notifications-images/notify02.png#lightbox)
-5. 如果需要，请调整**项目名称**和/或**解决方案名称**，并单击 "**创建**" 按钮： 
+5. 如果需要，请调整 **项目名称** 和/或 **解决方案名称** ，并单击 " **创建** " 按钮： 
 
     [![调整项目名称和/或解决方案名称](advanced-user-notifications-images/notify03.png)](advanced-user-notifications-images/notify03.png#lightbox)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 1. 在 Visual Studio for Mac 中打开应用的解决方案。
-2. 在**解决方案资源管理器**中右键单击解决方案名称，然后选择 "**添加 >" 新建项目 ...**"。
+2. 在 **解决方案资源管理器** 中右键单击解决方案名称，然后选择 " **添加 >" 新建项目 ...**"。
 3. 选择 " **Visual c # > IOS 扩展 > 通知内容扩展**：
 
     [![选择通知内容扩展](advanced-user-notifications-images/notify01.w157-sml.png)](advanced-user-notifications-images/notify01.w157.png#lightbox)
-4. 输入扩展的**名称**，然后单击 **"确定"** 按钮。
+4. 输入扩展的 **名称** ，然后单击 **"确定"** 按钮。
 
 -----
 
 向解决方案添加通知内容扩展时，将在扩展的项目中创建三个文件：
 
-1. `NotificationViewController.cs`-这是通知内容扩展插件的主视图控制器。
-2. `MainInterface.storyboard`-开发人员在 iOS 设计器中将通知内容扩展的可见 UI 布局。
-3. `Info.plist`-控制通知内容扩展插件的配置。
+1. `NotificationViewController.cs` -这是通知内容扩展插件的主视图控制器。
+2. `MainInterface.storyboard` -开发人员在 iOS 设计器中将通知内容扩展的可见 UI 布局。
+3. `Info.plist` -控制通知内容扩展插件的配置。
 
 默认文件如下所 `NotificationViewController.cs` 示：
 
@@ -248,26 +248,26 @@ namespace MonkeyChatNotifyExtension
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-1. 双击 `Info.plist` **Solution Pad**中的扩展文件，将其打开进行编辑。
+1. 双击 `Info.plist` **Solution Pad** 中的扩展文件，将其打开进行编辑。
 2. 切换到“源”视图。
 3. 展开该 `NSExtension` 密钥。
-4. 添加 `UNNotificationExtensionCategory` 键作为类型**字符串**，其中包含扩展所属类别的值（在此示例中为 "事件-邀请"）： 
+4. `UNNotificationExtensionCategory`在此示例的 "事件-邀请") 中，用扩展所属的类别的值添加密钥作为 Type **String** (： 
 
     [![添加 UNNotificationExtensionCategory 项](advanced-user-notifications-images/customui02.png)](advanced-user-notifications-images/customui02.png#lightbox)
 5. 保存所做更改。
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-1. 双击 `Info.plist` **解决方案资源管理器**中的扩展文件，将其打开进行编辑。
+1. 双击 `Info.plist` **解决方案资源管理器** 中的扩展文件，将其打开进行编辑。
 2. 展开该 `NSExtension` 密钥。
-3. 添加 `UNNotificationExtensionCategory` 键作为类型**字符串**，其中包含扩展所属类别的值（在此示例中为 "事件-邀请"）： 
+3. `UNNotificationExtensionCategory`在此示例的 "事件-邀请") 中，用扩展所属的类别的值添加密钥作为 Type **String** (： 
 
     [![添加 UNNotificationExtensionCategory 项](advanced-user-notifications-images/customui02w.png)](advanced-user-notifications-images/customui02w.png#lightbox)
 4. 保存所做更改。
 
 -----
 
-通知内容扩展类别（ `UNNotificationExtensionCategory` ）使用用于注册通知操作的相同类别值。 如果应用将为多个类别使用同一 UI，请将切换 `UNNotificationExtensionCategory` 到类型**阵列**，并提供所需的所有类别。 例如：
+通知内容扩展类别 (`UNNotificationExtensionCategory`) 使用用于注册通知操作的相同类别值。 如果应用将为多个类别使用同一 UI，请将切换 `UNNotificationExtensionCategory` 到类型 **阵列** ，并提供所需的所有类别。 例如：
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -281,7 +281,7 @@ namespace MonkeyChatNotifyExtension
 
 ### <a name="hiding-the-default-notification-content"></a>隐藏默认通知内容
 
-如果自定义通知 UI 将显示与默认通知相同的内容（标题、副标题和正文自动显示在通知 UI 的底部），则可以通过将密钥添加到密钥，将其 `UNNotificationExtensionDefaultContentHidden` `NSExtensionAttributes` 作为类型**布尔**值添加到 `YES` 扩展文件中的值，从而隐藏此默认信息 `Info.plist` ：
+如果自定义通知 UI 将显示与默认通知相同的内容 (标题、副标题和正文会自动显示在通知 UI) 的底部，则可以通过将密钥添加到密钥，将其 `UNNotificationExtensionDefaultContentHidden` `NSExtensionAttributes` 作为类型 **布尔** 值添加到 `YES` 扩展的文件中，从而隐藏此默认信息 `Info.plist` ：
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -295,10 +295,10 @@ namespace MonkeyChatNotifyExtension
 
 ### <a name="designing-the-custom-ui"></a>设计自定义 UI
 
-若要设计通知内容扩展插件的自定义用户界面，请双击该 `MainInterface.storyboard` 文件以在 IOS 设计器中将其打开以进行编辑，并在生成所需的接口所需的元素中拖动（如 `UILabels` 和 `UIImageViews` ）。
+若要设计通知内容扩展插件的自定义用户界面，请双击该 `MainInterface.storyboard` 文件以在 IOS 设计器中将其打开以进行编辑，并将生成所需的接口所需的元素拖到 (例如 `UILabels` 和 `UIImageViews`) 中。
 
 > [!NOTE]
-> 从 iOS 12，通知内容扩展可以包含交互式控件，如按钮和文本字段。 有关详细信息，请参阅[iOS 12 文档中的交互式通知](~/ios/platform/introduction-to-ios12/notifications/interactive.md)。
+> 从 iOS 12，通知内容扩展可以包含交互式控件，如按钮和文本字段。 有关详细信息，请参阅 [iOS 12 文档中的交互式通知](~/ios/platform/introduction-to-ios12/notifications/interactive.md) 。
 
 UI 已布局并且向 c # 代码公开所需的控件后，打开 `NotificationViewController.cs` 以进行编辑，并修改 `DidReceiveNotification` 方法以便在用户展开通知时填充 UI。 例如：
 
@@ -361,7 +361,7 @@ namespace MonkeyChatNotifyExtension
 
 由于在调用通知内容扩展之前通知系统已在运行，因此，内容区域将以完全大小开始，并在向用户显示时向下动态显示所请求的大小。
 
-若要消除这种影响，请在文件中编辑 `Info.plist` 扩展，并将 `UNNotificationExtensionInitialContentSizeRatio` 键的键设置 `NSExtensionAttributes` 为类型**Number** ，并将值设置为表示所需的比率。 例如：
+若要消除这种影响，请在文件中编辑 `Info.plist` 扩展，并将 `UNNotificationExtensionInitialContentSizeRatio` 键的键设置 `NSExtensionAttributes` 为类型 **Number** ，并将值设置为表示所需的比率。 例如：
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -375,7 +375,7 @@ namespace MonkeyChatNotifyExtension
 
 ### <a name="using-media-attachments-in-custom-ui"></a>在自定义 UI 中使用媒体附件
 
-由于媒体附件（如上面的[添加媒体附件](#adding-media-attachments)部分所示）是通知有效负载的一部分，因此可以在通知内容扩展中对其进行访问和显示，就像在默认通知 UI 中一样。
+由于媒体附件 ([如上所示](#adding-media-attachments)) 是通知负载的一部分，因此可以在通知内容扩展中对其进行访问和显示，就像在默认通知 UI 中一样。
 
 例如，如果上面的自定义 UI 包含 `UIImageView` 向 c # 代码公开的，则可以使用以下代码将其从媒体附件填充：
 
@@ -448,10 +448,10 @@ namespace MonkeyChatNotifyExtension
 
 除了自定义操作外，通知内容扩展还可以响应以下内置操作：
 
-- **默认操作**-当用户点击某个通知打开应用并显示给定通知的详细信息时，则为。
-- **取消操作**-当用户关闭给定通知时，此操作将发送到应用程序。
+- **默认操作** -当用户点击某个通知打开应用并显示给定通知的详细信息时，则为。
+- **取消操作** -当用户关闭给定通知时，此操作将发送到应用程序。
 
-通知内容扩展还可以在用户调用其中一个自定义操作时更新他们的 UI，例如，当用户点击 "**接受**自定义操作" 按钮时将日期显示为 "已接受"。 此外，通知内容扩展可以告知系统延迟通知 UI 的消除，以便用户可以在通知关闭之前查看操作的效果。
+通知内容扩展还可以在用户调用其中一个自定义操作时更新他们的 UI，例如，当用户点击 " **接受** 自定义操作" 按钮时将日期显示为 "已接受"。 此外，通知内容扩展可以告知系统延迟通知 UI 的消除，以便用户可以在通知关闭之前查看操作的效果。
 
 这是通过实现 `DidReceiveNotification` 包含完成处理程序的方法的第二个版本来完成的。 例如：
 
@@ -527,7 +527,7 @@ namespace myApp {
 }
 ```
 
-通过将 `Server.PostEventResponse` 处理程序添加到 `DidReceiveNotification` 通知内容扩展的方法中，该扩展插件*必须*处理所有自定义操作。 扩展还可以通过更改将自定义操作转发到包含应用程序 `UNNotificationContentExtensionResponseOption` 。 例如：
+通过将 `Server.PostEventResponse` 处理程序添加到 `DidReceiveNotification` 通知内容扩展的方法中，该扩展插件 *必须* 处理所有自定义操作。 扩展还可以通过更改将自定义操作转发到包含应用程序 `UNNotificationContentExtensionResponseOption` 。 例如：
 
 ```csharp
 // Close Notification
@@ -536,7 +536,7 @@ completionHandler (UNNotificationContentExtensionResponseOption.DismissAndForwar
 
 ### <a name="working-with-the-text-input-action-in-custom-ui"></a>使用自定义 UI 中的文本输入操作
 
-有时可能需要用户在通知中输入文本（例如，答复消息），这取决于应用程序的设计和通知。 与标准通知一样，通知内容扩展可以访问内置文本输入操作。
+根据应用程序和通知的设计，有时可能需要用户在通知中输入文本 (如) 回复消息。 与标准通知一样，通知内容扩展可以访问内置文本输入操作。
 
 例如：
 
@@ -676,7 +676,7 @@ namespace MonkeyChatNotifyExtension
 }
 ```
 
-此代码将创建一个新的文本输入操作，并将其添加到扩展的类别（在中为 `MakeExtensionCategory` ）方法。 在 `DidReceive` 重写方法中，它通过以下代码处理用户输入文本：
+此代码创建一个新的文本输入操作，并将其添加到) 方法中的扩展的类别 (`MakeExtensionCategory` 。 在 `DidReceive` 重写方法中，它通过以下代码处理用户输入文本：
 
 ```csharp
 // Is text input?
@@ -725,7 +725,7 @@ Server.PostEventResponse += (response) {
 };
 ```
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 本文大致介绍了如何在 Xamarin iOS 应用中使用新的用户通知框架。 本文介绍了如何将媒体附件添加到本地和远程通知，并介绍了如何使用新的用户通知 UI 创建自定义通知 ui。
 
