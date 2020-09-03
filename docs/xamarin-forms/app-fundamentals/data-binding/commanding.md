@@ -1,6 +1,6 @@
 ---
-title: title:“Xamarin.Forms 命令接口”说明：“本文介绍如何使用 Xamarin.Forms 数据绑定实现 Command 属性。”
-description: '命令接口提供了另一种实现命令的方法，这种方法更适合 MVVM 体系结构。” ms.prod: xamarin ms.assetid:69922284-F398-45C3-B4CC-B8E29BB4C533 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:2018/01/05 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: Xamarin.Forms 命令接口
+description: 本文介绍如何使用 Xamarin.Forms 数据绑定实现 Command 属性。 命令接口提供了另一种实现命令的方法，这种方法更适合 MVVM 体系结构。
 ms.prod: xamarin
 ms.assetid: 69922284-F398-45C3-B4CC-B8E29BB4C533
 ms.technology: xamarin-forms
@@ -10,14 +10,14 @@ ms.date: 01/05/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 253255f08cec6f08e03df94798c8572f7cf10f30
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.openlocfilehash: ad36bd5efe09909753fed948a961a690feb0592a
+ms.sourcegitcommit: a003b036f6fb83818e2ecc9c72a641e3aeb373bd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84139719"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88964657"
 ---
-# <a name="the-xamarinforms-command-interface"></a>Xamarin.Forms 命令接口
+# <a name="the-no-locxamarinforms-command-interface"></a>Xamarin.Forms 命令接口
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
@@ -688,10 +688,6 @@ public class DecimalKeypadViewModel : INotifyPropertyChanged
 `canExecute` 方法仅在参数为小数点（指示按下小数点）且 `Entry` 已经包含小数点时才返回 `false`。
 
 所有 `execute` 方法都调用 `RefreshCanExecutes`，然后它再为 `DigitCommand` 和 `ClearCommand` 调用 `ChangeCanExecute`。 这确保根据当前输入的数字的序列启用或禁用小数点和退格按钮。
-
-## <a name="adding-commands-to-existing-views"></a>向现有视图添加命令
-
-如果想在不支持命令接口的视图中使用命令接口，可以使用将事件转换为命令的 Xamarin.Forms 行为。 [可重用 EventToCommandBehavior](~/xamarin-forms/app-fundamentals/behaviors/reusable/event-to-command-behavior.md)一文中对此进行了介绍。
 
 ## <a name="asynchronous-commanding-for-navigation-menus"></a>导航菜单的异步命令
 

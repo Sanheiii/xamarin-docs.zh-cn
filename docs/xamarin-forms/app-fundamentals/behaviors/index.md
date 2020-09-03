@@ -10,14 +10,14 @@ ms.date: 04/06/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 83952982bd163725fb931c860cac3e267726315c
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: d917d7d6421cfae7fc877c81023a835573fa99b1
+ms.sourcegitcommit: a003b036f6fb83818e2ecc9c72a641e3aeb373bd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84135806"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88964618"
 ---
-# <a name="xamarinforms-behaviors"></a>Xamarin.Forms 行为
+# <a name="no-locxamarinforms-behaviors"></a>Xamarin.Forms 行为
 
 通过行为可将功能添加到用户界面控件，且无需将其子类化。行为由代码编写，并以 XAML 或代码的形式添加到控件中。
 
@@ -29,10 +29,10 @@ ms.locfileid: "84135806"
 
 附加行为是具有一个或多个附加属性的 `static` 类。 本文演示如何创建和使用附加行为。
 
-## <a name="xamarinforms-behaviorscreatingmd"></a>[Xamarin.Forms 行为](creating.md)
+## <a name="no-locxamarinforms-behaviors"></a>[Xamarin.Forms 行为](creating.md)
 
 Xamarin.Forms 行为由 [`Behavior`](xref:Xamarin.Forms.Behavior) 或 [`Behavior<T>`](xref:Xamarin.Forms.Behavior`1) 类派生创建而成。 本文演示如何创建和使用 Xamarin.Forms 行为。
 
-## <a name="reusable-behaviors"></a>[可重用行为](reusable/index.md)
+## <a name="reusable-effectbehavior"></a>[可重用 EffectBehavior](effect-behavior.md)
 
-行为可在多个应用程序中重复使用。 这些文章介绍了如何创建有用行为以执行常用功能。
+行为是一种非常有用的方法，用于向控件添加效果、从代码隐藏文件中删除冗余重复的效果处理代码。 本文演示如何创建 Xamarin.Forms 行为并将其用于向控件添加效果。
