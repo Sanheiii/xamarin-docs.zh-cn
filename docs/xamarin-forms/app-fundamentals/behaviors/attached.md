@@ -10,12 +10,12 @@ ms.date: 04/06/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a705eef2ecd240b8944117a67a90ebeebc382bcb
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 55c987ab9f9a95eaeacf648af11c3518a1c27c2a
+ms.sourcegitcommit: a003b036f6fb83818e2ecc9c72a641e3aeb373bd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86933739"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88964644"
 ---
 # <a name="attached-behaviors"></a>附加行为
 
@@ -32,7 +32,7 @@ ms.locfileid: "86933739"
 1. `propertyChanged` 委托将控件引用（接收为 [`BindableObject`](xref:Xamarin.Forms.BindableObject)）强制转换为旨在增强行为的控制类型。
 1. `propertyChanged` 委托修改控件属性、调用控件方法，或为控件公开的事件注册事件处理程序，以实现核心行为功能。
 
-附加行为存在一个问题，即它们使用 `static` 属性和方法在 `static` 类中进行定义。 这使得创建具有状态的附加行为变得困难。 此外，Xamarin.Forms 行为已替代附加行为，成为了行为构造的首选方法。 有关 Xamarin.Forms 行为的详细信息，请参阅 [Xamarin.Forms 行为](~/xamarin-forms/app-fundamentals/behaviors/creating.md)和[可重用行为](~/xamarin-forms/app-fundamentals/behaviors/reusable/index.md)。
+附加行为存在一个问题，即它们使用 `static` 属性和方法在 `static` 类中进行定义。 这使得创建具有状态的附加行为变得困难。 此外，Xamarin.Forms 行为已替代附加行为，成为了行为构造的首选方法。 有关 Xamarin.Forms 行为的详细信息，请参阅[Xamarin.Forms行为](~/xamarin-forms/app-fundamentals/behaviors/creating.md)。
 
 ## <a name="creating-an-attached-behavior"></a>创建附加行为
 

@@ -8,12 +8,12 @@ author: davidortinau
 ms.author: daortin
 ms.custom: video
 ms.date: 03/05/2020
-ms.openlocfilehash: 09d20ef2e4fece36ce67a7891892defb05a5f3df
-ms.sourcegitcommit: ca1eca5bcf6c82bc4ec05db12ee1be585006d59f
+ms.openlocfilehash: 32d9142fb74cba637982438a2aa984adb759d847
+ms.sourcegitcommit: bb18e6b3b5d592374b17932efa1e85c3b5fbad57
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88514624"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88950711"
 ---
 # <a name="automatic-provisioning-for-xamarinios"></a>Xamarin.iOS 的自动预配
 
@@ -25,7 +25,7 @@ Visual Studio for Mac、Visual Studio 2019 和 Visual Studio 2017（版本 15.7 
 
 > [!NOTE]
 > 此外，必须拥有付费的 Apple 开发者帐户才能使用此功能。 有关 Apple 开发者帐户的详细信息，请参阅[设备预配](~/ios/get-started/installation/device-provisioning/index.md)指南。
-> 如果没有付费的 Apple 开发人员帐户，请参阅 [免费 Xamarin.iOS 预配] (~/ios/get-started/installation/device-provisioning/free-provisioning.md) 指南。
+> 如果你没有付费的 Apple 开发者帐户，请参阅[免费预配 Xamarin.iOS](~/ios/get-started/installation/device-provisioning/free-provisioning.md) 指南。
 
 > [!NOTE]
 > 在开始之前，请务必先接受 [Apple 开发者门户](https://developer.apple.com/account/)或 [App Store Connect](https://appstoreconnect.apple.com/) 中的任何许可协议。

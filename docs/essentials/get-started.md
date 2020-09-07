@@ -9,14 +9,14 @@ ms.date: 05/11/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 0c0052b35475522ffb3634ebe22f69f66fe3b22b
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 3599958a493dd4051064b5e7f54aa5901e6bf32c
+ms.sourcegitcommit: f6a2f07d2e689e0cfd01b30008d50c83c63fa70c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84129306"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89052755"
 ---
-# <a name="get-started-with-xamarinessentials"></a>Xamarin.Essentials 入门
+# <a name="get-started-with-no-locxamarinessentials"></a>Xamarin.Essentials 入门
 
 Xamarin.Essentials 提供了适用于任何 iOS、Android 或 UWP 应用程序的单一跨平台 API，不管如何创建用户界面，都可以通过共享代码进行访问。 有关支持的操作系统的详细信息，请参阅[平台和功能支持指南](platform-feature-support.md)。
 
@@ -93,7 +93,7 @@ Xamarin.Essentials 可用作 NuGet 包并包含在 Visual Studio 的每个新项
 
 6. 按照 [Xamarin.Essentials 指南](index.md)为每个功能复制并粘贴代码片段。
 
-## <a name="xamarinessentials---cross-platform-apis-for-mobile-apps-video"></a>Xamarin.Essentials - 用于移动应用（视频）的跨平台 API
+## <a name="no-locxamarinessentials---cross-platform-apis-for-mobile-apps-video"></a>Xamarin.Essentials - 用于移动应用（视频）的跨平台 API
 
 > [!Video https://channel9.msdn.com/Shows/XamarinShow/Snack-Pack-XamarinEssentials-Cross-Platform-APIs-for-Mobile-Apps/player]
 

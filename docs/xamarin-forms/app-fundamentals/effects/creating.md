@@ -10,12 +10,12 @@ ms.date: 10/24/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d1aead9297312e190a5a04ee0f33328d81f2547a
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: bb4e0c81fb3f2e58be9c44d1ec7fddcf4d72a656
+ms.sourcegitcommit: a003b036f6fb83818e2ecc9c72a641e3aeb373bd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939953"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88964592"
 ---
 # <a name="creating-an-effect"></a>创建效果
 
@@ -42,8 +42,8 @@ _效果简化了控件的自定义。本文演示如何创建效果，在指向 
 
 `HomePage` 上的 [`Entry`](xref:Xamarin.Forms.Entry) 控件由特定于平台的各项目中的 `FocusEffect` 类自定义。 每个 `FocusEffect` 类均派生自各平台的 `PlatformEffect` 类。 这导致使用特定于平台的背景颜色呈现 `Entry` 控件，背景颜色在控件获得焦点时变化，如以下屏幕截图所示：
 
-![各平台上的焦点效果](creating-images/screenshots-1.png)
-![各平台上的焦点效果](creating-images/screenshots-2.png)
+![每个平台上的焦点效应，控制聚焦](creating-images/screenshots-1.png)
+![每个平台上的焦点效应，控制未聚焦](creating-images/screenshots-2.png)
 
 ## <a name="creating-the-effect-on-each-platform"></a>在各平台上创建效果
 
@@ -239,7 +239,7 @@ public class FocusEffect : RoutingEffect
 
 `FocusEffect` 类将 [`RoutingEffect`](xref:Xamarin.Forms.RoutingEffect) 类作为子类，它表示一个独立于平台的效果，该效果包装通常特定于平台的内部效果。 `FocusEffect` 类调用基类构造函数，传入由分辨率组名称（在效果类上使用 [`ResolutionGroupName`](xref:Xamarin.Forms.ResolutionGroupNameAttribute) 属性指定）以及唯一 ID（在效果类上使用 [`ExportEffect`](xref:Xamarin.Forms.ExportEffectAttribute) 属性指定）的串联组成的参数。 因此，在运行时初始化 [`Entry`](xref:Xamarin.Forms.Entry) 时，向控件的 [`Effects`](xref:Xamarin.Forms.Element.Effects) 集合添加了 `MyCompany.FocusEffect` 的新实例。
 
-还可以使用行为或附加属性将效果附加到控件。 有关使用行为将效果附加到控件的详细信息，请参阅[可重用的 EffectBehavior](~/xamarin-forms/app-fundamentals/behaviors/reusable/effect-behavior.md)。 有关使用附加属性将效果附加到控件的详细信息，请参阅[将参数传递给效果](~/xamarin-forms/app-fundamentals/effects/passing-parameters/index.md)。
+还可以使用行为或附加属性将效果附加到控件。 有关使用行为将效果附加到控件的详细信息，请参阅[可重用的 EffectBehavior](~/xamarin-forms/app-fundamentals/behaviors/effect-behavior.md)。 有关使用附加属性将效果附加到控件的详细信息，请参阅[将参数传递给效果](~/xamarin-forms/app-fundamentals/effects/passing-parameters/index.md)。
 
 ## <a name="consuming-the-effect-in-cnum"></a>在 C&num; 中使用效果
 

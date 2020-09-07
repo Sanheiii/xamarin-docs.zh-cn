@@ -1,6 +1,6 @@
 ---
-title: 标题：“Xamarin.Forms 本地通知”说明：“本文介绍如何在 Xamarin.Forms 中发送和接收本地通知。”
-description: 'ms.prod: xamarin ms.assetid:60460F57-63C6-4916-BBB5-A870F1DF53D7 ms.technology: xamarin-forms author: profexorgeek ms.author: jusjohns ms.date:2019/10/10 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: Xamarin.Forms 本地通知
+description: 本文介绍如何在 Xamarin.Forms 中发送和接收本地通知。
 ms.prod: xamarin
 ms.assetid: 60460F57-63C6-4916-BBB5-A870F1DF53D7
 ms.technology: xamarin-forms
@@ -10,14 +10,14 @@ ms.date: 10/10/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 40e040f216ddda40931273f4e7f5614964862fe8
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.openlocfilehash: da867dd017ed50ccbc09f969891bb91011379d3f
+ms.sourcegitcommit: f6a2f07d2e689e0cfd01b30008d50c83c63fa70c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84137587"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89052742"
 ---
-# <a name="local-notifications-in-xamarinforms"></a>Xamarin.Forms 中的本地通知
+# <a name="local-notifications-in-no-locxamarinforms"></a>Xamarin.Forms 中的本地通知
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/local-notifications)
 
@@ -50,7 +50,7 @@ public interface INotificationManager
 
 此接口将在每个平台项目中实现。 `NotificationReceived` 事件允许应用程序处理传入通知。 `Initialize` 方法应执行准备通知系统所需的任何本机平台逻辑。 `ScheduleNotification` 方法应发送通知。 当收到消息时，`ReceiveNotification` 方法应由基础平台调用。
 
-## <a name="consume-the-interface-in-xamarinforms"></a>在 Xamarin.Forms 使用接口
+## <a name="consume-the-interface-in-no-locxamarinforms"></a>在 Xamarin.Forms 使用接口
 
 创建接口后，即使尚未创建平台实现，也可以在共享 Xamarin.Forms 项目中使用该接口。 示例应用程序包含名为 MainPage.xaml 的 **，其中包含以内容`ContentPage`** ：
 
@@ -113,6 +113,16 @@ public partial class MainPage : ContentPage
 ```
 
 `MainPage` 类构造函数使用 Xamarin.Forms `DependencyService` 检索 `INotificationManager` 的特定于平台的实例。 `OnScheduleClicked` 方法使用 `INotificationManager` 实例计划新通知。 `ShowNotification` 方法是从附加到 `NotificationReceived` 事件的事件处理程序中调用的，并在调用该事件时将新的 `Label` 插入到页面中。
+
+`NotificationReceived` 事件处理程序将其事件参数强制转换为 `NotificationEventArgs`。 此类型在共享 Xamarin.Forms 项目中定义：
+
+```csharp
+public class NotificationEventArgs : EventArgs
+{
+    public string Title { get; set; }
+    public string Message { get; set; }
+}
+```
 
 有关 Xamarin.Forms `DependencyService` 的详细信息，请参阅 [Xamarin.Forms DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/introduction.md)。
 

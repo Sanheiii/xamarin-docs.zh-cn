@@ -10,12 +10,12 @@ ms.date: 04/06/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d5bee3baa08387a1ed67384ba4089d63aad08d2c
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 37c76a5f325c363a92c2a2c1e597dab28f064cd9
+ms.sourcegitcommit: a003b036f6fb83818e2ecc9c72a641e3aeb373bd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84135767"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88964605"
 ---
 # <a name="introduction-to-behaviors"></a>行为简介
 
@@ -32,7 +32,7 @@ ms.locfileid: "84135767"
 
 Xamarin.Forms 支持以下两种不同风格的行为：
 
-- **Xamarin.Forms 行为** - 从 [`Behavior`](xref:Xamarin.Forms.Behavior) 或 [`Behavior<T>`](xref:Xamarin.Forms.Behavior`1) 类派生的类，其中 `T` 是应用该行为的控件的类型。 有关 Xamarin.Forms 行为的详细信息，请参阅 [Xamarin.Forms 行为](~/xamarin-forms/app-fundamentals/behaviors/creating.md)和[可重用行为](~/xamarin-forms/app-fundamentals/behaviors/reusable/index.md)。
+- **Xamarin.Forms 行为** - 从 [`Behavior`](xref:Xamarin.Forms.Behavior) 或 [`Behavior<T>`](xref:Xamarin.Forms.Behavior`1) 类派生的类，其中 `T` 是应用该行为的控件的类型。 有关 Xamarin.Forms 行为的详细信息，请参阅[Xamarin.Forms行为](~/xamarin-forms/app-fundamentals/behaviors/creating.md)。
 - **附加行为** - 具有一个或多个附加属性的 `static` 类。 有关附加行为的详细信息，请参阅[附加行为](~/xamarin-forms/app-fundamentals/behaviors/attached.md)。
 
 本指南重点介绍 Xamarin.Forms 行为，因为它是行为构造的首选方法。
