@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/25/2018
-ms.openlocfilehash: a70095c5897163d3699d03ec42c33826f6d40419
-ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
+ms.openlocfilehash: aca9227bc5c885000bffe858e0fc8b34d3724dfd
+ms.sourcegitcommit: 0c45e3f810947e3d43223aa01bf3e43a0defca65
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86997145"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90843494"
 ---
 # <a name="ios-platform-features-overview"></a>iOS 平台功能概述
 
@@ -20,8 +20,9 @@ ms.locfileid: "86997145"
 
 ## <a name="ios-releases"></a>iOS 版本
 
-| 发布 | 说明 |
+| Release | 说明 |
 |-------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [IOS 14 简介](~/ios/platform/ios14/index.md) | 本文档介绍 Xamarin 14。|
 | [iOS 13 简介](~/ios/platform/ios13/index.md) | 本文档介绍 Xamarin （iOS）。|
 | [iOS 12 简介](~/ios/platform/introduction-to-ios12/index.md) | 本文档介绍生成 Xamarin iOS 应用程序时可使用的 iOS 12 功能。|
 | [iOS 11 简介](~/ios/platform/introduction-to-ios11/index.md) | 本文档介绍 iOS 11 和 Xcode 9 中的新增功能和更新功能，如 ARKit、Core ML、Core NFC、拖放、MapKit、PDFKit、SiriKit 和视觉。 它链接到介绍如何将这些功能与 Xamarin 一起使用的指南。 |
@@ -37,7 +38,7 @@ Apple Pay 随 iOS 8 一起引入，使用户能够通过其 iOS 设备为物品�
 
 ## <a name="callkit"></a>[CallKit](~/ios/platform/callkit.md)
 
-IOS 10 中的新 CallKit API 提供了一种方法，让 VOIP 应用与 iPhone UI 集成，并为最终用户提供熟悉的界面和体验。 使用此 API，用户可以从 iOS 设备的锁屏界面查看并与 VOIP 呼叫交互，并使用 Phone 应用的 **"收藏夹" 和 "** **最近**" 视图管理联系人。
+IOS 10 中的新 CallKit API 提供了一种方法，让 VOIP 应用与 iPhone UI 集成，并为最终用户提供熟悉的界面和体验。 使用此 API，用户可以从 iOS 设备的锁屏界面查看并与 VOIP 呼叫交互，并使用 Phone 应用的 **"收藏夹" 和 "** **最近** " 视图管理联系人。
 
 ## <a name="contacts-and-contactsui"></a>[联系人和 ContactsUI](~/ios/platform/contacts.md)
 
@@ -45,15 +46,15 @@ IOS 10 中的新 CallKit API 提供了一种方法，让 VOIP 应用与 iPhone U
 
 ## <a name="document-picker"></a>[文档选取器](~/ios/platform/document-picker.md)
 
-文档选取器允许在应用之间共享文档。 这些文档可以存储在 iCloud 或其他应用的目录中。 文档通过用户在其设备上安装的一组[文档提供程序扩展](~/ios/platform/extensions.md)来共享。
+文档选取器允许在应用之间共享文档。 这些文档可以存储在 iCloud 或其他应用的目录中。 文档通过用户在其设备上安装的一组 [文档提供程序扩展](~/ios/platform/extensions.md) 来共享。
 
 ## <a name="eventkit"></a>[EventKit](~/ios/platform/eventkit.md)
 
-iOS 中内置了两个日历相关的应用程序：日历应用程序和提醒应用程序。 它非常简单，足以了解日历应用程序管理日历数据的方式，但提醒应用程序不太明显。 提醒实际上可能会有与这些日期相关联的日期、完成时间，等等。因此，iOS 会将所有日历数据（无论是日历事件还是提醒）存储在一个位置（称为*日历数据库*）中。
+iOS 中内置了两个日历相关的应用程序：日历应用程序和提醒应用程序。 它非常简单，足以了解日历应用程序管理日历数据的方式，但提醒应用程序不太明显。 提醒实际上可能会有与这些日期相关联的日期、完成时间，等等。因此，iOS 会将所有日历数据（无论是日历事件还是提醒）存储在一个位置（称为 *日历数据库*）中。
 
 ## <a name="ios-extensions"></a>[iOS 扩展](~/ios/platform/extensions.md)
 
-IOS 8 中引入的扩展是专用的， `UIViewControllers` 由 ios 在诸如**通知中心**内的标准上下文中提供，作为用户请求的自定义键盘类型，以执行专用输入或其他上下文（例如编辑照片，其中扩展可以提供特殊效果筛选器）。
+IOS 8 中引入的扩展是专用的， `UIViewControllers` 由 ios 在诸如 **通知中心**内的标准上下文中提供，作为用户请求的自定义键盘类型，以执行专用输入或其他上下文（例如编辑照片，其中扩展可以提供特殊效果筛选器）。
 
 ## <a name="graphics-and-animation-in-ios"></a>[iOS 中的图形和动画](~/ios/platform/graphics-animation-ios/index.md)
 
@@ -61,7 +62,7 @@ IOS 中的图形和动画涵盖了 iOS 中的核心图形概念，如 CoreImage�
 
 ## <a name="handoff"></a>[Handoff](~/ios/platform/handoff.md)
 
-Apple 在 iOS 8 和 OS X Yosemite （10.10）中引入了移交，以提供一种通用机制，使用户能够将其设备上启动的活动传输到另一台运行相同应用程序的设备，或其他支持相同活动的应用程序。
+Apple 在 iOS 8 和 OS X Yosemite (10.10) 中引入了移交，以提供一种通用机制，让用户将其设备上启动的活动传输到另一台运行相同应用程序的设备，或其他支持相同活动的应用程序。
 
 ## <a name="healthkit"></a>[HealthKit](~/ios/platform/healthkit.md)
 
@@ -81,7 +82,7 @@ Apple 在 iOS 9 中对游戏 Api 做出了多项技术改进，使 Xamarin iOS �
 
 ## <a name="message-app-integration"></a>[消息应用集成](~/ios/platform/message-app-integration/index.md)
 
-新的 iOS 10，消息应用扩展与**Messages**应用集成并向用户提供新功能。 此扩展可以发送文本、不干胶标签、媒体文件和交互式消息。
+新的 iOS 10，消息应用扩展与 **Messages** 应用集成并向用户提供新功能。 此扩展可以发送文本、不干胶标签、媒体文件和交互式消息。
 
 ## <a name="multitasking-for-ipad"></a>[适用于 iPad 的多任务](~/ios/platform/multitasking.md)
 
@@ -107,15 +108,15 @@ Passbook 是适用于 Iphone 和 iPod 的应用，适用于 iOS 6。 它存储�
 
 ## <a name="sirikit"></a>[SiriKit](~/ios/platform/sirikit/index.md)
 
-使用 iOS 10 的新功能，SiriKit 允许 iOS 应用提供使用 Siri 的用户可访问的服务，以及使用应用扩展**和新的**方法和**意向 UI**框架在 iOS 设备上映射应用的服务。
+使用 iOS 10 的新功能，SiriKit 允许 iOS 应用提供使用 Siri 的用户可访问的服务，以及使用应用扩展 **和新的** 方法和 **意向 UI** 框架在 iOS 设备上映射应用的服务。
 
 ## <a name="social-framework"></a>[社交框架](~/ios/platform/social-framework.md)
 
-社交框架提供了一个统一的 API，用于与中国的用户（包括_Twitter_和_Facebook_）以及_SinaWeibo_的社交网络交互。
+社交框架提供了一个统一的 API，用于与中国的用户（包括 _Twitter_ 和 _Facebook_）以及 _SinaWeibo_ 的社交网络交互。
 
 ## <a name="speech-recognition"></a>[语音识别](~/ios/platform/speech.md)
 
-iOS 10 包括一个新的语音 API，该 API 允许应用程序支持连续语音识别和转录语音（从实时或录制的音频流）到文本。
+iOS 10 包括一个新的语音 API，该 API 允许应用程序支持从实时或录制的音频流) 到文本的连续语音识别和转录语音 (。
 
 ## <a name="textkit"></a>[TextKit](~/ios/platform/textkit.md)
 
