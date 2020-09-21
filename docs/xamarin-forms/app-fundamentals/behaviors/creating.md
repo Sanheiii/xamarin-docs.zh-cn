@@ -11,13 +11,13 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: f265d1da894b195402c91cbf9468a11837c53bcf
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.sourcegitcommit: f6a2f07d2e689e0cfd01b30008d50c83c63fa70c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
+ms.lasthandoff: 09/10/2020
 ms.locfileid: "86933702"
 ---
-# <a name="create-xamarinforms-behaviors"></a>创建 Xamarin.Forms 行为
+# <a name="create-no-locxamarinforms-behaviors"></a>创建 Xamarin.Forms 行为
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-numericvalidationbehavior)
 
@@ -59,7 +59,7 @@ public class CustomBehavior : Behavior<View>
 
 然后，可以通过将其附加到相应控件的 [`Behaviors`](xref:Xamarin.Forms.VisualElement.Behaviors) 集合来使用该行为。
 
-## <a name="creating-a-xamarinforms-behavior"></a>创建 Xamarin.Forms 行为
+## <a name="creating-a-no-locxamarinforms-behavior"></a>创建 Xamarin.Forms 行为
 
 示例应用程序演示一个 `NumericValidationBehavior`，并用红色突出显示用户输入到 [`Entry`](xref:Xamarin.Forms.Entry) 控件的值（如果该值不是 `double`）。 此行为如下面的代码示例所示：
 
@@ -92,7 +92,7 @@ public class NumericValidationBehavior : Behavior<Entry>
 > [!NOTE]
 > Xamarin.Forms 不会设置行为的 `BindingContext`，因为可以通过样式共享行为并将其应用于多个控件。
 
-## <a name="consuming-a-xamarinforms-behavior"></a>使用 Xamarin.Forms 行为
+## <a name="consuming-a-no-locxamarinforms-behavior"></a>使用 Xamarin.Forms 行为
 
 每个 Xamarin.Forms 控件都有一个 [`Behaviors`](xref:Xamarin.Forms.VisualElement.Behaviors) 集合，其中可以添加一个或多个行为，如以下 XAML 代码示例所示：
 
@@ -113,12 +113,12 @@ entry.Behaviors.Add (new NumericValidationBehavior ());
 
 在运行时，根据行为实现，行为将响应与控件的交互。 以下屏幕截图演示了响应无效输入的行为：
 
-[![具有 Xamarin.Forms 行为的示例应用程序](creating-images/screenshots-sml.png)](creating-images/screenshots.png#lightbox "带有 Xamarin.Forms 行为的示例应用程序")
+[![带有 Xamarin.Forms 行为的示例应用程序](creating-images/screenshots-sml.png)](creating-images/screenshots.png#lightbox "带有 Xamarin.Forms行为的示例应用程序")
 
 > [!NOTE]
 > 行为是为特定的控件类型（或者可以应用于许多控件的超类）编写的，它们只应添加到兼容的控件中。 试图将行为附加到不兼容控件将引发异常。
 
-### <a name="consuming-a-xamarinforms-behavior-with-a-style"></a>使用具有样式的 Xamarin.Forms 行为
+### <a name="consuming-a-no-locxamarinforms-behavior-with-a-style"></a>使用具有样式的 Xamarin.Forms 行为
 
 行为也可以通过显式或隐式样式使用。 但是，不能创建设置控件的 [`Behaviors`](xref:Xamarin.Forms.VisualElement.Behaviors) 属性的样式，因为该属性只读。 解决方案是向行为类添加附加属性，以控制添加和删除行为。 流程如下：
 

@@ -5,13 +5,13 @@ ms.assetid: 3BE5EE1E-3FF6-4E95-7C9F-7B443EE3E94C
 ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
-ms.date: 03/06/2020
-ms.openlocfilehash: 202041614d6a5b632aba6e92a77869effc21bb4f
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.date: 09/11/2020
+ms.openlocfilehash: d4c8e9ba717602aa30cb736957da5a61d2a91130
+ms.sourcegitcommit: e4a51ca35887dd3e45016cf10111cee68d343fbe
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84568316"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90027602"
 ---
 # <a name="build-process"></a>生成过程
 
@@ -437,7 +437,17 @@ MSBuild 属性控制目标的行为。 它们是在项目文件中指定的，�
 
   [manifest-merger]: https://developer.android.com/studio/build/manifest-merge
 
-- AndroidMultiDexClassListExtraArgs &ndash; 此符串属性使开发人员能够在生成 `multidex.keep` 文件时，向 `com.android.multidex.MainDexListBuilder` 传递额外的参数  。
+- **AndroidManifestPlaceholders** &ndash; AndroidManifest.xml 的键值替换对列表，采用分号分隔，其中每个对的格式为 `key=value`。
+
+  例如，`assemblyName=$(AssemblyName)` 的属性值定义一个 `${assemblyName}` 占位符，随后该占位符可以出现在 AndroidManifest.xml 中：
+
+  ```xml
+  <application android:label="${assemblyName}"
+  ```
+
+  这提供了一种将生成过程中的变量插入 AndroidManifest.xml 文件的方法。
+
+- AndroidMultiDexClassListExtraArgs &ndash; 此符串属性使开发人员能够在生成 `multidex.keep` 文件时，向 `com.android.multidex.MainDexListBuilder` 传递额外的参数。
 
   具体事例：是否在 `dx` 编译期间发生以下错误。
 
@@ -456,7 +466,7 @@ MSBuild 属性控制目标的行为。 它们是在项目文件中指定的，�
 
   在 Xamarin.Android 8.3 中新增。
 
-- AndroidPackageFormat &ndash; 枚举样式的属性，有效值为 `apk` 或 `aab` 。 该属性指示你希望将 Android 应用程序打包为 [APK 文件][apk]还是 [Android 应用程序包][bundle]。 应用程序包是一种新的格式，适用于要在 Google Play 上提交的 `Release` 版本。 该值当前默认为 `apk`。
+- **AndroidPackageFormat** &ndash; 枚举样式的属性，有效值为 `apk` 或 `aab`。 该属性指示你希望将 Android 应用程序打包为 [APK 文件][apk]还是 [Android 应用程序包][bundle]。 应用程序包是一种新的格式，适用于要在 Google Play 上提交的 `Release` 版本。 该值当前默认为 `apk`。
 
   当 `$(AndroidPackageFormat)` 设置为 `aab` 时，系统将设置 Android 应用程序包所必需的其他 MSBuild 属性：
 
@@ -475,13 +485,13 @@ MSBuild 属性控制目标的行为。 它们是在项目文件中指定的，�
 
   在 Xamarin.Android 10.1 中新增。
 
-- AndroidR8JarPath &ndash; 指向 `r8.jar` 的路径，可与 R8 Dex 编译器和压缩器结合使用  。 默认为 Xamarin.Android 安装中的路径。 有关详细信息，请参阅 [D8 和 R8][d8-r8] 相关文档。
+- **AndroidR8JarPath** &ndash; 指向 `r8.jar` 的路径，供与 R8 Dex 编译器和压缩器结合使用。 默认为 Xamarin.Android 安装中的路径。 有关详细信息，请参阅 [D8 和 R8][d8-r8] 相关文档。
 
-- AndroidSdkBuildToolsVersion &ndash; Android SDK 生成工具包提供 aapt 和 zipalign 工具等    。 可以同时安装多个不同版本的生成工具包。 若要选择用于打包的生成工具包，请检查是否有“首选”生成工具版本。如果有，请使用它；如果没有  “首选”版本，请使用版本最高的已安装生成工具包。
+- **AndroidSdkBuildToolsVersion ** &ndash; Android SDK 生成工具包提供 aapt**** 和 zipalign**** 工具等。 可以同时安装多个不同版本的生成工具包。 若要选择用于打包的生成工具包，请检查是否有“首选”生成工具版本。如果有，请使用它；如果没有**“首选”版本，请使用版本最高的已安装生成工具包。
 
   `$(AndroidSdkBuildToolsVersion)` MSBuild 属性包含首选的生成工具版本。 如果（例如）已知上一 aapt 版本可用，而此时最新的 aapt 发生崩溃，则 Xamarin.Android 生成系统会在 `Xamarin.Android.Common.targets` 中提供默认值，并且可在项目文件中替代该默认值，选择备用的生成工具版本。
 
-- AndroidSupportedAbis &ndash; 此字符串属性包含应加入 `.apk` 中的分号 (`;`) 分隔的 ABI 列表  。
+- AndroidSupportedAbis &ndash; 此字符串属性包含应加入 `.apk` 中的分号 (`;`) 分隔的 ABI 列表。
 
   支持的值包括：
 
@@ -490,27 +500,27 @@ MSBuild 属性控制目标的行为。 它们是在项目文件中指定的，�
   - `arm64-v8a`：需要 Xamarin.Android 5.1 及更高版本。
   - `x86_64`：需要 Xamarin.Android 5.1 及更高版本。
 
--  AndroidTlsProvider &ndash; 此字符串值指定应用程序中应使用哪个 TLS 提供程序。 可能的值有：
+- **AndroidTlsProvider ** &ndash; 一个字符串值，指定应用程序中应使用哪个 TLS 提供程序。 可能的值包括：
 
   - 取消设置/空字符串：在 Xamarin.Android 7.3 和更高版本中，这等效于 `btls`。
 
     在 Xamarin.Android 7.1 中，这等效于 `legacy`。
 
-    这对应于 Visual Studio 属性页中的“默认”设置  。
+    这对应于 Visual Studio 属性页中的“默认”设置。
 
-  - `btls`：针对与 [HttpWebRequest](xref:System.Net.HttpWebRequest) 的通信，使用 [Boring SSL](https://boringssl.googlesource.com/boringssl)。
+  - `btls`：使用 [Boring SSL](https://boringssl.googlesource.com/boringssl) 与 [HttpWebRequest](xref:System.Net.HttpWebRequest) 进行 TLS 通信。
 
     这样，可以对所有 Android 版本使用 TLS 1.2。
 
-    这对应于 Visual Studio 属性页中的“Native TLS 1.2+”设置  。
+    这对应于 Visual Studio 属性页中的“Native TLS 1.2+”设置。
 
-  - `legacy`：在 Xamarin.Android 10.1 和更早的版本中，对于网络交互使用之前托管的 SSL 实现。 这  不支持 TLS 1.2。
+  - `legacy`：在 Xamarin.Android 10.1 和更早的版本中，对于网络交互使用之前托管的 SSL 实现。 这** 不支持 TLS 1.2。
 
-    这对应于 Visual Studio 属性页中的“托管 TLS 1.0”设置  。
+    这对应于 Visual Studio 属性页中的“托管 TLS 1.0”设置。
 
     在 Xamarin.Android 10.2 和更高版本中，将忽略此值并使用 `btls` 设置。
 
-  - `default`：该值不太可能用于 Xamarin.Android 项目。 建议改用的值为空列表，它对应于 Visual Studio 属性页中的“默认”设置  。
+  - `default`：该值不太可能用于 Xamarin.Android 项目。 建议改用的值为空列表，它对应于 Visual Studio 属性页中的“默认”设置****。
 
     Visual Studio 属性页中不提供 `default` 值。
 
@@ -518,7 +528,7 @@ MSBuild 属性控制目标的行为。 它们是在项目文件中指定的，�
 
   已在 Xamarin.Android 7.1 中添加。
 
-- AndroidUseApkSigner &ndash; 此布尔属性使开发人员能够使用 `apksigner` 工具，而不是 `jarsigner` 。
+- AndroidUseApkSigner &ndash; 此布尔属性使开发人员能够使用 `apksigner` 工具，而不是 `jarsigner`。
 
     在 Xamarin.Android 8.2 中新增。
 
@@ -528,19 +538,19 @@ MSBuild 属性控制目标的行为。 它们是在项目文件中指定的，�
 
   在 Xamarin.Android 10.1 中新增。
 
--  AndroidUseLegacyVersionCode &ndash; 此布尔属性允许开发人员将 versionCode 计算还原到先前的 Xamarin.Android 8.2 旧行为。 这只能适用于在 Google Play 商店中已发布应用程序的开发人员。 强烈建议使用新 `$(AndroidVersionCodePattern)` 属性。
+- **AndroidUseLegacyVersionCode** &ndash; 一个布尔属性，允许开发人员将 versionCode 计算还原到先前的 Xamarin.Android 8.2 旧行为。 这只能适用于在 Google Play 商店中已发布应用程序的开发人员。 强烈建议使用新 `$(AndroidVersionCodePattern)` 属性。
 
   在 Xamarin.Android 8.2 中新增。
 
-- AndroidUseManagedDesignTimeResourceGenerator &ndash; 此布尔属性将设计时生成切换为使用受管理资源分析程序，而不是 `aapt` 。
+- AndroidUseManagedDesignTimeResourceGenerator &ndash; 此布尔属性将设计时生成切换为使用受管理资源分析程序，而不是 `aapt`。
 
   在 Xamarin.Android 8.1 中新增。
 
-- AndroidUseSharedRuntime &ndash; 此布尔属性用于确定是否需要“共享运行时包”  才能在目标设备上运行应用程序  。 依靠共享运行时包以允许应用程序包更小，加快包创建和部署过程，从而加快生成/部署/调试周转周期。
+- **AndroidUseSharedRuntime ** &ndash; 一个布尔属性，用于确定是否需要“共享运行时包”** 才能在目标设备上运行应用程序。 依靠共享运行时包以允许应用程序包更小，加快包创建和部署过程，从而加快生成/部署/调试周转周期。
 
   对于调试版本，该属性应为 `True`，对于发行项目应为 `False`。
 
-- AndroidVersionCodePattern &ndash; 允许开发人员在清单中自定义 `versionCode` 的字符串属性  。
+- **AndroidVersionCodePattern ** &ndash; 允许开发人员在清单中自定义 `versionCode` 的字符串属性。
   有关决定 `versionCode` 的信息，请参阅[为 APK 创建版本代码](~/android/deploy-test/building-apps/abi-specific-apks.md)。
 
   例如，如果 `abi`是 `armeabi`，清单中的 `versionCode` 为 `123`，则当 `$(AndroidCreatePackagePerAbi)` 为 True 时，`{abi}{versionCode}` 将生成 `1123` 的 versionCode，否则将生成值 123。
@@ -553,15 +563,15 @@ MSBuild 属性控制目标的行为。 它们是在项目文件中指定的，�
 
   预定义的键项
 
-  - abi &ndash; 插入应用的目标 abi 
+  - **abi**  &ndash; 插入应用的目标 abi
     - 2 &ndash; `armeabi-v7a`
     - 3 &ndash; `x86`
     - 4 &ndash; `arm64-v8a`
     - 5 &ndash; `x86_64`
 
-  - minSDK &ndash; 如果没有定义，则插入 `AndroidManifest.xml` 或 `11` 中支持的最小 SDK 值  。
+  - minSDK &ndash; 如果没有定义，则插入 `AndroidManifest.xml` 或 `11` 中支持的最小 SDK 值。
 
-  - versionCode &ndash; 直接使用 `Properties\AndroidManifest.xml` 中的版本代码  。
+  - versionCode &ndash; 直接使用 `Properties\AndroidManifest.xml` 中的版本代码。
 
   你可以使用（下文中定义的）`$(AndroidVersionCodeProperties)` 属性定义自定义项。
 
@@ -569,23 +579,23 @@ MSBuild 属性控制目标的行为。 它们是在项目文件中指定的，�
 
   已在 Xamarin.Android 7.2 中添加。
 
-- AndroidVersionCodeProperties &ndash; 此字符串属性允许开发人员定义要与 `AndroidVersionCodePattern` 配合使用的自定义项  。 它们采用 `key=value` 对的形式。 `value` 中的所有项都应是整数值。 例如：`screen=23;target=$(_AndroidApiLevel)`。 正如你所看到的，你可以使用字符串中现有或自定义的 MSBuild 属性。
+- AndroidVersionCodeProperties &ndash; 此字符串属性允许开发人员定义要与 `AndroidVersionCodePattern` 配合使用的自定义项。 它们采用 `key=value` 对的形式。 `value` 中的所有项都应是整数值。 例如：`screen=23;target=$(_AndroidApiLevel)`。 正如你所看到的，你可以使用字符串中现有或自定义的 MSBuild 属性。
 
   已在 Xamarin.Android 7.2 中添加。
 
-- AotAssemblies &ndash; 此布尔属性确定程序集是否会被预编译为本机代码并包含在 `.apk` 中  。
+- AotAssemblies &ndash; 此布尔属性确定程序集是否会被预编译为本机代码并包含在 `.apk` 中。
 
   Xamarin.Android 5.1 中增加了对该属性的支持。
 
   该属性默认为 `False`。
 
-- EmbedAssembliesIntoApk &ndash; 此布尔属性确定应用的程序集是否应嵌入到应用程序包中  。
+- EmbedAssembliesIntoApk &ndash; 此布尔属性确定应用的程序集是否应嵌入到应用程序包中。
 
-  对于发行版本，该属性应为 `True`，对于调试版本应为 `False`。 如果“快速部署”不支持目标设备，则调试版本中  可能必须为 `True`。
+  对于发行版本，该属性应为 `True`，对于调试版本应为 `False`。 如果“快速部署”不支持目标设备，则调试版本中** 可能必须为 `True`。
 
   该属性为 `False` 时，`$(AndroidFastDeploymentType)` MSBuild 属性还会控制嵌入到 `.apk` 中的内容，这会影响部署和重新生成时间。
 
-- EnableLLVM &ndash; 此布尔属性确定在将程序集预编译为本机代码时是否使用 LLVM  。
+- EnableLLVM &ndash; 此布尔属性确定在将程序集预编译为本机代码时是否使用 LLVM。
 
   必须安装 Android NDK 才能生成启用了此属性的项目。
 
@@ -595,7 +605,7 @@ MSBuild 属性控制目标的行为。 它们是在项目文件中指定的，�
 
   除非 `$(AotAssemblies)` MSBuild 属性为 `True`，否则该属性将被忽略。
 
-- EnableProguard &ndash; 此布尔属性确定是否在打包过程中运行 [proguard](https://developer.android.com/tools/help/proguard.html) 以链接 Java 代码  。
+- EnableProguard &ndash; 此布尔属性确定是否在打包过程中运行 [proguard](https://developer.android.com/tools/help/proguard.html) 以链接 Java 代码。
 
   Xamarin.Android 5.1 中增加了对该属性的支持。
 
@@ -604,7 +614,7 @@ MSBuild 属性控制目标的行为。 它们是在项目文件中指定的，�
   如果 `True`，[ProguardConfiguration](#ProguardConfiguration) 文件将用于控制 `proguard` 的执行。
 
 - JavaMaximumHeapSize &ndash; 指定在打包过程中构建 `.dex` 文件时使用的 java 
-  `-Xmx` 参数值的值   。 如果未指定，则 `-Xmx` 选项向 java 提供值 `1G` 。 我们发现与其他平台相比，Windows 常常要求这样设置。
+  `-Xmx` 参数值的值 。 如果未指定，则 `-Xmx` 选项向 java 提供值 `1G`****。 我们发现与其他平台相比，Windows 常常要求这样设置。
 
   如果 [`_CompileDex` 目标引发 `java.lang.OutOfMemoryError`](https://bugzilla.xamarin.com/show_bug.cgi?id=18327)，则指定该属性是必需的。
 
@@ -614,33 +624,33 @@ MSBuild 属性控制目标的行为。 它们是在项目文件中指定的，�
   <JavaMaximumHeapSize>1G</JavaMaximumHeapSize>
   ```
 
-- JavaOptions &ndash; 指定在生成 `.dex` 文件时传递给 java 的附加命令行选项   。
+- JavaOptions &ndash; 指定在生成 `.dex` 文件时传递给 java 的附加命令行选项 。
 
-- LinkerDumpDependencies &ndash; 此布尔属性允许生成链接器依赖项文件  。 可将此文件用作 [illinkanalyzer](https://github.com/mono/linker/blob/master/src/analyzer/README.md) 工具的输入。
+- **LinkerDumpDependencies** &ndash; 布尔属性，能够生成链接器依赖项文件。 可将此文件用作 [illinkanalyzer](https://github.com/mono/linker/blob/master/src/analyzer/README.md) 工具的输入。
 
   默认值为 False。
 
--  MandroidI18n &ndash; 指定应用程序附带的国际化支持，例如排序规则和排序表。 该值是以下一个或多个不区分大小写值的以逗号或分号分隔的列表：
+- **MandroidI18n ** &ndash; 指定应用程序附带的国际化支持，例如排序规则和排序表。 该值是以下一个或多个不区分大小写值的以逗号或分号分隔的列表：
 
-  - “无”  ：不包括任何额外的编码。
+  - **** 无：不包含其他编码。
 
-  - “所有”  ：包括所有可用编码。
+  - **** 全部：包含所有可用的编码。
 
-  - CJK  ：包括中文、日语和韩语编码，例如日语 (EUC) \[enc-jp, CP51932\]、日语 (Shift-JIS) \[iso-2022-jp, shift\_jis, CP932\]、日语 (JIS) \[CP50220\]、简体中文 (GB2312) \[gb2312, CP936\]、韩语 (UHC) \[ks\_c\_5601-1987, CP949\]、韩语 (EUC) \[euc-kr, CP51949\]、繁体中文 (Big5) \[big5, CP950\] 和简体中文 (GB18030) \[GB18030, CP54936\]         。
+  - **** CJK：包括中文、日语和朝鲜语编码，例如*日语(EUC)* \[enc-jp, CP51932\]、*日语(Shift-JIS)* \[iso-2022-jp, shift\_jis, CP932\]、*日语(JIS)* \[CP50220\]、*简体中文(GB2312)* \[gb2312, CP936\]、*朝鲜语(UHC)* \[ks\_c\_5601-1987, CP949\]、*朝鲜语(EUC)* \[euc-kr, CP51949\]、*繁体中文(Big5)* \[big5, CP950\] 以及*简体中文 (GB18030)* \[GB18030, CP54936\]。
 
-  - “中东”  ：包括中东编码，例如土耳其语 (Windows) \[iso-8859-9, CP1254\]、希伯来语 (Windows) \[windows-1255, CP1255\]、阿拉伯语(Windows) \[windows-1256, CP1256\]、阿拉伯语 (ISO) \[iso-8859-6, CP28596\]、希伯来语 (ISO) \[iso-8859-8, CP28598\]、拉丁语 5 (ISO) \[iso-8859-9, CP28599\] 和希伯来语 (Iso Alternative) \[iso-8859-8, CP38598\]        。
+  - **** 中东：包括中东编码，例如*土耳其语(Windows)* \[iso-8859-9, CP1254\]、*希伯来语(Windows)* \[windows-1255, CP1255\]、*阿拉伯语(Windows)* \[windows-1256, CP1256\]、*阿拉伯语(ISO)* \[iso-8859-6, CP28596\]、*希伯来语(ISO)* \[iso-8859-8, CP28598\]、*拉丁语 5 (ISO)* \[iso-8859-9, CP28599\] 以及*希伯来语(Iso 备用)* \[iso-8859-8, CP38598\]。
 
-  - “其他”  ：包括其他编码，例如西里尔字母 (Windows) \[CP1251\]、波罗的海文 (Windows) \[iso-8859-4, CP1257\]、越南语 (Windows) \[CP1258\]、西里尔字母 (KOI8-R) \[koi8-r, CP1251\]、乌克兰语 (KOI8-U) \[koi8-u, CP1251\]、波罗的海文 (ISO) \[iso-8859-4, CP1257\]、西里尔字母 (ISO) \[iso-8859-5, CP1251\]、ISCII 天城体梵文字母 \[x-iscii-de, CP57002\]、ISCII 孟加拉语 \[x-iscii-be, CP57003\]、ISCII 泰米尔语 \[x-iscii-ta, CP57004\]、ISCII 泰卢固语 \[x-iscii-te, CP57005\]、ISCII 阿萨姆语 \[x-iscii-as, CP57006\]、ISCII 奥里雅语 \[x-iscii-or, CP57007\]、ISCII 坎那达语 \[x-iscii-ka, CP57008\]、ISCII 马拉雅拉姆语 \[x-iscii-ma, CP57009\]、ISCII 古吉拉特语 \[x-iscii-gu, CP57010\]、ISCII 旁遮普语 \[x-iscii-pa, CP57011\] 和泰语 (Windows) \[CP874\]                   。
+  - **** 其他：包括其他编码，例如*西里尔文(Windows)* \[CP1251\]、*波罗的语(Windows)* \[iso-8859-4, CP1257\]、*越南语(Windows)* \[CP1258\]、*西里尔文(KOI8-R)* \[koi8-r, CP1251\]、*乌克兰语(KOI8-U)* \[koi8-u, CP1251\]、*波罗的语(ISO)* \[iso-8859-4, CP1257\]、*西里尔文(ISO)* \[iso-8859-5, CP1251\]、*ISCII Davenagari* \[x-iscii-de, CP57002\]、*ISCII 孟加拉语* \[x-iscii-be, CP57003\]、*ISCII 泰米尔语* \[x-iscii-ta, CP57004\]、*ISCII 泰卢固语* \[x-iscii-te, CP57005\]、*ISCII 阿萨姆语* \[x-iscii-as, CP57006\]、*ISCII 奥里亚语* \[x-iscii-or, CP57007\]、*ISCII 卡纳达语* \[x-iscii-ka, CP57008\]、*ISCII 马拉雅拉姆语* \[x-iscii-ma, CP57009\]、*ISCII 古吉拉特语* \[x-iscii-gu, CP57010\]、*ISCII 旁遮普文* \[x-iscii-pa, CP57011\] 以及*泰语(Windows)* \[CP874\]。
 
-  - “稀有”  ：包括稀有编码，例如 IBM EBCDIC (土耳其语) \[CP1026\]、IBM EBCDIC (开放系统拉丁语 1) \[CP1047\]、IBM EBCDIC (美国-加拿大-欧洲) \[CP1140\]、IBM EBCDIC (德国-欧洲) \[CP1141\]、IBM EBCDIC (丹麦/挪威-欧洲) \[CP1142\]、IBM EBCDIC (芬兰/瑞典-欧洲) \[CP1143\]、IBM EBCDIC (意大利-欧洲) \[CP1144\]、IBM EBCDIC (拉丁美洲/西班牙-欧洲) \[CP1145\]、IBM EBCDIC (英国-欧洲) \[CP1146\]、IBM EBCDIC (法国-欧洲) \[CP1147\]、IBM EBCDIC (国际-欧洲) \[CP1148\]、IBM EBCDIC (冰岛语-欧洲) \[CP1149\]、IBM EBCDIC (德语) \[CP20273\]、IBM EBCDIC (丹麦/挪威) \[CP20277\]IBM EBCDIC (芬兰/瑞典) \[CP20278\]、IBM EBCDIC (意大利) \[CP20280\]、IBM EBCDIC (拉丁美洲/西班牙) \[CP20284\]、IBM EBCDIC (英国) \[CP20285\]、IBM EBCDIC (扩展式日文片假名) \[CP20290\]、IBM EBCDIC (法国) \[CP20297\]、IBM EBCDIC (阿拉伯语) \[CP20420\]、IBM EBCDIC (希伯来语) \[CP20424\]、IBM EBCDIC (冰岛语) \[CP20871\]、IBM EBCDIC (西里尔字母 - 塞尔维亚语, 保加利亚语) \[CP21025\]、IBM EBCDIC (美国-加拿大) \[CP37\]IBM EBCDIC (国际) \[CP500\]、阿拉伯语 (ASMO 708) \[CP708\]、欧洲中部 (DOS) \[CP852\]、西里尔字母 (DOS) \[CP855\]、土耳其语 (DOS) \[CP857\]、欧洲西部 (DOS-欧洲) \[CP858\]、希伯来语 (DOS) \[CP862\]、阿拉伯语 (DOS) \[CP864\]俄语 (DOS) \[CP866\]、希腊语 (DOS) \[CP869\]、IBM EBCDIC (拉丁语 2) \[CP870\] 和 IBM EBCDIC (希腊语) \[CP875\]                                      。
+  - **** 少数：包括少数编码，例如 *IBM EBCDIC(土耳其语)* \[CP1026\]、*IBM EBCDIC(开放系统拉丁语 1)* \[CP1047\]、*IBM EBCDIC(美国-加拿大与欧洲)* \[CP1140\]、*IBM EBCDIC(德国与欧洲)* \[CP1141\]、*IBM EBCDIC(丹麦/挪威与欧洲)* \[CP1142\]、*IBM EBCDIC(芬兰/瑞典与欧洲)* \[CP1143\]、*IBM EBCDIC(意大利与欧洲)* \[CP1144\]、*IBM EBCDIC(拉丁美洲/西班牙与欧洲)* \[CP1145\]、*IBM EBCDIC(英国与欧洲)* \[CP1146\]、*IBM EBCDIC(法国与欧洲)* \[CP1147\]、*IBM EBCDIC(国际与欧洲)* \[CP1148\]、*IBM EBCDIC(冰岛与欧洲)* \[CP1149\]、*IBM EBCDIC(德国)* \[CP20273\]、*IBM EBCDIC(丹麦/挪威)* \[CP20277\]、*IBM EBCDIC(芬兰/瑞典)* \[CP20278\]、*IBM EBCDIC(意大利)* \[CP20280\]、*IBM EBCDIC(拉丁美洲/西班牙)* \[CP20284\]、*IBM EBCDIC(英国)* \[CP20285\]、*IBM EBCDIC(扩展式日语片假名)* \[CP20290\]、*IBM EBCDIC(法国)* \[CP20297\]、*IBM EBCDIC(阿拉伯语)* \[CP20420\]、*IBM EBCDIC(希伯来语)* \[CP20424\]、*IBM EBCDIC(冰岛语)* \[CP20871\]、*IBM EBCDIC (西里尔文 - 塞尔维亚文，保加利亚语)* \[CP21025\]、*IBM EBCDIC(美国-加拿大)* \[CP37\]、*IBM EBCDIC(国际)* \[CP500\]、*阿拉伯语(ASMO 708)* \[CP708\]、*中欧语言(DOS)* \[CP852\]*、西里尔文(DOS)* \[CP855\]、*土耳其语(DOS)* \[CP857\]、*西欧(DOS 与欧洲)* \[CP858\]、*希伯来语(DOS)* \[CP862\]、*阿拉伯语(DOS)* \[CP864\]、*俄语(DOS)* \[CP866\]、*希腊语(DOS)* \[CP869\]、*IBM EBCDIC(拉丁语 2)* \[CP870\] 以及 *IBM EBCDIC(希腊语)* \[CP875\]。
 
-  - “西部”  ：包括西部编码，例如欧洲西部 (Mac) \[macintosh, CP10000\]、冰岛语 (Mac) \[x-mac-icelandic, CP10079\]、欧洲中部 (Windows) \[iso-8859-2, CP1250\]、欧洲西部 (Windows) \[iso-8859-1, CP1252\]、希腊语 (Windows) \[iso-8859-7, CP1253\]、欧洲中部 (ISO) \[iso-8859-2, CP28592\]、拉丁语 3 (ISO) \[iso-8859-3, CP28593\]、拉丁语 (ISO) \[iso-8859-7, CP28597\]、拉丁语 9 (ISO) \[iso-8859-15, CP28605\]OEM 美国 \[CP437\]、欧洲西部 (DOS) \[CP850\]、葡萄牙语 (DOS) \[CP860\]、冰岛语 (DOS) \[CP861\]、法国加拿大语 (DOS) \[CP863\] 和日耳曼语 (DOS) \[CP865\]                。
+  - **** 西部：包括西部编码，例如*西欧(Mac)* \[macintosh, CP10000\]、*冰岛语(Mac)* \[x-mac-icelandic, CP10079\]、*中欧(Windows)* \[iso-8859-2, CP1250\]、*西欧(Windows)* \[iso-8859-1, CP1252\]、*希腊语(Windows)* \[iso-8859-7, CP1253\]、*中欧(ISO)* \[iso-8859-2, CP28592\]、*拉丁语 3 (ISO)* \[iso-8859-3, CP28593\]、*希腊语(ISO)* \[iso-8859-7, CP28597\]、*拉丁语 9 (ISO)* \[iso-8859-15, CP28605\]、*OEM 美国* \[CP437\]、*西欧(DOS)* \[CP850\]、*葡萄牙语(DOS)* \[CP860\]、*冰岛语(DOS)* \[CP861\]、*加拿大法语(DOS)* \[CP863\] 以及*北欧文(DOS)* \[CP865\]。
 
   ```xml
   <MandroidI18n>West</MandroidI18n>
   ```
 
-- MonoSymbolArchive &ndash; 此一个布尔属性控制是否创建 `.mSYM` 项目供以后与 `mono-symbolicate` 一起使用，以从版本堆栈跟踪中提取&ldquo;真实&rdquo;文件名和行号信息  。
+- MonoSymbolArchive &ndash; 此布尔属性控制是否创建 `.mSYM` 项目供以后与 `mono-symbolicate` 一起使用，以从版本堆栈跟踪中提取&ldquo;真实&rdquo;文件名和行号信息。
 
   对于已启用调试符号的&ldquo;发行&rdquo;应用，默认情况下为 True：`$(EmbedAssembliesIntoApk)` 为 True，`$(DebugSymbols)` 为 True 且 `$(Optimize)` 为 True。
 
@@ -650,29 +660,29 @@ MSBuild 属性控制目标的行为。 它们是在项目文件中指定的，�
 
 以下 MSBuild 属性与[绑定项目](~/android/platform/binding-java-library/index.md)一起使用：
 
-- AndroidClassParser &ndash; 此字符串属性用于控制如何分析 `.jar` 文件  。 可能的值包括：
+- **AndroidClassParser ** &ndash; 一个字符串属性，用于控制如何分析 `.jar` 文件。 可能的值包括：
 
-  - class-parse  ：使用 `class-parse.exe` 直接分析 Java 字节码，而不使用 JVM。 此值处于试验阶段。
+  - **** class-parse：使用 `class-parse.exe` 直接解析 Java 字节码，无需 JVM 的帮助。 此值处于试验阶段。
 
-  - jar2xml  ：通过 `jar2xml.jar` 使用 use Java 反射以提取 `.jar` 文件中的类型和成员。
+  - **** jar2xml：使用 `jar2xml.jar` 以使用 Java 反射从 `.jar` 文件中提取类型和成员。
 
   `class-parse` 优于 `jar2xml` 的优势是：
 
-  - `class-parse` 能够从包含  调试符号的 Java 字节码（例如，用 `javac -g` 编译的字节码）提取参数名称。
+  - `class-parse` 能够从包含调试符号的 Java 字节码（例如，用 `javac -g` 编译的字节码）提取参数名称。
 
   - `class-parse` 不会“跳过”从无法解析的类型继承或者包含无法解析类型成员的类。
 
-   “实验”。 已在 Xamarin.Android 6.0 中添加。
+  “实验”。 已在 Xamarin.Android 6.0 中添加。
 
   默认值为 `jar2xml`。
 
   默认值将会在未来版本中更改。
 
-- AndroidCodegenTarget &ndash; 此字符串属性控制代码生成目标 ABI  。 可能的值包括：
+- **AndroidCodegenTarget ** &ndash; 控制代码生成目标 ABI 的字符串属性。 可能的值包括：
 
-  - XamarinAndroid  ：自 Mono for Android 1.0 开始使用存在的 JNI 绑定 API。 使用 Xamarin.Android 5.0 或更高版本生成的绑定程序集只能在 Xamarin.Android 5.0 或更高版本（API/ABI 附加程序）上运行，但源与先前的产品版本兼容  。
+  - XamarinAndroid：自 Mono for Android 1.0 开始使用存在的 JNI 绑定 API。 使用 Xamarin.Android 5.0 或更高版本生成的绑定程序集只能在 Xamarin.Android 5.0 或更高版本（API/ABI 附加程序）上运行，但源与先前的产品版本兼容**。
 
-  - XAJavaInterop1  ：对JNI 调用使用 Java.Interop。 只能通过 Xamarin.Android 6.1 或更高版本构建和执行使用 `XAJavaInterop1` 的绑定程序集。 Xamarin.Android 6.1 和更高版本会将 `Mono.Android.dll` 与此值绑定。
+  - **** XAJavaInterop1：使用 Java.Interop 进行 JNI 调用。 只能通过 Xamarin.Android 6.1 或更高版本构建和执行使用 `XAJavaInterop1` 的绑定程序集。 Xamarin.Android 6.1 和更高版本会将 `Mono.Android.dll` 与此值绑定。
 
     `XAJavaInterop1` 的好处包括：
 
@@ -688,25 +698,25 @@ MSBuild 属性控制目标的行为。 它们是在项目文件中指定的，�
 
 资源属性控制 `Resource.designer.cs` 文件的生成，该文件提供对 Android 资源的访问。
 
-- AndroidAapt2CompileExtraArgs &ndash; 指定处理 Android 资产和资源时传递给 aapt2 compile 命令的附加命令行选项   。
+- AndroidAapt2CompileExtraArgs &ndash; 指定处理 Android 资产和资源时传递给 aapt2 compile 命令的附加命令行选项 。
 
   在 Xamarin.Android 9.1 中新增。
 
-- AndroidAapt2LinkExtraArgs &ndash; 指定处理 Android 资产和资源时传递给 aapt2 link 命令的附加命令行选项   。
+- AndroidAapt2LinkExtraArgs &ndash; 指定处理 Android 资产和资源时传递给 aapt2 link 命令的附加命令行选项 。
 
   在 Xamarin.Android 9.1 中新增。
 
-- AndroidExplicitCrunch &ndash; 如果你正在生成具有大量本地绘图的应用，则需要花费数分钟才能完成初始生成（或重新生成）  。 要加快生成过程，请尝试包含该属性并将其设置为 `True`。 设置该属性时，生成过程会预处理 .png 文件。
+- **AndroidExplicitCrunch** &ndash; Xamarin.Android 11.0 中不再支持。
 
-  注意：此选项与 `$(AndroidUseAapt2)` 选项不兼容。 如果启用了 `$(AndroidUseAapt2)`，将禁用此功能。 如果希望继续使用此功能，请将 `$(AndroidUseAapt2)` 设置为 `False`。
+- **AndroidR8IgnoreWarnings** &ndash; 自动为 `r8` 指定 `-ignorewarnings` proguard 规则。 这允许 `r8` 继续进行 dex 编译（即使遇到特定的警告）。 默认设置为 `True`但可以设置为 `False`，以便强制执行更加严格的行为。 有关详细信息，请参阅 [ProGuard 手册](https://www.guardsquare.com/products/proguard/manual/usage)。
 
-   “实验”。 已在 Xamarin.Android 7.0 中添加。
+  在 Xamarin.Android 10.3 中新增。
 
-- AndroidResgenExtraArgs &ndash; 指定处理 Android 资产和资源时传递给 aapt 命令的附加命令行选项   。
+- AndroidResgenExtraArgs &ndash; 指定处理 Android 资产和资源时传递给 aapt 命令的附加命令行选项 。
 
-- AndroidResgenFile &ndash; 指定要生成的资源文件的名称  。 默认模板将其设置为 `Resource.designer.cs`。
+- **AndroidResgenFile ** &ndash; 指定要生成的资源文件的名称。 默认模板将其设置为 `Resource.designer.cs`。
 
-- AndroidUseAapt2 &ndash; 此布尔属性使开发者能够控制 `aapt2` 打包工具的使用  。
+- **AndroidUseAapt2** &ndash; 布尔属性，使开发者能够控制 `aapt2` 打包工具的使用。
   该属性默认设置为 false，我们要使用的是 `aapt`。
   如果开发者要使用新的 `aapt2` 功能，他们可以进行如下设置：
 
@@ -722,7 +732,7 @@ MSBuild 属性控制目标的行为。 它们是在项目文件中指定的，�
 
   在 Xamarin.Android 8.3 中新增。
 
-- MonoAndroidResourcePrefix &ndash; 通过 `AndroidResource` 生成操作指定从文件名开头删除的“路径前缀”   。 这是为了允许更改资源所在的位置。
+- **MonoAndroidResourcePrefix ** &ndash; 通过 `AndroidResource` 生成操作指定从文件名开头删除的“路径前缀”**。 这是为了允许更改资源所在的位置。
 
   默认值为 `Resources`。 将此项更改为 `res` 以获得 Java 项目结构。
 
@@ -730,29 +740,29 @@ MSBuild 属性控制目标的行为。 它们是在项目文件中指定的，�
 
 ### <a name="signing-properties"></a>签名属性
 
-签名属性控制应用程序包的签名方式，以便将其安装到 Android 设备上。 为了更快地生成迭代，Xamarin.Android 任务不会在生成过程中为包签名，因为签名很慢。 相反，它们在安装之前或导出过程中由 IDE 或  安装生成目标进行签名（如有必要）。 调用 SignAndroidPackage  目标将生成一个在输出目录中带有 `-Signed.apk` 后缀的包。
+签名属性控制应用程序包的签名方式，以便将其安装到 Android 设备上。 为了更快地生成迭代，Xamarin.Android 任务不会在生成过程中为包签名，因为签名很慢。 相反，它们在安装之前或导出过程中由 IDE 或** 安装生成目标进行签名（如有必要）。 调用 SignAndroidPackage** 目标将生成一个在输出目录中带有 `-Signed.apk` 后缀的包。
 
 默认情况下，如果需要，签名目标会生成一个新的调试签名密钥。 如果你希望使用特定的密钥，例如在生成服务器上，则可以使用以下 MSBuild 属性：
 
-- AndroidDebugKeyAlgorithm &ndash; 指定要用于 `debug.keystore` 的默认算法  。 默认为 `RSA`。
+- **AndroidDebugKeyAlgorithm** &ndash; 指定要用于 `debug.keystore` 的默认算法。 默认为 `RSA`。
 
-- AndroidDebugKeyValidity &ndash; 指定要用于 `debug.keystore` 的默认有效期  。 默认值为 `10950`、`30 * 365` 或 `30 years`。
+- **AndroidDebugKeyValidity** &ndash; 指定要用于 `debug.keystore` 的默认有效期。 默认值为 `10950`、`30 * 365` 或 `30 years`。
 
 - **AndroidDebugStoreType** &ndash; 指定用于 `debug.keystore` 的密钥存储文件格式。 默认为 `pkcs12`。
 
   在 Xamarin.Android 10.2 中新增。
 
-- AndroidKeyStore &ndash; 此布尔值指示是否应使用自定义签名信息  。 默认值是 `False`，这意味着将使用默认的调试签名密钥来对包进行签名。
+- **AndroidKeyStore ** &ndash; 一个布尔值，指示是否应使用自定义签名信息。 默认值是 `False`，这意味着将使用默认的调试签名密钥来对包进行签名。
 
-- AndroidSigningKeyAlias &ndash; 指定密钥存储中密钥的别名  。 这是创建密钥存储时使用的 keytool -alias  值。
+- **AndroidSigningKeyAlias ** &ndash; 指定密钥存储中密钥的别名。 这是创建密钥存储时使用的 keytool -alias**** 值。
 
-- AndroidSigningKeyPass &ndash; 指定密钥存储文件中密钥的密码  。 这是在 `keytool` 要求“输入 $(AndroidSigningKeyAlias) 的密匙密码”  时输入的值。
+- **AndroidSigningKeyPass ** &ndash; 指定密钥存储文件中密钥的密码。 这是在 `keytool` 要求“输入 $(AndroidSigningKeyAlias) 的密匙密码”**** 时输入的值。
 
   在 Xamarin.Android 10.0 和更早的版本中，此属性仅支持纯文本密码。
 
   在 Xamarin.Android 10.1 和更高版本中，此属性还支持 `env:` 和 `file:` 前缀，它们可用于指定包含密码的环境变量或文件。 通过这些选项，可以防止密码显示在生成日志中。
 
-  例如，使用名称为 AndroidSigningPassword 的环境变量： 
+  例如，使用名称为 AndroidSigningPassword 的环境变量：
 
   ```xml
   <PropertyGroup>
@@ -771,15 +781,15 @@ MSBuild 属性控制目标的行为。 它们是在项目文件中指定的，�
   > [!NOTE]
   > `$(AndroidPackageFormat)` 设置为 `aab` 时，不支持 `env:` 前缀。
 
-- AndroidSigningKeyStore &ndash; 指定由 `keytool` 创建的密钥存储文件的文件名  。 这对应于提供给 keytool -keystore  选项的值。
+- **AndroidSigningKeyStore ** &ndash; 指定由 `keytool` 创建的密钥存储文件的文件名。 这对应于提供给 keytool -keystore**** 选项的值。
 
--  AndroidSigningStorePass &ndash; 指定 `$(AndroidSigningKeyStore)` 的密码。 这是在创建密钥存储文件并要求“输入密钥存储密码:”  时为 `keytool` 提供的值。
+- **AndroidSigningStorePass ** &ndash; 指定 `$(AndroidSigningKeyStore)` 的密码。 这是在创建密钥存储文件并要求“输入密钥存储密码:”**** 时为 `keytool` 提供的值。
 
   在 Xamarin.Android 10.0 和更早的版本中，此属性仅支持纯文本密码。
 
   在 Xamarin.Android 10.1 和更高版本中，此属性还支持 `env:` 和 `file:` 前缀，它们可用于指定包含密码的环境变量或文件。 通过这些选项，可以防止密码显示在生成日志中。
 
-  例如，使用名称为 AndroidSigningPassword 的环境变量： 
+  例如，使用名称为 AndroidSigningPassword 的环境变量：
 
   ```xml
   <PropertyGroup>
@@ -849,7 +859,7 @@ Enter key password for keystore.alias
 
 ## <a name="build-actions"></a>生成操作
 
- 生成操作将[应用于项目中的文件](https://docs.microsoft.com/visualstudio/msbuild/common-msbuild-project-items)，并控制文件的处理方式。
+** 生成操作将[应用于项目中的文件](https://docs.microsoft.com/visualstudio/msbuild/common-msbuild-project-items)，并控制文件的处理方式。
 
 ### <a name="androidaarlibrary"></a>AndroidAarLibrary
 
@@ -859,7 +869,7 @@ Enter key password for keystore.alias
 
 ### <a name="androidboundlayout"></a>AndroidBoundLayout
 
-指示 `AndroidGenerateLayoutBindings` 属性设置为 `false` 时，系统会为布局文件生成代码隐藏。 在所有其他情况下，它与上面所述的 `AndroidResource` 相同。 此操作仅适用于布局文件  ：
+指示 `AndroidGenerateLayoutBindings` 属性设置为 `false` 时，系统会为布局文件生成代码隐藏。 在所有其他情况下，它与上面所述的 `AndroidResource` 相同。 此操作仅适用于布局文件****：
 
 ```xml
 <AndroidBoundLayout Include="Resources\layout\Main.axml" />
@@ -903,7 +913,7 @@ Enter key password for keystore.alias
 
 #### <a name="item-attribute-name"></a>项属性名称
 
- Abi &ndash; 指定本机库的 ABI。
+**Abi ** &ndash; 指定本机库的 ABI。
 
 ```xml
 <ItemGroup>
@@ -915,7 +925,7 @@ Enter key password for keystore.alias
 
 ### <a name="androidresource"></a>AndroidResource
 
-生成操作为 AndroidResource  的所有文件都将在生成过程中编译为 Android 资源，并可通过 `$(AndroidResgenFile)` 访问。
+生成操作为 AndroidResource** 的所有文件都将在生成过程中编译为 Android 资源，并可通过 `$(AndroidResgenFile)` 访问。
 
 ```xml
 <ItemGroup>
@@ -937,7 +947,7 @@ Enter key password for keystore.alias
 </PropertyGroup>
 ```
 
- LogicalName &ndash; 显式指定资源路径。 允许使用 &ldquo;aliasing&rdquo; 文件，以便它们可用作多个不同的资源名称。
+**LogicalName ** &ndash; 显式指定资源路径。 允许使用 &ldquo;aliasing&rdquo; 文件，以便它们可用作多个不同的资源名称。
 
 ```xml
 <ItemGroup Condition="'$(Configuration)'!='Debug'">
@@ -958,7 +968,7 @@ Enter key password for keystore.alias
 
 在 Xamarin.Android 10.2 中新增。
 
-### <a name="content"></a>内容
+### <a name="content"></a>Content
 
 不支持正常的 `Content` 生成操作（因为我们还未想出如何在没有成本可能昂贵的首次运行步骤的情况下支持它）。
 
@@ -966,19 +976,19 @@ Enter key password for keystore.alias
 
 ### <a name="linkdescription"></a>LinkDescription
 
-生成操作为 LinkDescription  的文件用于[控制链接器行为](~/cross-platform/deploy-test/linker.md)。
+生成操作为 LinkDescription** 的文件用于[控制链接器行为](~/cross-platform/deploy-test/linker.md)。
 
 <a name="ProguardConfiguration"></a>
 
 ### <a name="proguardconfiguration"></a>ProguardConfiguration
 
-生成操作为 ProguardConfiguration  的文件包含用于控制 `proguard` 行为的选项。 有关此生成操作的更多信息，请参阅 [ProGuard](~/android/deploy-test/release-prep/proguard.md)。
+生成操作为 ProguardConfiguration** 的文件包含用于控制 `proguard` 行为的选项。 有关此生成操作的更多信息，请参阅 [ProGuard](~/android/deploy-test/release-prep/proguard.md)。
 
 除非 `$(EnableProguard)` MSBuild 属性为 `True`，否则这些文件将被忽略。
 
 ## <a name="target-definitions"></a>目标定义
 
-生成过程的 Xamarin.Android 特定部分在 `$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets` 中定义，但生成该程序集时也需要使用正常的语言特定目标，如 Microsoft.CSharp.targets  。
+生成过程的 Xamarin.Android 特定部分在 `$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets` 中定义，但生成该程序集时也需要使用正常的语言特定目标，如 Microsoft.CSharp.targets**。
 
 导入任何语言目标之前，必须设置以下生成属性：
 
@@ -990,7 +1000,7 @@ Enter key password for keystore.alias
 </PropertyGroup>
 ```
 
-通过导入 Xamarin.Android.CSharp.targets，可在 C# 中包含所有这些目标和属性  ：
+通过导入 Xamarin.Android.CSharp.targets，可在 C# 中包含所有这些目标和属性**：
 
 ```xml
 <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
