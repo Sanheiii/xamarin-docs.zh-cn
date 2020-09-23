@@ -56,7 +56,7 @@
           items:
             - name: 面向 Objective-C 开发者的 Xamarin
               href: get-started/objective-c-developers/index.md
-            - name: '面向 Objective-C 开发人员的 C# 入门'
+            - name: 面向 Objective-C 开发人员的 C# 入门
               href: get-started/objective-c-developers/primer.md
     - name: 应用程序基础知识
       items:
@@ -244,6 +244,12 @@
       items:
         - name: 概述
           href: platform/index.md
+        - name: iOS 14
+          items:
+            - name: iOS 14 简介
+              href: platform/ios14/index.md
+            - name: 入门
+              href: platform/ios14/get-started.md
         - name: iOS 13
           items:
             - name: iOS 13 简介
