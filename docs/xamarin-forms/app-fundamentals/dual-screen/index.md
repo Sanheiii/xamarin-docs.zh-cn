@@ -10,16 +10,14 @@ ms.date: 02/08/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2b0290daedab4a6e825d2bab4bea9889b4966645
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: a414127c01d26db6bf7b462d6fc5a7f9ae44dddc
+ms.sourcegitcommit: 69bd0fdc698c9b0c0d73217776d7084f32ae88ae
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87918308"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90832274"
 ---
 # <a name="no-locxamarinforms-dual-screen"></a>Xamarin.Forms 双屏
-
-![预发行版 API](~/media/shared/preview.png)
 
 Microsoft Surface Duo 等双屏设备有助于实现新的应用程序用户体验。 Xamarin.Forms 包含 `TwoPaneView` 和 `DualScreenInfo` 类，以便你可为这些双屏设备开发应用。
 
