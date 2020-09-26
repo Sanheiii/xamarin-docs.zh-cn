@@ -2,7 +2,7 @@
   href: index.yml
   expanded: true
   items:
-    - name: 开始操作
+    - name: 开始使用
       href: get-started/index.md
       expanded: true
       items:
@@ -18,7 +18,7 @@
               items:
                 - name: 硬件加速（Hyper-V 和 HAXM）
                   href: get-started/installation/android-emulator/hardware-acceleration.md
-                - name: Device Manager
+                - name: 设备管理器
                   href: get-started/installation/android-emulator/device-manager.md
                 - name: 设备属性
                   href: get-started/installation/android-emulator/device-properties.md
@@ -33,21 +33,21 @@
           items:
             - name: 第 1 部分：快速入门
               href: get-started/hello-android/hello-android-quickstart.md
-            - name: 第 2 部分：深入了解
+            - name: 第 2 部分：深度分析
               href: get-started/hello-android/hello-android-deepdive.md
         - name: 了解 Android 多屏幕
           href: get-started/hello-android-multiscreen/index.md
           items:
             - name: 第 1 部分：快速入门
               href: get-started/hello-android-multiscreen/hello-android-multiscreen-quickstart.md
-            - name: 第 2 部分：深入了解
+            - name: 第 2 部分：深度分析
               href: get-started/hello-android-multiscreen/hello-android-multiscreen-deepdive.md
         - name: 面向 Java 开发人员的 Xamarin
           href: get-started/java-developers.md
     - name: 应用程序基础知识
       href: app-fundamentals/index.md
       items:
-        - name: 可访问性
+        - name: 辅助功能
           href: app-fundamentals/accessibility.md
         - name: Android API 级别
           href: app-fundamentals/android-api-levels.md
@@ -145,7 +145,7 @@
               href: user-interface/android-designer/diagnostics.md
             - name: Android Designer 诊断分析器
               href: user-interface/android-designer/diagnostic-analyzers.md
-        - name: 材料主题
+        - name: Material Theme
           href: user-interface/material-theme.md
         - name: 用户配置文件
           href: user-interface/user-profile.md
@@ -211,7 +211,7 @@
                   href: user-interface/controls/buttons/check-box.md
                 - name: 自定义按钮
                   href: user-interface/controls/buttons/custom-button.md
-            - name: Calendar
+            - name: 日历
               href: user-interface/controls/calendar.md
             - name: CardView
               href: user-interface/controls/card-view.md
@@ -238,7 +238,7 @@
               href: user-interface/controls/switch.md
             - name: TextureView
               href: user-interface/controls/texture-view.md
-            - name: Toolbar
+            - name: 工具栏
               href: user-interface/controls/tool-bar/index.md
               items:
                 - name: 替换操作栏
@@ -287,7 +287,7 @@
           href: platform/android-job-scheduler.md
         - name: Firebase 作业调度程序
           href: platform/firebase-job-dispatcher.md
-        - name: 片段
+        - name: Fragments
           href: platform/fragments/index.md
           items:
             - name: 实现片段
@@ -327,10 +327,10 @@
           href: platform/jelly-bean.md
         - name: Android 4.0 Ice Cream Sandwich
           href: platform/ice-cream-sandwich.md
-        - name: 内容提供商
+        - name: 内容提供程序
           href: platform/content-providers/index.md
           items:
-            - name: 工作原理
+            - name: 工作方式
               href: platform/content-providers/how-it-works.md
             - name: 使用联系人 ContentProvider
               href: platform/content-providers/contacts-contentprovider.md
@@ -341,7 +341,7 @@
           items:
             - name: 位置
               href: platform/maps-and-location/location.md
-            - name: 映射
+            - name: 地图
               href: platform/maps-and-location/maps/index.md
               items:
                 - name: 地图应用程序
@@ -359,7 +359,7 @@
               href: platform/java-integration/android-callable-wrappers.md
             - name: 使用 JNI
               href: platform/java-integration/working-with-jni.md
-            - name: '将 Java 移植到 C#'
+            - name: 将 Java 移植到 C#
               href: platform/java-integration/porting-java-to-csharp.md
         - name: 绑定 Java 库
           href: platform/binding-java-library/index.md
@@ -504,7 +504,7 @@
         - name: Google 消息传送
           href: data-cloud/google-messaging/index.md
           items:
-            - name: Firebase 云消息传送
+            - name: Firebase Cloud Messaging
               href: data-cloud/google-messaging/firebase-cloud-messaging.md
             - name: FCM 通知演练
               href: data-cloud/google-messaging/remote-notifications-with-fcm.md
@@ -526,6 +526,12 @@
           items:
             - name: 生成过程
               href: deploy-test/building-apps/build-process.md
+            - name: 生成项
+              href: deploy-test/building-apps/build-items.md
+            - name: 生成属性
+              href: deploy-test/building-apps/build-properties.md
+            - name: 生成目标
+              href: deploy-test/building-apps/build-targets.md
             - name: 构建特定于 ABI 的 APK
               href: deploy-test/building-apps/abi-specific-apks.md
         - name: 命令行仿真器
@@ -643,7 +649,7 @@
     - name: Wear
       href: wear/index.md
       items:
-        - name: 开始操作
+        - name: 开始使用
           href: wear/get-started/index.md
           items:
             - name: Android 穿戴设备简介
