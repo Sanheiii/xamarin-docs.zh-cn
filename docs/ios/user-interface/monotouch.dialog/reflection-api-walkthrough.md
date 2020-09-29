@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: davidortinau
 ms.author: daortin
-ms.openlocfilehash: bdbff7760e7680173c57e5fc83cecb80967c0a51
-ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
+ms.openlocfilehash: 2eef38791f420fd49b87b46fd131f1e6ce501892
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86996092"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436580"
 ---
 # <a name="creating-a-xamarinios-application-using-the-reflection-api"></a>使用反射 API 创建 Xamarin iOS 应用程序
 
@@ -20,15 +20,15 @@ MT。D 反射 API 允许用 MT 的特性修饰类。D 使用自动创建屏幕�
 
 ## <a name="setting-up-mtd"></a>设置 MT。2-d
 
-隶书.D 与 Xamarin 一起分发。 若要使用此方法，请右键单击 Visual Studio 2017 或 Visual Studio for Mac 中的 Xamarin iOS 项目的 "**引用**" 节点，然后添加对**monotouch.dialog**程序集的引用。 然后， `using MonoTouch.Dialog` 根据需要在源代码中添加语句。
+隶书.D 与 Xamarin 一起分发。 若要使用此方法，请右键单击 Visual Studio 2017 或 Visual Studio for Mac 中的 Xamarin iOS 项目的 " **引用** " 节点，然后添加对 **monotouch.dialog** 程序集的引用。 然后， `using MonoTouch.Dialog` 根据需要在源代码中添加语句。
 
 ## <a name="getting-started-with-the-reflection-api"></a>反射 API 入门
 
 使用反射 API 非常简单，如下所示：
 
 1. 创建用 MT 修饰的类。D 特性。
-1. 创建一个 `BindingContext` 实例，并将上面的类的一个实例传递给它。
-1. 创建 `DialogViewController` ，并将其传递给 `BindingContext’s` `RootElement` 。
+1. 创建一个  `BindingContext` 实例，并将上面的类的一个实例传递给它。
+1. 创建  `DialogViewController` ，并将其传递给  `BindingContext’s` `RootElement` 。
 
 我们来看一个示例，说明如何使用反射 API。 在此示例中，我们将生成一个简单的数据输入屏幕，如下所示：
 
@@ -137,13 +137,13 @@ public class Expense
 
  <a name="Summary"></a>
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 本文介绍了反射 API 的演练。 我们演示了如何将属性添加到类以控制显示的内容。 还介绍了如何使用将 `BindingContext` 数据从类绑定到创建的元素层次结构，以及如何使用 MT。D 替换为 `UINavigationController` 。
 
 ## <a name="related-links"></a>相关链接
 
-- [MTDReflectionWalkthrough （示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/mtdreflectionwalkthrough)
+- [MTDReflectionWalkthrough (示例) ](/samples/xamarin/ios-samples/mtdreflectionwalkthrough)
 - [Monotouch.dialog 对话框简介](~/ios/user-interface/monotouch.dialog/index.md)
 - [元素 API 演练](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md)
 - [JSON 元素演练](~/ios/user-interface/monotouch.dialog/monotouch.dialog-json-markup.md)

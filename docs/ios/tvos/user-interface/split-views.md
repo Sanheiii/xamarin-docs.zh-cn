@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 56b9f82fcc15afc8c75012b204588b4da65a32c4
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 9cd19cfccac03ea1edb59c0422f197e33873abc6
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939732"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436892"
 ---
 # <a name="working-with-tvos-split-view-controllers-in-xamarin"></a>在 Xamarin 中使用 tvOS 拆分视图控制器
 
-拆分视图控制器在屏幕上并行呈现和管理主视图控制器和详细视图控制器。 拆分视图控制器用于在母版视图中提供持久的可设定焦点的内容（左侧的较小部分）和详细信息视图中的相关详细信息（右侧的更大部分）。
+拆分视图控制器在屏幕上并行呈现和管理主视图控制器和详细视图控制器。 拆分视图控制器用于在大纲视图中提供持久的可获得焦点的内容， (详细信息视图中左侧) 和相关详细信息的较小部分 (右侧) 中较大的部分。
 
 [![示例拆分视图](split-views-images/intro01.png)](split-views-images/intro01.png#lightbox)
 
@@ -30,15 +30,15 @@ ms.locfileid: "86939732"
 
 [![隐藏的母版视图控制器](split-views-images/intro02.png)](split-views-images/intro02.png#lightbox)
 
-拆分视图控制器通常用于显示可筛选内容的列表，其中的类别包含在主视图中，而筛选后的结果在详细信息视图中。 这通常显示为左侧的表视图，以及右侧的[集合视图](~/ios/tvos/user-interface/collection-views.md)。
+拆分视图控制器通常用于显示可筛选内容的列表，其中的类别包含在主视图中，而筛选后的结果在详细信息视图中。 这通常显示为左侧的表视图，以及右侧的 [集合视图](~/ios/tvos/user-interface/collection-views.md) 。
 
-设计需要拆分视图控制器的用户界面时，Apple 建议使用不会更改的 Master 和 Detail 视图控制器（仅内容更改，而不是结构）。 如果确实需要交换视图控制器，最好使用导航控制器作为需要更改的视图控制器（Master 或 Detail）的基础。
+设计需要拆分视图控制器的用户界面时，Apple 建议使用不更改 (仅更改内容的主和详细视图控制器，而不会更改结构) 。 如果确实需要交换视图控制器，最好使用导航控制器作为视图控制器的基础，该控制器需要 (Master 或 Detail) 更改。
 
 Apple 对于使用拆分视图控制器有以下建议：
 
-- **使用正确的拆分百分比**-默认情况下，拆分视图控制器使用全屏视图控制器的第三个屏幕，并为详细信息视图控制器使用三分之二。 您也可以使用50/50 分割。 选择正确的百分比，使内容在屏幕上显示均衡。
-- **保持主选择**-当 "详细信息视图" 中的内容可以更改时，它将响应用户在母版视图中的选择，应修复母版视图内容。 此外，您应该清楚地在母版视图中显示当前选定的项。
-- **使用单个统一标题**-通常情况下，你需要在详细信息视图中使用单个居中的标题，而不是在详细信息视图和母版视图中使用标题。
+- **使用正确的拆分百分比** -默认情况下，拆分视图控制器使用全屏视图控制器的第三个屏幕，并为详细信息视图控制器使用三分之二。 您也可以使用50/50 分割。 选择正确的百分比，使内容在屏幕上显示均衡。
+- **保持主选择** -当 "详细信息视图" 中的内容可以更改时，它将响应用户在母版视图中的选择，应修复母版视图内容。 此外，您应该清楚地在母版视图中显示当前选定的项。
+- **使用单个统一标题** -通常情况下，你需要在详细信息视图中使用单个居中的标题，而不是在详细信息视图和母版视图中使用标题。
 
 <a name="Split-View-Controllers-and-Storyboards"></a>
 
@@ -48,7 +48,7 @@ Apple 对于使用拆分视图控制器有以下建议：
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-1. 在**Solution Pad**中，双击该文件， `Main.storyboard` 然后将其打开进行编辑。
+1. 在 **Solution Pad**中，双击该文件， `Main.storyboard` 然后将其打开进行编辑。
 1. 从 "工具箱" 中将 **"** **拆分视图" 控制器**拖放到视图上： 
 
     [![拆分视图控制器](split-views-images/activity01.png)](split-views-images/activity01.png#lightbox)
@@ -68,7 +68,7 @@ Apple 对于使用拆分视图控制器有以下建议：
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-1. 在**解决方案资源管理器**中，双击该文件， `Main.storyboard` 然后将其打开进行编辑。
+1. 在 **解决方案资源管理器**中，双击该文件， `Main.storyboard` 然后将其打开进行编辑。
 1. 从 "工具箱" 中将 **"** **拆分视图" 控制器**拖放到视图上： 
 
     [![拆分视图控制器](split-views-images/activity01-vs.png)](split-views-images/activity01-vs.png#lightbox)
@@ -88,7 +88,7 @@ Apple 对于使用拆分视图控制器有以下建议：
 
 -----
 
-有关使用情节提要的详细信息，请参阅[tvOS 快速入门指南](~/ios/tvos/get-started/hello-tvos.md)。
+有关使用情节提要的详细信息，请参阅 [tvOS 快速入门指南](~/ios/tvos/get-started/hello-tvos.md)。
 
 <a name="Working-with-Split-View-Controllers"></a>
 
@@ -108,7 +108,7 @@ var masterController = ViewControllers [0] as MasterViewController;
 var detailController = ViewControllers [1] as DetailViewController;
 ```
 
-它以数组形式显示，其中，主视图控制器中的第一个元素（0）和第二个元素（1）为详细信息。
+它以数组形式显示，其中第一个元素 (0) 在主视图控制器中，第二个元素 (1) 为详细信息。
 
 <a name="Accessing-Detail-from-Master"></a>
 
@@ -159,7 +159,7 @@ if (SplitViewController.DisplayMode == UISplitViewControllerDisplayMode.PrimaryH
 
 `UISplitViewControllerDisplayMode`枚举定义如何将主视图控制器呈现为以下内容之一：
 
-- **自动**-tvOS 将控制母版和详细信息视图的表示形式。
+- **自动** -tvOS 将控制母版和详细信息视图的表示形式。
 - **PrimaryHidden** -隐藏母版视图控制器。
 - **AllVisible** -并排显示主节点和详细信息视图控制器。 这是正常的默认演示。
 - **PrimaryOverlay** -详细信息视图控制器在下扩展，并由主节点覆盖。
@@ -174,7 +174,7 @@ if (SplitViewController.DisplayMode == UISplitViewControllerDisplayMode.PrimaryH
 
 ## <a name="related-links"></a>相关链接
 
-- [tvOS 示例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
+- [tvOS 示例](/samples/browse/?products=xamarin&term=Xamarin.iOS%2btvOS)
 - [tvOS](https://developer.apple.com/tvos/)
 - [tvOS 人体学接口指南](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [TvOS 应用编程指南](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

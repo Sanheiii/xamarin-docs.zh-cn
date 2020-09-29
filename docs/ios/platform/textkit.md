@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 91db8ad0008afa29c732429c3304c24f4ab030a6
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 9468c7d00ec23743eb7772d2d5eeb252a44a957c
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86935377"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91437304"
 ---
 # <a name="textkit-in-xamarinios"></a>Xamarin 中的 TextKit
 
@@ -28,9 +28,9 @@ TextKit 是一个新的 API，它提供强大的文本布局和呈现功能。 �
 
 TextKit 提供了用于将文本存储与布局和显示分离的分层体系结构，包括以下类：
 
-- `NSTextContainer`–提供坐标系统和用于布局文本的几何图形。
-- `NSLayoutManager`–通过将文本转换为字型来布局文本。
-- `NSTextStorage`–保存文本数据，并处理批文本属性更新。 任何批更新都将传递到布局管理器，以实际处理更改，如重新计算布局和重绘文本。
+- `NSTextContainer` –提供坐标系统和用于布局文本的几何图形。
+- `NSLayoutManager` –通过将文本转换为字型来布局文本。
+- `NSTextStorage` –保存文本数据，并处理批文本属性更新。 任何批更新都将传递到布局管理器，以实际处理更改，如重新计算布局和重绘文本。
 
 这三个类应用于呈现文本的视图。 内置文本处理视图（如、 `UITextView` `UITextField` 和） `UILabel` 已设置，但你也可以创建它们并将其应用于任何 `UIView` 实例。
 
@@ -40,7 +40,7 @@ TextKit 提供了用于将文本存储与布局和显示分离的分层体系结
 
 ## <a name="text-storage-and-attributes"></a>文本存储和属性
 
-`NSTextStorage`类包含视图所显示的文本。 它还将对文本所做的任何更改（例如对字符或其属性的更改）传递到布局管理器以供显示。 `NSTextStorage`继承自 `MSMutableAttributed` string，允许对要在和调用之间分批指定的文本属性进行更改 `BeginEditing` `EndEditing` 。
+`NSTextStorage`类包含视图所显示的文本。 它还将对文本所做的任何更改（例如对字符或其属性的更改）传递到布局管理器以供显示。 `NSTextStorage` 继承自 `MSMutableAttributed` string，允许对要在和调用之间分批指定的文本属性进行更改 `BeginEditing` `EndEditing` 。
 
 例如，下面的代码段分别指定对前景色和背景色的更改，并以特定范围为目标：
 
@@ -55,7 +55,7 @@ textView.TextStorage.EndEditing ();
 
 ## <a name="layout-with-exclusion-path"></a>具有排除路径的布局
 
-TextKit 还支持布局，并允许对复杂的方案（如多列文本）和围绕指定的路径（称为*排除路径*）进行文本传输。 排除路径适用于文本容器，该容器修改文本布局的几何，导致文本绕指定路径流动。
+TextKit 还支持布局，并允许对复杂的方案（如多列文本）和围绕指定的路径（称为 *排除路径*）进行文本传输。 排除路径适用于文本容器，该容器修改文本布局的几何，导致文本绕指定路径流动。
 
 添加排除路径需要在 `ExclusionPaths` 布局管理器上设置属性。 设置此属性将导致布局管理器使文本布局失效，并围绕排除路径流式传输文本。
 
@@ -164,6 +164,6 @@ TextContainer.ExclusionPaths = new UIBezierPath[] { bezierPath };
 
 ## <a name="related-links"></a>相关链接
 
-- [IOS 7 简介（示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/introtoios7)
+- [IOS 7 (示例) 简介 ](/samples/xamarin/ios-samples/introtoios7)
 - [iOS 7 用户界面概述](~/ios/platform/introduction-to-ios7/ios7-ui.md)
 - [后台处理](~/ios/app-fundamentals/backgrounding/index.md)

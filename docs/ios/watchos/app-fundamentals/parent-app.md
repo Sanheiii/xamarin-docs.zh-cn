@@ -7,20 +7,20 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 49f2bdf63c286464073308cd1f17239692aa2395
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 002c57a1549201018cb2068f000a038f686eb2c0
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84567328"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436734"
 ---
 # <a name="working-with-the-watchos-parent-application-in-xamarin"></a>在 Xamarin 中使用 watchOS 父应用程序
 
 可以通过不同的方式在监视应用和它所捆绑到的 iOS 应用之间进行通信：
 
-- Watch 应用可以在 iPhone 上的父应用上[运行代码](#run-code)。
+- Watch 应用可以在 iPhone 上的父应用上 [运行代码](#run-code) 。
 
-- 监视扩展可以与父 iPhone 应用[共享存储位置](#shared-storage)。
+- 监视扩展可以与父 iPhone 应用 [共享存储位置](#shared-storage) 。
 
 - 使用移交将数据从通知传递到监视应用，并将用户发送到应用中的特定界面控制器。
 
@@ -30,12 +30,12 @@ ms.locfileid: "84567328"
 
 这两个示例演示了如何使用 `WCSession` 运行代码，并在手表应用和配对的 iPhone 之间发送消息：
 
-- [观看连接](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchconnectivity/)
-- [SimpleWatchConnectivity](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-simplewatchconnectivity/) 
+- [观看连接](/samples/xamarin/ios-samples/watchos-watchconnectivity/)
+- [SimpleWatchConnectivity](/samples/xamarin/ios-samples/watchos-simplewatchconnectivity/) 
 
 ## <a name="shared-storage"></a>共享存储
 
-如果配置[应用组](~/ios/watchos/app-fundamentals/app-groups.md)，则 iOS 8 扩展（包括监视扩展）可以与父应用共享数据。
+如果配置 [应用组](~/ios/watchos/app-fundamentals/app-groups.md) ，则 iOS 8 扩展 (包括监视扩展) 可以与父应用共享数据。
 
 ### <a name="nsuserdefaults"></a>使用 nsuserdefaults
 
@@ -70,9 +70,9 @@ Console.WriteLine ("agcpath: " + appGroupContainerPath);
 // use the path to create and update files
 ```
 
-注意：如果路径为， `null` 则检查[应用程序组配置](~/ios/watchos/app-fundamentals/app-groups.md)以确保配置文件已正确配置，并且已在开发计算机上下载/安装。
+注意：如果路径为， `null` 则检查 [应用程序组配置](~/ios/watchos/app-fundamentals/app-groups.md) 以确保配置文件已正确配置，并且已在开发计算机上下载/安装。
 
-有关详细信息，请参阅[应用组功能](~/ios/deploy-test/provisioning/capabilities/app-groups-capabilities.md)文档。
+有关详细信息，请参阅 [应用组功能](~/ios/deploy-test/provisioning/capabilities/app-groups-capabilities.md) 文档。
 
 ## <a name="related-links"></a>相关链接
 

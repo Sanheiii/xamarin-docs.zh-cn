@@ -1,22 +1,22 @@
 ---
 title: 使用 JSON 在 Xamarin 中创建用户界面
-description: Monotouch.dialog （MT。D）包含通过 JSON 数据对动态 UI 生成的支持。 在本教程中，我们将演练如何使用 JSONElement 从 JSON 创建用户界面，该用户界面既可以包含在应用程序中，也可以从远程 Url 加载。
+description: Monotouch.dialog (MT。D) 包括通过 JSON 数据对动态 UI 生成的支持。 在本教程中，我们将演练如何使用 JSONElement 从 JSON 创建用户界面，该用户界面既可以包含在应用程序中，也可以从远程 Url 加载。
 ms.prod: xamarin
 ms.assetid: E353DF14-51D7-98E3-59EA-16683C770C23
 ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: davidortinau
 ms.author: daortin
-ms.openlocfilehash: 8ad1bf746c129cfb5cfbc8b3e04b871224df486d
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: c19cf373a89798703224574fe13724dfbade33bb
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86936573"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436681"
 ---
 # <a name="using-json-to-create-a-user-interface-in-xamarinios"></a>使用 JSON 在 Xamarin 中创建用户界面
 
-_Monotouch.dialog （MT。D）包含通过 JSON 数据对动态 UI 生成的支持。在本教程中，我们将演练如何使用 JSONElement 从 JSON 创建用户界面，该用户界面既可以包含在应用程序中，也可以从远程 Url 加载。_
+_Monotouch.dialog (MT。D) 包括通过 JSON 数据对动态 UI 生成的支持。在本教程中，我们将演练如何使用 JSONElement 从 JSON 创建用户界面，该用户界面既可以包含在应用程序中，也可以从远程 Url 加载。_
 
 隶书.D 支持创建 JSON 中声明的用户界面。 使用 JSON，MT 声明元素。D 将自动为您创建关联的元素。 可以从本地文件、已分析的 `JsonObject` 实例甚至远程 Url 加载 JSON。
 
@@ -24,11 +24,11 @@ _Monotouch.dialog （MT。D）包含通过 JSON 数据对动态 UI 生成的支�
 
 [ ![ 例如，使用 json 完全声明了此屏幕截图中的应用程序](json-element-walkthrough-images/01-load-from-file.png)](json-element-walkthrough-images/01-load-from-file.png#lightbox) [ ![ ，例如，此屏幕截图中的应用程序使用 json 完全声明](json-element-walkthrough-images/01-load-from-file.png)](json-element-walkthrough-images/01-load-from-file.png#lightbox)
 
-让我们从[元素 API 演练](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md)教程中重新访问该示例，演示如何使用 JSON 添加任务详细信息屏幕。
+让我们从 [元素 API 演练](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md) 教程中重新访问该示例，演示如何使用 JSON 添加任务详细信息屏幕。
 
 ## <a name="setting-up-mtd"></a>设置 MT。2-d
 
-隶书.D 与 Xamarin 一起分发。 若要使用此方法，请右键单击 Visual Studio 2017 或 Visual Studio for Mac 中的 Xamarin iOS 项目的 "**引用**" 节点，然后添加对**monotouch.dialog**程序集的引用。 然后， `using MonoTouch.Dialog` 根据需要在源代码中添加语句。
+隶书.D 与 Xamarin 一起分发。 若要使用此方法，请右键单击 Visual Studio 2017 或 Visual Studio for Mac 中的 Xamarin iOS 项目的 " **引用** " 节点，然后添加对 **monotouch.dialog** 程序集的引用。 然后， `using MonoTouch.Dialog` 根据需要在源代码中添加语句。
 
 ## <a name="json-walkthrough"></a>JSON 演练
 
@@ -161,13 +161,13 @@ _rootElement = new RootElement ("Json Example") {
 
  [![此文件将由 MT 检索和分析。D 当用户导航到第二个视图时](json-element-walkthrough-images/04-json-web-example.png)](json-element-walkthrough-images/04-json-web-example.png#lightbox)
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 本文介绍如何使用 MT 创建接口。D 从 JSON。 其中介绍了如何使用应用程序以及从远程 Url 加载文件中包含的 JSON。 它还演示了如何在运行时访问 JSON 中所述的元素。
 
 ## <a name="related-links"></a>相关链接
 
-- [MTDJsonDemo （示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/mtdjsondemo)
+- [MTDJsonDemo (示例) ](/samples/xamarin/ios-samples/mtdjsondemo)
 - [Monotouch.dialog 简介](~/ios/user-interface/monotouch.dialog/index.md)
 - [元素 API 演练](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md)
 - [反射 API 演练](~/ios/user-interface/monotouch.dialog/reflection-api-walkthrough.md)

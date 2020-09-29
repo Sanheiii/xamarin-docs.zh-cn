@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 08/31/2017
-ms.openlocfilehash: 89a21eec369691e5c6e1ec8ce2430d679b6b309d
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 9a31cd31f7cbfb4748991d45204ca867b5d62c8c
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84572138"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436621"
 ---
 # <a name="vision-framework-in-xamarinios"></a>Xamarin 中的远景框架
 
@@ -20,7 +20,7 @@ ms.locfileid: "84572138"
 
 - [矩形检测](#rectangles)
 - [人脸检测](#faces)
-- 机器学习图像分析（在[CoreML](~/ios/platform/introduction-to-ios11/coreml.md)中讨论）
+- [CoreML](~/ios/platform/introduction-to-ios11/coreml.md)) 中讨论机器学习图像分析 (
 - 条形码检测
 - 图像对齐分析
 - 文本检测
@@ -35,7 +35,7 @@ ms.locfileid: "84572138"
 
 ## <a name="rectangle-detection"></a>矩形检测
 
-[VisionRects 示例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-visionrectangles)演示如何处理图像并在其上绘制检测到的矩形。
+[VisionRects 示例](/samples/xamarin/ios-samples/ios11-visionrectangles)演示如何处理图像并在其上绘制检测到的矩形。
 
 ### <a name="1-initialize-the-vision-request"></a>1. 初始化远景请求
 
@@ -50,7 +50,7 @@ RectangleRequest.MaximumObservations = 10;
 
 ### <a name="2-start-the-vision-processing"></a>2. 启动视觉处理
 
-下面的代码开始处理请求。 在**VisionRects**示例中，此代码在用户选择了图像后运行：
+下面的代码开始处理请求。 在 **VisionRects** 示例中，此代码在用户选择了图像后运行：
 
 ```csharp
 // Run the rectangle detector
@@ -94,19 +94,19 @@ private void HandleRectangles(VNRequest request, NSError error){
 - 绘制一个矩形以指示每个的检测位置，并
 - 使用 CoreGraphics 为每个矩形添加文本标签。
 
-查看 CoreGraphics 的确切方法[源](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-visionrectangles)。
+查看 CoreGraphics 的确切方法 [源](/samples/xamarin/ios-samples/ios11-visionrectangles) 。
 
 ![检测到包含三个矩形的照片](vision-images/found-rectangles-phone-sml.png)
 
 ### <a name="5-further-processing"></a>5. 进一步处理
 
-矩形检测通常只是操作链中的第一步（如[此 CoreMLVision 示例](~/ios/platform/introduction-to-ios11/coreml.md#coremlvision)），其中，将矩形传递到 CoreML 模型来分析手写数字。
+矩形检测通常只是操作链中的第一步（如 [此 CoreMLVision 示例](~/ios/platform/introduction-to-ios11/coreml.md#coremlvision)），其中，将矩形传递到 CoreML 模型来分析手写数字。
 
 <a name="faces"></a>
 
 ## <a name="face-detection"></a>人脸检测
 
-[VisionFaces 示例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-visionfaces)使用不同的远景请求类，与**VisionRectangles**示例的工作方式类似。
+[VisionFaces 示例](/samples/xamarin/ios-samples/ios11-visionfaces)使用不同的远景请求类，与**VisionRectangles**示例的工作方式类似。
 
 ### <a name="1-initialize-the-vision-request"></a>1. 初始化远景请求
 
@@ -118,7 +118,7 @@ FaceRectangleRequest = new VNDetectFaceRectanglesRequest(HandleRectangles);
 
 ### <a name="2-start-the-vision-processing"></a>2. 启动视觉处理
 
-下面的代码开始处理请求。 在**VisionFaces**示例中，此代码在用户选择了图像后运行：
+下面的代码开始处理请求。 在 **VisionFaces** 示例中，此代码在用户选择了图像后运行：
 
 ```csharp
 // Run the face detector
@@ -167,7 +167,7 @@ private void HandleRectangles(VNRequest request, NSError error){
 - 为检测到的每个面部绘制一个矩形，并
 - 使用 CoreGraphics 为每个面部添加一个文本标签。
 
-查看 CoreGraphics 的确切方法[源](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-visionfaces)。
+查看 CoreGraphics 的确切方法 [源](/samples/xamarin/ios-samples/ios11-visionfaces) 。
 
 ![检测到两个面部的照片](vision-images/found-faces-phone-sml.png)
 
@@ -177,6 +177,6 @@ private void HandleRectangles(VNRequest request, NSError error){
 
 ## <a name="related-links"></a>相关链接
 
-- [远景矩形（示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-visionrectangles)
-- [构想面（示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-visionfaces)
-- [核心图像改进-筛选器、金属、视觉效果等（WWDC）（视频）](https://developer.apple.com/videos/play/wwdc2017/510/)
+- [ (示例的视觉矩形) ](/samples/xamarin/ios-samples/ios11-visionrectangles)
+- [视觉 (示例) ](/samples/xamarin/ios-samples/ios11-visionfaces)
+- [核心图像的进步-筛选器、金属、视觉效果，以及更多 (WWDC)  (视频) ](https://developer.apple.com/videos/play/wwdc2017/510/)

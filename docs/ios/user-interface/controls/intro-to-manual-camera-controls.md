@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: dcfa727499859164d950ca9abc24fb935b3d76f9
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 04c33b59e2a1bab7fb401ffdc49d120bcfd679d0
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937002"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436825"
 ---
 # <a name="manual-camera-controls-in-xamarinios"></a>在 Xamarin 中手动照相机控件
 
@@ -32,9 +32,9 @@ ms.locfileid: "86937002"
 
 使用 iOS 8 提供的新 Api，应用程序可以控制以下相机功能：
 
-- **手动焦点**–通过允许最终用户直接控制焦点，应用程序可以更好地控制所采用的图像。
-- **手动曝光**–通过提供对曝光的手动控制，应用程序可以为用户提供更大的自由度，并使用户能够实现风格的外观。
-- **手动白平衡**–用白色余额调整图像中的颜色，通常是为了使其看起来真实。 不同光源的颜色温度不同，用于捕获图像的照相机设置会进行调整，以弥补这些差异。 同样，通过允许用户控制白平衡，用户可以进行自动调整。
+- **手动焦点** –通过允许最终用户直接控制焦点，应用程序可以更好地控制所采用的图像。
+- **手动曝光** –通过提供对曝光的手动控制，应用程序可以为用户提供更大的自由度，并使用户能够实现风格的外观。
+- **手动白平衡** –用白色余额调整图像中的颜色，通常是为了使其看起来真实。 不同光源的颜色温度不同，用于捕获图像的照相机设置会进行调整，以弥补这些差异。 同样，通过允许用户控制白平衡，用户可以进行自动调整。
 
 iOS 8 提供对现有 iOS Api 的扩展和增强功能，以提供对映像捕获过程的精细控制。
 
@@ -50,7 +50,7 @@ iOS 8 提供对现有 iOS Api 的扩展和增强功能，以提供对映像捕�
 
 - 需要在开发人员的计算机上安装和配置**Xcode 7 + 和 ios 8 或更高版本**的 Xcode 7 和 ios 8 或更高版本的 api。
 - **Visual Studio for Mac** –应在用户设备上安装和配置 Visual Studio for Mac 的最新版本。
-- **ios 8 设备**-运行最新版本 ios 8 的 ios 设备。 无法在 iOS 模拟器中测试相机功能。
+- **ios 8 设备** -运行最新版本 ios 8 的 ios 设备。 无法在 iOS 模拟器中测试相机功能。
 
 ## <a name="general-av-capture-setup"></a>常规 AV 捕获设置
 
@@ -272,11 +272,11 @@ AV 捕获会话用于控制来自 iOS 设备照相机的实时视频记录，并
 
 通过允许最终用户直接控制焦点，应用程序可以为所拍摄的图像提供更多的艺术控件。
 
-例如，专业摄影师可以将图像的聚焦柔化，以实现[Bokeh 效果](https://en.wikipedia.org/wiki/Bokeh)：
+例如，专业摄影师可以将图像的聚焦柔化，以实现 [Bokeh 效果](https://en.wikipedia.org/wiki/Bokeh)：
 
 [![Bokeh 效果](intro-to-manual-camera-controls-images/image2.png)](intro-to-manual-camera-controls-images/image2.png#lightbox)
 
-或者，创建一个[焦点效果](http://www.mediacollege.com/video/camera/focus/pull.html)，如：
+或者，创建一个 [焦点效果](http://www.mediacollege.com/video/camera/focus/pull.html)，如：
 
 [![焦点拉取效果](intro-to-manual-camera-controls-images/image3.png)](intro-to-manual-camera-controls-images/image3.png#lightbox)
 
@@ -288,7 +288,7 @@ AV 捕获会话用于控制来自 iOS 设备照相机的实时视频记录，并
 
 [![IOS 设备中的焦点如何工作](intro-to-manual-camera-controls-images/image4.png)](intro-to-manual-camera-controls-images/image4.png#lightbox)
 
-浅在 iOS 设备上进入相机镜头，并专注于图像传感器。 该镜头相对于传感器的距离，从传感器控制的距离（图像将显示在尖的区域）是。 该镜头远离传感器，距离对象看起来尖，接近的对象看似尖。
+浅在 iOS 设备上进入相机镜头，并专注于图像传感器。 从传感器控制镜头的距离，其中焦点 (图像将显示在尖) 的区域，与传感器的关系。 该镜头远离传感器，距离对象看起来尖，接近的对象看似尖。
 
 在 iOS 设备中，镜头通过磁体和弹簧更接近或更接近传感器。 因此，不可能精确定位镜头，因为它会因设备而异，并且可能会受参数（如设备的方向或设备的使用时间和弹簧）影响。
 
@@ -296,11 +296,11 @@ AV 捕获会话用于控制来自 iOS 设备照相机的实时视频记录，并
 
 在处理焦点时，开发人员应熟悉几个术语：
 
-- **字段深度**–最接近和最远的聚焦对象之间的距离。
-- **宏**-这是 "焦点" 频谱的近距离，是镜头可聚焦的最接近的距离。
-- **无穷**–这是最远的重心，是镜头可聚焦的距离。
-- **Hyperfocal 距离**–这是在焦点范围内的点，其中的最远对象刚好处于焦点的最末尾。 换句话说，这是最大化字段深度的焦点位置。
-- **镜头位置**–这就是控制以上所有术语的内容。 这是镜头距传感器的距离，进而成为焦点控制器。
+- **字段深度** –最接近和最远的聚焦对象之间的距离。
+- **宏** -这是 "焦点" 频谱的近距离，是镜头可聚焦的最接近的距离。
+- **无穷** –这是最远的重心，是镜头可聚焦的距离。
+- **Hyperfocal 距离** –这是在焦点范围内的点，其中的最远对象刚好处于焦点的最末尾。 换句话说，这是最大化字段深度的焦点位置。
+- **镜头位置** –这就是控制以上所有术语的内容。 这是镜头距传感器的距离，进而成为焦点控制器。
 
 考虑到这些术语和知识，可以在 iOS 8 应用程序中成功实现新的手动焦点控制。
 
@@ -308,16 +308,16 @@ AV 捕获会话用于控制来自 iOS 设备照相机的实时视频记录，并
 
 iOS 7 及更早版本，通过属性将现有的焦点控件提供 `FocusMode` 为：
 
-- `AVCaptureFocusModeLocked`–焦点锁定在单个焦点点上。
-- `AVCaptureFocusModeAutoFocus`–照相机会将镜头扫描到所有焦点上，直到它找到清晰的焦点，然后停留在该处。
-- `AVCaptureFocusModeContinuousAutoFocus`–当 refocuses 检测到超出焦点状态时，照相机就会出现问题。
+- `AVCaptureFocusModeLocked` –焦点锁定在单个焦点点上。
+- `AVCaptureFocusModeAutoFocus` –照相机会将镜头扫描到所有焦点上，直到它找到清晰的焦点，然后停留在该处。
+- `AVCaptureFocusModeContinuousAutoFocus` –当 refocuses 检测到超出焦点状态时，照相机就会出现问题。
 
 现有的控件还通过属性提供了一种可设置的相关点 `FocusPointOfInterest` ，以便用户可以点击以将焦点放在特定区域。 应用程序还可以通过监视属性来跟踪镜头运动 `IsAdjustingFocus` 。
 
 此外，范围限制由属性提供， `AutoFocusRangeRestriction` 如下所示：
 
-- `AVCaptureAutoFocusRangeRestrictionNear`–将 autofocus 限制为附近深度。 用于扫描 QR 码或条形码等情况。
-- `AVCaptureAutoFocusRangeRestrictionFar`–限制 autofocus 到远处的深度。 在视图（例如窗口框架）的字段中，这种情况下非常有用。
+- `AVCaptureAutoFocusRangeRestrictionNear` –将 autofocus 限制为附近深度。 用于扫描 QR 码或条形码等情况。
+- `AVCaptureAutoFocusRangeRestrictionFar` –限制 autofocus 到远处的深度。 在视图 (的 "视图" 字段中，这种情况非常有用，例如，) 的窗口框架。
 
 最后有 `SmoothAutoFocus` 一个属性，该属性减慢了自动焦点算法，并以较小的增量进行操作，以避免在录制视频时移动项目。
 
@@ -489,7 +489,7 @@ ThisApp.CaptureDevice.UnlockForConfiguration();
 
 ## <a name="manual-exposure"></a>手动公开
 
-"公开" 是指相对于源亮度的图像亮度，由感应器的点击率、传感器的最长持续时间以及传感器的增益级别（ISO 映射）决定。 通过提供对公开的手动控制，应用程序可以为最终用户提供更多自由，并允许他们实现风格化的外观。
+"公开" 是指相对于源亮度的图像亮度，由感应器的点击率、传感器 (ISO 映射) 的程度确定的程度。 通过提供对公开的手动控制，应用程序可以为最终用户提供更多自由，并允许他们实现风格化的外观。
 
 使用手动公开控制，用户可以从不切实际明亮到暗色和随和：
 
@@ -505,9 +505,9 @@ ThisApp.CaptureDevice.UnlockForConfiguration();
 
 共同控制其公开的三个基本元素是：
 
-- **快门速度**-这是打开快门以使相机传感器亮起的时间长度。 快门打开的时间越短，图像的光线越小，图像越小（运动模糊越少）。 快门打开的时间越长，会有更多的光线，并产生更多的运动模糊。
-- **ISO 映射**–这是从胶卷照片借用的一项术语，表示电影中的化学用品的灵敏度。 电影中的低 ISO 值具有更少的颜色和更精细的颜色重现;数字传感器上的低 ISO 值具有更少的传感器噪音，但亮度更少。 ISO 值越高，图像越快，但传感器噪音越多。 数字传感器上的 "ISO" 是[电子增益](https://en.wikipedia.org/wiki/Gain)的度量，而不是物理功能。
-- **镜头口径**–这是镜头打开的大小。 在所有 iOS 设备上，镜头口径都是固定的，因此，仅有两个可用于调整曝光度的值为快门速度和 ISO。
+- **快门速度** -这是打开快门以使相机传感器亮起的时间长度。 快门打开的时间越短，就越少，图像越 (降低运动模糊) 。 快门打开的时间越长，会有更多的光线，并产生更多的运动模糊。
+- **ISO 映射** –这是从胶卷照片借用的一项术语，表示电影中的化学用品的灵敏度。 电影中的低 ISO 值具有更少的颜色和更精细的颜色重现;数字传感器上的低 ISO 值具有更少的传感器噪音，但亮度更少。 ISO 值越高，图像越快，但传感器噪音越多。 数字传感器上的 "ISO" 是 [电子增益](https://en.wikipedia.org/wiki/Gain)的度量，而不是物理功能。
+- **镜头口径** –这是镜头打开的大小。 在所有 iOS 设备上，镜头口径都是固定的，因此，仅有两个可用于调整曝光度的值为快门速度和 ISO。
 
 ### <a name="how-continuous-auto-exposure-works"></a>连续自动曝光的工作方式
 
@@ -529,8 +529,8 @@ ThisApp.CaptureDevice.UnlockForConfiguration();
 
 iOS 7 及更高版本，可通过属性提供以下现有公开控制 `ExposureMode` ：
 
-- `AVCaptureExposureModeLocked`–对场景进行一次采样，并在场景中使用这些值。
-- `AVCaptureExposureModeContinuousAutoExposure`–对场景进行连续采样，以确保其正常亮起。
+- `AVCaptureExposureModeLocked` –对场景进行一次采样，并在场景中使用这些值。
+- `AVCaptureExposureModeContinuousAutoExposure` –对场景进行连续采样，以确保其正常亮起。
 
 `ExposurePointOfInterest`可用于点击以通过选择要在其上公开的目标对象来公开场景，应用程序可以监视 `AdjustingExposure` 属性以查看何时调整曝光。
 
@@ -539,7 +539,7 @@ iOS 7 及更高版本，可通过属性提供以下现有公开控制 `ExposureM
 除了 iOS 7 及更高版本提供的功能之外，现在还可以使用以下功能来控制 iOS 8 中的公开：
 
 - 完全手动自定义公开。
-- 获取、设置和键-值观察 IOS 和快门速度（持续时间）。
+- 获取、设置和键-值观察 IOS 和快门速度 (持续时间) 。
 
 为了实现上述功能，已添加了新 `AVCaptureExposureModeCustom` 模式。 如果中的照相机是自定义模式，则可以使用以下代码调整曝光持续时间和 ISO：
 
@@ -789,7 +789,7 @@ CaptureDevice.UnlockForConfiguration();
 
 [![显示人工白余额调整的示例图像](intro-to-manual-camera-controls-images/image16.png)](intro-to-manual-camera-controls-images/image16.png#lightbox)
 
-例如，日光具有 blueish 铸造，而 tungsten incandescent 灯的色调为黄色-橙色。 （令困惑，"冷" 颜色的颜色温度高于 "暖色" 颜色。 颜色温度是一种物理度量，而不是可感知的。）
+例如，日光具有 blueish 铸造，而 tungsten incandescent 灯的色调为黄色-橙色。  (令困惑，"冷" 颜色的颜色温度高于 "热" 颜色。 颜色温度是一种物理度量，而不是一种感知。 ) 
 
 对于颜色温度之间的差异，用户想法非常不错，但这是相机无法完成的工作。 相机的工作方式是提升相对色谱的颜色，以调整颜色差异。
 
@@ -799,7 +799,7 @@ CaptureDevice.UnlockForConfiguration();
 
 在讨论 IOS 8 应用程序中对白平衡的详细信息之前。 让我们简单了解一下白平衡的工作方式：
 
-在学习颜色感知的[同时，CIE 1931 RGB 颜色空间和 CIE 1931 XYZ color space](https://en.wikipedia.org/wiki/CIE_1931_color_space)是第一个数学定义的颜色空间。 它们是在1931的照明的国际佣金（CIE）上创建的。
+在学习颜色感知的 [同时，CIE 1931 RGB 颜色空间和 CIE 1931 XYZ color space](https://en.wikipedia.org/wiki/CIE_1931_color_space) 是第一个数学定义的颜色空间。 它们是由国际佣金在 1931 (CIE) 上创建的。
 
 [![CIE 1931 RGB 颜色空间和 CIE 1931 XYZ 颜色空间](intro-to-manual-camera-controls-images/image17.png)](intro-to-manual-camera-controls-images/image17.png#lightbox)
 
@@ -807,7 +807,7 @@ CaptureDevice.UnlockForConfiguration();
 
 如图中所示，有 X 和 Y 值可绘制在图形上，这些值将在人机愿景范围之外，因此，照相机无法重现这些颜色。
 
-上面的图表中的较小曲线称为[Planckian 出自](https://en.wikipedia.org/wiki/Planckian_locus)，它表示色温（开氏度），蓝端（温度）上的数字较大，红色端（温度）上的数字更小。 这些方法对典型照明情况非常有用。
+上面的图表中的较小曲线称为 [Planckian 出自](https://en.wikipedia.org/wiki/Planckian_locus)，它表示色温) 的色温温度 (，蓝色两侧 (温度) ，红色两侧的数字越小， (温度) 。 这些方法对典型照明情况非常有用。
 
 在混合照明条件下，白平衡调整需要与 Planckian 出自进行偏离，才能进行所需的更改。 在这些情况下，需要将调整移动到 CIE 刻度的绿色或红色/品红端。
 
@@ -817,8 +817,8 @@ iOS 设备通过提高相对颜色增益来补偿颜色转换。 例如，如果
 
 iOS 7 和更高版本通过属性提供了以下现有的白平衡控件 `WhiteBalanceMode` ：
 
-- `AVCapture WhiteBalance ModeLocked`–对场景进行一次采样，并在场景中使用这些值。
-- `AVCapture WhiteBalance ModeContinuousAutoExposure`–对场景进行连续采样，以确保其平衡。
+- `AVCapture WhiteBalance ModeLocked` –对场景进行一次采样，并在场景中使用这些值。
+- `AVCapture WhiteBalance ModeContinuousAutoExposure` –对场景进行连续采样，以确保其平衡。
 
 应用程序可以监视 `AdjustingWhiteBalance` 属性，以查看调整曝光的时间。
 
@@ -837,7 +837,7 @@ iOS 7 和更高版本通过属性提供了以下现有的白平衡控件 `WhiteB
 - `GreenGain`
 - `BlueGain`
 
-最大白余额收益目前为四（4），可以从属性准备就绪 `MaxWhiteBalanceGain` 。 因此，合法范围为从1到 `MaxWhiteBalanceGain` （4）。
+最大白余额收益目前为四 (4) ，可以从 `MaxWhiteBalanceGain` 属性准备。 因此，合法范围从一个 (1) 到 `MaxWhiteBalanceGain` 当前 (4 个) 。
 
 `DeviceWhiteBalanceGains`属性可用于观察当前的值。 `SetWhiteBalanceModeLockedWithDeviceWhiteBalanceGains`当照相机处于锁定的白平衡模式时，使用调整余额提升。
 
@@ -845,13 +845,13 @@ iOS 7 和更高版本通过属性提供了以下现有的白平衡控件 `WhiteB
 
 转换例程已添加到 iOS 8，可帮助转换为与设备无关的颜色空间。 若要实现转换例程，已 `AVCaptureWhiteBalanceChromaticityValues` 添加了以下成员的结构：
 
-- `X`-值介于0和1之间。
-- `Y`-值介于0和1之间。
+- `X` -值介于0和1之间。
+- `Y` -值介于0和1之间。
 
 `AVCaptureWhiteBalanceTemperatureAndTintValues`还添加了一个结构，其中包含以下成员：
 
-- `Temperature`-为开氏度的浮点值。
-- `Tint`-从0到150的偏移量，正值为绿色，正值方向为负值，在洋红色方向为负值。
+- `Temperature` -为开氏度的浮点值。
+- `Tint` -从0到150的偏移量，正值为绿色，正值方向为负值，在洋红色方向为负值。
 
 使用 `CaptureDevice.GetTemperatureAndTintValues` 和方法在 `CaptureDevice.GetDeviceWhiteBalanceGains` 温度和淡色之间进行转换，CHROMATICITY 和 RGB 增益颜色空间。
 
@@ -879,7 +879,7 @@ Apple 使用术语 "灰色" 来指代 iOS 8 中内置的灰色卡支持。 它�
 - `UIImageView`将显示视频源的。
 - `UISegmentedControl`将焦点模式从自动更改为锁定状态的。
 - `UISlider`将显示和更新温度和色调的两个控件。
-- `UIButton`用于对灰色卡（灰色世界）空间取样并使用这些值设置白平衡的。
+- `UIButton`用于对灰色 (灰色世界) 空间取样并使用这些值设置白平衡的。
 
 执行以下操作以将视图控制器连接到手动白平衡控件：
 
@@ -1106,9 +1106,9 @@ Apple 使用术语 "灰色" 来指代 iOS 8 中内置的灰色卡支持。 它�
 
 同样，括在括号中的捕获是指使用各种设置从图片到图片的静止图像。 可用的括起来捕获的类型包括：
 
-- **自动曝光支架**–所有映像都具有不同的偏移量。
-- **手动曝光支架**–所有图像都具有不同的快门速度（持续时间）和 ISO 量。
-- **简单的突发括号**-一系列快速的静止图像。
+- **自动曝光支架** –所有映像都具有不同的偏移量。
+- **手动曝光支架** -其中所有图像的快门速度都不同 (持续时间) 和 ISO 量。
+- **简单的突发括号** -一系列快速的静止图像。
 
 ### <a name="new-bracketed-capture-controls-in-ios-8"></a>IOS 8 中的新括号内捕获控件
 
@@ -1116,8 +1116,8 @@ Apple 使用术语 "灰色" 来指代 iOS 8 中内置的灰色卡支持。 它�
 
 实现了两个新类来处理设置：
 
-- `AVCaptureAutoExposureBracketedStillImageSettings`–它有一个属性， `ExposureTargetBias` 用于为自动曝光支架设置偏置。
-- `AVCaptureManual`  `ExposureBracketedStillImageSettings`–它有两个属性： `ExposureDuration` 和 `ISO` ，用于为手动曝光支架设置快门速度和 ISO。
+- `AVCaptureAutoExposureBracketedStillImageSettings` –它有一个属性，  `ExposureTargetBias` 用于为自动曝光支架设置偏置。
+- `AVCaptureManual`  `ExposureBracketedStillImageSettings` –它有两个属性：  `ExposureDuration` 和  `ISO` ，用于为手动曝光支架设置快门速度和 ISO。
 
 ### <a name="bracketed-capture-controls-dos-and-donts"></a>用括号括起来的捕获控件
 
@@ -1125,24 +1125,24 @@ Apple 使用术语 "灰色" 来指代 iOS 8 中内置的灰色卡支持。 它�
 
 以下列表列出了在 iOS 8 中使用括号内捕获控件时应执行的操作：
 
-- 通过调用方法为最坏大小写捕获情况准备应用 `PrepareToCaptureStillImageBracket` 。
+- 通过调用方法为最坏大小写捕获情况准备应用  `PrepareToCaptureStillImageBracket` 。
 - 假设示例缓冲区来自同一共享池。
-- 若要释放前面的准备调用分配的内存，请再次调用 `PrepareToCaptureStillImageBracket` 并向其发送一个对象的数组。
+- 若要释放前面的准备调用分配的内存，请再次调用  `PrepareToCaptureStillImageBracket` 并向其发送一个对象的数组。
 
 #### <a name="donts"></a>禁止事项
 
 以下列表列出了在 iOS 8 中使用括号内捕获控件时不应执行的操作：
 
 - 不要在单个捕获中混合使用括号内的捕获设置类型。
-- 不要 `MaxBracketedCaptureStillImageCount` 在单个捕获中请求多于个图像。
+- 不要  `MaxBracketedCaptureStillImageCount` 在单个捕获中请求多于个图像。
 
 ### <a name="bracketed-capture-details"></a>括起来的捕获详细信息
 
 在 iOS 8 中使用带括号的捕获时，应考虑以下详细信息：
 
-- 带括号的设置暂时替代 `AVCaptureDevice` 设置。
+- 带括号的设置暂时替代  `AVCaptureDevice` 设置。
 - 忽略闪光和静止图像稳定设置。
-- 所有图像必须使用相同的输出格式（jpeg、png 等）
+- 所有图像必须使用相同的输出格式 (jpeg、png 等 ) 
 - 视频预览可能会丢弃帧。
 - 与 iOS 8 兼容的所有设备均支持带括号捕获。
 
@@ -1157,9 +1157,9 @@ Apple 使用术语 "灰色" 来指代 iOS 8 中内置的灰色卡支持。 它�
 视图包含以下主要元素：
 
 - `UIImageView`将显示视频源的。
-- 三个 `UIImageViews` 将显示捕获结果的。
+- 三个  `UIImageViews` 将显示捕获结果的。
 - `UIScrollView`用于容纳视频源和结果视图的。
-- ， `UIButton` 用于采用某些预设设置进行带括号的捕获。
+- ，  `UIButton` 用于采用某些预设设置进行带括号的捕获。
 
 执行以下操作以将视图控制器连接到带外捕获：
 
@@ -1315,11 +1315,11 @@ Apple 使用术语 "灰色" 来指代 iOS 8 中内置的灰色卡支持。 它�
 
 上面的代码演示了如何在 iOS 8 中配置和采用自动曝光包含的捕获。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 在本文中，我们介绍了 iOS 8 提供的新手动摄像头控制，并介绍了其功能及其工作原理的基础知识。 我们提供了手动重点、手动曝光和人工白平衡的示例。 最后，我们提供了一个示例，其中使用前面讨论过的手动照相机控件
 
 ## <a name="related-links"></a>相关链接
 
-- [ManualCameraControls （示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/manualcameracontrols)
+- [ManualCameraControls (示例) ](/samples/xamarin/ios-samples/manualcameracontrols)
 - [iOS 8 简介](~/ios/platform/introduction-to-ios8.md)

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 08/30/2017
-ms.openlocfilehash: bddab35044c2b85b69146a03babd9884784baceb
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 8ccafec971a97a05dbf16488974d7a8e8e349708
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574582"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91437338"
 ---
 # <a name="new-features-in-mapkit-on-ios-11"></a>IOS 11 上 MapKit 中的新功能
 
@@ -29,13 +29,13 @@ iOS 11 向 MapKit 添加了以下新功能：
 
 ## <a name="automatically-grouping-markers-while-zooming"></a>缩放时自动对标记进行分组
 
-示例[MapKit 示例 "Tandm"](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-mapkitsample)显示了如何实现新的 iOS 11 批注群集功能。
+示例 [MapKit 示例 "Tandm"](/samples/xamarin/ios-samples/ios11-mapkitsample) 显示了如何实现新的 iOS 11 批注群集功能。
 
 ### <a name="1-create-an-mkpointannotation-subclass"></a>1. 创建 `MKPointAnnotation` 子类
 
 Point 批注类表示地图上的每个标记。 可以通过使用 `MapView.AddAnnotation()` 或从数组中单独添加它们 `MapView.AddAnnotations()` 。
 
-点批注类没有直观的表示形式，只需要表示与标记相关的数据（最重要的是，它 `Coordinate` 是地图上的纬度和经度）和任何自定义属性：
+Point 批注类没有直观的表示形式，只需要表示与标记相关联的数据 (最重要的 `Coordinate` 是，它是地图上的纬度和经度) 以及任何自定义属性：
 
 ```csharp
 public class Bike : MKPointAnnotation
@@ -64,7 +64,7 @@ public class Bike : MKPointAnnotation
 - **MarkerTintColor** –标记的颜色。
 - **GlyphText** –标记中显示的文本。
 - **GlyphImage** -设置显示在标记中的图像。
-- **DisplayPriority** –决定当地图与标记拥挤时，z 顺序（堆栈行为）。 使用、或中的一个 `Required` `DefaultHigh` `DefaultLow` 。
+- **DisplayPriority** –确定当地图与标记拥挤时)  (堆栈行为的 z 顺序。 使用、或中的一个 `Required` `DefaultHigh` `DefaultLow` 。
 
 若要支持自动群集，还必须设置：
 
@@ -106,13 +106,13 @@ public class BikeView : MKMarkerAnnotationView
 
 ### <a name="3-create-an-mkannotationview-to-represent-clusters-of-markers"></a>3. 创建 `MKAnnotationView` 以表示标记的分类
 
-尽管表示标记分类的批注视图_可能_是一个简单的图像，但用户希望应用程序能够提供有关已组合在一起的标记数的视觉提示。
+尽管表示标记分类的批注视图 _可能_ 是一个简单的图像，但用户希望应用程序能够提供有关已组合在一起的标记数的视觉提示。
 
-[示例代码](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-mapkitsample)使用 CoreGraphics 来呈现分类中的标记数，以及每个标记类型的比例的圆关系图表示形式。
+[示例代码](/samples/xamarin/ios-samples/ios11-mapkitsample)使用 CoreGraphics 来呈现分类中的标记数，以及每个标记类型的比例的圆关系图表示形式。
 
 还应设置：
 
-- **DisplayPriority** –决定当地图与标记拥挤时，z 顺序（堆栈行为）。 使用、或中的一个 `Required` `DefaultHigh` `DefaultLow` 。
+- **DisplayPriority** –确定当地图与标记拥挤时)  (堆栈行为的 z 顺序。 使用、或中的一个 `Required` `DefaultHigh` `DefaultLow` 。
 - **CollisionMode** - `Circle` 或 `Rectangle` 。
 
 ```csharp
@@ -194,15 +194,15 @@ MapView.Register(typeof(ClusterView), MKMapViewDefault.ClusterAnnotationViewReus
 
 ![显示地图上的聚集标记的模拟器](mapkit-images/cyclemap-sml.png)
 
-有关用 MapKit 显示数据的详细信息，请参阅[Maps 部分](~/ios/user-interface/controls/ios-maps/index.md)。
+有关用 MapKit 显示数据的详细信息，请参阅 [Maps 部分](~/ios/user-interface/controls/ios-maps/index.md) 。
 
 <a name="compass"></a>
 
 ## <a name="compass-button"></a>罗盘按钮
 
-iOS 11 增加了从地图中弹出罗盘的功能，并将其呈现在视图中的其他位置。 有关示例，请参阅[Tandm 示例应用](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-mapkitsample)。
+iOS 11 增加了从地图中弹出罗盘的功能，并将其呈现在视图中的其他位置。 有关示例，请参阅 [Tandm 示例应用](/samples/xamarin/ios-samples/ios11-mapkitsample) 。
 
-创建一个看起来像罗盘的按钮（当地图方向发生变化时包括实时动画），并将其呈现在另一个控件上。
+创建一个看起来像罗盘 (的按钮，当地图方向发生更改时，包括实时动画) ，然后在另一个控件上呈现该按钮。
 
 ![导航栏中的 "罗盘" 按钮](mapkit-images/compass-sml.png)
 
@@ -255,6 +255,6 @@ View.AddSubview(button); // constraints omitted for simplicity
 
 ## <a name="related-links"></a>相关链接
 
-- [MapKit 示例 "Tandm"](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-mapkitsample)
+- [MapKit 示例 "Tandm"](/samples/xamarin/ios-samples/ios11-mapkitsample)
 - [MKCompassButton](https://developer.apple.com/documentation/mapkit/mkcompassbutton)
-- [MapKit （WWDC）中的新增功能（视频）](https://developer.apple.com/videos/play/wwdc2017/237/)
+- [MapKit 中的新增功能 (WWDC)  (视频) ](https://developer.apple.com/videos/play/wwdc2017/237/)

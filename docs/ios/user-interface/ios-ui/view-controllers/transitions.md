@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/14/2017
-ms.openlocfilehash: 902e59aa9f5c4aec1dc73f10410132b500932094
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: e973221e013132c8172a4b1de0250a085f0ea1df
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86928726"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436930"
 ---
 # <a name="view-controller-transitions-in-xamarinios"></a>在 Xamarin 中查看控制器转换
 
@@ -20,13 +20,13 @@ UIKit 添加了对自定义呈现视图控制器时发生的动画转换的支�
 
 ## <a name="custom-transitions"></a>自定义转换
 
-IOS 7 中视图控制器之间的动态过渡是完全可自定义的。 `UIViewController`现在包含一个 `TransitioningDelegate` 属性，该属性在发生转换时向系统提供自定义的 animator 类。
+IOS 7 中视图控制器之间的动态过渡是完全可自定义的。 `UIViewController` 现在包含一个 `TransitioningDelegate` 属性，该属性在发生转换时向系统提供自定义的 animator 类。
 
 若要将自定义转换用于 `PresentViewController` ：
 
-1. 在 `ModalPresentationStyle` `UIModalPresentationStyle.Custom` 要显示的控制器上将设置为。
-2. 实现 `UIViewControllerTransitioningDelegate` 以创建 animator 类，该类是的实例 `UIViewControllerAnimatedTransitioning` 。
-3. 将 `TransitioningDelegate` 属性设置为的实例 `UIViewControllerTransitioningDelegate` ，还会在要显示的控制器上设置。
+1. 在  `ModalPresentationStyle`  `UIModalPresentationStyle.Custom` 要显示的控制器上将设置为。
+2. 实现  `UIViewControllerTransitioningDelegate` 以创建 animator 类，该类是的实例  `UIViewControllerAnimatedTransitioning` 。
+3. 将  `TransitioningDelegate` 属性设置为的实例  `UIViewControllerTransitioningDelegate` ，还会在要显示的控制器上设置。
 4. 显示视图控制器。
 
 例如，下面的代码提供了一个类型为的类的视图控制器 `ControllerTwo` `UIViewController` ：
@@ -75,12 +75,12 @@ public class TransitioningDelegate : UIViewControllerTransitioningDelegate
 }
 ```
 
-发生转换时，系统将创建一个实例 `IUIViewControllerContextTransitioning` ，并将其传递到 animator 的方法。 `IUIViewControllerContextTransitioning`包含 `ContainerView` 动画发生的位置，以及用于启动转换和要转换到的视图控制器的视图控制器。
+发生转换时，系统将创建一个实例 `IUIViewControllerContextTransitioning` ，并将其传递到 animator 的方法。 `IUIViewControllerContextTransitioning` 包含 `ContainerView` 动画发生的位置，以及用于启动转换和要转换到的视图控制器的视图控制器。
 
 `UIViewControllerAnimatedTransitioning`类处理实际动画。 必须实现两种方法：
 
-1. `TransitionDuration`–返回动画的持续时间（以秒为单位）。
-1. `AnimateTransition`–执行实际动画。
+1. `TransitionDuration` –返回动画的持续时间（以秒为单位）。
+1. `AnimateTransition` –执行实际动画。
 
 例如，下面的类实现 `UIViewControllerAnimatedTransitioning` 以对控制器视图的框架进行动画处理：
 
@@ -124,17 +124,17 @@ public class CustomTransitionAnimator : UIViewControllerAnimatedTransitioning
 
 集合视图为创建动态转换提供内置支持：
 
-- **导航控制器**–两个实例之间的动画转换 `UICollectionViewController` 可以选择在管理它们时自动处理 `UINavigationController` 。
-- **转换布局**–新 `UICollectionViewTransitionLayout` 类允许在布局之间进行交互式转换。
+- **导航控制器** –两个实例之间的动画转换  `UICollectionViewController` 可以选择在管理它们时自动处理  `UINavigationController` 。
+- **转换布局** –新  `UICollectionViewTransitionLayout` 类允许在布局之间进行交互式转换。
 
 ### <a name="navigation-controller-transitions"></a>导航控制器转换
 
 在导航控制器中使用时， `UICollectionViewController` 包括对控制器间的动画转换的支持。 此支持是内置的，只需几个简单的步骤即可实现：
 
 1. `UseLayoutToLayoutNavigationTransitions`在上将设置为 `false` `UICollectionViewController` 。
-1. 将的实例添加 `UICollectionViewController` 到导航控制器堆栈的根。
-1. 创建另一个 `UICollectionViewController` ，并将其 `UseLayoutToLayoutNavigtionTransitions` 属性设置为 `true` 。
-1. 将第二个推送 `UICollectionViewController` 到导航控制器的堆栈上。
+1. 将的实例添加  `UICollectionViewController` 到导航控制器堆栈的根。
+1. 创建另一个  `UICollectionViewController` ，并将其  `UseLayoutToLayoutNavigtionTransitions` 属性设置为  `true` 。
+1. 将第二个推送  `UICollectionViewController` 到导航控制器的堆栈上。
 
 下面的代码将 `UICollectionViewController` 名为的子类添加 `ImagesCollectionViewController` 到导航控制器堆栈的根目录中，并将 `UseLayoutToLayoutNavigationTransitions` 属性设置为 `false` ：
 
@@ -198,18 +198,18 @@ public override void ItemSelected (UICollectionView collectionView, NSIndexPath 
 
 ### <a name="transition-layout"></a>转换布局
 
-除了导航控制器中的布局转换支持外，现在还提供了一个名为的新布局 `UICollectionViewTransitionLayout` 。 此布局类允许在布局转换过程中进行交互式控制，方法是允许 `TransitionProgress` 从代码设置。 `UICollectionViewTransitionLayout`不同于-，而不是从 iOS 6 替换为-， `SetCollectionViewLayout` 后者导致动画布局转换发生。 该方法不为控制动画转换的进度提供内置支持。
+除了导航控制器中的布局转换支持外，现在还提供了一个名为的新布局 `UICollectionViewTransitionLayout` 。 此布局类允许在布局转换过程中进行交互式控制，方法是允许 `TransitionProgress` 从代码设置。 `UICollectionViewTransitionLayout` 不同于-，而不是从 iOS 6 替换为-， `SetCollectionViewLayout` 后者导致动画布局转换发生。 该方法不为控制动画转换的进度提供内置支持。
 
- `UICollectionViewTransitionLayout`例如，通过管理原始布局以及要转换到的目标布局，允许将笔势识别器配置为控制布局之间的转换以响应用户交互。
+ `UICollectionViewTransitionLayout` 例如，通过管理原始布局以及要转换到的目标布局，允许将笔势识别器配置为控制布局之间的转换以响应用户交互。
 
 使用的笔势识别器中实现交互式转换的步骤如下所示 `UICollectionViewTransitionLayout` ：
 
 1. 创建笔势识别器。
-1. 调用 `StartInteractiveTransition` 的方法 `UICollectionView` ，并向其传递目标布局和完成处理程序。
-1. 设置 `TransitionProgress` `UICollectionViewTransitionLayout` 从方法返回的实例的属性 `StartInteractiveTransition` 。
+1. 调用  `StartInteractiveTransition` 的方法  `UICollectionView` ，并向其传递目标布局和完成处理程序。
+1. 设置 `TransitionProgress`  `UICollectionViewTransitionLayout` 从方法返回的实例的属性  `StartInteractiveTransition` 。
 1. 使布局无效。
-1. 调用的 `FinishInteractiveTransition` 方法 `UICollectionView` 以完成转换或 `CancelInteractiveTransition` 取消方法。  `FinishInteractiveTransition`使动画完成其到目标布局的转换，而使 `CancelInteractiveTransition` 动画返回到原始布局。
-1. 在方法的完成处理程序中处理转换完成 `StartInteractiveTransition` 。
+1. 调用的 `FinishInteractiveTransition` 方法  `UICollectionView` 以完成转换或  `CancelInteractiveTransition` 取消方法。  `FinishInteractiveTransition` 使动画完成其到目标布局的转换，而使 `CancelInteractiveTransition` 动画返回到原始布局。
+1. 在方法的完成处理程序中处理转换完成  `StartInteractiveTransition` 。
 1. 将手势识别器添加到集合视图。
 
 下面的代码实现了一个在缩小手势识别器内的交互式布局转换：
@@ -258,6 +258,6 @@ imagesController.CollectionView.AddGestureRecognizer (pinch);
 
 ## <a name="related-links"></a>相关链接
 
-- [IOS 7 简介（示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/introtoios7)
+- [IOS 7 (示例) 简介 ](/samples/xamarin/ios-samples/introtoios7)
 - [iOS 7 用户界面概述](~/ios/platform/introduction-to-ios7/ios7-ui.md)
 - [后台处理](~/ios/app-fundamentals/backgrounding/index.md)

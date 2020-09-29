@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 177701b8b50edea965e97da225265912f1f0c198
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 78c5d639ef75891c037529f270bfb36f776a12e7
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86932322"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436653"
 ---
 # <a name="maps-in-xamarinios"></a>Xamarin 中的映射
 
@@ -28,13 +28,13 @@ map = new MKMapView (UIScreen.MainScreen.Bounds);
 View = map;
 ```
 
-`MKMapView`是 `UIView` 显示映射的子类。 只需使用上面的代码添加地图就会生成一个交互式地图：
+`MKMapView` 是 `UIView` 显示映射的子类。 只需使用上面的代码添加地图就会生成一个交互式地图：
 
 ![示例映射](images/00-map.png)
 
 ## <a name="map-style"></a>地图样式
 
-`MKMapView`支持3种不同的地图样式。 若要应用地图样式，只需将 `MapType` 属性设置为枚举中的一个值 `MKMapType` ：
+`MKMapView` 支持3种不同的地图样式。 若要应用地图样式，只需将 `MapType` 属性设置为枚举中的一个值 `MKMapType` ：
 
 ```csharp
 map.MapType = MKMapType.Standard; //road map
@@ -48,7 +48,7 @@ map.MapType = MKMapType.Hybrid;
 
 ## <a name="panning-and-zooming"></a>平移和缩放
 
-`MKMapView`支持映射交互功能，如：
+`MKMapView` 支持映射交互功能，如：
 
 - 通过挤压手势缩放
 - 通过平移手势平移
@@ -62,7 +62,7 @@ map.ScrollEnabled = false;
 
 ## <a name="user-location"></a>用户位置
 
-除了用户交互， `MKMapView` 还提供内置的支持来显示设备的位置。 它使用*核心位置*框架来实现此功能。 必须先提示用户，然后才能访问用户的位置。 为此，请创建一个实例， `CLLocationManager` 然后调用 `RequestWhenInUseAuthorization` 。
+除了用户交互， `MKMapView` 还提供内置的支持来显示设备的位置。 它使用 *核心位置* 框架来实现此功能。 必须先提示用户，然后才能访问用户的位置。 为此，请创建一个实例， `CLLocationManager` 然后调用 `RequestWhenInUseAuthorization` 。
 
 ```csharp
 CLLocationManager locationManager = new CLLocationManager();
@@ -72,14 +72,14 @@ locationManager.RequestWhenInUseAuthorization();
 
 请注意，在8.0 之前的 iOS 版本中，尝试调用 `RequestWhenInUseAuthorization` 将导致错误。 如果你打算支持8之前的版本，请确保在进行此调用之前检查 iOS 版本。
 
-访问用户的位置时，还需要修改**info.plist**。 应设置如下与位置数据相关的键：
+访问用户的位置时，还需要修改 **info.plist**。 应设置如下与位置数据相关的键：
 
 - **NSLocationWhenInUseUsageDescription** - 用于用户在和你的应用互动时访问用户的位置。
 - **NSLocationAlwaysUsageDescription** - 用于应用在后台访问用户的位置时。
 
-可以通过打开**info.plist**并选择编辑器底部的 "*源*" 来添加这些项。
+可以通过打开 **info.plist** 并选择编辑器底部的 " *源* " 来添加这些项。
 
-更新**info.plist**并提示用户提供访问其位置的权限后，可以通过将属性设置为 true 来显示用户在地图上的位置 `ShowsUserLocation` ：
+更新 **info.plist** 并提示用户提供访问其位置的权限后，可以通过将属性设置为 true 来显示用户在地图上的位置 `ShowsUserLocation` ：
 
 ```csharp
 map.ShowsUserLocation = true;
@@ -89,7 +89,7 @@ map.ShowsUserLocation = true;
 
 ## <a name="annotations"></a>批注
 
- `MKMapView`还支持在地图上显示图像（称为批注）。 它们可以是自定义图像，也可以是各种颜色的系统定义的 pin。 例如，以下屏幕截图显示了一个地图，其中包含一个 pin 和一个自定义映像：
+ `MKMapView` 还支持在地图上显示图像（称为批注）。 它们可以是自定义图像，也可以是各种颜色的系统定义的 pin。 例如，以下屏幕截图显示了一个地图，其中包含一个 pin 和一个自定义映像：
 
  ![此屏幕截图显示了一个地图，其中包含一个 pin 和一个自定义映像](images/03-annotations.png)
 
@@ -187,8 +187,8 @@ public override void CalloutAccessoryControlTapped (MKMapView mapView, MKAnnotat
 
 与批注类似，添加覆盖区涉及2部分：
 
-- 为覆盖对象创建模型对象并将其添加到中 `MKMapView` 。
-- 在中为覆盖创建视图 `MKMapViewDelegate` 。
+- 为覆盖对象创建模型对象并将其添加到中  `MKMapView` 。
+- 在中为覆盖创建视图  `MKMapViewDelegate` 。
 
 覆盖模型可以是任何 `MKShape` 子类。 Xamarin 包括 `MKShape` 多边形、折线和圆圈的子类， `MKPolygon` 分别通过、 `MKPolyline` 和 `MKCircle` 类。
 
@@ -223,10 +223,10 @@ iOS 包含带有地图工具包的本地搜索 API，该 API 允许在指定地�
 
 若要执行本地搜索，应用程序必须执行以下步骤：
 
-1. 创建 `MKLocalSearchRequest` 对象。
-1. 从创建 `MKLocalSearch` 对象 `MKLocalSearchRequest` 。
-1. 对 `Start` 对象调用方法 `MKLocalSearch` 。
-1. 检索 `MKLocalSearchResponse` 回调中的对象。
+1. 创建  `MKLocalSearchRequest` 对象。
+1. 从创建  `MKLocalSearch` 对象  `MKLocalSearchRequest` 。
+1. 对  `Start` 对象调用方法  `MKLocalSearch` 。
+1. 检索  `MKLocalSearchResponse` 回调中的对象。
 
 本地搜索 API 本身不提供用户界面。 它甚至不需要使用地图。 但是，若要充分利用本地搜索，应用程序需要提供某种方式来指定搜索查询并显示结果。 此外，由于结果将包含位置数据，因此在地图上显示它们通常是有意义的。
 
@@ -236,7 +236,7 @@ iOS 包含带有地图工具包的本地搜索 API，该 API 允许在指定地�
 
 接受搜索输入的一种方法是使用 `UISearchBar` 提供的， `UISearchController` 并将结果显示在表中。
 
-下面的代码在的 `UISearchController` 方法中添加（包含搜索栏属性） `ViewDidLoad` `MapViewController` ：
+下面的代码添加 `UISearchController`) 的方法中具有搜索栏属性的 (`ViewDidLoad` `MapViewController` ：
 
 ```csharp
 //Creates an instance of a custom View Controller that holds the results
@@ -377,7 +377,7 @@ public void Search (string forSearchString)
 }
 ```
 
-接下来， `MapViewController` 我们将在中创建的自定义实现，该实现 `UISearchResultsUpdating` 分配给 `SearchResultsUpdater` `searchController` "[添加本地搜索" UI](#Adding_a_Local_Search_UI)部分中的的属性：
+接下来， `MapViewController` 我们将在中创建的自定义实现，该实现 `UISearchResultsUpdating` 分配给 `SearchResultsUpdater` `searchController` " [添加本地搜索" UI](#Adding_a_Local_Search_UI) 部分中的的属性：
 
 ```csharp
 public class SearchResultsUpdator : UISearchResultsUpdating
@@ -396,7 +396,7 @@ public class SearchResultsUpdator : UISearchResultsUpdating
  ![从结果中选择项时添加到地图的批注](images/08-search-results.png)
 
 > [!IMPORTANT]
-> `UISearchController`已在 iOS 8 中实现。 如果希望在此之前支持设备，则需要使用 `UISearchDisplayController` 。
+> `UISearchController` 已在 iOS 8 中实现。 如果希望在此之前支持设备，则需要使用 `UISearchDisplayController` 。
 
 ## <a name="summary"></a>总结
 
@@ -405,4 +405,4 @@ public class SearchResultsUpdator : UISearchResultsUpdating
 ## <a name="related-links"></a>相关链接
 
 - [SearchController](https://github.com/xamarin/recipes/tree/master/Recipes/ios/content_controls/search-controller)
-- [MapDemo （示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/mapdemo)
+- [MapDemo (示例) ](/samples/xamarin/ios-samples/mapdemo)

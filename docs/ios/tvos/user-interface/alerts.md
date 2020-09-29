@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 1274fc409cd20b974c44fecd87b6d1b175591710
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 83831b71ebb349873b2a77bbd77ba08e08002d4a
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86930164"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436606"
 ---
 # <a name="working-with-tvos-alerts-in-xamarin"></a>在 Xamarin 中使用 tvOS 警报
 
 _本文介绍如何使用 UIAlertController 在 tvOS 中向用户显示警报消息。_
 
-如果需要 tvOS 用户或请求权限来执行破坏性操作（如删除文件），则可以使用显示警报消息 `UIAlertViewController` ：
+如果需要 tvOS 用户或请求权限来执行破坏性操作 (如删除文件) ，可以使用以下内容显示警报消息 `UIAlertViewController` ：
 
 [![示例 UIAlertViewController](alerts-images/alert01.png)](alerts-images/alert01.png#lightbox)
 
@@ -34,8 +34,8 @@ _本文介绍如何使用 UIAlertController 在 tvOS 中向用户显示警报消
 
 Apple 提供了以下有关使用警报的建议：
 
-- **使用警报**时，警报会中断用户与应用的流动，并使用户体验中断，因此，只应用于错误通知、应用内购买和破坏性操作等重要情况。
-- **提供了有用的选择**-如果警报向用户提供选项，您应确保每个选项都提供关键信息并为用户提供有用的操作。
+- **使用警报** 时，警报会中断用户与应用的流动，并使用户体验中断，因此，只应用于错误通知、应用内购买和破坏性操作等重要情况。
+- **提供了有用的选择** -如果警报向用户提供选项，您应确保每个选项都提供关键信息并为用户提供有用的操作。
 
 <a name="Alert-Titles-and-Messages"></a>
 
@@ -43,7 +43,7 @@ Apple 提供了以下有关使用警报的建议：
 
 Apple 提供以下建议来演示警报的标题和可选消息：
 
-- **使用 Multiword 标题**-警报的标题应当清楚地了解状况，同时保持简单。 单个单词标题很少提供足够的信息。
+- **使用 Multiword 标题** -警报的标题应当清楚地了解状况，同时保持简单。 单个单词标题很少提供足够的信息。
 - 请尽可能**使用不需要消息的描述性标题**，请考虑使警报的标题具有足够的描述性，指出不需要可选消息文本。
 - 将**消息设置为简短、完整的句子**-如果需要使用可选的消息来使警报点处于最佳位置，请尽可能简化，并使其成为具有正确大小写和标点的完整句子。
 
@@ -53,15 +53,15 @@ Apple 提供以下建议来演示警报的标题和可选消息：
 
 Apple 对于向警报添加按钮有以下建议：
 
-- **限制为两个按钮**-尽可能将警报限制为最多两个按钮。 单按钮警报提供信息，而不提供操作。 两个按钮警报提供简单的 "是/否" 操作选择。
-- **使用简洁的逻辑按钮标题**-简单一到两个单词按钮标题，可清楚地说明按钮的操作效果。 有关详细信息，请参阅[使用按钮](~/ios/tvos/user-interface/buttons.md)文档。
-- **清晰标记破坏性按钮**-对于执行破坏性操作的按钮（如删除文件），用样式清楚地标记这些按钮 `UIAlertActionStyle.Destructive` 。
+- **限制为两个按钮** -尽可能将警报限制为最多两个按钮。 单按钮警报提供信息，而不提供操作。 两个按钮警报提供简单的 "是/否" 操作选择。
+- **使用简洁的逻辑按钮标题** -简单一到两个单词按钮标题，可清楚地说明按钮的操作效果。 有关详细信息，请参阅 [使用按钮](~/ios/tvos/user-interface/buttons.md) 文档。
+- **清晰标记破坏性按钮** -对于执行破坏性操作的按钮 (如删除文件) 使用样式清楚地标记这些按钮 `UIAlertActionStyle.Destructive` 。
 
 <a name="Displaying-an-Alert"></a>
 
 ## <a name="displaying-an-alert"></a>显示警报
 
-若要显示警报，请创建的实例 `UIAlertViewController` ，并通过添加操作（按钮）并选择警报的样式来配置它。 例如，以下代码显示 "确定"/"取消" 警报：
+若要显示警报，请创建的实例， `UIAlertViewController` 并通过将 "操作" (按钮添加) 并选择该警报的样式来进行配置。 例如，以下代码显示 "确定"/"取消" 警报：
 
 ```csharp
 const string title = "A Short Title is Best";
@@ -105,9 +105,9 @@ UIAlertAction.Create ("Button Title", UIAlertActionStyle.Default, _ =>
 
 `UIAlertActionStyle`枚举允许你将按钮样式设置为以下内容之一：
 
-- **默认值**-显示警报时，该按钮将为选中状态。
-- **取消**-该按钮是警报的 "取消" 按钮。
-- **破坏性**-将按钮突出显示为破坏性操作，如删除文件。 目前，tvOS 呈现具有红色背景的破坏性按钮。
+- **默认值** -显示警报时，该按钮将为选中状态。
+- **取消** -该按钮是警报的 "取消" 按钮。
+- **破坏性** -将按钮突出显示为破坏性操作，如删除文件。 目前，tvOS 呈现具有红色背景的破坏性按钮。
 
 `AddAction`方法将给定操作添加到， `UIAlertViewController` 最后， `PresentViewController (alertController, true, null)` 方法向用户显示给定的警报。
 
@@ -115,7 +115,7 @@ UIAlertAction.Create ("Button Title", UIAlertActionStyle.Default, _ =>
 
 ## <a name="adding-text-fields"></a>添加文本字段
 
-除了向警报添加操作（按钮）以外，还可以向警报添加文本字段，以允许用户填写用户 Id 和密码等信息：
+除了将操作添加到警报)  (按钮外，还可以向警报添加文本字段，以允许用户填写用户 Id 和密码等信息：
 
 [![警报中的文本字段](alerts-images/alert02.png)](alerts-images/alert02.png#lightbox)
 
@@ -160,7 +160,7 @@ alert.AddAction(UIAlertAction.Create("OK",UIAlertActionStyle.Default,(actionOK) 
 controller.PresentViewController(alert,true,null);
 ```
 
-`AddTextField`方法将新的文本字段添加到警报，然后通过设置属性（如字段为空时显示的文本）、默认的文本值和键盘类型来配置该文本字段。 例如：
+`AddTextField`方法会将一个新的文本字段添加到警报，然后通过设置属性（如占位符文本 (在字段为空时显示的文本) 、默认文本值和键盘类型）来进行配置。 例如：
 
 ```csharp
 // Initialize field
@@ -363,13 +363,13 @@ partial void DisplayTextInputAlert (Foundation.NSObject sender) {
 
 <a name="Summary"></a>
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 本文介绍 `UIAlertController` 如何使用将警报消息显示给 tvOS 中的用户。 首先，它展示了如何显示简单的警报并添加按钮。 接下来，该示例演示如何向警报添加文本字段。 最后，它说明了如何使用 helper 类来减少显示警报所需的重复代码量。
 
 ## <a name="related-links"></a>相关链接
 
-- [tvOS 示例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
+- [tvOS 示例](/samples/browse/?products=xamarin&term=Xamarin.iOS%2btvOS)
 - [tvOS](https://developer.apple.com/tvos/)
 - [tvOS 人体学接口指南](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [TvOS 应用编程指南](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

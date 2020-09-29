@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: bbb0dfbc9a6bf1396c8d517cc2c3289e2857a836
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 2350db2e8d4f43a33b0ce394e06ffd2c16b6b7ad
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938393"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436554"
 ---
 # <a name="walkthrough---background-location-in-xamarinios"></a>演练-Xamarin 中的背景位置
 
@@ -22,17 +22,17 @@ ms.locfileid: "86938393"
 
 ## <a name="application-set-up"></a>应用程序设置
 
-1. 首先，创建新的**iOS > 应用 > 单视图应用程序（c #）**。 调用该_位置_，并确保已选择 IPad 和 iPhone。
+1. 首先， ** (c # ) > 单视图应用程序创建新的 iOS > 应用 **。 调用该 _位置_ ，并确保已选择 IPad 和 iPhone。
 
-1. 位置应用程序在 iOS 中限定为后台必需的应用程序。 通过编辑项目的**info.plist**文件，将应用程序注册为位置应用程序。
+1. 位置应用程序在 iOS 中限定为后台必需的应用程序。 通过编辑项目的 **info.plist** 文件，将应用程序注册为位置应用程序。
 
-    在 "解决方案资源管理器" 下，双击 " **info.plist** " 文件将其打开，然后滚动到列表的底部。 选中 "**启用后台模式**" 和 "**位置更新**" 复选框。
+    在 "解决方案资源管理器" 下，双击 " **info.plist** " 文件将其打开，然后滚动到列表的底部。 选中 " **启用后台模式** " 和 " **位置更新** " 复选框。
 
     在 Visual Studio for Mac 中，它将如下所示：
 
     [![选中 "启用后台模式" 和 "位置更新" 复选框](location-walkthrough-images/image7.png)](location-walkthrough-images/image7.png#lightbox)
 
-    在 Visual Studio 中，需要通过添加以下键/值对，手动更新**info.plist** ：
+    在 Visual Studio 中，需要通过添加以下键/值对，手动更新 **info.plist** ：
 
     ```xml
     <key>UIBackgroundModes</key>
@@ -71,20 +71,20 @@ ms.locfileid: "86938393"
     }
     ```
 
-    上面的代码在[CLLocationManager](xref:CoreLocation.CLLocationManager)类上设置了多个属性和权限：
+    上面的代码在 [CLLocationManager](xref:CoreLocation.CLLocationManager) 类上设置了多个属性和权限：
 
-    - `PausesLocationUpdatesAutomatically`–这是一个布尔值，可根据系统是否允许暂停位置更新来设置。 在某些设备上，它默认为 `true` ，这可能会导致设备在大约15分钟后停止获取后台位置更新。
-    - `RequestAlwaysAuthorization`-应传递此方法以向应用程序用户授予允许在后台访问位置的选项。 `RequestWhenInUseAuthorization`如果希望为用户授予仅在应用程序处于前台时才允许访问位置的选项，也可以传递。
-    - `AllowsBackgroundLocationUpdates`–这是在 iOS 9 中引入的布尔属性，可将其设置为允许应用在挂起时接收位置更新。
+    - `PausesLocationUpdatesAutomatically` –这是一个布尔值，可根据系统是否允许暂停位置更新来设置。 在某些设备上，它默认为 `true` ，这可能会导致设备在大约15分钟后停止获取后台位置更新。
+    - `RequestAlwaysAuthorization` -应传递此方法以向应用程序用户授予允许在后台访问位置的选项。 `RequestWhenInUseAuthorization` 如果希望为用户授予仅在应用程序处于前台时才允许访问位置的选项，也可以传递。
+    - `AllowsBackgroundLocationUpdates` –这是在 iOS 9 中引入的布尔属性，可将其设置为允许应用在挂起时接收位置更新。
 
     > [!IMPORTANT]
-    > iOS 8 （及更高版本）也需要**info.plist**文件中的条目，以将用户显示为授权请求的一部分。
+    > iOS 8 (和更高) 还需要 **info.plist** 文件中的条目，以将用户显示为授权请求的一部分。
 
-1. 为应用程序所需的权限类型（、、和/或）添加**info.plist 密钥。** 该应用程序需要 `NSLocationAlwaysUsageDescription` `NSLocationWhenInUseUsageDescription` `NSLocationAlwaysAndWhenInUseUsageDescription` 一个字符串，该字符串将在请求位置数据访问的警报中显示给用户。
+1. 为应用程序所需的权限类型（、、和/或）添加 **info.plist 密钥。** 该应用程序需要 `NSLocationAlwaysUsageDescription` `NSLocationWhenInUseUsageDescription` `NSLocationAlwaysAndWhenInUseUsageDescription` 一个字符串，该字符串将在请求位置数据访问的警报中显示给用户。
 
-1. iOS 9 要求在使用 `AllowsBackgroundLocationUpdates` **info.plist**时包含 `UIBackgroundModes` 具有值的密钥 `location` 。 如果已完成本演练的步骤2，则该操作应已在 info.plist 文件中。
+1. iOS 9 要求在使用 `AllowsBackgroundLocationUpdates` **info.plist** 时包含 `UIBackgroundModes` 具有值的密钥 `location` 。 如果已完成本演练的步骤2，则该操作应已在 info.plist 文件中。
 
-1. 在 `LocationManager` 类中，使用以下代码创建一个名为的方法 `StartLocationUpdates` 。 此代码显示了如何开始接收位置更新 `CLLocationManager` ：
+1. 在 `LocationManager` 类中，使用以下代码创建一个名为的方法 `StartLocationUpdates` 。 此代码显示了如何开始接收位置更新   `CLLocationManager` ：
 
     ```csharp
     if (CLLocationManager.LocationServicesEnabled) {
@@ -99,9 +99,9 @@ ms.locfileid: "86938393"
     }
     ```
 
-    此方法有几个重要事项。 首先，我们执行检查以查看应用程序是否有权访问设备上的位置数据。 我们通过调用来验证这一点 `LocationServicesEnabled` `CLLocationManager` 。 如果用户拒绝了应用程序对位置信息的访问，则此方法将返回**false** 。
+    此方法有几个重要事项。 首先，我们执行检查以查看应用程序是否有权访问设备上的位置数据。 我们通过调用来验证这一点 `LocationServicesEnabled` `CLLocationManager` 。 如果用户拒绝了应用程序对位置信息的访问，则此方法将返回 **false** 。
 
-1. 接下来，告诉位置管理器更新的频率。 `CLLocationManager`提供了许多用于筛选和配置位置数据的选项，包括更新的频率。 在此示例中，将设置 `DesiredAccuracy` 为，每当位置由计量器更改时更新。 有关配置位置更新频率和其他首选项的详细信息，请参阅 Apple 文档中的[CLLocationManager 类引用](https://developer.apple.com/library/ios/#documentation/CoreLocation/Reference/CLLocationManager_Class/CLLocationManager/CLLocationManager.html)。
+1. 接下来，告诉位置管理器更新的频率。 `CLLocationManager` 提供了许多用于筛选和配置位置数据的选项，包括更新的频率。 在此示例中，将设置 `DesiredAccuracy` 为，每当位置由计量器更改时更新。 有关配置位置更新频率和其他首选项的详细信息，请参阅 Apple 文档中的 [CLLocationManager 类引用](https://developer.apple.com/library/ios/#documentation/CoreLocation/Reference/CLLocationManager_Class/CLLocationManager/CLLocationManager.html) 。
 
 1. 最后，对 `StartUpdatingLocation` 实例调用 `CLLocationManager` 。 这会告诉位置管理器在当前位置获取初始修补程序，以及开始发送更新
 
@@ -112,7 +112,7 @@ ms.locfileid: "86938393"
 public event EventHandler<LocationUpdatedEventArgs>LocationUpdated = delegate { };
 ```
 
-下一步是订阅中的位置更新 `CLLocationManager` ，并在 `LocationUpdated` 新位置数据变得可用时引发自定义事件，并将该位置作为参数传入。 为此，请创建新类**LocationUpdateEventArgs.cs**。 此代码可在主应用程序中访问，并在引发事件时返回设备位置：
+下一步是订阅中的位置更新 `CLLocationManager` ，并在 `LocationUpdated` 新位置数据变得可用时引发自定义事件，并将该位置作为参数传入。 为此，请创建新类 **LocationUpdateEventArgs.cs**。 此代码可在主应用程序中访问，并在引发事件时返回设备位置：
 
 ```csharp
 public class LocationUpdatedEventArgs : EventArgs
@@ -133,7 +133,7 @@ public class LocationUpdatedEventArgs : EventArgs
 
 ## <a name="user-interface"></a>用户界面
 
-1. 使用 iOS 设计器生成将显示位置信息的屏幕。 双击要开始的**主情节提要**文件。
+1. 使用 iOS 设计器生成将显示位置信息的屏幕。 双击要开始的 **主情节提要** 文件。
 
     在情节提要上，将若干标签拖到屏幕上，作为位置信息的占位符。 在此示例中，有用于纬度、经度、海拔高度、课程和速度的标签。
 
@@ -278,5 +278,5 @@ UIApplication.Notifications.ObserveDidBecomeActive ((sender, args) => {
 
 ## <a name="related-links"></a>相关链接
 
-- [位置（第4部分）（示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/location)
+- [Location (第4部分)  (示例) ](/samples/xamarin/ios-samples/location)
 - [核心位置框架参考](https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CoreLocation_Framework/_index.html)

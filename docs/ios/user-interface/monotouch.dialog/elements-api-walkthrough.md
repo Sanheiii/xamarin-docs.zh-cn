@@ -1,22 +1,22 @@
 ---
 title: 使用元素 API 创建 Xamarin iOS 应用程序
-description: 本文基于 Monotouch.dialog 对话框简介一文中提供的信息。 其中提供了演示如何使用 Monotouch.dialog （MT）的演练。D）元素 API 快速开始使用 MT 构建应用程序。2-d.
+description: 本文基于 Monotouch.dialog 对话框简介一文中提供的信息。 它演示了演示如何使用 Monotouch.dialog (MT 的演练。D) 元素 API，快速开始使用 MT 构建应用程序。
 ms.prod: xamarin
 ms.assetid: F1124734-DF44-F1F3-0832-46F52A788CDC
 ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: davidortinau
 ms.author: daortin
-ms.openlocfilehash: 3e1e7a9c5fb01f73cddb4cab3a95aa421bd8c3fb
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: b95066379e7b6845bf1265b43681aec83b130aa4
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86933362"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436745"
 ---
 # <a name="creating-a-xamarinios-application-using-the-elements-api"></a>使用元素 API 创建 Xamarin iOS 应用程序
 
-_本文基于 Monotouch.dialog 对话框简介一文中提供的信息。其中提供了演示如何使用 Monotouch.dialog （MT）的演练。D）元素 API 快速开始使用 MT 构建应用程序。2-d._
+_本文基于 Monotouch.dialog 对话框简介一文中提供的信息。它演示了演示如何使用 Monotouch.dialog (MT 的演练。D) 元素 API，快速开始使用 MT 构建应用程序。_
 
 在本演练中，我们将使用 MT。D 元素 API，用于创建显示任务列表的应用程序的主-详细信息样式。 当用户 **+** 在导航栏中选择按钮时，会将一个新行添加到该任务的表中。 选择该行将导航到 "详细信息" 屏幕，该屏幕允许更新任务描述和截止日期，如下所示：
 
@@ -24,11 +24,11 @@ _本文基于 Monotouch.dialog 对话框简介一文中提供的信息。其中�
 
 ## <a name="setting-up-mtd"></a>设置 MT。2-d
 
-隶书.D 与 Xamarin 一起分发。 若要使用此方法，请右键单击 Visual Studio 2017 或 Visual Studio for Mac 中的 Xamarin iOS 项目的 "**引用**" 节点，然后添加对**monotouch.dialog**程序集的引用。 然后， `using MonoTouch.Dialog` 根据需要在源代码中添加语句。
+隶书.D 与 Xamarin 一起分发。 若要使用此方法，请右键单击 Visual Studio 2017 或 Visual Studio for Mac 中的 Xamarin iOS 项目的 " **引用** " 节点，然后添加对 **monotouch.dialog** 程序集的引用。 然后， `using MonoTouch.Dialog` 根据需要在源代码中添加语句。
 
 ## <a name="elements-api-walkthrough"></a>元素 API 演练
 
-在 " [monotouch.dialog" 对话框的简介](~/ios/user-interface/monotouch.dialog/index.md)一文中，我们已深入了解了 MT 的不同部分。2-d. 让我们使用元素 API 将它们合并到一个应用程序中。
+在 " [monotouch.dialog" 对话框](~/ios/user-interface/monotouch.dialog/index.md) 的 "简介" 一文中，我们全面了解了 MT 的不同部分。 让我们使用元素 API 将它们合并到一个应用程序中。
 
 ## <a name="setting-up-the-multi-screen-application"></a>设置多屏幕应用程序
 
@@ -38,9 +38,9 @@ _本文基于 Monotouch.dialog 对话框简介一文中提供的信息。其中�
 
 1. 创建 `UINavigationController.`
 1. 创建 `DialogViewController.`
-1. 添加 `DialogViewController` 作为的根`UINavigationController.` 
-1. 将添加 `RootElement` 到`DialogViewController.`
-1. 将 `Sections` 和添加 `Elements` 到`RootElement.` 
+1. 添加 `DialogViewController` 作为的根  `UINavigationController.` 
+1. 将添加 `RootElement` 到  `DialogViewController.`
+1. 将 `Sections` 和添加  `Elements` 到  `RootElement.` 
 
 ### <a name="using-a-uinavigationcontroller"></a>使用 UINavigationController
 
@@ -135,15 +135,15 @@ public class Task
 
  [![选择日期会自动将日期选取器加载到](elements-api-walkthrough-images/04-date-picker.png)](elements-api-walkthrough-images/04-date-picker.png#lightbox)
 
-在 `EntryElement` 和 `DateElement` 事例（或 monotouch.dialog 中的任何数据输入元素）中，对值所做的任何更改都将自动保留。 我们可以通过编辑日期，然后在根屏幕和各种任务详细信息之间来回导航来对此进行演示，详细信息屏幕中的值将保留在其中。
+在 `EntryElement` `DateElement` monotouch.dialog) 的和事例中 (或任何数据输入元素时，将自动保留对值所做的任何更改。 我们可以通过编辑日期，然后在根屏幕和各种任务详细信息之间来回导航来对此进行演示，详细信息屏幕中的值将保留在其中。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 本文介绍了如何使用 Monotouch.dialog 元素 API 的演练。 其中介绍了使用 MT 创建多屏幕应用程序的基本步骤。D. 包括如何使用 `DialogViewController` 以及如何添加元素和节来创建屏幕。 此外，它还演示了如何使用 MT。D 与一起使用 `UINavigationController` 。
 
 ## <a name="related-links"></a>相关链接
 
-- [MTDWalkthrough （示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/mtdwalkthrough)
+- [MTDWalkthrough (示例) ](/samples/xamarin/ios-samples/mtdwalkthrough)
 - [Monotouch.dialog 简介](~/ios/user-interface/monotouch.dialog/index.md)
 - [反射 API 演练](~/ios/user-interface/monotouch.dialog/reflection-api-walkthrough.md)
 - [JSON 元素演练](~/ios/user-interface/monotouch.dialog/json-element-walkthrough.md)

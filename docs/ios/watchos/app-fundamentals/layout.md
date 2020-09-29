@@ -7,20 +7,20 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 345c05a439423474644ac64ef86f9adc580ab0b1
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 1fdb7a10bd767085ba8758fa2e026cc36c93639a
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937717"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436917"
 ---
 # <a name="working-with-watchos-layout-in-xamarin"></a>在 Xamarin 中使用 watchOS 布局
 
-为 Apple Watch[屏幕大小](~/ios/watchos/app-fundamentals/screen-sizes.md)设计布局带来了独特的挑战。
+为 Apple Watch [屏幕大小](~/ios/watchos/app-fundamentals/screen-sizes.md) 设计布局带来了独特的挑战。
 
 ## <a name="design-tips"></a>设计提示
 
-关键点是：使用大手指使用户界面在小型观看屏幕上可读和使用。 不要陷入**IOS 模拟器**设计（显示非常大）和**鼠标指针**（适用于微小触摸目标）的陷阱！
+关键点是：使用大手指使用户界面在小型观看屏幕上可读和使用。 不要陷入 **IOS 模拟器** 设计的陷阱 (这会显示非常大的) 和 **鼠标指针** ， (可与小接触目标) ！
 
 - 使用黑色背景-它使用手表的黑色面板创建更大屏幕的错觉。
 
@@ -42,21 +42,21 @@ ms.locfileid: "86937717"
 
 `WKInterfaceController`是所有场景的基本类。
 
-接口控制器的设计图面的行为类似于垂直**组**：可以将其他控件拖动到接口控制器上，它们会自动布局在另一个上方：
+接口控制器的设计图面的行为类似于垂直 **组**：可以将其他控件拖动到接口控制器上，它们会自动布局在另一个上方：
 
 ![控件会自动向外布局一个控件](layout-images/controller-scene.png)
 
-可以设置每个控件的**位置**和**大小**属性，以控制其外观：
+可以设置每个控件的 **位置** 和 **大小** 属性，以控制其外观：
 
 ![设置每个控件的位置和大小属性](layout-images/positionsize-attributes.png)
 
-如果将大小设置为**相对于容器**，则可以提供比例值和偏移量调整。 此屏幕截图显示了一个按钮，该按钮已设置为使用 "监视屏幕宽度" （**0.8**）的80%：
+如果将大小设置为 **相对于容器** ，则可以提供比例值和偏移量调整。 此屏幕截图显示了一个按钮，该按钮已设置为使用80% 的手表屏幕宽度 (**0.8**) ：
 
 ![提供比例值和偏移量调整](layout-images/button-attributes.png)
 
-### <a name="group"></a>Group
+### <a name="group"></a>组
 
-`WKInterfaceGroup`是一个简单的布局容器，可以配置为垂直或水平堆叠控件。 默认情况下，它包含每个控件之间的间距，但您可以在 "**属性**检查器" 中修改间距（和插入）。
+`WKInterfaceGroup` 是一个简单的布局容器，可以配置为垂直或水平堆叠控件。 默认情况下，它包含每个控件之间的间距，但你可以在 " **属性** " 检查器中修改 (和插入) 的间距。
 
 ![在属性检查器中修改间距和嵌入项](layout-images/group-attributes.png)
 
@@ -66,19 +66,19 @@ ms.locfileid: "86937717"
 
 ### <a name="separator"></a>Separator
 
-分隔符控件旨在帮助提供布局中的视觉指导。 使用分隔符（或背景色或图像）可帮助用户了解哪些内容与屏幕相关。
+分隔符控件旨在帮助提供布局中的视觉指导。 使用分隔符 (或背景色或图像) ，以帮助用户了解你的屏幕上相关的内容。
 
 ![分隔符用法示例](layout-images/separator-scene.png)
 
-请注意，未使用整个屏幕宽度的蓝色和绿色分隔符已配置为**固定**或**相对于容器**大小。
+请注意，未使用整个屏幕宽度的蓝色和绿色分隔符已配置为 **固定** 或 **相对于容器** 大小。
 
 ### <a name="content-controls"></a>内容控件
 
-无需 `Label` 、、 `Image` `Button` 、 `Switch` 、、 `Slider` `Map` 和[其他控件](~/ios/watchos/user-interface/index.md)即可完成布局。
-可以使用**组**或每个控件上的位置和大小设置将这些设置定位到布局中。
+无需 `Label` 、、 `Image` `Button` 、 `Switch` 、、 `Slider` `Map` 和 [其他控件](~/ios/watchos/user-interface/index.md)即可完成布局。
+可以使用 **组** 或每个控件上的位置和大小设置将这些设置定位到布局中。
 
 ## <a name="related-links"></a>相关链接
 
-- [WatchKitCatalog （示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)
+- [WatchKitCatalog (示例) ](/samples/xamarin/ios-samples/watchos-watchkitcatalog)
 - [Apple 的布局引用](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/WatchHumanInterfaceGuidelines/Layout.html)
 - [Apple 的颜色 & 版式参考](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/WatchHumanInterfaceGuidelines/ColorandTypography.html)

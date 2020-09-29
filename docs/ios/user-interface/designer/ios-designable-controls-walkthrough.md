@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 4652497aa6a7819afe7224617a429b2852566255
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: ad07d6e7381c646273eae8fe6aaecb2d487027f7
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86934688"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436805"
 ---
 # <a name="using-custom-controls-with-the-ios-designer"></a>结合使用自定义控件和 iOS 设计器
 
@@ -20,12 +20,12 @@ ms.locfileid: "86934688"
 
 Xamarin Designer for iOS 在 Visual Studio for Mac 和 Visual Studio 2017 及更高版本的 Windows 中可用。
 
-本指南假定你熟悉[入门指南](~/ios/get-started/index.md)中所述的内容。
+本指南假定你熟悉 [入门指南](~/ios/get-started/index.md)中所述的内容。
 
 ## <a name="walkthrough"></a>演练
 
 > [!IMPORTANT]
-> 从 Xamarin 5.5 开始，创建自定义控件的方式与早期版本略有不同。 若要创建自定义控件， `IComponent` 需要提供接口（使用关联的实现方法）或可以使用批注类 `[DesignTimeVisible(true)]` 。 下面的演练示例使用后一种方法。
+> 从 Xamarin 5.5 开始，创建自定义控件的方式与早期版本略有不同。 若要创建自定义控件， `IComponent` 必须使用关联的实现) 方法 (接口，否则可以使用对类进行批注 `[DesignTimeVisible(true)]` 。 下面的演练示例使用后一种方法。
 
 1. 使用 IOS > 应用创建新的解决方案 **> 单视图应用程序 > c #** 模板，将其命名 `ScratchTicket` 为，然后继续完成新建项目向导：
 
@@ -156,17 +156,17 @@ Xamarin Designer for iOS 在 Visual Studio for Mac 和 Visual Studio 2017 及更
     }
     ```
 
-1. 将 `FillTexture.png` 、 `FillTexture2.png` 和 `Monkey.png` 文件（可[从 GitHub](https://github.com/xamarin/ios-samples/blob/master/ScratchTicket/Resources/images.zip?raw=true)获取）添加到**Resources**文件夹。
+1. 将 `FillTexture.png` `FillTexture2.png` (可用的、和 `Monkey.png` 文件 [从 GitHub](https://github.com/xamarin/ios-samples/blob/master/ScratchTicket/Resources/images.zip?raw=true)) 添加到 **Resources** 文件夹。
 
 1. 双击该 `Main.storyboard` 文件以在设计器中将其打开：
 
     [![iOS 设计器](ios-designable-controls-walkthrough-images/03new.png)](ios-designable-controls-walkthrough-images/03new.png#lightbox)
 
-1. 将 "图像"**视图**从 "**工具箱**" 拖放到情节提要中的视图上。
+1. 将 "图像" **视图** 从 " **工具箱** " 拖放到情节提要中的视图上。
 
     [![添加到布局的图像视图](ios-designable-controls-walkthrough-images/04new.png)](ios-designable-controls-walkthrough-images/04new.png#lightbox)
 
-1. 选择 "**图像" 视图**，并将其 " **image** " 属性更改为 `Monkey.png` 。
+1. 选择 " **图像" 视图** ，并将其 " **image** " 属性更改为 `Monkey.png` 。
 
     [![将 Image View Image 属性设置为 Monkey.png](ios-designable-controls-walkthrough-images/05new.png)](ios-designable-controls-walkthrough-images/05new.png#lightbox)
 
@@ -174,7 +174,7 @@ Xamarin Designer for iOS 在 Visual Studio for Mac 和 Visual Studio 2017 及更
 
     [![对图像进行居中](ios-designable-controls-walkthrough-images/06new.png)](ios-designable-controls-walkthrough-images/06new.png#lightbox)
 
-1. 若要限制高度和宽度，请单击大小固定控点（"骨骼" 整形控点），并分别选择 "宽度" 和 "高度"：
+1. 若要限制高度和宽度，请单击 "骨骼" 形状图柄 (大小固定控点) 并分别选择 "宽度" 和 "高度"：
 
     [![添加约束](ios-designable-controls-walkthrough-images/07new.png)](ios-designable-controls-walkthrough-images/07new.png#lightbox)
 
@@ -182,11 +182,11 @@ Xamarin Designer for iOS 在 Visual Studio for Mac 和 Visual Studio 2017 及更
 
     [![约束工具栏](ios-designable-controls-walkthrough-images/08new.png)](ios-designable-controls-walkthrough-images/08new.png#lightbox)
 
-1. 接下来，生成项目，以便 "**暂存票证" 视图**将显示在 "工具箱" 中的 "**自定义组件**" 下面：
+1. 接下来，生成项目，以便 " **暂存票证" 视图** 将显示在 "工具箱" 中的 " **自定义组件** " 下面：
 
     [![自定义组件工具箱](ios-designable-controls-walkthrough-images/09new.png)](ios-designable-controls-walkthrough-images/09new.png#lightbox)
 
-1. 拖放 "**暂存票证" 视图**，使其显示在 "猴子" 映像之上。 调整拖动控点，使草稿票证视图完全覆盖这些猴子，如下所示：
+1. 拖放 " **暂存票证" 视图** ，使其显示在 "猴子" 映像之上。 调整拖动控点，使草稿票证视图完全覆盖这些猴子，如下所示：
 
     [![图像视图上的暂存票证视图](ios-designable-controls-walkthrough-images/10new.png)](ios-designable-controls-walkthrough-images/10new.png#lightbox)
 
@@ -256,15 +256,15 @@ public override void Draw(CGRect rect)
 }
 ```
 
-如果 `ExportAttribute` 将和参数设置为，则会在 `BrowsableAttribute` `true` 设计器的**属性**面板中显示属性。 如果将属性更改为项目附带的另一个图像（如 `FillTexture2.png` ），则会在设计时更新控件，如下所示：
+如果 `ExportAttribute` 将和参数设置为，则会在 `BrowsableAttribute` `true` 设计器的 **属性** 面板中显示属性。 如果将属性更改为项目附带的另一个图像（如 `FillTexture2.png` ），则会在设计时更新控件，如下所示：
 
  [![编辑设计时属性](ios-designable-controls-walkthrough-images/11-customproperty.png)](ios-designable-controls-walkthrough-images/10-app.png#lightbox)
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
-本文介绍了如何创建自定义控件，以及如何使用 iOS 设计器在 iOS 应用程序中使用它。 我们了解了如何创建和生成控件，使其可用于设计器的**工具箱**中的应用程序。 此外，我们还讨论了如何实现控件，使其在设计时和运行时都能正确呈现，以及如何在设计器中公开自定义控件属性。
+本文介绍了如何创建自定义控件，以及如何使用 iOS 设计器在 iOS 应用程序中使用它。 我们了解了如何创建和生成控件，使其可用于设计器的 **工具箱**中的应用程序。 此外，我们还讨论了如何实现控件，使其在设计时和运行时都能正确呈现，以及如何在设计器中公开自定义控件属性。
 
 ## <a name="related-links"></a>相关链接
 
-- [ScratchTicket （示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/scratchticket)
-- [必需的图像（示例）](https://github.com/xamarin/ios-samples/blob/master/ScratchTicket/Resources/images.zip?raw=true)
+- [ScratchTicket (示例) ](/samples/xamarin/ios-samples/scratchticket)
+- [ (示例所需的图像) ](https://github.com/xamarin/ios-samples/blob/master/ScratchTicket/Resources/images.zip?raw=true)

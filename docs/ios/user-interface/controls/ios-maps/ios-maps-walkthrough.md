@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 59ad6a11eecf629fc2a815e21a29493f4a1a1397
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 56306b04b57295a3625804bdbbb6a9810675be2b
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86932218"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436767"
 ---
 # <a name="annotations-and-overlays-in-xamarinios"></a>Xamarin 中的注释和叠加
 
@@ -20,9 +20,9 @@ ms.locfileid: "86932218"
 
  [![示例 MapKit 应用](ios-maps-walkthrough-images/00-map-overlay.png)](ios-maps-walkthrough-images/00-map-overlay.png#lightbox)
 
-可以在[Maps 演练示例](https://docs.microsoft.com/samples/xamarin/ios-samples/mapswalkthrough)中找到已完成的代码。
+可以在 [Maps 演练示例](/samples/xamarin/ios-samples/mapswalkthrough)中找到已完成的代码。
 
-首先创建一个新的**IOS 空项目**，并为其提供一个相关名称。 首先，将代码添加到视图控制器以显示 MapView，然后为我们的 MapDelegate 和自定义批注创建新类。 为此，请按照以下步骤进行操作：
+首先创建一个新的 **IOS 空项目**，并为其提供一个相关名称。 首先，将代码添加到视图控制器以显示 MapView，然后为我们的 MapDelegate 和自定义批注创建新类。 为此，请按照以下步骤进行操作：
 
 ## <a name="viewcontroller"></a>ViewController
 
@@ -80,7 +80,7 @@ ms.locfileid: "86932218"
 
     ```
 
-1. 创建的新实例 `MapDelegate` ，并将其分配给的 `Delegate` `MKMapView` 。 同样，我们将很快实现 `MapDelegate` ：
+1. 创建的新实例  `MapDelegate` ，并将其分配给的 `Delegate` `MKMapView` 。 同样，我们将很快实现 `MapDelegate` ：
 
     ```csharp
     mapDelegate = new MapDelegate ();
@@ -101,7 +101,7 @@ ms.locfileid: "86932218"
     }
     ```
 
-1. 最后，我们需要编辑**info.plist**文件，以通知用户请求其位置的原因。 在**info.plist**的 "**源**" 菜单中，添加以下项：
+1. 最后，我们需要编辑 **info.plist** 文件，以通知用户请求其位置的原因。 在**info.plist**的 "**源**" 菜单中，添加以下项：
 
     `NSLocationWhenInUseUsageDescription`
 
@@ -192,7 +192,7 @@ ms.locfileid: "86932218"
 
     这里只有一个批注，因此不需要重复使用代码，但最好将其包含在内。
 
-1. 实现 `GetViewForAnnotation` 方法，以便 `ConferenceAnnotation` 使用本演练中包含的**conference.png**图像返回的视图：
+1. 实现 `GetViewForAnnotation` 方法，以便 `ConferenceAnnotation` 使用本演练中包含的 **conference.png** 图像返回的视图：
 
     ```csharp
     public override MKAnnotationView GetViewForAnnotation (MKMapView mapView, NSObject annotation)
@@ -276,7 +276,7 @@ ms.locfileid: "86932218"
     }
     ```
 
-运行该应用程序。 现在，我们有了一个交互式地图，其中包含自定义批注和覆盖区！ 点击 "批注"，将显示 "德克萨斯" 的图像，如下所示：
+运行应用程序。 现在，我们有了一个交互式地图，其中包含自定义批注和覆盖区！ 点击 "批注"，将显示 "德克萨斯" 的图像，如下所示：
 
  [![点击 "批注"，将显示 "德克萨斯" 的图像。](ios-maps-walkthrough-images/01-map-image.png)](ios-maps-walkthrough-images/01-map-image.png#lightbox)
 
@@ -286,6 +286,6 @@ ms.locfileid: "86932218"
 
 ## <a name="related-links"></a>相关链接
 
-- [Maps 演练示例](https://docs.microsoft.com/samples/xamarin/ios-samples/mapswalkthrough)
-- [地图演示示例](https://docs.microsoft.com/samples/xamarin/ios-samples/mapdemo)
+- [Maps 演练示例](/samples/xamarin/ios-samples/mapswalkthrough)
+- [地图演示示例](/samples/xamarin/ios-samples/mapdemo)
 - [iOS 地图](~/ios/user-interface/controls/ios-maps/index.md)
