@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: cd04450d1429092453e6d8b65278d87b5d52e45e
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 65a76c0196b79a17f935f59902c8e6d2f9f25933
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571618"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91434923"
 ---
 # <a name="troubleshooting-tvos-10-apps-built-with-xamarin"></a>排查用 Xamarin 构建的 tvOS 10 应用的问题
 
@@ -63,7 +63,7 @@ ms.locfileid: "84571618"
 
 ## <a name="core-image"></a>核心映像
 
-`CIImageProcessor`API 现在支持任意输入图像计数。 `CIImageProcessor`将删除包含在 tvOS 10 beta 1 中的 API。
+`CIImageProcessor`API 现在支持任意输入图像计数。 `CIImageProcessor` 将删除包含在 tvOS 10 beta 1 中的 API。
 
 <a name="NSUserActivity"></a>
 
@@ -86,5 +86,5 @@ ms.locfileid: "84571618"
 
 ## <a name="related-links"></a>相关链接
 
-- [tvOS 示例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
+- [tvOS 示例](/samples/browse/?products=xamarin&term=Xamarin.iOS%2btvOS)
 - [TvOS 10 中的新增功能](https://developer.apple.com/library/prerelease/content/releasenotes/General/WhatsNewinTVOS/Articles/tvOS10.html#//apple_ref/doc/uid/TP40017259-SW1)

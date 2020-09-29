@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: e779b874cda016a0cd6cc0444ff42a761ee7483e
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 793a82b7bb88f3e0c0a233c8c18c2d90f741b137
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86934675"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91434763"
 ---
 # <a name="tvos-user-interface-styles-in-xamarin"></a>Xamarin 中的 tvOS 用户界面样式
 
@@ -30,7 +30,7 @@ tvOS 10 现在支持一个深色和浅色用户界面主题，所有内置 UIKit
 
 [!["设置" 应用](user-interface-styles-images/theme01.png)](user-interface-styles-images/theme01.png#lightbox)
 
-选择了**深色**主题后，所有用户界面元素都将在深色背景上切换到浅文本：
+选择了 **深色** 主题后，所有用户界面元素都将在深色背景上切换到浅文本：
 
 [![深色主题](user-interface-styles-images/theme02.png)](user-interface-styles-images/theme02.png#lightbox)
 
@@ -42,12 +42,12 @@ tvOS 10 现在支持一个深色和浅色用户界面主题，所有内置 UIKit
 
 ## <a name="adopting-the-light-and-dark-themes"></a>采用浅色和深色主题
 
-为了支持此功能，Apple 已向类添加了一个新的 API， `UITraitCollection` 并且 tvOS 应用程序必须选择支持暗外观（通过其文件中的设置 `Info.plist` ）。
+为了支持此功能，Apple 已向类添加了一个新的 API， `UITraitCollection` tvOS 应用必须通过其文件) 中的设置选择支持 (深色外观 `Info.plist` 。
 
 若要选择支持轻型和深色主题，请执行以下操作：
 
 1. 在“解决方案资源管理器”**** 中，双击 `Info.plist` 文件，将其打开进行编辑。
-2. 从编辑器的底部选择**源**视图。
+2. 从编辑器的底部 (选择 **源** 视图) 。
 3. 添加新密钥并调用该密钥 `UIUserInterfaceStyle` ：
 
     [![UIUserInterfaceStyle 键](user-interface-styles-images/theme03.png)](user-interface-styles-images/theme03.png#lightbox)
@@ -58,9 +58,9 @@ tvOS 10 现在支持一个深色和浅色用户界面主题，所有内置 UIKit
 
 密钥有三个可能的值 `UIUserInterfaceStyle` ：
 
-- **浅**-强制 tvOS 应用的 UI 始终使用浅色主题。
-- **深色**-强制 tvOS 应用的 UI 始终使用深色主题。
-- **自动**-基于用户在 "设置" 中的首选项在 "光源" 和 "深色" 主题之间切换。 这是首选设置。
+- **浅** -强制 tvOS 应用的 UI 始终使用浅色主题。
+- **深色** -强制 tvOS 应用的 UI 始终使用深色主题。
+- **自动** -基于用户在 "设置" 中的首选项在 "光源" 和 "深色" 主题之间切换。 这是首选设置。
 
 <a name="UIKit-Theme-Support"></a>
 
@@ -73,7 +73,7 @@ tvOS 10 现在支持一个深色和浅色用户界面主题，所有内置 UIKit
 - 浅主题中的文本将为黑色。
 - 深色主题中的文本将为白色。
 
-如果开发人员曾经手动更改文本颜色（在情节提要或代码中），他们将负责根据 UI 主题处理颜色更改。
+如果开发人员在情节提要或代码) 中手动 (更改文本颜色，则他们将负责根据 UI 主题处理颜色更改。
 
 <a name="New-Blur-Effects"></a>
 
@@ -81,8 +81,8 @@ tvOS 10 现在支持一个深色和浅色用户界面主题，所有内置 UIKit
 
 为了支持 tvOS 10 应用中的浅色和深色主题，Apple 添加了两种新的模糊效果。 这些新效果将根据用户选择的 UI 主题自动调整模糊，如下所示：
 
-- `UIBlurEffectStyleRegular`-在浅色主题和深色主题中使用浅模糊。
-- `UIBlurEffectStyleProminent`-在浅色主题和深色主题中使用超大模糊效果。
+- `UIBlurEffectStyleRegular` -在浅色主题和深色主题中使用浅模糊。
+- `UIBlurEffectStyleProminent` -在浅色主题和深色主题中使用超大模糊效果。
 
 <a name="Working-with-Trait-Collections"></a>
 
@@ -90,9 +90,9 @@ tvOS 10 现在支持一个深色和浅色用户界面主题，所有内置 UIKit
 
 类的新 `UserInterfaceStyle` 属性 `UITraitCollection` 可用于获取当前选定的 UI 主题，并将是 `UIUserInterfaceStyle` 以下值之一的枚举：
 
-- **浅**-已选择光源 UI 主题。
-- **深色**-已选中深色 UI 主题。
-- **未指定**-视图尚未显示在屏幕上，因此当前 UI 主题未知。
+- **浅** -已选择光源 UI 主题。
+- **深色** -已选中深色 UI 主题。
+- **未指定** -视图尚未显示在屏幕上，因此当前 UI 主题未知。
 
 此外，特征集合在 tvOS 10 中具有以下功能：
 
@@ -180,13 +180,13 @@ SetOverrideTraitCollection (trait, this);
 
 在 Interface Builder 中编辑 tvOS 情节提要时，Apple 添加了以下功能：
 
-- 开发人员可以根据**特性检查器**中的 UI 主题来指定不同的用户界面元素变体：
+- 开发人员可以根据 **特性检查器**中的 UI 主题来指定不同的用户界面元素变体：
 
   - 现在有多个属性， **+** 可以单击这些属性来添加 UI 主题特定版本：
 
     [![添加特定于 UI 主题的版本](user-interface-styles-images/theme08.png)](user-interface-styles-images/theme08.png#lightbox)
 
-  - 开发人员可以指定新属性或单击**x**按钮将其删除：
+  - 开发人员可以指定新属性或单击 **x** 按钮将其删除：
 
     [![指定新属性或单击 x 按钮以将其删除](user-interface-styles-images/theme09.png)](user-interface-styles-images/theme09.png#lightbox)
 - 开发人员可以从 Interface Builder 中预览 "浅色" 或 "深色" 主题中的 UI 设计：
@@ -199,15 +199,15 @@ SetOverrideTraitCollection (trait, this);
 
     [![Interface Builder 中显示的主题](user-interface-styles-images/theme11.png)](user-interface-styles-images/theme11.png#lightbox)
 
-此外，tvOS 模拟器现在提供了一个键盘快捷键，使开发人员能够在调试 tvOS 应用时在浅色和深色主题之间快速切换。 使用**Command-D**键盘序列在浅色和深色之间切换。
+此外，tvOS 模拟器现在提供了一个键盘快捷键，使开发人员能够在调试 tvOS 应用时在浅色和深色主题之间快速切换。 使用 **Command-D** 键盘序列在浅色和深色之间切换。
 
 <a name="Summary"></a>
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 本文介绍了 Apple 添加到 tvOS 10 的轻型和深色 UI 主题，以及如何在 tvOS 应用程序中实现它们。
 
 ## <a name="related-links"></a>相关链接
 
-- [tvOS 示例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
+- [tvOS 示例](/samples/browse/?products=xamarin&term=Xamarin.iOS%2btvOS)
 - [TvOS 10 中的新增功能](https://developer.apple.com/library/prerelease/content/releasenotes/General/WhatsNewinTVOS/Articles/tvOS10.html#//apple_ref/doc/uid/TP40017259-SW1)

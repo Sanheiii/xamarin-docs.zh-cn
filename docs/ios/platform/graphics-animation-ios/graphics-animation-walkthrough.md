@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 632577d290c6d50a53d2f3fc236b5956f3795b35
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 1245531d68e43c833e892fe888830decc9d07c85
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86929540"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91430599"
 ---
 # <a name="using-core-graphics-and-core-animation-in-xamarinios"></a>在 Xamarin 中使用核心图形和核心动画
 
@@ -22,7 +22,7 @@ ms.locfileid: "86929540"
 
 ![已完成的应用程序](graphics-animation-walkthrough-images/00-final-app.png)
 
-在开始之前，请下载本指南附带的*GraphicsDemo*示例。 可在[此处](https://docs.microsoft.com/samples/xamarin/ios-samples/graphicsandanimation)下载该程序，它位于**GraphicsWalkthrough**目录中，通过双击来启动名为**GraphicsDemo_starter**的项目，然后打开 `DemoView` 该类。
+在开始之前，请下载本指南附带的 *GraphicsDemo* 示例。 可在 [此处](/samples/xamarin/ios-samples/graphicsandanimation) 下载该程序，它位于 **GraphicsWalkthrough** 目录中，通过双击来启动名为 **GraphicsDemo_starter** 的项目，然后打开 `DemoView` 该类。
 
 ## <a name="drawing-a-path"></a>绘制路径
 
@@ -79,7 +79,7 @@ ms.locfileid: "86929540"
     }
     ```
 
-    `SetNeedsDisplay`每次触控移动时都将调用，以便 `Draw` 在下一次运行循环时调用。
+    `SetNeedsDisplay` 每次触控移动时都将调用，以便 `Draw` 在下一次运行循环时调用。
 
 4. 我们将在方法中向路径添加行 `Draw` 并使用一条红虚线来绘制。 [实现 `Draw` ](~/ios/platform/graphics-animation-ios/core-graphics.md)，代码如下所示：
 
@@ -175,7 +175,7 @@ ms.locfileid: "86929540"
 
 ![添加了具有图像的层，并沿绘图路径进行传播](graphics-animation-walkthrough-images/00-final-app.png)
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 本文逐步介绍如何将图形和动画概念相互关联起来。 首先，我们介绍了如何使用核心图形在中绘制路径，以 `UIView` 响应用户触摸。 然后，我们介绍了如何使用核心动画使图像沿该路径行进。
 

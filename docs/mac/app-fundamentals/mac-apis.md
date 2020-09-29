@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/02/2017
-ms.openlocfilehash: c8fd877c6addac7dd865d8464e24a455b2f1aa88
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 67638a261cd9a6e8c356924d47ea4adb4eae6a80
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84573932"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91430986"
 ---
 # <a name="macos-apis-for-xamarinmac-developers"></a>适用于 Xamarin 开发人员的 macOS Api
 
@@ -22,7 +22,7 @@ ms.locfileid: "84573932"
 
 ## <a name="reading-enough-objective-c-to-be-dangerous"></a>读取足够的目标-C 是危险的
 
-有时需要读取目标 C 定义或方法调用，并将其转换为等效的 c # 方法。 让我们看看一个目标 C 函数定义并细分各个部分。 可在以下项上找到此方法（以目标为 C 的*选择器*） `NSTableView` ：
+有时需要读取目标 C 定义或方法调用，并将其转换为等效的 c # 方法。 让我们看看一个目标 C 函数定义并细分各个部分。 此方法 (可在) 中找到的目标中的 *选择器* `NSTableView` ：
 
 ```objc
 - (BOOL)canDragRowsWithIndexes:(NSIndexSet *)rowIndexes atPoint:(NSPoint)mouseDownPoint
@@ -30,13 +30,13 @@ ms.locfileid: "84573932"
 
 声明可以从左到右读取：
 
-- `-`前缀意味着它是实例（非静态）方法。 + 表示它是类（静态）方法
-- `(BOOL)`返回类型（在 c # 中为 bool）
-- `canDragRowsWithIndexes`名称的第一部分。
-- `(NSIndexSet *)rowIndexes`是第一个参数，它的类型为。 第一个参数的格式为：`(Type) pararmName`
-- `atPoint:(NSPoint)mouseDownPoint`是第二个参数及其类型。 第一个参数之后的每个参数都是以下格式：`selectorPart:(Type) pararmName`
+- `-`前缀表示 (非静态) 方法中的实例。 + 表示它是类 (静态) 方法
+- `(BOOL)` 是 (在 c # 中为布尔值的返回类型 ) 
+- `canDragRowsWithIndexes` 名称的第一部分。
+- `(NSIndexSet *)rowIndexes` 是第一个参数，它的类型为。 第一个参数的格式为： `(Type) pararmName`
+- `atPoint:(NSPoint)mouseDownPoint` 是第二个参数及其类型。 第一个参数之后的每个参数都是以下格式： `selectorPart:(Type) pararmName`
 - 此消息选择器的完整名称为： `canDragRowsWithIndexes:atPoint:` 。 请注意， `:` 最后是重要的。
-- 实际的 Xamarin c # 绑定为：`bool CanDragRows (NSIndexSet rowIndexes, PointF mouseDownPoint)`
+- 实际的 Xamarin c # 绑定为： `bool CanDragRows (NSIndexSet rowIndexes, PointF mouseDownPoint)`
 
 此选择器调用可以采用相同的方式读取：
 
@@ -45,19 +45,19 @@ ms.locfileid: "84573932"
 ```
 
 - 实例的 `v` `canDragRowsWithIndexes:atPoint` 选择器会通过两个参数传递， `set` 并 `point` 传入。
-- 在 c # 中，方法调用如下所示：`x.CanDragRows (set, point);`
+- 在 c # 中，方法调用如下所示： `x.CanDragRows (set, point);`
 
 <a name="finding_selector"></a>
 
 ## <a name="finding-the-c-member-for-a-given-selector"></a>查找给定选择器的 c # 成员
 
-找到需要调用的目标-C 选择器后，下一步是将其映射到等效的 c # 成员。 可以尝试四种方法（继续 `NSTableView CanDragRows` 示例）：
+找到需要调用的目标-C 选择器后，下一步是将其映射到等效的 c # 成员。 有四种方法可以尝试 (继续 `NSTableView CanDragRows` 执行示例) ：
 
 1. 使用自动完成列表快速扫描名称相同的内容。 由于我们知道它是一个实例 `NSTableView` ，因此你可以键入：
 
     - `NSTableView x;`
-    - `x.`[如果列表未出现，请按 ctrl + 空格键）。
-    - `CanDrag`回车
+    - `x.` [ctrl + space （如果列表未出现) 。
+    - `CanDrag` 回车
     - 右键单击方法，然后单击 "声明" 以打开 "程序集浏览器"，您可以在其中将 `Export` 属性与相关的选择器进行比较
 
 2. 搜索整个类绑定。 由于我们知道它是一个实例 `NSTableView` ，因此你可以键入：
@@ -66,9 +66,9 @@ ms.locfileid: "84573932"
     - 右键单击，然后单击 `NSTableView` "声明到程序集浏览器"
     - 搜索相关选择器
 
-3. 可以使用[XAMARIN API 联机文档](https://docs.microsoft.com/dotnet/api/?view=xamarinmac-3.0)。
+3. 可以使用 [XAMARIN API 联机文档](/dotnet/api/?view=xamarinmac-3.0) 。
 
-4. Miguel 在[此处](https://tirania.org/tmp/rosetta.html)提供了 Xamarin For Mac api 的 "Rosetta 石头" 视图，你可以在其中搜索给定的 API。 如果你的 API 不是 AppKit 或 macOS 特定的，你可能会发现它。
+4. Miguel 在 [此处](https://tirania.org/tmp/rosetta.html) 提供了 Xamarin For Mac api 的 "Rosetta 石头" 视图，你可以在其中搜索给定的 API。 如果你的 API 不是 AppKit 或 macOS 特定的，你可能会发现它。
 
 <!--
 Note: In some cases, the assembly browser can hit a bug where it will open but not jump to the right definition. Keep that tab open, switch back to your source code and try again.

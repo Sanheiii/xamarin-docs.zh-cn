@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: c02b810cc61779f5c3b5ee5eb61169e8c3fceab4
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 724d6ab8d39a5c0054302685c5f9f4ba0f3d9908
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86931204"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91431727"
 ---
 # <a name="ios-7-user-interface-overview"></a>iOS 7 用户界面概述
 
@@ -70,7 +70,7 @@ UIBarButtonItem button = new UIBarButtonItem ("Bar Button", UIBarButtonItemStyle
 
  ![示例 UIAlertView](ios7-ui-images/alert.png)
 
- 注意： UIAlertView 在 iOS 8 中已弃用。 查看有关在 iOS 8 及更高版本中使用警报视图的[警报控制器](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/alertcontroller)食谱。
+ 注意： UIAlertView 在 iOS 8 中已弃用。 查看有关在 iOS 8 及更高版本中使用警报视图的 [警报控制器](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/alertcontroller) 食谱。
 
 ### <a name="uisegmentedcontrol"></a>UISegmentedControl
 
@@ -124,7 +124,7 @@ cell.SeparatorInset = new UIEdgeInsets (0, 50, 0, 0);
 
 ### <a name="additional-control-changes"></a>其他控件更改
 
-其他 UIKit 控件也已更改，包括滑块、开关和 steppers。 这些更改是纯粹的视觉对象。 有关详细信息，请参阅 Apple 的[iOS 7 UI 转换指南](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/TransitionGuide/index.html)。
+其他 UIKit 控件也已更改，包括滑块、开关和 steppers。 这些更改是纯粹的视觉对象。 有关详细信息，请参阅 Apple 的 [iOS 7 UI 转换指南](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/TransitionGuide/index.html)。
 
 ## <a name="general-user-interface-changes"></a>常规用户界面更改
 
@@ -140,11 +140,11 @@ cell.SeparatorInset = new UIEdgeInsets (0, 50, 0, 0);
 
 iOS 7 设计为允许应用程序利用整个屏幕。 视图控制器现在显示为与状态栏和导航栏重叠（如果有），而不是显示在状态和导航栏的下方。
 
-为 iOS 7 准备应用程序时，可以使用*Interface Builder*或*Xamarin iOS 设计器*以可视方式对子视图进行重新对齐。 你还可以使用一个新的 Api 以编程方式处理全屏内容。 下面介绍了这些 Api。
+为 iOS 7 准备应用程序时，可以使用 *Interface Builder* 或 *Xamarin iOS 设计器*以可视方式对子视图进行重新对齐。 你还可以使用一个新的 Api 以编程方式处理全屏内容。 下面介绍了这些 Api。
 
 #### <a name="toplayoutguide-and-bottomlayoutguide"></a>TopLayoutGuide 和 BottomLayoutGuide
 
- `TopLayoutGuide`和用作 `BottomLayoutGuide` 视图的开始或结束位置的参考，以便内容不会被半透明 `UIKit` 栏重叠，如以下示例中所示：
+ `TopLayoutGuide` 和用作 `BottomLayoutGuide` 视图的开始或结束位置的参考，以便内容不会被半透明 `UIKit` 栏重叠，如以下示例中所示：
 
  [![不是由透明的 UIKit 栏重叠的示例内容](ios7-ui-images/clipped.png)](ios7-ui-images/clipped.png#lightbox)
 
@@ -168,12 +168,12 @@ public override void ViewDidLayoutSubviews ()
 
  [![屏幕顶部的 ImageViews 置换示例](ios7-ui-images/good2.png)](ios7-ui-images/good2.png#lightbox)
 
-有关工作示例，请参阅[ImageViewer](https://docs.microsoft.com/samples/xamarin/ios-samples/ios7-ui-updates/) 。
+有关工作示例，请参阅 [ImageViewer](/samples/xamarin/ios-samples/ios7-ui-updates/) 。
 
 在将视图添加到层次结构中后，会动态生成置换值，因此 `TopLayoutGuide` 在中尝试读取和 `BottomLayoutGuide` 值 `ViewDidLoad` 将返回0。 在加载视图之后计算值-例如，在中 `ViewDidLayoutSubviews` 。
 
 > [!IMPORTANT]
-> `TopLayoutGuide`和在 `BottomLayoutGuide` iOS 11 中已弃用，以支持新的安全区域布局。 Apple 规定，使用 safe 区域与 iOS 11 之前的 iOS 版本兼容。 有关详细信息，请参阅[更新适用于 iOS 的应用程序 11](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md#fullscreen)指南。
+> `TopLayoutGuide` 和在 `BottomLayoutGuide` iOS 11 中已弃用，以支持新的安全区域布局。 Apple 规定，使用 safe 区域与 iOS 11 之前的 iOS 版本兼容。 有关详细信息，请参阅 [更新适用于 iOS 的应用程序 11](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md#fullscreen) 指南。
 
 #### <a name="edgesforextendedlayout"></a>EdgesForExtendedLayout
 
@@ -189,7 +189,7 @@ public override void ViewDidLayoutSubviews ()
 
  [![为 iOS 6 配置的应用将包含已剪裁的视图的一部分，如以下屏幕截图所示](ios7-ui-images/clipped.png)](ios7-ui-images/clipped.png#lightbox)
 
-修改 `UIViewController.EdgesForExtendedLayout` 属性将针对此行为进行调整。 我们可以指定视图不填充任何边缘，因此我们的视图将避免在导航或工具栏（每个方向）所占用的空间中显示内容：
+修改 `UIViewController.EdgesForExtendedLayout` 属性将针对此行为进行调整。 我们可以指定视图不填充任何边缘，因此，我们的视图将避免在每个方向) 的导航或工具栏 (显示内容：
 
 ```csharp
 if (UIDevice.CurrentDevice.CheckSystemVersion (7, 0)) { 
@@ -203,7 +203,7 @@ if (UIDevice.CurrentDevice.CheckSystemVersion (7, 0)) {
 
 请注意，虽然 `TopLayoutGuide/BottomLayoutGuide` 和 api 的作用 `EdgesForExtendedLayout` 类似，但它们的作用是用于填充不同的目标。 `EdgesForExtendedLayout`默认情况下，更改此设置可能会修复为 iOS 6 设计的应用程序中的剪辑视图，但良好的 iOS 7 设计应遵循全屏幕美观，并提供全屏查看体验，并依赖 `TopLayoutGuide` 并 `BottomLayoutGuide` 适当地将旨在操纵的内容定位到用户的舒适位置。
 
-有关工作示例，请参阅[ImageViewer](https://docs.microsoft.com/samples/xamarin/ios-samples/ios7-ui-updates/) 。
+有关工作示例，请参阅 [ImageViewer](/samples/xamarin/ios-samples/ios7-ui-updates/) 。
 
 ### <a name="status-and-navigation-bars"></a>状态和导航栏
 
@@ -213,7 +213,7 @@ if (UIDevice.CurrentDevice.CheckSystemVersion (7, 0)) {
 
 #### <a name="status-bar-styles"></a>状态栏样式
 
-除了模糊和透明度，状态栏的前景可以是浅或深色（暗为默认值）。 状态栏样式可从视图控制器进行设置。 视图控制器还可以设置是隐藏还是显示状态栏。
+除了模糊和透明度外，状态栏的前景可以是浅或暗 (暗为默认) 。 状态栏样式可从视图控制器进行设置。 视图控制器还可以设置是隐藏还是显示状态栏。
 
 例如，下面的代码将重写 `PreferredStatusBarStyle` 视图控制器的方法，使状态栏显示浅前景：
 
@@ -256,12 +256,12 @@ public override bool PrefersStatusBarHidden ()
 
 ### <a name="dynamic-type"></a>动态类型
 
-在 iOS 7 中，用户可以在系统设置中指定文本大小。 对于动态类型，会动态调整字体，使其看起来很好，而不考虑大小。 `UIFont.PreferredFontForTextStyle`应使用来获取为用户控制的大小优化的字体。
+在 iOS 7 中，用户可以在系统设置中指定文本大小。 对于动态类型，会动态调整字体，使其看起来很好，而不考虑大小。 `UIFont.PreferredFontForTextStyle` 应使用来获取为用户控制的大小优化的字体。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 本文介绍 iOS 7 中对用户界面元素所做的更改。 它将检查对 UIKit 中的视图和控件所做的几项更改，同时突出显示视觉对象更改以及相关 Api 更改。 最后，它引入了新的 Api 来处理全屏内容、新的淡色颜色支持和动态类型。
 
 ## <a name="related-links"></a>相关链接
 
-- [ImageViewer （示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/ios7-ui-updates)
+- [ImageViewer (示例) ](/samples/xamarin/ios-samples/ios7-ui-updates)

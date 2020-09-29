@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/29/2017
-ms.openlocfilehash: 795bbffe17a5b14f3814967c1ec4032dfd2739aa
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: b51eeb3594f1b41f8b8f7fdaedc7577138c4f5ba
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937067"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91435671"
 ---
 # <a name="request-app-review-in-xamarinios"></a>在 Xamarin 中请求应用评审
 
@@ -65,10 +65,10 @@ namespace iOSTenThree
 
 除了新的方法之外 `RequestReview` ，开发人员还可以从应用程序中向应用商店中的应用程序的 "产品" 页提供深层链接。 通过追加 `action=write-review` 到产品页 URL 的末尾，会打开一个页面，用户可在其中自动编写应用的审核。 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 本文介绍了 Apple 添加到 iOS 10 的 RequestReview 方法，以及如何在 Xamarin 中实现它。
 
 ## <a name="related-links"></a>相关链接
 
-- [iOSTenThree 示例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios10-iostenthree/)
+- [iOSTenThree 示例](/samples/xamarin/ios-samples/ios10-iostenthree/)

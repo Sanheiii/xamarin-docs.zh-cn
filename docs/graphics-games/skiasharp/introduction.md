@@ -7,22 +7,22 @@ ms.assetid: 19506F08-2603-465E-A806-6BD01638DE90
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/03/2018
-ms.openlocfilehash: 4d0e57b98a479112b9fdf4f9c503418f3966cc73
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: fd8926edce6b2310271e15418f2498162723ba49
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "64749923"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436457"
 ---
 # <a name="skiasharp-platform-independent-examples"></a>独立于平台的 SkiaSharp 示例
 
 _这为 SkiaSharp 背后的概念提供了一个与平台无关的简短介绍。_
 
-SkiaSharp 提供了丰富且功能强大的2D 图形 API，可用于呈现为2D 缓冲区。  您可以使用这些内容来实现可合并到您的应用程序中的自定义用户界面元素和二维图形。 SkiaSharp 是一个到[Skia](https://skia.org)库的 .net 绑定，它继承了此库的功能和能力。
+SkiaSharp 提供了丰富且功能强大的2D 图形 API，可用于呈现为2D 缓冲区。  您可以使用这些内容来实现可合并到您的应用程序中的自定义用户界面元素和二维图形。 SkiaSharp 是一个到 [Skia](https://skia.org) 库的 .net 绑定，它继承了此库的功能和能力。
 
-库当前以跨平台[NuGet 包](https://www.nuget.org/packages/SkiaSharp)的形式提供，你可以通过添加 NuGet 引用将其添加到你的项目中。
+库当前以跨平台 [NuGet 包](https://www.nuget.org/packages/SkiaSharp)的形式提供，你可以通过添加 NuGet 引用将其添加到你的项目中。
 
-为了进行绘制，你的代码将创建一个 `SkCanvas`，用于描述发生绘图操作的图面。
+为了进行绘制，你的代码将创建一个， `SkCanvas` 它描述了将发生绘图操作的图面。
 
 ## <a name="obtaining-an-skcanvas"></a>获取 SKCanvas
 
@@ -36,7 +36,7 @@ using (var surface = SKSurface.Create (width: 640, height: 480, SKImageInfo.Plat
 
 ## <a name="drawing-on-skcanvas"></a>在 SKCanvas 上绘图
 
-@No__t_0 使用与您可能熟悉的其他绘图模型相似的绘图模型，它使用带有可选透明度通道的颜色，并且可以绘制线条、弧形、文本和图像。
+`SKCanvas`使用与您可能熟悉的其他绘图模型相似的绘图模型，它使用带有可选透明度通道的颜色，并且可以绘制线条、弧形、文本和图像。
 
 下面只是使用 SkiaSharp 可以完成的几个不同的操作。  在下面的示例中，变量 `canvas` 的类型为 SKCanvas。
 
@@ -133,6 +133,6 @@ using (var paint = new SKPaint()) {
 }
 ```
 
-## <a name="more-information"></a>更多信息
+## <a name="more-information"></a>详细信息
 
-有关使用 SkiaSharp 的详细信息，请参阅[API 文档](https://docs.microsoft.com/dotnet/api/skiasharp)
+有关使用 SkiaSharp 的详细信息，请参阅 [API 文档](/dotnet/api/skiasharp)

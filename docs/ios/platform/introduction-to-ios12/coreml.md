@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 08/15/2018
-ms.openlocfilehash: 6245873385caa23e37d5499daa822fa0b699ac1e
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 13eecdfe3ded3a0fd68594527f6c5bc8ca3a6c66
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032024"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91434244"
 ---
 # <a name="core-ml-2-in-xamarinios"></a>Xamarin 中的 Core ML 2
 
@@ -22,13 +22,13 @@ Core ML 是 iOS、macOS、tvOS 和 watchOS 上提供的机器学习技术。 它
 
 ## <a name="sample-app-marshabitatcoremltimer"></a>示例应用： MarsHabitatCoreMLTimer
 
-若要使用 Core ML 演示批处理预测，请查看[MarsHabitatCoreMLTimer](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-marshabitatcoremltimer)示例应用。 此示例使用经过训练的核心 ML 模型，根据各种输入来预测在 Mars 上构建 habitat 的成本：阳历面板数量、greenhouses 数和英亩数。
+若要使用 Core ML 演示批处理预测，请查看 [MarsHabitatCoreMLTimer](/samples/xamarin/ios-samples/ios12-marshabitatcoremltimer) 示例应用。 此示例使用经过训练的核心 ML 模型，根据各种输入来预测在 Mars 上构建 habitat 的成本：阳历面板数量、greenhouses 数和英亩数。
 
 本文档中的代码片段来自此示例。
 
 ## <a name="generate-sample-data"></a>生成示例数据
 
-在 `ViewController`中，示例应用的 `ViewDidLoad` 方法会调用 `LoadMLModel`，这会加载包含的核心 ML 模型：
+在中 `ViewController` ，示例应用的 `ViewDidLoad` 方法调用 `LoadMLModel` ，用于加载包含的核心 ML 模型：
 
 ```csharp
 void LoadMLModel()
@@ -59,7 +59,7 @@ async void CreateInputs(int num)
 }
 ```
 
-点击任意应用的三个按钮会执行两个预测序列：一个使用 `for` 循环，另一个使用 iOS 12 中引入的新 batch `GetPredictions` 方法：
+点击任意应用的三个按钮会执行两个预测序列：一个使用 `for` 循环，另一个使用 `GetPredictions` iOS 12 中引入的新 batch 方法：
 
 ```csharp
 async void RunTest(int num)
@@ -74,7 +74,7 @@ async void RunTest(int num)
 
 ## <a name="for-loop"></a>for 循环
 
-测试 naively 的 `for` 循环版本将循环访问指定的输入数目，并为每个输入调用[`GetPrediction`](xref:CoreML.MLModel.GetPrediction*)并放弃结果。 方法为进行预测所需的时间：
+`for`测试 naively 的循环版本会循环访问指定数目的输入， [`GetPrediction`](xref:CoreML.MLModel.GetPrediction*) 对每个输入调用，并放弃结果。 方法为进行预测所需的时间：
 
 ```csharp
 async Task FetchNonBatchResults(int num)
@@ -92,9 +92,9 @@ async Task FetchNonBatchResults(int num)
 }
 ```
 
-## <a name="getpredictions-new-batch-api"></a>GetPredictions （新建批处理 API）
+## <a name="getpredictions-new-batch-api"></a>GetPredictions (新的批处理 API) 
 
-测试的批处理版本从输入数组创建一个 `MLArrayBatchProvider` 对象（因为这是 `GetPredictions` 方法所必需的输入参数），将创建一个[`MLPredictionOptions`](xref:CoreML.MLPredictionOptions)
+测试的批处理版本 `MLArrayBatchProvider` 从输入数组创建对象 (因为这是方法) 必需的输入参数 `GetPredictions` ， [`MLPredictionOptions`](xref:CoreML.MLPredictionOptions)
 对象，该对象阻止预测计算限制于 CPU，并使用 `GetPredictions` API 提取预测，并再次放弃结果：
 
 ```csharp
@@ -118,13 +118,13 @@ async Task FetchBatchResults(int num)
 
 ## <a name="results"></a>结果
 
-在模拟器和设备上，`GetPredictions` 比基于循环的核心 ML 预测快得多。
+在模拟器和设备上， `GetPredictions` 完成速度快于基于循环的核心 ML 预测。
 
 ## <a name="related-links"></a>相关链接
 
-- [示例应用– MarsHabitatCoreMLTimer](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-marshabitatcoremltimer)
-- [核心 ML 中的新增功能，第1部分（WWDC 2018）](https://developer.apple.com/videos/play/wwdc2018/708/)
-- [核心 ML 中的新增功能，第2部分（WWDC 2018）](https://developer.apple.com/videos/play/wwdc2018/709/)
-- [Xamarin 中的 Core ML 简介](https://docs.microsoft.com/xamarin/ios/platform/introduction-to-ios11/coreml)
-- [核心 ML （Apple）](https://developer.apple.com/documentation/coreml?language=objc)
+- [示例应用– MarsHabitatCoreMLTimer](/samples/xamarin/ios-samples/ios12-marshabitatcoremltimer)
+- [核心 ML 中的新增功能，第1部分 (WWDC 2018) ](https://developer.apple.com/videos/play/wwdc2018/708/)
+- [核心 ML 中的新增功能，第2部分 (WWDC 2018) ](https://developer.apple.com/videos/play/wwdc2018/709/)
+- [Xamarin 中的 Core ML 简介](../introduction-to-ios11/coreml.md)
+- [核心 ML (Apple) ](https://developer.apple.com/documentation/coreml?language=objc)
 - [使用 Core ML 模型](https://developer.apple.com/machine-learning/build-run-models/)

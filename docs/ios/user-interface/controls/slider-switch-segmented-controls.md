@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: cf0e617b225cc7535acffa0880a0bc089ae8da28
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 01a09294d55490a723eb59b0365ac2dc516110c9
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86934051"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91434677"
 ---
 # <a name="sliders-switches-and-segmented-controls-in-xamarinios"></a>Xamarin 中的滑块、开关和分段控件
 
@@ -50,21 +50,21 @@ slider1.MaximumTrackTintColor = UIColor.Green;
  [![自定义滑块](slider-switch-segmented-controls-images/image27a.png)](slider-switch-segmented-controls-images/image28a.png#lightbox)
 
 > [!IMPORTANT]
-> 当前有一个[bug](https://stackoverflow.com/a/19496179)导致在 `ThumbTint` 运行时无法按预期方式呈现。 可以在上述代码**前面**添加以下代码行作为解决方法。 [[源](https://stackoverflow.com/a/21396794)]：
+> 当前有一个 [bug](https://stackoverflow.com/a/19496179) 导致在 `ThumbTint` 运行时无法按预期方式呈现。 可以在上述代码 **前面** 添加以下代码行作为解决方法。 [[源](https://stackoverflow.com/a/21396794)]：
 >
 > `slider1.SetThumbImage(UIImage.FromBundle("thumb.png"),UIControlState.Normal);`
 > 
-> 可以使用任何映像，因为它将被重写，但请确保将其放_在_Resources 目录中，并在代码中调用。
+> 可以使用任何映像，因为它将被重写，但请确保将其放 _在_ Resources 目录中，并在代码中调用。
 
 <a name="Switch"></a>
 
 ## <a name="switch"></a>开关
 
-iOS 使用 `UISwitch` 作为可通过其他平台上的单选按钮表示的布尔输入。 用户可以通过将*滚动块*移到**开启/关闭**位置之间来操作控件。
+iOS 使用 `UISwitch` 作为可通过其他平台上的单选按钮表示的布尔输入。 用户可以通过将 *滚动块* 移到 **开启/关闭** 位置之间来操作控件。
 
  [![开关](slider-switch-segmented-controls-images/image28a.png)](slider-switch-segmented-controls-images/image28a.png#lightbox)
 
-可以在设计器的**Properties Pad**中自定义开关的外观，这将允许您控制默认状态、**打开/关闭淡色**颜色和**打开/关闭图像**。 下图对此进行了说明：
+可以在设计器的 **Properties Pad** 中自定义开关的外观，这将允许您控制默认状态、 **打开/关闭淡色** 颜色和 **打开/关闭图像**。 下图对此进行了说明：
 
  [![切换属性](slider-switch-segmented-controls-images/image29a.png)](slider-switch-segmented-controls-images/image29a.png#lightbox)
 
@@ -78,7 +78,7 @@ switch1.On = true;
 
 ## <a name="segmented-controls"></a>分段控件
 
-分段控件是一种允许用户与少量选项交互的组织方式。 它是水平布局的，每个段都作为一个单独的按钮工作。 使用设计器时，可以在**工具箱 > 控件**下找到分段控件，如下图所示：
+分段控件是一种允许用户与少量选项交互的组织方式。 它是水平布局的，每个段都作为一个单独的按钮工作。 使用设计器时，可以在 **工具箱 > 控件**下找到分段控件，如下图所示：
 
  [![分段控件](slider-switch-segmented-controls-images/segmentedcontrol.png)](slider-switch-segmented-controls-images/segmentedcontrol.png#lightbox)
 
@@ -94,5 +94,5 @@ switch1.On = true;
 
 ## <a name="related-links"></a>相关链接
 
-- [控件（示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/controls)
+- [控制 (示例) ](/samples/xamarin/ios-samples/controls)
 - [警报控制器](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/alertcontroller)

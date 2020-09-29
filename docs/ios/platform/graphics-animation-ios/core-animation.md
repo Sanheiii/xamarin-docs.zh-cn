@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: ddd46da0787f853e949d08c45dff5be17b9451fd
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: d25d48421ad9b05925c1fa373ddba600ad3bac2e
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86932751"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91431231"
 ---
 # <a name="core-animation-in-xamarinios"></a>Xamarin 中的核心动画
 
 _本文将介绍核心动画框架，其中展示了它如何在 UIKit 中实现高性能的流畅动画，以及如何将其直接用于较低级别的动画控制。_
 
-iOS 包括[*核心动画*](https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/CoreAnimation_guide/Introduction/Introduction.html)，用于为应用程序中的视图提供动画支持。
+iOS 包括 [*核心动画*](https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/CoreAnimation_guide/Introduction/Introduction.html) ，用于为应用程序中的视图提供动画支持。
 IOS 中的所有超高平滑动画（如滚动表和在不同视图之间进行轻扫）都将执行，因为它们在内部依赖于核心动画。
 
 核心动画和核心图形框架可协同工作，创建精美的动画二维图形。 事实上，核心动画甚至可在三维空间中转换2D 图形，创建令人惊叹的迷人体验。 但是，若要创建真正的3D 图形，你需要使用诸如 OpenGL ES 之类的内容，或者将游戏转换为 API （如 MonoGame），尽管3D 超出了本文的范围。
@@ -46,7 +46,7 @@ UIKit 提供了几项功能，使你可以轻松地向应用程序添加动画�
 
 ### <a name="view-controller-transitions"></a>视图控制器转换
 
- `UIViewController`为在视图控制器间通过方法过渡提供内置支持 `PresentViewController` 。 使用时 `PresentViewController` ，可以选择性地对转换为第二个控制器的转换进行动画处理。
+ `UIViewController` 为在视图控制器间通过方法过渡提供内置支持 `PresentViewController` 。 使用时 `PresentViewController` ，可以选择性地对转换为第二个控制器的转换进行动画处理。
 
 例如，假设有一个具有两个控制器的应用程序，在该应用程序中触摸第一个控制器中的一个按钮 `PresentViewController` 以显示第二个控制器。 若要控制用于显示第二个控制器的转换动画，只需 [`ModalTransitionStyle`](xref:UIKit.UIModalTransitionStyle) 按如下所示设置其属性：
 
@@ -58,9 +58,9 @@ SecondViewController vc2 = new SecondViewController {
 
 在这种情况下 `PartialCurl` ，将使用动画，尽管有几个动画可用，包括：
 
-- `CoverVertical`–从屏幕底部向上滑动
-- `CrossDissolve`–旧视图 & 新视图淡出
-- `FlipHorizontal`-从右到左水平翻转。 在消除上，过渡从左向右翻转。
+- `CoverVertical` –从屏幕底部向上滑动
+- `CrossDissolve` –旧视图 & 新视图淡出
+- `FlipHorizontal` -从右到左水平翻转。 在消除上，过渡从左向右翻转。
 
 若要对转换进行动画处理，请 `true` 将作为第二个参数传递到 `PresentViewController` ：
 
@@ -88,7 +88,7 @@ UIView.Transition (
   completion: () => { Console.WriteLine ("transition complete"); });
 ```
 
-`UIView.Transition`还采用一个 `duration` 参数来控制动画运行的时间， [`options`](xref:UIKit.UIViewAnimationOptions) 并指定要使用的动画和缓动函数。 此外，还可以指定在动画完成时要调用的完成处理程序。
+`UIView.Transition` 还采用一个 `duration` 参数来控制动画运行的时间， [`options`](xref:UIKit.UIViewAnimationOptions) 并指定要使用的动画和缓动函数。 此外，还可以指定在动画完成时要调用的完成处理程序。
 
 下面的屏幕截图显示使用时图像视图之间的动画转换 `TransitionFlipFromTop` ：
 
@@ -133,17 +133,17 @@ UIView.Animate (
 
 ## <a name="using-core-animation"></a>使用核心动画
 
- `UIView`动画允许多种功能，如果可能，则应使用动画。 如前文所述，UIView 动画使用核心动画框架。 但是，某些操作不能使用 `UIView` 动画完成，如对不能使用视图进行动画处理的附加属性进行动画处理，或沿非线性路径插值。 在需要更精细控制的情况下，也可以直接使用核心动画。
+ `UIView` 动画允许多种功能，如果可能，则应使用动画。 如前文所述，UIView 动画使用核心动画框架。 但是，某些操作不能使用 `UIView` 动画完成，如对不能使用视图进行动画处理的附加属性进行动画处理，或沿非线性路径插值。 在需要更精细控制的情况下，也可以直接使用核心动画。
 
 ### <a name="layers"></a>图层
 
-使用核心动画时，动画通过类型为的*层*发生 `CALayer` 。 层在概念上类似于视图，其中有一个层层次结构，与视图层次结构非常类似。 实际上，层返回视图，视图添加了对用户交互的支持。 您可以通过视图的属性访问任何视图的层 `Layer` 。 事实上，在的方法中使用的上下文 `Draw` `UIView` 实际上是从层创建的。 在内部，将支持层的 `UIView` 委托设置为视图本身，这是调用 `Draw` 。 因此，当绘制到时 `UIView` ，实际上就是绘制到它的层。
+使用核心动画时，动画通过类型为的 *层*发生 `CALayer` 。 层在概念上类似于视图，其中有一个层层次结构，与视图层次结构非常类似。 实际上，层返回视图，视图添加了对用户交互的支持。 您可以通过视图的属性访问任何视图的层 `Layer` 。 事实上，在的方法中使用的上下文 `Draw` `UIView` 实际上是从层创建的。 在内部，将支持层的 `UIView` 委托设置为视图本身，这是调用 `Draw` 。 因此，当绘制到时 `UIView` ，实际上就是绘制到它的层。
 
 层动画可以是隐式的，也可以是显式的。 隐式动画是声明性的。 只需声明应更改的层属性，动画就会正常运行。 另一方面，显式动画是通过添加到层的动画类创建的。 显式动画允许对动画的创建方式进行额外的控制。 以下部分深入探讨隐式和显式动画。
 
 ### <a name="implicit-animations"></a>隐式动画
 
-对层的属性进行动画处理的一种方法是通过隐式动画。 `UIView`动画创建隐式动画。 不过，也可以直接针对层创建隐式动画。
+对层的属性进行动画处理的一种方法是通过隐式动画。 `UIView` 动画创建隐式动画。 不过，也可以直接针对层创建隐式动画。
 
 例如，下面的代码从图像设置一个层 `Contents` ，设置边框宽度和颜色，并将该层添加为视图层的子层：
 
@@ -194,7 +194,7 @@ public override void ViewDidAppear (bool animated)
 
 除了隐式动画以外，核心动画还包含各种从继承的类， `CAAnimation` 这些类可让你封装动画，然后将其显式添加到层。 它们允许对动画进行更精细的控制，如修改动画的起始值、组合动画并指定关键帧以允许非线性路径。
 
-下面的代码演示了一个显式动画的示例，该示例 `CAKeyframeAnimation` 为前面显示的层（在 "隐式动画" 部分中）使用：
+下面的代码演示了一个显式动画的示例，该示例使用 `CAKeyframeAnimation` 的是 (在 "隐式动画" 部分) 中的前面显示的层：
 
 ```csharp
 public override void ViewDidAppear (bool animated)
@@ -231,13 +231,13 @@ public override void ViewDidAppear (bool animated)
 
  ![此屏幕截图显示了一个层，其中包含图像通过指定路径进行动画处理](core-animation-images/12-explicit-animation.png)
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
-本文介绍了通过*核心动画*框架提供的动画功能。 我们检查了核心动画，同时显示了它在 UIKit 中的动画效果，以及如何将其直接用于较低级别的动画控件。
+本文介绍了通过 *核心动画* 框架提供的动画功能。 我们检查了核心动画，同时显示了它在 UIKit 中的动画效果，以及如何将其直接用于较低级别的动画控件。
 
 ## <a name="related-links"></a>相关链接
 
-- [核心动画示例](https://docs.microsoft.com/samples/xamarin/ios-samples/graphicsandanimation)
+- [核心动画示例](/samples/xamarin/ios-samples/graphicsandanimation)
 - [核心图形](~/ios/platform/graphics-animation-ios/core-graphics.md)
 - [图形和动画演练](~/ios/platform/graphics-animation-ios/graphics-animation-walkthrough.md)
 - [核心动画](https://github.com/xamarin/recipes/tree/master/Recipes/ios/animation/coreanimation)

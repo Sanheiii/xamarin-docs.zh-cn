@@ -1,37 +1,37 @@
 ---
 title: Xamarin 中的语音识别
-description: 本文介绍了新的语音 API，并演示了如何在 Xamarin iOS 应用程序中实现此功能，以支持连续语音识别和转录语音（从实时或录制的音频流）到文本。
+description: 本文介绍了新的语音 API，并演示了如何在 Xamarin iOS 应用程序中实现此功能，以支持从实时或录制的音频流) 到文本的转录语音识别和语音 (。
 ms.prod: xamarin
 ms.assetid: 64FED50A-6A28-4833-BEAE-63CEC9A09010
 ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: c4b818bcf3c4a5280c0280a2e28e2f59c65c8c81
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 98cbcd333d223d741602786643ef1948915d7dfc
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86930216"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436467"
 ---
 # <a name="speech-recognition-in-xamarinios"></a>Xamarin 中的语音识别
 
-_本文介绍了新的语音 API，并演示了如何在 Xamarin iOS 应用程序中实现此功能，以支持连续语音识别和转录语音（从实时或录制的音频流）到文本。_
+_本文介绍了新的语音 API，并演示了如何在 Xamarin iOS 应用程序中实现此功能，以支持从实时或录制的音频流) 到文本的转录语音识别和语音 (。_
 
-Apple 在 iOS 10 中的新增功能发布了语音识别 API，该 API 允许 iOS 应用支持连续语音识别和转录语音（从实时或录制的音频流）到文本。
+Apple 在 iOS 10 中的新增功能发布了语音识别 API，该 API 允许 iOS 应用支持连续语音识别，并使转录或录制的音频流中的语音 () 文本。
 
 根据 Apple，语音识别 API 具有以下功能和优势：
 
 - 高度准确
 - 图稿状态
 - 易用
-- 快
+- Fast
 - 支持多种语言
 - 尊重用户隐私
 
 ## <a name="how-speech-recognition-works"></a>语音识别的工作方式
 
-语音识别在 iOS 应用程序中实现，方法是获取实时或预先录制的音频（采用 API 支持的任何一种语言），并将其传递给语音识别器，这会返回明文形式的字词。
+语音识别在 iOS 应用程序中实现，方法是：以 API) 支持的任何一种语言获取实时或预先录制的音频 (，并将其传递给语音识别器，这会返回口述字词的纯文本。
 
 [![语音识别的工作方式](speech-images/speech01.png)](speech-images/speech01.png#lightbox)
 
@@ -39,9 +39,9 @@ Apple 在 iOS 10 中的新增功能发布了语音识别 API，该 API 允许 iO
 
 当大多数用户在 iOS 设备上考虑语音识别时，他们会想到内置的 Siri 语音助手，该助手是在 iOS 5 中与 iPhone 4S 一起发布的键盘听写。
 
-支持 TextKit （如或）的任何 interface 元素都支持键盘听写 `UITextField` `UITextArea` ，并由用户在 iOS 虚拟键盘中单击 "听写" 按钮（直接位于空格键左侧）激活。
+支持 TextKit (（如或) ）的任何 interface 元素都支持键盘听写 `UITextField` `UITextArea` ，并由用户在 iOS 虚拟键盘中直接 (单击 ") " 空格键的左侧激活。
 
-Apple 已经发布了以下键盘听写统计信息（从2011开始收集）：
+自 2011) 起，Apple 发布了以下键盘听写统计信息 (：
 
 - 键盘听写已广泛使用，因为它已在 iOS 5 中发布。
 - 大约65000个应用每天使用该应用。
@@ -49,7 +49,7 @@ Apple 已经发布了以下键盘听写统计信息（从2011开始收集）：
 
 键盘听写非常易于使用，因为它不需要开发人员在应用程序的 UI 设计中使用 TextKit interface 元素。 键盘听写还利用了不需要应用程序的任何特殊权限请求，然后才能使用。
 
-使用新语音识别 Api 的应用需要用户授予特殊权限，因为语音识别需要在 Apple 服务器上传输和临时存储数据。 有关详细信息，请参阅[安全和隐私增强](~/ios/app-fundamentals/security-privacy.md)文档。
+使用新语音识别 Api 的应用需要用户授予特殊权限，因为语音识别需要在 Apple 服务器上传输和临时存储数据。 有关详细信息，请参阅 [安全和隐私增强](~/ios/app-fundamentals/security-privacy.md) 文档。
 
 虽然键盘听写很容易实现，但它也有几个限制和缺点：
 
@@ -78,20 +78,20 @@ Apple 在 iOS 10 中的新增功能，它提供了语音识别 API，使 iOS 应
 
 Apple 提供了一个可用性 API 来确定当前是否可以翻译给定的语言。 应用应使用此 API，而不是直接测试 internet 连接本身。
 
-正如上面的键盘听写部分所述，语音识别需要通过 internet 在 Apple 服务器上传输数据和临时存储数据，因此，应用_必须_通过 `NSSpeechRecognitionUsageDescription` 在其文件中包含密钥 `Info.plist` 并调用方法来请求用户执行识别的权限 `SFSpeechRecognizer.RequestAuthorization` 。 
+正如上面的键盘听写部分所述，语音识别需要通过 internet 在 Apple 服务器上传输数据和临时存储数据，因此，应用 _必须_ 通过 `NSSpeechRecognitionUsageDescription` 在其文件中包含密钥 `Info.plist` 并调用方法来请求用户执行识别的权限 `SFSpeechRecognizer.RequestAuthorization` 。 
 
-基于用于语音识别的音频源，可能需要对应用文件进行其他更改 `Info.plist` 。 有关详细信息，请参阅[安全和隐私增强](~/ios/app-fundamentals/security-privacy.md)文档。
+基于用于语音识别的音频源，可能需要对应用文件进行其他更改 `Info.plist` 。 有关详细信息，请参阅 [安全和隐私增强](~/ios/app-fundamentals/security-privacy.md) 文档。
 
 ## <a name="adopting-speech-recognition-in-an-app"></a>在应用中采用语音识别
 
 开发人员必须执行四个主要步骤，才能在 iOS 应用中采用语音识别：
 
 - 使用密钥在应用文件中提供使用说明 `Info.plist` `NSSpeechRecognitionUsageDescription` 。 例如，照相机应用可能包含以下说明， _"这只允许您通过说" 奶酪 "一词来拍摄照片。_
-- 通过调用 `SFSpeechRecognizer.RequestAuthorization` 方法来提供一个说明（在上面的密钥中提供 `NSSpeechRecognitionUsageDescription` ），以说明应用希望语音识别在对话框中访问用户并允许他们接受或拒绝的原因。
+- 请求授权，方法是调用 `SFSpeechRecognizer.RequestAuthorization` 方法以提供一个说明 (在) 上述密钥中提供，因为 `NSSpeechRecognitionUsageDescription` 应用希望语音识别在对话框中访问用户并允许他们接受或拒绝。
 - 创建语音识别请求：
   - 对于磁盘上预先录制的音频，请使用 `SFSpeechURLRecognitionRequest` 类。
-  - 对于实时音频（或内存中的音频），请使用 `SFSPeechAudioBufferRecognitionRequest` 类。
-- 将语音识别请求传递到语音识别器（ `SFSpeechRecognizer` ）以开始识别。 应用可以选择性地在返回的上保存 `SFSpeechRecognitionTask` 来监视和跟踪识别结果。
+  - 对于实时音频 (或) 内存中的音频，请使用 `SFSPeechAudioBufferRecognitionRequest` 类。
+- 将语音识别请求传递到语音识别器 (`SFSpeechRecognizer`) 开始识别。 应用可以选择性地在返回的上保存 `SFSpeechRecognitionTask` 来监视和跟踪识别结果。
 
 下面将详细介绍这些步骤。
 
@@ -102,7 +102,7 @@ Apple 提供了一个可用性 API 来确定当前是否可以翻译给定的语
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 1. 双击该 `Info.plist` 文件将其打开以进行编辑。
-2. 切换到**源**视图： 
+2. 切换到 **源** 视图： 
 
     [![源视图](speech-images/speech02.png)](speech-images/speech02.png#lightbox)
 3. 单击 "**添加新项**"，输入作为 "类型" 的 `NSSpeechRecognitionUsageDescription` **属性**，将 " `String` **用法说明**" 作为**值**。 **Type** 例如： 
@@ -127,7 +127,7 @@ Apple 提供了一个可用性 API 来确定当前是否可以翻译给定的语
 -----
 
 > [!IMPORTANT]
-> 如果未能提供上述任一 `Info.plist` 项（或），则在 `NSSpeechRecognitionUsageDescription` `NSMicrophoneUsageDescription` 尝试访问语音识别或实时音频的麦克风时，可能会导致应用失败且不发出警告。
+> 如果未能提供上述任一 `Info.plist` 密钥 (`NSSpeechRecognitionUsageDescription` 或 `NSMicrophoneUsageDescription`) 可能导致应用在尝试访问语音识别或实时音频麦克风时出现故障，而不发出警告。
 
 ### <a name="requesting-authorization"></a>请求授权
 
@@ -230,13 +230,13 @@ public void RecognizeFile (NSUrl url)
 }
 ```
 
-首先详细查看此代码，它会尝试创建语音识别器（ `SFSpeechRecognizer` ）。 如果语音识别不支持默认语言， `null` 则返回，并且函数将退出。
+首先详细查看此代码，它会尝试创建)  (的语音识别器 `SFSpeechRecognizer` 。 如果语音识别不支持默认语言， `null` 则返回，并且函数将退出。
 
 如果语音识别器适用于默认语言，则应用将检查其当前是否可用于识别（使用 `Available` 属性）。 例如，如果设备没有活动的 internet 连接，则识别可能不可用。
 
 `SFSpeechUrlRecognitionRequest`是从 `NSUrl` iOS 设备上的预处理文件位置创建的，并将其传递给语音识别器以使用回调例程进行处理。
 
-调用回调时，如果 `NSError` 不 `null` 存在必须处理的错误，则为。 由于语音识别是以增量方式完成的，因此回调例程可能会被调用多次，因此，将对 `SFSpeechRecognitionResult.Final` 属性进行测试，以查看翻译是否完整以及是否写出了转换的最佳版本（ `BestTranscription` ）。
+调用回调时，如果 `NSError` 不 `null` 存在必须处理的错误，则为。 由于语音识别是以增量方式完成的，因此回调例程可能会被调用多次，因此，将对 `SFSpeechRecognitionResult.Final` 属性进行测试，以查看翻译是否已完成，并将翻译的最佳版本写入 (`BestTranscription`) 中。
 
 ### <a name="recognizing-live-speech"></a>识别实时语音
 
@@ -343,7 +343,7 @@ if (error != null) {
 }
 ```
 
-识别任务将启动，并将句柄保存到识别任务（ `SFSpeechRecognitionTask` ）：
+识别任务将启动，并将句柄保存到识别任务 (`SFSpeechRecognitionTask`) ：
 
 ```csharp
 RecognitionTask = SpeechRecognizer.GetRecognitionTask (LiveSpeechRequest, (SFSpeechRecognitionResult result, NSError err) => {
@@ -370,7 +370,7 @@ RecognitionTask.Cancel ();
 `RecognitionTask.Cancel`如果用户取消转换以释放内存和设备的处理器，则必须调用此方法。
 
 > [!IMPORTANT]
-> `NSSpeechRecognitionUsageDescription`如果无法提供或键，则在 `NSMicrophoneUsageDescription` `Info.plist` 尝试访问语音识别或实时音频的麦克风（）时，应用程序将无法正常运行 `var node = AudioEngine.InputNode;` 。 有关详细信息，请参阅上面的 "**提供使用说明**" 部分。
+> 如果无法提供或键，则在 `NSSpeechRecognitionUsageDescription` `NSMicrophoneUsageDescription` `Info.plist` 尝试访问语音识别或实时音频 () 的麦克风时，可能会导致应用失败且不发出警告 `var node = AudioEngine.InputNode;` 。 有关详细信息，请参阅上面的 " **提供使用说明** " 部分。
 
 ## <a name="speech-recognition-limits"></a>语音识别限制
 
@@ -390,12 +390,12 @@ RecognitionTask.Cancel ();
 
 - 录制用户的语音时，一定要清楚地指示记录是在应用的用户界面中进行的。 例如，应用可能会播放一条 "录音" 声并显示录制指示器。
 - 不要将语音识别用于敏感用户信息，例如密码、运行状况数据或财务信息。
-- 在操作_之前_显示识别结果。 这不仅提供有关应用程序的反馈，而且允许用户在发生识别错误时进行处理。
+- 在操作 _之前_ 显示识别结果。 这不仅提供有关应用程序的反馈，而且允许用户在发生识别错误时进行处理。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
-本文介绍了新的语音 API，并演示了如何在 Xamarin iOS 应用程序中实现此功能，以支持连续语音识别和转录语音（从实时或录制的音频流）到文本。 
+本文介绍了新的语音 API，并演示了如何在 Xamarin iOS 应用程序中实现此功能，以支持从实时或录制的音频流) 到文本的连续语音识别和转录语音 (。 
 
 ## <a name="related-links"></a>相关链接
 
-- [SpeakToMe （示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/ios10-speaktome)
+- [SpeakToMe (示例) ](/samples/xamarin/ios-samples/ios10-speaktome)

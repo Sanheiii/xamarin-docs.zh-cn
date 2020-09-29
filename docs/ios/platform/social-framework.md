@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: a77b5cd33710a7a8755441efc8b7134d82855c2a
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 0c5f2a5c6a3274b298d3de216a2a0f42ed590611
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937964"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436483"
 ---
 # <a name="social-framework-in-xamarinios"></a>Xamarin 中的社交框架
 
@@ -50,11 +50,11 @@ if (SLComposeViewController.IsAvailable (SLServiceKind.Twitter)) {
 }
 ```
 
- `SLComposeViewController`从不直接发送推文，无需用户交互。 但是，可以通过以下方法对其进行初始化：
+ `SLComposeViewController` 从不直接发送推文，无需用户交互。 但是，可以通过以下方法对其进行初始化：
 
-- `SetInitialText`–添加要在推文中显示的初始文本。
-- `AddUrl`–将 Url 添加到推文。
-- `AddImage`–将图像添加到推文。
+- `SetInitialText` –添加要在推文中显示的初始文本。
+- `AddUrl` –将 Url 添加到推文。
+- `AddImage` –将图像添加到推文。
 
 初始化后，调用会 `PresentVIewController` 显示由创建的视图 `SLComposeViewController` 。 然后，用户可以选择编辑并发送推文，或取消发送。 无论是哪种情况，控制器都应该在中解除 `CompletionHandler` ，还可以检查结果，以查看推文是已发送还是已取消，如下所示：
 
@@ -136,7 +136,7 @@ namespace SocialFrameworkDemo
 
 社交框架还包括对向社交网络发出 HTTP 请求的支持。 它将请求封装到 `SLRequest` 用于面向特定社交网络 API 的类中。
 
-例如，以下代码向 Twitter 发出请求，以获取公共时间线（通过扩展上面给出的代码）：
+例如，以下代码通过扩展) 上给出的代码，向 Twitter 发出请求以获取公共时间线 (：
 
 ```csharp
 using Accounts;
@@ -240,7 +240,7 @@ accountStore.RequestAccess (accountType, (granted, error) => {
 });
 ```
 
-当用户请求时间线数据时（通过点击 UI 中的按钮），应用首先会形成从 Twitter 访问数据的请求：
+当用户通过点击 UI) 中的按钮 (请求时间线数据时，应用首先会形成从 Twitter 访问数据的请求：
 
 ```csharp
 // Initialize request
@@ -249,7 +249,7 @@ var url = new NSUrl("https://api.twitter.com/1.1/statuses/user_timeline.json?cou
 var request = SLRequest.Create (SLServiceKind.Twitter, SLRequestMethod.Get, url, parameters);
 ```
 
-此示例通过在 URL 中包含来将返回的结果限制为最后10个条目 `?count=10` 。 最后，它会将请求附加到 Twitter 帐户（在上面加载），并对 Twitter 执行调用以提取数据：
+此示例通过在 URL 中包含来将返回的结果限制为最后10个条目 `?count=10` 。 最后，它会将请求附加到) 上面加载的 Twitter 帐户 (，并对 Twitter 执行调用以提取数据：
 
 ```csharp
 // Request data
@@ -278,11 +278,11 @@ request.PerformRequest ((data, response, error) => {
 });
 ```
 
-如果数据已成功加载，将显示原始 JSON 数据（如下面的示例输出所示）：
+如果已成功加载数据，原始 JSON 数据将显示 (如下面的示例输出中所示) ：
 
 [![原始 JSON 数据显示的示例](social-framework-images/twitter03.png)](social-framework-images/twitter03.png#lightbox)
 
-在实际应用中，可以将 JSON 结果分析为正常，并向用户显示结果。 请参阅[Web 服务简介](~/cross-platform/data-cloud/web-services/index.md)，了解有关如何分析 JSON 的信息。
+在实际应用中，可以将 JSON 结果分析为正常，并向用户显示结果。 请参阅 [Web 服务简介](~/cross-platform/data-cloud/web-services/index.md) ，了解有关如何分析 JSON 的信息。
 
 ## <a name="connecting-to-facebook"></a>连接到 Facebook
 
@@ -362,13 +362,13 @@ namespace SocialFrameworkDemo
 }
 ```
 
-与 Facebook 一起使用时， `SLComposeViewController` 会显示一个视图，该视图与 Twitter 示例大致相同，在这种情况下显示**Facebook**为标题：
+与 Facebook 一起使用时， `SLComposeViewController` 会显示一个视图，该视图与 Twitter 示例大致相同，在这种情况下显示 **Facebook** 为标题：
 
 [![SLComposeViewController 显示](social-framework-images/facebook02.png)](social-framework-images/facebook02.png#lightbox)
 
 ### <a name="calling-facebook-graph-api"></a>调用 Facebook 图形 API
 
-类似于 Twitter 示例，社交框架的 `SLRequest` 对象可与 Facebook 的 GRAPH API 一起使用。 例如，下面的代码从 graph API 返回有关 Xamarin 帐户的信息（通过展开上面给出的代码）：
+类似于 Twitter 示例，社交框架的 `SLRequest` 对象可与 Facebook 的 GRAPH API 一起使用。 例如，以下代码通过扩展) 上给出的代码，从 graph API 返回有关 Xamarin 帐户 (的信息：
 
 ```csharp
 using Accounts;
@@ -451,7 +451,7 @@ partial void RequestFacebookTimeline_TouchUpInside (UIButton sender)
 #endregion
 ```
 
-此代码与上面提供的 Twitter 版本之间唯一的区别在于 Facebook 需要获取开发人员/应用特定 ID （可从 Facebook 开发人员门户生成），在发出请求时，必须将其设置为选项：
+此代码与上面提供的 Twitter 版本之间唯一的区别在于 Facebook 需要获取开发人员/应用特定 ID (可以从 Facebook 的开发人员门户生成) 该 ID 在发出请求时必须设置为一个选项：
 
 ```csharp
 var options = new AccountStoreOptions ();
@@ -464,13 +464,13 @@ accountStore.RequestAccess (accountType, options, (granted, error) => {
 });
 ```
 
-如果未设置此选项（或使用无效的键），将导致错误或不返回任何数据。
+如果未设置此选项 (或使用无效的密钥) 会导致错误或不返回数据。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 本文演示了如何使用社交框架与 Twitter 和 Facebook 交互。 其中显示了在何处为设备设置中的每个社交网络配置帐户。 还介绍了如何使用 `SLComposeViewController` 来显示用于发布到社交网络的统一视图。 此外，它还检查了 `SLRequest` 用于调用每个社交网络 API 的类。
 
 ## <a name="related-links"></a>相关链接
 
-- [SocialFrameworkDemo （示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/socialframeworkdemo)
+- [SocialFrameworkDemo (示例) ](/samples/xamarin/ios-samples/socialframeworkdemo)
 - [Web 服务简介](~/cross-platform/data-cloud/web-services/index.md)

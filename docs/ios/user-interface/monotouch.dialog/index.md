@@ -1,18 +1,18 @@
 ---
 title: 适用于 Xamarin 的 Monotouch.dialog 简介
-description: 本文档介绍 Monotouch.dialog （MT）。D），是一种框架，用于通过 Xamarin 进行快速的声明性 UI 开发。 本文介绍如何使用 Monotouch.dialog Api 在代码或 JSON 中创建接口，并使用请求刷新、搜索、背景图像加载等功能。
+description: 本文档介绍 (MT 的 Monotouch.dialog。D) ，一种框架，用于通过 Xamarin 进行快速的声明性 UI 开发。 本文介绍如何使用 Monotouch.dialog Api 在代码或 JSON 中创建接口，并使用请求刷新、搜索、背景图像加载等功能。
 ms.prod: xamarin
 ms.assetid: 52A35B24-C23B-8461-A8FF-5928A2128FB0
 ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: davidortinau
 ms.author: daortin
-ms.openlocfilehash: 8216e0e41eea98dcdcd34ccfac6a9573224f3093
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: c57a6d02488272934ea77714b07c0328ac501d26
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86936664"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91431210"
 ---
 # <a name="introduction-to-monotouchdialog-for-xamarinios"></a>适用于 Xamarin 的 Monotouch.dialog 简介
 
@@ -54,8 +54,8 @@ public class Expense
 
 隶书.D 通过将所有这些代码封装到用于创建表的泛型 API 中来简化此过程。 然后，它在该 API 的顶层提供了一个抽象，它允许使用声明性对象绑定语法，使其变得更加简单。 在这种情况下，MT 提供两个 Api。2-d
 
-- **低级别元素 api** –*元素 api*基于创建元素的层次结构树，这些元素表示屏幕及其组件。 元素 API 为开发人员提供了最大的灵活性和控制。 此外，元素 API 通过 JSON 提供对声明性定义的高级支持，这允许实现极其快速的声明，以及从服务器动态地生成 UI。 
-- **高级别反射 api** （也称为*绑定*  *api* ），其中的类用 UI 提示和 MT 进行批注。D 基于对象自动创建屏幕，并在屏幕上显示的内容（以及（可选）以及支持的基础对象之间提供绑定。 上面的示例演示了反射 API 的用法。 此 API 不提供元素 API 执行的精细控制，但通过基于类属性自动生成元素层次结构，进一步降低了复杂性。 
+- **低级别元素 api** –  *元素 api* 基于创建元素的层次结构树，这些元素表示屏幕及其组件。 元素 API 为开发人员提供了最大的灵活性和控制。 此外，元素 API 通过 JSON 提供对声明性定义的高级支持，这允许实现极其快速的声明，以及从服务器动态地生成 UI。 
+- **高级别反射 api** （也称为  *绑定*  *api* ），其中的类用 UI 提示和 MT 进行批注。D 基于对象自动创建屏幕，并在显示的内容之间提供绑定 (，还可以选择在屏幕上编辑) 和基础对象支持。 上面的示例演示了反射 API 的用法。 此 API 不提供元素 API 执行的精细控制，但通过基于类属性自动生成元素层次结构，进一步降低了复杂性。 
 
 隶书.D 附带了大量内置 UI 元素，用于创建屏幕，但它也能识别自定义元素和高级屏幕布局的需求。 因此，可扩展性是融入 API 的一流功能。 开发人员可以扩展现有元素，或创建新元素，然后无缝集成。
 
@@ -63,17 +63,17 @@ public class Expense
 
 本文将全面介绍如何使用 MT。D. 包括：
 
-- **MT。D 组件**–这将重点介绍构成 MT 的类。D：使快速启动速度更快。 
-- **元素参考**– MT 的内置元素的综合列表。2-d. 
-- **高级用法**–这涉及到一些高级功能，例如：请求刷新、搜索、背景图像加载、使用 LINQ 生成元素层次结构，以及创建自定义元素、单元和控制器以与 MT 一起使用。2-d. 
+- **MT。D 组件** –这将重点介绍构成 MT 的类。D：使快速启动速度更快。 
+- **元素参考** – MT. d. 内置元素的完整列表。 
+- **高级用法** –这涉及到一些高级功能，例如：请求刷新、搜索、背景图像加载、使用 LINQ 生成元素层次结构，以及创建自定义元素、单元和控制器以与 MT 一起使用。 
 
 ## <a name="setting-up-mtd"></a>设置 MT。2-d
 
-隶书.D 与 Xamarin 一起分发。 若要使用此方法，请右键单击 Visual Studio 2017 或 Visual Studio for Mac 中的 Xamarin iOS 项目的 "**引用**" 节点，然后添加对**monotouch.dialog**程序集的引用。 然后， `using MonoTouch.Dialog` 根据需要在源代码中添加语句。
+隶书.D 与 Xamarin 一起分发。 若要使用此方法，请右键单击 Visual Studio 2017 或 Visual Studio for Mac 中的 Xamarin iOS 项目的 " **引用** " 节点，然后添加对 **monotouch.dialog** 程序集的引用。 然后， `using MonoTouch.Dialog` 根据需要在源代码中添加语句。
 
 ## <a name="understanding-the-pieces-of-mtd"></a>了解 MT 的各个部分。2-d
 
-即使使用反射 API，MT 也是如此。D 在其下创建一个元素层次结构，就像是直接通过元素 API 创建的一样。 此外，在上一节中提到的 JSON 支持也会创建元素。 出于此原因，必须基本了解 MT 的组成部分。2-d.
+即使使用反射 API，MT 也是如此。D 在其下创建一个元素层次结构，就像是直接通过元素 API 创建的一样。 此外，在上一节中提到的 JSON 支持也会创建元素。 出于此原因，重要的一点是要对 MT 的构成部分有一个基本的了解。
 
 隶书.D 使用以下四个部分生成屏幕：
 
@@ -132,12 +132,12 @@ var root = new RootElement ("Meals") {
 
 在上面的示例中，当用户点击 "甜品" 时，Monotouch.dialog 会创建一个新页面，并导航到根为 "甜品" 的单选按钮，并具有具有三个值的单选组。
 
-在此特定示例中，单选组将在 "甜品" 部分中选择 "巧克力蛋糕"，因为我们将值 "2" 传递到 RadioGroup。 这意味着选取列表中的第三项（零索引）。
+在此特定示例中，单选组将在 "甜品" 部分中选择 "巧克力蛋糕"，因为我们将值 "2" 传递到 RadioGroup。 这意味着选取列表中的第三项 (零索引) 。
 
 调用 Add 方法或使用 c # 4 初始值设定项语法添加部分。
 提供插入方法以插入带有动画的部分。
 
-如果你使用组实例（而不是 RadioGroup）创建 RootElement，则在某一节中显示的 RootElement 的汇总值将是与该组具有相同键的所有 BooleanElements 和 CheckboxElements 的累计计数。
+如果使用 (而不是) RadioGroup 的组实例创建 RootElement，则在部分中显示的 RootElement 的汇总值将是与该组具有相同键的所有 BooleanElements 和 CheckboxElements 的累计计数。
 
 ### <a name="sections"></a>部分
 
@@ -164,7 +164,7 @@ var section = new Section (header);
 #### <a name="handling-nsaction"></a>处理 NSAction
 
 隶书.D 将曲面 `NSAction` 作为处理回调的委托。
-例如，假设您想要为 MT 创建的表格单元处理触控事件。2-d. 使用 MT 创建元素时。D. 只需提供一个回调函数，如下所示：
+例如，假设您想要为由 MT 创建的表格单元处理触控事件。 使用 MT 创建元素时。D. 只需提供一个回调函数，如下所示：
 
 ```csharp
 new Section () {
@@ -188,11 +188,11 @@ var taskElement = new RootElement (task.Name) {
 };
 ```
 
-此代码将创建一个 UI，如下所示。 有关此示例的完整演练，请参阅[元素 API 演练](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md)教程。
+此代码将创建一个 UI，如下所示。 有关此示例的完整演练，请参阅 [元素 API 演练](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md) 教程。
 
  [![与 Element 属性结合在一起，回调可以检索在其他元素中设置的值](images/image6.png)](images/image6.png#lightbox)
 
-当用户按下下表单元时，将执行匿名函数中的代码，并将此实例中的值写入 `element` Visual Studio for Mac 中的**应用程序输出**板。
+当用户按下下表单元时，将执行匿名函数中的代码，并将此实例中的值写入 `element` Visual Studio for Mac 中的 **应用程序输出** 板。
 
 ## <a name="built-in-elements"></a>内置元素
 
@@ -244,7 +244,7 @@ new StringElement ("Click me", () => {
 它初始化为三个值：
 
 - 将向用户显示的项的标题。
-- 占位符文本（这是向用户提供提示的灰显文本）。 
+- 占位符文本 (这是向用户) 提供提示的灰色文本。 
 - 文本的值。
 
 占位符和值可以为 null。 但标题是必需的。
@@ -253,7 +253,7 @@ new StringElement ("Click me", () => {
 
 此外，还 `KeyboardType` 可以在创建时将属性设置为数据输入所需的键盘类型样式。 此操作可用于使用如下所示的值配置键盘 `UIKeyboardType` ：
 
-- 数值
+- Numeric
 - 电话
 - Url
 - 电子邮件
@@ -276,13 +276,13 @@ mtRoot = new RootElement ("Demos", new RadioGroup("MyGroup", 0));
 
  [![RadioElement 需要在 RootElement 中指定 RadioGroup](images/image14.png)](images/image14.png#lightbox)
 
- `RootElements`还用于协调收音机元素。 `RadioElement`成员可以跨多个部分（例如，实现类似于响铃音选择器的内容，并将自定义铃声与系统铃声分隔开）。 "摘要" 视图将显示当前选中的单选元素。 为此，请使用 `RootElement` 组构造函数创建，如下所示：
+ `RootElements` 还用于协调收音机元素。 `RadioElement`成员可以跨多个节 (例如，实现类似于响铃音选择器的内容，并将系统铃声) 中的自定义铃声分隔开。 "摘要" 视图将显示当前选中的单选元素。 为此，请使用 `RootElement` 组构造函数创建，如下所示：
 
 ```csharp
 var root = new RootElement ("Meals", new RadioGroup ("myGroup", 0));
 ```
 
-中组的名称 `RadioGroup` 用于显示包含页中的选定值（如果有）和值（在本例中为零）是第一个选定项的索引。
+中组的名称 `RadioGroup` 用于显示 "包含" 页中的选定值 (如果任何) 和值（在本例中为零）是第一个选定项的索引。
 
 ### <a name="badge-element"></a>徽章元素
 
@@ -391,7 +391,7 @@ using (var reader = File.OpenRead ("json.sample"))
     return JsonElement.FromJson (JsonObject.Load (reader) as JsonObject, arg);
 ```
 
-有关将 JSON 与 MT 一起使用的详细信息。D. 参阅[JSON 元素演练](https://docs.microsoft.com/xamarin/ios/user-interface/monotouch.dialog/json-element-walkthrough)教程。
+有关将 JSON 与 MT 一起使用的详细信息。D. 参阅 [JSON 元素演练](./json-element-walkthrough.md) 教程。
 
 ## <a name="other-features"></a>其他功能
 
@@ -427,7 +427,7 @@ dvc.ReloadComplete ();
 
 ### <a name="background-image-loading"></a>正在加载背景图像
 
-Monotouch.dialog 包含[TweetStation](https://github.com/migueldeicaza/TweetStation)应用程序的映像加载程序。 此图像加载程序可用于在后台加载图像，支持缓存并可在加载映像时通知代码。
+Monotouch.dialog 包含 [TweetStation](https://github.com/migueldeicaza/TweetStation) 应用程序的映像加载程序。 此图像加载程序可用于在后台加载图像，支持缓存并可在加载映像时通知代码。
 
 它还会限制传出的网络连接数。
 
@@ -445,7 +445,7 @@ var rootElement = new RootElement("Image Loader") {
 };
 ```
 
-ImageLoader 类公开了一个清除方法，当你想要释放当前缓存在内存中的所有图像时，你可以调用此方法。 当前代码具有50图像的缓存。 如果要使用不同的缓存大小（例如，如果希望图像太大，以致50图像太大），只需创建 ImageLoader 的实例，并传递要保存在缓存中的映像数。
+ImageLoader 类公开了一个清除方法，当你想要释放当前缓存在内存中的所有图像时，你可以调用此方法。 当前代码具有50图像的缓存。 如果要使用不同的缓存大小 (例如，如果希望图像太大，以致50映像太大) ，则只需创建 ImageLoader 的实例，并传递要保存在缓存中的映像数。
 
 ## <a name="using-linq-to-create-element-hierarchy"></a>使用 LINQ 创建元素层次结构
 
@@ -511,7 +511,7 @@ protected override NSString CellKey {
 
 这适用于大多数元素，但不适用于 `StringElement` 和， `StyledStringElement` 因为它们对各种呈现方案使用自己的键集。 必须复制这些类中的代码。
 
-### <a name="dialogviewcontrollers-dvcs"></a>DialogViewControllers （DVCs）
+### <a name="dialogviewcontrollers-dvcs"></a>DialogViewControllers (DVCs) 
 
 反射和元素 API 使用相同的 `DialogViewController` 。 有时你需要自定义视图的外观，或者你可能想要使用的某些功能 `UITableViewController` 超出了 ui 的基本创建功能。
 
@@ -555,21 +555,21 @@ public override Source CreateSizingSource (bool unevenRows)
 
 如果单元格大小相等，则此方法应返回的子类 `DialogViewController.Source` ; `DialogViewController.SizingSource` 如果单元格不相等，则返回的子类。
 
-您可以使用此替代来捕获任何 `UITableViewSource` 方法。 例如， [TweetStation](https://github.com/migueldeicaza/TweetStation)使用它来跟踪用户滚动到顶部的时间，并相应地更新未读推文的数量。
+您可以使用此替代来捕获任何 `UITableViewSource` 方法。 例如， [TweetStation](https://github.com/migueldeicaza/TweetStation) 使用它来跟踪用户滚动到顶部的时间，并相应地更新未读推文的数量。
 
 ## <a name="validation"></a>验证
 
 元素不会自行提供验证，因为这种模型非常适合于网页和桌面应用程序，也不会直接映射到 iPhone 交互模型。
 
-如果要进行数据验证，则应在用户使用输入的数据触发操作时执行此操作。 例如，在顶部工具栏上的 "**完成**" 或 "**下一步**" 按钮，或者某些按钮 `StringElement` 用于执行下一阶段。
+如果要进行数据验证，则应在用户使用输入的数据触发操作时执行此操作。 例如，在顶部工具栏上的 " **完成** " 或 " **下一步** " 按钮，或者某些按钮 `StringElement` 用于执行下一阶段。
 
 在这种情况下，你将执行基本输入验证，并且可能更复杂的验证，例如检查与服务器的用户/密码组合的有效性。
 
 如何将错误通知用户是特定于应用程序的。 您可以弹出 `UIAlertView` 或显示提示。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
-本文介绍了有关 Monotouch.dialog 的许多信息。 它讨论了 MT 的基本原理。D 工作，并涵盖了包含 MT 的各种组件。2-d. 它还展示了 MT 支持的各种元素和表自定义。D 并讨论了 MT 的方式。可以通过自定义元素扩展 D。 此外，它还说明了 MT 中的 JSON 支持。D：允许从 JSON 动态创建元素。
+本文介绍了有关 Monotouch.dialog 的许多信息。 它讨论了 MT 的基本原理。D 工作，并涵盖了包含 MT. D 的各种组件。 它还展示了 MT 支持的各种元素和表自定义。D 并讨论了 MT 的方式。可以通过自定义元素扩展 D。 此外，它还说明了 MT 中的 JSON 支持。D：允许从 JSON 动态创建元素。
 
 ## <a name="related-links"></a>相关链接
 

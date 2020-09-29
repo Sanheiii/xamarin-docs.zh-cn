@@ -7,30 +7,30 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/15/2017
-ms.openlocfilehash: 791ab82e0e5f47929eff561ac836ec87e6d6c134
-ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
+ms.openlocfilehash: 0dd7736d37f6db17ad794258d9dff852b2745053
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86997314"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91431847"
 ---
 # <a name="callkit-in-xamarinios"></a>Xamarin 中的 CallKit
 
-IOS 10 中的新 CallKit API 提供了一种方法，让 VOIP 应用与 iPhone UI 集成，并为最终用户提供熟悉的界面和体验。 使用此 API，用户可以从 iOS 设备的锁屏界面查看并与 VOIP 呼叫交互，并使用 Phone 应用的 **"收藏夹" 和 "** **最近**" 视图管理联系人。
+IOS 10 中的新 CallKit API 提供了一种方法，让 VOIP 应用与 iPhone UI 集成，并为最终用户提供熟悉的界面和体验。 使用此 API，用户可以从 iOS 设备的锁屏界面查看并与 VOIP 呼叫交互，并使用 Phone 应用的 **"收藏夹" 和 "** **最近** " 视图管理联系人。
 
 ## <a name="about-callkit"></a>关于 CallKit
 
-根据 Apple，CallKit 是一个新的框架，它将第三方语音 Over IP （VOIP）应用提升到 iOS 10 的第一方体验。 CallKit API 允许 VOIP 应用与 iPhone UI 集成，并为最终用户提供熟悉的界面和体验。 与内置的手机应用程序一样，用户可以从 iOS 设备的锁屏界面查看并与 VOIP 呼叫交互，并使用 Phone 应用的 **"收藏夹**" 和 "**最近**" 视图管理联系人。
+根据 Apple，CallKit 是一个新的框架，它将 IP (VOIP) 应用提升为第三方语音，以将其提升到 iOS 10 上的第一方体验。 CallKit API 允许 VOIP 应用与 iPhone UI 集成，并为最终用户提供熟悉的界面和体验。 与内置的手机应用程序一样，用户可以从 iOS 设备的锁屏界面查看并与 VOIP 呼叫交互，并使用 Phone 应用的 **"收藏夹** " 和 " **最近** " 视图管理联系人。
 
-此外，CallKit API 提供了创建应用扩展的功能，可以将电话号码与名称（呼叫方 ID）关联，也可以告知系统应阻止某个号码（呼叫阻塞）。
+此外，CallKit API 提供了创建应用扩展的功能，可以将电话号码与名称 (调用方 ID) ，或者告诉系统应阻止某个数字 (调用阻止) 。
 
 ### <a name="the-existing-voip-app-experience"></a>现有的 VOIP 应用体验
 
-在讨论新的 CallKit API 及其功能之前，请使用名为 MonkeyCall 的虚构 VOIP 应用，查看 iOS 9 中第三方 VOIP 应用的当前用户体验（和更低）。 MonkeyCall 是一个简单的应用，允许用户使用现有的 iOS Api 发送和接收 VOIP 呼叫。
+在讨论新的 CallKit API 及其功能之前，请查看使用 iOS 9 (的第三方 VOIP 应用的当前用户体验，并使用名为 MonkeyCall 的虚构 VOIP 应用) 更少的用户体验。 MonkeyCall 是一个简单的应用，允许用户使用现有的 iOS Api 发送和接收 VOIP 呼叫。
 
-目前，如果用户正在 MonkeyCall 上接收传入呼叫，并且其 iPhone 已锁定，则锁屏上收到的通知与任何其他类型的通知（例如，来自邮件或邮件应用的通知）不可区分。
+目前，如果用户正在 MonkeyCall 上接收传入呼叫，并且其 iPhone 处于锁定状态，则锁定屏幕上收到的通知与任何其他类型的 (通知（例如，) 中的通知）不区分开来。
 
-如果用户想要接听呼叫，他们必须滑动 MonkeyCall 通知以打开应用程序，并输入其密码（或用户 Touch ID）以在电话可以接受呼叫和开始对话之前解锁。
+如果用户想要接听呼叫，他们必须滑动 MonkeyCall 通知以打开应用程序，并输入其密码 (或用户 Touch ID) 在电话可以接受呼叫并开始对话之前，对其进行解锁。
 
 如果电话未锁定，则体验同样繁琐。 同样，传入的 MonkeyCall 调用将显示为从屏幕顶部滑入的标准通知横幅。 由于通知是暂时的，因此用户可以轻松地将其丢失，迫使用户打开通知中心，找到要回答的特定通知，然后手动调用或查找并启动 MonkeyCall 应用。
 
@@ -56,8 +56,8 @@ CallKit 为 MonkeyCall 提供附加功能，允许其 VOIP 调用与其他类型
 
 应用使用的 CallKit 中有两个主要接口：
 
-- `CXProvider`-这允许 MonkeyCall 应用向系统通知可能发生的任何带外通知系统。
-- `CXCallController`-允许 MonkeyCall 应用向系统通知本地用户操作。
+- `CXProvider` -这允许 MonkeyCall 应用向系统通知可能发生的任何带外通知系统。
+- `CXCallController` -允许 MonkeyCall 应用向系统通知本地用户操作。
 
 ### <a name="the-cxprovider"></a>CXProvider
 
@@ -217,7 +217,7 @@ namespace MonkeyCall
 }
 ```
 
-`ActiveCall`保存几个属性，这些属性定义调用的状态和两个可以在调用状态发生更改时引发的事件。 由于这只是一个示例，因此可以使用三种方法来模拟开始、应答和结束调用。
+`ActiveCall` 保存几个属性，这些属性定义调用的状态和两个可以在调用状态发生更改时引发的事件。 由于这只是一个示例，因此可以使用三种方法来模拟开始、应答和结束调用。
 
 ### <a name="the-startcallrequest-class"></a>StartCallRequest 类
 
@@ -278,7 +278,7 @@ namespace MonkeyCall
 }
 ```
 
-`CallHandleFromURL`和 `CallHandleFromActivity` 类在 AppDelegate 中用于获取在传出调用中调用的人员的联系句柄。 有关详细信息，请参阅下面的[处理传出呼叫](#handling-outgoing-calls)部分。
+`CallHandleFromURL`和 `CallHandleFromActivity` 类在 AppDelegate 中用于获取在传出调用中调用的人员的联系句柄。 有关详细信息，请参阅下面的 [处理传出呼叫](#handling-outgoing-calls) 部分。
 
 ### <a name="the-activecallmanager-class"></a>ActiveCallManager 类
 
@@ -392,7 +392,7 @@ namespace MonkeyCall
 }
 ```
 
-同样，由于这只是一个模拟，因此 `ActiveCallManager` 只维护对象的集合， `ActiveCall` 并且有一个例程用于按其属性查找给定的调用 `UUID` 。 它还包括启动、结束和更改传出调用的保持状态的方法。 有关详细信息，请参阅下面的[处理传出呼叫](#handling-outgoing-calls)部分。
+同样，由于这只是一个模拟，因此 `ActiveCallManager` 只维护对象的集合， `ActiveCall` 并且有一个例程用于按其属性查找给定的调用 `UUID` 。 它还包括启动、结束和更改传出调用的保持状态的方法。 有关详细信息，请参阅下面的 [处理传出呼叫](#handling-outgoing-calls) 部分。
 
 ### <a name="the-providerdelegate-class"></a>ProviderDelegate 类
 
@@ -599,7 +599,7 @@ namespace MonkeyCall
 }
 ```
 
-创建此委托的实例后，它将被传递 `ActiveCallManager` 到它将用于处理任何调用活动。 接下来，它定义将响应的句柄类型（ `CXHandleType` ） `CXProvider` ：
+创建此委托的实例后，它将被传递 `ActiveCallManager` 到它将用于处理任何调用活动。 接下来，它定义将响应的 () 的句柄类型 `CXHandleType` `CXProvider` ：
 
 ```csharp
 // Define handle types
@@ -728,13 +728,13 @@ namespace MonkeyCall
 }
 ```
 
-`OpenUrl` `ContinueUserActivity` 当应用程序正在处理传出调用时，使用和重写方法。 有关详细信息，请参阅下面的[处理传出呼叫](#handling-outgoing-calls)部分。
+`OpenUrl` `ContinueUserActivity` 当应用程序正在处理传出调用时，使用和重写方法。 有关详细信息，请参阅下面的 [处理传出呼叫](#handling-outgoing-calls) 部分。
 
 ## <a name="handling-incoming-calls"></a>处理传入调用
 
 在典型的传入调用工作流（例如）中，传入的 VOIP 调用可以通过几种状态和过程：
 
-- 通知用户（和系统）存在传入呼叫。
+- 通知用户 (和系统) 存在传入呼叫。
 - 当用户想要接听呼叫，并向其他用户初始化呼叫时接收通知。
 - 当用户想要结束当前呼叫时，通知系统和通信网络。
 
@@ -864,29 +864,29 @@ public override void PerformEndCallAction (CXProvider provider, CXEndCallAction 
 
 大多数 VOIP 应用可以一次处理多个调用。 例如，如果当前有活动的 VOIP 呼叫，并且应用收到了新的传入呼叫通知，则用户可以在第一次调用时暂停或挂断以回答第二台呼叫。
 
-在上述情况下，系统将向应用发送， `CXTransaction` 其中包含多个操作的列表（例如 `CXEndCallAction` 和 `CXAnswerCallAction` ）。 所有这些操作都需要单独完成，以便系统可以相应地更新 UI。
+在上述情况下，系统会将发送 `CXTransaction` 到应用，该应用将包含多个操作的列表 (例如 `CXEndCallAction` 和 `CXAnswerCallAction`) 。 所有这些操作都需要单独完成，以便系统可以相应地更新 UI。
 
 ## <a name="handling-outgoing-calls"></a>处理传出调用
 
-例如，如果用户从最近列表（在 Phone 应用中）中按某个条目，则该条目来自于应用的调用，系统会将其发送到_开始呼叫意向_：
+例如，如果用户在电话应用程序中从最近列表中点击某个条目 () 例如，来自属于该应用的调用，则系统会将其发送到 _开始呼叫意向_ ：
 
 [![接收开始呼叫意向](callkit-images/callkit08.png)](callkit-images/callkit08.png#lightbox)
 
-1. 此应用将基于从系统收到的开始呼叫意向创建 "_启动调用" 操作_。
+1. 此应用将基于从系统收到的开始呼叫意向创建 " _启动调用" 操作_ 。
 2. 应用程序将使用 `CXCallController` 从系统请求启动调用操作。
 3. 如果系统接受操作，它将通过委托返回到应用 `XCProvider` 。
 4. 应用程序通过其通信网络启动传出呼叫。
 
-有关意向的详细信息，请参阅我们的[意图和意向 UI 扩展](~/ios/platform/sirikit/understanding-sirikit.md)文档。
+有关意向的详细信息，请参阅我们的 [意图和意向 UI 扩展](~/ios/platform/sirikit/understanding-sirikit.md) 文档。
 
 ### <a name="the-outgoing-call-lifecycle"></a>传出呼叫生命周期
 
 使用 CallKit 和传出呼叫时，应用需要通知系统以下生命周期事件：
 
-1. **正在启动**-通知系统传出的调用即将开始。
-2. **已启动**-通知系统已开始传出呼叫。
-3. **连接**-通知系统传出呼叫正在连接。
-4. **已连接**-通知传出呼叫已连接，并且双方都可以立即交谈。
+1. **正在启动** -通知系统传出的调用即将开始。
+2. **已启动** -通知系统已开始传出呼叫。
+3. **连接** -通知系统传出呼叫正在连接。
+4. **已连接** -通知传出呼叫已连接，并且双方都可以立即交谈。
 
 例如，以下代码将启动传出呼叫：
 
@@ -923,9 +923,9 @@ public void StartCall (string contact)
 }
 ```
 
-它将创建一个 `CXHandle` ，并使用它来配置将 `CXStartCallAction` 绑定到 `CXTransaction` 使用类的方法发送到系统的 `RequestTransaction` `CXCallController` 。 通过调用 `RequestTransaction` 方法，系统可以在新调用开始之前，将任何现有调用置于现有状态，无论源（Phone 应用程序、FaceTime、VOIP 等）都是如此。
+它将创建一个 `CXHandle` ，并使用它来配置将 `CXStartCallAction` 绑定到 `CXTransaction` 使用类的方法发送到系统的 `RequestTransaction` `CXCallController` 。 通过调用 `RequestTransaction` 方法，系统可以在新调用开始之前，将任何现有调用置于现有状态，无论源 (Phone 应用 FaceTime、VOIP 等 ) 。
 
-启动传出 VOIP 呼叫的请求可以来自多个不同的源，例如 Siri、联系人卡片中的条目（在 contact 应用中）或来自最近列表（在 Phone 应用中）。 在这些情况下，将在中向应用发送开始呼叫意向 `NSUserActivity` ，AppDelegate 将需要对其进行处理：
+启动传出 VOIP 呼叫的请求可以来自多个不同的源，例如 Siri、Contact 应用中 (的联系人卡中的条目) 或手机应用) 中的最近列表 (的条目。 在这些情况下，将在中向应用发送开始呼叫意向 `NSUserActivity` ，AppDelegate 将需要对其进行处理：
 
 ```csharp
 public override bool ContinueUserActivity (UIApplication application, NSUserActivity userActivity, UIApplicationRestorationHandler completionHandler)
@@ -945,7 +945,7 @@ public override bool ContinueUserActivity (UIApplication application, NSUserActi
 }
 ```
 
-下面 `CallHandleFromActivity` 是帮助器类的方法，用于 `StartCallRequest` 获取被调用人员的句柄（请参阅上面[的 StartCallRequest 类](#the-startcallrequest-class)）。
+下面 `CallHandleFromActivity` 是帮助器类的方法，用于 `StartCallRequest` 获取正在被调用的人员的句柄 (参见上面) [的 StartCallRequest 类](#the-startcallrequest-class) 。
 
 `PerformStartCallAction` [ProviderDelegate 类](#the-providerdelegate-class)的方法用于最终启动实际的传出呼叫并通知系统其生命周期：
 
@@ -987,7 +987,7 @@ public override void PerformStartCallAction (CXProvider provider, CXStartCallAct
 }
 ```
 
-它创建类的实例 `ActiveCall` （以保存有关正在进行的调用的信息），并使用正在调用的人员进行填充。 `StartingConnectionChanged`和 `ConnectedChanged` 事件用于监视和报告传出呼叫生命周期。 调用已启动，系统已通知你已完成操作。
+它创建类的实例， `ActiveCall` (保存正在进行的调用的相关信息) 并使用正在调用的人员进行填充。 `StartingConnectionChanged`和 `ConnectedChanged` 事件用于监视和报告传出呼叫生命周期。 调用已启动，系统已通知你已完成操作。
 
 ### <a name="ending-an-outgoing-call"></a>结束传出呼叫
 
@@ -1038,7 +1038,7 @@ public void EndCall (ActiveCall call)
 
 ### <a name="provider-configuration"></a>提供程序配置
 
-当使用 CallKit 时，提供程序配置允许 iOS 10 VOIP 应用自定义用户体验（在本机内调用 UI 内部）。
+当使用 CallKit 时，提供程序配置允许 iOS 10 VOIP 应用自定义在本机 (调用 UI 内部) 的用户体验。
 
 应用可以进行以下类型的自定义：
 
@@ -1054,12 +1054,12 @@ public void EndCall (ActiveCall call)
 
 1. 应用已接收到开始呼叫操作，并已开始使用其通信网络初始化新的 VOIP 呼叫。
 2. 由于网络通信功能受限或不存在，此连接将失败。
-3. 应用程序*必须*将**失败**消息发送回 "启动调用" 操作（ `Action.Fail()` ），以通知系统发生故障。
+3. 应用程序 *必须* 将 **失败** 消息发送回 "开始呼叫" 操作 (`Action.Fail()`) ，以通知系统发生故障。
 4. 这允许系统通知用户呼叫的状态。 例如，显示呼叫失败 UI。
 
-此外，iOS 10 VOIP 应用需要响应_超时错误_，在给定的时间内无法处理预期的操作时可能会发生此错误。 CallKit 提供的每个操作类型都具有与之关联的最大超时值。 这些超时值可确保用户请求的任何 CallKit 操作都是以响应方式进行处理的，因此也保持操作系统的流畅性和响应能力。
+此外，iOS 10 VOIP 应用需要响应 _超时错误_ ，在给定的时间内无法处理预期的操作时可能会发生此错误。 CallKit 提供的每个操作类型都具有与之关联的最大超时值。 这些超时值可确保用户请求的任何 CallKit 操作都是以响应方式进行处理的，因此也保持操作系统的流畅性和响应能力。
 
-应该重写提供程序委托（）上的几个方法， `CXProviderDelegate` 以便正常处理此超时情况。
+提供程序委托 (了几种方法 `CXProviderDelegate`) ，应重写该方法以合理处理此超时情况。
 
 ### <a name="system-restrictions"></a>系统限制
 
@@ -1124,7 +1124,7 @@ CallKit 提供了几个优点用于处理在实时 VOIP 呼叫期间 iOS 10 VOIP
 
 ## <a name="working-with-call-directory-extensions"></a>使用调用目录扩展
 
-当使用 CallKit 时，_呼叫目录扩展_提供了一种方法，可在 iOS 设备上的联系人应用中添加被阻止的电话号码，并识别特定于给定 VOIP 应用的数字。
+当使用 CallKit 时， _呼叫目录扩展_ 提供了一种方法，可在 iOS 设备上的联系人应用中添加被阻止的电话号码，并识别特定于给定 VOIP 应用的数字。
 
 ### <a name="implementing-a-call-directory-extension"></a>实现调用目录扩展
 
@@ -1137,10 +1137,10 @@ CallKit 提供了几个优点用于处理在实时 VOIP 呼叫期间 iOS 10 VOIP
 3. 选择 " **iOS**  >  **扩展**  >  " "**调用目录扩展**"，然后单击 "**下一步**" 按钮：
 
     [![创建新的调用目录扩展](callkit-images/calldir01.png)](callkit-images/calldir01.png#lightbox)
-4. 输入扩展的**名称**，然后单击 "**下一步**" 按钮：
+4. 输入扩展的 **名称** ，然后单击 " **下一步** " 按钮：
 
     [![输入扩展的名称](callkit-images/calldir02.png)](callkit-images/calldir02.png#lightbox)
-5. 如果需要，请调整**项目名称**和/或**解决方案名称**，并单击 "**创建**" 按钮：
+5. 如果需要，请调整 **项目名称** 和/或 **解决方案名称** ，并单击 " **创建** " 按钮：
 
     [![创建项目](callkit-images/calldir03.png)](callkit-images/calldir03.png#lightbox)
 
@@ -1151,7 +1151,7 @@ CallKit 提供了几个优点用于处理在实时 VOIP 呼叫期间 iOS 10 VOIP
 3. 选择 " **iOS**  >  **扩展**  >  " "**调用目录扩展**"，然后单击 "**下一步**" 按钮：
 
     [![创建新的调用目录扩展](callkit-images/calldir01w.png)](callkit-images/calldir01.png#lightbox)
-4. 输入扩展的**名称**，然后单击 **"确定"** 按钮
+4. 输入扩展的 **名称** ，然后单击 **"确定"** 按钮
 
 -----
 
@@ -1251,14 +1251,14 @@ namespace MonkeyCallDirExtension
 
 `BeginRequest`需要修改调用目录处理程序中的方法，以提供所需的功能。 在上述示例中，它会尝试在 VOIP 应用的 "联系人" 数据库中设置已阻止的和可用的编号列表。 如果任何一个请求由于任何原因而失败，请创建一个 `NSError` 来描述失败并向其传递 `CancelRequest` 类的方法 `CXCallDirectoryExtensionContext` 。
 
-若要设置被阻止的数字，请使用 `AddBlockingEntry` 类的方法 `CXCallDirectoryExtensionContext` 。 提供给方法的数字_必须_按数值升序排列。 为获得最佳性能和内存使用率（如果有多个电话号码），请考虑在给定的时间只加载数字子集，并使用 autorelease 池释放在每个加载的编号批次中分配的对象。
+若要设置被阻止的数字，请使用 `AddBlockingEntry` 类的方法 `CXCallDirectoryExtensionContext` 。 提供给方法的数字 _必须_ 按数值升序排列。 为获得最佳性能和内存使用量（如果有多个电话号码），请考虑仅在给定时间加载数字子集，并使用 autorelease pool (s) 释放在每个加载的编号批次中分配的对象。
 
-若要通知与 VOIP 应用已知联系号码的联系应用，请使用类的 `AddIdentificationEntry` 方法， `CXCallDirectoryExtensionContext` 并同时提供数字和标识标签。 同样，提供给方法的数字_必须_按数值升序排列。 为获得最佳性能和内存使用率（如果有多个电话号码），请考虑在给定的时间只加载数字子集，并使用 autorelease 池释放在每个加载的编号批次中分配的对象。
+若要通知与 VOIP 应用已知联系号码的联系应用，请使用类的 `AddIdentificationEntry` 方法， `CXCallDirectoryExtensionContext` 并同时提供数字和标识标签。 同样，提供给方法的数字 _必须_ 按数值升序排列。 为获得最佳性能和内存使用量（如果有多个电话号码），请考虑仅在给定时间加载数字子集，并使用 autorelease pool (s) 释放在每个加载的编号批次中分配的对象。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
-本文介绍了 Apple 在 iOS 10 中发布的新 CallKit API，以及如何在 Xamarin iOS 应用程序中实现它。 它已展示了 CallKit 如何允许应用集成到 iOS 系统，以及如何通过内置应用（如电话）提供功能奇偶校验，以及它如何通过 Siri 交互和通过联系人应用在多个位置（如锁定和主屏幕）增加应用的可见性。
+本文介绍了 Apple 在 iOS 10 中发布的新 CallKit API，以及如何在 Xamarin iOS 应用程序中实现它。 它已展示了 CallKit 如何允许应用集成到 iOS 系统，以及如何通过内置 (应用（例如电话) ）提供功能奇偶校验，以及如何通过 Siri 交互和通过联系人应用来提高应用程序在各个位置（如锁定和主屏幕）的可见性。
 
 ## <a name="related-links"></a>相关链接
 
-- [iOS 10 示例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS10)
+- [iOS 10 示例](/samples/browse/?products=xamarin&term=Xamarin.iOS%2biOS10)

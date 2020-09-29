@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 08/30/2017
-ms.openlocfilehash: 572ba31a1f19ab099765cc92bb1b389ba1115d1b
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 875ae9c4712c974c663854f7790c51111eea4807
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84564688"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91434500"
 ---
 # <a name="introduction-to-coreml-in-xamarinios"></a>Xamarin 中的 CoreML 简介
 
@@ -27,15 +27,15 @@ CoreML 将机器学习带入 iOS –应用可以利用训练有素的机器学�
 
 ## <a name="getting-started-with-coreml"></a>入门与 CoreML
 
-以下步骤介绍如何将 CoreML 添加到 iOS 项目。 有关实际示例，请参阅[Mars Habitat Pricer 示例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-marshabitatcoremltimer/)。
+以下步骤介绍如何将 CoreML 添加到 iOS 项目。 有关实际示例，请参阅 [Mars Habitat Pricer 示例](/samples/xamarin/ios-samples/ios12-marshabitatcoremltimer/) 。
 
 ![Mars Habitat 价格预测器示例屏幕快照](coreml-images/marspricer-heading.png)
 
 ### <a name="1-add-the-coreml-model-to-the-project"></a>1. 将 CoreML 模型添加到项目
 
-将 CoreML 模型（扩展名为**mlmodel**的文件）添加到项目的**资源**目录。 
+将 CoreML 模型添加到项目的**Resources**目录中， () 扩展名为**mlmodel**的文件。 
 
-在模型文件的属性中，其**生成操作**设置为**CoreMLModel**。 这意味着在构建应用程序时，它将编译到**mlmodelc**文件中。
+在模型文件的属性中，其 **生成操作** 设置为 **CoreMLModel**。 这意味着在构建应用程序时，它将编译到 **mlmodelc** 文件中。
 
 ### <a name="2-load-the-model"></a>2. 加载模型
 
@@ -67,7 +67,7 @@ public class MyInput : NSObject, IMLFeatureProvider
   }
 ```
 
-使用这样的类，可以通过 CoreML 理解的方式提供输入参数。 功能的名称（如 `myParam` 代码示例中所示）必须与模型所需的名称相匹配。
+使用这样的类，可以通过 CoreML 理解的方式提供输入参数。 ) 的代码示例中 (功能的名称 `myParam` 必须与模型所需的名称相匹配。
 
 ### <a name="4-run-the-model"></a>4. 运行模型
 
@@ -80,7 +80,7 @@ var outFeatures = model.GetPrediction(inputFeatures, out NSError error2);
 
 ### <a name="5-extract-the-results"></a>5. 提取结果
 
-预测结果 `outFeatures` 也是实例 `IMLFeatureProvider` ; 可以通过 `GetFeatureValue` 每个输出参数的名称（例如）来访问输出值 `theResult` ，如下例所示：
+预测结果 `outFeatures` 也是实例 `IMLFeatureProvider` ; 可以使用 `GetFeatureValue` 与每个输出参数的名称进行访问的输出值 (如 `theResult`) ，如以下示例中所示：
 
 ```csharp
 var result = outFeatures.GetFeatureValue("theResult").DoubleValue; // eg. 6227020800
@@ -92,13 +92,13 @@ var result = outFeatures.GetFeatureValue("theResult").DoubleValue; // eg. 622702
 
 CoreML 还可以与远景框架结合使用来对图像执行操作，如形状识别、对象标识和其他任务。
 
-以下步骤说明了如何在[CoreMLVision 示例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-coremlvision)中结合使用 CoreML 和视觉。 该示例将远景[识别](~/ios/platform/introduction-to-ios11/vision.md#rectangles)与_MNINSTClassifier_ CoreML 模型组合在一起，以在照片中标识手写数字。
+以下步骤说明了如何在 [CoreMLVision 示例](/samples/xamarin/ios-samples/ios11-coremlvision)中结合使用 CoreML 和视觉。 该示例将远景 [识别](~/ios/platform/introduction-to-ios11/vision.md#rectangles) 与 _MNINSTClassifier_ CoreML 模型组合在一起，以在照片中标识手写数字。
 
 ![数字3的图像识别](coreml-images/vision3.png) ![数字5的图像识别](coreml-images/vision5.png)
 
 ### <a name="1-create-a-vision-coreml-model"></a>1. 创建远景 CoreML 模型
 
-加载 CoreML 模型_MNISTClassifier_ ，并将其包装在中， `VNCoreMLModel` 使模型可用于视觉任务。 此代码还会创建两个远景请求：首先查找图像中的矩形，然后使用 CoreML 模型处理矩形：
+加载 CoreML 模型 _MNISTClassifier_ ，并将其包装在中， `VNCoreMLModel` 使模型可用于视觉任务。 此代码还会创建两个远景请求：首先查找图像中的矩形，然后使用 CoreML 模型处理矩形：
 
 ```csharp
 // Load the ML model
@@ -117,7 +117,7 @@ ClassificationRequest = new VNCoreMLRequest(model, HandleClassification);
 
 ### <a name="2-start-the-vision-processing"></a>2. 启动视觉处理
 
-下面的代码开始处理请求。 在**CoreMLVision**示例中，此代码在用户选择了图像后运行：
+下面的代码开始处理请求。 在 **CoreMLVision** 示例中，此代码在用户选择了图像后运行：
 
 ```csharp
 // Run the rectangle detector, which upon completion runs the ML classifier.
@@ -153,7 +153,7 @@ void HandleRectangles(VNRequest request, NSError error) {
 
 ### <a name="4-handle-the-coreml"></a>4. 处理 CoreML
 
-`request`传递给此方法的参数包含 CoreML 请求的详细信息，并使用 `GetResults<VNClassificationObservation>()` 方法，它返回由置信度排序的可能结果的列表（首先是最高置信度）：
+`request`传递给此方法的参数包含 CoreML 请求的详细信息，并使用 `GetResults<VNClassificationObservation>()` 方法，它返回由置信度首先) 的可能结果的列表 (最高的置信度：
 
 ```csharp
 void HandleClassification(VNRequest request, NSError error){
@@ -171,17 +171,17 @@ void HandleClassification(VNRequest request, NSError error){
 
 有三个 CoreML 示例可供尝试：
 
-- [Mars Habitat 价格预测器示例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-marshabitatcoremltimer/)具有简单的数值输入和输出。
+- [Mars Habitat 价格预测器示例](/samples/xamarin/ios-samples/ios12-marshabitatcoremltimer/)具有简单的数值输入和输出。
 
-- [远景 & CoreML 示例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-coremlvision)接受 image 参数，并使用远景框架标识图像中的正方形区域，这些区域被传递到识别单个数字的 CoreML 模型。
+- [远景 & CoreML 示例](/samples/xamarin/ios-samples/ios11-coremlvision)接受 image 参数，并使用远景框架标识图像中的正方形区域，这些区域被传递到识别单个数字的 CoreML 模型。
 
-- 最后， [CoreML 图像识别示例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-coremlimagerecognition)使用 CoreML 标识照片中的功能。 默认情况下，它使用较小的**SqueezeNet**模型（5mb），但已编写它，以便您可以下载和合并更大的**VGG16**模型（553MB）。 有关详细信息，请参阅[示例的自述文件](https://github.com/xamarin/ios-samples/blob/master/ios11/CoreMLImageRecognition/CoreMLImageRecognition/README.md)。
+- 最后， [CoreML 图像识别示例](/samples/xamarin/ios-samples/ios11-coremlimagerecognition) 使用 CoreML 标识照片中的功能。 默认情况下，它使用较小的 **SqueezeNet** 模型 (5mb) ，但已编写它，以便可以下载更大的 **VGG16** 模型 (553MB) 。 有关详细信息，请参阅 [示例的自述文件](https://github.com/xamarin/ios-samples/blob/master/ios11/CoreMLImageRecognition/CoreMLImageRecognition/README.md)。
 
 ## <a name="related-links"></a>相关链接
 
-- [机器学习（Apple）](https://developer.apple.com/machine-learning/)
-- [CoreML 示例（Mars Habitat）（示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-marshabitatcoremltimer/)
-- [CoreML 和远景（数字识别）（示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-coremlvision)
-- [CoreML 图像识别（示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-coremlimagerecognition)
-- [与 Azure 自定义视觉 CoreML （示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-coremlazuremodel)
-- [引入 CoreML （WWDC）（视频）](https://developer.apple.com/videos/play/wwdc2017/703/)
+- [机器学习 (Apple) ](https://developer.apple.com/machine-learning/)
+- [CoreML 示例 (Mars Habitat)  (示例) ](/samples/xamarin/ios-samples/ios12-marshabitatcoremltimer/)
+- [CoreML 和远景 (数字识别)  (示例) ](/samples/xamarin/ios-samples/ios11-coremlvision)
+- [CoreML 图像识别 (示例) ](/samples/xamarin/ios-samples/ios11-coremlimagerecognition)
+- [CoreML with Azure 自定义视觉 (示例) ](/samples/xamarin/ios-samples/ios11-coremlazuremodel)
+- [介绍 CoreML (WWDC)  (视频) ](https://developer.apple.com/videos/play/wwdc2017/703/)

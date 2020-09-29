@@ -7,22 +7,22 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 6002e5cc62dfe30c14f21943c690a5a1b15a0c12
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 55f471fe02618becbfc4a7ab8571d9690fe44843
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86936586"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91430592"
 ---
 # <a name="table-parts-and-functionality-in-xamarinios"></a>Xamarin 中的表部件和功能
 
 UITableView 可以具有 "分组" 或 "纯" 样式，由以下部分组成：
 
 - [节标头](#Section_Header)
-- [单元格](#Cells)（如果需要，还可以使用行）
+-  (或行的[单元格](#Cells)（如果你喜欢）) 
 - [节页脚](#Section_Footer)
-- [Index](#Index)
-- [编辑模式](#Edit_Features)（包括 "轻扫到删除" 和拖动控点以更改行顺序） 
+- [索引](#Index)
+- [编辑模式](#Edit_Features) (包含 "轻扫到删除" 和拖动控点以更改行顺序)  
 
 这些屏幕截图显示部分行、页眉、页脚、编辑控件和索引的显示方式。
 
@@ -64,7 +64,7 @@ UITableView 可以具有 "分组" 或 "纯" 样式，由以下部分组成：
 - 滑动以删除单个单元。
 - 进入编辑模式以显示每行中的 "删除" 按钮 
 - 进入编辑模式以显示重新排序句柄。 
-- 插入新单元（带有动画）。
+- 插入具有动画)  (的新单元。
 
 本文档的其余部分介绍如何通过 Xamarin 实现所有这些 UITableView 功能。
 
@@ -76,9 +76,9 @@ UITableView 可以具有 "分组" 或 "纯" 样式，由以下部分组成：
 
 每个类的用途如下所述：
 
-- **UITableView** –一个视图，其中包含滚动容器中单元格的集合。 表格视图通常使用 iPhone 应用中的整个屏幕，但可能作为 iPad 上较大视图的一部分（或出现在 segue 中）。 
-- **UITableViewCell** –一个视图，它表示表视图中的单个单元格（或行）。 有四种内置单元类型，可以在 c # 中创建自定义单元，也可以在 iOS 设计器中创建。 
-- **UITableViewSource** – Xamarin 专用抽象类，提供显示表所需的所有方法，包括行计数、返回每行的单元格视图、处理行选择以及许多其他可选功能。 要使 UITableView 正常工作，*必须*为此划分子类。 
+- **UITableView** –一个视图，其中包含滚动容器中单元格的集合。 表格视图通常使用 iPhone 应用中的整个屏幕，但可能作为 iPad (上的较大视图的一部分存在，也可能出现在 segue 的) 中。 
+- **UITableViewCell** –一个视图，该视图表示表视图中 (或行) 的单个单元格。 有四种内置单元类型，可以在 c # 中创建自定义单元，也可以在 iOS 设计器中创建。 
+- **UITableViewSource** – Xamarin 专用抽象类，提供显示表所需的所有方法，包括行计数、返回每行的单元格视图、处理行选择以及许多其他可选功能。 要使 UITableView 正常工作，  *必须* 为此划分子类。 
 - **Nsindexpath.fromitemsection** –包含唯一标识表中单元格位置的行和节属性。 
 - **UITableViewController** –一种随时可用的 UIViewController，它将 UITableView 硬编码为其视图，并可通过 TableView 属性进行访问。 
 - **UIViewController** –如果表不占用整个屏幕，则可以将 UITableView 添加到任何 UIViewController 并适当地设置其框架。 
@@ -88,8 +88,8 @@ UITableViewSource 替换了以下两个类，这些类在 Xamarin 中仍可用�
 - **UITableViewDataSource** –作为抽象类在 Xamarin 中建模的目标为 C 的协议。 必须是子类才能为表提供每个单元的视图，以及有关表中的表头、表尾以及行数和节数的信息。 
 - **UITableViewDelegate** –作为类在 Xamarin 中建模的目标为 C 的协议。 处理选择、编辑功能和其他可选的表功能。 
 
-在本文档中，所有示例都使用 UITableViewSource 并忽略这两个类。 由于 Apple 文档中的任何目标为 C 的示例都引用了这些示例，因此在此处提到它们是非常有用的，因此，了解它们的作用（并且你可以改用 Xamarin 的 UITableViewSource）是非常有用的。
+在本文档中，所有示例都使用 UITableViewSource 并忽略这两个类。 由于 Apple 文档中的任何目标为 C 的示例都引用了这些示例，因此在此处提到它们是非常有用的，因此，了解它们的作用 (并且可以使用 Xamarin 的 UITableViewSource 而不是) 。
 
 ## <a name="related-links"></a>相关链接
 
-- [WorkingWithTables （示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/workingwithtables)
+- [WorkingWithTables (示例) ](/samples/xamarin/ios-samples/workingwithtables)
