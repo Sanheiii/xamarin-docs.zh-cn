@@ -6,12 +6,12 @@ ms.assetid: 442FC40A-84DD-A218-0D15-EAD86594B6D7
 author: davidortinau
 ms.author: daortin
 ms.date: 01/28/2016
-ms.openlocfilehash: 2f7d09405f90ac9fc4c3ce80181baafa447df637
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: f725fe06a5438e4dbdca2773d93befc13bc8ff95
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571230"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91457492"
 ---
 # <a name="building-cross-platform-applications"></a>生成跨平台应用程序
 
@@ -37,7 +37,7 @@ ms.locfileid: "84571230"
 
 ## <a name="case-studies"></a>案例研究
 
-本文档中所述的原则在示例应用程序*Tasky*和[预构建的应用程序](https://xamarin.com/prebuilt)（如[Xamarin CRM](https://xamarin.com/prebuilt/#xamarincrm)）中进行实践。
+本文档中所述的原则在示例应用程序 *Tasky*和 [预构建的应用程序](https://xamarin.com/prebuilt) （如 [Xamarin CRM](https://xamarin.com/prebuilt/#xamarincrm)）中进行实践。
 
  <a name="Tasky"></a>
 
@@ -48,7 +48,7 @@ Tasky 是适用于 iOS、Android 和 Windows Phone 的简单待办事项列表�
 
  [ ![ tasky 列表](images/iphone-list-sml.png)](images/iphone-list.png#lightbox) [ ![ tasky 列表](images/iphone-list-sml.png)](images/iphone-list.png#lightbox)
 
-阅读[Tasky 案例研究](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md)。
+阅读 [Tasky 案例研究](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md)。
 
 ## <a name="summary"></a>总结
 
@@ -56,7 +56,7 @@ Tasky 是适用于 iOS、Android 和 Windows Phone 的简单待办事项列表�
 
 它涵盖了一个分层体系结构，该体系结构可在多个平台上对代码进行重新使用，并描述了可在该体系结构中使用的不同软件模式。
 
-示例提供了常见的应用程序功能（如文件和网络操作），以及如何以跨平台的方式生成这些功能。
+示例提供了常见的应用程序功能 (例如文件和网络操作) 以及如何以跨平台的方式生成它们。
 
 最后，它简要讨论了测试，并提供了对案例研究的参考，将这些原则纳入操作中。
 
@@ -64,6 +64,6 @@ Tasky 是适用于 iOS、Android 和 Windows Phone 的简单待办事项列表�
 
 - [共享代码选项](~/cross-platform/app-fundamentals/code-sharing.md)
 - [案例研究：Tasky](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md)
-- [Tasky 示例应用（github）](https://docs.microsoft.com/samples/xamarin/mobile-samples/taskyportable/)
-- [Xamarin 移动应用程序开发：跨平台 c # 和 Xamarin 基础知识（Amazon）](https://www.amazon.com/Xamarin-Mobile-Application-Development-Cross-Platform/dp/1484202155/)
-- [使用 c # 通过 Greg Shackles （O'Reilly）进行移动开发](https://shop.oreilly.com/product/0636920024002.do)
+- [Tasky 示例应用 (github) ](/samples/xamarin/mobile-samples/taskyportable/)
+- [Xamarin 移动应用程序开发：跨平台 c # 和 Xamarin. Forms 基础 (Amazon) ](https://www.amazon.com/Xamarin-Mobile-Application-Development-Cross-Platform/dp/1484202155/)
+- [使用 c # 通过 Greg Shackles (O'Reilly 的移动开发) ](https://shop.oreilly.com/product/0636920024002.do)

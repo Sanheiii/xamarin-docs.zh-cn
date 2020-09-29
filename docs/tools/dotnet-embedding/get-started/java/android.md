@@ -6,34 +6,34 @@ ms.assetid: 870F0C18-A794-4C5D-881B-64CC78759E30
 author: davidortinau
 ms.author: daortin
 ms.date: 03/28/2018
-ms.openlocfilehash: bcda03d41cb3bafcfb3ee4b92046014cc5b0c119
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 813fb08835f30d0fc24f0c04e1f26b1f4e7f83e0
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029773"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91456544"
 ---
 # <a name="getting-started-with-android"></a>Android 入门
 
-除了[Java](~/tools/dotnet-embedding/get-started/java/index.md)入门指南中的要求外，还需要：
+除了 [Java](~/tools/dotnet-embedding/get-started/java/index.md) 入门指南中的要求外，还需要：
 
-- [Xamarin 7.5](https://visualstudio.microsoft.com/xamarin/)或更高版本
+- [Xamarin 7.5](https://visualstudio.microsoft.com/xamarin/) 或更高版本
 - [Android Studio](https://developer.android.com/studio/index.html) 1.X 与 Java 1。8
 
 作为概述，我们将：
 
-- 创建C# Android 库项目
+- 创建 c # Android 库项目
 - 通过 NuGet 安装 .NET 嵌入
 - 在 Android 库程序集上运行 .NET 嵌入
 - 在 Android Studio 的 Java 项目中使用生成的 AAR 文件
 
 ## <a name="create-an-android-library-project"></a>创建 Android 库项目
 
-打开 Visual Studio for Windows 或 Mac，创建新的 Android 类库项目，将其命名为 " **hello-从-csharp**"，并将其保存到 **~/Projects/hello-from-csharp**或 **%USERPROFILE%\Projects\hello-from-csharp**。
+打开 Visual Studio for Windows 或 Mac，创建新的 Android 类库项目，将其命名为 " **hello-从-csharp**"，并将其保存到 **~/Projects/hello-from-csharp** 或 **%USERPROFILE%\Projects\hello-from-csharp**。
 
-添加一个名为 " **HelloActivity.cs**" 的新 android 活动，后跟 "**资源/布局"/"main.axml**" 中的 android 布局。
+添加一个名为 " **HelloActivity.cs**" 的新 android 活动，后跟 " **资源/布局"/"main.axml**" 中的 android 布局。
 
-向布局添加新的 `TextView`，并将文本更改为愉快的内容。
+向你的布局添加新的 `TextView` ，并将文本更改为愉快的内容。
 
 布局源应类似于：
 
@@ -53,7 +53,7 @@ ms.locfileid: "73029773"
 </LinearLayout>
 ```
 
-在活动中，请确保正在通过新布局调用 `SetContentView`：
+在活动中，请确保正在 `SetContentView` 通过新的布局调用：
 
 ```csharp
 [Activity(Label = "HelloActivity"),
@@ -70,13 +70,13 @@ public class HelloActivity : Activity
 ```
 
 > [!NOTE]
-> 不要忘记 `[Register]` 特性。 有关详细信息，请参阅[限制](#current-limitations-on-android)。
+> 别忘了 `[Register]` 属性。 有关详细信息，请参阅 [限制](#current-limitations-on-android)。
 
-生成项目。 生成的程序集将保存在 `bin/Debug/hello-from-csharp.dll`中。
+生成项目。 生成的程序集将保存在中 `bin/Debug/hello-from-csharp.dll` 。
 
 ## <a name="installing-net-embedding-from-nuget"></a>从 NuGet 安装 .NET 嵌入
 
-按照以下[说明](~/tools/dotnet-embedding/get-started/install/install.md)安装和配置项目的 .net 嵌入。
+按照以下 [说明](~/tools/dotnet-embedding/get-started/install/install.md) 安装和配置项目的 .net 嵌入。
 
 应配置的命令调用如下所示：
 
@@ -96,22 +96,22 @@ if exist %E4K_OUTPUT% rmdir /S /Q %E4K_OUTPUT%
 
 ## <a name="use-the-generated-output-in-an-android-studio-project"></a>在 Android Studio 项目中使用生成的输出
 
-1. 打开 Android Studio，然后创建一个包含**空活动**的新项目。
-2. 右键单击**应用**模块，并选择 "**新建" > 模块**。
-3. 选择 "**导入"。JAR/。AAR 包**。
-4. 使用目录浏览器查找 **~/Projects/hello-from-csharp/output/hello_from_csharp.aar**并单击 "**完成**"。
+1. 打开 Android Studio，然后创建一个包含 **空活动**的新项目。
+2. 右键单击 **应用** 模块，并选择 " **新建" > 模块**。
+3. 选择 " **导入"。JAR/。AAR 包**。
+4. 使用目录浏览器查找 **~/projects/hello-from-csharp/output/hello_from_csharp aar** ，然后单击 " **完成**"。
 
 ![将 AAR 导入 Android Studio](android-images/androidstudioimport.png)
 
-这会将 AAR 文件复制到名为**hello_from_csharp**的新模块。
+这会将 AAR 文件复制到名为 **hello_from_csharp**的新模块中。
 
 ![Android Studio 项目](android-images/androidstudioproject.png)
 
-若要从**应用**中使用新模块，请右键单击并选择 "**打开模块设置**"。 在 "**依赖项**" 选项卡上，添加新的**模块依赖项**，然后选择 **： hello_from_csharp**。
+若要从 **应用**中使用新模块，请右键单击并选择 " **打开模块设置**"。 在 " **依赖项** " 选项卡上，添加新的 **模块依赖项** ，然后选择 " **hello_from_csharp**"。
 
 ![Android Studio 依赖关系](android-images/androidstudiodependencies.png)
 
-在活动中，添加新的 `onResume` 方法，然后使用以下代码启动该C#活动：
+在活动中，添加一个新 `onResume` 方法，然后使用以下代码启动 c # 活动：
 
 ```java
 import hello_from_csharp.*;
@@ -128,11 +128,11 @@ public class MainActivity extends AppCompatActivity {
 }
 ```
 
-### <a name="assembly-compression-important"></a>程序集压缩（*重要*）
+### <a name="assembly-compression-important"></a>程序集压缩 (*重要*) 
 
 还需要对 Android Studio 项目中的 .NET 嵌入进行进一步更改。
 
-打开应用的**gradle**文件并添加以下更改：
+打开应用的 **gradle** 文件并添加以下更改：
 
 ```groovy
 android {
@@ -155,11 +155,11 @@ com.xamarin.hellocsharp A/monodroid: No assemblies found in '(null)' or '<unavai
 
 启动应用时：
 
-![在模拟器C#中运行的示例 Hello](android-images/hello-from-csharp-android.png)
+![在模拟器中运行的 c # 示例](android-images/hello-from-csharp-android.png)
 
 请注意此处发生了什么：
 
-- 我们有一个C#类，`HelloActivity`，它是一个子类
+- 我们有一个 c # 类， `HelloActivity` 它是子类
 - 我们有 Android 资源文件
 - 在 Android Studio 中，我们使用了它们
 
@@ -167,19 +167,19 @@ com.xamarin.hellocsharp A/monodroid: No assemblies found in '(null)' or '<unavai
 
 - 在应用程序启动时配置 Xamarin。
 - **资产/程序集中**包含的 .net 程序集
-- 对C#活动进行 androidmanifest.xml 修改等。
+- 对 c # 活动**AndroidManifest.xml**修改等。
 - .NET 库中的 Android 资源和资产
-- 适用于任何 `Java.Lang.Object` 子类的[Android 可调用包装](~/android/platform/java-integration/android-callable-wrappers.md)器
+- 任何子类的[Android 可调用包装](~/android/platform/java-integration/android-callable-wrappers.md)器 `Java.Lang.Object`
 
-如果你正在寻找其他演练，请查看以下视频，其中演示了如何将 Charles Petzold 的[FingerPaint 演示](https://docs.microsoft.com/samples/xamarin/monodroid-samples/applicationfundamentals-fingerpaint)嵌入到 Android Studio 项目中：
+如果你正在寻找其他演练，请查看以下视频，其中演示了如何将 Charles Petzold 的 [FingerPaint 演示](/samples/xamarin/monodroid-samples/applicationfundamentals-fingerpaint) 嵌入到 Android Studio 项目中：
 
-[适用于 Android 的![Embeddinator-4000](https://img.youtube.com/vi/ZVcrXUpCNpI/0.jpg)](https://www.youtube.com/watch?v=ZVcrXUpCNpI)
+[![适用于 Android 的 Embeddinator-4000](https://img.youtube.com/vi/ZVcrXUpCNpI/0.jpg)](https://www.youtube.com/watch?v=ZVcrXUpCNpI)
 
 ## <a name="using-java-18"></a>使用 Java 1。8
 
-在撰写本文时，最好的方法是使用 Android Studio 3.0 （[在此处下载](https://developer.android.com/studio/index.html)）。
+在撰写本文时，最好的方法是使用此处 Android Studio 3.0 ([下载](https://developer.android.com/studio/index.html)) 。
 
-若要在应用模块的**gradle**文件中启用 Java 1.8，请执行以下操作：
+若要在应用模块的 **gradle** 文件中启用 Java 1.8，请执行以下操作：
 
 ```groovy
 android {
@@ -191,7 +191,7 @@ android {
 }
 ```
 
-有关更多详细信息，还可以查看[Android Studio 测试项目](https://github.com/mono/Embeddinator-4000/blob/master/tests/android/app/build.gradle)。 
+有关更多详细信息，还可以查看 [Android Studio 测试项目](https://github.com/mono/Embeddinator-4000/blob/master/tests/android/app/build.gradle) 。 
 
 如果要使用 Android Studio 2.3. x 稳定，则必须启用不推荐使用的插座工具链：
 
@@ -207,7 +207,7 @@ android {
 
 ## <a name="current-limitations-on-android"></a>Android 的当前限制
 
-现在，如果对 `Java.Lang.Object`的子类，则 Xamarin 将生成 Java 存根（Android 可调用包装器）而不是 .NET 嵌入。 因此，你必须遵循将导出C#到 Java 的相同规则作为 Xamarin。 例如:
+现在，如果子类化 `Java.Lang.Object` ，Xamarin 将 (Android 可调用) 包装器生成 Java 存根，而不是 .Net 嵌入。 因此，你必须遵循将 c # 导出为 Xamarin 的相同规则。 例如：
 
 ```csharp
 [Register("mono.embeddinator.android.ViewSubclass")]
@@ -223,10 +223,10 @@ public class ViewSubclass : TextView
 }
 ```
 
-- 需要 `[Register]` 才能映射到所需的 Java 包名称
-- 要使方法对 Java 可见，需要 `[Export]`
+- `[Register]` 需要映射到所需的 Java 包名称
+- `[Export]` 使方法对 Java 可见是必需的
 
-我们可以在 Java 中使用 `ViewSubclass`，如下所示：
+我们可以 `ViewSubclass` 在 Java 中使用，如下所示：
 
 ```java
 import mono.embeddinator.android.ViewSubclass;
@@ -235,11 +235,11 @@ ViewSubclass v = new ViewSubclass(this);
 v.apply("Hello");
 ```
 
-阅读有关[Java 与 Xamarin 集成的](~/android/platform/java-integration/index.md)详细信息。
+阅读有关 [Java 与 Xamarin 集成的](~/android/platform/java-integration/index.md)详细信息。
 
 ## <a name="multiple-assemblies"></a>多个程序集
 
-嵌入单个程序集非常简单;但是，您可能会有多个C#程序集。 很多时候，你会依赖于 NuGet 包，如 Android 支持库或 Google Play Services，从而进一步使工作复杂化。
+嵌入单个程序集非常简单;但是，您可能会有多个 c # 程序集。 很多时候，你会依赖于 NuGet 包，如 Android 支持库或 Google Play Services，从而进一步使工作复杂化。
 
 这会导致出现问题，因为 .NET 嵌入需要将许多类型的文件包含到最终 AAR 中，例如：
 
@@ -252,7 +252,7 @@ v.apply("Hello");
 
 下面是建议的方法：
 
-- 通过 .NET 嵌入你拥有的任何程序集（具有的源），并希望从 Java 调用
+- 通过 .NET 嵌入你拥有的任何程序集 (具有) 的源，并希望从 Java 调用
 - 通过 .NET 将需要 Android 资产、本机库或资源的任何程序集嵌入到
 - 添加 Java 依赖项，例如 Android 支持库或 Android Studio 中的 Google Play Services
 
@@ -262,9 +262,9 @@ v.apply("Hello");
 mono Embeddinator-4000.exe --gen=Java --platform=Android -c -o output YourMainAssembly.dll YourDependencyA.dll YourDependencyB.dll
 ```
 
-你应从 NuGet 中排除任何内容，除非你发现它包含 Android 资产、资源等，你将需要在 Android Studio 项目中执行此操作。 你还可以省略不需要从 Java 调用的依赖项，链接器_应_包括你的库中所需的部分。
+你应从 NuGet 中排除任何内容，除非你发现它包含 Android 资产、资源等，你将需要在 Android Studio 项目中执行此操作。 你还可以省略不需要从 Java 调用的依赖项，链接器 _应_ 包括你的库中所需的部分。
 
-若要添加 Android Studio 中所需的任何 Java 依赖项， **gradle**文件可能如下所示：
+若要添加 Android Studio 中所需的任何 Java 依赖项， **gradle** 文件可能如下所示：
 
 ```groovy
 dependencies {
@@ -285,4 +285,4 @@ dependencies {
 
 ## <a name="related-links"></a>相关链接
 
-- [天气示例（Android）](https://github.com/jamesmontemagno/embeddinator-weather)
+- [Android)  (天气示例 ](https://github.com/jamesmontemagno/embeddinator-weather)

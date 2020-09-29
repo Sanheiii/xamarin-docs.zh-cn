@@ -6,29 +6,29 @@ ms.assetid: 455fda67-3879-4299-8036-b12840e6a498
 author: davidortinau
 ms.author: daortin
 ms.date: 04/24/2019
-ms.openlocfilehash: 9f227f51596a4ed93fd830c3f3495a90c1f7f722
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 77df7d986f63861667c67b9c74b88ea6176f42ad
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73014568"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91458181"
 ---
 # <a name="visual-basic-in-xamarin-android-and-ios"></a>Xamarin Android 和 iOS 中的 Visual Basic
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/mobile-samples/visualbasic-taskyvb/)
 
-[TaskyVB](https://docs.microsoft.com/samples/xamarin/mobile-samples/visualbasic-taskyvb/)示例应用程序演示如何 Visual Basic 编译到 .NET Standard 库中的代码如何与 Xamarin 一起使用。 下面是在 Android 和 iOS 上运行的结果应用的一些屏幕截图：
+[TaskyVB](/samples/xamarin/mobile-samples/visualbasic-taskyvb/)示例应用程序演示如何 Visual Basic 编译到 .NET Standard 库中的代码如何与 Xamarin 一起使用。 下面是在 Android 和 iOS 上运行的结果应用的一些屏幕截图：
 
- [![Android 和 iOS 运行使用 Visual Basic 生成的应用](native-apps-images/simulators-sml.png)](native-apps-images/simulators.png#lightbox)
+ [![Android 和 iOS 运行使用 Visual Basic 构建的应用程序](native-apps-images/simulators-sml.png)](native-apps-images/simulators.png#lightbox)
 
-示例中的 Android 和 iOS 项目都是用编写的C#。 每个应用程序的用户界面都是使用本机技术生成的，而 `TodoItem` 管理由 Visual Basic 使用 XML 文件 .NET Standard 库提供（出于演示目的，而不是完整数据库）。
+示例中的 Android 和 iOS 项目都是用 c # 编写的。 每个应用程序的用户界面都是使用本机技术构建的，而 `TodoItem` 使用 XML 文件 (Visual Basic .NET Standard 库提供管理，而不是完整数据库) 。
 
 ## <a name="sample-walkthrough"></a>示例演练
 
-本指南讨论如何在适用于 iOS 和 Android 的[TaskyVB](https://github.com/xamarin/mobile-samples/tree/master/VisualBasic/TaskyVB) Xamarin 示例中实现 Visual Basic。
+本指南讨论如何在适用于 iOS 和 Android 的 [TaskyVB](https://github.com/xamarin/mobile-samples/tree/master/VisualBasic/TaskyVB) Xamarin 示例中实现 Visual Basic。
 
 > [!NOTE]
-> 继续本指南之前，请查看[Visual Basic 和 .NET Standard](index.md)上的说明。
+> 继续本指南之前，请查看 [Visual Basic 和 .NET Standard](index.md) 上的说明。
 >
 > 有关如何使用共享用户界面 Visual Basic 代码构建应用的说明，请参阅[使用 Visual Basic 说明的 Xamarin。](xamarin-forms.md)
 
@@ -44,7 +44,7 @@ Visual Basic .NET Standard 库只能在 Windows 上的 Visual Studio 中创建�
 
 ### <a name="todoitemvb"></a>TodoItem
 
-此类包含要在整个应用程序中使用的业务对象。 它将在 Visual Basic 中定义，并与编写的 Android 和 iOS 项目共享C#。
+此类包含要在整个应用程序中使用的业务对象。 它将在 Visual Basic 中定义，并与用 c # 编写的 Android 和 iOS 项目共享。
 
 类定义如下所示：
 
@@ -61,7 +61,7 @@ End Class
 
 ### <a name="todoitemmanagervb"></a>TodoItemManager
 
-管理器类提供可移植代码的 "API"。 它为 `TodoItem` 类提供基本的 CRUD 操作，但不实现这些操作。
+管理器类提供可移植代码的 "API"。 它为类提供基本的 CRUD 操作 `TodoItem` ，但不实现这些操作。
 
 ```vb
 Public Class TodoItemManager
@@ -148,13 +148,13 @@ End Class
 
 > [!NOTE]
 > 此代码是一个非常基本的数据存储机制的示例。
-> 提供它是为了演示 .NET Standard 库如何针对接口编写代码，以访问特定于平台的功能（在此情况下，加载和保存 XML 文件）。 它不是一种生产质量的数据库备选方案。
+> 提供它是为了演示 .NET Standard 库如何在此示例中对接口进行代码访问以访问特定于平台的功能 (在这种情况下，加载和保存 XML 文件) 。 它不是一种生产质量的数据库备选方案。
 
 ## <a name="android-and-ios-application-projects"></a>Android 和 iOS 应用程序项目
 
 ### <a name="ios"></a>iOS
 
-在 iOS 应用程序中，将在**AppDelegate.cs**文件中创建 `TodoItemManager` 和 `XmlStorageImplementation`，如下面的代码段所示。 前四行只是生成数据将存储到的文件的路径;最后两行显示两个实例化的类。
+在 iOS 应用程序中，将 `TodoItemManager` `XmlStorageImplementation` 在 **AppDelegate.cs** 文件中创建和，如下面的代码段所示。 前四行只是生成数据将存储到的文件的路径;最后两行显示两个实例化的类。
 
 ```csharp
 var xmlFilename = "TodoList.xml";
@@ -167,7 +167,7 @@ TaskMgr = new TodoItemManager(path);
 
 ### <a name="android"></a>Android
 
-在 Android 应用程序中，将在**Application.cs**文件中创建 `TodoItemManager` 和 `XmlStorageImplementation`，如下面的代码段所示。 前三行只是生成存储数据的文件的路径;最后两行显示两个实例化的类。
+在 Android 应用程序中，将 `TodoItemManager` `XmlStorageImplementation` 在 **Application.cs** 文件中创建和，如下面的代码段所示。 前三行只是生成存储数据的文件的路径;最后两行显示两个实例化的类。
 
 ```csharp
 var xmlFilename = "TodoList.xml";
@@ -177,16 +177,16 @@ var path = Path.Combine(libraryPath, xmlFilename);
 TaskMgr = new TodoItemManager(path);
 ```
 
-应用程序代码的其余部分主要涉及用户界面，并使用 `TaskMgr` 类加载并保存 `TodoItem` 类。
+应用程序代码的其余部分主要涉及用户界面，并使用 `TaskMgr` 类加载和保存 `TodoItem` 类。
 
 ## <a name="visual-studio-2019-for-mac"></a>Visual Studio 2019 for Mac
 
 > [!WARNING]
 > Visual Studio for Mac 不支持编辑 Visual Basic 语言–没有用于创建 Visual Basic 项目或文件的菜单项。 如果打开 **.vb** ，则没有语言语法突出显示、自动完成或 IntelliSense。
 
-Visual Studio 2019 for Mac_可以_编译在 Windows 上创建的 visual studio .NET Standard 项目，因此 iOS 应用可以引用这些项目。
+Visual Studio 2019 for Mac _可以_ 编译在 Windows 上创建的 visual studio .NET Standard 项目，因此 iOS 应用可以引用这些项目。
 
-Visual Studio 2017 根本_无法_生成 Visual Basic 项目。
+Visual Studio 2017 根本 _无法_ 生成 Visual Basic 项目。
 
 ## <a name="summary"></a>总结
 
@@ -194,5 +194,5 @@ Visual Studio 2017 根本_无法_生成 Visual Basic 项目。
 
 ## <a name="related-links"></a>相关链接
 
-- [TaskyVB （.NET Standard 示例）](https://github.com/xamarin/mobile-samples/tree/master/VisualBasic/TaskyVB)
-- [.NET Standard 中的新增功能](https://docs.microsoft.com/dotnet/standard/whats-new/whats-new-in-dotnet-standard?tabs=csharp)
+- [TaskyVB ( .NET Standard 示例) ](https://github.com/xamarin/mobile-samples/tree/master/VisualBasic/TaskyVB)
+- [.NET Standard 中的新增功能](/dotnet/standard/whats-new/whats-new-in-dotnet-standard?tabs=csharp)

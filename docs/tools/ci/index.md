@@ -6,12 +6,12 @@ ms.assetid: 99484E96-DC69-4697-8BBB-1B44C5CBB5ED
 author: davidortinau
 ms.author: daortin
 ms.date: 10/23/2018
-ms.openlocfilehash: 9c87a65481ca58b2861c40a420459d629852f6b6
-ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
+ms.openlocfilehash: 357bf2c6e137aacd471b517852f3a7b424af3f7d
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86997418"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91456569"
 ---
 # <a name="continuous-integration-with-xamarin"></a>与 Xamarin 持续集成
 
@@ -27,11 +27,11 @@ ms.locfileid: "86997418"
 
 ## <a name="working-with-continuous-integration-environments"></a>使用持续集成环境
 
-### <a name="build-xamarin-apps-with-azure-pipelines"></a>[生成包含 Azure Pipelines 的 Xamarin 应用](https://docs.microsoft.com/azure/devops/pipelines/languages/xamarin/)
+### <a name="build-xamarin-apps-with-azure-pipelines"></a>[生成包含 Azure Pipelines 的 Xamarin 应用](/azure/devops/pipelines/languages/xamarin/)
 
 使用 Azure Pipelines 自动生成适用于 Android 和 iOS 的 Xamarin 应用。
 
-### <a name="build-xamarin-apps-using-app-center"></a>[使用 App Center 生成 Xamarin 应用](https://docs.microsoft.com/appcenter/build/xamarin/)
+### <a name="build-xamarin-apps-using-app-center"></a>[使用 App Center 生成 Xamarin 应用](/appcenter/build/xamarin/)
 
 通过 App Center 直接从 GitHub、Azure DevOps 或 Bitbucket 生成 Xamarin 和 Xamarin Android 解决方案。
 

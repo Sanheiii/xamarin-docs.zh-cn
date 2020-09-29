@@ -6,12 +6,12 @@ ms.assetid: B581B2D0-9890-C383-C654-0B0E12DAD5A6
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: 96f5dd638de17569d105e95c44a539e652b35986
-ms.sourcegitcommit: d7c09c6cc2f479b8f14910ad2d20ec76800cd9c7
+ms.openlocfilehash: 803b42cfcc27dc86b0d4bc78fc4745af5565e8cb
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91248121"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91457544"
 ---
 # <a name="cross-platform-app-case-study-tasky"></a>跨平台应用案例研究： Tasky
 
@@ -164,7 +164,7 @@ public T GetItem<T> (int id) where T : BL.Contracts.IBusinessEntity, new ()
 
 #### <a name="locking-to-prevent-concurrent-access"></a>锁定以防止并发访问
 
-在类中实现 [锁定](https://msdn.microsoft.com/library/c5kehkcz(v=vs.100).aspx) ， `TaskItemDatabase` 以防止对数据库进行并发访问。 这是为了确保序列化不同线程的并发访问 (否则，UI 组件可能会在后台线程) 时尝试读取数据库。 下面显示了如何实现该锁的示例：
+在类中实现 [锁定](/previous-versions/visualstudio/visual-studio-2010/c5kehkcz(v=vs.100)) ， `TaskItemDatabase` 以防止对数据库进行并发访问。 这是为了确保序列化不同线程的并发访问 (否则，UI 组件可能会在后台线程) 时尝试读取数据库。 下面显示了如何实现该锁的示例：
 
 ```csharp
 static object locker = new object ();

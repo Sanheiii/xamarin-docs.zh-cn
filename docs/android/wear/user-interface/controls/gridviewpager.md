@@ -6,20 +6,20 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/02/2018
-ms.openlocfilehash: 77c5eb65601e5bfdac2cbaad2e196a8ae2813981
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 9c80535dfddd2a279fac66ab159c2a600681bb71
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030324"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91456998"
 ---
 # <a name="gridviewpager"></a>GridViewPager
 
-[GridViewPager](https://docs.microsoft.com/samples/xamarin/monodroid-samples/wear-gridviewpager)示例演示如何实现适用于 Android 磨损的2d 选取器导航模式。
+[GridViewPager](/samples/xamarin/monodroid-samples/wear-gridviewpager)示例演示如何实现适用于 Android 磨损的2d 选取器导航模式。
 
 ![正方形显示屏上 GridViewPager 的示例屏幕截图](gridviewpager-images/gridviewpager.png)
 
-首先将[Xamarin Android 磨损支持](https://www.nuget.org/packages/Xamarin.Android.Wear/)NuGet 包添加到你的项目。
+首先将 [Xamarin Android 磨损支持](https://www.nuget.org/packages/Xamarin.Android.Wear/) NuGet 包添加到你的项目。
 
 布局 XML 如下所示：
 
@@ -31,11 +31,11 @@ ms.locfileid: "73030324"
     android:keepScreenOn="true" />
 ```
 
-创建[`GridPagerAdapter`](https://developer.android.com/reference/android/support/wearable/view/GridPagerAdapter.html)
-（或子类，如[`FragmentGridPagerAdapter`](https://developer.android.com/reference/android/support/wearable/view/FragmentGridPagerAdapter.html)
+创建一个 [`GridPagerAdapter`](https://developer.android.com/reference/android/support/wearable/view/GridPagerAdapter.html)
+ (或子类，如 [`FragmentGridPagerAdapter`](https://developer.android.com/reference/android/support/wearable/view/FragmentGridPagerAdapter.html)
 提供要在用户导航时显示的视图。
 
-[示例适配器](https://github.com/xamarin/monodroid-samples/blob/master/wear/GridViewPager/GridViewPager/SimpleGridPagerAdapter.cs)显示了如何实现所需的方法，包括对 `RowCount`、`GetColumnCount`、`GetBackground`和 `GetFragment` 的替代
+[示例适配器](https://github.com/xamarin/monodroid-samples/blob/master/wear/GridViewPager/GridViewPager/SimpleGridPagerAdapter.cs)演示如何实现所需的方法，包括 `RowCount` 、、 `GetColumnCount` `GetBackground` 和的替代`GetFragment`
 
 按如下所示绑定适配器：
 
@@ -47,4 +47,4 @@ pager.Adapter = new SimpleGridPagerAdapter (this, FragmentManager);
 
 - [Google 的2D 选取器文档](https://developer.android.com/training/wearables/ui/2d-picker.html)
 - [可穿戴文档](https://developer.android.com/reference/android/support/wearable/view/package-summary.html)
-- [GridViewPager （示例）](https://docs.microsoft.com/samples/xamarin/monodroid-samples/wear-gridviewpager)
+- [GridViewPager (示例) ](/samples/xamarin/monodroid-samples/wear-gridviewpager)

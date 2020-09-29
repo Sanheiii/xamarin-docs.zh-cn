@@ -5,12 +5,12 @@ description: 此文档链接到已移植到作为跨平台应用程序使用 Xam
 author: davidortinau
 ms.author: daortin
 ms.date: 04/26/2017
-ms.openlocfilehash: 2797237fed9dab1b7e101b63b17e04281bc5de1d
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 11b92ecb29dd2a558aba8aa47551e6ed2a54883b
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016408"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91456829"
 ---
 # <a name="cross-platform-desktop-samples"></a>跨平台桌面示例
 
@@ -34,7 +34,7 @@ ms.locfileid: "73016408"
 
 ## <a name="architecture-guidance"></a>体系结构指南
 
-### <a name="eshop-on-containers-app"></a>eShop （on 容器）应用
+### <a name="eshop-on-containers-app"></a>容器) 应用上的 eShop (
 
 [GitHub 上的 eShopOnContainers 源](https://github.com/dotnet-architecture/eShopOnContainers)
 
@@ -46,4 +46,4 @@ ms.locfileid: "73016408"
 
 ## <a name="mobile-app-samples"></a>移动应用示例
 
-* 其他[Xamarin 示例](https://docs.microsoft.com/samples/browse/?products=xamarin)
+* 其他 [Xamarin 示例](/samples/browse/?products=xamarin)

@@ -6,20 +6,20 @@ ms.assetid: f264c632-8feb-4015-a5e5-cb9c681c787d
 author: davidortinau
 ms.author: daortin
 ms.date: 04/24/2019
-ms.openlocfilehash: 594f7584e914b7bd8f4d7b72b3c82c42bb2fb73e
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 8ccf96e266f9d5eae69a178cfcad3d1e48fb6962
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73014576"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91457520"
 ---
 # <a name="visual-basic-and-net-standard"></a>Visual Basic 和 .NET Standard
 
-Xamarin Android 和 iOS 项目不支持本机支持 Visual Basic;但是，开发人员可以使用[.NET Standard](~/cross-platform/app-fundamentals/net-standard.md)库将现有 Visual Basic 代码迁移到 Android 和 iOS，或在 Visual Basic 中编写其应用程序逻辑的重要部分。 Xamarin。窗体应用程序可以完全在 Visual Basic 中创建（自定义呈现器、依赖项服务和 XAML 代码隐藏）。
+Xamarin Android 和 iOS 项目不支持本机支持 Visual Basic;但是，开发人员可以使用 [.NET Standard](~/cross-platform/app-fundamentals/net-standard.md) 库将现有 Visual Basic 代码迁移到 Android 和 iOS，或在 Visual Basic 中编写其应用程序逻辑的重要部分。 Xamarin。窗体应用程序可以完全在 Visual Basic (中创建，不包括自定义呈现器、依赖项服务和 XAML 代码隐藏) 。
 
 ## <a name="requirements"></a>要求
 
-若要创建和编译 Visual Basic .NET Standard 库，必须在 Windows 上使用 Visual Studio （Visual Studio 2017 或更高版本）。
+若要创建和编译 Visual Basic .NET Standard 库，必须在 Windows (Visual Studio 2017 或更高版本) 上使用 Visual Studio。
 
 > [!NOTE]
 > 仅可使用 Visual Studio 创建和编译 Visual Basic 库。 Xamarin 和 Xamarin 不支持 Visual Basic 语言。
@@ -35,19 +35,19 @@ Xamarin Android 和 iOS 项目不支持本机支持 Visual Basic;但是，开发
 
 在 Visual Studio 中添加 Visual Basic .NET Standard 库时，必须注意选择正确的项目类型：
 
-1. 从 Visual Studio 2019 中选择 "**创建新项目**"。
+1. 从 Visual Studio 2019 中选择 " **创建新项目**"。
 
-2. 键入 " **Visual Basic 库**" 以筛选项目选项，然后选择 "类库 **（.NET Standard）** " 选项和 "Visual Basic" 图标：
+2. 键入 " **Visual Basic 库** " 以筛选项目选项，并选择 "类库" ** ( .NET Standard ") ** " 选项和 "Visual Basic" 图标：
 
-    [Visual Basic 库![筛选器](xamarin-forms-images/06-sml.png)](xamarin-forms-images/06.png#lightbox)
+    [![Visual Basic 库的筛选器](xamarin-forms-images/06-sml.png)](xamarin-forms-images/06.png#lightbox)
 
-3. 在下一个屏幕上，键入项目的名称，然后按 "**创建**"。
+3. 在下一个屏幕上，键入项目的名称，然后按 " **创建**"。
 
-4. Visual Basic 项目将显示如下所示的**解决方案资源管理器**中：
+4. Visual Basic 项目将显示如下所示的  **解决方案资源管理器** 中：
 
     [![空 Visual Basic 项目](images/new-library-sml.png)](images/new-library.png#lightbox)
 
-项目现已准备好 Visual Basic 要添加的代码。 .NET Standard 项目可以由其他项目（应用程序项目或库项目）引用。
+项目现已准备好 Visual Basic 要添加的代码。  (应用程序项目或库项目) 的其他项目可以引用 .NET Standard 项目。
 
 ## <a name="summary"></a>总结
 
@@ -60,7 +60,7 @@ Xamarin Android 和 iOS 项目不支持本机支持 Visual Basic;但是，开发
 
 ## <a name="related-links"></a>相关链接
 
-- [TaskyVB （示例）](https://docs.microsoft.com/samples/xamarin/mobile-samples/visualbasic-taskyvb/)
-- [XamarinFormsVB （示例）](https://docs.microsoft.com/samples/xamarin/mobile-samples/visualbasic-xamarinformsvb/)
+- [TaskyVB (示例) ](/samples/xamarin/mobile-samples/visualbasic-taskyvb/)
+- [XamarinFormsVB (示例) ](/samples/xamarin/mobile-samples/visualbasic-xamarinformsvb/)
 - [.NET Standard 和 Xamarin](~/cross-platform/app-fundamentals/net-standard.md)
 - [.NET Standard](/dotnet/standard/net-standard/)

@@ -6,12 +6,12 @@ ms.assetid: 81174493-02D3-4FF5-AD57-04F3288A7F94
 author: davidortinau
 ms.author: daortin
 ms.date: 06/19/2018
-ms.openlocfilehash: 1545af984c0a409244c323048b448ec44e9be6a8
-ms.sourcegitcommit: f7fe46c0236a7130b63a33d9d1670d5111582dd2
+ms.openlocfilehash: 70bc0f90b2802587dba8e2da19430164fccfe861
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88186182"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91457336"
 ---
 # <a name="inspector-installation-and-requirements"></a>检查器安装和要求
 
@@ -19,15 +19,15 @@ ms.locfileid: "88186182"
 
 # <a name="windows"></a>[Windows](#tab/windows)
 
-1. 下载并安装[Visual Studio Enterprise](https://visualstudio.microsoft.com/vs/) ，并选择 "**采用 .net 的移动开发**" 工作负荷。
-1. [登录](https://docs.microsoft.com/visualstudio/ide/signing-in-to-visual-studio)以启用你的企业订阅。
-1. [检查](~/tools/inspector/inspect.md)自己的应用！
+1. 下载并安装 [Visual Studio Enterprise](https://visualstudio.microsoft.com/vs/) ，并选择 " **采用 .net 的移动开发** " 工作负荷。
+1. [登录](/visualstudio/ide/signing-in-to-visual-studio) 以启用你的企业订阅。
+1. [检查](~/tools/inspector/inspect.md) 自己的应用！
 
 # <a name="macos"></a>[macOS](#tab/macos)
 
-1. 下载并安装[Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/)。
-1. [登录](https://docs.microsoft.com/visualstudio/mac/activation)以启用你的企业订阅。
-1. [检查](~/tools/inspector/inspect.md)自己的应用！
+1. 下载并安装 [Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/)。
+1. [登录](/visualstudio/mac/activation) 以启用你的企业订阅。
+1. [检查](~/tools/inspector/inspect.md) 自己的应用！
 
 -----
 
@@ -49,11 +49,11 @@ Live app 检查适用于企业客户。
 
 ### <a name="supported-app-platforms"></a>支持的应用平台
 
-|应用平台|IDE 支持|备注|
+|应用平台|IDE 支持|注释|
 |--- |--- |--- |
 |Mac|仅 Visual Studio for Mac 中支持|
 |iOS|在 Visual Studio 2017 和 Visual Studio for Mac 中受支持| 链接器行为必须设置为 "在**IOS 生成**项目选项下[**不链接**](~/ios/deploy-test/linker.md) ()  |
-|Android|在 Visual Studio 2017 和 Visual Studio for Mac 中受支持|必须针对 Android >= 4.0.3，并启用**fastdev** 。<br />必须使用 Google、Visual Studio 或 Xamarin Android 仿真程序。 Android 7 仿真程序此时可能不允许检查。|
+|Android|在 Visual Studio 2017 和 Visual Studio for Mac 中受支持|必须针对 Android >= 4.0.3，并启用 **fastdev** 。<br />必须使用 Google、Visual Studio 或 Xamarin Android 仿真程序。 Android 7 仿真程序此时可能不允许检查。|
 |WPF|仅在 Visual Studio 2017 中受支持|
 
 <a name="reporting-bugs"></a>
@@ -100,7 +100,7 @@ Visual Studio For Mac
 Visual Studio
 
 - `%LOCALAPPDATA%\Xamarin\Logs\{VS version}\Inspector {date}.log`
-- Visual Studio "**输出**" 窗格中的内容可能也有信息。
+- Visual Studio " **输出** " 窗格中的内容可能也有信息。
 
 ### <a name="project-settings"></a>项目设置
 

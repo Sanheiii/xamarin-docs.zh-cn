@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/02/2018
-ms.openlocfilehash: 83c4ba8cbdc360682a4e06a885be15dd20d0f249
-ms.sourcegitcommit: f4b26c5b8cc84f79123951e80c15061eb859452d
+ms.openlocfilehash: 3263bfd9cea184a7bfbb29099abe2f1b3deb4126
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88720300"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91458051"
 ---
 # <a name="packaging-wear-apps"></a>打包应用程序
 
@@ -24,7 +24,7 @@ Android 磨损1.0 应用使用完整 Android 应用进行打包，以便 Google 
 
 Android 磨损2.0 应用可以作为 [独立的应用程序][standalone]提交到 Google Play。
 
-[xa-11.1]: https://docs.microsoft.com/xamarin/android/release-notes/11/11.1
+[xa-11.1]: /xamarin/android/release-notes/11/11.1
 [standalone]: https://developer.android.com/training/wearables/apps/standalone-apps
 
 ## <a name="automatic-packaging"></a>自动打包
