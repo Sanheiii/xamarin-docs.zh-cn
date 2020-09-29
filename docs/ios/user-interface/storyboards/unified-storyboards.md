@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: 4da0bd1c47c37430b278bed46f658b935a502e2d
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: fdfdd385563ee425f0e8767aed13304ae9541b94
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937873"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91435354"
 ---
 # <a name="unified-storyboards-in-xamarinios"></a>Xamarin 中的统一情节提要
 
@@ -24,22 +24,22 @@ iOS 8 包含一种用于创建用户界面（统一情节提要）的全新、�
 
 ## <a name="size-classes"></a>大小类
 
-在 iOS 8 之前，开发人员使用 `UIInterfaceOrientation` 和 `UIInterfaceIdiom` 区分纵向模式和横向模式，以及 IPhone 和 iPad 设备之间的差异。 在 iOS8 中，通过使用*大小类*确定方向和设备。
+在 iOS 8 之前，开发人员使用 `UIInterfaceOrientation` 和 `UIInterfaceIdiom` 区分纵向模式和横向模式，以及 IPhone 和 iPad 设备之间的差异。 在 iOS8 中，通过使用 *大小类*确定方向和设备。
 
 设备是按大小类定义的，在垂直和水平轴中，在 iOS 8 中有两种类型的类：
 
-- **常规**–这适用于大屏幕大小（如 iPad）或小尺寸的小工具（例如，`UIScrollView`
-- **Compact** –适用于较小的设备（如 iPhone）。 此大小会考虑设备的方向。
+- **常规** –这适用于大屏幕尺寸 (如 iPad) 或小尺寸 (的小工具，如 `UIScrollView`
+- **Compact** –这适用于较小的设备 (例如 iPhone) 。 此大小会考虑设备的方向。
 
 如果将两个概念一起使用，则结果为 2 x 2 网格，该网格定义可在不同方向上使用的不同可能大小，如下图所示：
 
  [![2 x 2 网格，用于定义可在常规和紧凑方向中使用的不同可能大小](unified-storyboards-images/sizeclassgrid.png)](unified-storyboards-images/sizeclassgrid.png#lightbox)
 
-开发人员可以创建一个视图控制器，该控制器使用可能导致不同布局的四种可能性中的任何一种（如上图所示）。
+开发人员可以创建一个视图控制器，该视图控制器使用可能导致不同布局 (如) 上图中所示的四种可能性。
 
 ### <a name="ipad-size-classes"></a>iPad 大小类
 
-由于大小的原因，iPad 具有适用于这两个方向的**常规**类大小。
+由于大小的原因，iPad 具有适用于这两个方向的 **常规** 类大小。
 
  [![iPad 大小类](unified-storyboards-images/image1.png)](unified-storyboards-images/image1.png#lightbox)
 
@@ -62,9 +62,9 @@ IPhone 根据设备的方向提供不同大小的类：
 
 ### <a name="support-for-a-new-screen-scale"></a>支持新的屏幕缩放
 
-IPhone 6 Plus 使用屏幕缩放系数为3.0 （原始 iPhone 屏幕分辨率的三倍）的新 Retina 高清显示器。 若要在这些设备上提供可能的最佳体验，请包括为此屏幕缩放设计的新图稿。 在 Xcode 6 及更高版本中，资产目录可以包含以1x、2x 和3倍速大小的图像;只需添加新的图像资产，在 iPhone 6 Plus 上运行时，iOS 就会选择正确的资产。
+IPhone 6 Plus 使用屏幕缩放系数 3.0 (三倍于原始 iPhone 屏幕分辨率) 的新的 Retina 高清显示器。 若要在这些设备上提供可能的最佳体验，请包括为此屏幕缩放设计的新图稿。 在 Xcode 6 及更高版本中，资产目录可以包含以1x、2x 和3倍速大小的图像;只需添加新的图像资产，在 iPhone 6 Plus 上运行时，iOS 就会选择正确的资产。
 
-IOS 中的映像加载行为还识别了 `@3x` 映像文件上的后缀。 例如，如果开发人员在应用程序捆绑包中包括了一个图像资产（采用不同的解决方案），则应使用以下文件名： `MonkeyIcon.png` 、 `MonkeyIcon@2x.png` 和 `MonkeyIcon@3x.png` 。 在 iPhone 6 上， `MonkeyIcon@3x.png` 当开发人员使用以下代码加载图像时，将自动使用映像：
+IOS 中的映像加载行为还识别了 `@3x` 映像文件上的后缀。 例如，如果开发人员在应用程序捆绑包中的不同分辨率) 包含图像资产 (，请使用以下文件名： `MonkeyIcon.png` 、 `MonkeyIcon@2x.png` 和 `MonkeyIcon@3x.png` 。 在 iPhone 6 上， `MonkeyIcon@3x.png` 当开发人员使用以下代码加载图像时，将自动使用映像：
 
 ```csharp
 UIImage icon = UIImage.FromFile("MonkeyImage.png");
@@ -78,23 +78,23 @@ UIImage icon = UIImage.FromFile("MonkeyImage.png");
 
 启动屏幕文件在启动 iOS 应用程序时显示为初始屏幕，以便向用户提供对应用实际启动的反馈。 在 iOS 8 之前，开发人员必须为 `Default.png` 应用程序运行的每种设备类型、方向和屏幕分辨率包含多个图像资产。
 
-对于 iOS 8，开发人员可在 Xcode 中创建单个原子 `.xib` 文件，该文件使用自动布局和大小类来创建可用于每个设备、分辨率和方向的*动态启动屏幕*。 这不仅减少了开发人员创建和维护所有必需的图像资产所需的工作量，而且还减少了应用程序的已安装捆绑的大小。
+对于 iOS 8，开发人员可在 Xcode 中创建单个原子 `.xib` 文件，该文件使用自动布局和大小类来创建可用于每个设备、分辨率和方向的 *动态启动屏幕* 。 这不仅减少了开发人员创建和维护所有必需的图像资产所需的工作量，而且还减少了应用程序的已安装捆绑的大小。
 
 ## <a name="traits"></a>Traits
 
-特性是一些属性，可用于确定在其环境更改时布局的变化方式。 它们由一组属性（ `HorizontalSizeClass` 和 `VerticalSizeClass` 基于 `UIUserInterfaceSizeClass` ）以及接口用法（ `UIUserInterfaceIdiom` ）和显示比例组成。
+特性是一些属性，可用于确定在其环境更改时布局的变化方式。 它们包含一组 `HorizontalSizeClass` 基于)  (和的属性 `VerticalSizeClass` ，以及 `UIUserInterfaceSizeClass` ( `UIUserInterfaceIdiom`) 和显示比例接口。
 
-所有上述状态都在 Apple 引用为特征集合（）的容器中打包 `UITraitCollection` ，其中不仅包含属性，还包含其值。
+所有上述状态都在 Apple 引用为特征集合的容器中打包 ( `UITraitCollection`) ，其中不仅包含属性，还包含其值。
 
 ## <a name="trait-environment"></a>特征环境
 
 特性环境是 iOS 8 中的新接口，能够返回以下对象的特征集合：
 
-- 屏幕（ `UIScreens` ）。
-- Windows （ `UIWindows` ）。
-- 查看控制器（ `UIViewController` ）。
-- 视图（ `UIView` ）。
-- 表示控制器（ `UIPresentationController` ）。
+- )  ( 屏幕 `UIScreens` 。
+- Windows ( `UIWindows` ) 。
+- 查看控制器 ( `UIViewController` ) 。
+- 视图 ( `UIView` ) 。
+- 演示控制器 ( `UIPresentationController` ) 。
 
 开发人员使用特性环境返回的特征集合来确定应如何布置用户界面。
 
@@ -112,7 +112,7 @@ UIImage icon = UIImage.FromFile("MonkeyImage.png");
 
 下面是开发人员在 iPhone 上可能看到的典型特征集合：
 
-|properties|值|
+|属性|值|
 |--- |--- |
 |`HorizontalSizeClass`|精简|
 |`VerticalSizeClass`|定期|
@@ -121,9 +121,9 @@ UIImage icon = UIImage.FromFile("MonkeyImage.png");
 
 上述集将表示完全限定的特征集，因为它具有其所有特征属性的值。
 
-还可以具有一个特征集合，其中缺少某些值（Apple 将其称为*未指定*）：
+还可以具有一个特征集合，其中缺少某些值 (Apple 将其引用为 *未指定*) ：
 
-|properties|值|
+|属性|值|
 |--- |--- |
 |`HorizontalSizeClass`|精简|
 |`VerticalSizeClass`|未指定|
@@ -132,7 +132,7 @@ UIImage icon = UIImage.FromFile("MonkeyImage.png");
 
 不过，通常情况下，当开发人员为特征集合请求特征环境时，它将返回完全限定的集合，如以上示例中所示。
 
-如果特性环境（如视图或视图控制器）不在当前视图层次结构中，开发人员可能会获得一个或多个特征属性的未指定值。
+如果特性环境 (如视图或视图控制器) 不在当前视图层次结构内，则开发人员可能会获得一个或多个特征属性的未指定值。
 
 如果开发人员使用 Apple 提供的一种创建方法（如 `UITraitCollection.FromHorizontalSizeClass` ）来创建新的集合，则开发人员还将获得部分限定的特征集合。
 
@@ -152,11 +152,11 @@ UIImage icon = UIImage.FromFile("MonkeyImage.png");
 
 ## <a name="uiimage"></a>UIImage
 
-Apple 向添加了特征集合的另一个类 `UIImage` 。 在过去，开发人员必须指定 @1X @2x 要在应用程序中包括的任何位图图形资产的和版本（例如图标）。
+Apple 向添加了特征集合的另一个类 `UIImage` 。 在过去，开发人员必须指定 @1X @2x 要在应用程序中包括的任何位图图形资产的和版本， (如图标) 。
 
 iOS 8 已扩展为允许开发人员在基于特征集合的映像目录中包含多个版本的映像。 例如，开发人员可以包含一个较小的图像，用于处理精简特征类和任何其他集合的完全大小的图像。
 
-在类中使用其中一个图像时 `UIImageView` ，"图像" 视图将自动显示其特征集合的正确图像版本。 如果特征环境发生变化（例如用户将设备从纵向切换为横向），则图像视图将自动选择新图像大小以匹配新的特征集合，并将其大小更改为与要显示的图像的当前版本相匹配。
+在类中使用其中一个图像时 `UIImageView` ，"图像" 视图将自动显示其特征集合的正确图像版本。 如果特征环境改变 (例如，用户将设备从纵向切换为横向) ，则图像视图将自动选择新图像大小以匹配新的特征集合，并将其大小更改为与要显示的图像的当前版本相匹配。
 
 ## <a name="uiimageasset"></a>UIImageAsset
 
@@ -164,7 +164,7 @@ Apple 向 iOS 8 添加了一个名为的新类 `UIImageAsset` ，使开发人员
 
 图像资产会包装图像的所有不同版本，并允许开发人员询问与已传入的特征集合匹配的特定图像。 可以动态地从图像资产中添加或删除图像。
 
-有关图像资产的详细信息，请参阅 Apple 的[UIImageAsset](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIImageAsset_Ref/index.html#//apple_ref/occ/cl/UIImageAsset)文档。
+有关图像资产的详细信息，请参阅 Apple 的 [UIImageAsset](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIImageAsset_Ref/index.html#//apple_ref/occ/cl/UIImageAsset) 文档。
 
 ## <a name="combining-trait-collections"></a>组合特征集合
 
@@ -180,7 +180,7 @@ Apple 向 iOS 8 添加了一个名为的新类 `UIImageAsset` ，使开发人员
 
 IOS 8 中已更改的其中一个视图控制器类是 `UISplitViewController` 类。 过去，开发人员通常会在 iPad 版应用程序上使用拆分视图控制器，然后他们必须为 iPhone 版本的应用提供完全不同的视图层次结构版本。
 
-在 iOS 8 中， `UISplitViewController` 该类可在平台（iPad 和 iPhone）上使用，这使开发人员可以创建一个可同时适用于 iPhone 和 iPad 的视图控制器层次结构。
+在 iOS 8 中， `UISplitViewController` 类在 (iPad 和 iPhone) 平台上可用，这允许开发人员创建一个可同时适用于 iPhone 和 iPad 的视图控制器层次结构。
 
 当 iPhone 处于横向时，拆分视图控制器将并排显示其视图，就像在 iPad 上显示一样。
 
@@ -214,13 +214,13 @@ IOS 8 中已更改的其中一个视图控制器类是 `UISplitViewController` �
 
 iOS 8 提供若干次回调，开发人员可以使用这些回调来参与特征更改，如下表所示：
 
-|相位|回调|说明|
+|阶段|回调|说明|
 |--- |--- |--- |
 |设置|<ul><li>`WillTransitionToTraitCollection`</li><li>`TraitCollectionDidChange`</li></ul>|<ul><li>此方法在特性集合设置为其新值之前在特征更改开始时调用。</li><li>当特征集合的值已更改，但在发生任何动画之前，将调用方法。</li></ul>|
 |动画|`WillTransitionToTraitCollection`|传递给此方法的转换协调器具有一个 `AnimateAlongside` 属性，该属性允许开发人员添加将与默认动画一起执行的动画。|
 |清理|`WillTransitionToTraitCollection`|为开发人员提供一种方法，用于在发生过渡后包含自己的清理代码。|
 
-`WillTransitionToTraitCollection`方法非常适合用于对视图控制器进行动画处理，以及特征集合更改。 `WillTransitionToTraitCollection`方法仅适用于视图控制器（）， `UIViewController` 而不能用于其他特性环境（如） `UIViews` 。
+`WillTransitionToTraitCollection`方法非常适合用于对视图控制器进行动画处理，以及特征集合更改。 `WillTransitionToTraitCollection`方法仅适用于视图控制器 () ， `UIViewController` 而不是其他特性环境（如） `UIViews` 。
 
 `TraitCollectionDidChange`非常适合与 `UIView` 类合作，其中开发人员希望在改变特征时更新 UI。
 
@@ -228,26 +228,26 @@ iOS 8 提供若干次回调，开发人员可以使用这些回调来参与特�
 
 现在，让我们详细了解拆分视图控制器从两列到一个列视图的折叠情况。 作为此更改的一部分，需要执行两个过程：
 
-- 默认情况下，展开后，拆分视图控制器将使用主视图控制器作为视图。 开发人员可以重写此行为，方法是重写 `GetPrimaryViewControllerForCollapsingSplitViewController` 的方法 `UISplitViewControllerDelegate` ，并提供要在折叠状态下显示的任何视图控制器。
-- 辅助视图控制器必须合并到主视图控制器。 通常，开发人员无需在此步骤中执行任何操作;拆分视图控制器包括基于硬件设备的此阶段的自动处理。 但是，在某些特殊情况下，开发人员需要与此更改进行交互。 通过调用的 `CollapseSecondViewController` 方法，可以在 `UISplitViewControllerDelegate` 进行折叠时显示母版视图控制器，而不是详细信息视图。
+- 默认情况下，展开后，拆分视图控制器将使用主视图控制器作为视图。 开发人员可以重写此行为，方法是重写  `GetPrimaryViewControllerForCollapsingSplitViewController` 的方法  `UISplitViewControllerDelegate` ，并提供要在折叠状态下显示的任何视图控制器。
+- 辅助视图控制器必须合并到主视图控制器。 通常，开发人员无需在此步骤中执行任何操作;拆分视图控制器包括基于硬件设备的此阶段的自动处理。 但是，在某些特殊情况下，开发人员需要与此更改进行交互。 通过调用的  `CollapseSecondViewController` 方法，可以在  `UISplitViewControllerDelegate` 进行折叠时显示母版视图控制器，而不是详细信息视图。
 
 ### <a name="expanding-the-split-view-controller"></a>展开拆分视图控制器
 
 现在，让我们详细了解拆分视图控制器从折叠状态扩展后会发生的情况。 同样，需要执行两个阶段：
 
-- 首先，定义新的主视图控制器。 默认情况下，拆分视图控制器将自动从折叠视图使用主视图控制器。 同样，开发人员可以使用的方法来重写此行为 `GetPrimaryViewControllerForExpandingSplitViewController` `UISplitViewControllerDelegate` 。
-- 选择主视图控制器后，必须重新创建辅助视图控制器。 同样，拆分视图控制器包括基于硬件设备的此阶段的自动处理。 开发人员可以通过调用的方法来重写此行为 `SeparateSecondaryViewController` `UISplitViewControllerDelegate` 。
+- 首先，定义新的主视图控制器。 默认情况下，拆分视图控制器将自动从折叠视图使用主视图控制器。 同样，开发人员可以使用的方法来重写此行为  `GetPrimaryViewControllerForExpandingSplitViewController`  `UISplitViewControllerDelegate` 。
+- 选择主视图控制器后，必须重新创建辅助视图控制器。 同样，拆分视图控制器包括基于硬件设备的此阶段的自动处理。 开发人员可以通过调用的方法来重写此行为  `SeparateSecondaryViewController`  `UISplitViewControllerDelegate` 。
 
-在拆分视图控制器中，主视图控制器通过实现和方法，在展开和折叠视图中扮演着一个部分 `CollapseSecondViewController` `SeparateSecondaryViewController` `UISplitViewControllerDelegate` 。 `UINavigationController`实现这些方法以自动推送和弹出辅助视图控制器。
+在拆分视图控制器中，主视图控制器通过实现和方法，在展开和折叠视图中扮演着一个部分 `CollapseSecondViewController` `SeparateSecondaryViewController` `UISplitViewControllerDelegate` 。 `UINavigationController` 实现这些方法以自动推送和弹出辅助视图控制器。
 
 ### <a name="showing-view-controllers"></a>显示视图控制器
 
-Apple 对 iOS 8 进行的另一项更改是开发人员显示视图控制器的方式。 过去，如果应用程序有叶视图控制器（如表视图控制器），并且开发人员显示了不同的控制器（例如，为了响应用户点击某个单元），则应用程序将通过控制器层次结构返回到导航视图控制器，并对 `PushViewController` 其调用方法以显示新的视图。
+Apple 对 iOS 8 进行的另一项更改是开发人员显示视图控制器的方式。 过去，如果应用程序有一个叶视图控制器 (例如表视图控制器) ，而开发人员显示了一个不同的 (例如，为了响应用户对单元格的点击) ，应用程序将通过控制器层次结构进入导航视图控制器并对 `PushViewController` 其调用方法以显示新的视图。
 
 这会在导航控制器和它运行时所处的环境之间出现紧密耦合。 在 iOS 8 中，Apple 通过提供两种新方法来分离此内容：
 
-- `ShowViewController`–改编以根据其环境显示新的视图控制器。 例如，在中， `UINavigationController` 只需将新视图推送到堆栈上。 在拆分视图控制器中，新的视图控制器将作为新的主视图控制器显示在左侧。 如果没有容器视图控制器，则新视图将显示为模式视图控制器。
-- `ShowDetailViewController`–的工作方式类似于 `ShowViewController` ，但在拆分视图控制器上实现，用于将详细信息视图替换为传入的新视图控制器。 如果拆分视图控制器已折叠（在 iPhone 应用程序中可能会看到），则调用将被重定向到 `ShowViewController` 方法，新视图将显示为主视图控制器。 同样，如果不存在容器视图控制器，则新视图将显示为模式视图控制器。
+- `ShowViewController` –改编以根据其环境显示新的视图控制器。 例如，在中，  `UINavigationController` 只需将新视图推送到堆栈上。 在拆分视图控制器中，新的视图控制器将作为新的主视图控制器显示在左侧。 如果没有容器视图控制器，则新视图将显示为模式视图控制器。
+- `ShowDetailViewController` –的工作方式类似于  `ShowViewController` ，但在拆分视图控制器上实现，用于将详细信息视图替换为传入的新视图控制器。 如果拆分视图控制器已折叠 (如 iPhone 应用程序) 中所示，则调用将被重定向到  `ShowViewController` 方法，新视图将显示为主视图控制器。 同样，如果不存在容器视图控制器，则新视图将显示为模式视图控制器。
 
 这些方法的工作方式是从叶视图控制器开始，遍历视图层次结构，直到找到正确的容器视图控制器来处理新视图的显示。
 
@@ -261,18 +261,18 @@ Apple 对 iOS 8 进行的另一项更改是开发人员显示视图控制器的�
 
 此方法将遍历层次结构链，直到找到正确的容器视图控制器。 例如：
 
-1. 如果 `ShowViewController` 调用方法，则实现此方法的链中的第一个视图控制器是导航控制器，因此它将用作新视图的父控制器。
-1. 如果 `ShowDetailViewController` 已调用方法，则拆分视图控制器是第一个要实现它的视图控制器，因此它将用作父级。
+1. 如果  `ShowViewController` 调用方法，则实现此方法的链中的第一个视图控制器是导航控制器，因此它将用作新视图的父控制器。
+1. 如果  `ShowDetailViewController` 已调用方法，则拆分视图控制器是第一个要实现它的视图控制器，因此它将用作父级。
 
 方法的工作方式是 `GetTargetForAction` ：查找实现给定操作的视图控制器，然后询问视图控制器（如果它要接收该操作）。 由于此方法是公共的，因此开发人员可以创建自己的自定义方法，这些方法与内置 `ShowViewController` 和 `ShowDetailViewController` 方法相同。
 
 ## <a name="adaptive-presentation"></a>自适应演示
 
-在 iOS 8 中，Apple 已进行 Segue 演示（ `UIPopoverPresentationController` ）自适应。 因此，Segue 演示视图控制器会自动在常规大小类中显示普通的 Segue 视图，但会在水平紧凑的大小类（如 iPhone）上以全屏方式显示它。
+在 iOS 8 中，Apple 使 Segue 的演示文稿 ( `UIPopoverPresentationController`) 自适应。 因此，Segue 演示视图控制器会自动在常规大小类中显示普通的 Segue 视图，但会在水平紧凑的大小类 (例如在 iPhone) 上以全屏方式显示它。
 
-为了适应统一情节提要系统中的更改，创建了一个新的控制器对象用于管理所提供的视图控制器 `UIPresentationController` 。 此控制器是从显示视图控制器到关闭视图控制器时创建的。 由于它是一个管理类，因此它可以在视图控制器上被视为一个超级类，因为它对影响视图控制器（如方向）的设备更改进行响应，然后将其反馈到显示控制器控件的视图控制器。
+为了适应统一情节提要系统中的更改，创建了一个新的控制器对象用于管理所提供的视图控制器 `UIPresentationController` 。 此控制器是从显示视图控制器到关闭视图控制器时创建的。 由于它是一个管理类，因此可将其视为对视图控制器的一个超级类，因为它对影响视图控制器的设备更改进行了响应 (如方向) ，然后将其反馈到显示控制器控件的视图控制器。
 
-当开发人员使用方法呈现视图控制器时 `PresentViewController` ，会将演示过程的管理移交给 `UIKit` 。 UIKit 处理要创建的样式的正确控制器，其中唯一的例外是将视图控制器的样式设置为 `UIModalPresentationCustom` 。 此时，应用程序可以提供自己的 PresentationController，而不是使用 `UIKit` 控制器。
+当开发人员使用方法呈现视图控制器时 `PresentViewController` ，会将演示过程的管理移交给 `UIKit` 。 UIKit 处理所创建的样式的正确控制器) 的其他功能 (，仅当视图控制器将样式设置为时，才会发生这种情况 `UIModalPresentationCustom` 。 此时，应用程序可以提供自己的 PresentationController，而不是使用 `UIKit` 控制器。
 
 ### <a name="custom-presentation-styles"></a>自定义演示样式
 
@@ -564,7 +564,7 @@ public override void ViewDidLoad ()
 
 默认情况下，任何新的 Xamarin iOS 项目都将使用大小类。 若要在更早项目的情节提要内使用大小类和自适应 Segue，必须先将其从 iOS 设计器内部转换为 Xcode 6 统一情节提要格式。
 
-为此，请在 iOS 设计器中打开要转换的情节提要，并选中 "**使用大小类**" 复选框：
+为此，请在 iOS 设计器中打开要转换的情节提要，并选中 " **使用大小类** " 复选框：
 
  [!["使用大小类" 复选框](unified-storyboards-images/sizeclass01.png)](unified-storyboards-images/sizeclass01.png#lightbox)
 
@@ -577,7 +577,7 @@ IOS 设计器将确认开发人员想要将情节提要的格式转换为使用�
 
 ### <a name="generic-device-types"></a>泛型设备类型
 
-将情节提要转换为使用大小类后，它将在 Design Surface 中重新显示，并且作为设备的**视图**将为泛型：
+将情节提要转换为使用大小类后，它将在 Design Surface 中重新显示，并且作为设备的 **视图** 将为泛型：
 
  [![作为通用设备类型查看](unified-storyboards-images/sizeclass03.png)](unified-storyboards-images/sizeclass03.png#lightbox)
 
@@ -593,11 +593,11 @@ IOS 设计器将确认开发人员想要将情节提要的格式转换为使用�
 
 ### <a name="select-a-size-class"></a>选择大小类
 
-Size 类选择器按钮位于 Design Surface 的左上角（位于视图附近）。 它允许开发人员选择当前正在编辑的大小类：
+Size 类选择器按钮位于视图附近 (Design Surface 的左上角，) 为下拉列表。 它允许开发人员选择当前正在编辑的大小类：
 
  [![选择大小类](unified-storyboards-images/sizeclass06.png)](unified-storyboards-images/sizeclass06.png#lightbox)
 
-选择器将显示大小类选择作为 3 x 3 网格。 网格中的每个方形都表示 Width 类和 Height 类的组合。 中心方块选择任意宽度/任意高度大小类（统一情节提要的默认视图）。 选中此方形后，开发人员将编辑默认布局，此布局由所有其他配置继承。
+选择器将显示大小类选择作为 3 x 3 网格。 网格中的每个方形都表示 Width 类和 Height 类的组合。 中心方块选择任意宽度/任意高度大小类 (这是统一情节提要) 的默认视图。 选中此方形后，开发人员将编辑默认布局，此布局由所有其他配置继承。
 
 网格的左上角的方块表示紧凑型宽度/压缩高度大小类：
 
@@ -619,7 +619,7 @@ Size 类选择器按钮位于 Design Surface 的左上角（位于视图附近�
 
 ### <a name="adaptive-segue-types"></a>自适应 Segue 类型
 
-如果开发人员以前使用过情节提要，则他们将熟悉**现有的 segue、****模式**和**segue**类型。 在统一情节提要文件上启用大小类时，将提供以下自适应 Segue 类型（与上述新视图控制器 API 对应的类型）：**显示**和**显示详细信息**。
+如果开发人员以前使用过情节提要，则他们将熟悉**现有的 segue、****模式**和**segue**类型。 在统一情节提要文件上启用大小类时，将提供以下与前面讨论的新视图控制器 API () 的自适应 Segue 类型： **显示** 和 **显示详细信息**。
 
 > [!IMPORTANT]
 > 启用大小类后，任何现有的 segue 都将转换为新类型。
@@ -634,7 +634,7 @@ Size 类选择器按钮位于 Design Surface 的左上角（位于视图附近�
 
  [![主菜单](unified-storyboards-images/segue02.png)](unified-storyboards-images/segue02.png#lightbox)
 
-单击 "**选择游戏**" 按钮，项的视图控制器将被推送到导航堆栈：
+单击 " **选择游戏** " 按钮，项的视图控制器将被推送到导航堆栈：
 
  [![项视图控制器将被推送到导航堆栈上，如下所示](unified-storyboards-images/segue03.png)](unified-storyboards-images/segue03.png#lightbox)
 
@@ -642,17 +642,17 @@ Size 类选择器按钮位于 Design Surface 的左上角（位于视图附近�
 
  [![显示的主菜单](unified-storyboards-images/segue04.png)](unified-storyboards-images/segue04.png#lightbox)
 
-同样，单击 "**选择游戏**" 按钮，该项目的 "视图控制器" 将显示在拆分视图控制器的 "详细信息" 部分中：
+同样，单击 " **选择游戏** " 按钮，该项目的 "视图控制器" 将显示在拆分视图控制器的 "详细信息" 部分中：
 
  [![拆分视图控制器的详细信息部分中显示的项视图控制器](unified-storyboards-images/segue05.png)](unified-storyboards-images/segue05.png#lightbox)
 
 ### <a name="excluding-an-element-from-a-size-class"></a>从大小类排除元素
 
-有时，特定大小类中不需要给定元素（如视图、控件或约束）。 若要从大小类中排除元素，请选择要在**Design Surface**中排除的所需项。 滚动到**属性资源管理器**的底部，然后单击 "**齿轮**" 下拉菜单。 选择要从中排除项的**宽度**和**高度**的组合：
+在某些情况下，不需要在特定大小类中 (给定元素，如视图、控件或约束) 。 若要从大小类中排除元素，请选择要在 **Design Surface**中排除的所需项。 滚动到 **属性资源管理器** 的底部，然后单击 " **齿轮** " 下拉菜单。 选择要从中排除项的 **宽度** 和 **高度** 的组合：
 
 [![选择宽度和高度的组合](unified-storyboards-images/exclude-a.png)](unified-storyboards-images/exclude-a.png#lightbox)
 
-新的*排除事例*将添加到**属性资源管理器**底部的元素中。 接下来，取消选中给定大小类的**已安装**复选框：
+新的 *排除事例* 将添加到 **属性资源管理器**底部的元素中。 接下来，取消选中给定大小类的 **已安装** 复选框：
 
 [![取消选中 "已安装" 复选框](unified-storyboards-images/exclude-b.png)](unified-storyboards-images/exclude-b.png#lightbox)
 
@@ -672,7 +672,7 @@ Size 类选择器按钮位于 Design Surface 的左上角（位于视图附近�
 
  [![IPhone 模拟器中正在运行的应用程序时缺少元素](unified-storyboards-images/exclude05.png)](unified-storyboards-images/exclude05.png#lightbox)
 
-若要从元素中删除排除事例，只需在 " **Design Surface**中选择元素，滚动到"**属性资源管理器**"底部，然后单击 **-** 要删除的事例旁边的按钮。
+若要从元素中删除排除事例，只需在 " **Design Surface**中选择元素，滚动到" **属性资源管理器** "底部，然后单击 **-** 要删除的事例旁边的按钮。
 
 若要查看统一情节提要的实现，请查看 `UnifiedStoryboard` 附加到本文档的示例 Xamarin iOS 8 应用程序。
 
@@ -680,15 +680,15 @@ Size 类选择器按钮位于 Design Surface 的左上角（位于视图附近�
 
 启动屏幕文件在启动 iOS 应用程序时显示为初始屏幕，以便向用户提供对应用实际启动的反馈。 在 iOS 8 之前，开发人员必须为 `Default.png` 应用程序运行的每种设备类型、方向和屏幕分辨率包含多个图像资产。 例如，、、等 `Default@2x.png` `Default-Landscape@2x~ipad.png` `Default-Portrait@2x~ipad.png` 。
 
-在新的 iPhone 6 和 iPhone 6 Plus 设备（以及即将发布的 Apple Watch）中，在所有现有的 iPhone 和 iPad 设备上进行因式分解，这代表了 `Default.png` 必须创建和维护的启动屏幕图像资产的各种大小、方向和分辨率。 此外，这些文件可能会很大，并且会 "膨胀" 可交付结果应用程序捆绑，增加从 iTunes 应用商店下载应用程序所需的时间（可能使其无法通过蜂窝网络传递），并增加最终用户设备上所需的存储量。
+在新的 iPhone 6 和 iPhone 6 Plus 设备 (和即将推出的 Apple Watch) 与所有现有 iPhone 和 iPad 设备进行因式分解，这表示 `Default.png` 必须创建和维护的启动屏幕图像资产的各种大小、方向和分辨率。 此外，这些文件可能会很大，并且会 "膨胀" 可交付结果应用程序捆绑包，增加从 iTunes 应用商店下载应用程序所需的时间， (可能使其无法通过移动电话网络传递) 并增加最终用户设备上所需的存储量。
 
-对于 iOS 8，开发人员可在 Xcode 中创建单个原子 `.xib` 文件，该文件使用自动布局和大小类来创建可用于每个设备、分辨率和方向的*动态启动屏幕*。 这不仅减少了开发人员创建和维护所有必需的图像资产所需的工作量，而且大大减少了应用程序的已安装捆绑的大小。
+对于 iOS 8，开发人员可在 Xcode 中创建单个原子 `.xib` 文件，该文件使用自动布局和大小类来创建可用于每个设备、分辨率和方向的 *动态启动屏幕* 。 这不仅减少了开发人员创建和维护所有必需的图像资产所需的工作量，而且大大减少了应用程序的已安装捆绑的大小。
 
 动态启动屏幕具有以下限制和注意事项：
 
 - 仅使用 `UIKit` 类。
 - 使用单个根视图，即 `UIView` 或 `UIViewController` 对象。
-- 不要对应用程序的代码进行任何连接（不要添加**操作**或**插座**）。
+- 不要对应用程序的代码进行任何连接 (不要) 添加 **操作** 或 **插座** 。
 - 不要添加 `UIWebView` 对象。
 - 不要使用任何自定义类。
 - 不要使用运行时属性。
@@ -697,7 +697,7 @@ Size 类选择器按钮位于 Design Surface 的左上角（位于视图附近�
 
 执行以下操作：
 
-1. 打开**Visual Studio for Mac**并加载**解决方案**，以向添加动态启动屏幕。
+1. 打开 **Visual Studio for Mac** 并加载 **解决方案** ，以向添加动态启动屏幕。
 2. 在**解决方案资源管理器**中，右键单击该 `MainStoryboard.storyboard` 文件，然后选择 "**打开方式**  >  **Xcode" Interface Builder**：
 
     [![用 Xcode 打开 Interface Builder](unified-storyboards-images/dls01.png)](unified-storyboards-images/dls01.png#lightbox)
@@ -707,20 +707,20 @@ Size 类选择器按钮位于 Design Surface 的左上角（位于视图附近�
 4. 选择 " **iOS**  >  **用户界面**  >  **启动" 屏幕**，然后单击 "**下一步**" 按钮：
 
     [![选择 iOS/用户界面/启动屏幕](unified-storyboards-images/dls03.png)](unified-storyboards-images/dls03.png#lightbox)
-5. 命名该文件 `LaunchScreen.xib` ，然后单击 "**创建**" 按钮：
+5. 命名该文件 `LaunchScreen.xib` ，然后单击 " **创建** " 按钮：
 
     [![将该文件命名为 LaunchScreen. xib](unified-storyboards-images/dls04.png)](unified-storyboards-images/dls04.png#lightbox)
 6. 通过添加图形元素并使用布局约束来为给定设备、方向和屏幕大小定位它们，编辑启动屏幕的设计：
 
     [![编辑启动屏幕的设计](unified-storyboards-images/dls05.png)](unified-storyboards-images/dls05.png#lightbox)
 7. 保存对 `LaunchScreen.xib` 的更改。
-8. 选择**应用程序目标**和 "**常规**" 选项卡：
+8. 选择 **应用程序目标** 和 " **常规** " 选项卡：
 
     [![选择应用程序目标和 "常规" 选项卡](unified-storyboards-images/dls06.png)](unified-storyboards-images/dls06.png#lightbox)
-9. 单击 "**选择 info.plist** " 按钮， `Info.plist` 为 Xamarin 应用选择，并单击 "**选择**" 按钮：
+9. 单击 " **选择 info.plist** " 按钮， `Info.plist` 为 Xamarin 应用选择，并单击 " **选择** " 按钮：
 
     [![为 Xamarin 应用选择 info.plist](unified-storyboards-images/dls07.png)](unified-storyboards-images/dls07.png#lightbox)
-10. 在 "**应用程序图标和启动图像**" 部分中，打开 "**启动屏幕文件**" 下拉列表，然后选择 `LaunchScreen.xib` 上面创建的：
+10. 在 " **应用程序图标和启动图像** " 部分中，打开 " **启动屏幕文件** " 下拉列表，然后选择 `LaunchScreen.xib` 上面创建的：
 
     [![选择 LaunchScreen. xib](unified-storyboards-images/dls08.png)](unified-storyboards-images/dls08.png#lightbox)
 11. 保存对文件所做的更改，并返回 Visual Studio for Mac。
@@ -728,10 +728,10 @@ Size 类选择器按钮位于 Design Surface 的左上角（位于视图附近�
 13. 在**解决方案资源管理器**中，右键单击**资源**文件夹，然后选择 "**添加**" "添加  >  **文件 ...**"：
 
     [![选择 "添加/添加文件 ..."](unified-storyboards-images/dls09.png)](unified-storyboards-images/dls09.png#lightbox)
-14. 选择 `LaunchScreen.xib` 上面创建的文件，并单击 "**打开**" 按钮：
+14. 选择 `LaunchScreen.xib` 上面创建的文件，并单击 " **打开** " 按钮：
 
     [![选择 LaunchScreen. xib 文件](unified-storyboards-images/dls10.png)](unified-storyboards-images/dls10.png#lightbox)
-15. 生成应用程序。
+15. 构建应用程序。
 
 ### <a name="testing-the-dynamic-launch-screen"></a>测试动态启动屏幕
 
@@ -749,9 +749,9 @@ Size 类选择器按钮位于 Design Surface 的左上角（位于视图附近�
 
 若要保持与 iOS 7 的向后兼容性，只需 `Default.png` 在 ios 8 应用程序中将常用图像资源包含为正常。 iOS 将恢复到以前的行为，并在 iOS 7 设备上运行时将这些文件用作启动屏幕。
 
-若要在 Xamarin 中查看动态启动屏幕的实现，请查看附加到此文档的[动态启动](https://docs.microsoft.com/samples/xamarin/ios-samples/ios8-dynamiclaunchscreen)屏幕示例 iOS 8 应用程序。
+若要在 Xamarin 中查看动态启动屏幕的实现，请查看附加到此文档的 [动态启动](/samples/xamarin/ios-samples/ios8-dynamiclaunchscreen) 屏幕示例 iOS 8 应用程序。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 本文快速查看大小类及其在 iPhone 和 iPad 设备中的影响布局的方式。 它讨论了特征、特征环境和特征集如何与大小类结合使用，以创建统一的界面。 简单了解自适应视图控制器，以及它们如何使用统一接口内的大小类。 其中介绍了如何完全从 Xamarin iOS 8 应用程序内的 c # 代码实现大小类和统一接口。
 
@@ -759,9 +759,9 @@ Size 类选择器按钮位于 Design Surface 的左上角（位于视图附近�
 
 ## <a name="related-links"></a>相关链接
 
-- [自适应照片（示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/ios8-adaptivephotos)
-- [动态启动屏幕（示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/ios8-dynamiclaunchscreen)
+- [自适应照片 (示例) ](/samples/xamarin/ios-samples/ios8-adaptivephotos)
+- [动态启动屏幕 (示例) ](/samples/xamarin/ios-samples/ios8-dynamiclaunchscreen)
 - [iOS 8 简介](~/ios/platform/introduction-to-ios8.md)
-- [IOS8 中的动态布局-演化2014（视频）](https://youtu.be/f3mMGlS-lM4)
+- [IOS8 中的动态布局-2014 (视频) ](https://youtu.be/f3mMGlS-lM4)
 - [UIPresentationController](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIPresentationController_class/)
 - [UIImageAsset](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIImageAsset_Ref/index.html#//apple_ref/occ/cl/UIImageAsset)

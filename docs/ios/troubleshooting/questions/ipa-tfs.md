@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 4493b1a0d06e2f44ee9a11a250395f058baa0548
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 2542eace19cf08a994be99379566e9e621c27190
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031025"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91435575"
 ---
 # <a name="how-can-i-copy-ipa-output-files-to-the-tfs-drop-folder"></a>如何将 IPA 输出文件复制到 TFS 放置文件夹？
 
-在文本编辑器中打开 iOS 应用项目的 `.csproj` 文件，然后在结尾处添加以下行（紧靠在结束 `</Project>` 标记之前）：
+`.csproj`在文本编辑器中打开 iOS 应用项目的文件，然后将以下行添加到结束标记前面 (`</Project>`) ：
 
 ```xml
 <PropertyGroup>
@@ -38,18 +38,18 @@ ms.locfileid: "73031025"
 </Target>
 ```
 
-## <a name="notes"></a>注意
+## <a name="notes"></a>备注
 
-- 这与[我在能否更改 IPA 文件的输出路径](~/ios/troubleshooting/questions/ipa-output-path.md)时所讨论的一般方法相同？。 将 `$(TF_BUILD_BINARIESDIRECTORY)` 设置为目标文件夹并添加一个额外条件，使 `CopyIpa` 只为 TFS 生成运行，这两个要点。
+- 这与 [我在能否更改 IPA 文件的输出路径](~/ios/troubleshooting/questions/ipa-output-path.md)时所讨论的一般方法相同？。 需要将两个重要的要点设置 `$(TF_BUILD_BINARIESDIRECTORY)` 为目标文件夹并添加一个额外的条件，以便 `CopyIpa` 仅为 TFS 生成运行。
 
-- 有关 `TF_BUILD_BINARIESDIRECTORY` 的说明，请参阅[预定义的生成变量](https://docs.microsoft.com/azure/devops/pipelines/build/variables)。
+- 有关详细说明， `TF_BUILD_BINARIESDIRECTORY` 请参阅 [预定义的生成变量](/azure/devops/pipelines/build/variables)。
 
 ## <a name="additional-references"></a>其他参考
 
-- [有关安装 TFS 以与 Xamarin 一起使用的文档](https://docs.microsoft.com/azure/devops/repos/tfvc/overview)
-- [Azure DevOps 生成任务： Xamarin Android](https://docs.microsoft.com/azure/devops/pipelines/tasks/build/xamarin-android)
-- [Azure DevOps 生成任务： Xamarin. iOS](https://docs.microsoft.com/azure/devops/pipelines/tasks/build/xamarin-ios)
+- [有关安装 TFS 以与 Xamarin 一起使用的文档](/azure/devops/repos/tfvc/overview)
+- [Azure DevOps 生成任务： Xamarin Android](/azure/devops/pipelines/tasks/build/xamarin-android)
+- [Azure DevOps 生成任务： Xamarin. iOS](/azure/devops/pipelines/tasks/build/xamarin-ios)
 
 ### <a name="next-steps"></a>后续步骤
 
-本文档讨论了从 Mac 生成主机上的 Xamarin 3.11.666 for Visual Studio 和 Xamarin 8.10.3 的当前行为。 若要获得更多帮助，请联系我们，或者，如果在使用上述信息后仍出现此问题，请参阅[哪些支持选项可用于 Xamarin？](~/cross-platform/troubleshooting/support-options.md)有关联系人选项、建议的信息，以及如何在需要时记录新 bug.
+本文档讨论了从 Mac 生成主机上的 Xamarin 3.11.666 for Visual Studio 和 Xamarin 8.10.3 的当前行为。 若要获得更多帮助，请联系我们，或者，如果在使用上述信息后仍出现此问题，请参阅 [适用于 Xamarin 的哪些支持选项？](~/cross-platform/troubleshooting/support-options.md) 有关联系人选项、建议的信息，以及如何在需要时记录新的 bug。

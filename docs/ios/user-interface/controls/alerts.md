@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 1264b28b2ee56ec5de610350a199668c67d5c33c
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: b7dae8afbb5db378687f9ecb9469236dc68831ae
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73022102"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91435485"
 ---
 # <a name="displaying-alerts-in-xamarinios"></a>在 Xamarin 中显示警报
 
@@ -20,7 +20,7 @@ ms.locfileid: "73022102"
 
 不同于它所替换的类（UIView 的子类），UIAlertController 是 UIViewController 的子类。
 
-使用 `UIAlertControllerStyle` 指示要显示的警报的类型。 这些警报类型为：
+用于 `UIAlertControllerStyle` 指示要显示的警报的类型。 这些警报类型为：
 
 - **UIAlertControllerStyleActionSheet**
   - IOS 8 之前，这会是一个 UIActionSheet
@@ -30,11 +30,11 @@ ms.locfileid: "73022102"
 创建警报控制器时需要执行三个必要的步骤：
 
 - 使用以下内容创建并配置警报：
-  - 标题
-  - 消息
+  - title
+  - message
   - preferredStyle
 
-- 可有可无添加文本字段
+-  (可选) 添加文本字段
 - 添加所需的操作
 - 显示视图控制器
 
@@ -81,7 +81,7 @@ okayCancelButton.TouchUpInside += ((sender, e) => {
 
  ![操作表警报](alerts-images/alert3.png)
 
-将按钮添加到带有 `AddAction` 方法的警报：
+将按钮添加到警报， `AddAction` 方法如下：
 
 ```csharp
 actionSheetButton.TouchUpInside += ((sender, e) => {
@@ -111,5 +111,5 @@ actionSheetButton.TouchUpInside += ((sender, e) => {
 
 ## <a name="related-links"></a>相关链接
 
-- [控件（示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/controls)
+- [控制 (示例) ](/samples/xamarin/ios-samples/controls)
 - [警报控制器](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/alertcontroller)

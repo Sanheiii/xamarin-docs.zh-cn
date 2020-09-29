@@ -6,34 +6,34 @@ ms.assetid: D781401F-7A96-4098-9645-5F98AEAF7F71
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: 8ffb62c8715ff60e9b0ea3b2bc536f3441fb8765
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.openlocfilehash: bdbce0b001d5baf5ef751e092a2083efdf3ca992
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76724672"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436265"
 ---
 # <a name="introduction-to-game-development-with-monogame"></a>MonoGame 的游戏开发简介
 
 _此多部分演练演示了如何使用 MonoGame 创建简单的2D 应用程序。 它介绍常见的游戏编程概念，如图形、输入、游戏实体和物理学。_
 
-本文介绍了用于制作跨平台游戏的 MonoGame API 技术。 有关完整的平台列表，请参阅[MonoGame 网站](http://www.monogame.net/)。 本教程将使用 C＃ 代码示例，虽然 MonoGame 也完全可以使用F＃。
+本文介绍了用于创建跨平台游戏的 MonoGame API 技术。 有关完整的平台列表，请参阅 [MonoGame 网站](http://www.monogame.net/)。 本教程将使用 c # 编写代码示例，但 MonoGame 在 F # 中也能完全正常运行。
 
-MonoGame 是一个跨平台的硬件加速API、提供图形、音频、游戏状态管理、输入以及用于导入资产的内容流水线。 与大多数游戏引擎不同，MonoGame 不提供或强加任何模式或项目结构。  虽然这意味着开发人员可以随意组织他们的代码，但这也意味着首次启动新项目时需要一些设置代码。
+MonoGame 是一个跨平台的硬件加速 API，为导入资产提供了图形、音频、游戏状态管理、输入和内容管道。 与大多数游戏引擎不同，MonoGame 不提供任何模式或项目结构。  尽管这意味着开发人员可以随意按自己的方式组织代码，但这也意味着，在首次启动新项目时需要进行一些安装代码。
 
-本演练的第一部分重点介绍如何设置一个空项目。 最后一部分介绍了如何编写我们所有的游戏逻辑和内容 — 大多数都是跨平台的。
+本演练的第一部分重点介绍如何设置空项目。 最后一部分介绍如何编写我们的所有游戏逻辑和内容-其中大多数都是跨平台。
 
-本演练结束时，我们将创建一个简单的游戏，玩家可以通过触摸输入控制动画角色。  虽然这在技术上并不是一个完整的游戏（因为它没设置赢或输的条件），但它展示了许多游戏开发概念，可以作为许多游戏类型的基础。
+本演练结束时，我们将创建一个简单的游戏，播放机可以使用触控输入来控制动画字符。  尽管从技术上讲，这并不是完整的游戏 (因为它在) 的情况下不会有任何，它演示了许多游戏开发概念，并可用作多种游戏类型的基础。
 
-下面显示了此演练的结果：
+下面显示了本演练的结果：
 
 ![鼠标后的示例游戏字符的动画](images/image1.gif)
 
 ## <a name="monogame-and-xna"></a>MonoGame 和
 
-MonoGame 库旨在模仿 Microsoft XNA 库的功能和语法。  所有 MonoGame 对象都存在于 Microsoft.Xna 命名空间下 - 允许大多数 XNA 代码在 MonoGame 中使用而无需修改。
+MonoGame 库旨在模拟 Microsoft 的具有语法和功能的功能库。  MonoGame 命名空间下的所有对象都存在，允许在 MonoGame 中使用大多数未进行修改的代码。
 
-熟悉 XNA 的开发人员已熟悉 MonoGame 的语法，想寻找更多有关使用 MonoGame 的信息的开发人员可参考现有的在线XNA演练、API 文档和讨论。
+熟悉 MonoGame 的开发人员已经熟悉了的语法，而开发人员查找有关使用 MonoGame 的其他信息时，将能够引用现有的联机文件中演练、API 文档和讨论。
 
 ## <a name="walkthrough-parts"></a>演练部分
 
@@ -42,7 +42,7 @@ MonoGame 库旨在模仿 Microsoft XNA 库的功能和语法。  所有 MonoGame
 
 ## <a name="related-links"></a>相关链接
 
-- [WalkingGame MonoGame 项目（示例）](https://docs.microsoft.com/samples/xamarin/mobile-samples/walkinggamemg/)
+- [WalkingGame MonoGame Project (示例) ](/samples/xamarin/mobile-samples/walkinggamemg/)
 - [NuGet 上的 MonoGame Android](https://www.nuget.org/packages/MonoGame.Framework.Android/)
 - [NuGet 上的 MonoGame iOS](https://www.nuget.org/packages/MonoGame.Framework.iOS/)
 - [MonoGame API 文档](http://www.monogame.net/documentation/?page=main)

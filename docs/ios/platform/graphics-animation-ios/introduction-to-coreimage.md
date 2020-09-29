@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 9e0363f941784ecc488861c0d2f089a30c275a10
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 7cb94956266a3094cc62ccc66c3d44e97884f04d
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937392"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91435289"
 ---
 # <a name="core-image-in-xamarinios"></a>Xamarin 中的核心映像
 
@@ -34,7 +34,7 @@ _核心映像是 iOS 5 引入的新框架，用于提供图像处理和实时视
 
 ## <a name="face-detection"></a>人脸检测
 
-核心图像面部检测功能只是它所说的内容，它会尝试确定照片中的人脸，并返回它识别的任何面部的坐标。 此信息可用于计算图像中的人员数，在图像上绘制指示器（例如 对于照片中的 "标记" 人员，或可以考虑的任何其他内容。
+核心图像面部检测功能只是它所说的内容，它会尝试确定照片中的人脸，并返回它识别的任何面部的坐标。 此信息可用于计算图像中人员的数量，在图像上绘制标记 (例如。 对于照片中的 "标记" 用户) ，或者您可以考虑的任何其他内容。
 
 此 CoreImage\SampleCode.cs 中的代码演示如何在嵌入图像上创建和使用人脸检测：
 
@@ -46,7 +46,7 @@ var ciImage = CIImage.FromCGImage(image.CGImage);
 CIFeature[] features = detector.FeaturesInImage(ciImage);
 ```
 
-功能数组将填充 `CIFaceFeature` 对象（如果检测到任何面部）。 `CIFaceFeature`每个面都有一个。 `CIFaceFeature` 具有以下属性：
+`CIFaceFeature`如果检测到任何面部) ，功能阵列将用对象填充 (。 `CIFaceFeature`每个面都有一个。 `CIFaceFeature` 具有以下属性：
 
 - HasMouthPosition-是否为此人脸检测到嘴。
 - HasLeftEyePosition-是否为此人脸检测到了左侧眼。
@@ -55,7 +55,7 @@ CIFeature[] features = detector.FeaturesInImage(ciImage);
 - LeftEyePosition-此人脸的左侧眼睛坐标。
 - RightEyePosition-此人脸的适当眼睛坐标。
 
-所有这些属性的坐标在左下角均为原点–不同于 UIKit，它使用左上角作为原点。 当使用上的坐标时， `CIFaceFeature` 请确保 "翻转" 它们。 CoreImage\CoreImageViewController.cs 中这个非常基本的自定义图像视图演示了如何在图像上绘制 "面部指示器" 三角形（请注意 `FlipForBottomOrigin` 方法）：
+所有这些属性的坐标在左下角均为原点–不同于 UIKit，它使用左上角作为原点。 当使用上的坐标时， `CIFaceFeature` 请确保 "翻转" 它们。 CoreImage\CoreImageViewController.cs 中这个非常基本的自定义图像视图演示了如何在图像上绘制 "面部指示器" 三角形 (注意 `FlipForBottomOrigin` 方法) ：
 
 ```csharp
 public class FaceDetectImageView : UIView
@@ -110,7 +110,7 @@ faceView.SetNeedsDisplay();
 
 屏幕截图显示了示例输出：检测到的面部特征的位置显示在 UITextView 中，并使用 CoreGraphics 将其绘制到源图像上。
 
-由于面部识别的工作方式，有时会检测到人脸以外的东西（如这些玩具猴！）。
+由于面部识别的工作方式，有时会检测除人脸 (等玩具猴！ ) 以外的东西。
 
 ## <a name="filters"></a>筛选器
 
@@ -118,7 +118,7 @@ faceView.SetNeedsDisplay();
 
 ## <a name="using-filters"></a>使用筛选器
 
-将筛选器应用于映像包含四个不同的步骤：加载图像、创建筛选器、应用筛选器以及保存（或显示）结果。
+将筛选器应用于映像包含四个不同的步骤：加载图像、创建筛选器、应用筛选器并保存 (或显示结果) 。
 
 首先，将图像加载到 `CIImage` 对象。
 
@@ -152,7 +152,7 @@ imgview.Image = ui;
 
 这些屏幕截图显示 `CISepia` `CIHueAdjust` 在 CoreImage.zip 示例代码中演示的和筛选器的结果。
 
-有关筛选器的示例，请参阅[调整图像食谱的协定和亮度](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/coreimage/adjust_contrast_and_brightness_of_an_image) `CIColorControls` 。
+有关筛选器的示例，请参阅 [调整图像食谱的协定和亮度](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/coreimage/adjust_contrast_and_brightness_of_an_image) `CIColorControls` 。
 
 ```csharp
 var uiimage = UIImage.FromFile("photo.JPG");
@@ -208,7 +208,7 @@ foreach (var filter in filters){
 }
 ```
 
-[CIFilter 类引用](https://developer.apple.com/library/prerelease/ios/#documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIFilter_Class/Reference/Reference.html)描述了50内置筛选器及其属性。 使用上面的代码，你可以查询筛选器类，包括参数的默认值以及允许的最大值和最小值（可用于在应用筛选器之前验证输入）。
+[CIFilter 类引用](https://developer.apple.com/library/prerelease/ios/#documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIFilter_Class/Reference/Reference.html)描述了50内置筛选器及其属性。 使用上面的代码，你可以查询筛选器类，包括参数的默认值、最大值和最小值允许值 (可用于在应用筛选器) 之前验证输入。
 
 在模拟器上，列表类别的输出如下所示–您可以滚动浏览列表以查看所有筛选器及其参数。
 
@@ -216,13 +216,13 @@ foreach (var filter in filters){
 
 列出的每个筛选器已作为 Xamarin 中的类公开，因此你也可以在程序集浏览器中浏览 CoreImage API，或在 Visual Studio for Mac 或 Visual Studio 中使用自动完成。 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 本文介绍了如何使用一些新的 iOS 5 核图像框架功能，如人脸检测和对图像应用筛选器。 框架中提供了许多不同的映像筛选器供你使用。
 
 ## <a name="related-links"></a>相关链接
 
-- [核心映像（示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/coreimage)
+- [核心映像 (示例) ](/samples/xamarin/ios-samples/coreimage)
 - [调整图像食谱的协定和亮度](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/coreimage/adjust_contrast_and_brightness_of_an_image)
 - [使用核心映像筛选器](https://developer.apple.com/library/prerelease/ios/#documentation/GraphicsImaging/Conceptual/CoreImaging/ci_tasks/ci_tasks.html)
 - [CIFilter 类引用](https://developer.apple.com/library/prerelease/ios/#documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIFilter_Class/Reference/Reference.htm)

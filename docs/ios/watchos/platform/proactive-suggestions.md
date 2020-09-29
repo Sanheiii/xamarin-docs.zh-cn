@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 4235e6049b9700edbb3974f1e4cbaf7c405f6e83
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 246757ddc43c5480b26ab4c1360a036fd111dcfa
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937470"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91435350"
 ---
 # <a name="watchos-proactive-suggestions-in-xamarin"></a>Xamarin 中的 watchOS 主动建议
 
@@ -44,20 +44,20 @@ WatchOS 3 的新手， `NSUserActivity` 该类包含一个属性，该 `MapItem`
 
 主动建议使用以下三种主要方式使用应用：
 
-- **`NSUserActivity`**-帮助系统了解用户当前在屏幕上使用的信息。
-- **位置建议**-如果应用提供或使用基于位置的信息，则这些 API 扩展提供了新的方法来跨应用共享此信息。
+- **`NSUserActivity`** -帮助系统了解用户当前在屏幕上使用的信息。
+- **位置建议** -如果应用提供或使用基于位置的信息，则这些 API 扩展提供了新的方法来跨应用共享此信息。
 
 在应用程序中，通过实现以下内容来支持和：
 
 - IOS 10 中的**上下文 Siri 提醒**已 `NSUserActivity` 扩展为允许 Siri 快速提醒查看当前在应用程序中查看的内容。
-- **位置建议**-iOS 10 增强 `NSUserActivity` 了捕获在应用内查看的位置，并在整个系统的多个位置中进行升级。
+- **位置建议** -iOS 10 增强 `NSUserActivity` 了捕获在应用内查看的位置，并在整个系统的多个位置中进行升级。
 - **上下文 Siri 请求**  -  `NSUserActivity`为在应用程序中提供的信息提供上下文以 Siri，以便用户可以从应用程序中获取指示或调用 Siri 的调用。
 
 所有这些功能都有一个共同之处，它们都使用 `NSUserActivity` 一种窗体或其他功能来提供其功能。 
 
 ## <a name="nsuseractivity"></a>NSUserActivity
 
-如上所述， `NSUserActivity` 帮助系统了解用户当前在屏幕上使用的信息。 `NSUserActivity`是一种轻型状态缓存机制，用于在用户浏览应用时捕获用户的活动。 例如，查看餐馆应用：
+如上所述， `NSUserActivity` 帮助系统了解用户当前在屏幕上使用的信息。 `NSUserActivity` 是一种轻型状态缓存机制，用于在用户浏览应用时捕获用户的活动。 例如，查看餐馆应用：
 
 [![餐馆应用](proactive-suggestions-images/activity02.png)](proactive-suggestions-images/activity02.png#lightbox)
 
@@ -65,7 +65,7 @@ WatchOS 3 的新手， `NSUserActivity` 该类包含一个属性，该 `MapItem`
 
 1. 用户使用应用时，会创建一个， `NSUserActivity` 以便在以后重新创建该应用的状态。
 2. 如果用户搜索餐馆，则会遵循相同的创建活动模式。
-3. 再次查看结果时。 在最后一种情况下，用户正在查看某个位置，在 iOS 10 中，系统更了解某些概念（如位置或通信交互）。
+3. 再次查看结果时。 在最后一种情况下，用户正在查看某个位置，在 iOS 10 中，系统更了解某些概念 (如位置或通信交互) 。
 
 仔细查看最后一个屏幕：
 
@@ -75,11 +75,11 @@ WatchOS 3 的新手， `NSUserActivity` 该类包含一个属性，该 `MapItem`
 
 然后，该应用会确定是否会通过无线方式播发活动，并将其保存为位置建议的临时值，或添加到设备聚焦索引以在搜索结果中显示。
 
-有关移交和聚焦搜索的详细信息，请参阅我们的[移交简介](~/ios/platform/handoff.md)和[IOS 9 全新搜索 api](~/ios/platform/search/index.md)指南。
+有关移交和聚焦搜索的详细信息，请参阅我们的 [移交简介](~/ios/platform/handoff.md) 和 [IOS 9 全新搜索 api](~/ios/platform/search/index.md) 指南。
 
 ### <a name="creating-an-activity"></a>创建活动
 
-创建活动之前，需要创建一个活动类型标识符来识别它。 活动类型标识符是添加到 `NSUserActivityTypes` 应用 `Info.plist` 文件（用于唯一标识给定用户活动类型）数组的短字符串。 对于应用程序支持的每个活动，数组中将有一个条目，并将其公开给应用搜索。 有关更多详细信息，请参阅[创建活动类型标识符引用](~/ios/platform/search/nsuseractivity.md)。
+创建活动之前，需要创建一个活动类型标识符来识别它。 活动类型标识符是添加到 `NSUserActivityTypes` 应用 `Info.plist` 文件（用于唯一标识给定用户活动类型）数组的短字符串。 对于应用程序支持的每个活动，数组中将有一个条目，并将其公开给应用搜索。 有关更多详细信息，请参阅 [创建活动类型标识符引用](~/ios/platform/search/nsuseractivity.md) 。
 
 查看活动示例：
 
@@ -121,7 +121,7 @@ activity.ContentAttributeSet = attributes;
 activity.BecomeCurrent();
 ```
 
-如果开发人员有一个网站，该网站能够与应用程序显示相同的信息，则该应用程序可以包含 URL，并且内容可以在未安装应用的其他设备上显示（通过移交）：
+如果开发人员有一个网站，该网站能够与应用程序显示相同的信息，则该应用程序可以包含 URL，并且内容可以在未通过移交)  (安装应用的其他设备上显示：
 
 ```csharp
 // Restore on the web
@@ -130,7 +130,7 @@ activity.WebPageUrl = new NSUrl("http://xamarin.com/platform");
 
 ### <a name="restoring-an-activity"></a>还原活动
 
-若要对应用程序点击搜索结果（ `NSUserActivity` ），请编辑**AppDelegate.cs**文件并重写 `ContinueUserActivity` 方法。 例如：
+若要对应用程序点击搜索结果 (`NSUserActivity`) ，请编辑 **AppDelegate.cs** 文件并重写 `ContinueUserActivity` 方法。 例如：
 
 ```csharp
 public override bool ContinueUserActivity (UIApplication application, NSUserActivity userActivity, UIApplicationRestorationHandler completionHandler)
@@ -147,7 +147,7 @@ public override bool ContinueUserActivity (UIApplication application, NSUserActi
 }
 ```
 
-确保这与上面创建的活动具有相同的活动类型标识符（ `com.xamarin.platform` ）。 应用使用存储在中的信息 `NSUserActivity` 将状态还原回用户离开的位置。
+确保这是与上面创建的活动相同的活动类型标识符 (`com.xamarin.platform`) 。 应用使用存储在中的信息 `NSUserActivity` 将状态还原回用户离开的位置。
 
 ### <a name="benefits-of-creating-an-activity"></a>创建活动的好处
 
@@ -168,14 +168,14 @@ public override bool ContinueUserActivity (UIApplication application, NSUserActi
 
 1. 在应用程序中查找要与朋友见面的餐厅。
 2. 如果用户切换到 Maps 应用，则会自动将餐馆的地址建议为目标。
-3. 这也适用于第三方应用（支持 `NSUserActivity` ），因此，用户可以切换到 "应用商店" 应用，并自动将餐馆的地址作为目标提供。
+3. 这甚至适用于支持)  (第三方应用程序 `NSUserActivity` ，因此用户可以切换到 "应用程序"，并将餐馆的地址自动作为目标提供。
 4. 它还向 Siri 提供上下文，因此用户可以在餐馆应用中调用 Siri，并请求 *"获取行车路线 ..."* 和 Siri 将向用户正在查看的餐厅提供行车路线。
 
 上述所有功能都有一个共同之处，它们都表示建议最初来自何处。 在上述示例中，它是虚构的餐馆评论应用。
 
 watchOS 3 已得到了增强，可通过对现有框架进行几项小型修改和添加操作来为应用程序启用此功能：
 
-- `NSUserActivity`具有用于捕获在应用内查看的位置信息的附加字段。
+- `NSUserActivity` 具有用于捕获在应用内查看的位置信息的附加字段。
 - 已对 MapKit 和 CoreSpotlight 进行了几项添加以捕获位置。
 - 位置感知功能已添加到系统中的 Siri、Maps、多任务和其他应用。
 
@@ -244,7 +244,7 @@ attributes.SupportsNavigation = true;
 attributes.NamedLocation = "Apple Inc.";
 ```
 
-然后，基于文本的实例所需的基于文本的说明（例如 QuickType 键盘）：
+然后，基于文本的实例所需的基于文本的说明 (例如 QuickType 键盘) ：
 
 ```csharp
 attributes.SubThoroughfare = "1";
@@ -285,7 +285,7 @@ Apple 建议在使用活动时采用以下最佳做法：
 
 ## <a name="consuming-location-suggestions"></a>使用位置建议
 
-下一部分将介绍来自系统其他部分（如 Maps 应用）或其他第三方应用的使用位置建议。
+下一部分将介绍来自 (系统其他部分（如 Maps 应用) 或其他第三方应用）的消费位置建议。
 
 ## <a name="routing-apps-and-locations-suggestions"></a>路由应用和位置建议
 
@@ -356,11 +356,11 @@ geocoder.GeocodeAddress(address, (place, err)=> {
 
 ```
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 本文介绍了前瞻性建议，并展示了开发人员如何使用它们来驱动到适用于 watchOS 的 Xamarin iOS 应用的流量。 本文介绍了实现前瞻性建议并提供使用准则的步骤。
 
 ## <a name="related-links"></a>相关链接
 
-- [watchOS 示例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+watchOS)
+- [watchOS 示例](/samples/browse/?products=xamarin&term=Xamarin.iOS%2bwatchOS)
 - [SiriKit 编程指南](https://developer.apple.com/library/prerelease/content/documentation/Intents/Conceptual/SiriIntegrationGuide/index.html)

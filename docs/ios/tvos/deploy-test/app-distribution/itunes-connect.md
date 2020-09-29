@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: b316e0629bce66e295241be9d67dc4eb37ce1972
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 43692bf2180887e7983cf35fb1812a91222dbc7a
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939563"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91435151"
 ---
 # <a name="configure-your-tvos-app-in-itunes-connect"></a>在 iTunes Connect 中配置 tvOS 应用
 
 _本文提供 iOS 补充指南，适用于 iOS 在 iTunes Connect 中配置应用以 tvOS 特定配置。_
 
-除了需要遵循 iOS 在[ITunes Connect guide 中配置应用](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md)所需的配置和设置外，本文档还介绍了在 Apple TV 应用商店中发布 tvOS 应用所需的特定配置。
+除了需要遵循 iOS 在 [ITunes Connect guide 中配置应用](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md) 所需的配置和设置外，本文档还介绍了在 Apple TV 应用商店中发布 tvOS 应用所需的特定配置。
 
 <a name="Adding-a-tvOS-Release-Version"></a>
 
@@ -48,7 +48,7 @@ _本文提供 iOS 补充指南，适用于 iOS 在 iTunes Connect 中配置应�
 
 ## <a name="tvos-version-information"></a>tvOS 版本信息
 
-在左侧边栏中，选择 " **1.0 TVOS 应用准备提交**" 部分：
+在左侧边栏中，选择 " **1.0 TVOS 应用准备提交** " 部分：
 
 [![tvOS 版本信息](itunes-connect-images/connect03.png)](itunes-connect-images/connect03.png#lightbox)
 
@@ -60,7 +60,7 @@ _本文提供 iOS 补充指南，适用于 iOS 在 iTunes Connect 中配置应�
 - 可选 Game Center 支持排行榜和成就。
 - 必需的应用检查信息，如联系人、演示帐户和说明。
 
-输入所需信息后，请单击屏幕右上角的 "**保存**" 按钮以保存更改：
+输入所需信息后，请单击屏幕右上角的 " **保存** " 按钮以保存更改：
 
 [![tvOS 版本信息已准备好提交](itunes-connect-images/connect04.png)](itunes-connect-images/connect04.png#lightbox)
 
@@ -68,7 +68,7 @@ _本文提供 iOS 补充指南，适用于 iOS 在 iTunes Connect 中配置应�
 
 ## <a name="preparing-to-submit-for-review"></a>正在准备提交以供审阅
 
-最终准备好将 tvOS 应用提交到 Apple TV App Store 进行查看时，请返回到应用的 iTunes Connect 记录，并单击屏幕右上角的 "**提交以审阅**" 按钮：
+最终准备好将 tvOS 应用提交到 Apple TV App Store 进行查看时，请返回到应用的 iTunes Connect 记录，并单击屏幕右上角的 " **提交以审阅** " 按钮：
 
 [![提交以供审阅](itunes-connect-images/connect05.png)](itunes-connect-images/connect05.png#lightbox)
 
@@ -80,7 +80,7 @@ _本文提供 iOS 补充指南，适用于 iOS 在 iTunes Connect 中配置应�
 
 ## <a name="related-links"></a>相关链接
 
-- [tvOS 示例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
+- [tvOS 示例](/samples/browse/?products=xamarin&term=Xamarin.iOS%2btvOS)
 - [tvOS](https://developer.apple.com/tvos/)
 - [tvOS 人体学接口指南](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [TvOS 应用编程指南](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

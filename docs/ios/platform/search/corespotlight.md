@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: 285243c832d080d93e557deada5bb824e03f8d89
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 684e2b8ad5098dd9cecb14eb9c5e265e3ea53035
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939420"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436123"
 ---
 # <a name="search-with-core-spotlight-in-xamarinios"></a>在 Xamarin 中通过核心聚焦搜索
 
@@ -51,7 +51,7 @@ CSSearchableIndex.DefaultSearchableIndex.Index (new CSSearchableItem[]{ item }, 
 
 ## <a name="restoring-an-item"></a>还原项
 
-当用户通过应用的核心聚焦点击添加到搜索结果的项时，将 `AppDelegate` `ContinueUserActivity` 调用方法（此方法还用于 `NSUserActivity` ）。 例如：
+当用户通过应用的核心聚焦点击添加到搜索结果中的项时，将 `AppDelegate` `ContinueUserActivity` 调用方法 (此方法也用于 `NSUserActivity`) 。 例如：
 
 ```csharp
 public override bool ContinueUserActivity (UIApplication application,
@@ -129,13 +129,13 @@ CSSearchableIndex.DefaultSearchableIndex.DeleteAll((error) => {
 
 核心聚焦具有以下功能，可帮助保持索引准确并保持最新状态：
 
-- **批处理更新支持**–如果你的应用程序需要同时创建或修改大组索引，则可以通过一次调用将整个批处理发送到 `Index` 类的方法 `CSSearchableIndex` 。
-- **响应索引更改**–使用您的 `CSSearchableIndexDelegate` 应用程序可以响应可搜索索引中的更改和通知。
-- **应用数据保护**–使用数据保护类，可以对使用核心聚焦添加到可搜索索引的项实施安全性。
+- **批处理更新支持** –如果你的应用程序需要同时创建或修改大组索引，则可以通过一次调用将整个批处理发送到 `Index` 类的方法 `CSSearchableIndex` 。
+- **响应索引更改** –使用您的 `CSSearchableIndexDelegate` 应用程序可以响应可搜索索引中的更改和通知。
+- **应用数据保护** –使用数据保护类，可以对使用核心聚焦添加到可搜索索引的项实施安全性。
 
 ## <a name="related-links"></a>相关链接
 
-- [iOS 9 示例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS9)
+- [iOS 9 示例](/samples/browse/?products=xamarin&term=Xamarin.iOS%2biOS9)
 - [适用于开发人员的 iOS 9](https://developer.apple.com/ios/pre-release/)
 - [iOS 9。0](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)
 - [应用搜索编程指南](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/AppSearch/index.html#//apple_ref/doc/uid/TP40016308)

@@ -7,32 +7,32 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 07/13/2018
-ms.openlocfilehash: 04631993d47a1d51858ab24948ab61170d37bb6e
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: f99776a0e6a84c193362d0e5a4efb68e70717ad0
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939866"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436113"
 ---
 # <a name="notifications-in-xamarinios"></a>Xamarin.iOS 中的通知
 
 > [!IMPORTANT]
-> 本部分中的信息适用于 iOS 9 及更早的。 对于 iOS 10 及更高版本，请参阅[用户通知框架指南](~/ios/platform/user-notifications/index.md)。
+> 本部分中的信息适用于 iOS 9 及更早的。 对于 iOS 10 及更高版本，请参阅 [用户通知框架指南](~/ios/platform/user-notifications/index.md)。
 
 iOS 具有三种方式向用户指示已收到通知：
 
-- **声音或振动**-iOS 可以播放声音以通知用户。 如果禁用声音，则可以将设备配置为振动。
-- **警报**-可以在屏幕上显示有关通知的信息。
-- **徽章**-发布通知后，可以在应用程序图标上显示一个数字（徽章）。
+- **声音或振动** -iOS 可以播放声音以通知用户。 如果禁用声音，则可以将设备配置为振动。
+- **警报** -可以在屏幕上显示有关通知的信息。
+- **徽章** -发布通知后，可以在应用程序图标 (徽章) 中显示数字。
 
-iOS 还提供*通知中心，该通知中心*会向用户显示所有通知，无论是本地的还是远程的。 用户可通过从屏幕顶部向下轻扫来访问此内容：
+iOS 还提供 *通知中心，该通知中心* 会向用户显示所有通知，无论是本地的还是远程的。 用户可通过从屏幕顶部向下轻扫来访问此内容：
 
 ![通知中心](local-notifications-in-ios-images/image13.png "通知中心")
 
 ## <a name="creating-local-notifications-in-ios"></a>在 iOS 中创建本地通知
 
 iOS 使得创建和处理本地通知变得非常简单。
-首先，iOS 8 要求应用程序要求用户提供显示通知的权限。 尝试发送本地通知之前，请将以下代码添加到应用-附加的[示例](https://docs.microsoft.com/samples/xamarin/ios-samples/localnotifications)将其放入**AppDelegate**的**FinishedLaunching**方法。
+首先，iOS 8 要求应用程序要求用户提供显示通知的权限。 尝试发送本地通知之前，请将以下代码添加到应用-附加的 [示例](/samples/xamarin/ios-samples/localnotifications) 将其放入 **AppDelegate**的 **FinishedLaunching** 方法。
 
 ```csharp
 var notificationSettings = UIUserNotificationSettings.GetSettingsForTypes(
@@ -58,7 +58,7 @@ UIApplication.SharedApplication.ScheduleLocalNotification(notification);
 
 [![示例警报](local-notifications-in-ios-images/image2-sml.png)](local-notifications-in-ios-images/image2.png#lightbox)
 
-请注意，如果用户选择*不允许*通知，则不会显示任何内容。
+请注意，如果用户选择 *不允许* 通知，则不会显示任何内容。
 
 如果要使用数字将徽章应用于应用程序图标，则可以设置它，如下面的代码行所示：
 
@@ -129,14 +129,14 @@ if(remoteNotification != null)
 }
 ```
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 本部分说明如何在 Xamarin 中创建和发布通知。 它显示应用程序如何通过重写 `ReceivedLocalNotification` 中的方法或方法来对通知做出反应 `ReceivedRemoteNotification` `AppDelegate` 。
 
 ## <a name="related-links"></a>相关链接
 
-- [本地通知（示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/localnotifications)
+- [ (示例的本地通知) ](/samples/xamarin/ios-samples/localnotifications)
 - [面向开发人员的本地和推送通知](https://developer.apple.com/notifications/)
 - [本地和推送通知编程指南](https://developer.apple.com/library/prerelease/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/)
-- [UIApplication](https://docs.microsoft.com/dotnet/api/uikit.uiapplication)
-- [UILocalNotification](https://docs.microsoft.com/dotnet/api/uikit.UILocalNotification)
+- [UIApplication](/dotnet/api/uikit.uiapplication)
+- [UILocalNotification](/dotnet/api/uikit.UILocalNotification)

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: d5830fcc4eab2feb5002253a519d72099d6bcdde
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: d72a9722a9d48ea52932e4fd6516c0712dbd693c
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86929982"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436255"
 ---
 # <a name="using-adonet-with-xamarinios"></a>将 ADO.NET 与 Xamarin 配合使用
 
@@ -20,7 +20,7 @@ Xamarin 内置了对在 iOS 上可用的 SQLite 数据库的支持，并使用�
 
 ## <a name="assembly-references"></a>程序集引用
 
-若要通过 ADO.NET 使用访问 SQLite，你必须添加 `System.Data` 和 `Mono.Data.Sqlite` 引用 iOS 项目，如下所示（有关 Visual Studio for Mac 和 Visual Studio 中的示例）：
+若要通过 ADO.NET 使用访问 SQLite，你必须添加 `System.Data` 和 `Mono.Data.Sqlite` 引用 iOS 项目，如 Visual Studio for Mac 和 Visual Studio) 中的示例所示 (：
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -32,20 +32,20 @@ Xamarin 内置了对在 iOS 上可用的 SQLite 数据库的支持，并使用�
 
 -----
 
-右键单击 "**引用" > 编辑引用 ...** "，然后单击以选择所需的程序集。
+右键单击 " **引用" > 编辑引用 ...** "，然后单击以选择所需的程序集。
 
 ## <a name="about-monodatasqlite"></a>关于 Mono. Sqlite
 
 我们将使用 `Mono.Data.Sqlite.SqliteConnection` 类创建一个空数据库文件，然后对对象进行实例化 `SqliteCommand` ，这些对象可用于针对数据库执行 SQL 指令。
 
-1. **创建空白数据库**- `CreateFile` 使用有效的（即可写）文件路径调用方法。 在调用此方法之前，应检查该文件是否已存在，否则将在旧文件的顶部创建新的（空白）数据库，而旧文件中的数据将丢失：
+1. **创建空白数据库** - `CreateFile` 使用有效的 () 文件路径调用方法。 在调用此方法之前，应检查该文件是否已存在，否则将在旧文件的顶部创建新的 (空白) 数据库，旧文件中的数据将丢失：
 
     `Mono.Data.Sqlite.SqliteConnection.CreateFile (dbPath);`
 
     > [!NOTE]
     > `dbPath`应按照本文档前面所述的规则来确定该变量。
 
-2. **创建数据库连接**-创建 SQLite 数据库文件后，可以创建连接对象来访问数据。 使用的连接字符串构造连接 `Data Source=file_path` ，如下所示：
+2. **创建数据库连接** -创建 SQLite 数据库文件后，可以创建连接对象来访问数据。 使用的连接字符串构造连接 `Data Source=file_path` ，如下所示：
 
     ```csharp
     var connection = new SqliteConnection ("Data Source=" + dbPath);
@@ -56,7 +56,7 @@ Xamarin 内置了对在 iOS 上可用的 SQLite 数据库的支持，并使用�
 
     如前所述，连接永远不能在不同的线程之间重复使用。 如果有疑问，请根据需要创建连接并在完成后关闭它;但请注意，此操作的执行频率要高于所需的频率。
 
-3. **创建和执行数据库命令**-一旦建立了连接，就可以对其执行任意 SQL 命令。 下面的代码显示正在执行的 CREATE TABLE 语句。
+3. **创建和执行数据库命令** -一旦建立了连接，就可以对其执行任意 SQL 命令。 下面的代码显示正在执行的 CREATE TABLE 语句。
 
     ```csharp
     using (var command = connection.CreateCommand ()) {
@@ -69,7 +69,7 @@ Xamarin 内置了对在 iOS 上可用的 SQLite 数据库的支持，并使用�
 
 ## <a name="basic-data-access"></a>基本数据访问
 
-在 iOS 上运行时，此文档的*DataAccess_Basic*示例代码如下所示：
+在 iOS 上运行时，此文档的 *DataAccess_Basic* 示例代码如下所示：
 
  ![iOS ADO.NET 示例](using-adonet-images/image9.png)
 
@@ -149,8 +149,8 @@ public static string DoSomeDataAccess ()
 由于 SQLite 允许对数据运行任意 SQL 命令，因此你可以执行所需的任何 CREATE、INSERT、UPDATE、DELETE 或 SELECT 语句。 可以在 Sqlite 网站上阅读 SQLite 支持的 SQL 命令。 在 SqliteCommand 对象上使用以下三种方法之一运行 SQL 语句：
 
 - **ExecuteNonQuery** –通常用于表创建或数据插入。 某些运算的返回值为受影响的行数，否则为-1。
-- **ExecuteReader** -在行集合应作为返回时使用 `SqlDataReader` 。
-- **ExecuteScalar** –检索单个值（例如聚合）。
+- **ExecuteReader** -在行集合应作为返回时使用  `SqlDataReader` 。
+- **ExecuteScalar** –检索单个值 (例如聚合) 。
 
 ### <a name="executenonquery"></a>EXECUTENONQUERY
 
@@ -165,7 +165,7 @@ using (var c = connection.CreateCommand ()) {
 
 ### <a name="executereader"></a>EXECUTEREADER
 
-下面的方法显示 SELECT 语句中的 WHERE 子句。 由于代码正在编写完整的 SQL 语句，因此它必须小心地转义保留字符，如引号（"），如字符串。
+下面的方法显示 SELECT 语句中的 WHERE 子句。 由于代码正在编写完整的 SQL 语句，因此必须小心地转义保留字符，如引号 ( ") 围绕字符串。
 
 ```csharp
 public static string MoreComplexQuery ()
@@ -199,7 +199,7 @@ ExecuteReader 方法返回 SqliteDataReader 对象。 除了示例中所示的 R
 
 ### <a name="executescalar"></a>EXECUTESCALAR
 
-对于返回单个值（例如聚合）的 SELECT 语句，请使用此语句。
+对于返回单个值 (例如聚合) 的 SELECT 语句，请使用此语句。
 
 ```csharp
 using (var contents = connection.CreateCommand ()) {
@@ -212,9 +212,9 @@ using (var contents = connection.CreateCommand ()) {
 
 ## <a name="microsoftdatasqlite"></a>Microsoft.Data.Sqlite
 
-还有一个 `Microsoft.Data.Sqlite` 可[从 NuGet 安装](https://www.nuget.org/packages/Microsoft.Data.Sqlite)的库，它在功能上等效于 `Mono.Data.Sqlite` 并且允许相同类型的查询。
+还有一个 `Microsoft.Data.Sqlite` 可 [从 NuGet 安装](https://www.nuget.org/packages/Microsoft.Data.Sqlite)的库，它在功能上等效于 `Mono.Data.Sqlite` 并且允许相同类型的查询。
 
-[这两个库](https://docs.microsoft.com/dotnet/standard/data/sqlite/compare)与一些[特定于 Xamarin 的详细信息](https://docs.microsoft.com/dotnet/standard/data/sqlite/xamarin)之间存在比较。 对于 Xamarin iOS 应用，最重要的是，必须包含初始化调用：
+[这两个库](/dotnet/standard/data/sqlite/compare)与一些[特定于 Xamarin 的详细信息](/dotnet/standard/data/sqlite/xamarin)之间存在比较。 对于 Xamarin iOS 应用，最重要的是，必须包含初始化调用：
 
 ```csharp
 // required for Xamarin.iOS
@@ -223,7 +223,7 @@ SQLitePCL.Batteries_V2.Init();
 
 ## <a name="related-links"></a>相关链接
 
-- [DataAccess Basic （示例）](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
-- [DataAccess 高级（示例）](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
+- [DataAccess 基本 (示例) ](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
+- [DataAccess Advanced (示例) ](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
 - [iOS 数据食谱](https://github.com/xamarin/recipes/tree/master/Recipes/ios/data/sqlite)
 - [Xamarin. 窗体数据访问](~/xamarin-forms/data-cloud/data/databases.md)

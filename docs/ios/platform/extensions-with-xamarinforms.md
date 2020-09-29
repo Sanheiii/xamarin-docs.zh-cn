@@ -1,5 +1,5 @@
 ---
-title: 在 iOS 扩展中重用 Xamarin 页
+title: 在 iOS 扩展中重复使用 Xamarin 页
 description: 本文档介绍 iOS 扩展以及如何使用中的 Xamarin 页。 它包含有关如何创建扩展、集成 Xamarin 和在 iOS 扩展项目中以本机方式呈现简单 ContentPage 的演练。
 ms.prod: xamarin
 ms.assetid: 50076FFD-3EF6-41CC-BC7E-210DE3958F5B
@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: alexeystrakh
 ms.author: alstrakh
 ms.date: 05/13/2020
-ms.openlocfilehash: 4006bb3ef82264b5a7a6d764719bee81a8ce78a1
-ms.sourcegitcommit: 5bc37b384706bfbf5bf8e5b1288a34ddd0f3303b
+ms.openlocfilehash: b9bbbc784fa9932d087e1f1c2a575eb7848d5a80
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83418072"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91437118"
 ---
-# <a name="reuse-xamarinforms-pages-in-an-ios-extension"></a>在 iOS 扩展中重用 Xamarin 页
+# <a name="reuse-xamarinforms-pages-in-an-ios-extension"></a>在 iOS 扩展中重复使用 Xamarin 页
 
-iOS 扩展使你可以通过将额外功能添加到[ios 和 MacOS 扩展点](https://developer.apple.com/library/archive/documentation/General/Conceptual/ExtensibilityPG/index.html#//apple_ref/doc/uid/TP40014214-CH20-SW2)（如自定义上下文操作、密码自动填充、传入调用筛选器、通知内容修饰符等）来自定义现有系统行为。 Xamarin 支持扩展，[本指南](https://docs.microsoft.com/xamarin/ios/platform/extensions)将指导你使用 Xamarin 工具创建 iOS 扩展。
+iOS 扩展使你可以通过将额外功能添加到 [ios 和 MacOS 扩展点](https://developer.apple.com/library/archive/documentation/General/Conceptual/ExtensibilityPG/index.html#//apple_ref/doc/uid/TP40014214-CH20-SW2)（如自定义上下文操作、密码自动填充、传入调用筛选器、通知内容修饰符等）来自定义现有系统行为。 Xamarin 支持扩展， [本指南](./extensions.md) 将指导你使用 Xamarin 工具创建 iOS 扩展。
 
 扩展作为容器应用的一部分进行分发，并从主机应用程序中的特定扩展点激活。 容器应用通常是一个简单的 iOS 应用程序，它为用户提供有关扩展的信息，以及如何激活和使用该扩展。 有三种主要方法可用于在扩展和容器应用之间共享代码：
 
@@ -34,20 +34,20 @@ iOS 扩展使你可以通过将额外功能添加到[ios 和 MacOS 扩展点](ht
 
 ## <a name="xamarinforms-in-an-ios-extension-project"></a>IOS 扩展项目中的 Xamarin
 
-在本机项目中使用 Xamarin 的能力是通过[本机形式](~/xamarin-forms/platform/native-forms.md)提供的。 它允许 `ContentPage` 派生页面直接添加到本机 Xamarin iOS 项目。 `CreateViewController`扩展方法将 Xamarin 页的实例转换为本机 `UIViewController` ，可以使用或将其作为常规控制器进行修改。 由于 iOS 扩展是一种特殊类型的本机 iOS 项目，因此也可以在此处使用**本机窗体**。
+在本机项目中使用 Xamarin 的能力是通过 [本机形式](~/xamarin-forms/platform/native-forms.md)提供的。 它允许 `ContentPage` 派生页面直接添加到本机 Xamarin iOS 项目。 `CreateViewController`扩展方法将 Xamarin 页的实例转换为本机 `UIViewController` ，可以使用或将其作为常规控制器进行修改。 由于 iOS 扩展是一种特殊类型的本机 iOS 项目，因此也可以在此处使用 **本机窗体** 。
 
 > [!IMPORTANT]
-> IOS 扩展有很多[已知限制](https://docs.microsoft.com/xamarin/ios/platform/extensions#limitations)。 虽然你可以在 iOS 扩展中使用 Xamarin，但你应该非常小心，监视内存使用情况和启动时间。 否则，该扩展可能会被 iOS 终止，而不会对此进行适当的处理。
+> IOS 扩展有很多 [已知限制](./extensions.md#limitations) 。 虽然你可以在 iOS 扩展中使用 Xamarin，但你应该非常小心，监视内存使用情况和启动时间。 否则，该扩展可能会被 iOS 终止，而不会对此进行适当的处理。
 
 ## <a name="walkthrough"></a>演练
 
 在本演练中，你将创建一个 Xamarin. Forms 应用程序、一个 Xamarin iOS 扩展，并在扩展项目中重用共享代码：
 
-1. 打开 Visual Studio for Mac，使用**空白窗体应用程序**模板创建新的 Xamarin. Forms 项目，并将其命名为**FormsShareExtension**：
+1. 打开 Visual Studio for Mac，使用 **空白窗体应用程序** 模板创建新的 Xamarin. Forms 项目，并将其命名为 **FormsShareExtension**：
 
     ![创建项目](extensions-xf-images/1.walkthrough-createproject.png)
 
-1. 在**FormsShareExtension/MainPage**中，将内容替换为以下布局：
+1. 在 **FormsShareExtension/MainPage**中，将内容替换为以下布局：
 
     ```xaml
     <?xml version="1.0" encoding="utf-8" ?>
@@ -74,7 +74,7 @@ iOS 扩展使你可以通过将额外功能添加到[ios 和 MacOS 扩展点](ht
     </ContentPage>
     ```
 
-1. 将名为**MainPageViewMode**的新类添加到**FormsShareExtension**项目中，并将类的内容替换为以下代码：
+1. 将名为 **MainPageViewMode** 的新类添加到 **FormsShareExtension** 项目中，并将类的内容替换为以下代码：
 
     ```csharp
     using System;
@@ -131,17 +131,17 @@ iOS 扩展使你可以通过将额外功能添加到[ios 和 MacOS 扩展点](ht
 
     代码在所有平台之间共享，并且也将由 iOS 扩展使用。
 
-1. 在 "解决方案板" 中，右键单击解决方案，选择 "**添加 > 新建项目 > iOS > 扩展 > 操作扩展，将**其命名为**MyAction** ，然后按"**创建**"：
+1. 在 "解决方案板" 中，右键单击解决方案，选择 " **添加 > 新建项目 > iOS > 扩展 > 操作扩展，将**其命名为 **MyAction** ，然后按" **创建**"：
 
     ![创建扩展](extensions-xf-images/2.walkthrough-createextension.png)
 
 1. 若要在 iOS 扩展和共享代码中使用 Xamarin，需要添加所需的引用：
 
-    - 右键单击 iOS 扩展，选择 "**引用" > > 项目添加引用 ">" FormsShareExtension** "，然后按 **" 确定 "**。
+    - 右键单击 iOS 扩展，选择 " **引用" > > 项目添加引用 ">" FormsShareExtension** "，然后按 **" 确定 "**。
 
-    - 右键单击 iOS 扩展，选择 "**包" > "管理 NuGet 包 ..." > Xamarin**并按 "**添加包**"。
+    - 右键单击 iOS 扩展，选择 " **包" > "管理 NuGet 包 ..." > Xamarin**  并按 " **添加包**"。
 
-1. 展开扩展项目，然后修改入口点以初始化 Xamarin. Forms 和 create pages。 根据 iOS 要求，扩展必须定义**info.plist**中的入口点作为 `NSExtensionMainStoryboard` 或 `NSExtensionPrincipalClass` 。 激活入口点后，在这种情况下，它是 `ActionViewController.ViewDidLoad` 方法，你可以创建 Xamarin 页面的实例并将其显示给用户。 因此，请打开入口点并将 `ViewDidLoad` 方法替换为以下实现：
+1. 展开扩展项目，然后修改入口点以初始化 Xamarin. Forms 和 create pages。 根据 iOS 要求，扩展必须定义 **info.plist** 中的入口点作为 `NSExtensionMainStoryboard` 或 `NSExtensionPrincipalClass` 。 激活入口点后，在这种情况下，它是 `ActionViewController.ViewDidLoad` 方法，你可以创建 Xamarin 页面的实例并将其显示给用户。 因此，请打开入口点并将 `ViewDidLoad` 方法替换为以下实现：
 
     ```csharp
     public override void ViewDidLoad()
@@ -169,7 +169,7 @@ iOS 扩展使你可以通过将额外功能添加到[ios 和 MacOS 扩展点](ht
 
     ![创建扩展](extensions-xf-images/3.walkthrough-runapp.png)
 
-    若要激活该扩展，请导航到 Safari 浏览器，键入任意 web 地址（例如[microsoft.com](https://microsoft.com)），按 "导航"，然后按页面底部的**共享**图标查看可用的操作扩展。 在可用扩展列表中，通过点击来选择**MyAction**扩展：
+    若要激活该扩展，请导航到 Safari 浏览器，键入任意 web 地址（例如 [microsoft.com](https://microsoft.com)），按 "导航"，然后按页面底部的 **共享** 图标查看可用的操作扩展。 在可用扩展列表中，通过点击来选择 **MyAction** 扩展：
 
     ![创建扩展](extensions-xf-images/4.walkthrough-run1.png) ![创建扩展](extensions-xf-images/5.walkthrough-run2.png) ![创建扩展](extensions-xf-images/6.walkthrough-run3.png)
 
@@ -186,7 +186,7 @@ iOS 扩展使你可以通过将额外功能添加到[ios 和 MacOS 扩展点](ht
     ![IOS 扩展中的 Xamarin](extensions-xf-images/7.walkthrough-result.png)
 
     > [!IMPORTANT]
-    > 对于设备生成，请确保使用正确的生成设置和**发布**配置，如[此处所述](~/iOS/platform/extensions.md#debug-and-release-versions-of-extensions)。
+    > 对于设备生成，请确保使用正确的生成设置和 **发布** 配置，如 [此处所述](~/iOS/platform/extensions.md#debug-and-release-versions-of-extensions)。
 
 ## <a name="related-links"></a>相关链接
 

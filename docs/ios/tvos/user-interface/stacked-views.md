@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 1e1a9f3cd601a9d469bb53cce412daf08a8140f6
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: b318f11e866c94ab1f5aa8f6b4f351ac88475ac3
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938887"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91437052"
 ---
 # <a name="working-with-tvos-stacked-views-in-xamarin"></a>在 Xamarin 中使用 tvOS 堆积视图
 
-堆栈视图控件（ `UIStackView` ）利用自动布局和大小类的强大功能来管理子视图的堆栈（水平或垂直），这会动态响应 APPLE TV 设备的内容更改和屏幕大小。
+堆栈视图控件 (`UIStackView`) 利用自动布局和大小类的功能来管理子视图的堆栈（水平或垂直），这会动态响应 APPLE TV 设备的内容更改和屏幕大小。
 
 附加到堆栈视图的所有子视图的布局都是基于开发人员定义的属性（如轴、分布、对齐方式和间距）管理的：
 
@@ -30,16 +30,16 @@ ms.locfileid: "86938887"
 
 有几个属性控制堆栈视图如何排列其子视图集合：
 
-- **Axis** –确定堆栈视图是**水平**排列还是**垂直**排列子视图。
-- **对齐方式**–控制子视图在堆栈视图中的对齐方式。
-- **分布**–控制子视图在堆栈视图中的大小。
-- **间距**–控制堆栈视图中每个子视图之间的最小空间。
-- **基线相对**-如果 `true` 为，则每个子视图的垂直间距都将从它的基线派生。
-- **相对于布局边距**–相对于标准布局边距放置子视图。
+- **Axis** –确定堆栈视图是 **水平** 排列还是 **垂直**排列子视图。
+- **对齐方式** –控制子视图在堆栈视图中的对齐方式。
+- **分布** –控制子视图在堆栈视图中的大小。
+- **间距** –控制堆栈视图中每个子视图之间的最小空间。
+- **基线相对** -如果 `true` 为，则每个子视图的垂直间距都将从它的基线派生。
+- **相对于布局边距** –相对于标准布局边距放置子视图。
 
 通常，您将使用堆栈视图来排列少量的子视图。 可以通过将一个或多个堆栈视图彼此嵌套，来创建更复杂的用户界面。
 
-可以通过向子视图添加其他约束（例如控制高度或宽度）来进一步微调 Ui 的外观。 但是，应注意不要为堆栈视图本身引入的约束包含冲突约束。
+可以通过将其他约束添加到子视图 (来进一步精细调整 Ui 外观，例如，) 控制高度或宽度。 但是，应注意不要为堆栈视图本身引入的约束包含冲突约束。
 
 <a name="Auto-Layout-and-Size-Classes"></a>
 
@@ -49,7 +49,7 @@ ms.locfileid: "86938887"
 
 堆栈视图将其集合中的第一个和最后一个子视图固定到垂直堆栈视图的**上**边缘和**下**边缘，或者_固定_到水平堆栈视图的**左边**缘和**右**边缘。 如果将属性设置 `LayoutMarginsRelativeArrangement` 为，则视图会将 `true` 子视图固定到相关边距，而不是边缘。
 
-`IntrinsicContentSize`沿定义的 `Axis` （除之外）计算子视图大小时，堆栈视图将使用子视图的属性 `FillEqually Distribution` 。 `FillEqually Distribution`会调整所有子视图的大小，使其大小相同，从而沿显示堆栈视图 `Axis` 。
+`IntrinsicContentSize`沿定义的 `Axis` (（) 除外）计算子视图大小时，堆栈视图将使用子视图的属性 `FillEqually Distribution` 。 `FillEqually Distribution`会调整所有子视图的大小，使其大小相同，从而沿显示堆栈视图 `Axis` 。
 
 除了之外 `Fill Alignment` ，堆栈视图使用子视图的 `IntrinsicContentSize` 属性来计算视图与给定的垂直大小 `Axis` 。 对于 `Fill Alignment` ，所有子视图都将调整大小，以使其填充垂直于给定的堆栈视图 `Axis` 。
 
@@ -57,7 +57,7 @@ ms.locfileid: "86938887"
 
 ## <a name="positioning-and-sizing-the-stack-view"></a>定位堆栈视图并调整其大小
 
-尽管堆栈视图对任何子视图的布局具有完全控制（基于和等属性 `Axis` `Distribution` ），但仍需 `UIStackView` 使用自动布局和大小类将堆栈视图（）放置在其父视图中。
+尽管 "堆栈" 视图对 (基于属性（如和) ）的所有子视图的布局具有完全控制 `Axis` `Distribution` ，但仍需使用 "自动布局" 和 "大小" 类将堆栈视图 (`UIStackView`) 置于其父视图中。
 
 通常，这意味着至少固定堆栈视图的两个边缘来展开和收缩，从而定义其位置。 如果没有任何其他约束，堆栈视图将自动调整大小以适合其所有子视图，如下所示：
 
@@ -65,7 +65,7 @@ ms.locfileid: "86938887"
 - 如果 `LayoutMarginsRelativeArrangement` 属性为 `true` ，则堆栈视图大小还将包括边距空间。
 - 垂直于的大小 `Axis` 将设置为集合中的最大子视图。
 
-此外，还可以指定堆栈视图的**高度**和**宽度**约束。 在这种情况下，子视图将布局（调整大小）以填充由和属性确定的堆栈视图指定的空间 `Distribution` `Alignment` 。
+此外，还可以指定堆栈视图的 **高度** 和 **宽度**约束。 在这种情况下，子视图将布局 (大小) ，以填充由和属性确定的堆栈视图指定的空间 `Distribution` `Alignment` 。
 
 如果 `BaselineRelativeArrangement` 属性为 `true` ，则将基于第一个或最后一个子视图的基线来布局子视图，而不是使用**上**、**下**或 **中心* -  **Y**位置。 这些是在堆栈视图的内容上计算的，如下所示：
 
@@ -73,7 +73,7 @@ ms.locfileid: "86938887"
 - 水平堆栈视图将为第一个和最后一个基线使用最高的子视图。 如果最高视图也是堆栈视图，它将使用最高的子视图作为基线。
 
 > [!IMPORTANT]
-> 基线对齐不适用于拉伸或压缩的子视图大小，因为基线将计算到错误的位置。 对于基线对齐，请确保子视图的**高度**与内部内容视图的**高度**匹配。
+> 基线对齐不适用于拉伸或压缩的子视图大小，因为基线将计算到错误的位置。 对于基线对齐，请确保子视图的 **高度** 与内部内容视图的 **高度**匹配。
 
 <a name="Common-Stack-View-Uses"></a>
 
@@ -81,10 +81,10 @@ ms.locfileid: "86938887"
 
 有几种布局类型适用于堆栈视图控件。 根据 Apple，以下是一些更常见的用法：
 
-- **沿轴定义大小**–将两个边缘沿堆栈视图 `Axis` 和一个相邻边缘固定以设置位置时，堆栈视图将沿轴增长以适应其子视图定义的空间。
-- **定义子视图的位置**–通过将堆栈视图的相邻边缘固定到其父视图，堆栈视图将以这两个维度增长，以适合包含子视图。
-- **定义堆栈的大小和位置**–通过将堆栈视图的所有四个边缘固定到父视图，堆栈视图会根据堆栈视图中定义的空间排列子视图。
-- **定义垂直于轴的大小**–通过将垂直于堆栈视图的边缘 `Axis` 和沿轴的一个边缘固定到设置位置，堆栈视图将与轴垂直增长以适应其子视图定义的空间。
+- **沿轴定义大小** –将两个边缘沿堆栈视图 `Axis` 和一个相邻边缘固定以设置位置时，堆栈视图将沿轴增长以适应其子视图定义的空间。
+- **定义子视图的位置** –通过将堆栈视图的相邻边缘固定到其父视图，堆栈视图将以这两个维度增长，以适合包含子视图。
+- **定义堆栈的大小和位置** –通过将堆栈视图的所有四个边缘固定到父视图，堆栈视图会根据堆栈视图中定义的空间排列子视图。
+- **定义垂直于轴的大小** –通过将垂直于堆栈视图的边缘 `Axis` 和沿轴的一个边缘固定到设置位置，堆栈视图将与轴垂直增长以适应其子视图定义的空间。
 
 <a name="Stack-Views-and-Storyboards"></a>
 
@@ -94,15 +94,15 @@ ms.locfileid: "86938887"
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-1. 在**Solution Pad**中，双击 `Main.storyboard` 文件并将其打开以进行编辑。
+1. 在 **Solution Pad**中，双击 `Main.storyboard` 文件并将其打开以进行编辑。
 1. 设计要添加到堆栈视图中的单个元素的布局：
 
     [![元素布局示例](stacked-views-images/layout01.png)](stacked-views-images/layout01.png#lightbox)
 1. 向元素添加所需的任何约束，以确保它们能正确缩放。 将元素添加到堆栈视图后，此步骤非常重要。
-1. 创建所需数量的副本（在本例中为四个）：
+1. 在这种情况下，请将所需数量的副本 (四) ：
 
     [![所需的副本数](stacked-views-images/layout02.png)](stacked-views-images/layout02.png#lightbox)
-1. 将 "**堆栈" 视图**从 "**工具箱**" 拖放到视图上：
+1. 将 " **堆栈" 视图** 从 " **工具箱** " 拖放到视图上：
 
     [![堆栈视图](stacked-views-images/layout03.png)](stacked-views-images/layout03.png#lightbox)
 1. 选择 "堆栈" 视图，在 **"小组件" 选项** **Properties Pad**卡中，选择 "填充" 作为 "**对齐**" 的 "**填充**"，为**分布****均匀填充**，并输入 `25` **间距**：
@@ -118,15 +118,15 @@ ms.locfileid: "86938887"
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-1. 在**解决方案资源管理器**中，双击 `Main.storyboard` 文件并将其打开以进行编辑。
+1. 在 **解决方案资源管理器**中，双击 `Main.storyboard` 文件并将其打开以进行编辑。
 1. 设计要添加到堆栈视图中的单个元素的布局：
 
     [![示例元素布局](stacked-views-images/layout01.png)](stacked-views-images/layout01.png#lightbox)
 1. 向元素添加所需的任何约束，以确保它们能正确缩放。 将元素添加到堆栈视图后，此步骤非常重要。
-1. 创建所需数量的副本（在本例中为四个）：
+1. 在这种情况下，请将所需数量的副本 (四) ：
 
     [![所需的副本数](stacked-views-images/layout02.png)](stacked-views-images/layout02.png#lightbox)
-1. 将 "**堆栈" 视图**从 "**工具箱**" 拖放到视图上：
+1. 将 " **堆栈" 视图** 从 " **工具箱** " 拖放到视图上：
 
     [![堆栈视图](stacked-views-images/layout03-vs.png)](stacked-views-images/layout03-vs.png#lightbox)
 1. 选择 "堆栈" 视图，在 "**属性资源管理器**" 的 "**小组件" 选项卡**中，选择 "**填充**" 进行**对齐**，按**比例填充****分布**并输入 `25` **间距**：
@@ -143,9 +143,9 @@ ms.locfileid: "86938887"
 -----
 
 > [!IMPORTANT]
-> 尽管可以在 `TouchUpInside` `UIButton` 创建事件处理程序时在 IOS 设计器中将操作分配给 UI 元素（例如），但它永远不会被调用，因为 Apple TV 没有触摸屏或支持触控事件。 `Action Type`为 tvOS 用户界面元素创建操作时，应始终使用默认值。
+> 尽管可以在 `TouchUpInside` 创建事件处理程序时将操作（如 (如 `UIButton` IOS 设计器中的) ）分配给 UI 元素，但永远不会调用该操作，因为 Apple TV 没有触摸屏或支持触控事件。 `Action Type`为 tvOS 用户界面元素创建操作时，应始终使用默认值。
 
-有关使用情节提要的详细信息，请参阅[tvOS 快速入门指南](~/ios/tvos/get-started/hello-tvos.md)。
+有关使用情节提要的详细信息，请参阅 [tvOS 快速入门指南](~/ios/tvos/get-started/hello-tvos.md)。
 
 在我们的示例中，我们为每个 "播放机卡" 的段控件和插座公开了输出口和操作。 在代码中，我们将基于当前段隐藏和显示播放机。 例如：
 
@@ -196,7 +196,7 @@ partial void PlayerCountChanged (Foundation.NSObject sender) {
 
 除了在 iOS 设计器中完全定义堆栈视图的内容和布局外，还可以从 c # 代码动态创建和删除它。
 
-采用以下示例，该示例使用堆栈视图来处理评审中的 "星星" （从1到5）：
+采用以下示例，该示例使用堆栈视图来处理 "星星" (1 到 5) ：
 
 ```csharp
 public int Rating { get; set;} = 0;
@@ -250,7 +250,7 @@ partial void DecreaseRating (Foundation.NSObject sender) {
 
 让我们详细了解一下此代码的几个部分。 首先，我们使用 `if` 语句来检查是否不超过五个 "星星" 或小于零。
 
-若要添加新的 "星星"，请加载其图像，并将其**内容模式**设置为 "**缩放**"：
+若要添加新的 "星星"，请加载其图像，并将其 **内容模式** 设置为 " **缩放**"：
 
 ```csharp
 var icon = new UIImageView (new UIImage("icon.png"));
@@ -287,7 +287,7 @@ icon.RemoveFromSuperview();
 
 ## <a name="dynamically-changing-content"></a>动态更改内容
 
-只要添加、删除或隐藏子视图，堆栈视图就会自动调整子视图的布局。 如果调整堆栈视图的任何属性（如），也会调整布局 `Axis` 。
+只要添加、删除或隐藏子视图，堆栈视图就会自动调整子视图的布局。 如果将堆栈视图的任何属性调整 (如) ，则还会调整布局 `Axis` 。
 
 可以通过将布局更改放置在动画块中来对其进行动画处理，例如：
 
@@ -303,13 +303,13 @@ UIView.Animate(0.25, ()=>{
 
 <a name="Summary"></a>
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 本文介绍了如何在 tvOS 应用内设计和使用堆叠式视图。
 
 ## <a name="related-links"></a>相关链接
 
-- [tvOS 示例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
+- [tvOS 示例](/samples/browse/?products=xamarin&term=Xamarin.iOS%2btvOS)
 - [tvOS](https://developer.apple.com/tvos/)
 - [tvOS 人体学接口指南](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [TvOS 应用编程指南](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

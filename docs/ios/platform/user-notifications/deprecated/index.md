@@ -7,19 +7,19 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 10/07/2016
-ms.openlocfilehash: a97885518c0646d2d8315b5da5eb12c71d693cf6
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 0822f630d74563f5e6e0dcefa456cf5f5c07a8f5
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574075"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436944"
 ---
 # <a name="deprecated-notification-technologies-in-xamarinios"></a>Xamarin 中不推荐使用的通知技术
 
 本部分说明如何在 Xamarin 中实现本地和推送通知。 它将解释 iOS 通知的各种 UI 元素，并讨论创建和显示通知所涉及的 API。
 
 > [!IMPORTANT]
-> 本部分中的信息适用于 iOS 9 及更早版本。 对于 iOS 10 及更高版本，请参阅[用户通知框架指南](~/ios/platform/user-notifications/index.md)，以支持 ios 设备上的本地和远程通知。
+> 本部分中的信息适用于 iOS 9 及更早版本。 对于 iOS 10 及更高版本，请参阅 [用户通知框架指南](~/ios/platform/user-notifications/index.md) ，以支持 ios 设备上的本地和远程通知。
 
 ## <a name="sections"></a>部分
 
@@ -39,8 +39,8 @@ ms.locfileid: "84574075"
 
 ## <a name="remote-notifications-in-ios"></a>[IOS 中的远程通知](remote-notifications-in-ios.md)
 
-本部分将介绍 iOS 中的推送通知。 它介绍了 Apple 推送通知网关服务（APNS）以及它在向 iOS 应用程序发布通知时所扮演的角色。 它将说明如何创建启用推送通知和讨论所需的安全证书。 最后，本部分将讨论一些应用程序服务器必须执行的日常任务，以跟踪客户端移动设备。
+本部分将介绍 iOS 中的推送通知。 它介绍了 Apple 推送通知网关服务 (APNS) ，以及在向 iOS 应用程序发布通知时所扮演的角色。 它将说明如何创建启用推送通知和讨论所需的安全证书。 最后，本部分将讨论一些应用程序服务器必须执行的日常任务，以跟踪客户端移动设备。
 
 ## <a name="related-links"></a>相关链接
 
-- [通知（示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/notifications)
+- [通知 (示例) ](/samples/xamarin/ios-samples/notifications)

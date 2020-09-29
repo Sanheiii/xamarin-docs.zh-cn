@@ -7,24 +7,24 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: b547d21b19d223aebb345f7c4a1dc8dc126fb0d6
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 3d296c36febfb5671c816372aa97661494179b83
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86928778"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91433899"
 ---
 # <a name="walkthrough-using-touch-in-xamarinios"></a>演练：在 Xamarin 中使用触控
 
 本演练演示如何编写响应不同类型触控事件的代码。 每个示例都包含在单独的屏幕中：
 
-- [触摸示例](#Touch_Samples)–如何响应触控事件。
-- [手势识别器示例](#Gesture_Recognizer_Samples)–如何使用内置的笔势识别器。
-- [自定义手势识别器示例](#Custom_Gesture_Recognizer)–如何生成自定义手势识别器。
+- [触摸示例](#Touch_Samples) –如何响应触控事件。
+- [手势识别器示例](#Gesture_Recognizer_Samples) –如何使用内置的笔势识别器。
+- [自定义手势识别器示例](#Custom_Gesture_Recognizer) –如何生成自定义手势识别器。
 
 每节包含用于从头开始编写代码的说明。
 
-按照以下说明将代码添加到情节提要，并了解 iOS 中可用的不同类型的触摸事件。 或者，打开[已完成的示例](https://docs.microsoft.com/samples/xamarin/ios-samples/applicationfundamentals-touch-final)以查看一切正常运行。
+按照以下说明将代码添加到情节提要，并了解 iOS 中可用的不同类型的触摸事件。 或者，打开 [已完成的示例](/samples/xamarin/ios-samples/applicationfundamentals-touch-final) 以查看一切正常运行。
 
 <a name="Touch_Samples"></a>
 
@@ -32,11 +32,11 @@ ms.locfileid: "86928778"
 
 在此示例中，我们将演示一些触控 Api。 按照以下步骤添加实现触控事件所需的代码：
 
-1. 打开项目**Touch_Start**。 首先运行项目以确保一切正常，并触摸 "**触摸示例**" 按钮。 应该会看到类似于下面的屏幕（尽管所有按钮都不起作用）：
+1. 打开项目 **Touch_Start**。 首先运行项目以确保一切正常，并触摸 " **触摸示例** " 按钮。 你应看到类似于以下 (的屏幕，尽管任何按钮都不能) ：
 
     [![使用非工作按钮运行示例应用](ios-touch-walkthrough-images/image4.png)](ios-touch-walkthrough-images/image4.png#lightbox)
 
-1. 编辑文件**TouchViewController.cs**并将以下两个实例变量添加到类 `TouchViewController` ：
+1. 编辑文件 **TouchViewController.cs** 并将以下两个实例变量添加到类 `TouchViewController` ：
 
     ```csharp
     #region Private Variables
@@ -92,7 +92,7 @@ ms.locfileid: "86928778"
 
     - In _TouchImage_ –在 `Touches Began` 标签中显示文本并更改图像。
     - _内部 DoubleTouchImage_ –如果手势是双击，则更改显示的图像。
-    - _DragImage 内_–设置指示触摸已开始的标志。 方法 `TouchesMoved` 将使用此标志来确定是否 `DragImage` 应在屏幕上移动，如我们将在下一步中看到的那样。
+    - _DragImage 内_ –设置指示触摸已开始的标志。 方法 `TouchesMoved` 将使用此标志来确定是否 `DragImage` 应在屏幕上移动，如我们将在下一步中看到的那样。
 
     上述代码只涉及单个触摸，如果用户在屏幕上移动手指，则没有任何行为。 若要响应移动，请实现， `TouchesMoved` 如以下代码所示：
 
@@ -159,7 +159,7 @@ ms.locfileid: "86928778"
     }
     ```
 
-    这两种方法都会将标志重置 `touchStartedInside` 为 false。 `TouchesEnded`还将显示 `TouchesEnded` 在屏幕上。
+    这两种方法都会将标志重置 `touchStartedInside` 为 false。 `TouchesEnded` 还将显示 `TouchesEnded` 在屏幕上。
 
 1. 此时，"触摸示例" 屏幕已完成。 请注意，当你与每个图像交互时，屏幕会发生变化，如以下屏幕截图所示：
 
@@ -179,7 +179,7 @@ ms.locfileid: "86928778"
 
 按照以下步骤实现手势识别器：
 
-1. 编辑文件**GestureViewController.cs**并添加以下实例变量：
+1. 编辑文件 **GestureViewController.cs** 并添加以下实例变量：
 
     ```csharp
     #region Private Variables
@@ -424,7 +424,7 @@ ms.locfileid: "86928778"
     当 `State` 属性更改为或时，将调用 Reset 方法 `Recognized` `Ended` 。 这是重置自定义手势识别器中设置的任何内部状态的时间。
 现在，每当用户与应用程序交互时，类就可以开始刷新，并准备重新尝试识别手势。
 
-1. 现在，我们已经定义了自定义手势识别器（ `CheckmarkGestureRecognizer` ）编辑**CustomGestureViewController.cs**文件并添加了以下两个实例变量：
+1. 现在，我们已经定义了自定义手势识别器 (`CheckmarkGestureRecognizer`) 编辑 **CustomGestureViewController.cs** 文件并添加以下两个实例变量：
 
     ```csharp
     #region Private Variables
@@ -484,4 +484,4 @@ ms.locfileid: "86928778"
 
 ## <a name="related-links"></a>相关链接
 
-- [iOS 触摸最终（示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/applicationfundamentals-touch-final)
+- [iOS 触摸最终 (示例) ](/samples/xamarin/ios-samples/applicationfundamentals-touch-final)

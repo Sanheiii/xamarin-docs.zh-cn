@@ -7,35 +7,35 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: c303125ac02c8e7c47fb16928df1432c66a8e8d2
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 8a1f386209ccc1f2cb33348930f29bf5ac65ce4f
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937145"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91435614"
 ---
 # <a name="advanced-message-app-extensions-in-xamarinios"></a>Xamarin 中的高级消息应用扩展
 
 _本文介绍了在 Xamarin iOS 解决方案中使用消息应用扩展的高级方法，该解决方案与 Messages 应用集成并向用户提供新功能。_
 
-新的 iOS 10，消息应用扩展与**Messages**应用集成并向用户提供新功能。 此扩展可以发送文本、不干胶标签、媒体文件和交互式消息。
+新的 iOS 10，消息应用扩展与 **Messages** 应用集成并向用户提供新功能。 此扩展可以发送文本、不干胶标签、媒体文件和交互式消息。
 
 ## <a name="about-message-app-extensions"></a>关于消息应用扩展
 
-如上所述，消息应用扩展与**Messages**应用集成，并向用户提供新功能。 此扩展可以发送文本、不干胶标签、媒体文件和交互式消息。 提供两种类型的消息应用扩展：
+如上所述，消息应用扩展与 **Messages** 应用集成，并向用户提供新功能。 此扩展可以发送文本、不干胶标签、媒体文件和交互式消息。 提供两种类型的消息应用扩展：
 
-- **不干胶标签**-包含用户可添加到消息中的不干胶标签集合。 无需编写任何代码即可创建不干胶标签。
-- **IMessage 应用**-可在邮件应用中提供自定义用户界面，用于选择不干胶标签，输入文本，包括媒体文件（使用可选类型转换）以及创建、编辑和发送交互消息。
+- **不干胶标签** -包含用户可添加到消息中的不干胶标签集合。 无需编写任何代码即可创建不干胶标签。
+- **IMessage 应用** -可在邮件应用中提供自定义用户界面，用于选择不干胶标签，输入文本，包括 (具有可选类型转换的媒体文件) 以及创建、编辑和发送交互消息。
 
 消息应用扩展提供了三种主要内容类型：
 
-- **交互式消息**-应用生成的一种自定义消息内容，当用户点击消息时，将在前台启动应用。
-- **不干胶标签**-由应用生成的映像，可包含在用户之间发送的消息中。 若要实现不干胶标签包应用的示例，请参阅[冰淇淋生成器](https://docs.microsoft.com/samples/xamarin/ios-samples/ios10-icecreambuilder)示例应用。
-- **其他支持的内容**-应用可以提供消息应用始终支持的类型的内容，如照片、视频、文本或链接。
+- **交互式消息** -应用生成的一种自定义消息内容，当用户点击消息时，将在前台启动应用。
+- **不干胶标签** -由应用生成的映像，可包含在用户之间发送的消息中。 若要实现不干胶标签包应用的示例，请参阅 [冰淇淋生成器](/samples/xamarin/ios-samples/ios10-icecreambuilder) 示例应用。
+- **其他支持的内容** -应用可以提供消息应用始终支持的类型的内容，如照片、视频、文本或链接。
 
 新的 iOS 10，消息应用现在包含其自己的内置应用商店。 任何包含消息应用扩展的应用都将在此存储中显示和升级。 "新邮件" 应用抽屉将显示已从 "邮件" 应用商店下载的任何应用，以提供对用户的快速访问。
 
-此外，iOS 10 中的新增功能，Apple 添加了内嵌应用归属，使用户能够轻松发现应用。 例如，如果某个用户从不安装第2个用户的应用发送内容（例如不干胶标签），则发送应用的名称将列在消息历史记录中的内容下。 如果用户点击应用程序的名称，将打开 "消息应用商店"，并在存储中选择应用。
+此外，iOS 10 中的新增功能，Apple 添加了内嵌应用归属，使用户能够轻松发现应用。 例如，如果一个用户从第2个用户未安装的应用发送内容 (例如) 的不干胶标签，则发送应用的名称将列在消息历史记录中的内容下。 如果用户点击应用程序的名称，将打开 "消息应用商店"，并在存储中选择应用。
 
 消息应用扩展与开发人员熟悉的现有 iOS 应用类似，他们将有权访问标准 iOS 应用的所有标准框架和功能。 例如：
 
@@ -43,7 +43,7 @@ _本文介绍了在 Xamarin iOS 解决方案中使用消息应用扩展的高级
 - 他们有权访问 Apple Pay。
 - 它们有权访问设备硬件，如相机。
 
-仅在 iOS 10 上支持消息应用扩展，但是，可以在 watchOS 和 macOS 设备上查看这些扩展发送的内容。 添加到 watchOS 3 的新_最近页面_将显示已从手机发送的最近不干胶标签，包括来自邮件应用扩展的标签，并允许用户从手表发送这些不干胶标签。
+仅在 iOS 10 上支持消息应用扩展，但是，可以在 watchOS 和 macOS 设备上查看这些扩展发送的内容。 添加到 watchOS 3 的新 _最近页面_ 将显示已从手机发送的最近不干胶标签，包括来自邮件应用扩展的标签，并允许用户从手表发送这些不干胶标签。
 
 ## <a name="about-interactive-messages"></a>关于交互消息
 
@@ -71,8 +71,8 @@ _本文介绍了在 Xamarin iOS 解决方案中使用消息应用扩展的高级
 1. `MSMessageAppViewController`消息应用扩展中的对象是在向用户显示扩展视图时调用的主类。
 2. 此对话以对象实例的形式呈现给用户 `MSConversation` 。
 3. `MSMessage`类表示会话中给定的消息冒泡。
-4. `MSSession`控制消息的发送方式。
-5. `MSMessageTemplateLayout`控制消息的显示方式
+4. `MSSession` 控制消息的发送方式。
+5. `MSMessageTemplateLayout` 控制消息的显示方式
 
 ## <a name="the-extension-lifecycle"></a>扩展生命周期
 
@@ -80,7 +80,7 @@ _本文介绍了在 Xamarin iOS 解决方案中使用消息应用扩展的高级
 
 [![消息应用扩展的进程变为活动状态](advanced-message-app-extensions-images/interactive04.png)](advanced-message-app-extensions-images/interactive04.png#lightbox)
 
-1. 当扩展启动时（例如，从应用抽屉），消息应用将启动一个进程。
+1. 启动扩展后 (例如，从应用银箱) 中，消息应用将启动一个进程。
 2. `DidBecomeActive`调用方法并传递一个 `MSConversation` ，它表示正在运行消息应用扩展的会话。
 3. 因为该扩展是从中的开始 `UIViewController` `ViewWillAppear` ，并且 `ViewDidAppear` 称为。
 
@@ -120,7 +120,7 @@ MSMessage ComposeMessage (IceCream iceCream, string caption, MSSession session =
 }
 ```
 
-此代码将创建一个新的 `MSMessage` 并设置多个属性（如 `Url` ）。 虽然该消息只能在 iOS 上创建，但可以同时发送到 iOS 和 macOS。
+此代码创建一个新的 `MSMessage` 并设置多个属性， (如 `Url`) 。 虽然该消息只能在 iOS 上创建，但可以同时发送到 iOS 和 macOS。
 
 如果用户在 macOS 上单击会话中的消息冒泡，Mac 将尝试在 web 浏览器中打开 URL 中指定的地址。 因此，开发人员的网站应该能够在基于 macOS 的计算机上的 web 浏览器中显示邮件的某种表示形式。
 
@@ -128,7 +128,7 @@ MSMessage ComposeMessage (IceCream iceCream, string caption, MSSession session =
 
 [![MSMessageTemplateLayout 模板](advanced-message-app-extensions-images/interactive06.png)](advanced-message-app-extensions-images/interactive06.png#lightbox)
 
-`Image`的属性 `MSMessageTemplateLayout` 为屏幕上的 MessageBubble 的主体提供内容。 `MediaFileUrl`属性还为消息冒泡正文提供内容，但允许使用不受支持的内容 `UIImage` （例如，在后台循环的视频文件）。 如果同时 `Image` 提供了和 `MediaFileUrl` 属性，则 `Image` 属性将优先。 `MediaFileUrl`支持 PNG、JPEG、GIF 和视频（以可由 Media Player 框架的任何格式播放）媒体格式。
+`Image`的属性 `MSMessageTemplateLayout` 为屏幕上的 MessageBubble 的主体提供内容。 `MediaFileUrl`属性还为消息冒泡正文提供内容，但允许 (不支持的内容 `UIImage` （例如，将在后台) 循环的视频文件）。 如果同时 `Image` 提供了和 `MediaFileUrl` 属性，则 `Image` 属性将优先。 `MediaFileUrl`支持可以由 Media Player 框架) 媒体格式播放的任何格式的 PNG、JPEG、GIF 和视频 (。
 
 建议的媒体大小为 300 x 300 像素，分辨率为3倍。 还会接受稍大、较小的资产，而且 Apple 建议使用几种不同大小的测试，以获得最佳结果。 此消息应用将会关闭示例并根据需要缩放此媒体。
 
@@ -173,7 +173,7 @@ public void SendMessage (MSMessage message)
 - **附件** - `ActiveConversation.InsertAttachment (new NSUrl ("path"), "filename", (error) => {...});`
 - **不干胶标签**  -  `ActiveConversation.InsertSticker (sticker, (obj) => {...});`其中 `sticker` 是 `MSSticker` 。
 
-新内容出现在输入字段中后，用户可以通过点击蓝色的 "**发送**" 按钮（就像处理任何典型消息一样）发送消息。 邮件应用程序扩展无法自动发送内容，此过程完全由用户控制。
+新内容出现在输入字段中后，用户就可以通过点击蓝色的 " **发送** " 按钮来发送消息， (就像) 任何典型消息一样。 邮件应用程序扩展无法自动发送内容，此过程完全由用户控制。
 
 ## <a name="handling-the-compact-and-expanded-modes"></a>处理紧凑模式和展开模式
 
@@ -376,7 +376,7 @@ public override void DidTransition (MSMessagesAppPresentationStyle presentationS
 }
 ```
 
-或者，应用程序可能已使用方法在向 `WillTransition` 用户显示视图模式更改之前对其进行处理（如上面的 Icecream 生成器示例中所述）。 有关详细信息，请参阅[进一步的不干胶标签自定义](~/ios/platform/message-app-integration/intro-to-message-app-extensions.md)文档。
+或者，应用程序可以使用 `WillTransition` 方法来处理视图模式更改，然后再将其呈现给用户 (如以上) 上的 Icecream 生成器示例中所做的那样。 有关详细信息，请参阅 [进一步的不干胶标签自定义](~/ios/platform/message-app-integration/intro-to-message-app-extensions.md) 文档。
 
 ## <a name="replying-to-a-message"></a>回复消息
 
@@ -384,8 +384,8 @@ public override void DidTransition (MSMessagesAppPresentationStyle presentationS
 
 [![处于非活动和活动模式的消息应用扩展](advanced-message-app-extensions-images/interactive09.png)](advanced-message-app-extensions-images/interactive09.png#lightbox)
 
-- **扩展处于非活动状态**-消息应用扩展的消息消息中有一个冒泡消息，用户可以点击此项来激活扩展并继续交互式对话。
-- **扩展处于活动状态**-用户可以点击消息脚本中的消息应用扩展的消息冒泡来进入展开的视图模式，并在交互进程从中断的位置继续。
+- **扩展处于非活动状态** -消息应用扩展的消息消息中有一个冒泡消息，用户可以点击此项来激活扩展并继续交互式对话。
+- **扩展处于活动状态** -用户可以点击消息脚本中的消息应用扩展的消息冒泡来进入展开的视图模式，并在交互进程从中断的位置继续。
 
 ### <a name="the-extension-is-inactive"></a>扩展处于非活动状态
 
@@ -503,13 +503,13 @@ public override void DidSelectMessage (MSMessage message, MSConversation convers
 
 首先，类中有几个其他替代方法 `MSMessagesAppViewController` ，可提供对会话的更深层访问：
 
-- `DidStartSendingMessage`-当用户点击 "发送" 按钮时，将调用此项。 这并不意味着该消息实际上已传递给接收方，只是发送进程已启动。
-- `DidCancelSendingMessage`-当用户点击对话脚本的消息气泡右上角的*X*按钮时，会发生这种情况。
-- `DidReceiveMessage`-当消息应用扩展处于活动状态时，将调用此方法。从会话中的某个参与者接收到新消息。
+- `DidStartSendingMessage` -当用户点击 "发送" 按钮时，将调用此项。 这并不意味着该消息实际上已传递给接收方，只是发送进程已启动。
+- `DidCancelSendingMessage` -当用户点击对话脚本的消息气泡右上角的 *X* 按钮时，会发生这种情况。
+- `DidReceiveMessage` -当消息应用扩展处于活动状态时，将调用此方法。从会话中的某个参与者接收到新消息。
 
 ### <a name="group-conversations"></a>组对话
 
-当用户参与组对话（包含3个或更多个人）时，可以使用消息应用扩展，在设计和实现消息应用扩展时，必须考虑到这一点。
+当用户涉及到 (三个或更多个人) 的组对话中时，可以使用消息应用扩展，这在设计和实现消息应用扩展时必须考虑到这一点。
 
 请看一下与三个用户的组对话中的下列交互：
 
@@ -520,7 +520,7 @@ public override void DidSelectMessage (MSMessage message, MSConversation convers
 3. 用户3选择泡菜。
 4. 用户2的和用户3的选择几乎同时到达用户1。 因此，用户2的选择将折叠为摘要行并不可用。 这种情况也可能已翻转，并显示用户2的选项，并且用户3被折叠。
 
-无论是哪种情况，都不会出现这种行为，因为用户1应能够访问用户2的和用户3的选项。 为了应对这种情况，Apple 建议将消息应用扩展存储在云中，并使用 `MSMessage` （在用户之间发送）的 URL 属性来访问此状态。
+无论是哪种情况，都不会出现这种行为，因为用户1应能够访问用户2的和用户3的选项。 为了应对这种情况，Apple 建议将消息应用扩展存储在云中，并使用在 `MSMessage` 用户) 之间发送的 (的 URL 属性来访问此状态。
 
 当用户发送消息时，将生成会话令牌并将其推送到当前消息状态下的云。 当用户点击对话稿本中的消息冒泡时，会话令牌用于从云中检索当前会话状态。
 
@@ -533,7 +533,7 @@ public override void DidSelectMessage (MSMessage message, MSConversation convers
 1. 同样，用户1将发送一个组交互式消息，要求用户2和用户3选择快餐浇头。
 2. 用户3选取泡菜。
 3. 用户3的选择将向用户1返回，用户2尚未回复。
-4. 由于 Apple 非常关注用户隐私，因此，消息应用扩展仅知道 `NSUUID` 每个参与者在会话中分配的唯一标识符（作为）。 在本地设备上，仅知道当前用户的标识符。
+4. 由于 Apple 非常关注用户隐私，因此，消息应用扩展仅知道唯一标识符 (作为 `NSUUID` 在会话中分配给每个参与者的) 。 在本地设备上，仅知道当前用户的标识符。
 5. `MSMessage`具有一个 `SenderIdentifier` 属性，该属性与用户在扩展已知的参与者列表中的一个匹配。
 6. 每个用户设备的参与者列表都有自己的副本，但仅知道本地用户的标识符。
 7. 发送消息时，其 `SenderIdentifier` 属性也称为本地用户的属性。
@@ -544,7 +544,7 @@ public override void DidSelectMessage (MSMessage message, MSConversation convers
 - 当扩展接收到来自用户的消息时，它可以跟踪发送方标识符。 如果它收到具有相同发送方标识符的另一条消息，则该扩展将知道该消息来自同一用户。
 - 它们可用于帮助确定会话中的特定用户。
 
-发送方标识符可以在的任何文本字段中使用，方法是使用 `MSMessageTemplateLayout` 美元符号（）作为前缀 `$` 。 例如：
+发件人标识符可以在的任何文本字段中使用，方法是使用 `MSMessageTemplateLayout` 美元符号 () 来为其加上前缀 `$` 。 例如：
 
 ```csharp
 // Pass along the sender identifier
@@ -599,12 +599,12 @@ public override void DidStartSendingMessage (MSMessage message, MSConversation c
 - 其中一个将是模板布局提供的映像。
 - 另一个将是中提供的 URL `MSMessage` 。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
-本文介绍了一些高级技术，适用于在与**Messages**应用集成的 Xamarin iOS 解决方案中使用消息应用扩展，并向用户提供新功能。
+本文介绍了一些高级技术，适用于在与 **Messages** 应用集成的 Xamarin iOS 解决方案中使用消息应用扩展，并向用户提供新功能。
 
 ## <a name="related-links"></a>相关链接
 
-- [冰淇淋生成器（示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/ios10-icecreambuilder)
+- [冰淇淋生成器 (示例) ](/samples/xamarin/ios-samples/ios10-icecreambuilder)
 - [消息参考](https://developer.apple.com/reference/messages)
 - [应用扩展编程指南](https://developer.apple.com/library/prerelease/content/documentation/General/Conceptual/ExtensibilityPG/index.html#//apple_ref/doc/uid/TP40014214)

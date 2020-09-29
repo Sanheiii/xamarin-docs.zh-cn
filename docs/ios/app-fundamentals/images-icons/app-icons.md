@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/22/2017
-ms.openlocfilehash: 65e42e824a888934fd0f0a01093a6549dcf3d99d
-ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
+ms.openlocfilehash: 8bf0df03419d3705d72b679cfbfca427b0ac1a93
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86997457"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91435649"
 ---
 # <a name="application-icons-in-xamarinios"></a>Xamarin 中的应用程序图标
 
@@ -20,7 +20,7 @@ ms.locfileid: "86997457"
 
 - "[应用程序"、"聚光灯" 和 "设置" 图标](#icon-types)-IOS 应用程序所需的不同类型的图标。
 - 使用资产[目录管理图标](#managing)-使用资产目录管理应用程序图标。
-- [ITunes 图稿](#itunes)-为提供应用程序的即席方法提供所需的 iTunes 作品。
+- [ITunes 图稿](#itunes) -为提供应用程序的即席方法提供所需的 iTunes 作品。
 
 <a name="icon-types"></a>
 
@@ -28,21 +28,21 @@ ms.locfileid: "86997457"
 
 与 Xamarin iOS 应用程序可以将图像资产用于 UI 控件和文档图标一样，可以使用图像资产来提供应用程序图标。 IPad 中的以下屏幕截图说明了 iOS 中图标的三个用途：
 
-- **应用程序图标**-每个 iOS 应用都必须定义一个应用程序图标。 这是用户将在 iOS 主屏幕上点击以启动应用程序的图标。 此外，Game Center 使用此图标（如果适用）。 示例：
+- **应用程序图标** -每个 iOS 应用都必须定义一个应用程序图标。 这是用户将在 iOS 主屏幕上点击以启动应用程序的图标。 此外，Game Center 使用此图标（如果适用）。 示例：
 
     [![应用程序图标](app-icons-images/000.png)](app-icons-images/000-full.png#lightbox)
-- **聚光灯图标**-当用户在聚焦搜索中输入应用名称时，将显示此图标。 示例：
+- **聚光灯图标** -当用户在聚焦搜索中输入应用名称时，将显示此图标。 示例：
 
     [![聚光灯图标](app-icons-images/000a.png)](app-icons-images/000a-full.png#lightbox)
 - "**设置" 图标**-如果用户在其 iOS 设备上输入 "**设置**" 应用，则此图标将显示在应用的 "**设置**" 列表的末尾。 示例：
 
     [![设置图标](app-icons-images/000b.png)](app-icons-images/000b-full.png#lightbox)
 
-需要以下映像资产大小和分辨率，以支持适用于 iOS 应用的、面向 iOS 5 到 iOS 9 （或更高版本）的 Xamarin iOS 应用所需的所有图标类型：
+需要以下映像资产大小和分辨率，以支持将 iOS 应用面向 iOS 5 到 iOS 9 (或更高) 所需的所有图标类型：
 
 ### <a name="iphone-icon-sizes"></a>iPhone 图标大小
 
-- **iPhone： iOS 9 & 10 （iPhone 6 & 7 Plus）**
+- **iPhone： iOS 9 & 10 (iPhone 6 & 7 Plus) **
 
     |图标|3倍|
     |---|---|
@@ -70,7 +70,7 @@ ms.locfileid: "86997457"
 
 - **iPad： iOS 9 & 10**
 
-    |图标|2x （iPad Pro）|
+    |图标|2x (iPad Pro) |
     |---|---|
     |应用程序图标|167x167<sup>6</sup>|
     |聚焦|120x120<sup>6</sup>|
@@ -99,25 +99,25 @@ ms.locfileid: "86997457"
  5. 使用与 iPhone 相同的大小图标。
  6. 仅支持资产目录映像集。
 
- 有关图标的详细信息，请参阅 Apple 的[图标和图像大小](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/IconMatrix.html#//apple_ref/doc/uid/TP40006556-CH27-SW1)文档。
+ 有关图标的详细信息，请参阅 Apple 的 [图标和图像大小](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/IconMatrix.html#//apple_ref/doc/uid/TP40006556-CH27-SW1) 文档。
 
 <a name="managing"></a>
 
 ## <a name="managing-icons-with-asset-catalogs"></a>管理具有资产目录的图标
 
-对于图标，可以将特殊 `AppIcon` 图像集添加到 `Assets.xcassets` 应用项目中的文件。 支持所有解决方案所需的所有映像版本都包含在_xcasset_中，并组合在一起。 Visual Studio for Mac 中的一个特殊编辑器允许开发人员以图形方式包含和设置这些图像。
+对于图标，可以将特殊 `AppIcon` 图像集添加到 `Assets.xcassets` 应用项目中的文件。 支持所有解决方案所需的所有映像版本都包含在 _xcasset_ 中，并组合在一起。 Visual Studio for Mac 中的一个特殊编辑器允许开发人员以图形方式包含和设置这些图像。
 
 若要使用资产目录，请执行以下步骤：
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-1. 双击 `Info.plist` "**解决方案资源管理器**中的文件以将其打开以进行编辑。
-2. 向下滚动到 " **IPhone 图标**" 部分。
-3. 单击 "**迁移到资产目录**" 按钮：
+1. 双击 `Info.plist` " **解决方案资源管理器** 中的文件以将其打开以进行编辑。
+2. 向下滚动到 " **IPhone 图标** " 部分。
+3. 单击 " **迁移到资产目录** " 按钮：
 
     ![确保选择了 AppIcon](app-icons-images/migrate01.png)
 
-4. 在**解决方案资源管理器**中，双击该 `Assets.xcassets` 文件以将其打开进行编辑：
+4. 在 **解决方案资源管理器**中，双击该 `Assets.xcassets` 文件以将其打开进行编辑：
 
     ![解决方案资源管理器中的 assets.xcassets 文件](app-icons-images/asset01.png)
 
@@ -126,12 +126,12 @@ ms.locfileid: "86997457"
     ![AppIcon 编辑器](app-icons-images/asset02.png)
 
 6. 单击给定的图标类型，并为所需的类型/大小选择图像文件，或者从文件夹中拖放到所需大小。
-7. 单击 "**打开**" 按钮，将图像包含在项目中，并在 xcasset 中对其进行设置。
+7. 单击 " **打开** " 按钮，将图像包含在项目中，并在 xcasset 中对其进行设置。
 8. 对所需的所有映像重复此操作。
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-1. 双击 "信息"。  * ***解决方案资源管理器**中的文件：
+1. 双击 "信息"。  * * **解决方案资源管理器**中的文件：
 
     ![选择 info.plist](app-icons-images/icon01w.png)
 
@@ -141,17 +141,17 @@ ms.locfileid: "86997457"
 
     如果没有按钮，而是下拉列表，则资产目录已添加到此项目中。
 
-3. 在**解决方案资源管理器**中，展开 "**资产目录**" 文件夹：
+3. 在 **解决方案资源管理器**中，展开 " **资产目录** " 文件夹：
 
     ![展开 "资产目录" 文件夹](app-icons-images/image009.png)
 
-4. 双击**媒体**文件以在编辑器中将其打开：
+4. 双击 **媒体** 文件以在编辑器中将其打开：
 
     ![在编辑器中打开媒体文件](app-icons-images/image010.png)
 
-5. 在**属性资源管理器**中，开发人员可以选择所需的图标的不同类型和大小。
+5. 在 **属性资源管理器** 中，开发人员可以选择所需的图标的不同类型和大小。
 6. 单击给定的图标类型，然后选择所需类型/大小的图像文件。
-7. 单击 "**打开**" 按钮，将图像包含在项目中，并在 xcasset 中对其进行设置。
+7. 单击 " **打开** " 按钮，将图像包含在项目中，并在 xcasset 中对其进行设置。
 8. 对所需的所有映像重复此操作。
 
 -----
@@ -162,14 +162,14 @@ ms.locfileid: "86997457"
 
 ## <a name="itunes-artwork"></a>iTunes 图稿
 
-如果使用提供应用的即席方法（适用于企业用户或在真实设备上进行 beta 测试），开发人员还需要包括一个512x512 和一个1024x1024 映像，该映像将用于表示 iTunes 中的应用。
+如果使用向企业用户提供应用的即席方法 (或在真实设备上进行 beta 测试) ，则开发人员还需要包含一个512x512 和一个1024x1024 映像，该映像将用于表示 iTunes 中的应用。
 
 若要指定 iTunes 图稿，请执行以下操作：
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-1. 双击 `Info.plist` "**解决方案资源管理器**中的文件以将其打开以进行编辑。
-2. 滚动到编辑器的 " **ITunes 图稿**" 部分：
+1. 双击 `Info.plist` " **解决方案资源管理器** 中的文件以将其打开以进行编辑。
+2. 滚动到编辑器的 " **ITunes 图稿** " 部分：
 
     ![滚动到编辑器的 "iTunes 图稿" 部分](app-icons-images/itunes01.png)
 3. 对于任何缺少的图像，请单击编辑器中的缩略图，从 "打开文件" 对话框中选择所需 iTunes 图稿的图像文件，然后单击 **"确定"** 按钮。
@@ -177,18 +177,18 @@ ms.locfileid: "86997457"
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-1. 双击 `Info.plist` "**解决方案资源管理器**中的文件以将其打开以进行编辑。
+1. 双击 `Info.plist` " **解决方案资源管理器** 中的文件以将其打开以进行编辑。
 
-2. 单击 "**视觉资产**" 选项卡，然后展开**iTunes 图稿**：
+2. 单击 " **视觉资产** " 选项卡，然后展开 **iTunes 图稿**：
 
     ![在 Visual Studio 中编辑 iTunes 图稿](app-icons-images/itunes01w.png)
-3. 对于任何缺少的图像，请单击编辑器中的缩略图，从 "打开文件" 对话框中选择所需 iTunes 图稿的图像文件，并单击 "**打开**" 按钮。
+3. 对于任何缺少的图像，请单击编辑器中的缩略图，从 "打开文件" 对话框中选择所需 iTunes 图稿的图像文件，并单击 " **打开** " 按钮。
 4. 重复此步骤，直到已为该应用指定所有所需的映像。
 
 -----
 
 ## <a name="related-links"></a>相关链接
 
-- [使用图像（示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/workingwithimages)
+- [使用图像 (示例) ](/samples/xamarin/ios-samples/workingwithimages)
 - [Hello，iPhone](~/ios/get-started/hello-ios/index.md)
-- [自定义图标和图像创建准则](https://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/IconsImages/IconsImages.html)）
+- [自定义图标和图像创建准则](https://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/IconsImages/IconsImages.html)) 

@@ -7,35 +7,35 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/02/2017
-ms.openlocfilehash: 2cc27b18bdb58ee633cae2d61e8cc6a8064df581
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 0a2ca9fea8135e0188829b8651e9ec15303b933d
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937110"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436511"
 ---
 # <a name="message-app-extension-basics-in-xamarinios"></a>Xamarin 中的消息应用扩展基础知识
 
 _本文介绍如何在与 Messages 应用集成的 Xamarin iOS 解决方案中包含消息应用扩展，并向用户提供新功能。_
 
-新的 iOS 10，消息应用扩展与**Messages**应用集成并向用户提供新功能。 此扩展可以发送文本、不干胶标签、媒体文件和交互式消息。
+新的 iOS 10，消息应用扩展与 **Messages** 应用集成并向用户提供新功能。 此扩展可以发送文本、不干胶标签、媒体文件和交互式消息。
 
 ## <a name="about-message-app-extensions"></a>关于消息应用扩展
 
-如上所述，消息应用扩展与**Messages**应用集成，并向用户提供新功能。 此扩展可以发送文本、不干胶标签、媒体文件和交互式消息。 提供两种类型的消息应用扩展：
+如上所述，消息应用扩展与 **Messages** 应用集成，并向用户提供新功能。 此扩展可以发送文本、不干胶标签、媒体文件和交互式消息。 提供两种类型的消息应用扩展：
 
-- **不干胶标签**-包含用户可添加到消息中的不干胶标签集合。 无需编写任何代码即可创建不干胶标签。
-- **IMessage 应用**-可在邮件应用中提供自定义用户界面，用于选择不干胶标签，输入文本，包括媒体文件（使用可选类型转换）以及创建、编辑和发送交互消息。
+- **不干胶标签** -包含用户可添加到消息中的不干胶标签集合。 无需编写任何代码即可创建不干胶标签。
+- **IMessage 应用** -可在邮件应用中提供自定义用户界面，用于选择不干胶标签，输入文本，包括 (具有可选类型转换的媒体文件) 以及创建、编辑和发送交互消息。
 
 消息应用扩展提供了三种主要内容类型：
 
-- **交互式消息**-应用生成的一种自定义消息内容，当用户点击消息时，将在前台启动应用。
-- **不干胶标签**-由应用生成的映像，可包含在用户之间发送的消息中。
-- **其他受支持的内容**-该应用可以提供内容（如照片、视频、文本或指向邮件应用始终支持的任何其他内容类型的链接）。
+- **交互式消息** -应用生成的一种自定义消息内容，当用户点击消息时，将在前台启动应用。
+- **不干胶标签** -由应用生成的映像，可包含在用户之间发送的消息中。
+- **其他受支持的内容** -该应用可以提供内容（如照片、视频、文本或指向邮件应用始终支持的任何其他内容类型的链接）。
 
 新的 iOS 10，消息应用现在包含其自己的内置应用商店。 任何包含消息应用扩展的应用都将在此存储中显示和升级。 "新邮件" 应用抽屉将显示已从 "邮件" 应用商店下载的任何应用，以提供对用户的快速访问。
 
-此外，iOS 10 中的新增功能，Apple 添加了内嵌应用归属，使用户能够轻松发现应用。 例如，如果某个用户从不安装第2个用户的应用发送内容（例如不干胶标签），则发送应用的名称将列在消息历史记录中的内容下。 如果用户点击应用程序的名称，将打开 "消息应用商店"，并在存储中选择应用。
+此外，iOS 10 中的新增功能，Apple 添加了内嵌应用归属，使用户能够轻松发现应用。 例如，如果一个用户从第2个用户未安装的应用发送内容 (例如) 的不干胶标签，则发送应用的名称将列在消息历史记录中的内容下。 如果用户点击应用程序的名称，将打开 "消息应用商店"，并在存储中选择应用。
 
 消息应用扩展与开发人员熟悉创建的现有 iOS 应用程序类似，他们将有权访问标准 iOS 应用程序的所有标准框架和功能。 例如：
 
@@ -43,7 +43,7 @@ _本文介绍如何在与 Messages 应用集成的 Xamarin iOS 解决方案中�
 - 他们有权访问 Apple Pay。
 - 它们有权访问设备硬件，如相机。
 
-仅在 iOS 10 上支持消息应用扩展，但是，可以在 watchOS 和 macOS 设备上查看这些扩展发送的内容。 添加到 watchOS 3 的新_最近页面_将显示已从手机发送的最近不干胶标签，包括来自邮件应用扩展的标签，并允许用户从手表发送这些不干胶标签。
+仅在 iOS 10 上支持消息应用扩展，但是，可以在 watchOS 和 macOS 设备上查看这些扩展发送的内容。 添加到 watchOS 3 的新 _最近页面_ 将显示已从手机发送的最近不干胶标签，包括来自邮件应用扩展的标签，并允许用户从手表发送这些不干胶标签。
 
 ## <a name="about-the-messages-framework"></a>关于消息框架
 
@@ -51,7 +51,7 @@ _本文介绍如何在与 Messages 应用集成的 Xamarin iOS 解决方案中�
 
 在应用程序启动后，用户将与之进行交互，以通过消息创建要共享的新内容。 然后，应用程序使用 Messages framework 将新创建的内容传输到 Messages 应用程序进行处理。
 
-消息框架和消息应用扩展是基于预先存在的 iOS 应用扩展技术构建的。 有关应用扩展的详细信息，请参阅 Apple 的[应用扩展编程指南](https://developer.apple.com/library/prerelease/content/documentation/General/Conceptual/ExtensibilityPG/index.html#//apple_ref/doc/uid/TP40014214)。
+消息框架和消息应用扩展是基于预先存在的 iOS 应用扩展技术构建的。 有关应用扩展的详细信息，请参阅 Apple 的 [应用扩展编程指南](https://developer.apple.com/library/prerelease/content/documentation/General/Conceptual/ExtensibilityPG/index.html#//apple_ref/doc/uid/TP40014214)。
 
 与 Apple 在整个系统中提供的其他扩展点不同，开发人员无需为其消息应用扩展提供主机应用，因为消息应用本身充当容器。 但是，开发人员可以选择在新的或现有的 iOS 应用中包含消息应用扩展，并将其与捆绑包一起传送。
 
@@ -89,17 +89,17 @@ Apple 设计的不干胶标签是一种新的 iMessage 用户进行通信的方�
 > [!IMPORTANT]
 > 应始终在 `@3x` 300 x 300 到 618 x 618 像素范围内的分辨率提供不干胶标签图像。 系统将 `@2x` `@1x` 在运行时根据需要自动生成和版本。
 
-Apple 建议根据各种不同的彩色背景（如白色、黑色、红色、黄色和多色）和照片对标签图像资产进行测试，以确保它们在所有可能的情况下都能发挥最好的效果。
+Apple 建议根据各种不同的彩色背景 (（如白色、黑色、红色、黄色和多彩色) 和照片上方）测试不干胶标签图像资产，以确保它们在所有可能的情况下都能发挥最好的效果。
 
 不干胶标签可以按以下三种可用大小之一提供不干胶标签：
 
-- **小型**-100 x 100 点。
-- **中**-136 x 136 磅。 这是默认大小。
-- **大**-206 x 206 点。
+- **小型** -100 x 100 点。
+- **中** -136 x 136 磅。 这是默认大小。
+- **大** -206 x 206 点。
 
 使用 Xcode 的 "属性" 检查器设置整个不干胶包的大小，并且仅提供与所请求的大小匹配的图像资产，以便在 "邮件" 应用内的不干胶标签浏览器中获得最佳结果。
 
-有关详细信息，请参阅我们的[冰淇淋 Builder](https://docs.microsoft.com/samples/xamarin/ios-samples/ios10-icecreambuilder)应用和 Apple[消息参考](https://developer.apple.com/reference/messages)。
+有关详细信息，请参阅我们的 [冰淇淋 Builder](/samples/xamarin/ios-samples/ios10-icecreambuilder) 应用和 Apple [消息参考](https://developer.apple.com/reference/messages)。
 
 ## <a name="creating-a-custom-sticker-experience"></a>创建自定义不干胶标签体验
 
@@ -124,10 +124,10 @@ Apple 建议根据各种不同的彩色背景（如白色、黑色、红色、�
 3. 选择 " **iOS**  >  **扩展**  >  **iMessage 扩展**"，然后单击 "**下一步**" 按钮：
 
     [![选择 iMessage 扩展](intro-to-message-app-extensions-images/message01.png)](intro-to-message-app-extensions-images/message01.png#lightbox)
-4. 输入**扩展名称**并单击 "**下一步**" 按钮：
+4. 输入 **扩展名称** 并单击 " **下一步** " 按钮：
 
     [![输入扩展名称](intro-to-message-app-extensions-images/message02.png)](intro-to-message-app-extensions-images/message02.png#lightbox)
-5. 单击 "**创建**" 按钮以生成扩展：
+5. 单击 " **创建** " 按钮以生成扩展：
 
     [![单击 "创建" 按钮](intro-to-message-app-extensions-images/message03.png)](intro-to-message-app-extensions-images/message03.png#lightbox)
 
@@ -135,11 +135,11 @@ Apple 建议根据各种不同的彩色背景（如白色、黑色、红色、�
 
 1. 启动 Visual Studio。
 2. 打开解决方案以添加消息应用扩展。
-3. 选择 " **Ios 扩展" > IMessage Extension （iOS）** "，然后单击"**下一步**"按钮：
+3. 选择 **Ios 扩展 > IMessage Extension (ios) ** ，并单击 " **下一步** " 按钮：
 
-    [![选择 iMessage 扩展（iOS）](intro-to-message-app-extensions-images/message01.w157-sml.png)](intro-to-message-app-extensions-images/message01.w157.png#lightbox)
+    [![选择 iMessage Extension (iOS) ](intro-to-message-app-extensions-images/message01.w157-sml.png)](intro-to-message-app-extensions-images/message01.w157.png#lightbox)
 
-4. 输入**名称**，然后单击 **"确定"** 按钮
+4. 输入 **名称** ，然后单击 **"确定"** 按钮
 
 -----
 
@@ -147,20 +147,20 @@ Apple 建议根据各种不同的彩色背景（如白色、黑色、红色、�
 
 消息框架提供用于向用户显示可用不干胶标签的类：
 
-- `MSStickerBrowserViewController`-控制将显示不干胶标签的视图。 它还符合 `IMSStickerBrowserViewDataSource` 接口以返回给定浏览器索引的不干胶标签和不干胶标签。
-- `MSStickerBrowserView`-可用不干胶标签显示在此视图中。
-- `MSStickerSize`-决定浏览器视图中显示的不干胶标签网格的单个单元大小。
+- `MSStickerBrowserViewController` -控制将显示不干胶标签的视图。 它还符合 `IMSStickerBrowserViewDataSource` 接口以返回给定浏览器索引的不干胶标签和不干胶标签。
+- `MSStickerBrowserView` -可用不干胶标签显示在此视图中。
+- `MSStickerSize` -决定浏览器视图中显示的不干胶标签网格的单个单元大小。
 
 ### <a name="creating-a-custom-sticker-browser"></a>创建自定义标签浏览器
 
-开发人员可以通过 `MSMessageAppBrowserViewController` 在消息应用扩展中提供自定义的标签浏览器（），进一步自定义用户的不干胶标签。 自定义标签浏览器会在选择要包含在消息流中的不干胶标签时更改向用户显示不干胶标签的方式。
+开发人员可以通过 `MSMessageAppBrowserViewController` 在消息应用扩展中提供自定义的不干胶浏览器 () ，进一步自定义用户的不干胶标签体验。 自定义标签浏览器会在选择要包含在消息流中的不干胶标签时更改向用户显示不干胶标签的方式。
 
 执行以下操作：
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 1. 在**Solution Pad**中，右键单击扩展的项目名称，然后选择 "**添加**  >  **新文件 ...**  >  "**iOS |Apple Watch**  >  **接口控制器**。
-2. 输入 `StickerBrowserViewController` 作为**名称**，然后单击 "**新建**" 按钮：
+2. 输入 `StickerBrowserViewController` 作为 **名称** ，然后单击 " **新建** " 按钮：
 
     [![为名称输入 StickerBrowserViewController](intro-to-message-app-extensions-images/browser01.png)](intro-to-message-app-extensions-images/browser01.png#lightbox)
 3. 打开 `StickerBrowserViewController.cs` 文件进行编辑。
@@ -168,7 +168,7 @@ Apple 建议根据各种不同的彩色背景（如白色、黑色、红色、�
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 1. 在**解决方案资源管理器**中，右键单击扩展的项目名称，然后选择 "**添加**  >  **新文件 ...**  >  "**iOS |Apple Watch**  >  **接口控制器**。
-2. 输入 `StickerBrowserViewController` 作为**名称**，然后单击 "**新建**" 按钮：
+2. 输入 `StickerBrowserViewController` 作为 **名称** ，然后单击 " **新建** " 按钮：
 
     [![为名称输入 StickerBrowserViewController](intro-to-message-app-extensions-images/browser01.w157-sml.png)](intro-to-message-app-extensions-images/browser01.w157.png#lightbox)
 3. 打开 `StickerBrowserViewController.cs` 文件进行编辑。
@@ -311,7 +311,7 @@ private void CreateSticker (string assetName, string localizedDescription)
 }
 ```
 
-`LoadSticker`从调用方法，从 `ViewDidLoad` 命名图像资产（包括在应用的捆绑包中）创建不干胶标签，并将其添加到不干胶标签集合。
+`LoadSticker`从中调用方法 `ViewDidLoad` ，以通过包含在应用捆绑包中的命名图像资产 (来创建标签) 并将其添加到不干胶标签集合。
 
 若要实现自定义的不干胶标签，请编辑 `MessagesViewController.cs` 文件，使其类似于以下内容：
 
@@ -666,14 +666,14 @@ namespace MessageExtension
 }
 ```
 
-当用户请求向其可用集合添加新不干胶标签时，会将一个新的 `AddStickerViewController` 显示为可见控制器，而不干胶标签将进入**展开**的视图：
+当用户请求向其可用集合添加新不干胶标签时，会将一个新的 `AddStickerViewController` 显示为可见控制器，而不干胶标签将进入 **展开** 的视图：
 
 ```csharp
 // Switch to expanded view mode
 Request (MSMessagesAppPresentationStyle.Expanded);
 ```
 
-如果用户选择要添加的标签，则会将其添加到可用集合，并请求**精简**视图：
+如果用户选择要添加的标签，则会将其添加到可用集合，并请求 **精简** 视图：
 
 ```csharp
 public void AddStickerToCollection (MSSticker sticker)
@@ -705,12 +705,12 @@ public override void DidTransition (MSMessagesAppPresentationStyle presentationS
 }
 ```
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
-本文涵盖的 Xamarin iOS 解决方案中包含消息应用扩展，该扩展与**Messages**应用集成并向用户提供新功能。 它涉及到使用此扩展发送文本、不干胶标签、媒体文件和交互式消息。
+本文涵盖的 Xamarin iOS 解决方案中包含消息应用扩展，该扩展与 **Messages** 应用集成并向用户提供新功能。 它涉及到使用此扩展发送文本、不干胶标签、媒体文件和交互式消息。
 
 ## <a name="related-links"></a>相关链接
 
-- [冰淇淋生成器（示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/ios10-icecreambuilder)
+- [冰淇淋生成器 (示例) ](/samples/xamarin/ios-samples/ios10-icecreambuilder)
 - [消息参考](https://developer.apple.com/reference/messages)
 - [应用扩展编程指南](https://developer.apple.com/library/prerelease/content/documentation/General/Conceptual/ExtensibilityPG/index.html#//apple_ref/doc/uid/TP40014214)

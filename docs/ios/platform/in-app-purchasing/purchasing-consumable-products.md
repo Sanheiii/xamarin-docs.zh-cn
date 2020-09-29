@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: fb8cd050c789e165c1774398a3a2cc8e0467bde1
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.openlocfilehash: d6cc17d4a3a77487689357641999525a539b442f
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75489019"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91435532"
 ---
 # <a name="purchasing-consumable-products-in-xamarinios"></a>在 Xamarin 中购买可耗用产品
 
@@ -22,29 +22,29 @@ ms.locfileid: "75489019"
 
 本文档附带的示例代码演示了内置产品-将产品 Id 硬编码到应用程序中，因为它们与在付款后 "解除锁定" 功能的代码紧密耦合。 采购过程的可视化方式如下：   
    
-[![购买流程可视化](purchasing-consumable-products-images/image26.png)](purchasing-consumable-products-images/image26.png#lightbox)     
+[![采购流程可视化](purchasing-consumable-products-images/image26.png)](purchasing-consumable-products-images/image26.png#lightbox)     
    
- 基本工作流为：   
+ 基本工作流是：   
    
- 1. 应用程序将 `SKPayment` 添加到队列。 如果需要，将提示用户输入其 Apple ID，并要求确认付款。   
+ 1. 应用将添加 `SKPayment` 到队列中。 如果需要，将提示用户输入其 Apple ID，并要求确认付款。   
    
  2. StoreKit 将请求发送到服务器进行处理。   
    
  3. 事务完成后，服务器将使用事务回执进行响应。   
    
- 4. `SKPaymentTransactionObserver` 子类接收并处理接收。   
+ 4. `SKPaymentTransactionObserver`子类接收并处理该接收。   
    
- 5. 应用程序启用该产品（通过更新 `NSUserDefaults` 或某些其他机制），然后调用 StoreKit 的 `FinishTransaction`。
+ 5. 应用程序通过更新 `NSUserDefaults` 或其他某些机制)  (，然后调用 StoreKit 的 `FinishTransaction` 。
 
-还有另一种类型的工作流–*服务器交付的产品*-本文档稍后将对此进行介绍（请参阅 "*收据验证" 和 "服务器交付的产品*" 一节）。
+还有另一种类型的工作流– *服务器交付的产品* -稍后将在文档 (参阅《 *收据验证和服务器交付的产品*) 部分。
 
 ## <a name="consumable-products-example"></a>耗材产品示例
 
-[InAppPurchaseSample 代码](https://docs.microsoft.com/samples/xamarin/ios-samples/storekit)包含一个名为*耗材*的项目，该项目实现基本的游戏货币（称为 "猴子信用"）。 此示例演示如何实现两个应用内购买产品，使用户能够根据需要购买任意数量的 "猴子信用额度" –在实际应用程序中，还可以通过某种方式来支出它们！   
+[InAppPurchaseSample 代码](/samples/xamarin/ios-samples/storekit)包含一个名为 " *" 的项目，该*项目可实现 "游戏中的基本货币 (" ) 。 此示例演示如何实现两个应用内购买产品，使用户能够根据需要购买任意数量的 "猴子信用额度" –在实际应用程序中，还可以通过某种方式来支出它们！   
 
 这些屏幕截图中显示了应用程序–每个购买都会向用户的余额添加更多 "猴子学分"：   
 
- [![每个购买 向用户余额添加更多的猴子信用](purchasing-consumable-products-images/image27.png)](purchasing-consumable-products-images/image27.png#lightbox)   
+ [![每个购买向用户余额添加了更多的猴子信用额度](purchasing-consumable-products-images/image27.png)](purchasing-consumable-products-images/image27.png#lightbox)   
 
 自定义类 StoreKit 和 App Store 之间的交互如下所示：   
 
@@ -52,13 +52,13 @@ ms.locfileid: "75489019"
 
 ### <a name="viewcontroller-methods"></a>ViewController 方法
 
-除了检索产品信息所需的属性和方法之外，视图控制器还需要其他通知观察程序来侦听与购买相关的通知。 它们只是将在 `ViewWillAppear` 和 `ViewWillDisappear` 分别注册和删除 `NSObjects`。
+除了检索产品信息所需的属性和方法之外，视图控制器还需要其他通知观察程序来侦听与购买相关的通知。 它们只是 `NSObjects` 将在和中分别注册和 `ViewWillAppear` 删除 `ViewWillDisappear` 。
 
 ```csharp
 NSObject succeededObserver, failedObserver;
 ```
 
-构造函数还将创建 `SKProductsRequestDelegate` 子类（`InAppPurchaseManager`），进而创建并注册 `SKPaymentTransactionObserver` （`CustomPaymentObserver`）。   
+构造函数还将创建 `SKProductsRequestDelegate` 子类 ( `InAppPurchaseManager`) ，进而创建并注册 `SKPaymentTransactionObserver` ( `CustomPaymentObserver`) 。   
 
 处理应用内购买事务的第一部分是在用户希望购买某些内容时处理按钮按下，如示例应用程序中所示的以下代码所示：
 
@@ -89,11 +89,11 @@ failedObserver = NSNotificationCenter.DefaultCenter.AddObserver (InAppPurchaseMa
 });
 ```
 
-除了视图控制器上的这些方法，可耗用的产品购买事务还要求 `SKProductsRequestDelegate` 和 `SKPaymentTransactionObserver`上的代码。
+除了视图控制器上的这些方法，可耗用的产品购买事务还需要和上的代码 `SKProductsRequestDelegate` `SKPaymentTransactionObserver` 。
 
 ### <a name="inapppurchasemanager-methods"></a>InAppPurchaseManager 方法
 
-示例代码在 InAppPurchaseManager 类上实现了许多采购相关方法，包括创建 `SKPayment` 实例的 `PurchaseProduct` 方法，并将其添加到队列中进行处理：
+示例代码在 InAppPurchaseManager 类上实现了许多采购相关方法，包括 `PurchaseProduct` 创建 `SKPayment` 实例并将其添加到队列进行处理的方法：
 
 ```csharp
 public void PurchaseProduct(string appStoreProductId)
@@ -105,7 +105,7 @@ public void PurchaseProduct(string appStoreProductId)
 
 将付款添加到队列是一种异步操作。 当 StoreKit 处理事务并将其发送到 Apple 的服务器时，应用程序重新获得控制权。 此时，iOS 将验证用户是否已登录到应用商店，并在需要时提示她输入 Apple ID 和密码。   
 
-假设用户成功地通过应用商店进行身份验证并同意事务，则 `SKPaymentTransactionObserver` 将接收 StoreKit 的响应，并调用以下方法来完成该事务并将其完成。
+假设用户成功地通过应用商店进行身份验证并同意事务，则 `SKPaymentTransactionObserver` 将接收 StoreKit 的响应，并调用以下方法来完成该事务并完成该事务。
 
 ```csharp
 public void CompleteTransaction (SKPaymentTransaction transaction)
@@ -117,7 +117,7 @@ public void CompleteTransaction (SKPaymentTransaction transaction)
 }
 ```
 
-最后一步是通过调用 `FinishTransaction`来确保通知 StoreKit 已成功完成事务：
+最后一步是通过调用以下方法确保通知 StoreKit 已成功完成事务 `FinishTransaction` ：
 
 ```csharp
 public void FinishTransaction(SKPaymentTransaction transaction, bool wasSuccessful)
@@ -137,11 +137,11 @@ public void FinishTransaction(SKPaymentTransaction transaction, bool wasSuccessf
 }
 ```
 
-产品交付完成后，必须调用 `SKPaymentQueue.DefaultQueue.FinishTransaction` 才能从付款队列中删除该事务。
+交付产品后， `SKPaymentQueue.DefaultQueue.FinishTransaction` 必须调用才能从付款队列中删除该事务。
 
-### <a name="skpaymenttransactionobserver-custompaymentobserver-methods"></a>SKPaymentTransactionObserver （CustomPaymentObserver）方法
+### <a name="skpaymenttransactionobserver-custompaymentobserver-methods"></a>SKPaymentTransactionObserver (CustomPaymentObserver) 方法
 
-StoreKit 在收到 Apple 服务器的响应时调用 `UpdatedTransactions` 方法，并传递 `SKPaymentTransaction` 对象的数组以供你的代码检查。 方法遍历每个事务，并根据事务状态执行不同的功能（如下所示）：
+StoreKit `UpdatedTransactions` 在收到 Apple 服务器的响应时调用方法，并传递一个 `SKPaymentTransaction` 对象数组供你的代码检查。 方法遍历每个事务，并根据事务状态执行不同的函数 (如下所示) ：
 
 ```csharp
 public override void UpdatedTransactions (SKPaymentQueue queue, SKPaymentTransaction[] transactions)
@@ -163,11 +163,11 @@ public override void UpdatedTransactions (SKPaymentQueue queue, SKPaymentTransac
 }
 ```
 
-本部分前面介绍了 `CompleteTransaction` 方法-它将购买详细信息保存到 `NSUserDefaults`，通过 StoreKit 完成事务，最后通知 UI 进行更新。
+`CompleteTransaction`本部分前面介绍了方法-它将购买详细信息保存到 `NSUserDefaults` ，通过 StoreKit 完成事务，最后通知 UI 进行更新。
 
 ### <a name="purchasing-multiple-products"></a>购买多个产品
 
-如果在您的应用程序中购买多个产品是有意义的，请使用 `SKMutablePayment` 类并设置数量字段：
+如果在应用程序中购买多个产品是有意义的，请使用 `SKMutablePayment` 类并设置 "数量" 字段：
 
 ```csharp
 public void PurchaseProduct(string appStoreProductId)
@@ -205,7 +205,7 @@ public void CompleteTransaction (SKPaymentTransaction transaction)
 
 ### <a name="product-requests"></a>产品请求
 
-如果在进行 `SKProductRequest`时网络不可用，则将调用 `SKProductsRequestDelegate` 子类（`InAppPurchaseManager`）的 `RequestFailed` 方法，如下所示：
+如果在进行此操作时网络不可用， `SKProductRequest` `RequestFailed` `SKProductsRequestDelegate` 将调用子类 () 的方法 `InAppPurchaseManager` ，如下所示：
 
 ```csharp
 public override void RequestFailed (SKRequest request, NSError error)
@@ -235,7 +235,7 @@ requestObserver = NSNotificationCenter.DefaultCenter.AddObserver (InAppPurchaseM
 
 StoreKit 付款队列将存储并转发购买请求（如果可能），因此，网络故障的影响取决于在购买过程中网络出现故障的时间。   
 
-如果在事务中发生了错误，`SKPaymentTransactionObserver` 子类（`CustomPaymentObserver`）将调用 `UpdatedTransactions` 方法，`SKPaymentTransaction` 类将处于失败状态。
+如果在事务中发生错误，则) 的 `SKPaymentTransactionObserver` 子类 ( `CustomPaymentObserver` 将 `UpdatedTransactions` 调用方法并且 `SKPaymentTransaction` 类将处于失败状态。
 
 ```csharp
 public override void UpdatedTransactions (SKPaymentQueue queue, SKPaymentTransaction[] transactions)
@@ -257,7 +257,7 @@ public override void UpdatedTransactions (SKPaymentQueue queue, SKPaymentTransac
 }
 ```
 
-`FailedTransaction` 方法将检测该错误是否是由用户取消引起的，如下所示：
+`FailedTransaction`方法检测错误是否由用户取消导致，如下所示：
 
 ```csharp
 public void FailedTransaction (SKPaymentTransaction transaction)
@@ -271,7 +271,7 @@ public void FailedTransaction (SKPaymentTransaction transaction)
 }
 ```
 
-即使事务失败，也必须调用 `FinishTransaction` 方法，以便从付款队列中删除事务：
+即使事务失败，也 `FinishTransaction` 必须调用方法以从付款队列中删除事务：
 
 ```csharp
 SKPaymentQueue.DefaultQueue.FinishTransaction(transaction);
@@ -288,11 +288,11 @@ Applications may detect and respond to specific error codes, or handle them in t
 
 ## <a name="handling-restrictions"></a>处理限制
 
-"设置" > "iOS" 的 "**常规 > 限制**" 功能，用户可锁定其设备的某些功能。   
+"设置" > "iOS" 的 " **常规 > 限制** " 功能，用户可锁定其设备的某些功能。   
 
-可以查询是否允许用户通过 `SKPaymentQueue.CanMakePayments` 方法进行应用内购买。 如果此返回 false，则用户无法访问应用内购买。 如果尝试购买，StoreKit 将自动向用户显示一条错误消息。 通过选中此值，应用程序可以隐藏购买按钮，或执行其他操作来帮助用户。   
+可以查询用户是否允许通过方法进行应用内购买 `SKPaymentQueue.CanMakePayments` 。 如果此返回 false，则用户无法访问应用内购买。 如果尝试购买，StoreKit 将自动向用户显示一条错误消息。 通过选中此值，应用程序可以隐藏购买按钮，或执行其他操作来帮助用户。   
 
-在 `InAppPurchaseManager.cs` 文件中，`CanMakePayments` 方法包装 StoreKit 函数，如下所示：
+在 `InAppPurchaseManager.cs` 文件中， `CanMakePayments` 方法包装 StoreKit 函数，如下所示：
 
 ```csharp
 public bool CanMakePayments()
@@ -301,11 +301,11 @@ public bool CanMakePayments()
 }
 ```
 
-若要测试此方法，请使用 iOS 的**限制**功能禁用**应用内购买**：   
+若要测试此方法，请使用 iOS 的 **限制** 功能禁用 **应用内购买**：   
 
  [![使用 iOS 的限制功能禁用应用内购买](purchasing-consumable-products-images/image31.png)](purchasing-consumable-products-images/image31.png#lightbox)   
 
-此示例代码来自 `ConsumableViewController` 反应 `CanMakePayments` 通过在禁用的按钮上显示**AppStore 的禁用**文本来返回 false。
+此代码示例 `ConsumableViewController` `CanMakePayments` 通过在禁用的按钮上显示 **AppStore 的禁用** 文本来响应返回 false。
 
 ```csharp
 // only if we can make payments, request the prices
@@ -321,12 +321,12 @@ if (iap.CanMakePayments()) {
 }
 ```
 
-应用**内购买**功能受到限制时，应用程序如下所示–禁用了 "购买" 按钮。   
+应用 **内购买** 功能受到限制时，应用程序如下所示–禁用了 "购买" 按钮。   
 
- [![当应用内购买功能受到限制时，应用程序 如下所示](purchasing-consumable-products-images/image32.png)](purchasing-consumable-products-images/image32.png#lightbox)   
+ [![当应用内购买功能受到限制时，应用程序如下所示](purchasing-consumable-products-images/image32.png)](purchasing-consumable-products-images/image32.png#lightbox)   
 
-`CanMakePayments` 为 false 时仍可请求产品信息，因此应用仍可检索和显示价格。 这意味着，如果我们从代码中删除了 `CanMakePayments` 检查，则采购按钮仍处于活动状态，但是，如果尝试进行购买，用户将看到一条消息，指出**不允许应用内购买**（在访问付款队列时由 StoreKit 生成）：   
+当为 false 时，仍可以请求产品信息 `CanMakePayments` ，因此应用仍可检索并显示价格。 这意味着，如果我们从代码中删除了 " `CanMakePayments` 采购" 按钮仍处于活动状态的检查，则当用户尝试进行购买时，用户将看到一条消息，指出在) 访问付款队列时， **不允许 StoreKit 生成应用内采购** (：   
 
- [![不允许 应用内购买](purchasing-consumable-products-images/image33.png)](purchasing-consumable-products-images/image33.png#lightbox)   
+ [![不允许应用内购买](purchasing-consumable-products-images/image33.png)](purchasing-consumable-products-images/image33.png#lightbox)   
 
 实际的应用程序可能采用不同的方法来处理限制，如完全隐藏按钮并提供比 StoreKit 自动显示的警报更详细的消息。

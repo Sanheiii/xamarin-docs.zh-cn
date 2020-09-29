@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: e57b6df0f0137d5a8a8f2c0ba68793008986ba18
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 0252626cb58ff334e3cff2cc60e6544e4eba18c0
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86932179"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91435391"
 ---
 # <a name="quick-interaction-techniques-for-watchos-3-in-xamarin"></a>Xamarin 中 watchOS 3 的快速交互技术
 
@@ -22,9 +22,9 @@ _本文介绍了 Apple 在 watchOS 3 中添加的快速交互技术，以及如�
 
 ## <a name="what-are-quick-interactions"></a>什么是快速交互
 
-对于用于创建适用于 iOS 或 macOS 的应用程序的开发人员（在这种情况下，用户与应用程序进行交互的时间量以分钟或小时为单位），为 Apple Watch 设计成功的应用程序可能是一个难题，需要不同的方法。
+对于用于创建适用于 iOS 或 macOS (的应用程序的开发人员来说，用户与应用程序进行交互的时间量以分钟或小时为单位) ，为 Apple Watch 设计成功的应用可能是一项挑战，需要不同的方法。
 
-在 watchOS 中，用户通常希望抬起其手腕，快速与应用交互（通常只需几秒钟的时间），删除手腕并继续操作。
+在 watchOS 中，用户通常希望抬起其手腕，快速与应用进行交互 (通常只需几秒钟的时间) ，然后删除手腕并继续操作。
 
 下面是有关 Apple Watch 上的典型快速交互的几个示例：
 
@@ -36,7 +36,7 @@ _本文介绍了 Apple 在 watchOS 3 中添加的快速交互技术，以及如�
 
 - **Glanceable** -这意味着，用户应能一目了然地获取所需的信息。 
 - 可**操作**-这意味着用户应该能够做出更明智的决策。
-- **响应**-这意味着用户永远不会等待接收他们所需的信息或实现所需的操作。
+- **响应** -这意味着用户永远不会等待接收他们所需的信息或实现所需的操作。
 
 ### <a name="quick-interactions-length"></a>快速交互长度
 
@@ -63,11 +63,11 @@ Apple 向 WatchKit 添加了一些新功能和 Api，以帮助开发人员向其
 watchOS 3 将支持以下四个手势识别器：
 
 - 离散手势类型：
-  - 滑动手势（ `WKSwipeGestureRecognizer` ）。
-  - 分流手势（ `WKTapGestureRecognizer` ）。
+  - 滑动手势 (`WKSwipeGestureRecognizer`) 。
+  - 攻丝 (`WKTapGestureRecognizer`) 。
 - 连续手势类型：
-  - 平移手势（ `WKPanGestureRecognizer` ）。
-  - 长按下的手势（ `WKLongPressGestureRecognizer` ）。
+  - 平移手势 (`WKPanGestureRecognizer`) 。
+  - 长按) 笔势 (`WKLongPressGestureRecognizer` 。
 
 若要实现新的笔势识别器之一，只需将其拖动到 Visual Studio for Mac 中的 iOS 设计器的设计图面上，并配置其属性即可。
 
@@ -75,7 +75,7 @@ watchOS 3 将支持以下四个手势识别器：
 
 #### <a name="discrete-gesture-states"></a>离散手势状态
 
-对于离散的手势，在识别手势并且将状态（）指定为时，将调用操作 `WKGestureRecognizerState` ：
+对于离散的手势，在识别手势并且将状态 () 指定为时，将调用操作 `WKGestureRecognizerState` ：
 
 [![离散手势状态](quick-interaction-techniques-images/quick01.png)](quick-interaction-techniques-images/quick01.png#lightbox)
 
@@ -103,7 +103,7 @@ watchOS 3 将支持以下四个手势识别器：
 
 开发人员可通过在 watchOS 3 应用中实现 Digital Crown 支持，为用户提供更高的导航速度和精度交互。
 
-自 watchOS 2 起，Apple Watch 应用程序可以 `WKInterfacePicker` 通过提供 `WKPickerItems` 和选取器样式（List、堆积或图像序列）的列表来使用对象来访问 Digital Crown。 然后，watchOS 允许用户使用 Digital Crown 从列表中选择一项。
+自 watchOS 2 起，Apple Watch 应用程序可以使用 `WKInterfacePicker` 对象来访问 Digital Crown，方法是提供一个列表 `WKPickerItems` 和一个 (列表、堆积或图像序列) 的选择器样式。 然后，watchOS 允许用户使用 Digital Crown 从列表中选择一项。
 
 使用时 `WKInterfacePicker` ，WatchKit 通过以下方式处理大部分工作：
 
@@ -115,8 +115,8 @@ WatchOS 3 的新增功能现在，开发人员可以直接访问 Digital Crown �
 
 Digital Crown 访问权限由以下元素提供：
 
-- `WKCrownSequencer`-提供对每秒旋转的访问。
-- `WKCrownDelegate`-提供对循环增量事件的访问。
+- `WKCrownSequencer` -提供对每秒旋转的访问。
+- `WKCrownDelegate` -提供对循环增量事件的访问。
 
 #### <a name="rotations-per-second"></a>每秒循环
 
@@ -162,11 +162,11 @@ namespace MonkeyWatch.MonkeySeeExtension
 }
 ```
 
-此处，应用维护一个积累（ `AccumulatedRotations` ）来确定旋转的数目。 Digital Crown 的一次完全旋转等于的累计增量 `1.0` ，半旋转将为 `0.5` 。
+此处的应用程序维护一个积累的 (`AccumulatedRotations`) 来确定旋转的数目。 Digital Crown 的一次完全旋转等于的累计增量 `1.0` ，半旋转将为 `0.5` 。
 
 Apple 将其留给开发人员来确定旋转计数如何与正在更新的 UI 元素上的更改敏感度相对应。
 
-旋转增量的符号（ `+/-` ）表示用户打开 Digital Crown 的方向：
+旋转增量的符号 (`+/-`) 指示用户打开 Digital Crown 的方向：
 
 [![循环增量的符号表示用户打开 Digital Crown 的方向](quick-interaction-techniques-images/quick03.png)](quick-interaction-techniques-images/quick03.png#lightbox)
 
@@ -190,11 +190,11 @@ Apple 将其留给开发人员来确定旋转计数如何与正在更新的 UI �
 
 [![在表和详细信息视图之间移动](quick-interaction-techniques-images/quick04.png)](quick-interaction-techniques-images/quick04.png#lightbox)
 
-WatchOS 3 的新手，开发人员可以对其表视图控件启用垂直分页。 启用此功能后，用户可以滚动查找表视图行并点击该行，查看其详细信息。 不过，他们现在可以向上轻扫来选择表中的下一行或向下滚动，选择上一行（或使用 Digital Crown），所有这些操作都不必首先返回到表视图：
+WatchOS 3 的新手，开发人员可以对其表视图控件启用垂直分页。 启用此功能后，用户可以滚动查找表视图行并点击该行，查看其详细信息。 不过，他们现在可以向上轻扫来选择表中的下一行或向下滚动，选择上一行 (或使用 Digital Crown) ，所有这些操作都不必首先返回到表视图：
 
 [![在表和详细信息视图之间移动，并在其他行之间向上和向下轻扫](quick-interaction-techniques-images/quick05.png)](quick-interaction-techniques-images/quick05.png#lightbox)
 
-若要启用此模式，请在 Xcode 中打开 watchOS 应用的情节提要进行编辑，选择表视图并选中 "**垂直详细信息分页**" 复选框：
+若要启用此模式，请在 Xcode 中打开 watchOS 应用的情节提要进行编辑，选择表视图并选中 " **垂直详细信息分页** " 复选框：
 
 [![选中 "垂直详细信息分页" 复选框](quick-interaction-techniques-images/quick06.png)](quick-interaction-techniques-images/quick06.png#lightbox)
 
@@ -224,12 +224,12 @@ MenuTable.PerformSegue (0);
 - 对于明确定义的通知，用户将不执行任何操作，而只是关闭通知。
 - 他们还可以点击通知以启动 watchOS 应用。
 - 对于支持自定义操作的通知，用户可以选择一个自定义操作。 这些可能是：
-  - **前景操作**-这些操作将启动应用以执行操作。
-  - **后台操作**-始终路由到 watchOS 2 中的 iPhone，但可以路由到 watchOS 3 中的 watchApp。
+  - **前景操作** -这些操作将启动应用以执行操作。
+  - **后台操作** -始终路由到 watchOS 2 中的 iPhone，但可以路由到 watchOS 3 中的 watchApp。
 
 WatchOS 3 的新增内容：
 
-- 通知在所有平台（iOS、watchOS、tvOS 和 macOS）中使用类似的 API。
+- 通知在所有平台中使用类似的 API (iOS、watchOS、tvOS 和 macOS) 。
 - 可以在 Apple Watch 上计划本地通知。
 - 如果计划在 Apple Watch 上，则后台通知将路由到应用程序的扩展。
 
@@ -244,7 +244,7 @@ WatchOS 3 的新增内容：
 
 通过在通知的 Apple Watch 和 iPhone 版本上都包含相同的通知标识符，可防止在手表上显示重复的通知。 通知的 Apple Watch 版本将优先于 iPhone 版本。
 
-由于 watchOS 3 使用同一个 `UINotification` API framework 作为 iOS 10，请参阅我们的 ios 10[用户通知框架](~/ios/platform/user-notifications/index.md)文档了解更多详细信息。
+由于 watchOS 3 使用同一个 `UINotification` API framework 作为 iOS 10，请参阅我们的 ios 10 [用户通知框架](~/ios/platform/user-notifications/index.md) 文档了解更多详细信息。
 
 ### <a name="using-spritekit-and-scenekit"></a>使用 SpriteKit 和 SceneKit
 
@@ -252,10 +252,10 @@ WatchOS 3 的新增内容：
 
 添加了两个新接口类以支持此功能：
 
-- `WKInterfaceSKScene`-用于 SpriteKit 2D 图形。
-- `WKInterfaceSCNScene`-用于使用 SceneKit 3D 图形。
+- `WKInterfaceSKScene` -用于 SpriteKit 2D 图形。
+- `WKInterfaceSCNScene` -用于使用 SceneKit 3D 图形。
 
-若要使用这些对象，只需将其拖到 Xcode 的 Interface Builder 中的 watch 应用情节提要内的设计图面上，然后使用 "**属性" 检查器**对其进行配置。
+若要使用这些对象，只需将其拖到 Xcode 的 Interface Builder 中的 watch 应用情节提要内的设计图面上，然后使用 " **属性" 检查器** 对其进行配置。
 
 从此时起，使用 SpriteKit 或 SceneKit 场景的工作方式与在 iOS 应用中的工作方式相同。 Watch 应用程序将 `WKInterfaceSKScene` 通过调用其中一种方法来显示 `Present` 。 对于 SceneKit，只需设置 `Scene` 对象的属性即可 `WKInterfaceSCNScene` 。
 
@@ -298,7 +298,7 @@ Apple Watch 上的通知提供了一种很好的可自定义方法，可快速�
 
 ## <a name="simple-navigation"></a>简单导航
 
-watchOS 3 提供了多种方法，开发人员可以在其 watchOS 应用中简化导航，例如新的[垂直分页](#vertical-paging)、[手势识别器支持](#gesture-recognizer-support)和上面提供的[Digital Crown 旋转](#digital-crown-rotation)功能。
+watchOS 3 提供了多种方法，开发人员可以在其 watchOS 应用中简化导航，例如新的 [垂直分页](#vertical-paging)、 [手势识别器支持](#gesture-recognizer-support) 和上面提供的 [Digital Crown 旋转](#digital-crown-rotation) 功能。
 
 Digital Crown 是 Apple Watch 独有的，可以通过多种不同的方式使用来简化导航。 例如，计时器应用程序可以使用 Digital Crown 来清理可用的计时器长度。
 
@@ -308,7 +308,7 @@ Apple 建议查找结合了 watchOS 3 中添加的所有新快速交互功能的
 
 ## <a name="finishing-the-quick-interaction"></a>完成快速交互
 
-设计良好的快速交互体验后，用户可以在完成当前交互后，满怀信心地删除静电（并脱离应用）。
+设计良好的快速交互体验会使用户满怀信心地删除手腕 (，并在应用程序完成当前交互后，将其与应用) 断开。
 
 这具体会成为一个问题，即 watch 应用正在执行任何类型的网络连接或与其配套的 iPhone 应用共享信息。 在事务发生时，这通常会导致等待指示器，这在快速交互过程中是不可取的。 执行以下示例：
 
@@ -338,7 +338,7 @@ Apple 建议查找结合了 watchOS 3 中添加的所有新快速交互功能的
 
 ## <a name="quick-interaction-design-tips"></a>快速交互设计提示
 
-由于快速交互所需的长度是两秒钟或更少，开发人员应将精力集中在设计过程的最开始部分。 查找可简化这些交互的领域（使用以上所述的方法），并使用 watchOS 3 的新增功能，使应用程序快速和响应能力。
+由于快速交互所需的长度是两秒钟或更少，开发人员应将精力集中在设计过程的最开始部分。 使用以上所示的方法，查找可简化这些交互的区域 () 并使用 watchOS 3 的新增功能，使应用程序快速和响应能力。
 
 Apple 建议以下内容：
 
@@ -348,10 +348,10 @@ Apple 建议以下内容：
 - 尽可能简化应用中的导航。
 - 切勿使用户等待，使其删除手腕并尽快断开应用。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 本文介绍了 Apple 在 watchOS 3 中添加的快速交互技术，以及如何在 Apple Watch 的 Xamarin 中实现它们。
 
 ## <a name="related-links"></a>相关链接
 
-- [watchOS 示例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+watchOS)
+- [watchOS 示例](/samples/browse/?products=xamarin&term=Xamarin.iOS%2bwatchOS)

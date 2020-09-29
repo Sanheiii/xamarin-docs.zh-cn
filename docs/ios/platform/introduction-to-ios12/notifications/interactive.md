@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 09/04/2018
-ms.openlocfilehash: e629cd8f481558991d02c7fb879502ebd54753bd
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: af06aa4dc7ea836887edcc0416cfd15ce3aa1446
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031944"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91433776"
 ---
 # <a name="interactive-notification-user-interfaces-in-xamarinios"></a>Xamarin 中的交互式通知用户界面
 
@@ -20,7 +20,7 @@ ms.locfileid: "73031944"
 
 ## <a name="sample-app-redgreennotifications"></a>示例应用： RedGreenNotifications
 
-[RedGreenNotifications](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-redgreennotifications)示例应用包含一个包含交互式用户界面的通知内容扩展。
+[RedGreenNotifications](/samples/xamarin/ios-samples/ios12-redgreennotifications)示例应用包含一个包含交互式用户界面的通知内容扩展。
 
 本指南中的代码片段来自于此示例。
 
@@ -58,15 +58,15 @@ ms.locfileid: "73031944"
 
 请注意以下功能：
 
-- `UNNotificationExtensionCategory` 数组指定内容扩展处理的通知类别的类型。
-- 为了支持交互式内容，通知内容扩展会将 `UNNotificationExtensionUserInteractionEnabled` 密钥设置为 `true`。
-- `UNNotificationExtensionInitialContentSizeRatio` 键指定内容扩展接口的初始高度/宽度比。
+- `UNNotificationExtensionCategory`数组指定内容扩展处理的通知类别的类型。
+- 为了支持交互式内容，通知内容扩展会将 `UNNotificationExtensionUserInteractionEnabled` 密钥设置为 `true` 。
+- `UNNotificationExtensionInitialContentSizeRatio`键为内容扩展接口指定初始高度/宽度比。
 
 ## <a name="interactive-interface"></a>交互式接口
 
-为通知内容扩展定义接口的 MainInterface 是一个包含单个视图控制器的标准情节提要 **。** 在示例应用中，视图控制器的类型为 `NotificationViewController`，它包含一个图像视图、三个按钮和一个滑块。 情节提要将这些控件与在**NotificationViewController.cs**中定义的处理程序相关联：
+为通知内容扩展定义接口的 MainInterface 是一个包含单个视图控制器的标准情节提要 **。** 在示例应用中，视图控制器的类型为 `NotificationViewController` ，它包含一个图像视图、三个按钮和一个滑块。 情节提要将这些控件与在 **NotificationViewController.cs**中定义的处理程序相关联：
 
-- "**启动应用**程序" 按钮处理程序对 `ExtensionContext`调用 `PerformNotificationDefaultAction` 操作方法，这将启动应用程序：
+- " **启动应用** 程序" 按钮处理程序对 `PerformNotificationDefaultAction` 启动应用的操作方法 `ExtensionContext` ：
 
     ```csharp
     partial void HandleLaunchAppButtonTap(UIButton sender)
@@ -75,7 +75,7 @@ ms.locfileid: "73031944"
     }
     ```
 
-    在应用程序中，用户通知中心的 `Delegate` （在示例应用程序中，`AppDelegate`）可响应 `DidReceiveNotificationResponse` 方法中的交互：
+    在应用程序中，用户通知中心的 `Delegate` (在示例应用程序中， `AppDelegate`) 可以响应方法中的交互   `DidReceiveNotificationResponse` ：
 
     ```csharp
     [Export("userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:")]
@@ -87,7 +87,7 @@ ms.locfileid: "73031944"
             // ...
     ```
 
-- **消除通知**按钮处理程序对 `ExtensionContext`调用 `DismissNotificationContentExtension`，这会关闭通知：
+- **消除通知**按钮处理程序 `DismissNotificationContentExtension` 在上调用 `ExtensionContext` ，这将关闭通知：
 
     ```csharp
     partial void HandleDismissNotificationButtonTap(UIButton sender)
@@ -117,10 +117,10 @@ ms.locfileid: "73031944"
 
 ## <a name="related-links"></a>相关链接
 
-- [示例应用– RedGreenNotifications](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-redgreennotifications)
+- [示例应用– RedGreenNotifications](/samples/xamarin/ios-samples/ios12-redgreennotifications)
 - [Xamarin 中的用户通知框架](~/ios/platform/user-notifications/index.md)
-- [UserNotifications （Apple）](https://developer.apple.com/documentation/usernotifications?language=objc)
-- [用户通知中的新增功能（WWDC 2018）](https://developer.apple.com/videos/play/wwdc2018/710/)
-- [用户通知中的最佳实践和新增功能（WWDC 2017）](https://developer.apple.com/videos/play/wwdc2017/708/)
-- [丰富通知（WWDC 2017）](https://developer.apple.com/videos/play/wwdc2017/817/)
-- [生成远程通知（Apple）](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification)
+- [UserNotifications (Apple) ](https://developer.apple.com/documentation/usernotifications?language=objc)
+- [用户通知中的新增功能 (WWDC 2018) ](https://developer.apple.com/videos/play/wwdc2018/710/)
+- [ (WWDC 2017) 的最佳实践和用户通知中的新增功能 ](https://developer.apple.com/videos/play/wwdc2017/708/)
+- [ (WWDC 2017) 的丰富通知 ](https://developer.apple.com/videos/play/wwdc2017/817/)
+- [ (Apple) 生成远程通知 ](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification)

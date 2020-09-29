@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 08/30/2017
-ms.openlocfilehash: 51b28ec05af91dea21b1291956de30c549b1868e
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 6803ecf2303ff2c91265f3ac8352a7aa15e74d40
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571670"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436206"
 ---
 # <a name="introduction-to-arkit-in-xamarinios"></a>Xamarin 中的 ARKit 简介
 
@@ -33,7 +33,7 @@ ARKit 实现了各种增加的现实应用程序和游戏。 本部分涵盖了�
 
 ### <a name="1-add-a-3d-model"></a>1. 添加三维模型
 
-应通过**SceneKitAsset**生成操作将资产添加到项目。
+应通过 **SceneKitAsset** 生成操作将资产添加到项目。
 
 ![SceneKit 项目中的资产](images/scene-assets.png)
 
@@ -53,7 +53,7 @@ SceneView.Scene = scene;
 
 ### <a name="3-optionally-implement-a-session-delegate"></a>3. 可以选择实现会话委托
 
-虽然对于简单情况并不是必需的，但实现会话委托对于调试 ARKit 会话的状态（在实际应用程序中，为用户提供反馈）很有用。 使用以下代码创建简单委托：
+尽管简单情况并不是必需的，但实现会话委托对于调试 ARKit 会话状态 (和实际应用程序非常有用，可向用户) 提供反馈。 使用以下代码创建简单委托：
 
 ```csharp
 public class SessionDelegate : ARSessionDelegate
@@ -97,7 +97,7 @@ ship.Position = new SCNVector3(2f, -2f, -9f);
 
 ### <a name="5-pause-the-augmented-reality-session"></a>5. 暂停扩充的现实会话
 
-当视图控制器不可见时（在方法中为）暂停 ARKit 会话是一种很好的做法 `ViewWillDisappear` ：
+当视图控制器在方法中 (不可见时暂停 ARKit 会话是一种很好的做法 `ViewWillDisappear` ：
 
 ```csharp
 SceneView.Session.Pause();
@@ -107,12 +107,12 @@ SceneView.Session.Pause();
 
 上述代码会生成一个简单的 ARKit 应用程序。 更复杂的示例是，要托管扩大现实会话的视图控制器实现 `IARSCNViewDelegate` 并实现其他方法。
 
-ARKit 提供大量更复杂的功能，如面跟踪和用户交互。 有关将 ARKit 跟踪与 UrhoSharp 结合使用的示例，请参阅[UrhoSharp 演示](urhosharp.md)。
+ARKit 提供大量更复杂的功能，如面跟踪和用户交互。 有关将 ARKit 跟踪与 UrhoSharp 结合使用的示例，请参阅 [UrhoSharp 演示](urhosharp.md) 。
 
 ## <a name="related-links"></a>相关链接
 
-- [扩充的现实（Apple）](https://developer.apple.com/arkit/)
+- [ (Apple) 扩充的现实 ](https://developer.apple.com/arkit/)
 - [将 ARKit 与 UrhoSharp 配合使用](urhosharp.md)
-- [简单 ARKit （Jet）示例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-arkitsample)
-- [ARKit 放置对象（示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-arkitplacingobjects)
-- [引入适用于 iOS 的 ARKit （WWDC）（视频）](https://developer.apple.com/videos/play/wwdc2017/602/)
+- [简单的 ARKit (Jet) 示例](/samples/xamarin/ios-samples/ios11-arkitsample)
+- [ARKit 放置对象 (示例) ](/samples/xamarin/ios-samples/ios11-arkitplacingobjects)
+- [引入 ARKit-)  (视频的 iOS (扩充的现实) ](https://developer.apple.com/videos/play/wwdc2017/602/)

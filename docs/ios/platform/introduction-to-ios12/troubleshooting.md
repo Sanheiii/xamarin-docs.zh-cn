@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 09/05/2018
-ms.openlocfilehash: cbed65ce39e9298d397051740737aa164fadbc0b
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 5f37bc10a545dc0b364621be6b78dc300a222a75
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031853"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91434019"
 ---
 # <a name="troubleshooting-ios-12-development-with-xamarin"></a>排查通过 Xamarin 进行的 iOS 12 开发
 
@@ -23,9 +23,9 @@ ms.locfileid: "73031853"
 检查以下资源以了解已知问题：
 
 - 发行说明
-  - Xamarin 的[发行说明](https://docs.microsoft.com/xamarin/ios/release-notes/)存档
-  - Visual Studio for Mac （[稳定](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-mac-relnotes)、[预览](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-mac-preview-relnotes)）
-  - Visual Studio 2017 （[稳定](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-relnotes)、[预览版](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-preview-relnotes)）
+  - Xamarin 的 [发行说明](/xamarin/ios/release-notes/) 存档
+  - Visual Studio for Mac ([稳定](/visualstudio/releasenotes/vs2017-mac-relnotes)， [预览版](/visualstudio/releasenotes/vs2017-mac-preview-relnotes)) 
+  - Visual Studio 2017 ([稳定](/visualstudio/releasenotes/vs2017-relnotes)、 [预览版](/visualstudio/releasenotes/vs2017-preview-relnotes)) 
 - [开发人员社区](https://developercommunity.visualstudio.com/search.html)
 - [GitHub](https://github.com/xamarin/xamarin-macios/issues)
 - [Xamarin Bugzilla](https://bugzilla.xamarin.com/query.cgi?product=iOS)
@@ -33,7 +33,7 @@ ms.locfileid: "73031853"
 
 ## <a name="report-a-new-issue"></a>报告新问题
 
-通过在[Visual Studio 2017](https://docs.microsoft.com/visualstudio/ide/how-to-report-a-problem-with-visual-studio-2017)或[Visual Studio for Mac](https://docs.microsoft.com/visualstudio/mac/report-a-problem)中选择 "**报告问题**" 选项，报告[开发人员社区](https://developercommunity.visualstudio.com/spaces/8/index.html)中的新问题。
+通过在[Visual Studio 2017](/visualstudio/ide/how-to-report-a-problem-with-visual-studio-2017)或[Visual Studio for Mac](/visualstudio/mac/report-a-problem)中选择 "**报告问题**" 选项，报告[开发人员社区](https://developercommunity.visualstudio.com/spaces/8/index.html)中的新问题。
 
 ## <a name="xamarin-forums-and-stack-overflow"></a>Xamarin 论坛和 Stack Overflow
 

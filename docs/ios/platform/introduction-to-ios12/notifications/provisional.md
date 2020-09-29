@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 09/04/2018
-ms.openlocfilehash: 7d9fe2a651d8d75d8dd9d8c0dd1225350a58373d
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 745bfbc56dec12b7d46003a1d488e5638dc6c110
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031890"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91435177"
 ---
 # <a name="provisional-notifications-in-xamarinios"></a>Xamarin 中的临时通知
 
@@ -22,12 +22,12 @@ ms.locfileid: "73031890"
 
 ## <a name="sample-app-redgreennotifications"></a>示例应用： RedGreenNotifications
 
-查看发送临时通知的[RedGreenNotifications](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-redgreennotifications)示例应用。
+查看发送临时通知的 [RedGreenNotifications](/samples/xamarin/ios-samples/ios12-redgreennotifications) 示例应用。
 
 ## <a name="sending-provisional-notifications"></a>发送临时通知
 
-若要发送临时通知，请提供 `UNAuthorizationOptions.Provisional` 作为[`RequestAuthorization`](xref:UserNotifications.UNUserNotificationCenter.RequestAuthorization*)的选项
-`UNUserNotificationCenter`的方法：
+若要发送临时通知，请提供 `UNAuthorizationOptions.Provisional` 作为选项 [`RequestAuthorization`](xref:UserNotifications.UNUserNotificationCenter.RequestAuthorization*)
+方法 `UNUserNotificationCenter` ：
 
 ```csharp
 public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
@@ -41,13 +41,13 @@ public override bool FinishedLaunching(UIApplication application, NSDictionary l
 }
 ```
 
-如果用户将临时通知升级为显著交付，则传递给 `RequestAuthorization` 的 `UNAuthorizationOptions` 值将确定新的通知传递设置（在上述代码中，`UNAuthorizationOptions.Alert` 和 `UNAuthorizationOptions.Sound`）。
+如果用户将临时通知升级为显著交付，则 `UNAuthorizationOptions` 传递给的值 `RequestAuthorization` 将确定在上述代码中 (的新通知传递设置， `UNAuthorizationOptions.Alert` 并 `UNAuthorizationOptions.Sound`) 。
 
 ## <a name="related-links"></a>相关链接
 
-- [示例应用– RedGreenNotifications](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-redgreennotifications)
+- [示例应用– RedGreenNotifications](/samples/xamarin/ios-samples/ios12-redgreennotifications)
 - [Xamarin 中的用户通知框架](~/ios/platform/user-notifications/index.md)
-- [UserNotifications （Apple）](https://developer.apple.com/documentation/usernotifications?language=objc)
-- [用户通知中的新增功能（WWDC 2018）](https://developer.apple.com/videos/play/wwdc2018/710/)
-- [用户通知中的最佳实践和新增功能（WWDC 2017）](https://developer.apple.com/videos/play/wwdc2017/708/)
-- [生成远程通知（Apple）](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification)
+- [UserNotifications (Apple) ](https://developer.apple.com/documentation/usernotifications?language=objc)
+- [用户通知中的新增功能 (WWDC 2018) ](https://developer.apple.com/videos/play/wwdc2018/710/)
+- [ (WWDC 2017) 的最佳实践和用户通知中的新增功能 ](https://developer.apple.com/videos/play/wwdc2017/708/)
+- [ (Apple) 生成远程通知 ](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification)

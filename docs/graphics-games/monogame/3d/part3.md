@@ -6,18 +6,18 @@ ms.assetid: A4130995-48FD-4E2E-9C2B-ADCEFF35BE3A
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: 54a4c6e32059b6ff32b3a93abf5fd30c65f16b5f
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 06309c2d746d1349a672d947e27503018b80ae40
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86936625"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436953"
 ---
 # <a name="3d-coordinates-in-monogame"></a>MonoGame 中的三维坐标
 
 _了解3D 坐标系统是开发3D 游戏的一个重要步骤。MonoGame 提供了许多类，用于在三维空间中定位、定向和缩放对象。_
 
-开发三维游戏需要了解如何在3D 坐标系中操作对象。 本演练将介绍如何操作视觉对象（特别是模型）。 我们将在控制模型以创建3D 相机类的概念上进行构建。
+开发三维游戏需要了解如何在3D 坐标系中操作对象。 本演练将介绍如何)  (特定模型操作视觉对象。 我们将在控制模型以创建3D 相机类的概念上进行构建。
 
 所提供的概念源自线性代数，但我们将采取一种实用的方法，使没有强数学背景的任何用户都可以在自己的游戏中应用这些概念。
 
@@ -36,15 +36,15 @@ _了解3D 坐标系统是开发3D 游戏的一个重要步骤。MonoGame 提供�
 
 ## <a name="creating-a-project"></a>创建项目
 
-本演练重点介绍如何在三维空间中移动对象。 我们将从用于呈现模型和顶点数组的项目开始，[可在此处找到](https://docs.microsoft.com/samples/xamarin/mobile-samples/modelsandvertsmg/)。 下载后，解压缩并打开项目以确保其运行，我们应该会看到以下内容：
+本演练重点介绍如何在三维空间中移动对象。 我们将从用于呈现模型和顶点数组的项目开始， [可在此处找到](/samples/xamarin/mobile-samples/modelsandvertsmg/)。 下载后，解压缩并打开项目以确保其运行，我们应该会看到以下内容：
 
 ![下载后，解压缩并打开该项目以确保其运行并且应显示此视图](part3-images/image2.png)
 
 ## <a name="creating-a-robot-entity"></a>创建机器人实体
 
-在开始移动机器人之前，我们将创建一个 `Robot` 类以包含用于绘图和移动的逻辑。 游戏开发人员将此逻辑和数据封装称为*实体*。
+在开始移动机器人之前，我们将创建一个 `Robot` 类以包含用于绘图和移动的逻辑。 游戏开发人员将此逻辑和数据封装称为 *实体*。
 
-将新的空类文件添加到**MonoGame3D**可移植类库（而不是特定于平台的 ModelAndVerts）。 将其命名为**机器人**，并单击 "**新建**"：
+将新的空类文件添加到 **MonoGame3D** 可移植类库， (不是特定于平台的 ModelAndVerts) 。 将其命名为 **机器人** ，并单击 " **新建**"：
 
 ![将其命名为机器人并单击 "新建"](part3-images/image3.png)
 
@@ -104,7 +104,7 @@ namespace MonoGame3D
 }
 ```
 
-`Robot`代码在中本质上与 `Game1` 用于绘制的代码相同 `Model` 。 有关 `Model` 如何加载和绘制的详细介绍，请参阅[此指南了解如何使用模型](~/graphics-games/monogame/3d/part1.md)。 现在，我们可以 `Model` 从中删除所有加载和呈现代码 `Game1` ，并将其替换为 `Robot` 实例：
+`Robot`代码在中本质上与 `Game1` 用于绘制的代码相同 `Model` 。 有关 `Model` 如何加载和绘制的详细介绍，请参阅 [此指南了解如何使用模型](~/graphics-games/monogame/3d/part1.md)。 现在，我们可以 `Model` 从中删除所有加载和呈现代码 `Game1` ，并将其替换为 `Robot` 实例：
 
 ```csharp
 using Microsoft.Xna.Framework;
@@ -328,9 +328,9 @@ Matrix GetWorldMatrix()
 
 ## <a name="matrix-multiplication"></a>矩阵相乘
 
-上面的代码通过 `Matrix` 在方法中创建来旋转机器人 `GetWorldMatrix` 。 `Matrix`结构包含16个可用于转换（设置位置）、旋转和缩放的浮点值（设置大小）。 当我们分配 `effect.World` 属性时，我们会告诉基础呈现系统如何定位、调整大小和定位我们碰巧要绘制的任何内容（ `Model` 或顶点的几何图形）。 
+上面的代码通过 `Matrix` 在方法中创建来旋转机器人 `GetWorldMatrix` 。 `Matrix`结构包含16个 float 值，可用于转换 (设置位置) 、旋转和缩放 (集大小) 。 当我们分配 `effect.World` 属性时，我们会告诉基础呈现系统如何定位、调整大小，并为 `Model` 从顶点) 绘制 (或几何的方向进行定位。 
 
-幸运的是，该 `Matrix` 结构包含很多方法，可简化常见类型的矩阵的创建。 以上代码中的第一个使用是 `Matrix.CreateTranslation` 。 数学术语*转换*指的是一项操作，该操作将导致一个点（或在我们的示例模型中）从一个位置移到另一个位置，而无需进行任何其他修改（如旋转或调整大小）。 函数使用 X、Y 和 Z 值进行转换。 如果我们从上到下查看场景，则 `CreateTranslation` 方法（隔离）将执行以下操作：
+幸运的是，该 `Matrix` 结构包含很多方法，可简化常见类型的矩阵的创建。 以上代码中的第一个使用是 `Matrix.CreateTranslation` 。 数学术语 *转换* 指的是一项操作，该操作将导致一个点 (或者在我们的示例中，) 从一个位置移到另一个位置，而无需进行任何其他修改 (如旋转或调整) 。 函数使用 X、Y 和 Z 值进行转换。 如果我们从上到下查看场景，则 `CreateTranslation` 方法 (隔离) 执行以下操作：
 
 ![隔离中的 CreateTranslation 方法执行此操作](part3-images/image6.png)
 
@@ -374,7 +374,7 @@ Matrix combined = rotationMatrix * translationMatrix;
 
 `Camera`实体将包含执行基于输入的移动所需的所有逻辑，并提供用于在类上分配属性的属性 `BasicEffect` 。
 
-首先，我们将实现一个静态照相机（无基于输入的移动），并将其集成到现有项目中。 将新类添加到**MonoGame3D**可移植类库（与相同的项目 `Robot.cs` ）并将其命名为**相机**。 将此文件的内容替换为以下代码：
+首先，我们将实现一个静态照相机 (没有基于输入的移动) 并将其集成到现有项目中。 将新类添加到 **MonoGame3D** 可移植类库 (同一项目与 `Robot.cs`) 并将其命名为 **相机**。 将文件的内容替换为以下代码：
 
 ```csharp
 using System;
@@ -570,13 +570,13 @@ namespace MonoGame3D
 }
 ```
 
-对 `Game1` 以前版本（由标识）的的修改为 `// New camera code` ：
+`Game1`从 ) 中标识 (先前版本的修改 `// New camera code` 是：
 
-- `Camera`字段`Game1`
-- `Camera`实例化`Game1.Initialize`
-- `Camera.Update`调用`Game1.Update`
-- `Robot.Draw`现在采用 `Camera` 参数
-- `Game1.Draw`现在使用 `Camera.ViewMatrix` 和`Camera.ProjectionMatrix`
+- `Camera` 字段 `Game1`
+- `Camera` 实例化 `Game1.Initialize`
+- `Camera.Update` 调用 `Game1.Update`
+- `Robot.Draw` 现在采用 `Camera` 参数
+- `Game1.Draw` 现在使用 `Camera.ViewMatrix` 和 `Camera.ProjectionMatrix`
 
 ## <a name="moving-the-camera-with-input"></a>移动带输入的相机
 
@@ -624,7 +624,7 @@ public class Camera
 
 ### <a name="creating-an-angle-variable"></a>创建角度变量
 
-`lookAtVector`变量控制相机正在查看的角度。 目前，它是固定的，以便向下查看负 Y 轴，稍微向下倾斜（从 `-.5f` Z 值开始）。 我们将创建一个 `angle` 用于调整属性的变量 `lookAtVector` 。 
+`lookAtVector`变量控制相机正在查看的角度。 目前，它是固定的，以便向下查看负 Y 轴，稍微向下减小 `-.5f` Z 值)  (。 我们将创建一个 `angle` 用于调整属性的变量 `lookAtVector` 。 
 
 在本演练的前面部分中，我们介绍了可以使用矩阵来旋转对象的绘制方式。 我们还可以使用矩阵来旋转向量，如 `lookAtVector` 使用 `Vector3.Transform` 方法。 
 
@@ -663,7 +663,7 @@ public class Camera
 
 现在，我们 `Camera` 的实体可以通过其位置和角度变量进行完全控制，只需根据输入更改它们即可。
 
-首先，我们将获取 `TouchPanel` 状态，查找用户在屏幕上的接触位置。 有关使用类的详细信息 `TouchPanel` ，请参阅[触摸屏 API 参考](http://www.monogame.net/documentation/?page=T_Microsoft_Xna_Framework_Input_Touch_TouchPanel)。
+首先，我们将获取 `TouchPanel` 状态，查找用户在屏幕上的接触位置。 有关使用类的详细信息 `TouchPanel` ，请参阅 [触摸屏 API 参考](http://www.monogame.net/documentation/?page=T_Microsoft_Xna_Framework_Input_Touch_TouchPanel)。
 
 如果用户在第三方触摸，我们将调整 `angle` 值以便 `Camera` 向左旋转，如果用户在第三方触摸，则会旋转其他方法。 如果用户正在屏幕的第三个屏幕上触摸，我们将 `Camera` 向前移动。
 
@@ -717,15 +717,15 @@ public void Update(GameTime gameTime)
 
 更新方法首先调用 `TouchPanel.GetState` ，后者返回一组接触。 尽管 `TouchPanel.GetState` 可以返回多个触控点，但对于简单起见，我们只需考虑第一个点。
 
-如果用户正在触摸屏幕，则代码将进行检查以确定第一个触摸是位于屏幕的左侧、中间还是右第三。 左和右指根据值增加或减少变量来旋转相机 `angle` `TotalSeconds` （这样，无论帧速率如何，游戏的行为相同）。
+如果用户正在触摸屏幕，则代码将进行检查以确定第一个触摸是位于屏幕的左侧、中间还是右第三。 向左和右指根据值增加或减少变量来旋转相机 `angle` `TotalSeconds` (以便不管) 帧速率，游戏的行为相同。
 
 如果用户正在触摸屏幕的第三个屏幕，则照相机会向前移动。 首先通过获取正向向量来完成此操作，它最初定义为指向负 Y 轴，然后由使用和值创建的矩阵旋转 `Matrix.CreateRotationZ` `angle` 。 最后， `forwardVector` 应用到 `position` 使用 `unitsPerSecond` 系数。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 本演练介绍如何 `Models` 使用和属性在三维空间中移动和旋转 `Matrices` `BasicEffect.World` 。 这种形式的移动为在三维游戏中移动对象提供了基础。 本演练还介绍了如何实现 `Camera` 从任何位置和角度查看世界的实体。
 
 ## <a name="related-links"></a>相关链接
 
 - [MonoGame API 链接](http://www.monogame.net/documentation/?page=api)
-- [已完成的项目（示例）](https://docs.microsoft.com/samples/xamarin/monodroid-samples/monogame3dcamera)
+- [已完成的项目 (示例) ](/samples/xamarin/monodroid-samples/monogame3dcamera)

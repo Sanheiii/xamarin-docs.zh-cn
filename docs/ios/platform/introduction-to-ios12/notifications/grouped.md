@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 09/04/2018
-ms.openlocfilehash: 8c4ad31d91e6f9e4415309eee6c3da8a095dc097
-ms.sourcegitcommit: 80bd4d74812d2c086a164323b72a14662276d302
+ms.openlocfilehash: 8c440d61a41fc26aa7537dc169be08c2bf413c68
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88608605"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91435215"
 ---
 # <a name="grouped-notifications-in-xamarinios"></a>Xamarin 中的分组通知
 
@@ -22,7 +22,7 @@ ms.locfileid: "88608605"
 
 ## <a name="sample-app-groupednotifications"></a>示例应用： GroupedNotifications
 
-若要了解如何对 Xamarin 使用分组通知，请查看 [GroupedNotifications](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-groupednotifications) 示例应用。
+若要了解如何对 Xamarin 使用分组通知，请查看 [GroupedNotifications](/samples/xamarin/ios-samples/ios12-groupednotifications) 示例应用。
 
 此示例应用模拟与各个朋友的对话，发送每条消息的通知并按线程对消息进行分组。 它还演示了如何在应用程序级别的组中 unthreaded 通知。
 
@@ -139,7 +139,7 @@ async partial void ScheduleThreadedNotification(UIButton sender)
 
 ## <a name="related-links"></a>相关链接
 
-- [示例应用– GroupedNotifications](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-groupednotifications)
+- [示例应用– GroupedNotifications](/samples/xamarin/ios-samples/ios12-groupednotifications)
 - [Xamarin 中的用户通知框架](~/ios/platform/user-notifications/index.md)
 - [用户通知中的新增功能 (WWDC 2018) ](https://developer.apple.com/videos/play/wwdc2018/710/)
 - [ (WWDC 2018) 使用分组通知 ](https://developer.apple.com/videos/play/wwdc2018/711/)
