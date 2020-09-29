@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 0f3c91e175e5ccdefeaf3d6c9c83e9eb3e012e14
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 3ee159eaaf4a124f652b083e4dd7341909f52d82
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86935390"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91433128"
 ---
 # <a name="working-with-tvos-navigation-bars-in-xamarin"></a>在 Xamarin 中使用 tvOS 导航栏
 
@@ -20,7 +20,7 @@ ms.locfileid: "86935390"
 
 [![示例导航栏](navigation-bars-images/navbar01.png)](navigation-bars-images/navbar01.png#lightbox)
 
-除了在中心显示的标题外，导航栏还可以 `UIBarButtonItem` 在条形图的左侧和右侧包含一个或多个导航栏按钮（）。
+除了在中心) 中显示 (标题以外，导航栏还可以包含一个或多个导航栏按钮，)  (`UIBarButtonItem` 栏的左侧和右侧。
 
 > [!IMPORTANT]
 > 默认情况下，导航栏是完全透明的。 应注意确保导航栏的内容可在其下方的内容中保持可读。 例如，当表视图或集合中的内容在其下滚动时。
@@ -33,14 +33,14 @@ ms.locfileid: "86935390"
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-1. 在**Solution Pad**中，双击 " `Main.storyboard` 文件" 并将其打开以进行编辑。
-1. 将**导航栏**从**工具箱**拖放到屏幕顶部的视图上：
+1. 在 **Solution Pad**中，双击 " `Main.storyboard` 文件" 并将其打开以进行编辑。
+1. 将 **导航栏** 从 **工具箱** 拖放到屏幕顶部的视图上：
 
     [![导航栏](navigation-bars-images/navbar02.png)](navigation-bars-images/navbar02.png#lightbox)
-1. 双击**导航栏**以选择**导航项**。 在**Properties Pad**的 "**小组件**" 选项卡中，可以设置**标题**：
+1. 双击 **导航栏** 以选择 **导航项**。 在**Properties Pad**的 "**小组件**" 选项卡中，可以设置**标题**：
 
     [![设置标题](navigation-bars-images/navbar03.png)](navigation-bars-images/navbar03.png#lightbox)
-1. 接下来，可以将一个或多个**条形按钮项**添加到栏的任一端：
+1. 接下来，可以将一个或多个 **条形按钮项** 添加到栏的任一端：
 
     [![条形按钮项](navigation-bars-images/navbar04.png)](navigation-bars-images/navbar04.png#lightbox)
 1. 最后，在 "**属性资源管理器**" 的 "**事件**" 选项卡中将**条形按钮项**向上连接到操作：
@@ -50,14 +50,14 @@ ms.locfileid: "86935390"
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-1. 在**解决方案资源管理器**中，双击 " `Main.storyboard` 文件" 并将其打开以进行编辑。
-1. 将**导航栏**从**工具箱**拖放到屏幕顶部的视图上：
+1. 在 **解决方案资源管理器**中，双击 " `Main.storyboard` 文件" 并将其打开以进行编辑。
+1. 将 **导航栏** 从 **工具箱** 拖放到屏幕顶部的视图上：
 
     [![导航栏](navigation-bars-images/navbar02-vs.png)](navigation-bars-images/navbar02-vs.png#lightbox)
-1. 双击**导航栏**以选择**导航项**。 在 "**属性资源管理器**" 的 "**小组件**" 选项卡中，您可以设置**标题**：
+1. 双击 **导航栏** 以选择 **导航项**。 在 "**属性资源管理器**" 的 "**小组件**" 选项卡中，您可以设置**标题**：
 
     [![设置标题](navigation-bars-images/navbar03-vs.png)](navigation-bars-images/navbar03-vs.png#lightbox)
-1. 接下来，可以将一个或多个**条形按钮项**添加到栏的任一端：
+1. 接下来，可以将一个或多个 **条形按钮项** 添加到栏的任一端：
 
     [![条形按钮项](navigation-bars-images/navbar04-vs.png)](navigation-bars-images/navbar04-vs.png#lightbox)
 1. 最后，在 "**属性资源管理器**" 的 "**事件**" 选项卡中将**条形按钮项**向上连接到操作：
@@ -68,9 +68,9 @@ ms.locfileid: "86935390"
 -----
 
 > [!IMPORTANT]
-> 尽管可以 `TouchUpInside` 在 IOS 设计器中将事件（例如 UIButton）分配给 UI 元素（例如，如），但永远不会调用它，因为 APPLE TV 没有触摸屏或支持触控事件。 `Primary Action`创建 tvOS 用户界面元素的事件处理程序时，应始终使用事件。
+> 尽管可以 `TouchUpInside` 在 IOS 设计器中将事件（例如 UIButton) ）分配给 UI (元素，但绝不会调用此类事件，因为 APPLE TV 没有触摸屏或支持触控事件。 `Primary Action`创建 tvOS 用户界面元素的事件处理程序时，应始终使用事件。
 
-下面的代码提供了三个不同 BarButtonItems 上的事件处理程序的示例： `ShowFirstHotel` 、 `ShowSecondHotel` 和 `ShowThirdHotel` 。 单击每个项目时，背景图像 `HotelImage` 将更改。 此操作在视图控制器（示例）文件中进行编辑 `ViewController.cs` ：
+下面的代码提供了三个不同 BarButtonItems 上的事件处理程序的示例： `ShowFirstHotel` 、 `ShowSecondHotel` 和 `ShowThirdHotel` 。 单击每个项目时，背景图像 `HotelImage` 将更改。 此操作在视图控制器 (示例) 文件中进行编辑 `ViewController.cs` ：
 
 ```csharp
 using System;
@@ -123,17 +123,17 @@ namespace MySingleView
 
 只要按钮的 `Enabled` 属性为 `true` ，并且它未被另一个控件或视图所覆盖，就可以使用 Siri Remote 使其成为焦点项。
 
-有关使用情节提要的详细信息，请参阅[tvOS 快速入门指南](~/ios/tvos/get-started/hello-tvos.md)。
+有关使用情节提要的详细信息，请参阅 [tvOS 快速入门指南](~/ios/tvos/get-started/hello-tvos.md)。
 
 <a name="Summary"></a>
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 本文介绍了如何在 tvOS 应用程序中设计和使用导航栏。
 
 ## <a name="related-links"></a>相关链接
 
-- [tvOS 示例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
+- [tvOS 示例](/samples/browse/?products=xamarin&term=Xamarin.iOS%2btvOS)
 - [tvOS](https://developer.apple.com/tvos/)
 - [tvOS 人体学接口指南](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [TvOS 应用编程指南](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

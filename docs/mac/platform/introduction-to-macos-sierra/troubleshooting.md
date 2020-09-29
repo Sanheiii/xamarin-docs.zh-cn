@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 09/22/2016
-ms.openlocfilehash: e7bc6fa12ab6720842ab264678cbf8124353fc40
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: d3ec300cbda5d22a285c3f63d3281bde29b94024
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574413"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91430062"
 ---
 # <a name="xamarinmac---macos-sierra-troubleshooting"></a>Xamarin macOS Sierra 疑难解答
 
@@ -28,7 +28,7 @@ _本文提供了有关在 Xamarin for Mac 应用中使用 macOS Sierra 的几个
 - [核心映像](#CoreImage)
 - [通知](#Notifications)
 - [NSUserActivity](#NSUserActivity)
-- [Safari](#Safari)
+- [免费](#Safari)
 
 <a name="App-Store"></a>
 
@@ -43,7 +43,7 @@ _本文提供了有关在 Xamarin for Mac 应用中使用 macOS Sierra 的几个
 
 ## <a name="apple-pay"></a>Apple Pay
 
-如果在将新的付款卡添加到 Apple Pay 时输入了不正确的过期日期或安全代码（CW），则将终止卡预配过程。
+如果在将新的信用卡添加到 Apple Pay 时输入了不正确的过期日期或安全代码 (CW) ，则将终止卡预配过程。
 
 <a name="Binary-Compatibility"></a>
 
@@ -72,7 +72,7 @@ _本文提供了有关在 Xamarin for Mac 应用中使用 macOS Sierra 的几个
 
 ## <a name="core-image"></a>核心映像
 
-`CIImageProcessor`API 现在支持任意输入图像计数。 `CIImageProcessor`将删除 macOS Sierra beta 1 中包含的 API。
+`CIImageProcessor`API 现在支持任意输入图像计数。 `CIImageProcessor` 将删除 macOS Sierra beta 1 中包含的 API。
 
 <a name="Notifications"></a>
 
@@ -90,9 +90,9 @@ _本文提供了有关在 Xamarin for Mac 应用中使用 macOS Sierra 的几个
 
 ## <a name="safari"></a>Safari
 
-WebGeolocation 要求使用安全（ `https://` ） URL 来处理 iOS 10 和 macOS Sierra，以防止恶意使用位置数据。
+WebGeolocation 要求 `https://` 在 iOS 10 和 macOS Sierra 上使用安全 () URL，以防止恶意使用位置数据。
 
 ## <a name="related-links"></a>相关链接
 
-- [Mac 示例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Mac)
+- [Mac 示例](/samples/browse/?products=xamarin&term=Xamarin.Mac)
 - [MacOS 10.12 中的新增功能](https://developer.apple.com/library/prerelease/content/releasenotes/MacOSX/WhatsNewInOSX/Articles/OSXv10.html#//apple_ref/doc/uid/TP40017145-SW1)

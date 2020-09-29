@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/11/2016
-ms.openlocfilehash: 588dadbfe63a46bc7658d5d29a052cebe52be65c
-ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
+ms.openlocfilehash: a01f0075ec7f47d6653313ea50047b7f89529bc6
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86997405"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91431391"
 ---
 # <a name="cloudkit-in-xamarinios"></a>Xamarin 中的 CloudKit
 
@@ -29,7 +29,7 @@ CloudKit 框架可简化访问 iCloud 的应用程序的开发。 这包括检�
 
 - 需要在开发人员的计算机上安装和配置**Xcode 和 IOS SDK** – Apple 的 Xcode 和 Ios 8 api。
 - **Visual Studio for Mac** –应在用户设备上安装和配置 Visual Studio for Mac 的最新版本。
-- **ios 8 设备**-运行最新版本 ios 8 的 ios 设备用于测试。
+- **ios 8 设备** -运行最新版本 ios 8 的 ios 设备用于测试。
 
 ## <a name="what-is-cloudkit"></a>什么是 CloudKit？
 
@@ -44,27 +44,27 @@ CloudKit 支持公用和专用数据库的概念。 公共数据库提供用户�
 CloudKit 支持结构化数据和大容量数据。 它能够无缝地处理大型文件传输。 CloudKit 在后台与 iCloud 服务器之间有效地传输大型文件，使开发人员能够专注于其他任务。
 
 > [!NOTE]
-> 请务必注意，CloudKit 是一种_传输技术_。 它不提供任何持久性;它仅允许应用程序有效地从服务器发送和接收信息。
+> 请务必注意，CloudKit 是一种 _传输技术_。 它不提供任何持久性;它仅允许应用程序有效地从服务器发送和接收信息。
 
 到撰写本文时为止，Apple 最初免费提供 CloudKit，同时提供带宽和存储容量的高限制。 对于具有大型用户群的大型项目或应用程序，Apple 将提供经济实惠的定价比例。
 
 ## <a name="enabling-cloudkit-in-a-xamarin-application"></a>在 Xamarin 应用程序中启用 CloudKit
 
-在 Xamarin 应用程序可以利用 CloudKit 框架之前，必须正确预配应用程序，如使用[功能](~/ios/deploy-test/provisioning/capabilities/icloud-capabilities.md)和使用[权利](~/ios/deploy-test/provisioning/entitlements.md)指南中所述。
+在 Xamarin 应用程序可以利用 CloudKit 框架之前，必须正确预配应用程序，如使用 [功能](~/ios/deploy-test/provisioning/capabilities/icloud-capabilities.md) 和使用 [权利](~/ios/deploy-test/provisioning/entitlements.md) 指南中所述。
 
-若要访问 CloudKit， **info.plist**文件必须包含**Enable iCloud**、**键值存储**和**CloudKit**权限。
+若要访问 CloudKit， **info.plist** 文件必须包含 **Enable iCloud**、 **键值存储**和 **CloudKit** 权限。
 
 ### <a name="sample-app"></a>示例应用
 
-[CloudKitAtlas 示例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios8-cloudkitatlas)演示如何将 CloudKit 与 Xamarin 配合使用。 下面的步骤演示了如何配置示例–除了需要对 CloudKit 的要求以外，它还需要其他设置：
+[CloudKitAtlas 示例](/samples/xamarin/ios-samples/ios8-cloudkitatlas)演示如何将 CloudKit 与 Xamarin 配合使用。 下面的步骤演示了如何配置示例–除了需要对 CloudKit 的要求以外，它还需要其他设置：
 
 1. 在 Visual Studio for Mac 或 Visual Studio 中打开项目。
-2. 在**解决方案资源管理器**中，打开**info.plist**文件，并确保**捆绑标识符**与在设置设置过程中创建的**应用 ID**中定义的标识符相匹配。
-3. 向下滚动到**info.plist**文件的底部，选择 "**启用后台模式**"、"**位置更新**" 和 "**远程通知**"。
-4. 右键单击解决方案中的 iOS 项目，然后选择 "**选项**"。
-5. 选择 " **IOS 捆绑签名**"，选择上面创建的**开发人员标识**和**预配配置文件**。
-6. 确保**info.plist**包括**启用 iCloud**、**键值存储**和**CloudKit**。
-7. 请确保应用程序存在**无处不容器**。 示例： `iCloud.com.your-company.CloudKitAtlas`
+2. 在 **解决方案资源管理器**中，打开 **info.plist** 文件，并确保 **捆绑标识符** 与在设置设置过程中创建的 **应用 ID** 中定义的标识符相匹配。
+3. 向下滚动到 **info.plist** 文件的底部，选择 " **启用后台模式**"、" **位置更新**" 和 " **远程通知**"。
+4. 右键单击解决方案中的 iOS 项目，然后选择 " **选项**"。
+5. 选择 " **IOS 捆绑签名**"，选择上面创建的 **开发人员标识** 和 **预配配置文件** 。
+6. 确保 **info.plist** 包括 **启用 iCloud**、 **键值存储**和 **CloudKit**。
+7. 请确保应用程序存在 **无处不容器** 。 示例： `iCloud.com.your-company.CloudKitAtlas`
 8. 保存对文件所做的更改。
 
 设置好这些设置后，示例应用现已准备好访问 CloudKit Framework Api 以及后台、位置和通知服务。
@@ -73,13 +73,13 @@ CloudKit 支持结构化数据和大容量数据。 它能够无缝地处理大�
 
 在 Xamarin iOS 应用程序中实现 CloudKit 之前，本文将介绍 CloudKit Framework 的基础知识，其中包括以下主题：
 
-1. **容器**– iCloud 通信的隔离接收器。
-2. **数据库**–公共和专用于应用程序。
-3. **记录**–结构化数据在 CloudKit 之间移动的机制。
-4. **记录区域**–是记录组。
-5. **记录标识符**–完全规范化并表示记录的特定位置。
-6. **引用**–提供给定数据库内相关记录之间的父子关系。
-7. **资产**–允许将大型非结构化数据的文件上传到 iCloud，并将其与给定记录相关联。
+1. **容器** – iCloud 通信的隔离接收器。
+2. **数据库** –公共和专用于应用程序。
+3. **记录** –结构化数据在 CloudKit 之间移动的机制。
+4. **记录区域** –是记录组。
+5. **记录标识符** –完全规范化并表示记录的特定位置。
+6. **引用** –提供给定数据库内相关记录之间的父子关系。
+7. **资产** –允许将大型非结构化数据的文件上传到 iCloud，并将其与给定记录相关联。
 
 ### <a name="containers"></a>容器
 
@@ -87,9 +87,9 @@ CloudKit 支持结构化数据和大容量数据。 它能够无缝地处理大�
 
 使用客户端应用程序并运行与其他客户端分离的概念非常强大，并且具有以下优势：
 
-1. **安全性**–一个应用程序不能干扰其他客户端应用程序或操作系统本身。
-1. **稳定性**-如果客户端应用程序发生故障，它将无法排除 OS 的其他应用。
-1. **隐私**–每个客户端应用程序都具有对存储在设备中的个人信息的有限访问权限。
+1. **安全性** –一个应用程序不能干扰其他客户端应用程序或操作系统本身。
+1. **稳定性** -如果客户端应用程序发生故障，它将无法排除 OS 的其他应用。
+1. **隐私** –每个客户端应用程序都具有对存储在设备中的个人信息的有限访问权限。
 
 CloudKit 旨在提供与上面列出的相同的优点，并将其应用到使用基于云的信息：
 
@@ -109,7 +109,7 @@ Apple 建议在为应用程序容器创建命名空间时使用反向 DNS 表示
 
 ### <a name="databases"></a>数据库
 
-CloudKit 的主要功能之一是使用应用程序的数据模型和将模型复制到 iCloud 服务器。 某些信息适用于创建它的用户，其他信息是可以由用户创建以供公众使用的公共数据（如餐厅审阅），也可以是开发人员为应用程序发布的信息。 无论是哪种情况，受众都不只是单个用户，而是用户群。
+CloudKit 的主要功能之一是使用应用程序的数据模型和将模型复制到 iCloud 服务器。 某些信息适用于创建它的用户，其他信息是可供用户公开使用 (如餐厅审核) 的公共数据，也可以是开发人员为应用程序发布的信息。 无论是哪种情况，受众都不只是单个用户，而是用户群。
 
  [![CloudKit 容器关系图](intro-to-cloudkit-images/image32.png)](intro-to-cloudkit-images/image32.png#lightbox)
 
@@ -218,17 +218,17 @@ await CloudManager.SaveAsync (newRecord);
 var recordID =  new CKRecordID("My Record");
 ```
 
-### <a name="references"></a>参考资料
+### <a name="references"></a>参考
 
 引用在给定的数据库中提供相关记录之间的关系：
 
  [![引用在给定的数据库中提供相关记录之间的关系](intro-to-cloudkit-images/image37.png)](intro-to-cloudkit-images/image37.png#lightbox)
 
-在上面的示例中，父代为子项，使子记录成为父记录的子记录。 关系从子记录转到父记录，称为*返回引用*。
+在上面的示例中，父代为子项，使子记录成为父记录的子记录。 关系从子记录转到父记录，称为 *返回引用*。
 
 在 CloudKit 框架中通过类公开了引用 `CKReference` 。 它们是一种使 iCloud 服务器了解记录之间的关系的方式。
 
-引用提供级联删除之后的机制。 如果从数据库中删除父记录，则也会自动从数据库中删除任何子记录（在关系中指定）。
+引用提供级联删除之后的机制。 如果从数据库中删除了父记录，则会自动从数据库中删除任何 (在关系) 中指定的子记录。
 
 > [!NOTE]
 > 使用 CloudKit 时，可以使用无关联的指针。 例如，当应用程序提取记录指针列表，选择一条记录，然后请求记录时，该记录可能不再存在于数据库中。 必须对应用程序进行编码以适当地处理这种情况。
@@ -373,7 +373,7 @@ ThisApp.PublicDatabase.SaveRecord(newRecord, (record, err) => {
 
 有关上述代码，请注意以下三个事项：
 
-1. 通过调用 `SaveRecord` 的方法 `PublicDatabase` ，开发人员无需指定如何发送数据、写入的区域，等等。便利性 API 负责处理所有这些细节。
+1. 通过调用  `SaveRecord` 的方法  `PublicDatabase` ，开发人员无需指定如何发送数据、写入的区域，等等。便利性 API 负责处理所有这些细节。
 1. 调用是异步的，并在调用完成时提供回调例程，不管是成功还是失败。 如果调用失败，则会提供一条错误消息。
 1. CloudKit 不提供本地存储/持久性;仅限传输媒介。 因此，当请求保存记录时，会立即将其发送到 iCloud 服务器。
 
@@ -436,15 +436,15 @@ ThisApp.PublicDatabase.FetchRecord(recordID, (record, err) => {
 应用程序的最热门程度，数据库中的数据越多，但在设备上缓存整个数据的可能性越低。 可以使用以下方法解决此问题：
 
 - 将**大型数据保存在云中**– CloudKit 旨在有效地处理大数据。
-- **客户端只应查看该数据的一个切片**–在给定时间减少处理任何任务所需的最小数据量。
-- **客户端视图可以更改**–因为每个用户都有不同的首选项，正在显示的数据切片可以从用户更改为用户，而用户的任何给定切片的单个视图可能不同。
-- **客户端使用查询来重点介绍视点**–查询允许用户查看云中存在的较大数据集的一个小部分。
+- **客户端只应查看该数据的一个切片** –在给定时间减少处理任何任务所需的最小数据量。
+- **客户端视图可以更改** –因为每个用户都有不同的首选项，正在显示的数据切片可以从用户更改为用户，而用户的任何给定切片的单个视图可能不同。
+- **客户端使用查询来重点介绍视点** –查询允许用户查看云中存在的较大数据集的一个小部分。
 
 ### <a name="queries"></a>查询
 
 如上所述，查询允许开发人员选择云中存在的较大数据集的一小部分。 查询在 CloudKit 框架中通过 `CKQuery` 类公开。
 
-查询合并了三个不同的内容：记录类型（ `RecordType` ）、谓词（ `NSPredicate` ）和（可选）排序说明符（ `NSSortDescriptors` ）。 CloudKit 支持大多数 `NSPredicate` 。
+查询合并了三个不同的内容：一种记录类型 ( `RecordType`) ， () 的谓词 `NSPredicate` ，还可以是 () 的排序描述符 `NSSortDescriptors` 。 CloudKit 支持大多数 `NSPredicate` 。
 
 #### <a name="supported-predicates"></a>支持的谓词
 
@@ -535,7 +535,7 @@ ThisApp.PublicDatabase.PerformQuery(query, CKRecordZone.DefaultRecordZone().Zone
 
 最后，在运行服务器端查询时，应将推送通知发送到连接到数据库的每个设备。
 
-订阅在 CloudKit 框架中通过 `CKSubscription` 类公开。 它们合并了记录类型（ `RecordType` ）、谓词（ `NSPredicate` ）和 Apple 推送通知（ `Push` ）。
+订阅在 CloudKit 框架中通过 `CKSubscription` 类公开。 它们将记录类型 ( `RecordType`) 、谓词 ( `NSPredicate`) 和 Apple 推送通知 () 组合在一起 `Push` 。
 
 > [!NOTE]
 > CloudKit 推送会略微增加，因为它们包含一个包含特定信息的负载，如导致推送发生的原因。
@@ -596,7 +596,7 @@ ThisApp.PublicDatabase.SaveSubscription(subscription, (s, err) => {
 
 #### <a name="handling-push-notifications"></a>处理推送通知
 
-如果开发人员以前使用过 Apple 推送通知（AP），则应熟悉处理 CloudKit 生成的通知的过程。
+如果开发人员以前使用过 Apple 推送通知 (的 AP) ，则应对 CloudKit 生成的通知的过程非常熟悉。
 
 在中 `AppDelegate.cs` ，重写 `ReceivedRemoteNotification` 类，如下所示：
 
@@ -634,10 +634,10 @@ public override void ReceivedRemoteNotification (UIApplication application, NSDi
 
 CloudKit 向开发人员提供以下用户信息：
 
-- **标识**–唯一标识用户的方式。
-- **元数据**–保存和检索有关用户的信息的能力。
-- **隐私**–所有信息都在隐私意识 manor 中得到处理。 除非用户同意，否则不会公开任何内容。
-- **发现**–使用户能够发现使用同一应用程序的朋友。
+- **标识** –唯一标识用户的方式。
+- **元数据** –保存和检索有关用户的信息的能力。
+- **隐私** –所有信息都在隐私意识 manor 中得到处理。 除非用户同意，否则不会公开任何内容。
+- **发现** –使用户能够发现使用同一应用程序的朋友。
 
 接下来，我们将详细介绍这些主题。
 
@@ -649,9 +649,9 @@ CloudKit 向开发人员提供以下用户信息：
 
 在用户的设备上运行的客户端应用程序以及 CloudKit 容器中的所有特定用户专用数据库。 客户端应用程序将链接到这些特定用户之一。 这取决于在设备本地登录到 iCloud 的用户。
 
-因为这是来自 iCloud，所以有一个丰富的后备存储的用户信息。 因为 iCloud 实际上是托管容器，所以它可以关联用户。 在上图中，其 iCloud 帐户 `user@icloud.com` 链接到当前客户端的用户。
+因为这是来自 iCloud，所以有一个丰富的后备存储的用户信息。 因为 iCloud 实际上是托管容器，所以它可以关联用户。 在上图中，其 iCloud 帐户  `user@icloud.com` 链接到当前客户端的用户。
 
-在容器基础上，将创建唯一的、随机生成的用户 ID 并将其与用户的 iCloud 帐户（电子邮件地址）相关联。 此用户 ID 将返回到应用程序，并可供开发人员认为合适的任何方式使用。
+在容器基础上，将创建唯一的、随机生成的用户 ID，并将其与用户的 iCloud 帐户关联 (电子邮件地址) 。 此用户 ID 将返回到应用程序，并可供开发人员认为合适的任何方式使用。
 
 > [!NOTE]
 > 同一 iCloud 用户在同一设备上运行的不同应用程序将具有不同的用户 Id，因为它们连接到不同的 CloudKit 容器。
@@ -676,7 +676,7 @@ CKContainer.DefaultContainer.FetchUserRecordId ((recordID, err) => {
 
 上面的代码要求 CloudKit 容器提供当前已登录用户的 ID。 由于此信息来自 iCloud 服务器，因此调用是异步的，需要进行错误处理。
 
-#### <a name="metadata"></a>元数据
+#### <a name="metadata"></a>Metadata
 
 CloudKit 中的每个用户都具有描述它们的特定元数据。 此元数据表示为 CloudKit 记录：
 
@@ -727,13 +727,13 @@ CloudKit 还提供了一种方法，用于通过查询整个通讯簿来发现�
 概括而言，有三种不同类型的输入可用于用户发现：
 
 - **用户记录 ID** -可以针对当前已登录的 CloudKit 用户的用户 ID 执行发现。
-- **用户电子邮件地址**–用户可以提供电子邮件地址，并可用于发现。
-- **联系簿**–用户的通讯簿可用于发现应用程序的用户，该用户的电子邮件地址与联系人中列出的相同。
+- **用户电子邮件地址** –用户可以提供电子邮件地址，并可用于发现。
+- **联系簿** –用户的通讯簿可用于发现应用程序的用户，该用户的电子邮件地址与联系人中列出的相同。
 
 用户发现将返回以下信息：
 
 - **用户记录 ID** -公共数据库中用户的唯一 ID。
-- **名字和姓氏**，存储在公共数据库中。
+- **名字和姓氏** ，存储在公共数据库中。
 
 只会为已选择发现的用户返回此信息。
 
@@ -779,16 +779,16 @@ CKContainer.DefaultContainer.DiscoverAllContactUserInfos((info, er) => {
 
 CloudKit 为应用程序的记录类型和数据提供单独的开发和生产环境。 开发环境是一个更灵活的环境，仅适用于开发团队的成员。 当应用程序将新字段添加到记录并将该记录保存到开发环境中时，服务器会自动更新架构信息。
 
-开发人员可以使用此功能在开发期间对架构进行更改，从而节省时间。 需要注意的一点是，在字段添加到记录后，不能以编程方式更改与该字段相关联的数据类型。 若要更改字段的类型，开发人员必须在[CloudKit 仪表板](https://icloud.developer.apple.com/dashboard/)中删除该字段，并使用新类型再次添加它。
+开发人员可以使用此功能在开发期间对架构进行更改，从而节省时间。 需要注意的一点是，在字段添加到记录后，不能以编程方式更改与该字段相关联的数据类型。 若要更改字段的类型，开发人员必须在 [CloudKit 仪表板](https://icloud.developer.apple.com/dashboard/) 中删除该字段，并使用新类型再次添加它。
 
-在部署应用程序之前，开发人员可以使用**CloudKit 仪表板**将其架构和数据迁移到生产环境。 针对生产环境运行时，服务器禁止应用程序以编程方式更改架构。 开发人员仍然可以使用**CloudKit 仪表板**进行更改，但尝试将字段添加到生产环境中的记录会导致错误。
+在部署应用程序之前，开发人员可以使用 **CloudKit 仪表板**将其架构和数据迁移到生产环境。 针对生产环境运行时，服务器禁止应用程序以编程方式更改架构。 开发人员仍然可以使用 **CloudKit 仪表板** 进行更改，但尝试将字段添加到生产环境中的记录会导致错误。
 
 > [!NOTE]
-> IOS 模拟器仅适用于**开发环境**。 当开发人员准备好在**生产环境**中测试应用程序时，需要使用物理 iOS 设备。
+> IOS 模拟器仅适用于 **开发环境**。 当开发人员准备好在 **生产环境**中测试应用程序时，需要使用物理 iOS 设备。
 
 ## <a name="shipping-a-cloudkit-enabled-app"></a>传送启用了 CloudKit 的应用
 
-在装运使用 CloudKit 的应用程序之前，需要将它配置为面向**生产 CloudKit 环境**，否则 Apple 将拒绝该应用程序。
+在装运使用 CloudKit 的应用程序之前，需要将它配置为面向 **生产 CloudKit 环境** ，否则 Apple 将拒绝该应用程序。
 
 执行以下操作：
 
@@ -796,42 +796,42 @@ CloudKit 为应用程序的记录类型和数据提供单独的开发和生产�
 
     [![编译应用程序以发布](intro-to-cloudkit-images/shipping01.png)](intro-to-cloudkit-images/shipping01.png#lightbox)
 
-2. 在 "**生成**" 菜单中选择 "**存档**"：
+2. 在 " **生成** " 菜单中选择 " **存档**"：
 
     [![选择存档](intro-to-cloudkit-images/shipping02.png)](intro-to-cloudkit-images/shipping02.png#lightbox)
 
-3. 将创建**存档**并显示 Visual Studio for Mac：
+3. 将创建 **存档** 并显示 Visual Studio for Mac：
 
     [![将创建并显示存档](intro-to-cloudkit-images/shipping03.png)](intro-to-cloudkit-images/shipping03.png#lightbox)
 
 4. 启动 **Xcode**。
-5. 从 "**窗口**" 菜单中，选择 "**管理器**"：
+5. 从 " **窗口** " 菜单中，选择 " **管理器**"：
 
     [![选择组织程序](intro-to-cloudkit-images/shipping04.png)](intro-to-cloudkit-images/shipping04.png#lightbox)
 
-6. 选择应用程序的存档，并单击 "**导出 ...** " 按钮：
+6. 选择应用程序的存档，并单击 " **导出 ...** " 按钮：
 
     [![应用程序的存档](intro-to-cloudkit-images/shipping05.png)](intro-to-cloudkit-images/shipping05.png#lightbox)
 
-7. 选择要导出的方法，然后单击 "**下一步**" 按钮：
+7. 选择要导出的方法，然后单击 " **下一步** " 按钮：
 
     [![选择导出方法](intro-to-cloudkit-images/shipping06.png)](intro-to-cloudkit-images/shipping06.png#lightbox)
 
-8. 从下拉列表中选择**开发团队**，并单击 "**选择**" 按钮：
+8. 从下拉列表中选择 **开发团队** ，并单击 " **选择** " 按钮：
 
     [![从下拉列表中选择开发团队](intro-to-cloudkit-images/shipping07.png)](intro-to-cloudkit-images/shipping07.png#lightbox)
 
-9. 从下拉列表中选择 "**生产**"，并单击 "**下一步**" 按钮：
+9. 从下拉列表中选择 " **生产** "，并单击 " **下一步** " 按钮：
 
     [![从下拉列表中选择 "生产"](intro-to-cloudkit-images/shipping08.png)](intro-to-cloudkit-images/shipping08.png#lightbox)
 
-10. 查看设置并单击 "**导出**" 按钮：
+10. 查看设置并单击 " **导出** " 按钮：
 
     [![查看设置](intro-to-cloudkit-images/shipping09.png)](intro-to-cloudkit-images/shipping09.png#lightbox)
 
 11. 选择要生成的应用程序文件所在的位置 `.ipa` 。
 
-此过程类似于将应用程序直接提交到 iTunes Connect，只需单击 "**提交 ...** " 按钮而不是 "导出 ..."在 "管理器" 窗口中选择存档后。
+此过程类似于将应用程序直接提交到 iTunes Connect，只需单击 " **提交 ...** " 按钮而不是 "导出 ..."在 "管理器" 窗口中选择存档后。
 
 ## <a name="when-to-use-cloudkit"></a>何时使用 CloudKit
 
@@ -841,19 +841,19 @@ CloudKit 为应用程序的记录类型和数据提供单独的开发和生产�
 
 以下用例应有助于开发人员决定何时使用特定的 iCloud 框架或技术：
 
-- **ICloud 键值存储**–以异步方式使少量数据保持最新状态，非常适合使用应用程序首选项。 但是，它受限于极少量的信息。
-- **ICloud 驱动器**-构建在现有 ICloud 文档 api 之上，并提供一个用于同步文件系统中的非结构化数据的简单 API。 它在 Mac OS X 上提供完全脱机缓存，非常适用于以文档为中心的应用程序。
-- **ICloud 核心数据**-允许在用户的所有设备之间复制数据。 数据是单用户的，非常适合用于保持私有的结构化数据同步。
+- **ICloud 键值存储** –以异步方式使少量数据保持最新状态，非常适合使用应用程序首选项。 但是，它受限于极少量的信息。
+- **ICloud 驱动器** -构建在现有 ICloud 文档 api 之上，并提供一个用于同步文件系统中的非结构化数据的简单 API。 它在 Mac OS X 上提供完全脱机缓存，非常适用于以文档为中心的应用程序。
+- **ICloud 核心数据** -允许在用户的所有设备之间复制数据。 数据是单用户的，非常适合用于保持私有的结构化数据同步。
 - **CloudKit** –提供结构化和批量的公共数据，并能够处理大型数据集和大型非结构化文件。 它与用户的 iCloud 帐户关联，并提供客户端定向数据传输。
 
 考虑到这些用例，开发人员应选择正确的 iCloud 技术来提供当前所需的应用程序功能，并为将来的增长提供良好的可伸缩性。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 本文介绍了 CloudKit API 的简介。 它演示了如何预配和配置 Xamarin iOS 应用程序以使用 CloudKit。 它已涵盖 CloudKit 便利性 API 的功能。 它演示了如何使用查询和订阅为可缩放性设计 CloudKit 启用的应用程序。 最后，它显示了通过 CloudKit 向应用程序公开的用户帐户信息。
 
 ## <a name="related-links"></a>相关链接
 
-- [CloudKit （Apple）](https://developer.apple.com/icloud/cloudkit/)
-- [CloudKitAtlas （示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/ios8-cloudkitatlas)
+- [CloudKit (Apple) ](https://developer.apple.com/icloud/cloudkit/)
+- [CloudKitAtlas (示例) ](/samples/xamarin/ios-samples/ios8-cloudkitatlas)
 - [创建预配配置文件](~/ios/get-started/installation/device-provisioning/index.md)

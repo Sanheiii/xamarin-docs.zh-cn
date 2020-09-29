@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 5aabaadfb1781f9f1622abf5687252b16b327d34
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.openlocfilehash: 7e061f12e45e6d60c1772fc8699ffdb1f1b1d730
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76725420"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91430397"
 ---
 # <a name="in-app-purchasing-in-xamarinios"></a>Xamarin 中的应用内购买
 
@@ -20,11 +20,11 @@ iOS 应用程序可以使用 StoreKit 销售数字产品或服务– iOS 提供�
 
 提供应用内购买功能需要执行许多步骤：
 
-- **配置应用**–必须正确设置应用程序的预配配置文件。
-- **创建产品**–必须在 iTunes Connect 门户中创建产品描述和价格。
+- **配置应用** –必须正确设置应用程序的预配配置文件。
+- **创建产品** –必须在 iTunes Connect 门户中创建产品描述和价格。
 - **实现 StoreKit** –必须根据要销售的产品类型来实现 StoreKit API。
-- **构建用户界面和产品本身**–必须实现产品，其中包括跟踪每个购买和备份/还原它们的机制（如果适用）。
-- **监视销售和接收资金**–使用 iTunes Connect 提供的信息来监视销售趋势和跟踪收入。
+- **构建用户界面和产品本身** –必须实现产品，其中包括跟踪每个购买和备份/还原它们的机制（如果适用）。
+- **监视销售和接收资金** –使用 iTunes Connect 提供的信息来监视销售趋势和跟踪收入。
 
 本文档介绍了如何完成所有这些步骤，以使用 Xamarin 提供应用内购买。
 
@@ -32,7 +32,7 @@ iOS 应用程序可以使用 StoreKit 销售数字产品或服务– iOS 提供�
 
 若要支持应用内购买，必须使用 Xcode 7 及更高版本的 Xamarin 5.0 或更高版本。
 
-## <a name="contents"></a>内容
+## <a name="contents"></a>目录
 
 - [应用内购买基本知识和配置](~/ios/platform/in-app-purchasing/in-app-purchase-basics-and-configuration.md)
 
@@ -46,23 +46,23 @@ iOS 应用程序可以使用 StoreKit 销售数字产品或服务– iOS 提供�
 
 - [订阅和报告](~/ios/platform/in-app-purchasing/subscriptions-and-reporting.md)
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 本文介绍了应用内购买的概念，其中概述了如何配置应用程序以利用它并使用 Xamarin 提供的示例。 其中包括：
 
-- **IOS 预配门户**–启用应用内购买功能的指导原则。
+- **IOS 预配门户** –启用应用内购买功能的指导原则。
 - **ITunes Connect** –配置要在应用中销售的产品。
-- **应用商店工具包**–对用于构建应用内购买功能的类的说明。
-- **编写应用程序的采购代码**-如何将应用内购买构建到 Xamarin iOS 应用中的示例。
-- **报告**–有关通过 iTunes Connect 提供的统计信息的概述。
+- **应用商店工具包** –对用于构建应用内购买功能的类的说明。
+- **编写应用程序的采购代码** -如何将应用内购买构建到 Xamarin iOS 应用中的示例。
+- **报告** –有关通过 iTunes Connect 提供的统计信息的概述。
 
 ## <a name="related-links"></a>相关链接
 
-- [InAppPurchaseSample](https://docs.microsoft.com/samples/xamarin/ios-samples/storekit/)
+- [InAppPurchaseSample](/samples/xamarin/ios-samples/storekit/)
 - [应用购买编程指南](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/StoreKitGuide/Introduction.html)
 - [iTunes Connect 开发人员指南](https://developer.apple.com/library/ios/documentation/LanguagesUtilities/Conceptual/iTunesConnect_Guide/iTunesConnect_Guide.pdf)
 - [应用商店工具包框架参考](https://developer.apple.com/library/ios/documentation/StoreKit/Reference/StoreKit_Collection/StoreKit_Collection.pdf)
-- [应用内购买产品标识符 Q &](https://developer.apple.com/library/ios/#qa/qa1329/_index.html)
+- [应用内购买产品标识符 Q&](https://developer.apple.com/library/ios/#qa/qa1329/_index.html)
 - [应用内购买技术说明](https://developer.apple.com/library/ios/#technotes/tn2259/_index.html)
 - [首次应用商店提交](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html)
 - [App Store 提交提示](https://developer.apple.com/appstore/resources/submission/tips.html)

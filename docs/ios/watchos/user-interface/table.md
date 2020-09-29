@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 0358e1570a5e38e008894a7eb9b6ca1985a0fed0
-ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
+ms.openlocfilehash: 21154ee5ed83d9d6af2c5d5f70bb64759de43137
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86997249"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91431518"
 ---
 # <a name="watchos-table-controls-in-xamarin"></a>Xamarin 中的 watchOS 表控件
 
@@ -23,25 +23,25 @@ WatchOS `WKInterfaceTable` 控件比它的 iOS 副本简单得多，但会执行
 
 ## <a name="adding-a-table"></a>添加表
 
-将 "**表**" 控件拖到场景中。 默认情况下，它将如下所示（显示单个未指定的行布局）：
+将 " **表** " 控件拖到场景中。 默认情况下，它将如下所示 (显示单个未指定的行布局) ：
 
 [![添加表](table-images/add-table-sml.png)](table-images/add-table.png#lightbox)
 
-在**Properties** pad 的 "**名称**" 框中为该表命名，以便在代码中引用它。
+在 **Properties** pad 的 " **名称** " 框中为该表命名，以便在代码中引用它。
 
 ## <a name="add-a-row-controller"></a>添加行控制器
 
-该表自动包含单个行，由默认情况下包含**组**控件的行控制器表示。
+该表自动包含单个行，由默认情况下包含 **组** 控件的行控制器表示。
 
-若要设置行控制器的**类**，请在**文档大纲**中选择该行，并在**Properties** pad 中键入类名：
+若要设置行控制器的 **类** ，请在 **文档大纲** 中选择该行，并在 **Properties** pad 中键入类名：
 
 [![在 Properties pad 中输入类名](table-images/add-row-controller-sml.png)](table-images/add-row-controller.png#lightbox)
 
-设置行控制器的类后，IDE 将在项目中创建相应的 c # 文件。 将控件（如标签）拖到行上，并为其指定名称，以便可以在代码中引用它们。
+设置行控制器的类后，IDE 将在项目中创建相应的 c # 文件。 将控件 (如标签) 拖到行上，并为其指定名称，以便可以在代码中引用它们。
 
 ## <a name="create-and-populate-rows"></a>创建和填充行
 
-`SetNumberOfRows`为每行创建行控制器类，使用 `Identifier` 选择正确的类。 如果为行控制器提供自定义 `Identifier` ，请将以下代码片段中的**默认值**更改为所用标识符。 `RowController`当调用并显示该表时，将创建*每一行*的 `SetNumberOfRows` 。
+`SetNumberOfRows` 为每行创建行控制器类，使用 `Identifier` 选择正确的类。 如果为行控制器提供自定义 `Identifier` ，请将以下代码片段中的 **默认值** 更改为所用标识符。 `RowController`当调用并显示该表时，将创建*每一行*的 `SetNumberOfRows` 。
 
 ```csharp
 myTable.SetNumberOfRows ((nint)rows.Count, "default");
@@ -49,9 +49,9 @@ myTable.SetNumberOfRows ((nint)rows.Count, "default");
 ```
 
 > [!IMPORTANT]
-> 表中的行不会像在 iOS 中那样进行虚拟化。 尝试限制行数（Apple 建议小于20）。
+> 表中的行不会像在 iOS 中那样进行虚拟化。 尝试限制 (Apple 建议少于 20) 行数。
 
-创建行后，需要填充每个单元（就像 `GetCell` 在 iOS 中执行的操作）。 [WatchTables 示例](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchtables)中的此代码片段更新每行中的标签
+创建行后，需要在 () 中填充每个单元格 `GetCell` 。 [WatchTables 示例](/samples/xamarin/ios-samples/watchos-watchtables)中的此代码片段更新每行中的标签
 
 ```csharp
 for (var i = 0; i < rows.Count; i++) {
@@ -86,8 +86,8 @@ public override void DidSelectRow (WKInterfaceTable table, nint rowIndex)
 
 ### <a name="getcontextforsegue"></a>GetContextForSegue
 
-将情节提要上的 segue 从表行拖至另一个场景（拖动时按住**控制**键）。
-请确保选择 segue 并在**Properties** pad 中为其指定一个标识符（如 `secondLevel` 以下示例中所示）。
+将情节提要上的 segue 从表行拖至另一个场景 (按住 **ctrl** 键的同时拖动) 。
+请确保选择 segue 并在 **Properties** pad 中为其指定一个标识符 (如 `secondLevel` 下面的示例所) 。
 
 在接口控制器中，实现 `GetContextForSegue` 方法并返回应提供给 segue 提供的场景的数据上下文。
 
@@ -109,7 +109,7 @@ public override NSObject GetContextForSegue (string segueIdentifier, WKInterface
 
 ![设置原型行的数目](table-images/prototype-rows1.png)
 
-将**Rows**属性设置为**3**将创建额外的行占位符，以便您将控件拖放到中。 对于每一行，在**Properties** pad 中设置**类**名称，以确保行控制器类已创建。
+将 **Rows** 属性设置为 **3** 将创建额外的行占位符，以便您将控件拖放到中。 对于每一行，在**Properties** pad 中设置**类**名称，以确保行控制器类已创建。
 
 ![设计器中的原型行](table-images/prototype-rows2.png)
 
@@ -147,11 +147,11 @@ watchOS 3 为表引入了一项新功能：滚动浏览与每行相关的详细�
 > [!IMPORTANT]
 > 此功能当前仅可通过在 Xcode Interface Builder 中编辑情节提要来使用。
 
-若要启用此功能，请 `WKInterfaceTable` 在设计图面上选择并勾选**垂直详细信息分页**选项：
+若要启用此功能，请 `WKInterfaceTable` 在设计图面上选择并勾选 **垂直详细信息分页** 选项：
 
 ![选择垂直详细信息分页选项](table-images/vertical-detail-paging-sml.png)
 
-如[Apple 所述](https://developer.apple.com/reference/watchkit/wkinterfacetable#1682023)，表导航必须使用 segue 才能使用分页功能。 改为重新编写使用 segue 的所有现有代码 `PushController` 。
+如 [Apple 所述](https://developer.apple.com/reference/watchkit/wkinterfacetable#1682023) ，表导航必须使用 segue 才能使用分页功能。 改为重新编写使用 segue 的所有现有代码 `PushController` 。
 
 <a name="add_row_controller"></a>
 
@@ -159,7 +159,7 @@ watchOS 3 为表引入了一项新功能：滚动浏览与每行相关的详细�
 
 在设计器中创建行控制器时，IDE 将自动创建两个代码文件。 下面显示了这些生成的文件中的代码以供参考。
 
-首先将为类命名，例如**RowController.cs**，如下所示：
+首先将为类命名，例如 **RowController.cs**，如下所示：
 
 ```csharp
 using System;
@@ -176,7 +176,7 @@ namespace WatchTablesExtension
 }
 ```
 
-另一个**designer.cs**文件是分部类定义，其中包含在设计器图面上创建的插座和操作，例如，具有一个控件的示例 `WKInterfaceLabel` ：
+另一个 **designer.cs** 文件是分部类定义，其中包含在设计器图面上创建的插座和操作，例如，具有一个控件的示例 `WKInterfaceLabel` ：
 
 ```csharp
 using Foundation;
@@ -204,10 +204,10 @@ namespace WatchTables.OnWatchExtension
 }
 ```
 
-然后，可以在代码中引用此处声明的插座和操作，但不应直接编辑**designer.cs**文件。
+然后，可以在代码中引用此处声明的插座和操作，但不应直接编辑 **designer.cs** 文件。
 
 ## <a name="related-links"></a>相关链接
 
-- [WatchTables （示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchtables)
-- [WatchKitCatalog （示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)
+- [WatchTables (示例) ](/samples/xamarin/ios-samples/watchos-watchtables)
+- [WatchKitCatalog (示例) ](/samples/xamarin/ios-samples/watchos-watchkitcatalog)
 - [Apple 的表文档](https://developer.apple.com/reference/watchkit/wkinterfacetable)

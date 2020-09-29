@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 8586157dc9a803c3502ae2ffed9fed4fc285bfda
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: c90a51d8d849dc95ca9465dd55910bcd5b50e43e
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574400"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91430146"
 ---
 # <a name="working-with-storyboards-in-xamarinmac"></a>在 Xamarin 中使用情节提要
 
@@ -20,7 +20,7 @@ ms.locfileid: "84574400"
 
 [![Xcode 的 Interface Builder 中的情节提要](indepth-images/intro01.png)](indepth-images/intro01.png#lightbox)
 
-情节提要是一个资源文件（扩展名为 `.storyboard` ），在编译和交付 Xamarin 应用程序的捆绑包时包含在其中。 若要为应用定义起始情节提要，请编辑其 `Info.plist` 文件，然后从下拉框中选择**主界面**： 
+情节提要是一个资源 (文件，其中包含 `.storyboard` 在编译和交付 Xamarin 应用程序捆绑包时包含在 Xamarin 中的) 扩展。 若要为应用定义起始情节提要，请编辑其 `Info.plist` 文件，然后从下拉框中选择 **主界面** ： 
 
 [![Info.plist 编辑器](indepth-images/sb01.png)](indepth-images/sb01.png#lightbox)
 
@@ -47,7 +47,7 @@ controller.ShowWindow(this);
 
 [![设置初始控制器](indepth-images/sb03.png)](indepth-images/sb03.png#lightbox)
 
-它由**情节提要入口点**和上面的 "打开结束" 箭头标记。
+它由 **情节提要入口点** 和上面的 "打开结束" 箭头标记。
 
 <a name="View-Controllers"></a>
 
@@ -61,30 +61,30 @@ controller.ShowWindow(this);
 
 已向类添加了几个新方法 `NSViewController` ，以支持 macOS 中的情节提要。 最重要的方法是使用以下方法来响应由给定视图控制器控制的视图的生命周期：
 
-- `ViewDidLoad`-从情节提要文件加载视图时，将调用此方法。
-- `ViewWillAppear`-在屏幕上显示视图之前，调用此方法。
-- `ViewDidAppear`-在屏幕上显示视图后直接调用此方法。
-- `ViewWillDisappear`-在从屏幕中删除视图之前，将调用此方法。
-- `ViewDidDisappear`-从屏幕中删除视图后，将直接调用此方法。
-- `UpdateViewConstraints`-当需要更新定义视图自动布局位置和大小的约束时，将调用此方法。
-- `ViewWillLayout`-此方法在屏幕上的子视图布局之前被调用。
-- `ViewDidLayout`-在屏幕上布局视图的子视图后直接调用此方法。
+- `ViewDidLoad` -从情节提要文件加载视图时，将调用此方法。
+- `ViewWillAppear` -在屏幕上显示视图之前，调用此方法。
+- `ViewDidAppear` -在屏幕上显示视图后直接调用此方法。
+- `ViewWillDisappear` -在从屏幕中删除视图之前，将调用此方法。
+- `ViewDidDisappear` -从屏幕中删除视图后，将直接调用此方法。
+- `UpdateViewConstraints` -当需要更新定义视图自动布局位置和大小的约束时，将调用此方法。
+- `ViewWillLayout` -此方法在屏幕上的子视图布局之前被调用。
+- `ViewDidLayout` -在屏幕上布局视图的子视图后直接调用此方法。
 
 <a name="The-Responder-Chain"></a>
 
 ### <a name="the-responder-chain"></a>响应方链
 
-此外， `NSViewControllers` 现在是窗口的_响应方链_的一部分：
+此外， `NSViewControllers` 现在是窗口的 _响应方链_的一部分：
 
 [![响应方链](indepth-images/vc01.png)](indepth-images/vc01.png#lightbox)
 
-因此，它们可以通过有线方式接收和响应事件，例如剪切、复制和粘贴菜单项选择。 此自动视图控制器仅在 macOS Sierra （10.12）及更高版本上运行的应用上进行。
+因此，它们可以通过有线方式接收和响应事件，例如剪切、复制和粘贴菜单项选择。 此自动视图控制器仅在 macOS Sierra (10.12) 和更高版本上运行的应用上进行。
 
 <a name="Containment"></a>
 
 ### <a name="containment"></a>Containment
 
-在情节提要中，视图控制器（如拆分视图控制器和选项卡视图控制器）现在可以实现_包含_，使其可以 "包含" 其他子视图控制器：
+在情节提要中，视图控制器 (如拆分视图控制器和选项卡视图控制器) 现在可以实现 _包含_，使其可以 "包含" 其他子视图控制器：
 
 [![视图控制器包含的示例](indepth-images/vc02.png)](indepth-images/vc02.png#lightbox)
 
@@ -108,13 +108,13 @@ Segue 提供定义应用 UI 的所有场景之间的关系。 如果你熟悉 iO
 
 ### <a name="presentation-segues"></a>演示 Segue
 
-对于 macOS 的倾向，在某些情况下，使用_演示 segue_ ，如模式窗口、工作表视图和 Popovers。 macOS 提供下列内置 segue 类型：
+对于 macOS 的倾向，在某些情况下，使用 _演示 segue_ ，如模式窗口、工作表视图和 Popovers。 macOS 提供下列内置 segue 类型：
 
 - **Show** -显示 Segue 的目标作为非模式窗口。 例如，使用此类型的 Segue 在应用程序中显示文档窗口的另一个实例。
 - **Modal** -显示 Segue 的目标作为模式窗口。 例如，使用此类型的 Segue 可显示应用的首选项窗口。
-- **工作表**-以附加到父窗口的工作表形式显示 Segue 的目标。 例如，使用此类型的 segue 显示 "查找和替换" 工作表。
+- **工作表** -以附加到父窗口的工作表形式显示 Segue 的目标。 例如，使用此类型的 segue 显示 "查找和替换" 工作表。
 - **Segue** -在 segue 窗口中显示 Segue 的目标。 例如，当用户单击 UI 元素时，可以使用此 Segue 类型来提供选项。
-- **自定义**-使用开发人员定义的自定义 Segue 类型显示 Segue 的目标。 有关更多详细信息，请参阅下面的 "[创建自定义 segue](#Creating-Custom-Segues) " 部分。
+- **自定义** -使用开发人员定义的自定义 Segue 类型显示 Segue 的目标。 有关更多详细信息，请参阅下面的 " [创建自定义 segue](#Creating-Custom-Segues) " 部分。
 
 使用 Presentation Segue 时，可以重写用于显示的 `PrepareForSegue` 父视图控制器的方法来初始化和变量，并向显示的视图控制器提供任何数据。
 
@@ -122,7 +122,7 @@ Segue 提供定义应用 UI 的所有场景之间的关系。 如果你熟悉 iO
 
 ### <a name="triggered-segues"></a>触发的 Segue
 
-通过触发的 Segue，可指定命名的 Segue （通过其在 Interface Builder 中的**标识符**属性），并使它们由事件（例如用户单击按钮或通过 `PerformSegue` 在代码中调用方法）触发：
+触发的 Segue 允许您通过 Interface Builder) 中其 **标识符** 属性指定命名的 segue (，并使它们由事件（例如用户单击按钮或通过 `PerformSegue` 在代码中调用方法）触发：
 
 ```csharp
 // Display the Scene defined by the given Segue ID
@@ -158,7 +158,7 @@ public override void PrepareForSegue (NSStoryboardSegue segue, NSObject sender)
 
 有时，你的应用程序需要在 macOS 中定义的内置 Segue 未提供 Segue 类型。 如果是这种情况，则可以创建自定义 Segue，以便在对应用程序的 UI 进行布局时，可以在 Xcode 的 Interface Builder 中分配该自定义。
 
-例如，若要创建一个新的 Segue 类型，用来替换窗口中的当前视图控制器（而不是在新窗口中打开目标场景），可以使用以下代码：
+例如，若要创建一个新的 Segue 类型，该类型将替换窗口中的当前视图控制器 (而不是在新窗口中打开目标场景) ，可以使用以下代码：
 
 ```csharp
 using System;
@@ -210,10 +210,10 @@ namespace OnCardMac
 
 - 我们使用属性向 `Register` 目标-C/macOS 公开此类。
 - 我们将重写 `Perform` 方法，以实际执行自定义 Segue 的操作。
-- 我们将 `ContentViewController` 使用 Segue 的目标（目标）定义的控制器来替换窗口控制器。
+- 我们将 `ContentViewController` 使用由 Segue 的目标 (目标) 定义的控制器来替换窗口控制器。
 - 我们正在删除原始视图控制器，以便使用方法释放内存 `RemoveFromParentViewController` 。
 
-若要在 Xcode 的 Interface Builder 中使用此新的 Segue 类型，需要先编译应用，然后切换到 Xcode 并在两个场景之间添加新的 Segue。 将**样式**设置为**custom** ，并将**Segue 类**设置为 `ReplaceViewSegue` （我们的自定义 Segue 类的名称）：
+若要在 Xcode 的 Interface Builder 中使用此新的 Segue 类型，需要先编译应用，然后切换到 Xcode 并在两个场景之间添加新的 Segue。 将 **样式** 设置为 **custom** ，并将 **Segue 类** 设置为 `ReplaceViewSegue`)  (自定义 Segue 类的名称：
 
 [![设置 Segue 类](indepth-images/sg01.png)](indepth-images/sg01.png#lightbox)
 
@@ -232,16 +232,16 @@ namespace OnCardMac
 窗口控制器负责 macOS 应用的以下功能：
 
 - 它们管理特定的窗口。
-- 它们管理窗口的标题栏和工具栏（如果可用）。
+- 它们管理窗口的标题栏和工具栏 (（如果可用）) 。
 - 它们管理内容视图控制器以显示窗口的内容。
 
 <a name="Gesture-Recognizers"></a>
 
 ## <a name="gesture-recognizers"></a>手势识别器
 
-MacOS 的笔势识别器与 iOS 中的对应项几乎完全相同，并使开发人员能够轻松地将笔势（如单击鼠标按钮）添加到应用 UI 中的元素。
+MacOS 的笔势识别器与 iOS 中的对应项几乎完全相同，允许开发人员轻松地添加 (笔势，例如单击鼠标按钮) 应用的 UI 中的元素。
 
-但是，iOS 中的手势由应用的设计确定（例如，用两根手指点击屏幕），macOS 中的大多数手势都由硬件确定。
+但是，iOS 中的手势由应用的设计 (确定，如使用两个手指) 点击屏幕，macOS 中的大多数手势都由硬件决定。
 
 通过使用笔势识别器，可以极大地减少向 UI 中的项添加自定义交互所需的代码量。 由于它们可以自动确定双击两次，单击并拖动事件等。
 
@@ -249,11 +249,11 @@ MacOS 的笔势识别器与 iOS 中的对应项几乎完全相同，并使开发
 
 MacOS 中提供了以下手势识别器：
 
-- `NSClickGestureRecognizer`-注册鼠标按下事件。
-- `NSPanGestureRecognizer`-按下鼠标按钮、拖放事件。
-- `NSPressGestureRecognizer`-寄存器在给定的时间事件内按下鼠标按钮。
-- `NSMagnificationGestureRecognizer`-从触控板硬件注册缩放事件。
-- `NSRotationGestureRecognizer`-从触控板硬件注册轮换事件。
+- `NSClickGestureRecognizer` -注册鼠标按下事件。
+- `NSPanGestureRecognizer` -按下鼠标按钮、拖放事件。
+- `NSPressGestureRecognizer` -寄存器在给定的时间事件内按下鼠标按钮。
+- `NSMagnificationGestureRecognizer` -从触控板硬件注册缩放事件。
+- `NSRotationGestureRecognizer` -从触控板硬件注册轮换事件。
 
 <a name="Using-Storyboard-References"></a>
 
@@ -261,7 +261,7 @@ MacOS 中提供了以下手势识别器：
 
 使用情节提要引用，您可以进行大量复杂的情节提要设计，并将其分解成更小的情节提要，使其从原始情节提要中引用，从而消除复杂性并使生成的各个演示图板更易于设计和维护。
 
-此外，情节提要引用可以提供指向同一情节提要中的另一个场景或不同场景中的特定场景的_定位点_。
+此外，情节提要引用可以提供指向同一情节提要中的另一个场景或不同场景中的特定场景的 _定位点_ 。
 
 <a name="Referencing-an-External-Storyboard"></a>
 
@@ -269,21 +269,21 @@ MacOS 中提供了以下手势识别器：
 
 若要添加对外部情节提要的引用，请执行以下操作：
 
-1. 在**解决方案资源管理器**中，右键单击项目名称，然后选择 "**添加**" "  >  **新文件 ...**  >  "**Mac**  > **情节提要**。 输入新情节提要的**名称**，然后单击 "**新建**" 按钮： 
+1. 在**解决方案资源管理器**中，右键单击项目名称，然后选择 "**添加**" "  >  **新文件 ...**  >  "**Mac**  > **情节提要**。 输入新情节提要的 **名称** ，然后单击 " **新建** " 按钮： 
 
     [![添加新情节提要](indepth-images/ref01.png)](indepth-images/ref01.png#lightbox)
-2. 在**解决方案资源管理器**中，双击新的情节提要名称以将其打开，以便在 Xcode 的 Interface Builder 中进行编辑。
+2. 在 **解决方案资源管理器**中，双击新的情节提要名称以将其打开，以便在 Xcode 的 Interface Builder 中进行编辑。
 3. 按通常的方式设计新情节提要的幕后布局，并保存所做的更改： 
 
     [![设计接口](indepth-images/ref02.png)](indepth-images/ref02.png#lightbox)
 4. 切换到要在 Interface Builder 中添加对的引用的情节提要。
-5. 将**情节提要引用**从**对象库**拖动到 Design Surface： 
+5. 将 **情节提要引用** 从 **对象库** 拖动到 Design Surface： 
 
     [![选择库中的情节提要引用](indepth-images/ref03.png)](indepth-images/ref03.png#lightbox)
-6. 在 "**属性检查器**" 中，选择上面创建的**情节提要**的名称： 
+6. 在 " **属性检查器**" 中，选择上面创建的 **情节提要** 的名称： 
 
     [![配置引用](indepth-images/ref04.png)](indepth-images/ref04.png#lightbox)
-7. 在现有场景上，单击鼠标右键单击 UI 小组件（例如按钮），并创建一个新的 Segue 到刚刚创建的**情节提要引用**。  从弹出菜单中，选择 "**显示**" 以完成 Segue： 
+7. Control-单击 UI 小组件 (如) 现有场景上的按钮，并创建新的 Segue 到刚刚创建的 **情节提要引用** 。  从弹出菜单中，选择 " **显示** " 以完成 Segue： 
 
     [![设置 Segue 类型](indepth-images/ref06.png)](indepth-images/ref06.png#lightbox) 
 8. 保存对情节提要所做的更改。
@@ -295,29 +295,29 @@ MacOS 中提供了以下手势识别器：
 
 ### <a name="referencing-a-specific-scene-in-an-external-storyboard"></a>引用外部情节提要中的特定场景
 
-若要将引用添加到外部情节提要（而非初始窗口控制器）的特定场景，请执行以下操作：
+若要将引用添加到外部情节提要 (而不是初始窗口控制器) 的特定场景，请执行以下操作：
 
-1. 在**解决方案资源管理器**中，双击外部情节提要将其打开，以便在 Xcode 的 Interface Builder 中进行编辑。
+1. 在 **解决方案资源管理器**中，双击外部情节提要将其打开，以便在 Xcode 的 Interface Builder 中进行编辑。
 2. 添加新场景并按常规方式设计其布局： 
 
     [![在 Xcode 中设计布局](indepth-images/ref07.png)](indepth-images/ref07.png#lightbox)
-3. 在 "**标识检查器**" 中，输入新场景的窗口控制器的**情节提要 ID** ： 
+3. 在 " **标识检查器**" 中，输入新场景的窗口控制器的 **情节提要 ID** ： 
 
     [![设置情节提要 ID](indepth-images/ref08.png)](indepth-images/ref08.png#lightbox)
 4. 打开要在 Interface Builder 中添加对的引用的情节提要。
-5. 将**情节提要引用**从**对象库**拖动到 Design Surface： 
+5. 将 **情节提要引用** 从 **对象库** 拖动到 Design Surface： 
 
     [![从库中选择情节提要引用](indepth-images/ref03.png)](indepth-images/ref03.png#lightbox)
-6. 在 "**标识检查器**" 中，选择你在上面创建的场景的**情节提要**名称和**引用 id** （情节提要 id）： 
+6. 在 " **标识检查器**" 中，选择你在上面创建的场景的 **情节** 提要名称和 **引用 id** (情节提要 id) ： 
 
     [![设置引用 ID](indepth-images/ref09.png)](indepth-images/ref09.png#lightbox)
-7. 在现有场景上，单击鼠标右键单击 UI 小组件（例如按钮），并创建一个新的 Segue 到刚刚创建的**情节提要引用**。 从弹出菜单中，选择 "**显示**" 以完成 Segue： 
+7. Control-单击 UI 小组件 (如) 现有场景上的按钮，并创建新的 Segue 到刚刚创建的 **情节提要引用** 。 从弹出菜单中，选择 " **显示** " 以完成 Segue： 
 
     [![设置 Segue 类型](indepth-images/ref06.png)](indepth-images/ref06.png#lightbox) 
 8. 保存对情节提要所做的更改。
 9. 返回到 Visual Studio for Mac 以同步你的更改。
 
-当应用程序运行并且用户单击你从其创建 Segue 的 UI 元素时，将显示具有情节提要引用中指定的外部情节提要的给定**情节提要 ID**的场景。
+当应用程序运行并且用户单击你从其创建 Segue 的 UI 元素时，将显示具有情节提要引用中指定的外部情节提要的给定 **情节提要 ID** 的场景。
 
 <a name="Referencing-a-Specific-Scene-in-the-Same-Storyboard"></a>
 
@@ -325,32 +325,32 @@ MacOS 中提供了以下手势识别器：
 
 若要将引用添加到相同情节提要的特定场景，请执行以下操作：
 
-1. 在**解决方案资源管理器**中，双击情节提要将其打开以进行编辑。
+1. 在 **解决方案资源管理器**中，双击情节提要将其打开以进行编辑。
 2. 添加新场景并按常规方式设计其布局： 
 
     [![在 Xcode 中编辑情节提要](indepth-images/ref11.png)](indepth-images/ref11.png#lightbox)
-3. 在 "**标识检查器**" 中，输入新场景的窗口控制器的**情节提要 ID** ： 
+3. 在 " **标识检查器**" 中，输入新场景的窗口控制器的 **情节提要 ID** ： 
 
     [![设置情节提要 ID](indepth-images/ref12.png)](indepth-images/ref12.png#lightbox)
-4. 将**情节提要引用**从**工具箱**拖动到 Design Surface： 
+4. 将 **情节提要引用** 从 **工具箱** 拖动到 Design Surface： 
 
     [![从库中选择情节提要引用](indepth-images/ref03.png)](indepth-images/ref03.png#lightbox)
-5. 在 "**属性检查器**" 中，选择上面创建的场景的**引用 id** （情节提要 id）： 
+5. 在 " **属性检查器**" 中，选择上面创建的场景的 " **引用 Id** (情节提要 id) ： 
 
     [![设置引用 ID](indepth-images/ref13.png)](indepth-images/ref13.png#lightbox)
-6. 在现有场景上，单击鼠标右键单击 UI 小组件（例如按钮），并创建一个新的 Segue 到刚刚创建的**情节提要引用**。 从弹出菜单中，选择 "**显示**" 以完成 Segue： 
+6. Control-单击 UI 小组件 (如) 现有场景上的按钮，并创建新的 Segue 到刚刚创建的 **情节提要引用** 。 从弹出菜单中，选择 " **显示** " 以完成 Segue： 
 
     [![选择 Segue 类型](indepth-images/ref06.png)](indepth-images/ref06.png#lightbox) 
 7. 保存对情节提要所做的更改。
 8. 返回到 Visual Studio for Mac 以同步你的更改。
 
-当应用程序运行，并且用户单击你从其创建 Segue 的 UI 元素时，将显示在情节提要引用中指定的同一情节提要中具有给定**情节提要 ID**的场景。
+当应用程序运行，并且用户单击你从其创建 Segue 的 UI 元素时，将显示在情节提要引用中指定的同一情节提要中具有给定 **情节提要 ID** 的场景。
 
 <a name="Complex-Storyboard-Example"></a>
 
 ## <a name="complex-storyboard-example"></a>复杂情节提要示例
 
-有关在 Xamarin 应用程序中使用情节提要的复杂示例，请参阅[SourceWriter 示例应用](https://docs.microsoft.com/samples/xamarin/mac-samples/sourcewriter)。 SourceWriter 是一个非常简单的源代码编辑器，提供代码补全和简单语法突出显示支持。
+有关在 Xamarin 应用程序中使用情节提要的复杂示例，请参阅 [SourceWriter 示例应用](/samples/xamarin/mac-samples/sourcewriter)。 SourceWriter 是一个非常简单的源代码编辑器，提供代码补全和简单语法突出显示支持。
 
 SourceWriter 代码已经完全注释，且在可用时，提供了相关链接，链接涵盖了从关键技术或方法到 Xamarin.Mac 指南文档中的相关信息。
 

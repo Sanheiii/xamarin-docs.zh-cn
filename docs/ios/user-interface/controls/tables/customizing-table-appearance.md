@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: f65b4f8f97059858067df8c847bc9ed181c8cc4c
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: dd79c2059d53702d947a966327bf22b2043d36c5
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86932673"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91429944"
 ---
 # <a name="customizing-a-tables-appearance-in-xamarinios"></a>在 Xamarin 中自定义表的外观
 
@@ -22,16 +22,16 @@ ms.locfileid: "86932673"
 
 有四种内置样式：
 
-- **默认**–支持 `UIImageView` 。
-- **副标题**–支持 `UIImageView` 和副标题。
+- **默认** –支持 `UIImageView` 。
+- **副标题** –支持 `UIImageView` 和副标题。
 - **Value1** -右对齐副标题，支持 `UIImageView` 。
-- **Value2** –标题右对齐，副标题按左对齐（但不含图像）。
+- **Value2** –标题为右对齐，副标题为左对齐 (但不) 图像。
 
 这些屏幕截图显示每种样式的显示方式：
 
  [![这些屏幕截图显示每种样式的显示方式](customizing-table-appearance-images/image7.png)](customizing-table-appearance-images/image7.png#lightbox)
 
-示例**CellDefaultTable**包含用于生成这些屏幕的代码。 单元格样式在 `UITableViewCell` 构造函数中设置，如下所示：
+示例 **CellDefaultTable** 包含用于生成这些屏幕的代码。 单元格样式在 `UITableViewCell` 构造函数中设置，如下所示：
 
 ```csharp
 cell = new UITableViewCell (UITableViewCellStyle.Default, cellIdentifier);
@@ -48,12 +48,12 @@ cell.DetailTextLabel.Text = tableItems[indexPath.Row].SubHeading;
 cell.ImageView.Image = UIImage.FromFile("Images/" + tableItems[indexPath.Row].ImageName); // don't use for Value2
 ```
 
-## <a name="accessories"></a>配件
+## <a name="accessories"></a>Accessories
 
 单元格可以将以下附件添加到视图右侧：
 
-- **复选标记**-可用于指示表中的多个选择。
-- **DetailButton** –独立于单元格的其余部分响应触摸，使其能够执行不同的功能来接触单元格本身（例如打开弹出窗口或不属于堆栈一部分的新窗口 `UINavigationController` ）。
+- **复选标记** -可用于指示表中的多个选择。
+- **DetailButton** –独立于单元格的其余部分响应触摸，使其能够执行不同的功能来触摸单元本身 (例如，打开不属于堆栈) 的弹出窗口或新窗口 `UINavigationController` 。
 - **DisclosureIndicator** –通常用于指示触摸单元会打开另一个视图。
 - **DetailDisclosureButton** –和的组合 `DetailButton` `DisclosureIndicator` 。
 
@@ -83,7 +83,7 @@ public override void AccessoryButtonTapped (UITableView tableView, NSIndexPath i
 }
 ```
 
-示例**CellAccessoryTable**演示了一个使用附件的示例。
+示例 **CellAccessoryTable** 演示了一个使用附件的示例。
 
 ## <a name="cell-separators"></a>单元分隔符
 
@@ -122,9 +122,9 @@ CellCustomTable 示例实现了一个 `UITableViewCell` 子类，该子类 `UILa
 
 自定义单元格类只包含三种方法：
 
-- **构造函数**–创建 UI 控件并设置自定义样式属性（例如 字体、大小和颜色）。
-- **UpdateCell** –用于 `UITableView.GetCell` 设置单元格的属性的方法。
-- **LayoutSubviews** –设置 UI 控件的位置。 在示例中，每个单元格都具有相同的布局，但更复杂的单元格（尤其是具有不同大小的单元格）可能需要不同的布局位置，具体取决于所显示的内容。
+- **构造函数** –创建 UI 控件并设置自定义样式属性， (例如。 字体、字号和颜色) 。
+- **UpdateCell** –用于  `UITableView.GetCell` 设置单元格的属性的方法。
+- **LayoutSubviews** –设置 UI 控件的位置。 在示例中，每个单元格都具有相同的布局，但更复杂的单元格 (尤其是那些具有不同) 大小的单元格，具体取决于所显示的内容。
 
 **CellCustomTable > CustomVegeCell.cs**中的完整示例代码如下：
 
@@ -184,4 +184,4 @@ public override UITableViewCell GetCell (UITableView tableView, NSIndexPath inde
 
 ## <a name="related-links"></a>相关链接
 
-- [WorkingWithTables （示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/workingwithtables)
+- [WorkingWithTables (示例) ](/samples/xamarin/ios-samples/workingwithtables)

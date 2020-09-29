@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 84e21378a8ac7b61bc1a389352eb53b75881592a
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 281595f45db48316feeebb88debf8c70873f87f3
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86929644"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91430856"
 ---
 # <a name="core-graphics-in-xamarinios"></a>Xamarin 中的核心图形
 
 _本文介绍核心图形 iOS 框架。它演示了如何使用核心图形绘制几何、图像和 Pdf。_
 
-iOS 包括[*核心图形*](https://developer.apple.com/library/prerelease/ios/documentation/CoreGraphics/Reference/CoreGraphics_Framework/index.html)框架以提供低级别的绘图支持。 这些框架可实现 UIKit 中丰富的图形功能。
+iOS 包括 [*核心图形*](https://developer.apple.com/library/prerelease/ios/documentation/CoreGraphics/Reference/CoreGraphics_Framework/index.html) 框架以提供低级别的绘图支持。 这些框架可实现 UIKit 中丰富的图形功能。
 
 核心图形是一种低级别的2D 图形框架，可用于与设备无关的图形。 UIKit 中的所有2D 绘图均使用内部核心图形。
 
@@ -205,7 +205,7 @@ public override void Draw (CGRect rect)
 
  ![倒置绘制的图像](core-graphics-images/03-upside-down-monkey.png)
 
-出现这种情况的原因是，图像绘制的核心图形原点在左下角，而视图的原点位于左上角。 因此，若要正确显示图像，需要修改源，这可以通过修改*当前变换矩阵* *（CTM）* 来完成。 CTM 定义点的位置，也称为*用户空间*。 在 y 方向上反方向反转 CTM，并在负 y 方向将其沿边界的高度移位，可以翻转图像。
+出现这种情况的原因是，图像绘制的核心图形原点在左下角，而视图的原点位于左上角。 因此，若要正确显示图像，需要修改源，这可以通过修改 *当前变换矩阵* * (CTM) *完成。 CTM 定义点的位置，也称为 *用户空间*。 在 y 方向上反方向反转 CTM，并在负 y 方向将其沿边界的高度移位，可以翻转图像。
 
 图形上下文包含用于转换 CTM 的 helper 方法。 在这种情况下， `ScaleCTM` "翻转" 绘图并将 `TranslateCTM` 其移到左上方，如下所示：
 
@@ -277,11 +277,11 @@ public override void Draw (RectangleF rect)
 
 不同于 `Draw` 方法，其中的上下文由视图提供，在这种情况下，您可以通过以下两种方式之一创建上下文：
 
-1. 通过调用 `UIGraphics.BeginImageContext` （或 `BeginImageContextWithOptions` ）
+1. 通过调用 `UIGraphics.BeginImageContext` (或 `BeginImageContextWithOptions`) 
 
-2. 通过创建新的`CGBitmapContextInstance`
+2. 通过创建新的 `CGBitmapContextInstance`
 
- `CGBitmapContextInstance`当您直接处理图像位（如使用自定义图像操作算法的情况）时，将非常有用。 在所有其他情况下，应使用 `BeginImageContext` 或 `BeginImageContextWithOptions` 。
+ `CGBitmapContextInstance` 当您直接处理图像位（如使用自定义图像操作算法的情况）时，将非常有用。 在所有其他情况下，应使用 `BeginImageContext` 或 `BeginImageContextWithOptions` 。
 
 获得映像上下文后，添加绘图代码就像在子类中一样 `UIView` 。 例如，之前用于绘制三角形的代码示例可用于在内存中（而不是在中）绘制到图像 `UIView` ，如下所示：
 
@@ -421,13 +421,13 @@ UIGraphics.EndPDFContent ();
 
 生成的文本将被绘制到 PDF，后者随后将包含在 `NSData` 可以保存、上传、通过电子邮件发送等的中。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
-本文介绍了通过*核心图形*框架提供的图形功能。 我们了解到如何使用核心图形在的上下文中以及在支持内存的图形上下文中绘制几何、图像和 Pdf `UIView,` 。
+本文介绍了通过 *核心图形* 框架提供的图形功能。 我们了解到如何使用核心图形在的上下文中以及在支持内存的图形上下文中绘制几何、图像和 Pdf `UIView,` 。
 
 ## <a name="related-links"></a>相关链接
 
-- [核心图形示例](https://docs.microsoft.com/samples/xamarin/ios-samples/graphicsandanimation)
+- [核心图形示例](/samples/xamarin/ios-samples/graphicsandanimation)
 - [图形和动画演练](~/ios/platform/graphics-animation-ios/graphics-animation-walkthrough.md)
 - [核心动画](~/ios/platform/graphics-animation-ios/core-animation.md)
 - [核心动画食谱](https://github.com/xamarin/recipes/tree/master/Recipes/ios/animation/coreanimation)

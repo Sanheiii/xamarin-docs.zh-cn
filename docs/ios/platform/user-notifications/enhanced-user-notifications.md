@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/02/2017
-ms.openlocfilehash: d4fe04412eb4fb456bc49d71c1e5fe87df5f9e76
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 207aac33101615a0a103176cd2bf5dd061e0d264
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939630"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91430416"
 ---
 # <a name="enhanced-user-notifications-in-xamarinios"></a>Xamarin 中的增强用户通知
 
@@ -22,15 +22,15 @@ ms.locfileid: "86939630"
 
 如上所述，新的用户通知框架允许传递和处理本地和远程通知。 使用此框架，应用或应用扩展可以通过指定一组条件（如位置或一天的时间）来计划本地通知的传送。
 
-此外，在将本地和远程通知发送到用户的 iOS 设备时，该应用或扩展可以接收（并可能修改）这些通知。
+此外，在将本地和远程通知传递给用户的 iOS 设备时，应用或扩展可以接收 (并可能修改) 本地和远程通知。
 
 新用户通知 UI 框架允许应用或应用扩展在向用户显示本地和远程通知时，对其外观进行自定义。
 
 此框架提供了以下方法，应用程序可以向用户提供通知：
 
-- **视觉对象警报**-通知从屏幕顶部滚动为横幅的位置。
+- **视觉对象警报** -通知从屏幕顶部滚动为横幅的位置。
 - **Sound 和 Vibrations** -可与通知相关联。
-- **应用程序图标添加徽章**-其中，应用程序的图标会显示一个标记，表明新内容可用，如未读电子邮件的数目。
+- **应用程序图标添加徽章** -其中，应用程序的图标会显示一个标记，表明新内容可用，如未读电子邮件的数目。
 
 此外，根据用户的当前上下文，会有不同的方法显示通知：
 
@@ -40,8 +40,8 @@ ms.locfileid: "86939630"
 
 Xamarin iOS 应用有两种类型的用户通知可以发送：
 
-- **本地通知**-这些应用由本地安装在用户设备上的应用发送。
-- **远程通知**-从远程服务器发送，并显示给用户或触发应用内容的后台更新。
+- **本地通知** -这些应用由本地安装在用户设备上的应用发送。
+- **远程通知** -从远程服务器发送，并显示给用户或触发应用内容的后台更新。
 
 ### <a name="about-local-notifications"></a>关于本地通知
 
@@ -58,14 +58,14 @@ IOS 应用可以发送的本地通知具有以下功能和属性：
 - 提醒警报
 - 识别位置触发器
 
-有关详细信息，请参阅 Apple 的[本地和远程通知编程指南](https://developer.apple.com/documentation/usernotifications)文档。
+有关详细信息，请参阅 Apple 的 [本地和远程通知编程指南](https://developer.apple.com/documentation/usernotifications) 文档。
 
 ### <a name="about-remote-notifications"></a>关于远程通知
 
 IOS 应用可以发送的远程通知具有以下功能和属性：
 
 - 应用程序具有与之通信的服务器端组件。
-- Apple Push Notification 服务（APNs）用于通过基于云的云服务器将最大程度的远程通知传送到用户的设备。
+- Apple Push Notification 服务 (APNs) 用于从开发人员的基于云的服务器向用户的设备传送最大程度的远程通知。
 - 当应用接收到远程通知时，将向用户显示该通知。
 - 当用户与通知交互时，应用程序将收到回调。
 
@@ -77,14 +77,14 @@ IOS 应用可以发送的远程通知具有以下功能和属性：
 
 IOS 应用提供了两种类型的远程通知：
 
-- **面向用户**-在设备上向用户显示这些用户。
-- **无提示更新**-这些更新提供了一种机制，用于在后台更新 iOS 应用程序的内容。 当收到无提示更新时，应用程序可以与远程服务器联系以拉取最新的内容。
+- **面向用户** -在设备上向用户显示这些用户。
+- **无提示更新** -这些更新提供了一种机制，用于在后台更新 iOS 应用程序的内容。 当收到无提示更新时，应用程序可以与远程服务器联系以拉取最新的内容。
 
-有关详细信息，请参阅 Apple 的[本地和远程通知编程指南](https://developer.apple.com/documentation/usernotifications)文档。
+有关详细信息，请参阅 Apple 的 [本地和远程通知编程指南](https://developer.apple.com/documentation/usernotifications) 文档。
 
 ### <a name="about-the-existing-notifications-api"></a>关于现有通知 API
 
-在 iOS 10 之前，iOS 应用将使用 `UIApplication` 向系统注册通知并计划应如何触发通知（按时间或位置）。
+在 iOS 10 之前，iOS 应用将使用 `UIApplication` 向系统注册通知，并按时间或位置) 计划 (触发通知的方式。
 
 开发人员在使用现有通知 API 时可能会遇到几个问题：
 
@@ -113,7 +113,7 @@ IOS 应用提供了两种类型的远程通知：
 - **tvOS** -为本地和远程通知添加标记应用图标的功能。
 - **watchOS** -添加了将通知从用户的已配对 iOS 设备转发到其 Apple Watch 的功能，并向手表应用提供直接在手表上执行本地通知的功能。
 
-有关详细信息，请参阅 Apple 的[UserNotifications Framework 参考](https://developer.apple.com/reference/usernotifications)和[UserNotificationsUI](https://developer.apple.com/reference/usernotificationsui)文档。
+有关详细信息，请参阅 Apple 的 [UserNotifications Framework 参考](https://developer.apple.com/reference/usernotifications) 和 [UserNotificationsUI](https://developer.apple.com/reference/usernotificationsui) 文档。
 
 ## <a name="preparing-for-notification-delivery"></a>准备通知送达
 
@@ -127,7 +127,7 @@ IOS 应用提供了两种类型的远程通知：
 
 此外，必须为本地和远程通知请求和设置这些批准级别。
 
-在应用启动后，应立即请求通知权限，方法是将以下代码添加到 `FinishedLaunching` 的方法 `AppDelegate` ，并设置所需的通知类型（ `UNAuthorizationOptions` ）：
+在应用启动后，应立即请求通知权限，方法是将以下代码添加到 `FinishedLaunching` 的方法 `AppDelegate` ，并将所需的通知类型设置 (`UNAuthorizationOptions`) ：
 
 ```csharp
 using UserNotifications;
@@ -144,7 +144,7 @@ public override bool FinishedLaunching (UIApplication application, NSDictionary 
 }
 ```
 
-此外，用户随时可以使用设备上的 "**设置**" 应用随时更改应用的通知特权。 应用应先检查用户请求的通知权限，然后再使用以下代码提出通知：
+此外，用户随时可以使用设备上的 " **设置** " 应用随时更改应用的通知特权。 应用应先检查用户请求的通知权限，然后再使用以下代码提出通知：
 
 ```csharp
 // Get current notification settings
@@ -163,8 +163,8 @@ IOS 10 的新手，开发人员必须在开发或生产环境中通知操作系�
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-1. 双击 `Entitlements.plist` " **Solution Pad**中的文件以将其打开以进行编辑。
-2. 切换到**源**视图： 
+1. 双击 `Entitlements.plist` " **Solution Pad** 中的文件以将其打开以进行编辑。
+2. 切换到 **源** 视图： 
 
     [![源视图](enhanced-user-notifications-images/setup01.png)](enhanced-user-notifications-images/setup01.png#lightbox)
 3. 单击 " **+** 添加新密钥" 按钮。
@@ -175,7 +175,7 @@ IOS 10 的新手，开发人员必须在开发或生产环境中通知操作系�
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-1. 双击 `Entitlements.plist` "**解决方案资源管理器**中的文件以将其打开以进行编辑。
+1. 双击 `Entitlements.plist` " **解决方案资源管理器** 中的文件以将其打开以进行编辑。
 2. 单击 " **+** 添加新密钥" 按钮。
 3. `aps-environment`为**属性**输入，将**类型**保留为， `String` 并 `development` `production` 为**值**输入或： 
 
@@ -186,7 +186,7 @@ IOS 10 的新手，开发人员必须在开发或生产环境中通知操作系�
 
 ### <a name="registering-for-remote-notifications"></a>注册远程通知
 
-如果应用将发送和接收远程通知，则仍需使用现有 API 进行_令牌注册_ `UIApplication` 。 此注册要求设备具有实时网络连接访问 Apn，这将生成将发送到应用的必要令牌。 应用程序需要将此令牌转发给开发人员的服务器端应用程序，以注册远程通知：
+如果应用将发送和接收远程通知，则仍需使用现有 API 进行 _令牌注册_ `UIApplication` 。 此注册要求设备具有实时网络连接访问 Apn，这将生成将发送到应用的必要令牌。 应用程序需要将此令牌转发给开发人员的服务器端应用程序，以注册远程通知：
 
 [![令牌注册概述](enhanced-user-notifications-images/token01.png)](enhanced-user-notifications-images/token01.png#lightbox)
 
@@ -202,7 +202,7 @@ UIApplication.SharedApplication.RegisterForRemoteNotifications ();
 
 令牌充当密钥，该密钥将通知和用于打开或响应通知的应用程序联系在一起。
 
-有关详细信息，请参阅 Apple 的[本地和远程通知编程指南](https://developer.apple.com/documentation/usernotifications)文档。
+有关详细信息，请参阅 Apple 的 [本地和远程通知编程指南](https://developer.apple.com/documentation/usernotifications) 文档。
 
 ## <a name="notification-delivery"></a>通知传递
 
@@ -210,7 +210,7 @@ UIApplication.SharedApplication.RegisterForRemoteNotifications ();
 
 ### <a name="providing-notification-content"></a>提供通知内容
 
-新的 iOS 10，所有通知都同时包含**标题**和**副标题**，这将始终显示在通知内容的**正文**中。 另外，还可以将**媒体附件**添加到通知内容。
+新的 iOS 10，所有通知都同时包含 **标题** 和 **副标题** ，这将始终显示在通知内容的 **正文** 中。 另外，还可以将 **媒体附件** 添加到通知内容。
 
 若要创建本地通知的内容，请使用以下代码：
 
@@ -239,12 +239,12 @@ content.Badge = 1;
 
 ### <a name="scheduling-when-a-notification-is-sent"></a>调度通知发送时间
 
-如果已创建通知的内容，则应用需要通过设置*触发器*来计划向用户显示通知的时间。 iOS 10 提供了四种不同的触发器类型：
+如果已创建通知的内容，则应用需要通过设置 *触发器*来计划向用户显示通知的时间。 iOS 10 提供了四种不同的触发器类型：
 
-- **推送通知**-以独占方式用于远程通知，并在 APNs 向设备上运行的应用发送通知包时触发。
-- **时间间隔**-允许从时间间隔开始计划本地通知，并从现在开始，到以后结束。 例如： `var trigger =  UNTimeIntervalNotificationTrigger.CreateTrigger (5, false);`
-- **日历日期**-允许将本地通知计划在特定日期和时间。
-- **基于位置**-允许在 iOS 设备进入或离开特定地理位置或处于对任何蓝牙信号的邻近性时计划本地通知。
+- **推送通知** -以独占方式用于远程通知，并在 APNs 向设备上运行的应用发送通知包时触发。
+- **时间间隔** -允许从时间间隔开始计划本地通知，并从现在开始，到以后结束。 例如： `var trigger =  UNTimeIntervalNotificationTrigger.CreateTrigger (5, false);`
+- **日历日期** -允许将本地通知计划在特定日期和时间。
+- **基于位置** -允许在 iOS 设备进入或离开特定地理位置或处于对任何蓝牙信号的邻近性时计划本地通知。
 
 当本地通知准备就绪时，应用程序需要调用对象的 `Add` 方法以将 `UNUserNotificationCenter` 其显示计划给用户。 对于远程通知，服务器端应用程序将通知负载发送到 Apn，然后将数据包发送到用户的设备。
 
@@ -336,7 +336,7 @@ public override bool FinishedLaunching (UIApplication application, NSDictionary 
 
 使用 iOS 10 的新功能，通知管理提供对挂起和传递的通知的访问，并添加删除、更新或升级这些通知的功能。
 
-通知管理的一个重要部分是在系统创建和计划通知时分配给通知的_请求标识符_。 对于远程通知，通过 `apps-collapse-id` HTTP 请求标头中的新字段分配。
+通知管理的一个重要部分是在系统创建和计划通知时分配给通知的 _请求标识符_ 。 对于远程通知，通过 `apps-collapse-id` HTTP 请求标头中的新字段分配。
 
 请求标识符用于选择应用想要对其执行通知管理的通知。
 
@@ -358,7 +358,7 @@ UNUserNotificationCenter.Current.RemoveDeliveredNotifications (requests);
 
 ### <a name="updating-an-existing-notification"></a>更新现有通知
 
-若要更新现有通知，只需创建一个新的通知，其中修改了所需的参数（例如，新的触发器时间），并将其请求标识符与需要修改的通知添加到系统中。 示例：
+若要更新现有通知，只需创建一个新的通知，其中包含修改后的所需参数 (如新的触发器时间) ，并将其添加到与需要修改的通知具有相同请求标识符的系统。 示例：
 
 ```csharp
 using UserNotifications;
@@ -390,13 +390,13 @@ UNUserNotificationCenter.Current.AddNotificationRequest (request, (err) => {
 
 ## <a name="working-with-notification-actions"></a>使用通知操作
 
-在 iOS 10 中，传递给用户的通知不是静态的，并且提供了用户可与其交互的多种方式（从内置到自定义操作）。
+在 iOS 10 中，传递给用户的通知不是静态的，而是提供多种方式，用户可以通过这些方式与)  (从内置到自定义操作的交互。
 
 IOS 应用可以响应三种类型的操作：
 
-- **默认操作**-当用户点击某个通知打开应用并显示给定通知的详细信息时，则为。
-- **自定义操作**-在 iOS 8 中添加了这些操作，并提供了一种快速方法，使用户可以直接从通知执行自定义任务，而无需启动应用。 它们可以显示为具有可自定义标题的按钮列表或可在后台运行的文本输入字段（其中，应用程序提供了少量时间来完成请求）或前台（应用程序在前台启动以完成请求）。 自定义操作适用于 iOS 和 watchOS。
-- **取消操作**-当用户关闭给定通知时，此操作将发送到应用程序。
+- **默认操作** -当用户点击某个通知打开应用并显示给定通知的详细信息时，则为。
+- **自定义操作** -在 iOS 8 中添加了这些操作，并提供了一种快速方法，使用户可以直接从通知执行自定义任务，而无需启动应用。 它们可以显示为具有可自定义标题的按钮列表或可在后台运行的文本输入字段， (在该应用程序提供了少量时间来完成请求) 或前台 (，在前台启动应用以满足请求) 。 自定义操作适用于 iOS 和 watchOS。
+- **取消操作** -当用户关闭给定通知时，此操作将发送到应用程序。
 
 ### <a name="creating-custom-actions"></a>创建自定义操作
 
@@ -420,7 +420,7 @@ var categories = new UNNotificationCategory [] { category };
 UNUserNotificationCenter.Current.SetNotificationCategories (new NSSet<UNNotificationCategory>(categories)); 
 ```
 
-创建新的时 `UNNotificationAction` ，将为其分配唯一的 ID 和将出现在按钮上的标题。 默认情况下，该操作将创建为后台操作，但可以提供选项来调整操作的行为（例如，将其设置为前景操作）。
+创建新的时 `UNNotificationAction` ，将为其分配唯一的 ID 和将出现在按钮上的标题。 默认情况下，该操作将创建为后台操作，但可以提供选项来调整操作的行为 (例如，将其设置为) 的前景操作。
 
 创建的每个操作都需要与一个类别关联。 创建新的时 `UNNotificationCategory` ，将为其分配唯一 ID、它可以执行的操作的列表、意向 id 列表，以提供有关该类别中的操作意向的详细信息，以及一些用于控制类别行为的选项。
 
@@ -513,11 +513,11 @@ namespace MonkeyNotification
 `UserText`属性保存任何用户文本输入值。 `Notification`属性保存发起通知，其中包含包含触发器和通知内容的请求。 应用程序可以根据触发器的类型决定是本地还是远程通知。
 
 > [!NOTE]
-> iOS 12 使自定义通知 UI 可以在运行时修改其操作按钮。 有关详细信息，请参阅[动态通知操作按钮](~/ios/platform/introduction-to-ios12/notifications/dynamic-actions.md)文档。
+> iOS 12 使自定义通知 UI 可以在运行时修改其操作按钮。 有关详细信息，请参阅 [动态通知操作按钮](~/ios/platform/introduction-to-ios12/notifications/dynamic-actions.md) 文档。
 
 ## <a name="working-with-service-extensions"></a>使用服务扩展
 
-使用远程通知时，_服务扩展_提供了一种在通知有效负载内启用端对端加密的方式。 服务扩展是在后台运行的非用户界面扩展（在 iOS 10 中提供），其主要目的是增加或替换通知的可见内容，然后将其提供给用户。 
+使用远程通知时， _服务扩展_ 提供了一种在通知有效负载内启用端对端加密的方式。 服务扩展是一种非用户界面扩展 (在后台运行) 中提供，主要目的是在向用户显示通知的可见内容之前对其进行扩充或替换。 
 
 [![服务扩展概述](enhanced-user-notifications-images/extension01.png)](enhanced-user-notifications-images/extension01.png#lightbox)
 
@@ -539,26 +539,26 @@ namespace MonkeyNotification
 3. 选择 " **iOS**  >  **扩展**  >  **通知服务扩展**"，然后单击 "**下一步**" 按钮： 
 
     [![选择通知服务扩展](enhanced-user-notifications-images/extension02.png)](enhanced-user-notifications-images/extension02.png#lightbox)
-4. 输入扩展的**名称**，然后单击 "**下一步**" 按钮： 
+4. 输入扩展的 **名称** ，然后单击 " **下一步** " 按钮： 
 
     [![输入扩展的名称](enhanced-user-notifications-images/extension03.png)](enhanced-user-notifications-images/extension03.png#lightbox)
-5. 如果需要，请调整**项目名称**和/或**解决方案名称**，并单击 "**创建**" 按钮： 
+5. 如果需要，请调整 **项目名称** 和/或 **解决方案名称** ，并单击 " **创建** " 按钮： 
 
     [![调整项目名称和/或解决方案名称](enhanced-user-notifications-images/extension04.png)](enhanced-user-notifications-images/extension04.png#lightbox) 
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 1. 在 Visual Studio 中打开应用的解决方案。
-2. 在**解决方案资源管理器**中右键单击解决方案名称，然后选择 "**添加 >" 新建项目 ...**"。
+2. 在 **解决方案资源管理器** 中右键单击解决方案名称，然后选择 " **添加 >" 新建项目 ...**"。
 3. 选择 " **Visual c #" > IOS 扩展 > 通知服务扩展**：
 
     [![选择通知服务扩展](enhanced-user-notifications-images/extension01.w157-sml.png)](enhanced-user-notifications-images/extension01.w157.png#lightbox)
-4. 输入扩展的**名称**，然后单击 **"确定"** 按钮。
+4. 输入扩展的 **名称** ，然后单击 **"确定"** 按钮。
 
 -----
 
 > [!IMPORTANT]
-> 服务扩展的捆绑标识符应与主应用的捆绑标识符匹配，并将其 `.appnameserviceextension` 附加到末尾。 例如，如果主应用有捆绑标识符 `com.xamarin.monkeynotify` ，则服务扩展应具有的捆绑标识符 `com.xamarin.monkeynotify.monkeynotifyserviceextension` 。 向解决方案添加扩展时，应自动设置此设置。 
+> 服务扩展的捆绑标识符应与主应用的捆绑标识符匹配，并将其 `.appnameserviceextension` 附加到末尾。 例如，如果主应用有捆绑标识符  `com.xamarin.monkeynotify` ，则服务扩展应具有的捆绑标识符 `com.xamarin.monkeynotify.monkeynotifyserviceextension` 。 向解决方案添加扩展时，应自动设置此设置。 
 
 通知服务扩展中有一个主类，需要对其进行修改以提供所需的功能。 例如：
 
@@ -660,13 +660,13 @@ namespace myApp {
 
 此代码从密钥解密加密内容 `encrypted-content` ，创建新的 `UNMutableNotificationContent` ，将 `Body` 属性设置为已解密的内容，并使用 `contentHandler` 向用户显示通知。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 本文涵盖了用户通知通过 iOS 10 增强的所有方式。 它提供新的用户通知框架，以及如何在 Xamarin iOS 应用程序或应用程序扩展中使用它。
 
 ## <a name="related-links"></a>相关链接
 
-- [iOS 10 示例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS10)
+- [iOS 10 示例](/samples/browse/?products=xamarin&term=Xamarin.iOS%2biOS10)
 - [UserNotifications Framework 参考](https://developer.apple.com/reference/usernotifications)
 - [UserNotificationsUI](https://developer.apple.com/reference/usernotificationsui)
 - [本地和远程通知编程指南](https://developer.apple.com/documentation/usernotifications)

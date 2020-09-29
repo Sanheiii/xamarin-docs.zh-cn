@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: 8c296e32fd0d1491c83ea3cb16e0921c0f0c5f12
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: dc3def5d5c709515574a72cf9f61d71d67690d87
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73017047"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91429708"
 ---
 # <a name="introduction-to-macos-mojave"></a>macOS Mojave 简介
 
@@ -38,14 +38,14 @@ ms.locfileid: "73017047"
 
 ## <a name="network-framework"></a>网络框架
 
-网络框架是 iOS 应用程序中常用的 `URLSession` Api 基础的网络堆栈，现作为独立框架提供，使其更易于使用 TCP、UDP、TLS、IPv4/IPv6 等。
+网络框架是 iOS 应用程序中常用的 api 基础的网络堆栈， `URLSession` 现作为独立框架提供，使其更易于使用 TCP、UDP、TLS、IPv4/IPv6 等。
 
 ## <a name="deprecations"></a>弃用功能
 
-对于 macOS Mojave，Apple 已弃用 OpenGL ES 和 OpenCL，[鼓励开发人员](https://developer.apple.com/macos/whats-new/)采用金属和金属绩效着色。
+对于 macOS Mojave，Apple 已弃用 OpenGL ES 和 OpenCL， [鼓励开发人员](https://developer.apple.com/macos/whats-new/) 采用金属和金属绩效着色。
 
 ## <a name="related-links"></a>相关链接
 
-- [Xamarin. Mac 示例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Mac)
+- [Xamarin.Mac 示例](/samples/browse/?products=xamarin&term=Xamarin.Mac)
 - [macOS-Apple 开发人员](https://developer.apple.com/macos/)
-- [Xamarin 5.0 发行说明](https://docs.microsoft.com/xamarin/mac/release-notes/5/5.0/)
+- [Xamarin 5.0 发行说明](/xamarin/mac/release-notes/5/5.0/)

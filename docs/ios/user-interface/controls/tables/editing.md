@@ -7,17 +7,17 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: c022c1af78a5a3800cd61096c3f142c1ed0235e7
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 3a33c2191f39ea72113a1d7eab660e1a172f752f
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86930931"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91430877"
 ---
 # <a name="editing-tables-with-xamarinios"></a>用 Xamarin 编辑表
 
 通过重写子类中的方法可启用表编辑功能 `UITableViewSource` 。 最简单的编辑行为是可使用单个方法重写实现的轻扫到删除手势。
-在编辑模式下，可以对表执行更复杂的编辑（包括移动行）。
+更复杂的编辑 (包括移动行) 可在编辑模式下对表执行。
 
 ## <a name="swipe-to-delete"></a>刷到删除
 
@@ -25,11 +25,11 @@ ms.locfileid: "86930931"
 
  [![刷卡器到删除的示例](editing-images/image10.png)](editing-images/image10.png#lightbox)
 
-有三种方法重写，它们会影响滑动手势，以便在单元格中显示 "**删除**" 按钮：
+有三种方法重写，它们会影响滑动手势，以便在单元格中显示 " **删除** " 按钮：
 
-- **CommitEditingStyle** -表源检测是否重写了此方法，并自动启用了轻扫到删除手势。 方法的实现应 `DeleteRows` 在上调用 `UITableView` 以使单元格消失，同时还会从模型中删除基础数据（例如，数组、字典或数据库）。 
-- **CanEditRow** –如果重写 CommitEditingStyle，则假定所有行都是可编辑的。 如果实现了此方法并返回 false （对于某些特定的行，或对于所有行），则将不会在该单元格中使用 "轻扫到删除" 手势。 
-- **TitleForDeleteConfirmation** –（可选）指定 "**删除**" 按钮的文本。 如果未实现此方法，则按钮文本将为 "Delete"。 
+- **CommitEditingStyle** -表源检测是否重写了此方法，并自动启用了轻扫到删除手势。 方法的实现应  `DeleteRows` 在上调用  `UITableView` 以使单元格消失，还会从模型中删除基础数据 (例如，数组、字典或数据库) 。 
+- **CanEditRow** –如果重写 CommitEditingStyle，则假定所有行都是可编辑的。 如果实现此方法并为某些特定行返回 false (，或为所有) 行返回 false，则将无法在该单元格中使用向下轻扫手势。 
+- **TitleForDeleteConfirmation** –（可选）指定 "  **删除** " 按钮的文本。 如果未实现此方法，则按钮文本将为 "Delete"。 
 
 这些方法在类中实现，如下所示 `TableSource` ：
 
@@ -58,7 +58,7 @@ public override string TitleForDeleteConfirmation (UITableView tableView, NSInde
 }
 ```
 
-在此示例中，已 `UITableViewSource` 更新，以使用 `List<TableItem>` （而不是字符串数组）作为数据源，因为它支持添加和删除集合中的项。
+在此示例中，已 `UITableViewSource` 更新为使用 `List<TableItem>` (而不是字符串) 数组作为数据源，因为它支持添加和删除集合中的项。
 
 ## <a name="edit-mode"></a>编辑模式
 
@@ -91,7 +91,7 @@ public override UITableViewCellEditingStyle EditingStyleForRow (UITableView tabl
 }
 ```
 
-`MoveRow`实现稍微复杂一些，因为它需要更改基础数据结构以匹配新的顺序。 由于数据是作为 `List` 以下代码实现的：删除其旧位置的数据项，然后将其插入到新位置。 如果数据存储在具有 "order" 列的 SQLite 数据库表中（例如），则此方法将改为需要执行某些 SQL 操作来对该列中的数字重新排序。
+`MoveRow`实现稍微复杂一些，因为它需要更改基础数据结构以匹配新的顺序。 由于数据是作为 `List` 以下代码实现的：删除其旧位置的数据项，然后将其插入到新位置。 如果数据存储在具有 "order" 列 (例如) 的 SQLite 数据库表中，则此方法将改为需要执行某些 SQL 操作，以便对该列中的数字重新排序。
 
 ```csharp
 public override void MoveRow (UITableView tableView, NSIndexPath sourceIndexPath, NSIndexPath destinationIndexPath)
@@ -119,7 +119,7 @@ public override void MoveRow (UITableView tableView, NSIndexPath sourceIndexPath
 table.SetEditing (true, true);
 ```
 
-完成用户编辑后，"**完成**" 按钮应关闭编辑模式：
+完成用户编辑后，" **完成** " 按钮应关闭编辑模式：
 
 ```csharp
 table.SetEditing (false, true);
@@ -127,22 +127,22 @@ table.SetEditing (false, true);
 
 ## <a name="row-insertion-editing-style"></a>行插入编辑样式
 
-表中的行插入是一种不常见的用户界面–标准 iOS 应用中的主要示例是 "**编辑联系人**" 屏幕。 此屏幕截图显示行插入功能的工作方式–在编辑模式下还有一个附加行（单击此项时）会将其他行插入数据中。 完成编辑后，将删除临时 **（添加新的）** 行。
+表中的行插入是一种不常见的用户界面–标准 iOS 应用中的主要示例是 " **编辑联系人** " 屏幕。 此屏幕截图显示行插入功能的工作方式–在编辑模式下，单击) 将其他行插入到数据中时，会 (额外的行。 完成编辑后，将删除临时 ** (添加新) ** 行。
 
  [![完成编辑后，将删除临时添加新行](editing-images/image12.png)](editing-images/image12.png#lightbox)
 
 上有许多不同的方法 `UITableViewSource` 可影响表的编辑模式行为。 下面的示例代码中实现了这些方法：
 
-- **EditingStyleForRow** – `UITableViewCellEditingStyle.Delete` 为包含数据的行返回，并返回 `UITableViewCellEditingStyle.Insert` 最后一行（将专门添加到作为 "插入" 按钮的行为）。 
-- **CustomizeMoveTarget** -当用户正在移动某个单元时，此可选方法的返回值可以覆盖其位置选择。 这意味着，可以防止它们在某些位置（例如，在 "**添加新**的" 行之后移动任何行） "删除" 单元格。 
+- **EditingStyleForRow** –  `UITableViewCellEditingStyle.Delete` 为包含数据的行返回，并  `UITableViewCellEditingStyle.Insert` 为最后一行 (返回，这将专门添加到) 的 "插入" 按钮。 
+- **CustomizeMoveTarget** -当用户正在移动某个单元时，此可选方法的返回值可以覆盖其位置选择。 这意味着可以防止它们 "删除" 特定位置的单元格（例如，在  ** (添加新) ** 行后阻止移动任何行的此示例）。 
 - **CanMoveRow** –返回 true 以启用移动 "handle" 或 false 以阻止移动。 在此示例中，最后一行会隐藏移动 "句柄"，因为它仅用于作为 "插入" 按钮。 
 
-我们还添加了两个自定义方法来添加 "insert" 行，然后在不再需要时再次将其删除。 它们是从 "**编辑**" 和 "**完成**" 按钮调用的：
+我们还添加了两个自定义方法来添加 "insert" 行，然后在不再需要时再次将其删除。 它们是从 " **编辑** " 和 " **完成** " 按钮调用的：
 
-- **WillBeginTableEditing** –当 "**编辑**" 按钮触摸时，它将调用 `SetEditing` 以在编辑模式下放置表。 这会触发 WillBeginTableEditing 方法，在此方法中，我们将在表的末尾显示 " **（新增）** " 行以充当 "插入按钮"。 
-- **DidFinishTableEditing** –再次调用 "完成" 按钮 `SetEditing` 以关闭编辑模式。 当不再需要编辑时，示例代码将从表中删除 **（添加新的）** 行。 
+- **WillBeginTableEditing** –当 "  **编辑** " 按钮触摸时，它将调用  `SetEditing` 以在编辑模式下放置表。 这会触发 WillBeginTableEditing 方法，在此方法中，我们将显示 (在表的末尾  ** 添加新的) ** 行以作为 "插入按钮"。 
+- **DidFinishTableEditing** –再次调用 "完成" 按钮  `SetEditing` 以关闭编辑模式。 示例代码删除了 "不再需要编辑时，从表中  ** 添加新) 行 (** 。 
 
-示例文件**TableEditModeAdd/Code/TableSource**中实现了这些方法重写：
+示例文件 **TableEditModeAdd/Code/TableSource**中实现了这些方法重写：
 
 ```csharp
 public override UITableViewCellEditingStyle EditingStyleForRow (UITableView tableView, NSIndexPath indexPath)
@@ -169,7 +169,7 @@ public override bool CanMoveRow (UITableView tableView, NSIndexPath indexPath)
 }
 ```
 
-当启用或禁用表的编辑模式时，这两种自定义方法用于添加和删除 **（新增）** 行：
+当启用或禁用表的编辑模式时，这两种自定义方法用于添加和删除 ** (添加新) ** 行：
 
 ```csharp
 public void WillBeginTableEditing (UITableView tableView)
@@ -194,7 +194,7 @@ public void DidFinishTableEditing (UITableView tableView)
 }
 ```
 
-最后，此代码将实例化 "**编辑**" 和 "**完成**" 按钮，并在接触时启用或禁用编辑模式：
+最后，此代码将实例化 " **编辑** " 和 " **完成** " 按钮，并在接触时启用或禁用编辑模式：
 
 ```csharp
 done = new UIBarButtonItem(UIBarButtonSystemItem.Done, (s,e)=>{
@@ -216,4 +216,4 @@ edit = new UIBarButtonItem(UIBarButtonSystemItem.Edit, (s,e)=>{
 
 ## <a name="related-links"></a>相关链接
 
-- [WorkingWithTables （示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/workingwithtables)
+- [WorkingWithTables (示例) ](/samples/xamarin/ios-samples/workingwithtables)

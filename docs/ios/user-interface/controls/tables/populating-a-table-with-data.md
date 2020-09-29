@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 48aeaf8e3036c9b4e1ed548208b7daa822a00913
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 819e4f89b1443b2e1154aedfb51007ca38fdca02
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86933414"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91429914"
 ---
 # <a name="populating-a-table-with-data-in-xamarinios"></a>使用 Xamarin 中的数据填充表
 
@@ -29,14 +29,14 @@ ms.locfileid: "86933414"
 
 ## <a name="subclassing-uitableviewsource"></a>子类 UITableViewSource
 
-`UITableViewSource`子类分配给每个 `UITableView` 。 "表" 视图查询源类以确定如何呈现自身（例如，需要多少行以及每行的高度（如果不同于默认值）。 最重要的是，源提供每个填充了数据的单元格。
+`UITableViewSource`子类分配给每个 `UITableView` 。 表视图查询源类以确定如何呈现自身 (例如，所需的行数和每个行的高度（如果不同于默认) ）。 最重要的是，源提供每个填充了数据的单元格。
 
 要使表显示数据，只需要两个必需的方法：
 
-- **RowsInSection** –返回 [`nint`](~/cross-platform/macios/nativetypes.md) 该表应显示的数据的总行数。
-- **GetCell** – `UITableViewCell` 为传递给方法的相应行索引返回填充了数据的。
+- **RowsInSection** –返回  [`nint`](~/cross-platform/macios/nativetypes.md) 该表应显示的数据的总行数。
+- **GetCell** –  `UITableViewCell` 为传递给方法的相应行索引返回填充了数据的。
 
-BasicTable 示例文件**TableSource.cs**的可能实现的最简单实现 `UITableViewSource` 。 在下面的代码片段中可以看到，它接受要在表中显示的字符串数组，并返回包含每个字符串的默认单元格样式：
+BasicTable 示例文件 **TableSource.cs** 的可能实现的最简单实现 `UITableViewSource` 。 在下面的代码片段中可以看到，它接受要在表中显示的字符串数组，并返回包含每个字符串的默认单元格样式：
 
 ```csharp
 public class TableSource : UITableViewSource {
@@ -72,7 +72,7 @@ public class TableSource : UITableViewSource {
 }
 ```
 
-`UITableViewSource`可以使用任何数据结构，从简单字符串数组（如本示例所示）到列表 <> 或其他集合。 方法的实现将 `UITableViewSource` 表与基础数据结构隔离开来。
+`UITableViewSource`可以使用任何数据结构，从简单的字符串数组 (如本示例中所示) 到列表 <> 或其他集合。 方法的实现将 `UITableViewSource` 表与基础数据结构隔离开来。
 
 若要使用此子类，请创建一个字符串数组来构造源，然后将其分配给实例 `UITableView` ：
 
@@ -91,7 +91,7 @@ public override void ViewDidLoad ()
 
  [![运行的示例表](populating-a-table-with-data-images/image3.png)](populating-a-table-with-data-images/image3.png#lightbox)
 
-大多数表使用户能够通过触摸行来选择它，并执行一些其他操作（例如播放歌曲、调用联系人或显示其他屏幕）。 若要实现此目的，需要执行一些操作。 首先，让我们创建一个 AlertController，通过向方法中添加以下内容，在用户单击行时显示一条消息 `RowSelected` ：
+大多数表使用户能够通过触摸行来选择它，并执行一些其他操作 (如播放歌曲、调用联系人或显示另一个屏幕) 。 若要实现此目的，需要执行一些操作。 首先，让我们创建一个 AlertController，通过向方法中添加以下内容，在用户单击行时显示一条消息 `RowSelected` ：
 
 ```csharp
 public override void RowSelected (UITableView tableView, NSIndexPath indexPath)
@@ -147,7 +147,7 @@ public override void RowSelected (UITableView tableView, NSIndexPath indexPath)
 
 在此示例中，只有六个项目，因此不需要重新使用单元。 但是，在显示几百行或数千行时， `UITableViewCell` 如果一次只在屏幕上容纳几个对象，则会浪费内存来创建数百或数千个对象。
 
-若要避免这种情况，当单元格从屏幕上消失时，其视图将放置在队列中以供重复使用。 当用户滚动时，表将调用 `GetCell` 以请求显示新视图–若要重用现有单元（当前未显示），只需调用 `DequeueReusableCell` 方法。 如果某个单元格可用于重用，则将返回，否则将返回 null，并且你的代码必须创建新的单元格实例。
+若要避免这种情况，当单元格从屏幕上消失时，其视图将放置在队列中以供重复使用。 当用户滚动时，表将调用 `GetCell` 以请求显示新视图–若要重用现有单元 (当前未显示) 只需调用 `DequeueReusableCell` 方法。 如果某个单元格可用于重用，则将返回，否则将返回 null，并且你的代码必须创建新的单元格实例。
 
 该示例中的代码片段演示了模式：
 
@@ -212,7 +212,7 @@ public class MyCell : UITableViewCell
 }
 ```
 
-你可以在链接到本文的**BasicTable**示例中查看上述主题的示例。
+你可以在链接到本文的 **BasicTable** 示例中查看上述主题的示例。
 
 <a name="Adding_an_Index"></a>
 
@@ -238,11 +238,11 @@ keys = indexedTableItems.Keys.ToArray ();
 
 `UITableViewSource`然后，子类需要添加或修改以下方法来使用 `Dictionary<>` ：
 
-- **NumberOfSections** –此方法是可选的，默认情况下，该表假设有一个部分。 显示索引时，此方法应返回索引中项的数目（例如，如果索引包含英文字母表中的所有字母，则为26）。
+- **NumberOfSections** –此方法是可选的，默认情况下，该表假设有一个部分。 显示索引时，此方法应返回索引中的项数 (例如，如果索引包含英文字母) 的所有字母，则为26。
 - **RowsInSection** –返回给定节中的行数。
 - **SectionIndexTitles** –返回将用于显示索引的字符串数组。 示例代码返回一个字母数组。
 
-示例文件**BasicTableIndex/TableSource**中的更新的方法如下所示：
+示例文件 **BasicTableIndex/TableSource** 中的更新的方法如下所示：
 
 ```csharp
 public override nint NumberOfSections (UITableView tableView)
@@ -275,7 +275,7 @@ public override string[] SectionIndexTitles (UITableView tableView)
 - **TitleForHeader** –返回用作标题的文本
 - **TitleForFooter** –返回要用作页脚的文本。
 
-示例文件**BasicTableHeaderFooter/Code/TableSource**中的更新的方法如下所示：
+示例文件 **BasicTableHeaderFooter/Code/TableSource** 中的更新的方法如下所示：
 
 ```csharp
 public override string TitleForHeader (UITableView tableView, nint section)
@@ -292,4 +292,4 @@ public override string TitleForFooter (UITableView tableView, nint section)
 
 ## <a name="related-links"></a>相关链接
 
-- [WorkingWithTables （示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/workingwithtables)
+- [WorkingWithTables (示例) ](/samples/xamarin/ios-samples/workingwithtables)

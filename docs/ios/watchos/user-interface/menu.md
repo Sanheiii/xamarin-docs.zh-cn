@@ -1,5 +1,5 @@
 ---
-title: Xamarin 中的 watchOS 菜单控件（Force Touch）
+title: 'Xamarin 中的 watchOS 菜单控件 (Force Touch) '
 description: 本文档介绍如何在 Xamarin 中使用 watchOS 强制触摸手势。 它讨论了如何响应强制触控、如何添加菜单以及如何更改菜单项。
 ms.prod: xamarin
 ms.assetid: 5A7F83FB-9BC4-4812-92C5-CEC8DAE8211E
@@ -7,14 +7,14 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 1a9013c8f3adad0f52c264ea1216cab784d6b58f
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 5ad45e1cc17a58875037f20996463f55f2b68685
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939654"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91431551"
 ---
-# <a name="watchos-menu-control-force-touch-in-xamarin"></a>Xamarin 中的 watchOS 菜单控件（Force Touch）
+# <a name="watchos-menu-control-force-touch-in-xamarin"></a>Xamarin 中的 watchOS 菜单控件 (Force Touch) 
 
 手表工具包提供了一个在 "监视" 应用屏幕上实现时触发菜单的 Force Touch 手势。
 
@@ -35,7 +35,7 @@ ms.locfileid: "86939654"
 
 ![在设计时编辑菜单](menu-images/menu-action.png)
 
-最多可以向 menu 控件添加四个菜单项。 它们可在**Properties** pad 中进行配置。 可以设置以下属性：
+最多可以向 menu 控件添加四个菜单项。 它们可在 **Properties** pad 中进行配置。 可以设置以下属性：
 
 - Title 和
 - 自定义映像，或
@@ -54,7 +54,7 @@ partial void MenuItemTapped ()
 
 类似于 iOS 中的选项卡图像，菜单项图像需要一个带有 alpha 通道的不透明模式，该模式允许透过显示背景。
 
-为了获得最佳性能，应将用于菜单的图像添加到 "监视应用程序" 项目（而不是 "监视应用扩展项目"）。
+应将用于菜单的图像添加到 "监视应用程序" 项目中， (不是 "监视应用扩展" 项目) 以获得最佳性能。
 
 ## <a name="changing-the-menu-items"></a>更改菜单项
 
@@ -91,5 +91,5 @@ void MenuItemTapped ()
 
 ## <a name="related-links"></a>相关链接
 
-- [WatchKitCatalog （示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)
+- [WatchKitCatalog (示例) ](/samples/xamarin/ios-samples/watchos-watchkitcatalog)
 - [Apple 的菜单文档](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/Menus.html)

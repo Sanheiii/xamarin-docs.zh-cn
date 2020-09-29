@@ -7,20 +7,20 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: fbd6e4a3b1c5cdb45a057f1ed664a0d5e71e224d
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 7f600593d7a3bb180ef8daca6639dbbea4bf07aa
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937886"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91430072"
 ---
 # <a name="introduction-to-opentk-in-xamarinmac"></a>Xamarin 中的 OpenTK 简介
 
-OpenTK （开放工具包）是一种高级的低级别 c # 库，可让你更轻松地使用 OpenGL、OpenCL 和 OpenAL。 OpenTK 可用于需要3D 图形、音频或计算功能的游戏、科学应用程序或其他项目。 本文简要介绍了如何在 Xamarin 应用程序中使用 OpenTK。
+OpenTK (打开的工具包) 是一种高级的低级别 c # 库，可让你更轻松地使用 OpenGL、OpenCL 和 OpenAL。 OpenTK 可用于需要3D 图形、音频或计算功能的游戏、科学应用程序或其他项目。 本文简要介绍了如何在 Xamarin 应用程序中使用 OpenTK。
 
 [![示例应用运行](opentk-images/intro01.png)](opentk-images/intro01.png#lightbox)
 
-本文介绍了 Xamarin OpenTK 应用程序中的基础知识。 强烈建议您先完成[Hello，Mac](~/mac/get-started/hello-mac.md)一文，特别是[Xcode 和 Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)及[输出口和操作](~/mac/get-started/hello-mac.md#outlets-and-actions)部分的简介，因为它涵盖了我们将在本文中使用的重要概念和技巧。
+本文介绍了 Xamarin OpenTK 应用程序中的基础知识。 强烈建议您先完成 [Hello，Mac](~/mac/get-started/hello-mac.md) 一文，特别是 [Xcode 和 Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder) 及 [输出口和操作](~/mac/get-started/hello-mac.md#outlets-and-actions) 部分的简介，因为它涵盖了我们将在本文中使用的重要概念和技巧。
 
 你可能想要查看[Xamarin 内部](~/mac/internals/how-it-works.md)示例文档的 "将[c # 类/方法公开到目标 c](~/mac/internals/how-it-works.md) " 部分， `Register` 并说明用于将 `Export` C # 类连接到目标 C 对象和 UI 元素的和命令。
 
@@ -28,19 +28,19 @@ OpenTK （开放工具包）是一种高级的低级别 c # 库，可让你更�
 
 ## <a name="about-opentk"></a>关于 OpenTK
 
-如上所述，OpenTK （开放工具包）是一种高级的低级别 c # 库，可让你更轻松地使用 OpenGL、OpenCL 和 OpenAL。 在 Xamarin 应用程序中使用 OpenTK 提供以下功能：
+如上所述，OpenTK (打开的工具包) 是一种高级的低级别 c # 库，可让你更轻松地使用 OpenGL、OpenCL 和 OpenAL。 在 Xamarin 应用程序中使用 OpenTK 提供以下功能：
 
-- **快速开发**-OpenTK 提供了强大的数据类型和内联文档，可提高编码工作流并更快地捕获错误。
-- **轻松集成**-OpenTK 旨在与 .net 应用程序轻松集成。
+- **快速开发** -OpenTK 提供了强大的数据类型和内联文档，可提高编码工作流并更快地捕获错误。
+- **轻松集成** -OpenTK 旨在与 .net 应用程序轻松集成。
 - 许可的**许可**-OPENTK 在 MIT/X11 许可证下分发，完全免费。
-- **丰富的类型安全绑定**-OpenTK 支持最新版本的 OpenGL、OPENGL | ES、OpenAL 和 OpenCL 和自动扩展加载、错误检查和内联文档。
-- **灵活的 GUI 选项**-OpenTK 提供专为游戏和 Xamarin 设计的本机、高性能游戏窗口。
-- **完全托管的符合 CLS 的代码**OpenTK 支持32位和64位版本的 macOS，不包含非托管库。
-- **3D 数学工具包**OpenTK `Vector` `Matrix` `Quaternion` `Bezier` 通过其3d 数学工具包提供、和结构。
+- **丰富的类型安全绑定** -OpenTK 支持最新版本的 OpenGL、OPENGL | ES、OpenAL 和 OpenCL 和自动扩展加载、错误检查和内联文档。
+- **灵活的 GUI 选项** -OpenTK 提供专为游戏和 Xamarin 设计的本机、高性能游戏窗口。
+- **完全托管的符合 CLS 的代码** OpenTK 支持32位和64位版本的 macOS，不包含非托管库。
+- **3D 数学工具包** OpenTK `Vector` `Matrix` `Quaternion` `Bezier` 通过其3d 数学工具包提供、和结构。
 
 OpenTK 可用于需要3D 图形、音频或计算功能的游戏、科学应用程序或其他项目。
 
-有关详细信息，请参阅[开放工具包](https://opentk.net)网站。
+有关详细信息，请参阅 [开放工具包](https://opentk.net) 网站。
 
 <a name="OpenTK_Quickstart"></a>
 
@@ -56,17 +56,17 @@ OpenTK 可用于需要3D 图形、音频或计算功能的游戏、科学应用�
 
 [![添加新的 Cocoa 应用](opentk-images/sample01.png)](opentk-images/sample01.png#lightbox)
 
-输入 `MacOpenTK` 作为**项目名称**：
+输入 `MacOpenTK` 作为 **项目名称**：
 
 [![设置项目名称](opentk-images/sample02.png)](opentk-images/sample02.png#lightbox)
 
-单击 "**创建**" 按钮以生成新项目。
+单击 " **创建** " 按钮以生成新项目。
 
 <a name="Including_OpenTK"></a>
 
 ### <a name="including-opentk"></a>包括 OpenTK
 
-你需要包含对 OpenTK 程序集的引用，然后才能在 Xamarin Mac 应用程序中使用 Open TK。 在**解决方案资源管理器**中，右键单击 "**引用**" 文件夹，然后选择 "**编辑引用 ...**"。
+你需要包含对 OpenTK 程序集的引用，然后才能在 Xamarin Mac 应用程序中使用 Open TK。 在 **解决方案资源管理器**中，右键单击 " **引用** " 文件夹，然后选择 " **编辑引用 ...**"。
 
 勾选 `OpenTK` 并单击 **"确定"** 按钮：
 
@@ -76,7 +76,7 @@ OpenTK 可用于需要3D 图形、音频或计算功能的游戏、科学应用�
 
 ### <a name="using-opentk"></a>使用 OpenTK
 
-创建新项目 `MainWindow.cs` 后，在**解决方案资源管理器**中双击该文件以将其打开以进行编辑。 使 `MainWindow` 类看起来如下所示：
+创建新项目 `MainWindow.cs` 后，在 **解决方案资源管理器** 中双击该文件以将其打开以进行编辑。 使 `MainWindow` 类看起来如下所示：
 
 ```csharp
 using System;
@@ -223,7 +223,7 @@ Game.Load += (sender, e) =>
 
 ### <a name="the-resize-event"></a>Resize 事件
 
-`Resize`每次调整游戏视图大小时，都应调用事件。 对于我们的示例应用程序，我们要使 GL 视区的大小与游戏视图（通过 Mac 主窗口自动调整大小）相同，并具有以下代码：
+`Resize`每次调整游戏视图大小时，都应调用事件。 对于我们的示例应用程序，我们会将总帐视区的大小设为与游戏视图相同， (通过 Mac 主窗口) 自动调整大小，使用以下代码：
 
 ```csharp
 Game.Resize += (sender, e) =>
@@ -253,7 +253,7 @@ Game.UpdateFrame += (sender, e) =>
 
 ### <a name="the-renderframe-event"></a>RenderFrame 事件
 
-`RenderFrame`事件包含用于呈现（绘制）图形的代码。 对于我们的示例应用，我们使用简单的三角形填充游戏视图：
+`RenderFrame`事件包含用于呈现图形)  (绘图的代码。 对于我们的示例应用，我们使用简单的三角形填充游戏视图：
 
 ```csharp
 Game.RenderFrame += (sender, e) =>
@@ -280,7 +280,7 @@ Game.RenderFrame += (sender, e) =>
 通常，呈现代码将调用， `GL.Clear` 以在绘制新元素之前删除任何现有元素。
 
 > [!IMPORTANT]
-> 对于**OpenTK 版本**的， `SwapBuffers` `MonoMacGameView` 在呈现代码末尾不要调用实例的方法。 这样做将导致游戏视图快速看起来，而不是显示呈现的视图。
+> 对于 **OpenTK 版本** 的， `SwapBuffers` `MonoMacGameView` 在呈现代码末尾不要调用实例的方法。 这样做将导致游戏视图快速看起来，而不是显示呈现的视图。
 
 <a name="Running_the_Game_View"></a>
 
@@ -293,7 +293,7 @@ Game.RenderFrame += (sender, e) =>
 Game.Run(60.0);
 ```
 
-我们会将所需的帧速率传递到游戏视图的更新位置，对于我们的示例，我们选择了 `60` 每秒帧数（与普通电视相同的刷新频率）。
+我们会按所需的帧速率来更新游戏视图，对于我们的示例，我们已选择 `60` "每秒帧数" (与普通电视) 相同的刷新频率。
 
 运行应用程序并查看输出：
 
@@ -313,20 +313,20 @@ Game.Run(60.0);
 - 使用 `for` 循环来呈现事件中的几个三角形 `RenderFrame` 。
 - 旋转相机，为3D 空间中的三角形指定不同的视图。 提示：使用 `Matrix4.CreateTranslation` 方法创建平移矩阵并调用 `GL.LoadMatrix` 方法将其加载。 你还可以使用 `Vector2` 、 `Vector3` `Vector4` 和 `Matrix4` 类进行照相机操作。
 
-有关更多示例，请参阅[OpenTK 示例 GitHub](https://github.com/opentk/opentk/tree/master/Source/Examples)存储库。 它包含使用 OpenTK 的官方示例列表。 必须修改这些示例，以便将与 OpenTK 的 Xamarin 版本结合使用。
+有关更多示例，请参阅 [OpenTK 示例 GitHub](https://github.com/opentk/opentk/tree/master/Source/Examples) 存储库。 它包含使用 OpenTK 的官方示例列表。 必须修改这些示例，以便将与 OpenTK 的 Xamarin 版本结合使用。
 
-有关 OpenTK 实现的更复杂的 Xamarin 示例，请参阅我们的[MonoMacGameView](https://docs.microsoft.com/samples/xamarin/mac-samples/monomacgamewindow)示例。
+有关 OpenTK 实现的更复杂的 Xamarin 示例，请参阅我们的 [MonoMacGameView](/samples/xamarin/mac-samples/monomacgamewindow) 示例。
 
 <a name="Summary"></a>
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 本文大致介绍了如何在 Xamarin. Mac 应用程序中使用 OpenTK。 我们了解了如何创建游戏窗口，如何将游戏窗口附加到 Mac 窗口，以及如何在游戏窗口中呈现简单的形状。
 
 ## <a name="related-links"></a>相关链接
 
-- [MacOpenTK （示例）](https://docs.microsoft.com/samples/xamarin/mac-samples/macopentk)
-- [MonoMacGameView （示例）](https://docs.microsoft.com/samples/xamarin/mac-samples/monomacgamewindow)
+- [MacOpenTK (示例) ](/samples/xamarin/mac-samples/macopentk)
+- [MonoMacGameView (示例) ](/samples/xamarin/mac-samples/monomacgamewindow)
 - [了解 Mac](~/mac/get-started/hello-mac.md)
 - [使用 Windows](~/mac/user-interface/window.md)
 - [开放工具包](https://opentk.net)

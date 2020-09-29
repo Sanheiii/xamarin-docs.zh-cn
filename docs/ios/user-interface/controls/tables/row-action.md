@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 09/25/2017
-ms.openlocfilehash: 40640f903ad82c5f154dbb74307c0003d7271561
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 2cb453996a43d1e70f4fb818c86f6215c213b988
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86936599"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91429748"
 ---
 # <a name="working-with-row-actions-in-xamarinios"></a>在 Xamarin 中使用行操作
 
@@ -22,10 +22,10 @@ _本指南演示如何为具有 UISwipeActionsConfiguration 或 UITableViewRowAc
 
 iOS 提供了两种方法来对表执行操作： `UISwipeActionsConfiguration` 和 `UITableViewRowAction` 。
 
-`UISwipeActionsConfiguration`是在 iOS 11 中引入的，用于定义一组操作，当用户在表视图中的某_一行上 swipes_时，这些操作应发生。 此行为与本机 Mail 应用程序的行为类似。
+`UISwipeActionsConfiguration` 是在 iOS 11 中引入的，用于定义一组操作，当用户在表视图中的某 _一行上 swipes_ 时，这些操作应发生。 此行为与本机 Mail 应用程序的行为类似。
 
 `UITableViewRowAction`类用于定义一个操作，该操作将在用户在表视图中的某一行上水平 swipes 时进行。
-例如，编辑表时，默认情况下，按行向左轻扫会显示 "**删除**" 按钮。 通过将类的多个实例附加 `UITableViewRowAction` 到 `UITableView` ，可以定义多个自定义操作，每个操作都具有其自己的文本、格式设置和行为。
+例如，编辑表时，默认情况下，按行向左轻扫会显示 " **删除** " 按钮。 通过将类的多个实例附加 `UITableViewRowAction` 到 `UITableView` ，可以定义多个自定义操作，每个操作都具有其自己的文本、格式设置和行为。
 
 ## <a name="uiswipeactionsconfiguration"></a>UISwipeActionsConfiguration
 
@@ -39,9 +39,9 @@ iOS 提供了两种方法来对表执行操作： `UISwipeActionsConfiguration` 
 
 ### <a name="1-implementing-the-swipeactionsconfigurations-methods"></a>1. 实现 SwipeActionsConfigurations 方法
 
-`UITableViewController`（以及 `UITableViewSource` 和 `UITableViewDelegate` ）包含两个方法： `GetLeadingSwipeActionsConfiguration` 和 `GetTrailingSwipeActionsConfiguration` ，用于对表视图行实现一组轻扫操作。 领先的 "轻扫" 操作是指从屏幕的左侧按从右到左的语言，然后从右到左的语言以从右到左的语言进行的扫。
+`UITableViewController` (和 `UITableViewSource` `UITableViewDelegate`) 包含两个方法： `GetLeadingSwipeActionsConfiguration` 和 `GetTrailingSwipeActionsConfiguration` ，它们用于对表视图行实现一组轻扫操作。 领先的 "轻扫" 操作是指从屏幕的左侧按从右到左的语言，然后从右到左的语言以从右到左的语言进行的扫。
 
-下面的示例（来自[TableSwipeActions](https://docs.microsoft.com/samples/xamarin/ios-samples/tableswipeactions)示例）演示了如何实现领先的刷卡器配置。 从上下文操作创建两个操作，[如下](#create-uicontextualaction)所述。 然后，将这些操作传递到新初始化的 [`UISwipeActionsConfiguration`](#create-uiswipeactionsconfigurations) ，后者将用作返回值。
+下面的示例从 [TableSwipeActions](/samples/xamarin/ios-samples/tableswipeactions) 示例 () 演示如何实现领先的刷卡器配置。 从上下文操作创建两个操作， [如下](#create-uicontextualaction)所述。 然后，将这些操作传递到新初始化的 [`UISwipeActionsConfiguration`](#create-uiswipeactionsconfigurations) ，后者将用作返回值。
 
 ```csharp
 public override UISwipeActionsConfiguration GetLeadingSwipeActionsConfiguration(UITableView tableView, NSIndexPath indexPath)
@@ -61,7 +61,7 @@ public override UISwipeActionsConfiguration GetLeadingSwipeActionsConfiguration(
 
 <a name="create-uiswipeactionsconfigurations"></a>
 
-### <a name="2-instantiate-a-uiswipeactionsconfiguration"></a>2. 实例化`UISwipeActionsConfiguration`
+### <a name="2-instantiate-a-uiswipeactionsconfiguration"></a>2. 实例化 `UISwipeActionsConfiguration`
 
 `UISwipeActionsConfiguration`使用方法来实例化 `FromActions` ，以添加的新数组 `UIContextualAction` ，如下面的代码段所示：
 
@@ -79,7 +79,7 @@ leadingSwipe.PerformsFirstActionWithFullSwipe = false;
 
 ![在表行上显示的尾随轻扫操作](row-action-images/action04.png)
 
-此代码段还利用新的 `PerformsFirstActionWithFullSwipe` 属性。 默认情况下，此属性设置为 true，这意味着当用户完全 swipes 一行时，将发生数组中的第一个操作。 如果你有一个非破坏性操作（例如 "删除"），这可能不是理想的行为，因此应将其设置为 `false` 。
+此代码段还利用新的 `PerformsFirstActionWithFullSwipe` 属性。 默认情况下，此属性设置为 true，这意味着当用户完全 swipes 一行时，将发生数组中的第一个操作。 如果你的操作不是破坏性 (例如 "Delete"），这可能不是理想的行为，因此应将其设置为 `false` 。
 
 <a name="create-uicontextualaction"></a>
 
@@ -161,7 +161,7 @@ namespace BasicTable
 }
 ```
 
-静态 `UITableViewRowAction.Create` 方法用于创建一个新 `UITableViewRowAction` 的，当用户 swipes 在表中的某一行上水平居中时，它将显示 "**高**" 按钮。 稍后将创建的新实例 `TableDelegate` ，并将其附加到 `UITableView` 。 例如：
+静态 `UITableViewRowAction.Create` 方法用于创建一个新 `UITableViewRowAction` 的，当用户 swipes 在表中的某一行上水平居中时，它将显示 " **高** " 按钮。 稍后将创建的新实例 `TableDelegate` ，并将其附加到 `UITableView` 。 例如：
 
 ```csharp
 TableDelegate tableDelegate;
@@ -173,7 +173,7 @@ table.Delegate = tableDelegate;
 
 ```
 
-运行上述代码，并将用户 swipes 到表行时，将显示 " **Hi** " 按钮，而不是默认显示的 "**删除**" 按钮：
+运行上述代码，并将用户 swipes 到表行时，将显示 " **Hi** " 按钮，而不是默认显示的 " **删除** " 按钮：
 
 [![显示的是 "高" 按钮，而不是 "删除" 按钮](row-action-images/action01.png)](row-action-images/action01.png#lightbox)
 
@@ -181,5 +181,5 @@ table.Delegate = tableDelegate;
 
 ## <a name="related-links"></a>相关链接
 
-- [TableSwipeActions （示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/tableswipeactions)
-- [WorkingWithTables （示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/workingwithtables)
+- [TableSwipeActions (示例) ](/samples/xamarin/ios-samples/tableswipeactions)
+- [WorkingWithTables (示例) ](/samples/xamarin/ios-samples/workingwithtables)

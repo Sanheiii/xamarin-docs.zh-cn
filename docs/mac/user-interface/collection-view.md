@@ -7,24 +7,24 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 05/24/2017
-ms.openlocfilehash: f6e9a9338c0bce628cfd62d1106601ddc7a11490
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 0d95ecb1997ba70a2994d74bacdedd334f2b4c61
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84568628"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91429728"
 ---
 # <a name="collection-views-in-xamarinmac"></a>Xamarin 中的集合视图
 
 _本文介绍如何在 Xamarin. Mac 应用中使用集合视图。它介绍了如何在 Xcode 中创建和维护集合视图，并 Interface Builder 以编程方式使用它们。_
 
-在 Xamarin 应用*程序中使用*c # 和 .net 时，开发人员有权访问在 AppKit 和*Xcode*中工作的开发人员。 因为 Xamarin 与 Xcode 直接集成，所以开发人员使用 Xcode 的_Interface Builder_来创建和维护集合视图。
+在 Xamarin 应用 *程序中使用* c # 和 .net 时，开发人员有权访问在 AppKit 和 *Xcode* 中工作的开发人员。 因为 Xamarin 与 Xcode 直接集成，所以开发人员使用 Xcode 的 _Interface Builder_ 来创建和维护集合视图。
 
 `NSCollectionView`显示使用组织的子视图网格 `NSCollectionViewLayout` 。 网格中的每个子视图都用来表示， `NSCollectionViewItem` 后者管理从文件中加载视图的内容 `.xib` 。
 
 [![示例应用运行](collection-view-images/intro01.png)](collection-view-images/intro01.png#lightbox)
 
-本文介绍在 Xamarin. Mac 应用中使用集合视图的基础知识。 强烈建议您先完成[Hello，Mac](~/mac/get-started/hello-mac.md)一文，特别是[Xcode 和 Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)及[输出口和操作](~/mac/get-started/hello-mac.md#outlets-and-actions)部分的简介，因为它涵盖了本文中所用的主要概念和技巧。
+本文介绍在 Xamarin. Mac 应用中使用集合视图的基础知识。 强烈建议您先完成 [Hello，Mac](~/mac/get-started/hello-mac.md) 一文，特别是 [Xcode 和 Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder) 及 [输出口和操作](~/mac/get-started/hello-mac.md#outlets-and-actions) 部分的简介，因为它涵盖了本文中所用的主要概念和技巧。
 
 你可能想要查看[Xamarin 内部](~/mac/internals/how-it-works.md)示例文档的 "将[c # 类/方法公开到目标 c](~/mac/internals/how-it-works.md) " 部分， `Register` 并说明用于将 `Export` C # 类连接到目标 C 对象和 UI 元素的和命令。
 
@@ -32,9 +32,9 @@ _本文介绍如何在 Xamarin. Mac 应用中使用集合视图。它介绍了�
 
 ## <a name="about-collection-views"></a>关于集合视图
 
-集合视图（）的主要目标 `NSCollectionView` 是使用集合视图布局（）以有序的方式排列一组对象 `NSCollectionViewLayout` ，其中每个单独的对象（ `NSCollectionViewItem` ）在更大的集合中获取其自己的视图。 集合视图通过数据绑定和键/值编码方法工作，因此，在继续阅读本文之前，您应该阅读[数据绑定和键/值编码](~/mac/app-fundamentals/databinding.md)文档。
+集合视图 () 的主要目标 `NSCollectionView` 是使用集合视图布局 () 以一种有序的方式排列一组对象 `NSCollectionViewLayout` ，每个对象 (`NSCollectionViewItem`) 在更大的集合中获取其自己的视图。 集合视图通过数据绑定和键/值编码方法工作，因此，在继续阅读本文之前，您应该阅读 [数据绑定和键/值编码](~/mac/app-fundamentals/databinding.md) 文档。
 
-集合视图没有标准的内置集合视图项（例如大纲视图或表视图），因此开发人员负责使用其他 AppKit 控件（如图像字段、文本字段、标签等）设计和实现_原型视图_。此原型视图将用于显示和使用由集合视图管理的每个项，并存储在 `.xib` 文件中。
+集合视图没有标准的内置集合视图项 (如大纲视图或表视图) ，因此开发人员负责使用其他 AppKit 控件（如图像字段、文本字段、标签等）设计和实现 _原型视图_ 。此原型视图将用于显示和使用由集合视图管理的每个项，并存储在 `.xib` 文件中。
 
 由于开发人员负责收集视图项的外观，因此 "集合" 视图不支持突出显示网格中选定的项。 本文将介绍如何实现此功能。
 
@@ -42,7 +42,7 @@ _本文介绍如何在 Xamarin. Mac 应用中使用集合视图。它介绍了�
 
 ## <a name="defining-the-data-model"></a>定义数据模型
 
-在 Interface Builder 中绑定集合视图之前，必须在 Xamarin 应用程序中定义一个键/值编码（KVC）/Key-Value KVO （）兼容类，才能充当绑定的_数据模型_。 数据模型提供将显示在集合中的所有数据，并在运行应用程序时接收用户在 UI 中所做数据的任何修改。
+在 Interface Builder 中绑定集合视图之前，必须在 Xamarin 应用程序中定义一个 (KVC) /Key-Value (KVO) 相容类的键-值编码，才能充当绑定的 _数据模型_ 。 数据模型提供将显示在集合中的所有数据，并在运行应用程序时接收用户在 UI 中所做数据的任何修改。
 
 采用管理一组员工的应用示例，可以使用以下类定义数据模型：
 
@@ -197,10 +197,10 @@ namespace MacDatabinding
 
 由于集合视图不包括默认的单元原型，开发人员需要将一个或多个 `.xib` 文件添加到 Xamarin 应用程序中，以定义各个单元格的布局和内容。
 
-请执行以下操作：
+执行以下操作：
 
 1. 在**解决方案资源管理器**中，右键单击项目名称，然后选择 "**添加**" "  >  **新文件 ...** "
-2. 选择 " **Mac**  >  **查看控制器**"，为其指定一个名称（如 `EmployeeItem` 本示例所示），然后单击 "**新建**" 按钮以创建： 
+2. 选择 " **Mac**  >  **视图控制器**"，为其命名 (例如， `EmployeeItem` 在本示例中为) 并单击 "**新建**" 按钮以创建： 
 
     ![添加新的视图控制器](collection-view-images/proto01.png)
 
@@ -209,10 +209,10 @@ namespace MacDatabinding
 4. 向 `NSBox` 视图中添加一个 `NSImageView` 和两个 `NSLabel` 控件，并按如下所示对其进行布局：
 
     ![设计单元原型的布局](collection-view-images/proto02.png)
-5. 打开**助手编辑器**并为创建一个**插座**， `NSBox` 使其可用于指示单元格的选择状态：
+5. 打开 **助手编辑器** 并为创建一个 **插座** ， `NSBox` 使其可用于指示单元格的选择状态：
 
     ![公开插座中的 NSBox](collection-view-images/proto03.png)
-6. 返回到**标准编辑器**，然后选择 "图像" 视图。
+6. 返回到 **标准编辑器** ，然后选择 "图像" 视图。
 7. 在**绑定检查器**中，选择 "**绑定到**  >  **文件的所有者**"，然后输入**模型密钥路径** `self.Person.Icon` ：
 
     ![绑定图标](collection-view-images/proto04.png)
@@ -373,7 +373,7 @@ public override bool Selected
 
 ### <a name="creating-the-collection-view-data-source"></a>创建集合视图数据源
 
-集合视图数据源（ `NSCollectionViewDataSource` ）提供集合视图的所有数据，并 `.xib` 根据集合中每一项的需要，创建并填充集合视图单元格（使用原型）。
+集合视图数据源 (`NSCollectionViewDataSource`) 提供集合视图的所有数据，并 `.xib` 根据集合中每个项的所需) 使用原型创建并填充集合视图单元格 (。
 
 添加新的类项目，对其进行调用， `CollectionViewDataSource` 使其类似于以下内容：
 
@@ -486,7 +486,7 @@ public override NSCollectionViewItem GetItem(NSCollectionView collectionView, NS
 EmployeeCollection.RegisterClassForItem(typeof(EmployeeItemController), "EmployeeCell");
 ``` 
 
-**Identifier** `EmployeeCell` 在调用中使用的标识符（ `MakeItem` ）_必须_与在集合视图中注册的视图控制器的名称相匹配。 下面将详细介绍此步骤。
+**Identifier** `EmployeeCell` 在调用中使用的标识符 () 必须与在 `MakeItem` 集合视图中注册的视图控制器的名称匹配。 _must_ 下面将详细介绍此步骤。
 
 <a name="Handling-Item-Selection"></a>
 
@@ -573,16 +573,16 @@ namespace MacCollectionNew
 
 使用所需的所有支持块后，可以编辑主情节提要，并向其添加集合视图。
 
-请执行以下操作：
+执行以下操作：
 
-1. 双击 `Main.Storyboard` "**解决方案资源管理器**中的文件以将其打开，以便在 Xcode 的 Interface Builder 中进行编辑。
+1. 双击 `Main.Storyboard` " **解决方案资源管理器** 中的文件以将其打开，以便在 Xcode 的 Interface Builder 中进行编辑。
 2. 将集合视图拖到主视图中，并调整其大小以填充视图：
 
     ![向布局添加集合视图](collection-view-images/collection01.png)
 3. 选择集合视图后，在调整大小后使用约束编辑器将其固定到视图：
 
     ![添加约束](collection-view-images/collection02.png)
-4. 确保在 " **Design Surface** （而不是包含它的带边框的**滚动视图**或**剪辑视图**）中选择" 集合 "视图，切换到"**助手编辑器**"并为" 集合 "视图创建一个**插座**：
+4. 请确保在 " **Design Surface** " (中选择 "集合" 视图，而不是包含) 的带 **边框的滚动视图** 或 **剪辑视图** ，切换到 " **助手编辑器** " 并为 "集合" 视图创建一个 **插座** ：
 
     ![添加约束](collection-view-images/collection03.png)
 5. 保存更改并返回到 Visual Studio 以进行同步。
@@ -591,7 +591,7 @@ namespace MacCollectionNew
 
 ## <a name="bringing-it-all-together"></a>全部整合
 
-现在，所有支持片段都已与一个类结合使用，该类可用作数据模型（ `PersonModel` ），已添加到 `NSCollectionViewDataSource` 提供数据，创建了一个 `NSCollectionViewDelegateFlowLayout` 用于处理项选择的，并且已 `NSCollectionView` 添加到主情节提要并作为输出口公开 `EmployeeCollection` 。
+现在，所有支持部分都已与类结合使用，该类可用作数据模型 (`PersonModel`) 、已 `NSCollectionViewDataSource` 添加到提供数据的、为 `NSCollectionViewDelegateFlowLayout` 处理项选择而创建的，并且已 `NSCollectionView` 添加到主情节提要并作为出口提供 (`EmployeeCollection`) 。
 
 最后一步是编辑包含集合视图的视图控制器，并将所有部分组合在一起，以填充集合并处理项选择。
 
@@ -744,14 +744,14 @@ namespace MacCollectionNew
 EmployeeCollection.RegisterClassForItem(typeof(EmployeeItemController), "EmployeeCell");
 ```
 
-请注意， **Identifier** `EmployeeCell` 用于注册原型的标识符（）与 `GetItem` 前面定义的的方法中调用的标识符（）匹配 `CollectionViewDataSource` ：
+请注意， **Identifier** `EmployeeCell` 用于注册原型的标识符 () 与 `GetItem` 上面定义的的方法中调用的标识符匹配 `CollectionViewDataSource` ：
 
 ```csharp
 var item = collectionView.MakeItem("EmployeeCell", indexPath) as EmployeeItemController;
 ...
 ```
 
-此外，视图控制器的类型**必须**与定义原型的文件的名称 `.xib` **完全**匹配。 在此示例中， `EmployeeItemController` 和 `EmployeeItemController.xib` 。
+此外，视图控制器的类型 **必须** 与定义原型的文件的名称 `.xib` **完全**匹配。 在此示例中， `EmployeeItemController` 和 `EmployeeItemController.xib` 。
 
 集合视图中项的实际布局由集合视图布局类控制，可以通过将新实例分配给属性在运行时动态更改 `CollectionViewLayout` 。 更改此属性将更新集合视图外观，而不会对更改进行动画处理。
 
@@ -769,7 +769,7 @@ var flowLayout = new NSCollectionViewFlowLayout()
 };
 ```
 
-`ItemSize`属性定义集合中每个单独单元格的大小。 `SectionInset`属性定义集合中单元格将在其中进行布局的集合。 `MinimumInteritemSpacing`定义项之间的最小间距，并 `MinimumLineSpacing` 定义集合中各行之间的最小间距。
+`ItemSize`属性定义集合中每个单独单元格的大小。 `SectionInset`属性定义集合中单元格将在其中进行布局的集合。 `MinimumInteritemSpacing` 定义项之间的最小间距，并 `MinimumLineSpacing` 定义集合中各行之间的最小间距。
 
 布局将分配给集合视图，并 `CollectionViewDelegate` 附加到用于处理项选择的实例：
 
@@ -813,11 +813,11 @@ public override void ViewDidLoad()
 
 ## <a name="summary"></a>总结
 
-本文详细介绍了如何在 Xamarin. Mac 应用程序中使用集合视图。 首先，它介绍如何使用键/值编码（KVC）和键-值观察（KVO）将 c # 类公开给目标-C。 接下来，该示例演示如何使用 KVO 兼容类并将其绑定到 Xcode 的 Interface Builder 中的集合视图。 最后，它演示了如何在 c # 代码中与集合视图交互。
+本文详细介绍了如何在 Xamarin. Mac 应用程序中使用集合视图。 首先，它介绍了如何使用键/值编码向目标-C 公开 c # 类 (KVC) 和键-值观察 (KVO) 。 接下来，该示例演示如何使用 KVO 兼容类并将其绑定到 Xcode 的 Interface Builder 中的集合视图。 最后，它演示了如何在 c # 代码中与集合视图交互。
 
 ## <a name="related-links"></a>相关链接
 
-- [MacCollectionNew （示例）](https://docs.microsoft.com/samples/xamarin/mac-samples/maccollectionnew)
+- [MacCollectionNew (示例) ](/samples/xamarin/mac-samples/maccollectionnew)
 - [了解 Mac](~/mac/get-started/hello-mac.md)
 - [数据绑定和键值编码](~/mac/app-fundamentals/databinding.md)
 - [NSCollectionView](https://developer.apple.com/reference/appkit/nscollectionview)

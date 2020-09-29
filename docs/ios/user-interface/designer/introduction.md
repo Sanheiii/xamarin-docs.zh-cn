@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 01/31/2018
-ms.openlocfilehash: e5cbbc10f189abb6d0d0b2ef99b50ae53d1103c2
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 7c6b5a4dd2f6f5d4992d84d5d8690a6dda3d20e3
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84572281"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91432755"
 ---
 # <a name="ios-designer-basics"></a>iOS 设计器基础知识
 
@@ -24,7 +24,7 @@ Xamarin Designer for iOS 是类似于 Xcode 的 Interface Builder 和 Android De
 
 IOS 设计器可用于 Visual Studio for Mac 和 Visual Studio 2017 及更高版本的 Windows。 在 Visual Studio for Windows 中，iOS 设计器需要连接到正确配置的 Mac 生成主机，但 Xcode 无需运行。
 
-本指南假定你熟悉[入门指南](~/ios/get-started/index.md)中所述的内容。
+本指南假定你熟悉 [入门指南](~/ios/get-started/index.md)中所述的内容。
 
 <a name="how-it-works"></a>
 
@@ -32,7 +32,7 @@ IOS 设计器可用于 Visual Studio for Mac 和 Visual Studio 2017 及更高版
 
 本部分介绍 iOS 设计器如何帮助创建用户界面并将其连接到代码。
 
-使用 iOS 设计器，开发人员可直观地设计应用程序的用户界面。 如情节提要指南[简介](~/ios/user-interface/storyboards/index.md)中所述，storyboard 介绍了构成应用的屏幕（视图控制器）、放置在这些视图控制器上的界面元素（视图）以及应用的整个导航流。 
+使用 iOS 设计器，开发人员可直观地设计应用程序的用户界面。 如情节提要指南 [简介](~/ios/user-interface/storyboards/index.md) 中所述，情节提要介绍了构成应用的屏幕 (查看控制器) 、 (视图中的界面元素) 放置在这些视图控制器上以及应用的整个导航流。 
 
 视图控制器有两部分： iOS 设计器中的可视化表示形式和关联的 c # 类：
 
@@ -68,13 +68,13 @@ IOS 设计器可用于 Visual Studio for Mac 和 Visual Studio 2017 及更高版
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-为了访问和操作代码中的按钮，该按钮必须具有唯一标识符。 通过选择按钮、打开**Properties Pad**并将其 "**名称**" 字段设置为一个值（如 "SubmitButton"）来提供唯一标识符：
+为了访问和操作代码中的按钮，该按钮必须具有唯一标识符。 通过选择按钮、打开 **Properties Pad**并将其 " **名称** " 字段设置为一个值（如 "SubmitButton"）来提供唯一标识符：
 
 [![在 Properties Pad 中设置按钮的名称](introduction-images/4-settingbuttonname-vsmac.png "在 Properties Pad 中设置按钮的名称")](introduction-images/4-settingbuttonname-vsmac-large.png#lightbox)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-为了访问和操作代码中的按钮，该按钮必须具有唯一标识符。 通过选择按钮，打开 "**属性" 窗口**，并将其 "**名称**" 字段设置为一个值（如 "SubmitButton"）来提供唯一标识符：
+为了访问和操作代码中的按钮，该按钮必须具有唯一标识符。 通过选择按钮，打开 " **属性" 窗口**，并将其 " **名称** " 字段设置为一个值（如 "SubmitButton"）来提供唯一标识符：
 
 [![在 "属性" 窗口中设置按钮的名称](introduction-images/4-settingbuttonname-vs.png "在 "属性" 窗口中设置按钮的名称")](introduction-images/4-settingbuttonname-vs-large.png#lightbox)
 
@@ -84,13 +84,13 @@ IOS 设计器可用于 Visual Studio for Mac 和 Visual Studio 2017 及更高版
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-在**Solution Pad**中，导航到 " **ViewController.cs** "，然后单击泄露指示器会显示视图控制器的 `ViewController` 类定义跨两个文件，其中每个文件都包含一个[分部类](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods)定义：
+在 **Solution Pad**中，导航到 " **ViewController.cs** "，然后单击泄露指示器会显示视图控制器的 `ViewController` 类定义跨两个文件，其中每个文件都包含一个 [分部类](/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods) 定义：
 
 [![构成 ViewController 类的两个文件： ViewController.cs 和 ViewController.designer.cs](introduction-images/5-twoviewcontrollerfiles-vsmac.png "构成 ViewController 类的两个文件： ViewController.cs 和 ViewController.designer.cs")](introduction-images/5-twoviewcontrollerfiles-vsmac-large.png#lightbox)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-在**解决方案资源管理器**中，导航到 " **ViewController.cs** "，然后单击泄露指示器会显示视图控制器的 `ViewController` 类定义跨两个文件，其中每个文件都包含一个[分部类](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods)定义：
+在 **解决方案资源管理器**中，导航到 " **ViewController.cs** "，然后单击泄露指示器会显示视图控制器的 `ViewController` 类定义跨两个文件，其中每个文件都包含一个 [分部类](/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods) 定义：
 
 [![构成 ViewController 类的两个文件： ViewController.cs 和 ViewController.designer.cs](introduction-images/5-twoviewcontrollerfiles-vs.png "构成 ViewController 类的两个文件： ViewController.cs 和 ViewController.designer.cs")](introduction-images/5-twoviewcontrollerfiles-vs-large.png#lightbox)
 
@@ -98,7 +98,7 @@ IOS 设计器可用于 Visual Studio for Mac 和 Visual Studio 2017 及更高版
 
 - 应在**ViewController.cs**中填充与类相关的自定义代码 `ViewController` 。 在此文件中， `ViewController` 类可以响应各种 iOS 视图控制器生命周期方法、自定义 UI 以及响应用户输入（如点击按钮）。
 
-- **ViewController.designer.cs**是一个生成的文件，由 IOS 设计器创建，以将可视化构造的接口映射到代码。 由于对此文件所做的更改将被覆盖，因此不应进行修改。 此文件中的属性声明使类中的代码可以 `ViewController` 按**名称**访问 iOS 设计器中设置的控件。 打开**ViewController.designer.cs**会显示以下代码：
+- **ViewController.designer.cs** 是一个生成的文件，由 IOS 设计器创建，以将可视化构造的接口映射到代码。 由于对此文件所做的更改将被覆盖，因此不应进行修改。 此文件中的属性声明使类中的代码可以 `ViewController` 按 **名称**访问 iOS 设计器中设置的控件。 打开 **ViewController.designer.cs** 会显示以下代码：
 
 ```csharp
 namespace Designer
@@ -121,7 +121,7 @@ namespace Designer
 }
 ```
 
-`SubmitButton`属性声明将整个 `ViewController` 类（而不仅仅是**ViewController.designer.cs**文件）连接到情节提要中定义的按钮。 由于**ViewController.cs**定义了类的一部分 `ViewController` ，因此它有权访问 `SubmitButton` 。
+`SubmitButton`属性声明将整个 `ViewController` 类（而不仅仅是**ViewController.designer.cs**文件）连接到情节提要中定义的按钮。 由于 **ViewController.cs** 定义了类的一部分 `ViewController` ，因此它有权访问 `SubmitButton` 。
 
 下面的屏幕截图说明，IntelliSense 现在可识别 `SubmitButton` **ViewController.cs**中的引用：
 
@@ -153,7 +153,7 @@ namespace Designer
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-使用 Visual Studio 创建的大多数 Xamarin 项目都包含情节提要。 若要查看情节提要的内容，请双击 "**解决方案资源管理器**中的" storyboard "文件：
+使用 Visual Studio 创建的大多数 Xamarin 项目都包含情节提要。 若要查看情节提要的内容，请双击 " **解决方案资源管理器**中的" storyboard "文件：
 
 [![在 iOS 设计器中打开的演示图板](introduction-images/7-storyboardopen-vs.png "在 iOS 设计器中打开的演示图板")](introduction-images/7-storyboardopen-vs-large.png#lightbox)
 
@@ -170,22 +170,22 @@ IOS 设计器有六个主要部分：
 [![IOS 设计器部分](introduction-images/8-sixpartsofiosdesigner-vsmac.png "IOS 设计器部分")](introduction-images/8-sixpartsofiosdesigner-vsmac-large.png#lightbox)
 
 1. **Design Surface** – IOS 设计器的主工作区。 在文档区域中显示，它支持用户界面的直观构造。
-2. **约束工具栏**-允许在框架编辑模式和约束编辑模式间切换，这两种不同的方法可以在用户界面中定位元素。
-3. **"工具箱**" –列出可拖放到设计图面并添加到用户界面的控制器、对象、控件、数据视图、笔势识别器、窗口和条。
+2. **约束工具栏** -允许在框架编辑模式和约束编辑模式间切换，这两种不同的方法可以在用户界面中定位元素。
+3. **"工具箱** " –列出可拖放到设计图面并添加到用户界面的控制器、对象、控件、数据视图、笔势识别器、窗口和条。
 4. **Properties Pad** –显示选定控件的属性，包括标识、视觉样式、可访问性、布局和行为。
-5. **文档大纲**–显示构成所编辑接口的布局的控件树。 单击树中的某一项将在 iOS 设计器中选择它，并在**Properties Pad**中显示其属性。 这对于在深层嵌套的用户界面中选择特定控件非常方便。
-6. **底部工具栏**-包含用于更改 IOS 设计器如何显示 xib 文件的选项，包括设备、方向和缩放。
+5. **文档大纲** –显示构成所编辑接口的布局的控件树。 单击树中的某一项将在 iOS 设计器中选择它，并在  **Properties Pad**中显示其属性。 这对于在深层嵌套的用户界面中选择特定控件非常方便。
+6. **底部工具栏** -包含用于更改 IOS 设计器如何显示 xib 文件的选项，包括设备、方向和缩放。
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 [![IOS 设计器部分](introduction-images/8-sixpartsofiosdesigner-vs.png "IOS 设计器部分")](introduction-images/8-sixpartsofiosdesigner-vs-large.png#lightbox)
 
 1. **Design Surface** – IOS 设计器的主工作区。 在文档区域中显示，它支持用户界面的直观构造。
-2. **约束工具栏**-允许在框架编辑模式和约束编辑模式间切换，这两种不同的方法可以在用户界面中定位元素。
-3. **"工具箱**" –列出可拖放到设计图面并添加到用户界面的控制器、对象、控件、数据视图、笔势识别器、窗口和条。
+2. **约束工具栏** -允许在框架编辑模式和约束编辑模式间切换，这两种不同的方法可以在用户界面中定位元素。
+3. **"工具箱** " –列出可拖放到设计图面并添加到用户界面的控制器、对象、控件、数据视图、笔势识别器、窗口和条。
 4. "**属性" 窗口**–显示选定控件的属性，包括标识、视觉样式、可访问性、布局和行为。
-5. **文档大纲**–显示构成所编辑接口的布局的控件树。 单击树中的某一项将在 iOS 设计器中选择该项，然后在 "**属性" 窗口**中显示其属性。 这对于在深层嵌套的用户界面中选择特定控件非常方便。
-6. **底部工具栏**-包含用于更改 IOS 设计器如何显示 xib 文件的选项，包括设备、方向和缩放。
+5. **文档大纲** –显示构成所编辑接口的布局的控件树。 单击树中的某一项将在 iOS 设计器中选择该项，然后在 "  **属性" 窗口**中显示其属性。 这对于在深层嵌套的用户界面中选择特定控件非常方便。
+6. **底部工具栏** -包含用于更改 IOS 设计器如何显示 xib 文件的选项，包括设备、方向和缩放。
 
 -----
 
@@ -193,7 +193,7 @@ IOS 设计器有六个主要部分：
 
 #### <a name="adding-a-control-to-the-interface"></a>向接口添加控件
 
-若要将控件添加到接口，请将其从 "**工具箱**" 拖放到设计图面上。 添加或定位控件时，垂直和水平指导原则突出显示了常用布局位置，如垂直居中、水平居中和边距：
+若要将控件添加到接口，请将其从 " **工具箱** " 拖放到设计图面上。 添加或定位控件时，垂直和水平指导原则突出显示了常用布局位置，如垂直居中、水平居中和边距：
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -211,7 +211,7 @@ IOS 设计器有六个主要部分：
 
 #### <a name="context-menu-commands"></a>上下文菜单命令
 
-在设计图面和**文档大纲**中，上下文菜单都可用。 此菜单提供选定控件及其父控件的命令，这在使用嵌套层次结构中的视图时很有用：
+在设计图面和 **文档大纲**中，上下文菜单都可用。 此菜单提供选定控件及其父控件的命令，这在使用嵌套层次结构中的视图时很有用：
 
 [![设计图面上的上下文菜单](introduction-images/10-contextmenudesignsurface-vsmac.png "设计图面上的上下文菜单")](introduction-images/10-contextmenudesignsurface-vsmac-large.png#lightbox)
 
@@ -296,9 +296,9 @@ IOS 设计器有六个主要部分：
 
 -----
 
-请注意，选择设备和方向仅会更改 iOS 设计器预览设计的方式。 无论当前选择哪一项，新添加的约束都将应用于所有设备和方向，除非已使用 "**编辑特征**" 按钮进行指定。
+请注意，选择设备和方向仅会更改 iOS 设计器预览设计的方式。 无论当前选择哪一项，新添加的约束都将应用于所有设备和方向，除非已使用 " **编辑特征** " 按钮进行指定。
 
-启用[大小类](~/ios/user-interface/storyboards/unified-storyboards.md#size-classes)后[enabled](~/ios/user-interface/storyboards/unified-storyboards.md#enabling-size-classes)，展开的底部工具栏中将显示 "**编辑特征**" 按钮。  单击 "**编辑特征**" 按钮将显示基于所选设备和方向所表示的大小类创建界面变体的选项。 请考虑以下示例：
+启用[大小类](~/ios/user-interface/storyboards/unified-storyboards.md#size-classes)后[enabled](~/ios/user-interface/storyboards/unified-storyboards.md#enabling-size-classes)，展开的底部工具栏中将显示 "**编辑特征**" 按钮。  单击 " **编辑特征** " 按钮将显示基于所选设备和方向所表示的大小类创建界面变体的选项。 请考虑以下示例：
 
 - 如果选择了**iPhone SE**  /  **纵向**，segue 将提供用于为紧凑型宽度、常规高度大小类创建界面变体的选项。 
 - 如果选择了**iPad Pro 9.7 "**  /  **横向**  /  **全屏**显示，segue 将提供用于为常规宽度、常规高度大小类创建界面变体的选项。
@@ -332,7 +332,7 @@ IOS 设计器有六个主要部分：
 1. 缩放到合适大小
 2. 缩小
 3. 放大
-4. 实际大小（1:1 像素大小）
+4. 实际大小 (1:1 像素大小) 
 
 这些控件在设计图面上调整缩放。 它们不会影响应用程序在运行时的用户界面。
 
@@ -340,7 +340,7 @@ IOS 设计器有六个主要部分：
 
 ### <a name="properties-pad"></a>Properties Pad
 
-使用**Properties Pad**编辑控件的标识、视觉样式、可访问性和行为。 以下屏幕截图说明了按钮的**Properties Pad**选项：
+使用 **Properties Pad** 编辑控件的标识、视觉样式、可访问性和行为。 以下屏幕截图说明了按钮的 **Properties Pad** 选项：
 
 [![按钮的 Properties Pad](introduction-images/17-buttonpropertiespad-vsmac.png "按钮的 Properties Pad")](introduction-images/17-buttonpropertiespad-vsmac-large.png#lightbox)
 #### <a name="properties-pad-sections"></a>Properties Pad 节
@@ -351,25 +351,25 @@ IOS 设计器有六个主要部分：
 
 ### <a name="properties-window"></a>“属性”窗口
 
-使用 "**属性" 窗口**可以编辑控件的标识、视觉样式、可访问性和行为。 以下屏幕截图说明了按钮的 "**属性" 窗口**选项：
+使用 " **属性" 窗口** 可以编辑控件的标识、视觉样式、可访问性和行为。 以下屏幕截图说明了按钮的 " **属性" 窗口** 选项：
 
 [![按钮的 "属性" 窗口](introduction-images/17-buttonpropertieswindow-vs.png "按钮的 "属性" 窗口")](introduction-images/17-buttonpropertieswindow-vs-large.png#lightbox)
 
 #### <a name="properties-window-sections"></a>"属性" 窗口节
 
-"**属性" 窗口**包含三个部分：
+" **属性" 窗口** 包含三个部分：
 
 -----
 
-1. **小组件**–控件的主要属性，如名称、类、样式属性等。通常在此处放置用于管理控件内容的属性。
-2. **布局**–跟踪控件位置和大小（包括限制和框架）的属性列在此处。
-3. **事件**–事件和事件处理程序在此处指定。 用于处理触控、点击、拖动等事件。事件也可以直接在代码中处理。
+1. **小组件** –控件的主要属性，如名称、类、样式属性等。通常在此处放置用于管理控件内容的属性。
+2. **布局** –跟踪控件位置和大小（包括限制和框架）的属性列在此处。
+3. **事件** –事件和事件处理程序在此处指定。 用于处理触控、点击、拖动等事件。事件也可以直接在代码中处理。
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 #### <a name="editing-properties-in-the-properties-pad"></a>编辑 Properties Pad 中的属性
 
-除了在设计图面上进行可视编辑之外，iOS 设计器还支持在**Properties Pad**中编辑属性。 可用属性因所选控件而变化，如以下屏幕截图所示：
+除了在设计图面上进行可视编辑之外，iOS 设计器还支持在 **Properties Pad**中编辑属性。 可用属性因所选控件而变化，如以下屏幕截图所示：
 
 [![按钮属性](introduction-images/18a-buttonpropertiespad-vsmac.png "按钮属性")](introduction-images/18a-buttonpropertiespad-vsmac-large.png#lightbox)
 
@@ -379,7 +379,7 @@ IOS 设计器有六个主要部分：
 
 #### <a name="editing-properties-in-the-properties-window"></a>在 "属性" 窗口中编辑属性
 
-除了在设计图面上进行可视编辑之外，iOS 设计器还支持在 "**属性" 窗口**中编辑属性。 可用属性因所选控件而变化，如以下屏幕截图所示：
+除了在设计图面上进行可视编辑之外，iOS 设计器还支持在 " **属性" 窗口**中编辑属性。 可用属性因所选控件而变化，如以下屏幕截图所示：
 
 [![按钮属性](introduction-images/18a-buttonpropertieswindow-vs.png "按钮属性")](introduction-images/18a-buttonpropertieswindow-vs-large.png#lightbox)
 
@@ -388,7 +388,7 @@ IOS 设计器有六个主要部分：
 -----
 
 > [!IMPORTANT]
-> 现在，Properties Pad 的 "标识" 部分显示一个**模块**字段。 仅当与 Swift 类互操作时，才需要填写此部分。 使用它为 Swift 类输入模块名称，这些类为带命名空间。
+> 现在，Properties Pad 的 "标识" 部分显示一个 **模块** 字段。 仅当与 Swift 类互操作时，才需要填写此部分。 使用它为 Swift 类输入模块名称，这些类为带命名空间。
 
 #### <a name="default-values"></a>默认值
 
@@ -398,7 +398,7 @@ IOS 设计器有六个主要部分：
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-"**属性" 窗口**中的许多属性不显示值或默认值。 但是，应用程序的代码可能仍会修改这些值。 "**属性" 窗口**不会显示在代码中设置的值。
+" **属性" 窗口** 中的许多属性不显示值或默认值。 但是，应用程序的代码可能仍会修改这些值。 " **属性" 窗口** 不会显示在代码中设置的值。
 
 -----
 
@@ -406,13 +406,13 @@ IOS 设计器有六个主要部分：
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-若要为各种事件指定自定义事件处理程序，请使用**Properties Pad**的**事件**选项卡。 例如，在下面的屏幕截图中， `HandleClick` 方法处理按钮在事件**内的触摸**：
+若要为各种事件指定自定义事件处理程序，请使用**Properties Pad**的**事件**选项卡。 例如，在下面的屏幕截图中， `HandleClick` 方法处理按钮在事件 **内的触摸** ：
 
 [![Properties Pad，并为按钮设置了事件处理程序](introduction-images/19-buttonpropertiespadevents-vsmac.png "Properties Pad，并为按钮设置了事件处理程序")](introduction-images/19-buttonpropertiespadevents-vsmac-large.png#lightbox)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-若要为各种事件指定自定义事件处理程序，请使用 "**属性" 窗口**的 "**事件**" 选项卡。 例如，在下面的屏幕截图中， `HandleClick` 方法处理按钮在事件**内的触摸**：
+若要为各种事件指定自定义事件处理程序，请使用 "**属性" 窗口**的 "**事件**" 选项卡。 例如，在下面的屏幕截图中， `HandleClick` 方法处理按钮在事件 **内的触摸** ：
 
 [!["属性" 窗口，其中为按钮设置了事件处理程序](introduction-images/19-buttonpropertieswindowevents-vs.png ""属性" 窗口，其中为按钮设置了事件处理程序")](introduction-images/19-buttonpropertieswindowevents-vs-large.png#lightbox)
 
@@ -424,7 +424,7 @@ IOS 设计器有六个主要部分：
 
 [![无法识别的选择器异常](introduction-images/20-unrecognizedselector-vsmac.png "无法识别的选择器异常")](introduction-images/20-unrecognizedselector-vsmac-large.png#lightbox)
 
-请注意，在**Properties Pad**中指定了事件处理程序后，IOS 设计器将立即打开相应的代码文件，并提供插入方法声明。 
+请注意，在 **Properties Pad**中指定了事件处理程序后，IOS 设计器将立即打开相应的代码文件，并提供插入方法声明。 
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
@@ -432,11 +432,11 @@ IOS 设计器有六个主要部分：
 
 -----
 
-有关使用自定义事件处理程序的示例，请参阅[Hello，iOS 入门指南](~/ios/get-started/hello-ios/index.md)。
+有关使用自定义事件处理程序的示例，请参阅 [Hello，iOS 入门指南](~/ios/get-started/hello-ios/index.md)。
 
 ### <a name="outline-view"></a>大纲视图
 
-IOS 设计器还可以以大纲形式显示接口的控件层次结构。 可以通过选择 "**文档大纲**" 选项卡来获取大纲，如下所示：
+IOS 设计器还可以以大纲形式显示接口的控件层次结构。 可以通过选择 " **文档大纲** " 选项卡来获取大纲，如下所示：
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -454,7 +454,7 @@ IOS 设计器还可以以大纲形式显示接口的控件层次结构。 可以
 
 ## <a name="revert-to-xcode"></a>恢复到 Xcode
 
-可以 Interface Builder 交换使用 iOS 设计器和 Xcode。 若要在 Xcode Interface Builder 中打开情节提要或 xib 文件，请右键单击该文件，然后选择 "**使用 > Xcode Interface Builder 打开**"，如下面的屏幕截图所示：
+可以 Interface Builder 交换使用 iOS 设计器和 Xcode。 若要在 Xcode Interface Builder 中打开情节提要或 xib 文件，请右键单击该文件，然后选择 " **使用 > Xcode Interface Builder 打开**"，如下面的屏幕截图所示：
 
 [![在 Xcode 中打开情节提要 Interface Builder](introduction-images/22-openinxcodeinterfacebuilder-vsmac.png "在 Xcode 中打开情节提要 Interface Builder")](introduction-images/22-openinxcodeinterfacebuilder-vsmac-large.png#lightbox)
 
@@ -464,7 +464,7 @@ IOS 设计器还可以以大纲形式显示接口的控件层次结构。 可以
 
 ## <a name="revert-to-xcode"></a>恢复到 Xcode
 
-可以 Interface Builder 交换使用 iOS 设计器和 Xcode，但 Xcode Interface Builder 仅在 Mac 上可用。 若要在 Mac 上的 Xcode Interface Builder 中打开情节提要或 xib 文件，请在[Visual Studio for Mac](/visualstudio/mac/)中打开包含 Xamarin iOS 项目的解决方案，右键单击该文件，然后选择 "**使用 > Xcode Interface Builder 打开**"，如下面的屏幕截图所示：
+可以 Interface Builder 交换使用 iOS 设计器和 Xcode，但 Xcode Interface Builder 仅在 Mac 上可用。 若要在 Mac 上的 Xcode Interface Builder 中打开情节提要或 xib 文件，请在 [Visual Studio for Mac](/visualstudio/mac/)中打开包含 Xamarin iOS 项目的解决方案，右键单击该文件，然后选择 " **使用 > Xcode Interface Builder 打开**"，如下面的屏幕截图所示：
 
 [![在 Xcode 中打开情节提要 Interface Builder](introduction-images/22-openinxcodeinterfacebuilder-vsmac.png "在 Xcode 中打开情节提要 Interface Builder")](introduction-images/22-openinxcodeinterfacebuilder-vsmac-large.png#lightbox)
 
@@ -484,7 +484,7 @@ IOS 设计器支持创建、编辑和管理 xib 文件。 这些是 XML 文件�
 - [使用 xib 创建自定义 TableViewCell](https://github.com/xamarin/recipes/tree/master/Recipes/ios/content_controls/tables/custom-tableviewcell)
 - [使用 xib 创建启动屏幕](https://github.com/xamarin/recipes/tree/master/Recipes/ios/general/templates/launchscreen-xib)
 
-有关使用情节提要的详细信息，请参阅[情节提要简介](~/ios/user-interface/storyboards/index.md)。
+有关使用情节提要的详细信息，请参阅 [情节提要简介](~/ios/user-interface/storyboards/index.md)。
 
 此和其他与 iOS 设计器相关的指南介绍了如何使用情节提要作为构建用户界面的标准方法，因为大多数 Xamarin 新项目模板默认提供情节提要。
 
@@ -499,6 +499,6 @@ IOS 设计器支持创建、编辑和管理 xib 文件。 这些是 XML 文件�
 - [Hello，iOS](~/ios/get-started/hello-ios/index.md)
 - [Hello，iOS 多屏显示](~/ios/get-started/hello-ios-multiscreen/index.md)
 - [Android Designer 概述](~/android/user-interface/android-designer/index.md)
-- [分部类和方法](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods)
-- [深入了解 Xamarin Designer for iOS-演化2014（视频）](https://www.youtube.com/watch?v=W4H9uLjoEjM)
-- [使用 iOS 设计器创建启动屏幕（视频）](https://university.xamarin.com/lightninglectures/using-the-ios-designer-to-create-a-launch-screen)
+- [分部类和方法](/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods)
+- [深入了解 Xamarin Designer for iOS-演化 2014 (视频) ](https://www.youtube.com/watch?v=W4H9uLjoEjM)
+- [使用 iOS 设计器创建启动屏幕 (视频) ](https://university.xamarin.com/lightninglectures/using-the-ios-designer-to-create-a-launch-screen)

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 86c7c726465257d71b6b407686153650dddbcbca
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: e6879db1631bc6b58a36142344ff1fba997ee4fb
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574465"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91432041"
 ---
 # <a name="providing-haptic-feedback-in-xamarinios"></a>在 Xamarin 中提供 Haptic 的反馈
 
@@ -20,7 +20,7 @@ ms.locfileid: "84574465"
 
 ## <a name="overview"></a>概述
 
-在 iPhone 7 和 iPhone 7 Plus 上，Apple 包含了新的 haptic 响应，这些响应提供了用于以物理方式吸引用户的其他方式。 Haptic 反馈（通常简称为 Haptics）在用户界面设计中使用触控（通过强制、vibrations 或运动）。 使用这些新的 tactile 反馈选项，使用户注意并强化其操作。
+在 iPhone 7 和 iPhone 7 Plus 上，Apple 包含了新的 haptic 响应，这些响应提供了用于以物理方式吸引用户的其他方式。 Haptic 反馈 (通常称为 Haptics) 在用户界面设计中通过强制、vibrations 或运动) 来使用触控 (。 使用这些新的 tactile 反馈选项，使用户注意并强化其操作。
 
 将详细介绍以下主题：
 
@@ -37,9 +37,9 @@ ms.locfileid: "84574465"
 
 开发人员可以使用以下 `UIFeedbackGenerator` 子类之一以编程方式触发 haptic 反馈：
 
-- `UIImpactFeedbackGenerator`-使用此反馈生成器来补充操作或任务（例如，当视图滑入时显示 "thud"）或两个屏幕对象发生冲突。
-- `UINotificationFeedbackGenerator`-将此反馈生成器用于通知，如操作完成、失败或任何其他类型的警告。
-- `UISelectionFeedbackGenerator`-对于正在进行的选择（如从列表中选取一项），请使用此反馈生成器。
+- `UIImpactFeedbackGenerator` -使用此反馈生成器来补充操作或任务（例如，当视图滑入时显示 "thud"）或两个屏幕对象发生冲突。
+- `UINotificationFeedbackGenerator` -将此反馈生成器用于通知，如操作完成、失败或任何其他类型的警告。
+- `UISelectionFeedbackGenerator` -对于正在进行的选择（如从列表中选取一项），请使用此反馈生成器。
 
 <a name="UIImpactFeedbackGenerator"></a>
 
@@ -129,4 +129,4 @@ selection.SelectionChanged ();
 
 ## <a name="related-links"></a>相关链接
 
-- [iOS 10 示例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS10)
+- [iOS 10 示例](/samples/browse/?products=xamarin&term=Xamarin.iOS%2biOS10)
