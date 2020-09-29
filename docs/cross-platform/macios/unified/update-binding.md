@@ -6,12 +6,12 @@ ms.assetid: 5E2A3251-D17F-4F9C-9EA0-6321FEBE8577
 author: davidortinau
 ms.author: daortin
 ms.date: 03/29/2017
-ms.openlocfilehash: c74c4bedc040ef8f01222b12ee3e6cb99bf5355a
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: d545daa10f9f771cd1708adf32569a49f6c4e709
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938900"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91453501"
 ---
 # <a name="migrating-a-binding-to-the-unified-api"></a>将绑定迁移到 Unified API
 
@@ -34,9 +34,9 @@ Windows 计算机上的 Visual studio 不支持绑定项目。
 
 ## <a name="modify-the-using-statements"></a>修改 Using 语句
 
-统一 Api 使你可以比以往更轻松地在 Mac 和 iOS 之间共享代码，并允许你支持具有相同二进制的32和64位应用程序。 通过删除命名空间中的_MonoMac_和_monotouch.dialog_前缀，可以更简单地跨 Xamarin 和 xamarin iOS 应用程序项目实现共享。
+统一 Api 使你可以比以往更轻松地在 Mac 和 iOS 之间共享代码，并允许你支持具有相同二进制的32和64位应用程序。 通过删除命名空间中的 _MonoMac_ 和 _monotouch.dialog_ 前缀，可以更简单地跨 Xamarin 和 xamarin iOS 应用程序项目实现共享。
 
-因此，我们需要修改所有绑定协定（以及 `.cs` 绑定项目中的其他文件），以删除语句中的_MonoMac_和_monotouch.dialog_前缀 `using` 。
+因此，我们需要在绑定项目中修改任何绑定协定 (和其他 `.cs` 文件，) 从语句中删除 _MonoMac_ 和 _monotouch.dialog_ 前缀 `using` 。
 
 例如，给定以下 using 语句：
 
@@ -60,11 +60,11 @@ using ObjCRuntime;
 
 同样，我们需要为绑定项目中的任何文件执行此操作 `.cs` 。 进行这种更改后，下一步是将绑定项目更新为使用新的本机数据类型。
 
-有关 Unified API 的详细信息，请参阅[Unified API](~/cross-platform/macios/unified/index.md)文档。 有关支持32和64位应用程序的更多背景和有关框架的信息，请参阅[32 和64位平台注意事项](~/cross-platform/macios/32-and-64/index.md)文档。
+有关 Unified API 的详细信息，请参阅 [Unified API](~/cross-platform/macios/unified/index.md) 文档。 有关支持32和64位应用程序的更多背景和有关框架的信息，请参阅 [32 和64位平台注意事项](~/cross-platform/macios/32-and-64/index.md) 文档。
 
 ## <a name="update-to-native-data-types"></a>更新为本机数据类型
 
-客观-C 将 `NSInteger` 数据类型映射到 `int32_t` 32 位系统上的和 `int64_t` 64 位系统上的。 若要匹配此行为，新 Unified API 会将以前使用的 `int` （在 .net 中定义为 "始终" `System.Int32` ）替换为新的数据类型： `System.nint` 。
+客观-C 将 `NSInteger` 数据类型映射到 `int32_t` 32 位系统上的和 `int64_t` 64 位系统上的。 为了匹配此行为，新 Unified API 将替换 `int` 在 .net 中定义为始终 `System.Int32`) 到新数据类型的 (的以前使用： `System.nint` 。
 
 除了新的 `nint` 数据类型，Unified API 还介绍了 `nuint` 和 `nfloat` 类型，以便映射到 `NSUInteger` 和 `CGFloat` 类型。
 
@@ -92,17 +92,17 @@ nint Add(nint operandUn, nint operandDeux);
 
 如果要映射到的第三方版本与最初链接到的版本不同，我们需要检查 `.h` 库的标头文件，并查看是否存在、、或的显式调用已 `int` `int32_t` `unsigned int` `uint32_t` `float` 升级为 `NSInteger` `NSUInteger` 或 `CGFloat` 。 如果是这样，则 `nint` `nuint` `nfloat` 还需要对其映射进行相同的修改。
 
-若要了解有关这些数据类型更改的详细信息，请参阅[本机类型](~/cross-platform/macios/nativetypes.md)文档。
+若要了解有关这些数据类型更改的详细信息，请参阅 [本机类型](~/cross-platform/macios/nativetypes.md) 文档。
 
 ## <a name="update-the-coregraphics-types"></a>更新 CoreGraphics 类型
 
-用于使用32或64位的 "点"、"大小" 和 "矩形" 数据类型 `CoreGraphics` 取决于其上运行的设备。 当 Xamarin 最初绑定 iOS 和 Mac Api 时，我们使用了现有的数据结构，这些结构发生了匹配中的数据类型 `System.Drawing` （ `RectangleF` 例如）。
+用于使用32或64位的 "点"、"大小" 和 "矩形" 数据类型 `CoreGraphics` 取决于其上运行的设备。 当 Xamarin 最初绑定 iOS 和 Mac Api 时，我们使用了现有的数据结构，这些结构与 (中的数据类型相匹配， `System.Drawing` `RectangleF` 例如) 。
 
 由于支持64位和新的本机数据类型的要求，在调用方法时，需要对现有代码进行以下调整 `CoreGraphic` ：
 
 - **CGRect** - `CGRect` `RectangleF` 在定义浮点矩形区域时使用而不是。
-- **CGSize** - `CGSize` `SizeF` 在定义浮点大小（宽度和高度）时使用而不是。
-- **CGPoint** - `CGPoint` `PointF` 定义浮点位置（X 和 Y 坐标）时使用而不是。
+- **CGSize** - `CGSize` `SizeF` (宽度和高度) 定义浮点大小时，请使用而不是。
+- **CGPoint** - `CGPoint` `PointF` 在定义浮点位置 (X 和 Y 坐标) 时使用，而不是。
 
 在上述情况下，我们将需要查看我们的 API，并确保 `CGRect` `CGSize` `CGPoint` 之前绑定到或 `RectangleF` `SizeF` `PointF` 更改为本机类型或 `CGRect` `CGSize` 的 `CGPoint` 任何实例。
 
@@ -132,7 +132,7 @@ IntPtr Constructor (CGRect frame);
 
 ## <a name="modify-the-binding-project"></a>修改绑定项目
 
-作为将绑定项目更新为使用统一 Api 的最后一个步骤，我们需要修改 `MakeFile` 用于构建项目的或 Xamarin 项目类型（如果从 Visual Studio for Mac 中进行绑定）并指示_btouch_绑定到统一 api 而不是经典 api。
+为了将绑定项目更新为使用统一 Api，我们需要修改 `MakeFile` 用于生成项目的或 Xamarin 项目类型 (如果我们要从 Visual Studio for Mac) 中进行绑定，并指示 _btouch_ 绑定到统一 api 而不是经典 api，则需要对其进行绑定。
 
 ### <a name="updating-a-makefile"></a>更新生成文件
 
@@ -202,14 +202,14 @@ XMBindingLibrary.dll: AssemblyInfo.cs XMBindingLibrarySample.cs extras.cs libXMB
 3. 在 "新建解决方案" 对话框中，选择 " **ios**  >  **Unified API**  >  **ios 绑定项目**"： 
 
     [![在 "新建解决方案" 对话框中，选择 "iOS/Unified API/iOS 绑定项目"](update-binding-images/image01new.png)](update-binding-images/image01new.png#lightbox)
-4. 在 "配置新项目" 对话框中，输入新绑定项目的**名称**，然后单击 **"确定"** 按钮。
+4. 在 "配置新项目" 对话框中，输入新绑定项目的 **名称** ，然后单击 **"确定"** 按钮。
 5. 包括要为其创建绑定的64位版本的目标-C 库。
-6. 在现有的32位 Classic API 绑定项目（如 `ApiDefinition.cs` 和文件）中复制源代码 `StructsAndEnums.cs` 。
+6. 从现有32位复制 Classic API 绑定项目中的源代码 (例如 `ApiDefinition.cs` 和 `StructsAndEnums.cs` 文件) 。
 7. 对源代码文件进行上述已记录的更改。
 
 进行所有这些更改后，就可以生成新的64位版本的 API，就像32位版本一样。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 在本文中，我们已展示了需要对现有 Xamarin 绑定项目进行的更改，以支持新的统一 Api 和64位设备，以及生成新的64位兼容版本的 API 所需的步骤。
 
@@ -220,4 +220,4 @@ XMBindingLibrary.dll: AssemblyInfo.cs XMBindingLibrarySample.cs extras.cs libXMB
 - [32/64 位平台注意事项](~/cross-platform/macios/32-and-64/index.md)
 - [升级现有的 iOS 应用](~/cross-platform/macios/unified/updating-ios-apps.md)
 - [Unified API](~/cross-platform/macios/unified/index.md)
-- [BindingSample](https://docs.microsoft.com/samples/xamarin/ios-samples/bindingsample/)
+- [BindingSample](/samples/xamarin/ios-samples/bindingsample/)

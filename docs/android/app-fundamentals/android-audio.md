@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/28/2018
-ms.openlocfilehash: ac59bcbb062dc9dae784d18054048f50094c2145
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: f8fb2c8b1d87ec1a02c0920cc4d3670e7e8f9cb0
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73018073"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91456245"
 ---
 # <a name="android-audio"></a>Android 音频
 
@@ -20,42 +20,42 @@ _Android OS 为多媒体提供了广泛的支持，包括音频和视频。本�
 
 ## <a name="overview"></a>概述
 
-现代移动设备采用了以前需要专用设备 &ndash; 照相机、音乐播放机和视频刻录机的功能。 因此，多媒体框架已成为移动 Api 中的一流功能。
+现代移动设备采用了以前需要的设备 &ndash; 相机、音乐播放机和录像机等专用功能。 因此，多媒体框架已成为移动 Api 中的一流功能。
 
 Android 为多媒体提供广泛支持。 本文介绍如何在 Android 中使用音频，并介绍了以下主题
 
-1. 使用**MediaPlayer 的音频播放音频**&ndash; 使用内置 `MediaPlayer` 类播放音频，包括使用 `AudioTrack` 类的本地音频文件和流音频文件。
+1. **通过 MediaPlayer** &ndash; 播放音频使用内置  `MediaPlayer` 类播放音频，包括本地音频文件和具有类的流音频文件 `AudioTrack` 。
 
-2. 使用内置 `MediaRecorder` 类记录音频来记录**音频**&ndash;。
+2. **录制音频** &ndash; 使用内置 `MediaRecorder` 类记录音频。
 
-3. 使用音频**通知**&ndash; 使用音频通知创建正常运行的应用程序，这些应用程序可以通过挂起或取消其音频输出来正确响应事件（例如传入的电话呼叫）。
+3. 使用**音频通知** &ndash;使用音频通知来创建正常运行的应用程序，这些应用程序可正确响应事件 (如通过挂起或取消其音频输出) 的传入电话呼叫。
 
-4. 使用**低级音频**&ndash; 通过直接写入内存缓冲区来使用 `AudioTrack` 类播放音频。 使用 `AudioRecord` 类记录音频并直接从内存缓冲区读取。
+4. 使用**低级别音频** &ndash;`AudioTrack`通过直接写入内存缓冲区来使用类播放音频。 使用类记录音频 `AudioRecord` 并直接从内存缓冲区读取。
 
 ## <a name="requirements"></a>要求
 
-本指南需要 Android 2.0 （API 级别5）或更高版本。 请注意，必须在设备上进行调试音频。
+本指南需要 Android 2.0 (API 级别 5) 或更高版本。 请注意，必须在设备上进行调试音频。
 
-需要在**androidmanifest.xml**中请求 `RECORD_AUDIO` 权限：
+需要 `RECORD_AUDIO` 在 **AndroidManifest.XML**中请求权限：
 
-![启用了录音\_音频的 Android 清单所需权限部分](android-audio-images/image01.png)
+![启用了录音音频的 Android 清单的 "所需权限" 部分 \_](android-audio-images/image01.png)
 
 ## <a name="playing-audio-with-the-mediaplayer-class"></a>用 MediaPlayer 类播放音频
 
-在 Android 中播放音频的最简单方法是采用内置的[MediaPlayer](xref:Android.Media.MediaPlayer)类。
-`MediaPlayer` 可以通过传入文件路径来播放本地文件或远程文件。 但 `MediaPlayer` 是非常区分状态的，并且在错误的状态下调用其方法之一将导致引发异常。 按照下面所述的顺序与 `MediaPlayer` 进行交互非常重要，以免出现错误。
+在 Android 中播放音频的最简单方法是采用内置的 [MediaPlayer](xref:Android.Media.MediaPlayer) 类。
+`MediaPlayer` 可以通过传入文件路径来播放本地文件或远程文件。 但是， `MediaPlayer` 非常区分状态，并且在错误的状态下调用其方法之一将导致引发异常。 按照 `MediaPlayer` 下面所述的顺序进行交互很重要，以免出现错误。
 
 ### <a name="initializing-and-playing"></a>正在初始化和播放
 
-播放带有 `MediaPlayer` 的音频需要以下顺序：
+播放音频时 `MediaPlayer` 需要以下顺序：
 
-1. 实例化新的[MediaPlayer](xref:Android.Media.MediaPlayer)对象。
+1. 实例化新的 [MediaPlayer](xref:Android.Media.MediaPlayer) 对象。
 
-1. 将文件配置为通过[SetDataSource](xref:Android.Media.MediaPlayer.SetDataSource*)方法播放。
+1. 将文件配置为通过 [SetDataSource](xref:Android.Media.MediaPlayer.SetDataSource*) 方法播放。
 
-1. 调用[Prepare](xref:Android.Media.MediaPlayer.Prepare)方法来初始化播放器。
+1. 调用 [Prepare](xref:Android.Media.MediaPlayer.Prepare) 方法来初始化播放器。
 
-1. 调用[start](xref:Android.Media.MediaPlayer.Start)方法开始播放音频。
+1. 调用 [start](xref:Android.Media.MediaPlayer.Start) 方法开始播放音频。
 
 下面的代码示例演示了这种用法：
 
@@ -76,26 +76,26 @@ public void StartPlayer(String  filePath)
 
 ### <a name="suspending-and-resuming-playback"></a>挂起和继续播放
 
-可以通过调用[Pause](xref:Android.Media.MediaPlayer.Pause)方法来挂起播放：
+可以通过调用 [Pause](xref:Android.Media.MediaPlayer.Pause) 方法来挂起播放：
 
 ```csharp
 player.Pause();
 ```
 
-若要恢复暂停播放，请调用[Start](xref:Android.Media.MediaPlayer.Start)方法。
+若要恢复暂停播放，请调用 [Start](xref:Android.Media.MediaPlayer.Start) 方法。
 这将从播放中的暂停位置继续：
 
 ```csharp
 player.Start();
 ```
 
-在播放机上调用[Stop](xref:Android.Media.MediaPlayer.Stop)方法会结束正在进行的播放：
+在播放机上调用 [Stop](xref:Android.Media.MediaPlayer.Stop) 方法会结束正在进行的播放：
 
 ```csharp
 player.Stop();
 ```
 
-当不再需要播放机时，必须通过调用[Release](xref:Android.Media.MediaPlayer.Release)方法释放资源：
+当不再需要播放机时，必须通过调用 [Release](xref:Android.Media.MediaPlayer.Release) 方法释放资源：
 
 ```csharp
 player.Release();
@@ -103,25 +103,25 @@ player.Release();
 
 ## <a name="using-the-mediarecorder-class-to-record-audio"></a>使用 MediaRecorder 类录制音频
 
-用于在 Android 中记录音频 `MediaPlayer` 的必然结果是[MediaRecorder](xref:Android.Media.MediaRecorder)类。 与 `MediaPlayer`一样，它是区分状态的，并通过多个状态进行转换，使之能够开始记录。 若要录制音频，必须设置 `RECORD_AUDIO` 权限。 有关如何设置应用程序权限的说明，请参阅使用[androidmanifest.xml](~/android/platform/android-manifest.md)。
+`MediaPlayer`用于在 Android 中录制音频的必然结果是[MediaRecorder](xref:Android.Media.MediaRecorder)类。 与类似 `MediaPlayer` ，它是区分状态的，并通过多个状态进行转换，使之能够开始记录。 若要录制音频， `RECORD_AUDIO` 必须设置权限。 有关如何设置应用程序权限的说明，请参阅使用 [AndroidManifest.xml](~/android/platform/android-manifest.md)。
 
 ### <a name="initializing-and-recording"></a>初始化和记录
 
-录制带有 `MediaRecorder` 的音频需要执行以下步骤：
+录制音频时 `MediaRecorder` 需要执行以下步骤：
 
-1. 实例化新的[MediaRecorder](xref:Android.Media.MediaRecorder)对象。
+1. 实例化新的 [MediaRecorder](xref:Android.Media.MediaRecorder) 对象。
 
-2. 指定要使用哪些硬件设备通过[SetAudioSource](xref:Android.Media.MediaRecorder.SetAudioSource*)方法捕获音频输入。
+2. 指定要使用哪些硬件设备通过 [SetAudioSource](xref:Android.Media.MediaRecorder.SetAudioSource*) 方法捕获音频输入。
 
-3. 使用[SetOutputFormat](xref:Android.Media.MediaRecorder.SetOutputFormat*)方法设置输出文件音频格式。 有关支持的音频类型的列表，请参阅[Android 支持的媒体格式](https://developer.android.com/guide/appendix/media-formats.html)。
+3. 使用 [SetOutputFormat](xref:Android.Media.MediaRecorder.SetOutputFormat*) 方法设置输出文件音频格式。 有关支持的音频类型的列表，请参阅 [Android 支持的媒体格式](https://developer.android.com/guide/appendix/media-formats.html)。
 
-4. 调用[SetAudioEncoder](xref:Android.Media.MediaRecorder.SetAudioEncoder*)方法来设置音频编码类型。
+4. 调用 [SetAudioEncoder](xref:Android.Media.MediaRecorder.SetAudioEncoder*) 方法来设置音频编码类型。
 
-5. 调用[SetOutputFile](xref:Android.Media.MediaRecorder.SetOutputFile*)方法以指定写入音频数据的输出文件的名称。
+5. 调用 [SetOutputFile](xref:Android.Media.MediaRecorder.SetOutputFile*) 方法以指定写入音频数据的输出文件的名称。
 
-6. 调用[Prepare](xref:Android.Media.MediaRecorder.Prepare)方法以初始化记录器。
+6. 调用 [Prepare](xref:Android.Media.MediaRecorder.Prepare) 方法以初始化记录器。
 
-7. 调用[start](xref:Android.Media.MediaRecorder.Start)方法开始记录。
+7. 调用 [start](xref:Android.Media.MediaRecorder.Start) 方法开始记录。
 
 下面的代码示例演示了此顺序：
 
@@ -154,7 +154,7 @@ void RecordAudio (String filePath)
 
 ### <a name="stopping-recording"></a>正在停止录制
 
-若要停止录制，请对 `MediaRecorder`调用 `Stop` 方法：
+若要停止录制，请对 `Stop` `MediaRecorder` 执行以下操作：
 
 ```csharp
 recorder.Stop();
@@ -162,13 +162,13 @@ recorder.Stop();
 
 ### <a name="cleaning-up"></a>清理
 
-`MediaRecorder`停止后, 调用 [Reset](xref:Android.Media.MediaRecorder.Reset) 方法, 使其重新进入其空闲状态:
+停止后 `MediaRecorder` ，调用 [Reset](xref:Android.Media.MediaRecorder.Reset) 方法，使其重新进入其空闲状态：
 
 ```csharp
 recorder.Reset();
 ```
 
-当不再需要`MediaRecorder`时, 必须通过调用 [Release](xref:Android.Media.MediaRecorder.Release) 方法释放其资源:
+当 `MediaRecorder` 不再需要时，必须通过调用 [Release](xref:Android.Media.MediaRecorder.Release) 方法释放其资源：
 
 ```csharp
 recorder.Release();
@@ -178,39 +178,39 @@ recorder.Release();
 
 ### <a name="the-audiomanager-class"></a>AudioManager 类
 
-[AudioManager](xref:Android.Media.AudioManager)类提供对音频通知的访问，使应用程序能够了解音频事件发生的时间。 此服务还提供对其他音频功能（如音量和铃声模式控制）的访问。 `AudioManager` 允许应用程序处理音频通知以控制音频播放。
+[AudioManager](xref:Android.Media.AudioManager)类提供对音频通知的访问，使应用程序能够了解音频事件发生的时间。 此服务还提供对其他音频功能（如音量和铃声模式控制）的访问。 `AudioManager`允许应用程序处理音频通知以控制音频播放。
 
 ### <a name="managing-audio-focus"></a>管理音频焦点
 
-所有正在运行的应用程序共享设备的音频资源（内置播放机和记录器）。
+设备的音频资源 (内置播放机和录像机) 由所有正在运行的应用程序共享。
 
 从概念上讲，这类似于台式计算机上只有一个应用程序具有键盘焦点的应用程序：在通过鼠标单击其中一个正在运行的应用程序选择一个运行的应用程序后，键盘输入只会转到该应用程序。
 
-音频焦点与此类似，可防止多个应用程序同时播放或录制音频。 它比键盘焦点更复杂，因为它是自愿的 &ndash; 应用程序可以忽略它当前没有音频焦点，而不考虑 &ndash; 和，因为可以请求不同类型的音频焦点。 例如，如果请求者只需播放音频一小段时间，则可能会请求暂时性的焦点。
+音频焦点与此类似，可防止多个应用程序同时播放或录制音频。 它比键盘焦点更复杂，因为它是自愿 &ndash; 的，应用程序可以忽略它当前没有音频焦点，而不考虑 &ndash; 和，因为有不同类型的音频焦点可以请求。 例如，如果请求者只需播放音频一小段时间，则可能会请求暂时性的焦点。
 
 可能会立即授予音频焦点，或最初拒绝音频焦点，稍后将其授予。 例如，如果某个应用程序在电话呼叫期间请求音频焦点，则它将被拒绝，但在电话呼叫完成后，就可以获得焦点。 在这种情况下，将注册侦听器以便在音频焦点消失时进行相应的响应。 请求音频焦点用于确定是否可以播放或录制音频。
 
-有关音频焦点的详细信息，请参阅[管理音频焦点](https://developer.android.com/training/managing-audio/audio-focus.html)。
+有关音频焦点的详细信息，请参阅 [管理音频焦点](https://developer.android.com/training/managing-audio/audio-focus.html)。
 
 #### <a name="registering-the-callback-for-audio-focus"></a>为音频焦点注册回调
 
-从 `IOnAudioChangeListener` 注册 `FocusChangeListener` 回调是获取和释放音频焦点的重要部分。 这是因为，对音频焦点的授予可能会推迟到稍后的时间。 例如，应用程序可能会请求在有电话呼叫时播放音乐。 电话呼叫结束之前，将不会授予音频焦点。
+从注册 `FocusChangeListener` 回调 `IOnAudioChangeListener` 是获取和释放音频焦点的重要部分。 这是因为，对音频焦点的授予可能会推迟到稍后的时间。 例如，应用程序可能会请求在有电话呼叫时播放音乐。 电话呼叫结束之前，将不会授予音频焦点。
 
-出于此原因，回调对象将作为参数传递到 `AudioManager`的 `GetAudioFocus` 方法中，此调用将注册回调。 如果最初拒绝音频焦点，但后来却被授予，则会通过调用回调 `OnAudioFocusChange` 来通知应用程序。 使用相同的方法来告知应用程序音频焦点已消失。
+出于此原因，回调对象将作为参数传递到 `GetAudioFocus` 的方法 `AudioManager` 中，这是注册回调的此调用。 如果最初拒绝音频焦点，但后来却被授予，则会通过调用回调来通知应用程序 `OnAudioFocusChange` 。 使用相同的方法来告知应用程序音频焦点已消失。
 
-当应用程序使用完音频资源后，它将调用 `AudioManager`的 `AbandonFocus` 方法，并再次传入回调。 这会注销回调并释放音频资源，以便其他应用程序可以获得音频焦点。
+当应用程序使用完音频资源后，它将调用的 `AbandonFocus` 方法 `AudioManager` ，并再次传入回调。 这会注销回调并释放音频资源，以便其他应用程序可以获得音频焦点。
 
 #### <a name="requesting-audio-focus"></a>请求音频焦点
 
 请求设备的音频资源所需的步骤如下所示：
 
-1. 获取 `AudioManager` 系统服务的句柄。
+1. 获取系统服务的句柄 `AudioManager` 。
 
 2. 创建回调类的实例。
 
-3. 通过对 `AudioManager` 调用 `RequestAudioFocus` 方法来请求设备的音频资源。 参数是回调对象、流类型（音乐、语音呼叫、环等）和所请求的访问权限的类型（例如，可以暂时请求音频资源或无限期地请求音频资源）。
+3. 通过对调用方法来请求设备的音频资源 `RequestAudioFocus` `AudioManager` 。 参数是回调对象、流类型 (音乐、语音呼叫、振铃等 ) 和请求的访问权限的类型 (音频资源可以暂时请求或无限期（例如) ）。
 
-4. 如果授予了请求，将立即调用 `playMusic` 方法，并开始播放音频。
+4. 如果授予了该请求，则 `playMusic` 会立即调用方法，并且音频开始播放。
 
 5. 如果拒绝请求，则不执行其他操作。 在这种情况下，仅当稍后授予请求时，才会播放音频。
 
@@ -234,11 +234,11 @@ Boolean RequestAudioResources(INotificationReceiver parent)
 
 #### <a name="releasing-audio-focus"></a>正在释放音频焦点
 
-播放跟踪完成后，将调用 `AudioManager` 上的 `AbandonFocus` 方法。 这允许其他应用程序获取设备的音频资源。 如果其他应用程序已注册自己的侦听器，则这些应用程序将收到此音频焦点更改的通知。
+播放跟踪完成后，将 `AbandonFocus` 调用上的方法 `AudioManager` 。 这允许其他应用程序获取设备的音频资源。 如果其他应用程序已注册自己的侦听器，则这些应用程序将收到此音频焦点更改的通知。
 
 ## <a name="low-level-audio-api"></a>低级别音频 API
 
-低级别音频 Api 可以更好地控制音频播放和录制，因为它们直接与内存缓冲区交互，而不是使用文件 Uri。 在某些情况下，这种方法更可取。 这种情况包括：
+低级别音频 Api 可以更好地控制音频播放和录制，因为它们直接与内存缓冲区交互，而不是使用文件 Uri。 在某些情况下，这种方法更可取。 这些情况包括：
 
 1. 从加密的音频文件播放时。
 
@@ -248,25 +248,25 @@ Boolean RequestAudioResources(INotificationReceiver parent)
 
 ### <a name="audiotrack-class"></a>AudioTrack 类
 
-[AudioTrack](xref:Android.Media.AudioTrack)类使用低级别音频 api 进行记录，并且是 `MediaPlayer` 类的低级别等效项。
+[AudioTrack](xref:Android.Media.AudioTrack)类使用低级别音频 api 进行记录，并且是类的低级别等效项 `MediaPlayer` 。
 
 #### <a name="initializing-and-playing"></a>正在初始化和播放
 
-若要播放音频，必须实例化 `AudioTrack` 的新实例。 传入[构造函数](xref:Android.Media.AudioTrack)的参数列表指定如何播放缓冲区中包含的音频示例。 参数包括：
+若要播放音频， `AudioTrack` 必须实例化的新实例。 传入 [构造函数](xref:Android.Media.AudioTrack) 的参数列表指定如何播放缓冲区中包含的音频示例。 参数包括：
 
 1. 流类型 &ndash; 语音、铃声、音乐、系统或警报。
 
-2. 频率 &ndash; 以 Hz 表示的采样速率。
+2. &ndash;以 Hz 表示的采样速率的频率。
 
 3. 通道配置 &ndash; Mono 或立体声。
 
-4. 音频格式 &ndash; 8 位或16位编码。
+4. &ndash;8 位或16位编码的音频格式。
 
-5. 缓冲区大小 &ndash; 以字节为单位）。
+5. 缓冲区大小 &ndash; （以字节为单位）。
 
-6. 缓冲模式 &ndash; 流式处理或静态。
+6. 缓冲区模式 &ndash; 流式处理或静态。
 
-构造后, 将调用`AudioTrack`的[播放](xref:Android.Media.AudioTrack.Play)方法, 将其设置为开始播放。 将音频缓冲区写入 `AudioTrack` 会开始播放：
+构造后，将调用的 [播放](xref:Android.Media.AudioTrack.Play) 方法 `AudioTrack` ，将其设置为开始播放。 将音频缓冲区写入到 `AudioTrack` 开始播放：
 
 ```csharp
 void PlayAudioTrack(byte[] audioBuffer)
@@ -292,13 +292,13 @@ void PlayAudioTrack(byte[] audioBuffer)
 
 #### <a name="pausing-and-stopping-the-playback"></a>暂停和停止播放
 
-调用[pause](xref:Android.Media.AudioTrack.Pause)方法以暂停播放：
+调用 [pause](xref:Android.Media.AudioTrack.Pause) 方法以暂停播放：
 
 ```csharp
 audioTrack.Pause();
 ```
 
-调用[Stop](xref:Android.Media.AudioTrack.Stop)方法将永久终止播放：
+调用 [Stop](xref:Android.Media.AudioTrack.Stop) 方法将永久终止播放：
 
 ```csharp
 audioTrack.Stop();
@@ -306,7 +306,7 @@ audioTrack.Stop();
 
 #### <a name="cleanup"></a>清理
 
-当不再需要`AudioTrack`时, 必须通过调用 [Release](xref:Android.Media.AudioTrack.Release) 释放其资源:
+当 `AudioTrack` 不再需要时，必须通过调用 [Release](xref:Android.Media.AudioTrack.Release)释放其资源：
 
 ```csharp
 audioTrack.Release();
@@ -314,25 +314,25 @@ audioTrack.Release();
 
 ### <a name="the-audiorecord-class"></a>AudioRecord 类
 
-[AudioRecord](xref:Android.Media.AudioRecord)类等效于记录端 `AudioTrack`。 与 `AudioTrack`一样，它会直接使用内存缓冲区来代替文件和 Uri。 它要求在清单中设置 `RECORD_AUDIO` 权限。
+[AudioRecord](xref:Android.Media.AudioRecord)类等效于 `AudioTrack` 录制端。 与类似 `AudioTrack` ，它会直接使用内存缓冲区来代替文件和 uri。 它要求 `RECORD_AUDIO` 在清单中设置权限。
 
 #### <a name="initializing-and-recording"></a>初始化和记录
 
-第一步是构造一个新的[AudioRecord](xref:Android.Media.AudioRecord)对象。 传入[构造函数](xref:Android.Media.AudioRecord)的参数列表提供记录所需的所有信息。 与 `AudioTrack`不同，其中的参数是大部分枚举，`AudioRecord` 中的等效参数是整数。 这些问题包括：
+第一步是构造一个新的 [AudioRecord](xref:Android.Media.AudioRecord) 对象。 传入 [构造函数](xref:Android.Media.AudioRecord) 的参数列表提供记录所需的所有信息。 与中不同 `AudioTrack` ，其中的参数是很大程度的枚举，中的等效参数 `AudioRecord` 是整数。 其中包括：
 
 1. 硬件音频输入源，如麦克风。
 
 2. 流类型 &ndash; 语音、铃声、音乐、系统或警报。
 
-3. 频率 &ndash; 以 Hz 表示的采样速率。
+3. &ndash;以 Hz 表示的采样速率的频率。
 
 4. 通道配置 &ndash; Mono 或立体声。
 
-5. 音频格式 &ndash; 8 位或16位编码。
+5. &ndash;8 位或16位编码的音频格式。
 
 6. 缓冲区大小（以字节为单位）
 
-构造 `AudioRecord` 后，将调用其[StartRecording](xref:Android.Media.AudioRecord.StartRecording)方法。 现在可以开始录制了。 `AudioRecord` 连续读取音频缓冲区以进行输入，并将此输入写入音频文件。
+构造后 `AudioRecord` ，将调用其 [StartRecording](xref:Android.Media.AudioRecord.StartRecording) 方法。 现在可以开始录制了。 `AudioRecord`持续读取音频缓冲区的输入，并将此输入写入音频文件。
 
 ```csharp
 void RecordAudio()
@@ -367,7 +367,7 @@ void RecordAudio()
 
 #### <a name="stopping-the-recording"></a>正在停止记录
 
-调用[Stop](xref:Android.Media.AudioRecord.Stop)方法会终止记录：
+调用 [Stop](xref:Android.Media.AudioRecord.Stop) 方法会终止记录：
 
 ```csharp
 audRecorder.Stop();
@@ -375,7 +375,7 @@ audRecorder.Stop();
 
 #### <a name="cleanup"></a>清理
 
-当不再需要 `AudioRecord`对象时,调用其[Release](xref:Android.Media.AudioRecord.Release)方法会释放与其关联的所有资源:
+当 `AudioRecord` 不再需要对象时，调用其 [Release](xref:Android.Media.AudioRecord.Release) 方法会释放与其关联的所有资源：
 
 ```csharp
 audRecorder.Release();
@@ -383,11 +383,11 @@ audRecorder.Release();
 
 ## <a name="summary"></a>总结
 
-Android OS 提供了一个功能强大的框架，用于播放、记录和管理音频。 本文介绍如何使用高级别 `MediaPlayer` 和 `MediaRecorder` 类播放和录制音频。 接下来，它探讨了如何使用音频通知在不同应用程序之间共享设备的音频资源。 最后，它介绍了如何使用低级别 Api 播放和录制音频，后者直接与内存缓冲区交互。
+Android OS 提供了一个功能强大的框架，用于播放、记录和管理音频。 本文介绍如何使用高级和类播放和录制音频 `MediaPlayer` `MediaRecorder` 。 接下来，它探讨了如何使用音频通知在不同应用程序之间共享设备的音频资源。 最后，它介绍了如何使用低级别 Api 播放和录制音频，后者直接与内存缓冲区交互。
 
 ## <a name="related-links"></a>相关链接
 
-- [使用音频（示例）](https://docs.microsoft.com/samples/xamarin/monodroid-samples/example-workingwithaudio)
+- [使用音频 (示例) ](/samples/xamarin/monodroid-samples/example-workingwithaudio)
 - [Media Player](xref:Android.Media.MediaPlayer)
 - [媒体录制器](xref:Android.Media.MediaRecorder)
 - [音频管理器](xref:Android.Media.AudioManager)

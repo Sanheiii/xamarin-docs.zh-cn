@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: 43637d8592631b2732e5922544f52d91947dd3bd
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: b4740b91b3d59a3c50696af06eec4ff82bbf9b1e
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73024286"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91455191"
 ---
 # <a name="touch-and-gestures-in-xamarinandroid"></a>Xamarin 中的触摸和手势
 
@@ -30,7 +30,7 @@ Android 使用 `MotionEvent` 对象封装触控数据，并使用视图对象上
 
 本指南针对每个操作系统遵循类似的格式：首先，会引入和解释平台的触控 Api，因为它们是构建触摸交互的基础。 接下来，我们通过探索一些常见手势，并完成为应用程序创建自定义手势，深入探讨了手势识别器的世界。 最后，你将了解如何使用底层触摸跟踪来跟踪单个手指，以创建手指画图程序。
 
-## <a name="sections"></a>各节内容
+## <a name="sections"></a>部分
 
 - [Android 中的触控](~/android/app-fundamentals/touch/android-touch-walkthrough.md)
 - [演练：在 Android 中使用触控](~/android/app-fundamentals/touch/android-touch-walkthrough.md)
@@ -42,6 +42,6 @@ Android 使用 `MotionEvent` 对象封装触控数据，并使用视图对象上
 
 ## <a name="related-links"></a>相关链接
 
-- [Android Touch 开始（示例）](https://docs.microsoft.com/samples/xamarin/monodroid-samples/applicationfundamentals-touch-start)
-- [Android Touch 最终（示例）](https://docs.microsoft.com/samples/xamarin/monodroid-samples/applicationfundamentals-touch-final)
-- [FingerPaint （示例）](https://docs.microsoft.com/samples/xamarin/monodroid-samples/applicationfundamentals-fingerpaint)
+- [Android Touch 开始 (示例) ](/samples/xamarin/monodroid-samples/applicationfundamentals-touch-start)
+- [Android Touch 最终 (示例) ](/samples/xamarin/monodroid-samples/applicationfundamentals-touch-final)
+- [FingerPaint (示例) ](/samples/xamarin/monodroid-samples/applicationfundamentals-fingerpaint)

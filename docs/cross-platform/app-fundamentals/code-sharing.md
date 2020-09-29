@@ -6,12 +6,12 @@ ms.assetid: B73675D2-09A3-14C1-E41E-20352B819B53
 author: davidortinau
 ms.author: daortin
 ms.date: 08/06/2018
-ms.openlocfilehash: 5edfd8216892eb28a2b1ad14d3ccee1668b21a43
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: b097a0549db6178576d9e10eb3282c88e96b9ddb
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571215"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91453293"
 ---
 # <a name="sharing-code-overview"></a>共享代码概述
 
@@ -19,9 +19,9 @@ _本文档比较跨平台项目之间共享代码的不同方法： .NET Standar
 
 有三种方法可以在跨平台应用程序之间共享代码：
 
-- [**.NET Standard 库**](#Net_Standard)– .NET Standard 项目可以实现跨多个平台共享的代码，并可访问大量 .net api （具体取决于版本）。 .NET Standard 1.0-1.6 实现逐渐扩大的 Api 集，而 .NET Standard 2.0 提供 .NET BCL 的最佳覆盖面（包括 Xamarin 应用程序中提供的 .NET Api）。
-- [**共享项目**](#Shared_Projects)–使用共享资产项目类型来组织你的源代码，并 `#if` 根据需要使用编译器指令来管理特定于平台的要求。
-- [**可移植类库**](#Portable_Class_Libraries)（已弃用）-可移植类库（pcl）可以将多个平台指定为一个公共 API 图面，使用接口来提供特定于平台的功能。 Visual Studio 的最新版本中不推荐 &ndash; 使用 .NET Standard。
+- [**.NET Standard 库**](#Net_Standard) – .NET Standard 项目可实现在多个平台之间共享的代码，并可根据) 版本来访问大量 .net api (。 .NET Standard 1.0-1.6 实现逐渐扩大的 Api 集，而 .NET Standard 2.0 提供 .NET BCL 的最佳覆盖 (，其中包括 Xamarin 应用) 中提供的 .NET Api。
+- [**共享项目**](#Shared_Projects) –使用共享资产项目类型来组织你的源代码，并 `#if` 根据需要使用编译器指令来管理特定于平台的要求。
+- [**可移植类库**](#Portable_Class_Libraries) (弃用) –可移植类库 (pcl) 可以使用一个公共 API 图面以多个平台为目标，并使用接口来提供特定于平台的功能。 Visual Studio 的最新版本中不推荐 &ndash; 使用 .NET Standard。
 
 代码共享策略的目标是支持此关系图中显示的体系结构，在该体系结构中，多个平台可使用单个基本代码。
 
@@ -33,7 +33,7 @@ _本文档比较跨平台项目之间共享代码的不同方法： .NET Standar
 
 ## <a name="net-standard-libraries"></a>.NET Standard 库
 
-[.NET Standard](~/cross-platform/app-fundamentals/net-standard.md)库提供一组定义完善的基类库，可以在不同的项目类型中引用这些库，包括 Xamarin 和 xamarin 等跨平台项目。 建议使用 .NET Standard 2.0，以最大程度地兼容现有 .NET Framework 代码。
+[.NET Standard](~/cross-platform/app-fundamentals/net-standard.md) 库提供一组定义完善的基类库，可以在不同的项目类型中引用这些库，包括 Xamarin 和 xamarin 等跨平台项目。 建议使用 .NET Standard 2.0，以最大程度地兼容现有 .NET Framework 代码。
 
 ![.NET Standard 关系图](code-sharing-images/netstandard.png ".NET Standard 关系图")
 
@@ -41,23 +41,23 @@ _本文档比较跨平台项目之间共享代码的不同方法： .NET Standar
 
 - 允许你在多个项目之间共享代码。
 - 重构操作始终更新所有受影响的引用。
-- .NET 基类库（BCL）的更大外围应用于 PCL 配置文件。 具体而言，.NET Standard 2.0 与 .NET Framework 几乎是相同的 API 图面，建议用于新应用并移植现有 Pcl。
+- 与 PCL 配置文件相比，.NET 基类库 (BCL) 的图面面积更大。 具体而言，.NET Standard 2.0 与 .NET Framework 几乎是相同的 API 图面，建议用于新应用并移植现有 Pcl。
 
 ### <a name="disadvantages"></a>缺点
 
 - 不能使用类似的编译器指令 `#if __IOS__` 。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
-.NET Standard[类似于 PCL](https://docs.microsoft.com/dotnet/standard/net-standard#comparison-to-portable-class-libraries)，但使用更简单的平台支持模式，并且来自 BCL 的类更多。
+.NET Standard [类似于 PCL](/dotnet/standard/net-standard#comparison-to-portable-class-libraries)，但使用更简单的平台支持模式，并且来自 BCL 的类更多。
 
 <a name="Shared_Projects"></a>
 
 ## <a name="shared-projects"></a>共享项目
 
-[共享项目](~/cross-platform/app-fundamentals/shared-projects.md)包含代码文件和任何引用它们的项目中包含的资产。 共享项目不会自行生成编译的输出。
+[共享项目](~/cross-platform/app-fundamentals/shared-projects.md) 包含代码文件和任何引用它们的项目中包含的资产。 共享项目不会自行生成编译的输出。
 
-此屏幕截图显示了包含三个应用程序项目（适用于 Android、iOS 和 Windows）的解决方案文件，其中包含一个包含常见 c # 源代码文件的**共享**项目：
+此屏幕截图显示一个解决方案文件，其中包含 (适用于 Android、iOS 和 Windows) 的三个应用程序项目，其中包含一个包含常见 c # 源代码文件的 **共享** 项目：
 
 ![共享项目解决方案](code-sharing-images/sharedsolution.png "共享项目解决方案")
 
@@ -69,20 +69,20 @@ _本文档比较跨平台项目之间共享代码的不同方法： .NET Standar
 
 支持 iOS、Android 和 Windows 的跨平台应用程序需要适用于每个平台的应用程序项目。 常见代码位于共享项目中。
 
-示例解决方案包含以下文件夹和项目（已为表现力选择项目名称，你的项目不必遵循这些命名准则）：
+示例解决方案包含以下文件夹和项目 (为表现力选择项目名称，你的项目不必遵循这些命名准则) ：
 
-- **共享**–包含所有项目通用的代码的共享项目。
+- **共享** –包含所有项目通用的代码的共享项目。
 - **AppAndroid** – Xamarin Android 应用程序项目。
 - **AppiOS** – Xamarin iOS 应用程序项目。
 - **AppWindows** – Windows 应用程序项目。
 
-通过这种方式，这三个应用程序项目共享相同的源代码（共享的 c # 文件）。 对共享代码进行的任何编辑都将在所有三个项目之间共享。
+通过这种方式，这三个应用程序项目共享同一源代码 (共享) 中的 c # 文件。 对共享代码进行的任何编辑都将在所有三个项目之间共享。
 
 ### <a name="benefits"></a>优点
 
 - 允许你在多个项目之间共享代码。
-- 可以使用编译器指令基于平台对共享代码进行分支（例如 使用 `#if __ANDROID__` ，如[构建跨平台应用程序](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md)文档中所述。
-- 应用程序项目可能包括共享代码可以使用的特定于平台的引用（例如， `Community.CsharpSqlite.WP7` 在 Windows Phone 的 Tasky 示例中使用）。
+- 共享代码可以使用编译器指令根据平台进行分支 (例如。 `#if __ANDROID__`如[构建跨平台应用程序](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md)文档中所述，使用来) 。
+- 应用程序项目可能包括共享代码可以使用的特定于平台的引用 (例如，  `Community.CsharpSqlite.WP7` 在 Windows Phone) 的 Tasky 示例中使用。
 
 ### <a name="disadvantages"></a>缺点
 
@@ -91,9 +91,9 @@ _本文档比较跨平台项目之间共享代码的不同方法： .NET Standar
 
 <a name="Shared_Remarks"></a>
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
-适用于应用程序开发人员的一个不错的解决方案，它只用于在应用程序中共享（而不是分发给其他开发人员）。
+适用于应用程序开发人员的一个不错的解决方案，它只用于在其应用程序中共享的代码 (，而不是分发给其他开发人员) 。
 
 <a name="Portable_Class_Libraries"></a>
 
@@ -113,11 +113,11 @@ _本文档比较跨平台项目之间共享代码的不同方法： .NET Standar
 
 ### <a name="disadvantages"></a>缺点
 
-- 建议在最新版本的 Visual Studio 中弃用 .NET Standard 库。 请参阅以下[说明](https://docs.microsoft.com/dotnet/standard/net-standard#comparison-to-portable-class-libraries)PCL 与 .NET Standard 之间的差异。
+- 建议在最新版本的 Visual Studio 中弃用 .NET Standard 库。 请参阅以下 [说明](/dotnet/standard/net-standard#comparison-to-portable-class-libraries) PCL 与 .NET Standard 之间的差异。
 - 不能使用编译器指令。
-- 仅可使用 .NET framework 的子集，由所选的配置文件决定（有关详细信息，请参阅[PCL 简介](~/cross-platform/app-fundamentals/pcl.md)）。
+- 仅可使用 .NET framework 的子集，由所选的配置文件决定 (参阅  [PCL 简介](~/cross-platform/app-fundamentals/pcl.md) ，了解详细信息) 。
 
-### <a name="remarks"></a>备注
+### <a name="remarks"></a>注解
 
 在最新版本的 Visual Studio 中，PCL 模板被视为已弃用。
 
@@ -125,16 +125,16 @@ _本文档比较跨平台项目之间共享代码的不同方法： .NET Standar
 
 你选择的代码共享策略将由你所面向的平台驱动。 选择最适合您的项目的方法。
 
-.NET Standard 是构建可共享的代码库（特别是在 NuGet 上发布）的最佳选择。 共享项目适用于计划在其跨平台应用中使用多种平台特定功能的应用程序开发人员。
+.NET Standard 是构建可共享的代码库的最佳选择， (尤其是在 NuGet) 上发布。 共享项目适用于计划在其跨平台应用中使用多种平台特定功能的应用程序开发人员。
 
 虽然在 Visual Studio 中继续支持 PCL 项目，但建议将 .NET Standard 用于新项目。
 
 ## <a name="related-links"></a>相关链接
 
-- [构建跨平台应用程序（主文档）](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md)
+- [构建跨平台应用程序 (主文档) ](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md)
 - [可移植类库](~/cross-platform/app-fundamentals/pcl.md)
 - [共享项目](~/cross-platform/app-fundamentals/shared-projects.md)
 - [.NET Standard](~/cross-platform/app-fundamentals/net-standard.md)
 - [案例研究：Tasky](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md)
-- [Tasky 示例（github）](https://github.com/xamarin/mobile-samples/tree/master/Tasky)
-- [使用 PCL 的 Tasky 示例（github）](https://github.com/xamarin/mobile-samples/tree/master/TaskyPortable)
+- [Tasky 示例 (github) ](https://github.com/xamarin/mobile-samples/tree/master/Tasky)
+- [使用 PCL (github 的 Tasky 示例) ](https://github.com/xamarin/mobile-samples/tree/master/TaskyPortable)
