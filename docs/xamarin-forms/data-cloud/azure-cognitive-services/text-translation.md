@@ -10,16 +10,16 @@ ms.date: 02/08/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 38c7f11ecf65a2a9ec9ef54b5beb270f51d24dda
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 2b26e80267be9af6bf300b2ffc82e43fe717f59c
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86929943"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563115"
 ---
 # <a name="text-translation-using-the-translator-api"></a>使用转换器 API 进行文本翻译
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
 
 _Microsoft Translator API 可用于通过 REST API 翻译语音和文本。本文介绍如何使用 Microsoft 文本翻译 API 在应用程序中将文本从一种语言翻译成另一种语言 Xamarin.Forms 。_
 
@@ -35,13 +35,13 @@ _Microsoft Translator API 可用于通过 REST API 翻译语音和文本。本�
 > [!NOTE]
 > 如果还没有 [Azure 订阅](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing)，可以在开始前创建一个[免费帐户](https://aka.ms/azfree-docs-mobileapps)。
 
-必须获取 API 密钥才能使用文本翻译 API。 此操作可在[如何注册 Microsoft 文本翻译 API](/azure/cognitive-services/translator/translator-text-how-to-signup/)中获得。
+必须获取 API 密钥才能使用文本翻译 API。 此操作可在 [如何注册 Microsoft 文本翻译 API](/azure/cognitive-services/translator/translator-text-how-to-signup/)中获得。
 
-有关 Microsoft 文本翻译 API 的详细信息，请参阅[文本翻译 API 文档](/azure/cognitive-services/translator/)。
+有关 Microsoft 文本翻译 API 的详细信息，请参阅 [文本翻译 API 文档](/azure/cognitive-services/translator/)。
 
 ## <a name="authentication"></a>身份验证
 
-对文本翻译 API 发出的每个请求都需要一个 JSON Web 令牌（JWT）访问令牌，该令牌可从认知服务令牌服务获取 `https://api.cognitive.microsoft.com/sts/v1.0/issueToken` 。 可以通过向令牌服务发出 POST 请求来获得令牌，并指定 `Ocp-Apim-Subscription-Key` 包含 API 密钥作为其值的标头。
+对文本翻译 API 发出的每个请求都需要一个 JSON Web 令牌 (JWT) 访问令牌，该令牌可从认知服务令牌服务获取 `https://api.cognitive.microsoft.com/sts/v1.0/issueToken` 。 可以通过向令牌服务发出 POST 请求来获得令牌，并指定 `Ocp-Apim-Subscription-Key` 包含 API 密钥作为其值的标头。
 
 下面的代码示例演示如何从令牌服务请求访问令牌：
 
@@ -70,7 +70,7 @@ async Task<string> FetchTokenAsync(string fetchUri)
 httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", bearerToken);
 ```
 
-有关认知服务令牌服务的详细信息，请参阅[身份验证](/azure/cognitive-services/translator/reference/v3-0-reference#authentication)。
+有关认知服务令牌服务的详细信息，请参阅 [身份验证](/azure/cognitive-services/translator/reference/v3-0-reference#authentication)。
 
 ## <a name="performing-text-translation"></a>正在执行文本转换
 
@@ -90,7 +90,7 @@ public async Task<string> TranslateTextAsync(string text)
 
 `TranslateTextAsync`方法生成请求 URI，并从令牌服务检索访问令牌。 然后，将文本翻译请求发送到 `translate` API，该 API 返回包含结果的 XML 响应。 分析 XML 响应，并将转换结果返回给调用方法以进行显示。
 
-有关文本翻译 REST Api 的详细信息，请参阅[文本翻译 API](/azure/cognitive-services/translator/reference/v3-0-reference)。
+有关文本翻译 REST Api 的详细信息，请参阅 [文本翻译 API](/azure/cognitive-services/translator/reference/v3-0-reference)。
 
 ### <a name="configuring-text-translation"></a>配置文本翻译
 
@@ -106,7 +106,7 @@ string GenerateRequestUri(string endpoint, string text, string to)
 }
 ```
 
-此方法设置要转换的文本，以及要将文本转换为的语言。 有关 Microsoft Translator 支持的语言的列表，请参阅[microsoft 文本翻译 API 中支持的语言](/azure/cognitive-services/translator/languages/)。
+此方法设置要转换的文本，以及要将文本转换为的语言。 有关 Microsoft Translator 支持的语言的列表，请参阅 [microsoft 文本翻译 API 中支持的语言](/azure/cognitive-services/translator/languages/)。
 
 > [!NOTE]
 > 如果应用程序需要知道文本所处的语言，则 `Detect` 可以调用 API 来检测文本字符串的语言。
@@ -131,7 +131,7 @@ async Task<string> SendRequestAsync(string url, string bearerToken)
 
 此方法通过将访问令牌添加到 `Authorization` 标头（以字符串为前缀）来生成 GET 请求 `Bearer` 。 然后，会将 GET 请求发送到 `translate` API，并将请求 URL 指定为要转换的文本，并将文本转换为所用的语言。 然后，将读取响应并将其返回给调用方法。
 
-`translate`如果请求有效，则 API 将在响应中发送 HTTP 状态代码200（正常），这表明请求已成功，并且请求的信息在响应中。 有关可能的错误响应的列表，请参阅[GET 翻译](/azure/cognitive-services/translator/reference/v3-0-translate)中的响应消息。
+`translate`如果请求有效，则 API 会将 HTTP 状态代码200发送 (确定) ，这表明请求已成功，并且请求的信息在响应中。 有关可能的错误响应的列表，请参阅 [GET 翻译](/azure/cognitive-services/translator/reference/v3-0-translate)中的响应消息。
 
 ### <a name="processing-the-response"></a>处理响应
 
@@ -153,5 +153,5 @@ API 响应以 XML 格式返回。 以下 XML 数据显示了一个典型的成�
 
 - [文本翻译 API 文档](/azure/cognitive-services/translator/)
 - [使用 RESTful Web 服务](~/xamarin-forms/data-cloud/web-services/rest.md)
-- [Todo 认知服务（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
+- [Todo 认知服务 (示例) ](/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
 - [文本翻译 API](/azure/cognitive-services/translator/reference/v3-0-reference)

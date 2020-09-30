@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Forms和 Azure 认知服务简介
+title: Xamarin.Forms 和 Azure 认知服务简介
 description: 本文介绍了一个示例应用程序，演示如何调用某些 Microsoft 认知服务 Api。
 ms.prod: xamarin
 ms.assetid: 74121ADB-1322-4C1E-A103-F37257BC7CB0
@@ -10,14 +10,14 @@ ms.date: 02/08/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: cce5b0fc9c3d1d04c20b1be242197e3bc9e4f901
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: f40220a29611bb365dc77eeb5e85445a0df19fd6
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86929332"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563245"
 ---
-# <a name="xamarinforms-and-azure-cognitive-services-introduction"></a>Xamarin.Forms和 Azure 认知服务简介
+# <a name="no-locxamarinforms-and-azure-cognitive-services-introduction"></a>Xamarin.Forms 和 Azure 认知服务简介
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
 
@@ -29,16 +29,16 @@ _Microsoft 认知服务是一组可供开发人员使用的 Api、Sdk 和服务�
 
 - 查看任务的列表。
 - 通过软键盘添加和编辑任务，或通过使用 Microsoft Speech API 执行语音识别。
-- 使用必应拼写检查 API 对任务进行拼写检查。 有关详细信息，请参阅[使用必应拼写检查 API 的拼写检查](spell-check.md)。
-- 使用转换器 API 将任务从英语转换为德语。 有关详细信息，请参阅[使用转换器 API 进行文本翻译](text-translation.md)。
+- 使用必应拼写检查 API 对任务进行拼写检查。 有关详细信息，请参阅 [使用必应拼写检查 API 的拼写检查](spell-check.md)。
+- 使用转换器 API 将任务从英语转换为德语。 有关详细信息，请参阅 [使用转换器 API 进行文本翻译](text-translation.md)。
 - 删除任务。
 - 将任务状态设置为 "已完成"。
-- 使用人脸 API，使用情感识别对应用程序进行评级。 有关详细信息，请参阅[使用人脸 API 的情感识别](emotion-recognition.md)。
+- 使用人脸 API，使用情感识别对应用程序进行评级。 有关详细信息，请参阅 [使用人脸 API 的情感识别](emotion-recognition.md)。
 
 > [!WARNING]
-> 此必应语音 API 已弃用，以支持 Azure 语音服务。 有关专用于 Azure 语音服务的示例，请参阅语音[识别和语音服务 API](~/xamarin-forms/data-cloud/azure-cognitive-services/speech-recognition.md)。
+> 此必应语音 API 已弃用，以支持 Azure 语音服务。 有关专用于 Azure 语音服务的示例，请参阅语音 [识别和语音服务 API](~/xamarin-forms/data-cloud/azure-cognitive-services/speech-recognition.md)。
 
-任务存储在本地 SQLite 数据库中。 有关使用本地 SQLite 数据库的详细信息，请参阅使用[本地数据库](~/xamarin-forms/data-cloud/data/databases.md)。
+任务存储在本地 SQLite 数据库中。 有关使用本地 SQLite 数据库的详细信息，请参阅使用 [本地数据库](~/xamarin-forms/data-cloud/data/databases.md)。
 
 `TodoListPage`当应用程序启动时，将显示。 此页显示存储在本地数据库中的所有任务的列表，并允许用户创建新任务或对应用程序进行评分：
 
@@ -70,7 +70,7 @@ _Microsoft 认知服务是一组可供开发人员使用的 Api、Sdk 和服务�
 
 共享代码项目还包含一些重要文件：
 
-|文件|目的|
+|文件|用途|
 |--- |--- |
 |Constants.cs|`Constants`类，它为调用的 Microsoft 认知服务 api 指定 API 密钥和终结点。 API 密钥常量需要更新才能访问不同的认知服务 Api。|
 |App.xaml.cs|`App`该类负责实例化应用程序在每个平台上显示的第一页，以及 `TodoManager` 用于调用数据库操作的类。|
@@ -79,10 +79,10 @@ _Microsoft 认知服务是一组可供开发人员使用的 Api、Sdk 和服务�
 
 示例应用程序使用以下 NuGet 包：
 
-- `Newtonsoft.Json`–提供适用于 .NET 的 JSON 框架。
-- `PCLStorage`–提供一组跨平台本地文件 IO Api。
-- `sqlite-net-pcl`–提供 SQLite 数据库存储。
-- `Xam.Plugin.Media`–提供跨平台的照片拍摄和挑选 Api。
+- `Newtonsoft.Json` –提供适用于 .NET 的 JSON 框架。
+- `PCLStorage` –提供一组跨平台本地文件 IO Api。
+- `sqlite-net-pcl` –提供 SQLite 数据库存储。
+- `Xam.Plugin.Media` –提供跨平台的照片拍摄和挑选 Api。
 
 此外，这些 NuGet 包还会安装其自己的依赖项。
 
@@ -117,19 +117,19 @@ public class TodoItem
 
 `IFileHelper`接口由 `FileHelper` 每个平台项目中的类实现。 此类包含单个方法，该方法 `GetLocalFilePath` 返回用于存储 SQLite 数据库的本地文件路径。
 
-`IAudioRecorderService`接口由 `AudioRecorderService` 每个平台项目中的类实现。 此类包含 `StartRecording` 、 `StopRecording` 和支持方法，这些方法使用平台 api 从设备的麦克风记录音频，并将其存储为 wav 文件。 在 iOS 上， `AudioRecorderService` 使用 `AVFoundation` API 来记录音频。 在 Android 上， `AudioRecordService` 使用 `AudioRecord` API 来记录音频。 在通用 Windows 平台（UWP）上， `AudioRecorderService` 使用 `AudioGraph` API 来记录音频。
+`IAudioRecorderService`接口由 `AudioRecorderService` 每个平台项目中的类实现。 此类包含 `StartRecording` 、 `StopRecording` 和支持方法，这些方法使用平台 api 从设备的麦克风记录音频，并将其存储为 wav 文件。 在 iOS 上， `AudioRecorderService` 使用 `AVFoundation` API 来记录音频。 在 Android 上， `AudioRecordService` 使用 `AudioRecord` API 来记录音频。 在通用 Windows 平台 (UWP) 上， `AudioRecorderService` 使用 `AudioGraph` API 来记录音频。
 
 ### <a name="invoke-cognitive-services"></a>调用认知服务
 
 示例应用程序调用以下 Microsoft 认知服务：
 
-- Microsoft 语音 API。 有关详细信息，请参阅[使用 Microsoft SPEECH API 的语音识别](speech-recognition.md)。
-- 必应拼写检查 API。 有关详细信息，请参阅[使用必应拼写检查 API 的拼写检查](spell-check.md)。
-- 转换 API。 有关详细信息，请参阅[使用转换器 API 进行文本翻译](text-translation.md)。
-- 人脸 API。 有关详细信息，请参阅[使用人脸 API 的情感识别](emotion-recognition.md)。
+- Microsoft 语音 API。 有关详细信息，请参阅 [使用 Microsoft SPEECH API 的语音识别](speech-recognition.md)。
+- 必应拼写检查 API。 有关详细信息，请参阅 [使用必应拼写检查 API 的拼写检查](spell-check.md)。
+- 转换 API。 有关详细信息，请参阅 [使用转换器 API 进行文本翻译](text-translation.md)。
+- 人脸 API。 有关详细信息，请参阅 [使用人脸 API 的情感识别](emotion-recognition.md)。
 
 ## <a name="related-links"></a>相关链接
 
 - [语音识别和语音服务 API](~/xamarin-forms/data-cloud/azure-cognitive-services/speech-recognition.md)
 - [Microsoft 认知服务文档](https://www.microsoft.com/cognitive-services/documentation)
-- [Todo 认知服务（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
+- [Todo 认知服务 (示例) ](/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)

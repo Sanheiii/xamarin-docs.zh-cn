@@ -10,12 +10,12 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a0c30d32d53397392a4be2ca984ac5f60975ca78
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 22e020ad585c39671d3e3cc8ec47f55c8c41c90c
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86936313"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563752"
 ---
 # <a name="entry-font-size-on-ios"></a>IOS 上的输入字体大小
 
@@ -46,7 +46,7 @@ using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 entry.On<iOS>().EnableAdjustsFontSizeToFitWidth();
 ```
 
-`Entry.On<iOS>`方法指定此平台特定的仅在 iOS 上运行。 [ `Entry.EnableAdjustsFontSizeToFitWidth` ] （X： Xamarin.Forms 。PlatformConfiguration. iOSSpecific. EnableAdjustsFontSizeToFitWidth （ Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration、 Xamarin.Forms 。Entry}））方法，该方法 [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) 用于缩放输入文本文本的字号，以确保它适合于 [`Entry`](xref:Xamarin.Forms.Entry) 。 此外， [`Entry`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Entry) 命名空间中的类 `Xamarin.Forms.PlatformConfiguration.iOSSpecific` 还具有 [ `DisableAdjustsFontSizeToFitWidth` ] （x： Xamarin.Forms 。PlatformConfiguration. iOSSpecific. DisableAdjustsFontSizeToFitWidth （ Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration、 Xamarin.Forms 。Entry}））方法，该方法可禁用特定于平台的和 [ `SetAdjustsFontSizeToFitWidth` ] （x： Xamarin.Forms 。PlatformConfiguration. iOSSpecific. SetAdjustsFontSizeToFitWidth （ Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration、 Xamarin.Forms 。Entry}，System.object）方法，该方法可用于通过调用 [ `AdjustsFontSizeToFitWidth` ] （x：）来切换字体大小缩放。 Xamarin.FormsPlatformConfiguration. iOSSpecific. AdjustsFontSizeToFitWidth （ Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration、 Xamarin.Forms 。Entry}））方法：
+`Entry.On<iOS>`方法指定此平台特定的仅在 iOS 上运行。 [ `Entry.EnableAdjustsFontSizeToFitWidth` ] (x： Xamarin.Forms 。PlatformConfiguration Xamarin.Forms . EnableAdjustsFontSizeToFitWidth (。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration、 Xamarin.Forms 。Entry} ) # A3 方法，在 [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) 命名空间中，用于缩放输入文本文本的字号，以确保它适合于 [`Entry`](xref:Xamarin.Forms.Entry) 。 此外， [`Entry`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Entry) 命名空间中的类 `Xamarin.Forms.PlatformConfiguration.iOSSpecific` 还具有 [ `DisableAdjustsFontSizeToFitWidth` ] (x： Xamarin.Forms 。PlatformConfiguration Xamarin.Forms . DisableAdjustsFontSizeToFitWidth (。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration、 Xamarin.Forms 。Entry} ) 禁用特定于平台的 # A3 方法，[ `SetAdjustsFontSizeToFitWidth` ] (x： Xamarin.Forms 。PlatformConfiguration Xamarin.Forms . SetAdjustsFontSizeToFitWidth (。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration、 Xamarin.Forms 。Entry}，system.string) # A7 方法，该方法可用于通过调用 [ `AdjustsFontSizeToFitWidth` ] (x：来切换字体大小缩放。 Xamarin.FormsPlatformConfiguration Xamarin.Forms . AdjustsFontSizeToFitWidth (。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration、 Xamarin.Forms 。Entry} ) # A11 方法：
 
 ```csharp
 entry.On<iOS>().SetAdjustsFontSizeToFitWidth(!entry.On<iOS>().AdjustsFontSizeToFitWidth());
@@ -58,6 +58,6 @@ entry.On<iOS>().SetAdjustsFontSizeToFitWidth(!entry.On<iOS>().AdjustsFontSizeToF
 
 ## <a name="related-links"></a>相关链接
 
-- [PlatformSpecifics （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [PlatformSpecifics (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [创建平台特定信息](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [iOSSpecific API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

@@ -10,12 +10,12 @@ ms.date: 07/10/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d6f3304c9eeb87405ab303a80450a1cd8b2af267
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: c355816ec1b89801814b217cad8a23be2f453226
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938055"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563791"
 ---
 # <a name="imagebutton-drop-shadows-on-android"></a>Android 上的 ImageButton 投影
 
@@ -67,8 +67,8 @@ imageButton.On<Android>()
 
 `ImageButton.On<Android>`方法指定此平台特定的仅在 Android 上运行。 `ImageButton.SetIsShadowEnabled`命名空间中的方法 [`Xamarin.Forms.PlatformConfiguration.AndroidSpecific`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) 用于控制是否在上启用了投影 `ImageButton` 。 此外，可以调用以下方法来控制投影：
 
-- `SetShadowColor`–设置投影的颜色。 默认颜色为 [`Color.Default`](xref:Xamarin.Forms.Color.Default*) 。
-- `SetShadowOffset`–设置投影的偏移量。 偏移量会更改阴影的转换方向，并指定为 [`Size`](xref:Xamarin.Forms.Size) 值。 `Size`结构值以与设备无关的单位表示，其第一个值为向左（负值）或向右（正值）的距离，第二个值为上面的距离（负值）或更低（正值）。 此属性的默认值为（0.0，0.0），这会导致在的每一侧周围都有投影 `ImageButton` 。
+- `SetShadowColor` –设置投影的颜色。 默认颜色为 [`Color.Default`](xref:Xamarin.Forms.Color.Default*) 。
+- `SetShadowOffset` –设置投影的偏移量。 偏移量会更改阴影的转换方向，并指定为 [`Size`](xref:Xamarin.Forms.Size) 值。 `Size`结构值以与设备无关的单位表示，其第一个值为向左 (负值) 或右 (正值) ，第二个值是高于正值 (或低于) 负值 (的距离。 此属性的默认值为 (0.0，0.0) ，这会导致在的每一侧周围都有投影 `ImageButton` 。
 - `SetShadowRadius`–设置用于呈现投影的模糊半径。 默认半径值为10.0。
 
 > [!NOTE]
@@ -80,7 +80,7 @@ imageButton.On<Android>()
 
 ## <a name="related-links"></a>相关链接
 
-- [PlatformSpecifics （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [PlatformSpecifics (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [创建平台特定信息](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [AndroidSpecific API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)
 - [AndroidSpecific. AppCompat API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat)

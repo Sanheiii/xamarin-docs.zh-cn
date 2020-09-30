@@ -10,12 +10,12 @@ ms.date: 07/10/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 0e4300354588e5055e58251caa547a56c751fd94
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: ca8fdf101d521bf5cc58edecc523a035577be09b
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86936066"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563362"
 ---
 # <a name="visualelement-legacy-color-mode-on-android"></a>Android 上的 VisualElement 旧版颜色模式
 
@@ -49,18 +49,18 @@ using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
 _legacyColorModeDisabledButton.On<Android>().SetIsLegacyColorModeEnabled(false);
 ```
 
-`VisualElement.On<Android>`方法指定此平台特定的仅在 Android 上运行。 [ `VisualElement.SetIsLegacyColorModeEnabled` ] （X： Xamarin.Forms 。PlatformConfiguration. AndroidSpecific. VisualElement. SetIsLegacyColorModeEnabled （ Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration Xamarin.Forms 。VisualElement}，System.object）方法， [`Xamarin.Forms.PlatformConfiguration.AndroidSpecific`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) 用于控制是否禁用旧颜色模式的功能。 此外，[ `VisualElement.GetIsLegacyColorModeEnabled` ] （x： Xamarin.Forms 。PlatformConfiguration. AndroidSpecific. VisualElement. GetIsLegacyColorModeEnabled （ Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration Xamarin.Forms 。VisualElement}））方法可用于返回是否禁用旧颜色模式。
+`VisualElement.On<Android>`方法指定此平台特定的仅在 Android 上运行。 [ `VisualElement.SetIsLegacyColorModeEnabled` ] (x： Xamarin.Forms 。PlatformConfiguration. AndroidSpecific. VisualElement. SetIsLegacyColorModeEnabled (Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration Xamarin.Forms 。VisualElement} （在命名空间中）) # A3 方法 [`Xamarin.Forms.PlatformConfiguration.AndroidSpecific`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) 用于控制是否禁用旧颜色模式。 此外，[ `VisualElement.GetIsLegacyColorModeEnabled` ] (x： Xamarin.Forms 。PlatformConfiguration. AndroidSpecific. VisualElement. GetIsLegacyColorModeEnabled (Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration Xamarin.Forms 。VisualElement} ) # A3 方法可用于返回是否禁用旧颜色模式。
 
 结果就是可以禁用旧的颜色模式，这样，即使在禁用视图时，用户也仍会保留对视图设置的颜色：
 
 ![已禁用旧版颜色模式](legacy-color-mode-images/legacy-color-mode-disabled.png)
 
 > [!NOTE]
-> 在 [`VisualStateGroup`](xref:Xamarin.Forms.VisualStateGroup) 视图上设置时，旧的颜色模式完全被忽略。 有关可视状态的详细信息，请[参阅 Xamarin.Forms 可视状态管理器](~/xamarin-forms/user-interface/visual-state-manager.md)。
+> 在 [`VisualStateGroup`](xref:Xamarin.Forms.VisualStateGroup) 视图上设置时，旧的颜色模式完全被忽略。 有关可视状态的详细信息，请 [参阅 Xamarin.Forms 可视状态管理器](~/xamarin-forms/user-interface/visual-state-manager.md)。
 
 ## <a name="related-links"></a>相关链接
 
-- [PlatformSpecifics （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [PlatformSpecifics (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [创建平台特定信息](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [AndroidSpecific API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)
 - [AndroidSpecific. AppCompat API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat)

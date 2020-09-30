@@ -10,26 +10,26 @@ ms.date: 05/24/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2571375e7ad28acbf367870b5c48e19d3a7525e7
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: f2e6735be2593133f755f87b365b8352bf09ebb4
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86931243"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563076"
 ---
 # <a name="svg-path-data-in-skiasharp"></a>SkiaSharp 中的 SVG 路径数据
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _使用可缩放矢量图形格式的文本字符串定义路径_
 
-[`SKPath`](xref:SkiaSharp.SKPath)类支持通过可缩放矢量图形（SVG）规范所建立的格式的文本字符串来定义整个路径对象。 本文稍后会介绍如何在文本字符串中表示整个路径，例如：
+[`SKPath`](xref:SkiaSharp.SKPath)类支持通过可缩放矢量图形 (SVG) 规范所建立的格式的文本字符串来定义整个路径对象。 本文稍后会介绍如何在文本字符串中表示整个路径，例如：
 
 ![使用 SVG 路径数据定义的示例路径](path-data-images/pathdatasample.png)
 
 SVG 是基于 XML 的 web 页面编程语言。 由于 SVG 必须允许在标记中定义路径而不是一系列函数调用，因此 SVG 标准包含一种将整个图形路径指定为文本字符串的极其简洁的方式。
 
-在 SkiaSharp 中，此格式称为 "SVG 路径-数据"。 基于 Windows XAML 的编程环境中也支持该格式，其中包括 Windows Presentation Foundation 和通用 Windows 平台，其中称为 "[路径标记语法](/dotnet/framework/wpf/graphics-multimedia/path-markup-syntax)" 或 "[移动和绘制命令" 语法](/windows/uwp/xaml-platform/move-draw-commands-syntax/)。 它还可用作矢量图形图像的交换格式，尤其是在基于文本的文件（如 XML）中。
+在 SkiaSharp 中，此格式称为 "SVG 路径-数据"。 基于 Windows XAML 的编程环境中也支持该格式，其中包括 Windows Presentation Foundation 和通用 Windows 平台，其中称为 " [路径标记语法](/dotnet/framework/wpf/graphics-multimedia/path-markup-syntax) " 或 " [移动和绘制命令" 语法](/windows/uwp/xaml-platform/move-draw-commands-syntax/)。 它还可用作矢量图形图像的交换格式，尤其是在基于文本的文件（如 XML）中。
 
 [`SKPath`](xref:SkiaSharp.SKPath)类定义了两个方法，其中的 `SvgPathData` 名称中包含单词：
 
@@ -41,7 +41,7 @@ public string ToSvgPathData()
 
 静态 [`ParseSvgPathData`](xref:SkiaSharp.SKPath.ParseSvgPathData(System.String)) 方法将字符串转换为 `SKPath` 对象，同时 [`ToSvgPathData`](xref:SkiaSharp.SKPath.ToSvgPathData) 将 `SKPath` 对象转换为字符串。
 
-下面是位于点（0，0）上、半径为100的五角星的 SVG 字符串：
+下面是一个 SVG 字符串，其中有一个位于点 (0，0) 的点，半径为100：
 
 ```
 "M 0 -100 L 58.8 90.9, -95.1 -30.9, 95.1 -30.9, -58.8 80.9 Z"
@@ -53,7 +53,7 @@ public string ToSvgPathData()
 "M0-100L58.8 90.9-95.1-30.9 95.1-30.9-58.8 80.9Z"
 ```
 
-Svg 路径数据的语法在[svg 规范的8.3 节](https://www.w3.org/TR/SVG11/paths.html#PathData)中进行了正式记录。 下面是一个摘要：
+Svg 路径数据的语法在 [svg 规范的8.3 节](https://www.w3.org/TR/SVG11/paths.html#PathData)中进行了正式记录。 下面是一个摘要：
 
 ## <a name="moveto"></a>**MoveTo**
 
@@ -69,7 +69,7 @@ M x y
 L x y ...
 ```
 
-此命令向路径添加一条直线，并将新的当前位置设置为最后一行的末尾。 可以在命令后跟 `L` 多对*x*和*y*坐标。
+此命令向路径添加一条直线 (或线条) 并将新的当前位置设置为最后一行的末尾。 可以在命令后跟 `L` 多对 *x* 和 *y* 坐标。
 
 ## <a name="horizontal-lineto"></a>**水平 LineTo**
 
@@ -77,7 +77,7 @@ L x y ...
 H x ...
 ```
 
-此命令向路径添加水平线，并将新的当前位置设置为行的末尾。 您可以在命令后跟 `H` 多个*x*坐标，但这并不是很有意义。
+此命令向路径添加水平线，并将新的当前位置设置为行的末尾。 您可以在命令后跟 `H` 多个 *x* 坐标，但这并不是很有意义。
 
 ## <a name="vertical-line"></a>**竖线**
 
@@ -105,11 +105,11 @@ A rx ry rotation-angle large-arc-flag sweep-flag x y ...
 
 *Rx*和*r*参数是椭圆的水平半径和垂直半径。 *旋转角度*以顺时针度为单位。
 
-对于大弧，将*大弧线标志*设置为1，将小弧线设置为0。
+对于大弧，将 *大弧线标志* 设置为1，将小弧线设置为0。
 
-将 "*扫描-标志*" 设置为 "1"，顺时针，将设置为 "0"。
+将 " *扫描-标志* " 设置为 "1"，顺时针，将设置为 "0"。
 
-弧线绘制到点（*x*， *y*），后者将成为新的当前位置。
+圆弧绘制到 (*x*， *y*) 点，这将成为新的当前位置。
 
 ## <a name="cubicto"></a>**CubicTo**
 
@@ -117,7 +117,7 @@ A rx ry rotation-angle large-arc-flag sweep-flag x y ...
 C x1 y1 x2 y2 x3 y3 ...
 ```
 
-此命令会将从当前位置到（*x3*， *y3*）的三次贝塞尔曲线添加到新的当前位置。 点（*x1*， *y1*）和（*x2*， *y2*）是控制点。
+此命令将从当前位置到 (*x3*， *y3*) 的立方贝塞尔曲线添加到新的当前位置。  (*x1*， *y1*) 和 (*x2*， *y2*) 为控制点。
 
 单个命令可以指定多个贝塞尔曲线 `C` 。 点数必须为3的倍数。
 
@@ -127,7 +127,7 @@ C x1 y1 x2 y2 x3 y3 ...
 S x2 y2 x3 y3 ...
 ```
 
-此命令应遵循常规的 Bezier 命令（尽管这并不是绝对必需的）。 平滑 Bezier 命令计算第一个控制点，使其成为其各个点周围的前一贝塞尔曲线的第二个控制点的反射。 因此，这三个点是 colinear 的，两个 Bezier 曲线之间的连接是平滑的。
+此命令应遵循常规的 Bezier 命令 (，不过这并不是严格需要的) 。 平滑 Bezier 命令计算第一个控制点，使其成为其各个点周围的前一贝塞尔曲线的第二个控制点的反射。 因此，这三个点是 colinear 的，两个 Bezier 曲线之间的连接是平滑的。
 
 ## <a name="quadto"></a>**QuadTo**
 
@@ -135,7 +135,7 @@ S x2 y2 x3 y3 ...
 Q x1 y1 x2 y2 ...
 ```
 
-对于二次贝塞尔曲线，点数必须是2的倍数。 控制点为（*x1*， *y1*），终点（和新的当前位置）为（*x2*， *y2*）
+对于二次贝塞尔曲线，点数必须是2的倍数。 控制点为 (*x1*， *y1*) ，终点 (，新的当前位置) 为 (*x2*， *y2*) 
 
 还有一个平滑的二次曲线命令：
 
@@ -151,7 +151,7 @@ T x2 y2 ...
 
 静态 [`SKPath.ParseSvgPathData`](xref:SkiaSharp.SKPath.ParseSvgPathData(System.String)) 方法需要 SVG 命令的有效字符串。 如果检测到任何语法错误，则该方法将返回 `null` 。 这是唯一的错误指示。
 
-[`ToSvgPathData`](xref:SkiaSharp.SKPath.ToSvgPathData)方法非常方便，可用于从现有对象获取 SVG 路径数据 `SKPath` 以传输到其他程序，或者存储为基于文本的文件格式（如 XML）。 （ `ToSvgPathData` 本文中的示例代码未演示此方法。）*不*希望 `ToSvgPathData` 返回与创建该路径的方法调用完全对应的字符串。 特别是，您将发现该弧形转换为多个 `QuadTo` 命令，这就是它们在从返回的路径数据中的显示方式 `ToSvgPathData` 。
+[`ToSvgPathData`](xref:SkiaSharp.SKPath.ToSvgPathData)方法非常方便，可用于从现有对象获取 SVG 路径数据 `SKPath` 以传输到其他程序，或者存储为基于文本的文件格式（如 XML）。  (`ToSvgPathData` 本文的示例代码中未演示方法。 ) *不* 希望 `ToSvgPathData` 返回与创建该路径的方法调用完全对应的字符串。 特别是，您将发现该弧形转换为多个 `QuadTo` 命令，这就是它们在从返回的路径数据中的显示方式 `ToSvgPathData` 。
 
 **路径数据 Hello**页面使用 SVG 路径数据拼写了单词 "hello"。 `SKPath`和 `SKPaint` 对象均定义为类中的字段 [`PathDataHelloPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathDataHelloPage.cs) ：
 
@@ -177,11 +177,11 @@ public class PathDataHelloPage : ContentPage
 }
 ```
 
-定义文本字符串的路径从点的左上角开始（0，0）。 每个字母为50单位宽，100个单位高，字母用另外25个单位分隔，这意味着整个路径为350个单位。
+定义文本字符串的路径从 (0，0) 点的左上角开始。 每个字母为50单位宽，100个单位高，字母用另外25个单位分隔，这意味着整个路径为350个单位。
 
 "H" 由 3 1 行等高线组成，而 "E" 是两个连接的三次贝塞尔曲线。 请注意，该 `C` 命令后跟六个点，两个控制点的 y 坐标为–10和110，这会将它们放在其他字母的 y 坐标范围之外。 "L" 是两条连接的线，而 "O" 是使用命令呈现的椭圆 `A` 。
 
-请注意， `M` 最后一个等高线的命令将位置设置为点（350，50），这是 "O" 左侧的垂直中心。 如命令后面的第一个数字所示 `A` ，椭圆的水平半径为25，垂直半径为50。 结束点通过命令中的最后一个数字对 `A` 表示点（300，49.9）。 这与开始点特意略有不同。 如果端点设置为等于开始点，则不会呈现弧。 若要绘制完整的椭圆，你必须将终结点设置为接近（但不等于）开始点，或者必须使用两个或更多 `A` 命令，每个命令都适用于完整椭圆的一部分。
+请注意， `M` 最后一个等高线的命令会将位置设置为 (350，50) 点，这是 "O" 左侧的垂直中心。 如命令后面的第一个数字所示 `A` ，椭圆的水平半径为25，垂直半径为50。 结束点通过命令中的最后一对数字进行 `A` 表示，该数字表示点 (300，49.9) 。 这与开始点特意略有不同。 如果端点设置为等于开始点，则不会呈现弧。 若要绘制完整的椭圆，你必须将终结点设置为接近 (但不等于开始点) ，或者必须使用两个或更多 `A` 命令，每个命令都适用于完整椭圆的一部分。
 
 你可能想要将以下语句添加到页面的构造函数中，然后设置一个断点来检查生成的字符串：
 
@@ -191,7 +191,7 @@ string str = helloPath.ToSvgPathData();
 
 您将发现， `Q` 使用二次贝塞尔曲线使弧线的段落近似为一系列命令的弧线已被替换。
 
-`PaintSurface`处理程序获取路径的紧密边界，该边界不包括 "E" 和 "O" 曲线的控制点。 这三种转换将路径中心移到点（0，0），将路径缩放为画布的大小（还会将笔划宽度考虑在内），然后将路径的中心移动到画布的中心：
+`PaintSurface`处理程序获取路径的紧密边界，该边界不包括 "E" 和 "O" 曲线的控制点。 这三种转换将路径中心移动到 (0，0) 的点，将路径缩放为画布的大小 (但同时将笔划宽度纳入) ，然后将路径中心移至画布中心：
 
 ```csharp
 public class PathDataHelloPage : ContentPage
@@ -258,7 +258,7 @@ public class PathDataCatPage : ContentPage
 }
 ```
 
-Cat 的头是一个圆圈，这里显示了两个 `A` 命令，每个命令都绘制一个半圆。 `A`头的两个命令都定义100的水平半径和垂直半径。 第一个弧从（240，100）开始，到（240，300）结束，后者将成为以（240，100）结束的第二个弧线的起点。
+Cat 的头是一个圆圈，这里显示了两个 `A` 命令，每个命令都绘制一个半圆。 `A`头的两个命令都定义100的水平半径和垂直半径。 第一条弧从 (240，100) 开始，以 (240，300) 结束，这将成为第二个弧线的起点，该曲线将以 (240、100) 结束。
 
 这两个眼睛还呈现有两个 `A` 命令，与 cat 头一样，第二个 `A` 命令结束于第一个命令的开头 `A` 。 但是，这些命令对 `A` 不会定义椭圆。 每个弧线的都是40单位，半径也是40个单位，这意味着这些圆弧并不完全 semicircles。
 
@@ -297,7 +297,7 @@ public class PathDataCatPage : ContentPage
 
 通常，当 `SKPath` 对象定义为字段时，必须在构造函数或其他方法中定义路径的轮廓。 但是，在使用 SVG 路径数据时，您已看到可以完全在字段定义中指定路径。
 
-"[**旋转转换**](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/rotate.md)" 一文中较早的实用**模拟时钟**示例显示了时钟作为简单线条的手。 下面这个非常好的**模拟时钟**程序用 `SKPath` 定义为类中的字段的对象 [`PrettyAnalogClockPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PrettyAnalogClockPage.cs) 和 `SKPaint` 对象替换这些行：
+"[**旋转转换**](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/rotate.md)" 一文中较早的实用**模拟时钟**示例显示了时钟作为简单线条的手。 下面这个非常好的 **模拟时钟** 程序用 `SKPath` 定义为类中的字段的对象 [`PrettyAnalogClockPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PrettyAnalogClockPage.cs) 和 `SKPaint` 对象替换这些行：
 
 ```csharp
 public class PrettyAnalogClockPage : ContentPage
@@ -337,7 +337,7 @@ public class PrettyAnalogClockPage : ContentPage
 
 现在，小时和分钟都包含区域。 若要使这些指针彼此不同，则使用和对象绘制黑色轮廓和灰色填充 `handStrokePaint` `handFillPaint` 。
 
-在前面的较小的**模拟时钟**示例中，标记为小时和分钟的小圆圈是在循环中绘制的。 在这个**非常好的模拟时钟**示例中，使用了完全不同的方法：小时和分钟标记是使用和对象绘制的点线 `minuteMarkPaint` `hourMarkPaint` ：
+在前面的较小的 **模拟时钟** 示例中，标记为小时和分钟的小圆圈是在循环中绘制的。 在这个 **非常好的模拟时钟** 示例中，使用了完全不同的方法：小时和分钟标记是使用和对象绘制的点线 `minuteMarkPaint` `hourMarkPaint` ：
 
 ```csharp
 public class PrettyAnalogClockPage : ContentPage
@@ -434,5 +434,5 @@ public class PrettyAnalogClockPage : ContentPage
 
 ## <a name="related-links"></a>相关链接
 
-- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [SkiaSharp Api](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (示例) ](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

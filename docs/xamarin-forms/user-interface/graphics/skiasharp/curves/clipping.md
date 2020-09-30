@@ -10,12 +10,12 @@ ms.date: 06/16/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a4bb6c30ada13691146d00d2094df8f13ca453b9
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 604d2aa8368c85b852530f999601fffca8e104e6
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84140252"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562920"
 ---
 # <a name="clipping-with-paths-and-regions"></a>按路径和区域进行剪裁
 
@@ -23,13 +23,13 @@ ms.locfileid: "84140252"
 
 _使用路径将图形剪辑到特定区域和创建区域_
 
-有时需要将图形呈现限制为特定区域。 这称为 "*剪裁*"。 您可以使用剪辑来实现特殊效果，例如通过 keyhole 查看的这一图像：
+有时需要将图形呈现限制为特定区域。 这称为 " *剪裁*"。 您可以使用剪辑来实现特殊效果，例如通过 keyhole 查看的这一图像：
 
 ![通过 keyhole 的猴子](clipping-images/clippingsample.png)
 
 *剪辑区域*是呈现图形的屏幕区域。 不会呈现在剪辑区域之外显示的任何内容。 剪辑区域通常由矩形或 [`SKPath`](xref:SkiaSharp.SKPath) 对象定义，但您也可以使用对象定义剪辑区域 [`SKRegion`](xref:SkiaSharp.SKRegion) 。 这两种类型的对象最初看起来是相关的，因为你可以从路径创建区域。 但是，您不能从区域创建路径，并且它们在内部都非常不同：路径由一系列线条和曲线组成，而区域由一系列水平扫描线定义。
 
-上图是通过**Keyhole**页创建的。 [`MonkeyThroughKeyholePage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/MonkeyThroughKeyholePage.cs)类使用 SVG 数据定义路径，并使用构造函数从程序资源加载位图：
+上图是通过 **Keyhole** 页创建的。 [`MonkeyThroughKeyholePage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/MonkeyThroughKeyholePage.cs)类使用 SVG 数据定义路径，并使用构造函数从程序资源加载位图：
 
 ```csharp
 public class MonkeyThroughKeyholePage : ContentPage
@@ -104,7 +104,7 @@ canvas.ClipPath(keyholePath);
 
 [![通过 Keyhole 页面的三重屏幕截图](clipping-images/monkeythroughkeyhole-small.png)](clipping-images/monkeythroughkeyhole-large.png#lightbox)
 
-当调用方法时，剪切路径服从有效转换 `ClipPath` ，而不是在显示图形对象（如位图）时生效的转换。 剪切路径是画布状态的一部分，该状态随方法一起保存 `Save` 并通过 `Restore` 方法还原。
+当调用方法时，剪切路径服从于有效的转换 `ClipPath` ，而不是在显示图形对象 (如位图) 时生效的转换。 剪切路径是画布状态的一部分，该状态随方法一起保存 `Save` 并通过 `Restore` 方法还原。
 
 ## <a name="combining-clipping-paths"></a>合并剪切路径
 
@@ -122,7 +122,7 @@ public void ClipPath(SKPath path, SKClipOperation operation = SKClipOperation.In
 public Void ClipRect(SKRect rect, SKClipOperation operation = SKClipOperation.Intersect, Boolean antialias = false);
 ```
 
-默认情况下，生成的剪辑区域是现有剪辑区域与或 `SKPath` 方法中指定的或的交集 `SKRect` `ClipPath` `ClipRect` 。 这会在**四个圆圈相交**的 "剪切" 页中进行演示。 `PaintSurface`类中的处理程序 [`FourCircleInteresectClipPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/FourCircleIntersectClipPage.cs) 重用相同的 `SKPath` 对象来创建四个重叠圆圈，其中每个圆通过连续调用来减小剪辑区域 `ClipPath` ：
+默认情况下，生成的剪辑区域是现有剪辑区域与或 `SKPath` 方法中指定的或的交集 `SKRect` `ClipPath` `ClipRect` 。 这会在 **四个圆圈相交** 的 "剪切" 页中进行演示。 `PaintSurface`类中的处理程序 [`FourCircleInteresectClipPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/FourCircleIntersectClipPage.cs) 重用相同的 `SKPath` 对象来创建四个重叠圆圈，其中每个圆通过连续调用来减小剪辑区域 `ClipPath` ：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -173,9 +173,9 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 [`SKClipOperation`](xref:SkiaSharp.SKClipOperation)枚举只有两个成员：
 
-- `Difference`从现有剪辑区域中移除指定的路径或矩形
+- `Difference` 从现有剪辑区域中移除指定的路径或矩形
 
-- `Intersect`与指定的路径或矩形与现有剪辑区域相交
+- `Intersect` 与指定的路径或矩形与现有剪辑区域相交
 
 如果将类中的四个 `SKClipOperation.Intersect` 参数替换 `FourCircleIntersectClipPage` 为 `SKClipOperation.Difference` ，则会看到以下内容：
 
@@ -183,7 +183,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 已从剪辑区域中删除四个重叠圆圈。
 
-"**剪辑操作**" 页面说明了这两个操作之间的区别，只包含一对圆圈。 左侧的第一个圆圈将添加到剪辑区域，其中包含的默认剪辑操作 `Intersect` ，而右侧的第二个圆圈添加到剪辑区域，其中包含由文本标签指示的剪辑操作：
+" **剪辑操作** " 页面说明了这两个操作之间的区别，只包含一对圆圈。 左侧的第一个圆圈将添加到剪辑区域，其中包含的默认剪辑操作 `Intersect` ，而右侧的第二个圆圈添加到剪辑区域，其中包含由文本标签指示的剪辑操作：
 
 [!["剪辑操作" 页的三个屏幕截图](clipping-images//clipoperations-small.png)](clipping-images/clipoperations-large.png#lightbox)
 
@@ -286,9 +286,9 @@ public void ClipRegion(SKRegion region, SKClipOperation operation = SKClipOperat
 
 [!["区域操作" 页的三个屏幕截图](clipping-images//regionoperations-small.png)](clipping-images/regionoperations-large.png#lightbox)
 
-这两个圆圈的组合是否有可能？ 将生成的映像视为三个组件的组合，这些组件本身在 `Difference` 、 `Intersect` 和操作中可见 `ReverseDifference` 。 组合的总数为第三次幂，即8个。 缺少的两个都是原始区域（从根本就没有调用 `Op` ）和一个完全空区域。
+这两个圆圈的组合是否有可能？ 将生成的映像视为三个组件的组合，这些组件本身在 `Difference` 、 `Intersect` 和操作中可见 `ReverseDifference` 。 组合的总数为第三次幂，即8个。 缺少的两个都是原始区域 (这是因为不会 `Op` 在所有) 和完全空区域调用。
 
-由于需要首先创建一个路径，然后从该路径中创建一个区域，然后组合多个区域，因此很难使用区域进行剪辑。 "**区域操作**" 页的总体结构与**剪辑操作**非常相似，但 [`RegionOperationsPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/RegionOperationsPage.cs) 类将屏幕分为六个区域，并显示使用区域执行此作业所需的额外工作。
+由于需要首先创建一个路径，然后从该路径中创建一个区域，然后组合多个区域，因此很难使用区域进行剪辑。 " **区域操作** " 页的总体结构与 **剪辑操作** 非常相似，但 [`RegionOperationsPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/RegionOperationsPage.cs) 类将屏幕分为六个区域，并显示使用区域执行此作业所需的额外工作。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -429,7 +429,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 区域显然是一系列离散坐标。
 
-如果不需要使用转换连接到剪辑区域，则可以使用区域进行剪辑，如**四叶三月**页所示。 [`FourLeafCloverPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/FourLeafCloverPage.cs)类从四个圆形区域构造一个复合区域，将该复合区域设置为剪辑区域，然后在页面的中心绘制一系列360直线 emanating：
+如果不需要使用转换连接到剪辑区域，则可以使用区域进行剪辑，如 **四叶三月** 页所示。 [`FourLeafCloverPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/FourLeafCloverPage.cs)类从四个圆形区域构造一个复合区域，将该复合区域设置为剪辑区域，然后在页面的中心绘制一系列360直线 emanating：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -515,5 +515,5 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ## <a name="related-links"></a>相关链接
 
-- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [SkiaSharp Api](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (示例) ](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

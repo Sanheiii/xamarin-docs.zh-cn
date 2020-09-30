@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsCarouselView 数据
+title: Xamarin.Forms CarouselView 数据
 description: 使用数据填充 CarouselView，方法是将其 System.windows.controls.itemscontrol.itemssource 属性设置为任何实现 IEnumerable 的集合。
 ms.prod: xamarin
 ms.assetid: 20DB2C57-CE3A-4D91-80DC-73AE361A3CB0
@@ -10,20 +10,20 @@ ms.date: 04/29/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f2359880626b292f410af094c82ba6bb3ed50426
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: b0654aef28ac356fdffc5a846f9ca654db240367
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87918406"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562855"
 ---
-# <a name="no-locxamarinforms-carouselview-data"></a>Xamarin.FormsCarouselView 数据
+# <a name="no-locxamarinforms-carouselview-data"></a>Xamarin.Forms CarouselView 数据
 
 ![预发行版 API](~/media/shared/preview.png)
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
 
-[`CarouselView`](xref:Xamarin.Forms.CarouselView)包括以下属性，这些属性定义要显示的数据及其外观：
+[`CarouselView`](xref:Xamarin.Forms.CarouselView) 包括以下属性，这些属性定义要显示的数据及其外观：
 
 - [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource)类型为的 `IEnumerable` 指定要显示的项的集合，其默认值为 `null` 。
 - [`ItemTemplate`](xref:Xamarin.Forms.ItemsView.ItemTemplate)类型为的 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 指定要应用于要显示的项集合中的每一项的模板。
@@ -31,9 +31,9 @@ ms.locfileid: "87918406"
 这些属性是由对象支持的 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，这意味着属性可以是数据绑定的目标。
 
 > [!NOTE]
-> [`CarouselView`](xref:Xamarin.Forms.CarouselView)定义一个 `ItemsUpdatingScrollMode` 属性，该属性表示在 `CarouselView` 添加新项时的滚动行为。 有关此属性的详细信息，请参阅[在添加新项时控制滚动位置](scrolling.md#control-scroll-position-when-new-items-are-added)。
+> [`CarouselView`](xref:Xamarin.Forms.CarouselView) 定义一个 `ItemsUpdatingScrollMode` 属性，该属性表示在 `CarouselView` 添加新项时的滚动行为。 有关此属性的详细信息，请参阅 [在添加新项时控制滚动位置](scrolling.md#control-scroll-position-when-new-items-are-added)。
 
-[`CarouselView`](xref:Xamarin.Forms.CarouselView)支持在用户滚动时增加数据虚拟化。 有关详细信息，请参阅[以增量方式加载数据](#load-data-incrementally)。
+[`CarouselView`](xref:Xamarin.Forms.CarouselView) 支持在用户滚动时增加数据虚拟化。 有关详细信息，请参阅 [以增量方式加载数据](#load-data-incrementally)。
 
 ## <a name="populate-a-carouselview-with-data"></a>使用数据填充 CarouselView
 
@@ -81,11 +81,11 @@ carouselView.ItemsSource = new string[]
 
 [![在 iOS 和 Android 上包含文本项的 CarouselView 的屏幕截图](populate-data-images/text.png "CarouselView 中的文本项")](populate-data-images/text-large.png#lightbox "CarouselView 中的文本项")
 
-有关如何更改方向的详细信息 [`CarouselView`](xref:Xamarin.Forms.CarouselView) ，请参阅[ Xamarin.Forms CarouselView Layout](layout.md)。 有关如何定义中每个项的外观的信息 `CarouselView` ，请参阅[定义项外观](#define-item-appearance)。
+有关如何更改方向的详细信息 [`CarouselView`](xref:Xamarin.Forms.CarouselView) ，请参阅[ Xamarin.Forms CarouselView Layout](layout.md)。 有关如何定义中每个项的外观的信息 `CarouselView` ，请参阅 [定义项外观](#define-item-appearance)。
 
 ### <a name="data-binding"></a>数据绑定
 
-[`CarouselView`](xref:Xamarin.Forms.CarouselView)使用数据绑定将其属性绑定到集合，可以填充数据 [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource) `IEnumerable` 。 在 XAML 中，这是通过 `Binding` 标记扩展实现的：
+[`CarouselView`](xref:Xamarin.Forms.CarouselView) 使用数据绑定将其属性绑定到集合，可以填充数据 [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource) `IEnumerable` 。 在 XAML 中，这是通过 `Binding` 标记扩展实现的：
 
 ```xaml
 <CarouselView ItemsSource="{Binding Monkeys}" />
@@ -256,7 +256,7 @@ public class MonkeyDataTemplateSelector : DataTemplateSelector
 
 [![IOS 和 Android 上的 CarouselView 运行时项模板选择屏幕截图](populate-data-images/datatemplateselector.png "CarouselView 中的运行时项模板选择")](populate-data-images/datatemplateselector-large.png#lightbox "CarouselView 中的运行时项模板选择")
 
-有关数据模板选择器的详细信息，请参阅[创建 Xamarin.Forms 并重](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)。
+有关数据模板选择器的详细信息，请参阅 [创建 Xamarin.Forms 并重](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)。
 
 > [!IMPORTANT]
 > 使用时 [`CarouselView`](xref:Xamarin.Forms.CarouselView) ，不要将对象的根元素设置 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 为 `ViewCell` 。 这将导致引发异常，因为 `CarouselView` 没有单元的概念。
@@ -291,7 +291,7 @@ public class MonkeyDataTemplateSelector : DataTemplateSelector
 
 ## <a name="context-menus"></a>上下文菜单
 
-[`CarouselView`](xref:Xamarin.Forms.CarouselView)支持通过的项的上下文菜单，该菜单 `SwipeView` 显示带有滑动手势的上下文菜单。 `SwipeView`是一个容器控件，该控件环绕内容项，并为该项内容提供上下文菜单项。 因此， `CarouselView` 通过创建一个来实现上下文菜单， `SwipeView` 该对象用于定义环绕的内容 `SwipeView` ，以及由滑动手势显示的上下文菜单项。 这是通过将添加 `SwipeView` 到中的来实现的 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) ，后者定义中每项数据的外观 `CarouselView` ：
+[`CarouselView`](xref:Xamarin.Forms.CarouselView) 支持通过的项的上下文菜单，该菜单 `SwipeView` 显示带有滑动手势的上下文菜单。 `SwipeView`是一个容器控件，该控件环绕内容项，并为该项内容提供上下文菜单项。 因此， `CarouselView` 通过创建一个来实现上下文菜单， `SwipeView` 该对象用于定义环绕的内容 `SwipeView` ，以及由滑动手势显示的上下文菜单项。 这是通过将添加 `SwipeView` 到中的来实现的 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) ，后者定义中每项数据的外观 `CarouselView` ：
 
 ```xaml
 <CarouselView x:Name="carouselView"
@@ -383,13 +383,13 @@ carouselView.ItemTemplate = new DataTemplate(() =>
 [![IOS 和 Android 上的 CarouselView 底部上下文菜单项的屏幕截图](populate-data-images/swipeview-bottom.png "带有底端 SwipeView 上下文菜单项的 CarouselView")](populate-data-images/swipeview-bottom-large.png#lightbox "带有底端 SwipeView 上下文菜单项的 CarouselView") 
 [ ![IOS 和 Android 上的 CarouselView top 菜单项的屏幕截图](populate-data-images/swipeview-top.png "带有 top SwipeView 上下文菜单项的 CarouselView")](populate-data-images/swipeview-top-large.png#lightbox "带有 top SwipeView 上下文菜单项的 CarouselView")
 
-`SwipeView`支持四种不同的轻扫方向，并通过将 `SwipeItems` 对象添加到的方向集合来定义滑动方向 `SwipeItems` 。 默认情况下，当用户点击一项时，将执行一项刷卡器项。 此外，在执行了一项轻扫项目后，将会隐藏该滑动项，并 `SwipeView` 重新显示内容。 不过，这些行为可以更改。
+`SwipeView` 支持四种不同的轻扫方向，并通过将 `SwipeItems` 对象添加到的方向集合来定义滑动方向 `SwipeItems` 。 默认情况下，当用户点击一项时，将执行一项刷卡器项。 此外，在执行了一项轻扫项目后，将会隐藏该滑动项，并 `SwipeView` 重新显示内容。 不过，这些行为可以更改。
 
 有关控件的详细信息 `SwipeView` ，请参阅[ Xamarin.Forms SwipeView](~/xamarin-forms/user-interface/swipeview.md)。
 
 ## <a name="pull-to-refresh"></a>下拉刷新
 
-[`CarouselView`](xref:Xamarin.Forms.CarouselView)支持通过拉取到刷新功能 `RefreshView` ，这可通过下拉项来刷新要显示的数据。 `RefreshView`是一个容器控件，它提供向其子级提供刷新功能的拉取，前提是子级支持可滚动的内容。 因此，通过将拉取设置为的子级来实现对的请求刷新 `CarouselView` `RefreshView` ：
+[`CarouselView`](xref:Xamarin.Forms.CarouselView) 支持通过拉取到刷新功能 `RefreshView` ，这可通过下拉项来刷新要显示的数据。 `RefreshView`是一个容器控件，它提供向其子级提供刷新功能的拉取，前提是子级支持可滚动的内容。 因此，通过将拉取设置为的子级来实现对的请求刷新 `CarouselView` `RefreshView` ：
 
 ```xaml
 <RefreshView IsRefreshing="{Binding IsRefreshing}"
@@ -428,20 +428,20 @@ refreshView.Content = carouselView;
 
 ## <a name="load-data-incrementally"></a>以增量方式加载数据
 
-[`CarouselView`](xref:Xamarin.Forms.CarouselView)支持在用户滚动时增加数据虚拟化。 这可以实现各种方案，例如，在用户滚动时，从 web 服务异步加载数据页。 此外，还可以配置加载更多数据的点，以便用户不会看到空白空间，也不会停止滚动。
+[`CarouselView`](xref:Xamarin.Forms.CarouselView) 支持在用户滚动时增加数据虚拟化。 这可以实现各种方案，例如，在用户滚动时，从 web 服务异步加载数据页。 此外，还可以配置加载更多数据的点，以便用户不会看到空白空间，也不会停止滚动。
 
-[`CarouselView`](xref:Xamarin.Forms.CarouselView)定义以下属性以控制数据的增量加载：
+[`CarouselView`](xref:Xamarin.Forms.CarouselView) 定义以下属性以控制数据的增量加载：
 
 - `RemainingItemsThreshold`，类型为 `int` ，在事件激发时，列表中尚未显示的项的阈值 `RemainingItemsThresholdReached` 。
 - `RemainingItemsThresholdReachedCommand`，类型为 `ICommand` ，在达到时执行 `RemainingItemsThreshold` 。
 - `RemainingItemsThresholdReachedCommandParameter`，属于 `object` 类型，是传递给 `RemainingItemsThresholdReachedCommand` 的参数。
 
-[`CarouselView`](xref:Xamarin.Forms.CarouselView)还定义了一个 `RemainingItemsThresholdReached` 事件，该事件在 `CarouselView` 滚动到足够多的 `RemainingItemsThreshold` 项尚未显示时激发。 可以处理此事件以加载更多项。 此外，当 `RemainingItemsThresholdReached` 引发事件时， `RemainingItemsThresholdReachedCommand` 将执行，以便在 viewmodel 中进行增量数据加载。
+[`CarouselView`](xref:Xamarin.Forms.CarouselView) 还定义了一个 `RemainingItemsThresholdReached` 事件，该事件在 `CarouselView` 滚动到足够多的 `RemainingItemsThreshold` 项尚未显示时激发。 可以处理此事件以加载更多项。 此外，当 `RemainingItemsThresholdReached` 引发事件时， `RemainingItemsThresholdReachedCommand` 将执行，以便在 viewmodel 中进行增量数据加载。
 
 此属性的默认值 `RemainingItemsThreshold` 为-1，表示 `RemainingItemsThresholdReached` 将永远不会触发该事件。 当属性值为0时， `RemainingItemsThresholdReached` 将在显示中的最后一项时触发事件 [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource) 。 对于大于0的值， `RemainingItemsThresholdReached` 当 `ItemsSource` 包含该数目的项尚未滚动到时，将触发事件。
 
 > [!NOTE]
-> [`CarouselView`](xref:Xamarin.Forms.CarouselView)验证 `RemainingItemsThreshold` 属性，使其值始终大于或等于-1。
+> [`CarouselView`](xref:Xamarin.Forms.CarouselView) 验证 `RemainingItemsThreshold` 属性，使其值始终大于或等于-1。
 
 下面的 XAML 示例显示了一个 [`CarouselView`](xref:Xamarin.Forms.CarouselView) 以增量方式加载数据的：
 
@@ -479,9 +479,9 @@ void OnCollectionViewRemainingItemsThresholdReached(object sender, EventArgs e)
 
 ## <a name="related-links"></a>相关链接
 
-- [CarouselView (示例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
-- [Xamarin.FormsIndicatorView](~/xamarin-forms/user-interface/indicatorview.md)
-- [Xamarin.FormsRefreshView](~/xamarin-forms/user-interface/refreshview.md)
+- [CarouselView (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
+- [Xamarin.Forms IndicatorView](~/xamarin-forms/user-interface/indicatorview.md)
+- [Xamarin.Forms RefreshView](~/xamarin-forms/user-interface/refreshview.md)
 - [Xamarin.Forms数据绑定](~/xamarin-forms/app-fundamentals/data-binding/index.md)
-- [Xamarin.Forms数据模板](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)
+- [Xamarin.Forms 数据模板](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)
 - [创建 Xamarin.Forms 并重](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)

@@ -1,5 +1,5 @@
 ---
-title: 中的动态样式Xamarin.Forms
+title: 中的动态样式 Xamarin.Forms
 description: 本文说明了 Xamarin.Forms 应用程序如何在运行时使用动态资源动态响应样式更改。
 ms.prod: xamarin
 ms.assetid: 13D4FA4B-DF10-42BF-B001-2C49367FC216
@@ -11,14 +11,14 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.custom: video
-ms.openlocfilehash: d40ca3423cca68757cf458faf5cca1138aec5461
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: d6944da583679d58885c20d327b3e43e176eb6fa
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84140083"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563349"
 ---
-# <a name="dynamic-styles-in-xamarinforms"></a>中的动态样式Xamarin.Forms
+# <a name="dynamic-styles-in-no-locxamarinforms"></a>中的动态样式 Xamarin.Forms
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-dynamicstyles)
 
@@ -26,7 +26,7 @@ _样式不会对属性更改做出响应，并在应用程序持续时间内保�
 
 `DynamicResource`标记扩展类似于 `StaticResource` 中的标记扩展，这两个方法都使用字典键从中提取值 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 。 但是，虽然 `StaticResource` 执行单个字典查找，但仍会 `DynamicResource` 保留字典键的链接。 因此，如果替换与该键关联的字典条目，则更改将应用于该视觉对象。 这样就可以在应用程序中进行运行时样式更改。
 
-下面的代码示例演示了 XAML 页中的*动态*样式：
+下面的代码示例演示了 XAML 页中的 *动态* 样式：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Styles.DynamicStylesPage" Title="Dynamic" IconImageSource="xaml.png">
@@ -132,7 +132,7 @@ public class DynamicStylesPageCS : ContentPage
 
 无法使用属性从动态样式中派生样式 [`Style.BasedOn`](xref:Xamarin.Forms.Style.BasedOn) 。 相反， [`Style`](xref:Xamarin.Forms.Style) 该类包含 [`BaseResourceKey`](xref:Xamarin.Forms.Style.BaseResourceKey) 属性，该属性可以设置为字典键，其值可能会动态更改。
 
-下面的代码示例演示了 XAML 页中的*动态*样式继承：
+下面的代码示例演示了 XAML 页中的 *动态* 样式继承：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Styles.DynamicStylesInheritancePage" Title="Dynamic Inheritance" IconImageSource="xaml.png">
@@ -214,8 +214,8 @@ public class DynamicStylesInheritancePageCS : ContentPage
 ## <a name="related-links"></a>相关链接
 
 - [XAML 标记扩展](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
-- [动态样式（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-dynamicstyles)
-- [使用样式（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithstyles)
+- [动态样式 (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-styles-dynamicstyles)
+- [使用样式 (示例) ](/samples/xamarin/xamarin-forms-samples/workingwithstyles)
 - [ResourceDictionary](xref:Xamarin.Forms.ResourceDictionary)
 - [样式](xref:Xamarin.Forms.Style)
 - [](xref:Xamarin.Forms.Setter)Setter

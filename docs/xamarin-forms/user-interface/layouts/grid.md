@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Forms格
+title: Xamarin.Forms 格
 description: Xamarin.Forms网格是一种布局，可将其子级组织到单元格的行和列中。
 ms.prod: xamarin
 ms.assetid: 762B1802-D185-494C-B643-74EED55882FE
@@ -10,22 +10,22 @@ ms.date: 06/15/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9d2e697a07e033fd7c3c8d3efffa1d67f6c097c3
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 59a4d5c0730719d6cc332728c6cab641d02239b4
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84946333"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563557"
 ---
-# <a name="xamarinforms-grid"></a>Xamarin.Forms格
+# <a name="no-locxamarinforms-grid"></a>Xamarin.Forms 格
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-griddemos)
 
-[![Xamarin.Forms格](grid-images/layouts.png "[!基金.无 LOC （Xamarin）] 网格")](grid-images/layouts-large.png#lightbox "[!基金.无 LOC （Xamarin）] 网格")
+[![：： no (Xamarin) ：：： Grid](grid-images/layouts.png "：： no (Xamarin) ：：： Grid")](grid-images/layouts-large.png#lightbox "：： no (Xamarin) ：：： Grid")
 
 [`Grid`](xref:Xamarin.Forms.Grid)是一个布局，它将其子级组织为行和列，这些行和列的大小可以是比例或绝对值。 默认情况下， `Grid` 包含一行和一列。 此外，还 `Grid` 可用作包含其他子布局的父布局。
 
-[`Grid`](xref:Xamarin.Forms.Grid)不应将该布局与表混淆，不应显示表格数据。 与 HTML 表不同，用于 `Grid` 布局内容。 若要显示表格数据，请考虑使用[ListView](~/xamarin-forms/user-interface/listview/index.md)、 [CollectionView](~/xamarin-forms/user-interface/collectionview/index.md)或[TableView](~/xamarin-forms/user-interface/tableview.md)。
+[`Grid`](xref:Xamarin.Forms.Grid)不应将该布局与表混淆，不应显示表格数据。 与 HTML 表不同，用于 `Grid` 布局内容。 若要显示表格数据，请考虑使用 [ListView](~/xamarin-forms/user-interface/listview/index.md)、 [CollectionView](~/xamarin-forms/user-interface/collectionview/index.md)或 [TableView](~/xamarin-forms/user-interface/tableview.md)。
 
 [`Grid`](xref:Xamarin.Forms.Grid)类定义以下属性：
 
@@ -43,7 +43,7 @@ ms.locfileid: "84946333"
 [`Grid`](xref:Xamarin.Forms.Grid)类派生自 `Layout<T>` 类，该类定义 `Children` 类型的属性 `IList<T>` 。 `Children`属性是类的 `ContentProperty` `Layout<T>` ，因此无需从 XAML 显式设置。
 
 > [!TIP]
-> 若要获得最佳布局性能，请遵循[优化布局性能](~/xamarin-forms/deploy-test/performance.md#optimize-layout-performance)中的准则。
+> 若要获得最佳布局性能，请遵循 [优化布局性能](~/xamarin-forms/deploy-test/performance.md#optimize-layout-performance)中的准则。
 
 ## <a name="rows-and-columns"></a>行和列
 
@@ -67,9 +67,9 @@ ms.locfileid: "84946333"
 
 [`RowDefinition`](xref:Xamarin.Forms.RowDefinition)类定义类型为 [`Height`](xref:Xamarin.Forms.RowDefinition.Height) 的属性， [`GridLength`](xref:Xamarin.Forms.GridLength) [`ColumnDefinition`](xref:Xamarin.Forms.ColumnDefinition) 类定义 [`Width`](xref:Xamarin.Forms.ColumnDefinition.Width) 类型的属性 [`GridLength`](xref:Xamarin.Forms.GridLength) 。 [`GridLength`](xref:Xamarin.Forms.GridLength)结构在枚举中指定行高或列宽 [`GridUnitType`](xref:Xamarin.Forms.GridUnitType) ，其中包含三个成员：
 
-- `Absolute`–行高或列宽是与设备无关的单位（XAML 中的数字）的值。
-- `Auto`–行高或列宽根据单元内容（ `Auto` 在 XAML 中）自动调整。
-- `Star`–剩余的行高度或列宽是按比例分配的（一个后跟 `*` 在 XAML 中的数字）。
+- `Absolute` –行高或列宽是以与设备无关的单位表示的值， (XAML) 中的数字。
+- `Auto` –行高或列宽基于 (`Auto` 在 XAML) 中的单元格内容进行自动调整。
+- `Star` –剩余的行高度或列宽度按比例分配 (一个数字后跟 `*` XAML) 。
 
 [`Grid`](xref:Xamarin.Forms.Grid)具有的 `Height` 属性的行以与 `Auto` 垂直相同的方式约束该行中视图的高度 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 。 同样，具有 `Width` 属性的列 `Auto` 非常类似于水平 `StackLayout` 。
 
@@ -163,7 +163,7 @@ ms.locfileid: "84946333"
 > [!NOTE]
 > `Grid.Row`和 `Grid.Column` 属性都是从0开始编制索引的，因此引用第 `Grid.Row="2"` 三行，而 `Grid.Column="1"` 引用第二列。 此外，这两个属性的默认值均为0，因此不需要在占据第一行或第一列的子视图上设置 [`Grid`](xref:Xamarin.Forms.Grid) 。
 
-在此示例中，所有三 [`Grid`](xref:Xamarin.Forms.Grid) 行都由 [`BoxView`](xref:Xamarin.Forms.BoxView) 和 [`Label`](xref:Xamarin.Forms.Label) 视图占用。 第三行是100与设备无关的单位，前两行占用剩余空间（第一行与第二行高两倍）。 这两个列的宽度相等，并将除以 `Grid` 一半。 `BoxView`第三行中的两个列。
+在此示例中，所有三 [`Grid`](xref:Xamarin.Forms.Grid) 行都由 [`BoxView`](xref:Xamarin.Forms.BoxView) 和 [`Label`](xref:Xamarin.Forms.Label) 视图占用。 第三行是100与设备无关的单位，前两行占用了剩余空间， (第一行与第二行) 高两倍。 这两个列的宽度相等，并将除以 `Grid` 一半。 `BoxView`第三行中的两个列。
 
 [![基本网格布局的屏幕截图](grid-images/basic.png "基本网格布局")](grid-images/basic-large.png#lightbox "基本网格布局")
 
@@ -270,7 +270,7 @@ public class BasicGridPageCS : ContentPage
 
 在代码中，若要指定对象的高度 [`RowDefinition`](xref:Xamarin.Forms.RowDefinition) 以及对象的宽度，请 [`ColumnDefinition`](xref:Xamarin.Forms.ColumnDefinition) 使用结构的值 [`GridLength`](xref:Xamarin.Forms.GridLength) ，通常与枚举结合使用 [`GridUnitType`](xref:Xamarin.Forms.GridUnitType) 。
 
-上面的示例代码还显示了几种不同的方法，可将子级添加到 [`Grid`](xref:Xamarin.Forms.Grid) 中，并指定它们所在的单元格。 当使用 `Add` 指定*left*、 *right*、 *top*和 top 参数的重载*bottom*时，尽管*left*和*top*参数将始终引用中的单元 `Grid` ，但*右侧*和*底部*参数看起来是指引用外部的单元格 `Grid` 。 这是因为*右*参数必须始终大于*左侧*参数，而*底部*参数必须始终大于*top*参数。 下面的示例假定 2x2 `Grid` ，同时使用这两个重载显示等效的代码 `Add` ：
+上面的示例代码还显示了几种不同的方法，可将子级添加到 [`Grid`](xref:Xamarin.Forms.Grid) 中，并指定它们所在的单元格。 当使用 `Add` 指定*left*、 *right*、 *top*和 top 参数的重载*bottom*时，尽管*left*和*top*参数将始终引用中的单元 `Grid` ，但*右侧*和*底部*参数看起来是指引用外部的单元格 `Grid` 。 这是因为 *右* 参数必须始终大于 *左侧* 参数，而 *底部* 参数必须始终大于 *top* 参数。 下面的示例假定 2x2 `Grid` ，同时使用这两个重载显示等效的代码 `Add` ：
 
 ```csharp
 // left, top
@@ -302,7 +302,7 @@ grid.Children.Add(bottomRight, 1, 2, 1, 2); // second column, second row
 
 在此示例中， [`Grid`](xref:Xamarin.Forms.Grid) 有五行和四列。 第三个、第三行和第五行设置为绝对高度，第二行自动调整其内容的大小。 然后，将剩余的高度分配给第一行。
 
-将第三列设置为绝对宽度，第三列自动调整其内容的大小。 在第一列和第二列之间按星号前面的数字分配剩余宽度。 在此示例中，第二列的宽度是第一列的两倍（因为与 `*` 相同 `1*` ）。
+将第三列设置为绝对宽度，第三列自动调整其内容的大小。 在第一列和第二列之间按星号前面的数字分配剩余宽度。 在此示例中，第二列的宽度是 (第一列的两倍，因为与 `*` `1*`) 相同。
 
 ## <a name="space-between-rows-and-columns"></a>行和列之间的间距
 
@@ -653,7 +653,7 @@ public class GridAlignmentPageCS : ContentPage
 [![嵌套网格的屏幕截图](grid-images/nesting.png "嵌套网格对象")](grid-images/nesting-large.png#lightbox "嵌套网格对象")
 
 > [!IMPORTANT]
-> 嵌套 [`Grid`](xref:Xamarin.Forms.Grid) 对象和其他布局的深度越多，嵌套布局就会影响性能。 有关详细信息，请参阅[选择正确的布局](~/xamarin-forms/deploy-test/performance.md#choose-the-correct-layout)。
+> 嵌套 [`Grid`](xref:Xamarin.Forms.Grid) 对象和其他布局的深度越多，嵌套布局就会影响性能。 有关详细信息，请参阅 [选择正确的布局](~/xamarin-forms/deploy-test/performance.md#choose-the-correct-layout)。
 
 等效 C# 代码如下：
 
@@ -752,7 +752,7 @@ public class ColorSlidersGridPageCS : ContentPage
 
 ## <a name="related-links"></a>相关链接
 
-- [网格演示（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-griddemos)
-- [布局选项Xamarin.Forms](layout-options.md)
+- [网格演示 (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-griddemos)
+- [布局选项 Xamarin.Forms](layout-options.md)
 - [选择 Xamarin.Forms 布局](choose-layout.md)
 - [提高 Xamarin.Forms 应用程序性能](~/xamarin-forms/deploy-test/performance.md)

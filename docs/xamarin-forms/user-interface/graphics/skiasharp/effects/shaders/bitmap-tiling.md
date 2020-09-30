@@ -10,12 +10,12 @@ ms.date: 08/23/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6a28dd20eb8978334365ac217df1241e5288fd28
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 8c6d139e47974247ce4af6bfa6c32331fcf7c824
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137418"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563128"
 ---
 # <a name="skiasharp-bitmap-tiling"></a>SkiaSharp 位图平铺
 
@@ -45,7 +45,7 @@ public static SKShader CreateBitmap (SKBitmap src, SKShaderTileMode tmx, SKShade
 
 ## <a name="exploring-the-tile-modes"></a>探索磁贴模式
 
-[**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)示例的 "着色器"**和 "其他效果**" 页的 "**位图平铺**" 部分中的第一个程序演示了这两个参数的效果 `SKShaderTileMode` 。 **Bitmap 磁贴翻转模式**XAML 文件实例化一个 `SKCanvasView` 和两个 `Picker` 视图，使用这些视图可以为 `SKShaderTilerMode` 水平平铺和垂直平铺选择值。 请注意，在 `SKShaderTileMode` 部分中定义了成员的数组 `Resources` ：
+[**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)示例的 "着色器"**和 "其他效果**" 页的 "**位图平铺**" 部分中的第一个程序演示了这两个参数的效果 `SKShaderTileMode` 。 **Bitmap 磁贴翻转模式**XAML 文件实例化一个 `SKCanvasView` 和两个 `Picker` 视图，使用这些视图可以为 `SKShaderTilerMode` 水平平铺和垂直平铺选择值。 请注意，在 `SKShaderTileMode` 部分中定义了成员的数组 `Resources` ：
 
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -158,7 +158,7 @@ public partial class BitmapTileFlipModesPage : ContentPage
 
 位图平铺通常用于从相对较小的位图创建带图案的背景。 典型示例是程序块墙。
 
-"**算法程序块墙**" 页创建一个小位图，该位图类似于整个程序块和由实体分隔的两部分程序块。 因为在下一个示例中也使用了此程序块，所以它是通过静态构造函数创建的，并使用静态属性公开：
+" **算法程序块墙** " 页创建一个小位图，该位图类似于整个程序块和由实体分隔的两部分程序块。 因为在下一个示例中也使用了此程序块，所以它是通过静态构造函数创建的，并使用静态属性公开：
 
 ```csharp
 public class AlgorithmicBrickWallPage : ContentPage
@@ -213,7 +213,7 @@ public class AlgorithmicBrickWallPage : ContentPage
 
 ![算法砖墙磁贴](bitmap-tiling-images/AlgorithmicBrickWallTile.png "算法砖墙磁贴")
 
-"**算法程序块背景**" 页的其余部分将创建一个 `SKShader` 对象，该对象在水平和垂直方向上重复此图像：
+" **算法程序块背景** " 页的其余部分将创建一个 `SKShader` 对象，该对象在水平和垂直方向上重复此图像：
 
 ```csharp
 public class AlgorithmicBrickWallPage : ContentPage
@@ -258,7 +258,7 @@ public class AlgorithmicBrickWallPage : ContentPage
 
 ![砖墙磁贴](bitmap-tiling-images/BrickWallTile.jpg "砖墙磁贴")
 
-此位图用于 "**摄影砖墙墙壁**" 页：
+此位图用于 " **摄影砖墙墙壁** " 页：
 
 ```csharp
 public class PhotographicBrickWallPage : ContentPage
@@ -303,11 +303,11 @@ public class PhotographicBrickWallPage : ContentPage
 
 需要执行一些工作才能获取磁贴的合适位图。 这一问题不太好，因为较暗的程序块太多了。 它会定期出现在重复的图像中，揭示此砖墙墙壁是从较小的位图构造的这一事实。
 
-[**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)示例的**Media**文件夹还包括石头墙壁的图像：
+[**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)示例的**Media**文件夹还包括石头墙壁的图像：
 
 ![石头墙壁磁贴](bitmap-tiling-images/StoneWallTile.jpg "石头墙壁磁贴")
 
-但是，图块的原始位图有点太大。 可以调整它的大小，但 `SKShader.CreateBitmap` 方法还可以通过向其应用转换来调整磁贴的大小。 此选项在 "**石头墙壁**" 页中演示：
+但是，图块的原始位图有点太大。 可以调整它的大小，但 `SKShader.CreateBitmap` 方法还可以通过向其应用转换来调整磁贴的大小。 此选项在 " **石头墙壁** " 页中演示：
 
 ```csharp
 public class StoneWallPage : ContentPage
@@ -367,9 +367,9 @@ SKMatrix.PostConcat(ref matrix, SKMatrix.MakeRotationDegrees(15));
 
 [![石头旋转](bitmap-tiling-images/StoneWallRotated.png "石头旋转")](bitmap-tiling-images/StoneWallRotated-Large.png#lightbox)
 
-在部分[**磁贴对齐**](#tile-alignment)中，你将看到一个应用于着色器的转换转换示例。
+在部分 [**磁贴对齐**](#tile-alignment)中，你将看到一个应用于着色器的转换转换示例。
 
-独立的[**Cat 时钟**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/catclock)示例（不是**SkiaSharpFormsDemos**的一部分）使用基于此240像素的正方形位图的位图平铺来模拟木头颗粒背景：
+独立的 [**Cat 时钟**](/samples/xamarin/xamarin-forms-samples/catclock) 示例 (不是 **SkiaSharpFormsDemos** 的一部分) 使用基于此240像素正方形位图的位图平铺来模拟木头颗粒背景：
 
 ![木材颗粒](bitmap-tiling-images/WoodGrain.png "木材颗粒")
 
@@ -379,13 +379,13 @@ SKMatrix.PostConcat(ref matrix, SKMatrix.MakeRotationDegrees(15));
 
 ## <a name="tile-alignment"></a>磁贴对齐
 
-迄今为止显示的所有示例都使用了创建的着色器 `SKShader.CreateBitmap` 来覆盖整个画布。 在大多数情况下，你将使用位图平铺来归档较小的区域或（更少）用于填充粗线条的内部。 下面是用于较小矩形的摄影砖墙磁贴：
+迄今为止显示的所有示例都使用了创建的着色器 `SKShader.CreateBitmap` 来覆盖整个画布。 在大多数情况下，你将使用位图平铺来归档较小的区域，或 (更少) 来填充粗线条的内部。 下面是用于较小矩形的摄影砖墙磁贴：
 
 [![磁贴对齐](bitmap-tiling-images/TileAlignment.png "磁贴对齐")](bitmap-tiling-images/TileAlignment-Large.png#lightbox)
 
 这可能看起来很好，甚至可能不会。 您可能已注意到平铺模式不会从矩形左上角的完整程序块开始。 这是因为着色器与画布对齐，而不是其修饰的图形对象。
 
-修复很简单。 `SKMatrix`基于翻译转换创建值。 转换会有效地将平铺模式移动到要对齐磁贴的左上角的点。 此方法在 "**磁贴对齐**" 页中进行演示，此页面创建了上面显示的未对齐磁贴的图像：
+修复很简单。 `SKMatrix`基于翻译转换创建值。 转换会有效地将平铺模式移动到要对齐磁贴的左上角的点。 此方法在 " **磁贴对齐** " 页中进行演示，此页面创建了上面显示的未对齐磁贴的图像：
 
 ```csharp
 public class TileAlignmentPage : ContentPage
@@ -457,7 +457,7 @@ public class TileAlignmentPage : ContentPage
 
 [![点击的磁贴对齐](bitmap-tiling-images/TileAlignmentTapped.png "点击的磁贴对齐")](bitmap-tiling-images/TileAlignmentTapped-Large.png#lightbox)
 
-还可以使用此方法确保平铺位图模式在它绘制的区域内居中。 在 "**居中" 磁贴**页面中， `PaintSurface` 处理程序将首先计算坐标，就好像它将在画布中心显示单个位图。 然后，它使用这些坐标为创建转换转换 `SKShader.CreateBitmap` 。 此转换将移动整个模式，使磁贴居中：
+还可以使用此方法确保平铺位图模式在它绘制的区域内居中。 在 " **居中" 磁贴** 页面中， `PaintSurface` 处理程序将首先计算坐标，就好像它将在画布中心显示单个位图。 然后，它使用这些坐标为创建转换转换 `SKShader.CreateBitmap` 。 此转换将移动整个模式，使磁贴居中：
 
 ```csharp
 public class CenteredTilesPage : ContentPage
@@ -521,7 +521,7 @@ SKMatrix matrix = SKMatrix.MakeTranslation(info.Rect.MidX, info.Rect.MidY);
 
 ## <a name="simplification-through-rotation"></a>通过旋转简化
 
-有时，在方法中使用旋转转换 `SKShader.CreateBitmap` 可以简化位图图块。 尝试为链链接围栏定义磁贴时，这会很明显。 **ChainLinkTile.cs**文件创建此处显示的磁贴（为清楚起见，使用粉红色背景）：
+有时，在方法中使用旋转转换 `SKShader.CreateBitmap` 可以简化位图图块。 尝试为链链接围栏定义磁贴时，这会很明显。 **ChainLinkTile.cs**文件会创建此处显示的磁贴 (带有粉红色背景，以便清晰) ：
 
 ![硬链接磁贴](bitmap-tiling-images/HardChainLinkTile.png "硬链接磁贴")
 
@@ -533,7 +533,7 @@ SKMatrix matrix = SKMatrix.MakeTranslation(info.Rect.MidX, info.Rect.MidY);
 
 如果位图磁贴着色器旋转了90度，则视觉对象几乎相同。
 
-用于创建更简单的链链接磁贴的代码是**链式链接磁贴**页的一部分。 构造函数根据运行程序的设备类型确定磁贴大小，然后调用 `CreateChainLinkTile` ，使用线条、路径和渐变着色器在位图上绘制：
+用于创建更简单的链链接磁贴的代码是 **链式链接磁贴** 页的一部分。 构造函数根据运行程序的设备类型确定磁贴大小，然后调用 `CreateChainLinkTile` ，使用线条、路径和渐变着色器在位图上绘制：
 
 ```csharp
 public class ChainLinkFencePage : ContentPage
@@ -663,7 +663,7 @@ public class ChainLinkFencePage : ContentPage
 
 还可以在小型位图上进行绘制，或以每秒60的速率来操作位图的像素位。 然后，可以将该位图用于拼贴，整个平铺模式可能会进行动画处理。 
 
-**动画位图磁贴**页面演示了这种方法。 位图被实例化为一个字段，其形式为64像素的正方形。 构造函数调用 `DrawBitmap` 来为其指定初始外观。 如果该 `angle` 字段为零（就像第一次调用方法时一样），则位图包含两行，并将其作为 X。线条的长度足以始终到达位图边缘，而不考虑 `angle` 值： 
+**动画位图磁贴**页面演示了这种方法。 位图被实例化为一个字段，其形式为64像素的正方形。 构造函数调用 `DrawBitmap` 来为其指定初始外观。 如果该 `angle` 字段为零 (就像第一次将该方法称为) 时，该位图包含两行作为 X。线条的长度足以始终到达位图边缘，而不考虑 `angle` 值： 
 
 ```csharp
 public class AnimatedBitmapTilePage : ContentPage
@@ -782,6 +782,6 @@ public class AnimatedBitmapTilePage : ContentPage
 
 ## <a name="related-links"></a>相关链接
 
-- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
-- [CatClock （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/catclock)
+- [SkiaSharp Api](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (示例) ](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [CatClock (示例) ](/samples/xamarin/xamarin-forms-samples/catclock)

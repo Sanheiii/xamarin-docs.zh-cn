@@ -1,6 +1,6 @@
 ---
-title: 使用 Windows Communication Foundation （WCF） Web 服务
-description: 本文演示如何从应用程序中使用 WCF 简单对象访问协议（SOAP）服务 Xamarin.Forms 。
+title: 使用 Windows Communication Foundation (WCF) Web 服务
+description: 本文演示如何从应用程序 (SOAP) 服务使用 WCF 简单对象访问协议 Xamarin.Forms 。
 ms.prod: xamarin
 ms.assetid: 5696FF04-EF21-4B7A-8C8B-26DE28B5C0AD
 ms.technology: xamarin-forms
@@ -10,72 +10,72 @@ ms.date: 03/28/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: cee301178880a62695f4208161965b01bb6f522e
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 596fab91a1f64e0fb6c5483e354c2ef15fd24346
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938575"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91557915"
 ---
-# <a name="consume-a-windows-communication-foundation-wcf-web-service"></a>使用 Windows Communication Foundation （WCF） Web 服务
+# <a name="consume-a-windows-communication-foundation-wcf-web-service"></a>使用 Windows Communication Foundation (WCF) Web 服务
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todowcf)
 
-_WCF 是 Microsoft 的统一框架，用于生成面向服务的应用程序。它使开发人员能够构建安全、可靠、可互操作的分布式应用程序。本文演示如何从应用程序中使用 WCF 简单对象访问协议（SOAP）服务 Xamarin.Forms 。_
+_WCF 是 Microsoft 的统一框架，用于生成面向服务的应用程序。它使开发人员能够构建安全、可靠、可互操作的分布式应用程序。本文演示如何从应用程序 (SOAP) 服务使用 WCF 简单对象访问协议 Xamarin.Forms 。_
 
 WCF 描述了具有各种不同协定的服务，包括：
 
-- **数据协定**–定义构成消息中内容的基础的数据结构。
-- **消息协定**–基于现有数据协定撰写消息。
-- **故障协定**–允许指定自定义 SOAP 错误。
-- **服务协定**–指定服务支持的操作，以及与每个操作交互所需的消息。 它们还指定可与每个服务上的操作关联的任何自定义错误行为。
+- **数据协定** –定义构成消息中内容的基础的数据结构。
+- **消息协定** –基于现有数据协定撰写消息。
+- **故障协定** –允许指定自定义 SOAP 错误。
+- **服务协定** –指定服务支持的操作，以及与每个操作交互所需的消息。 它们还指定可与每个服务上的操作关联的任何自定义错误行为。
 
-ASP.NET Web Services （.ASMX）和 WCF 之间存在差异，但 WCF 支持与通过 HTTP 提供的 SOAP 消息相同的功能。 有关使用 .ASMX 服务的详细信息，请参阅[使用 ASP.NET Web 服务（.asmx）](~/xamarin-forms/data-cloud/web-services/asmx.md)。
+ASP.NET Web Services (.ASMX) 和 WCF 之间存在差异，但 WCF 支持与通过 HTTP 提供的 SOAP 消息相同的功能。 有关使用 .ASMX 服务的详细信息，请参阅 [使用 ASP.NET Web 服务 (.asmx) ](~/xamarin-forms/data-cloud/web-services/asmx.md)。
 
 > [!IMPORTANT]
 > 对 WCF 的 Xamarin 平台支持仅限于使用类通过 HTTP/HTTPS 进行文本编码的 SOAP 消息 `BasicHttpBinding` 。
 >
 > WCF 支持需要使用仅在 Windows 环境中可用的工具来生成代理并托管 TodoWCFService。 生成和测试 iOS 应用需要在 Windows 计算机上部署 TodoWCFService，或将其部署为 Azure web 服务。
 >
-> Xamarin 窗体本机应用通常与 .NET Standard 类库共享代码。 但是，.NET Core 当前不支持 WCF，因此共享项目必须是旧的可移植类库。 有关 .NET Core 中 WCF 支持的信息，请参阅[为服务器应用选择 .Net core 和 .NET Framework](/dotnet/standard/choosing-core-framework-server)。
+> Xamarin 窗体本机应用通常与 .NET Standard 类库共享代码。 但是，.NET Core 当前不支持 WCF，因此共享项目必须是旧的可移植类库。 有关 .NET Core 中 WCF 支持的信息，请参阅 [为服务器应用选择 .Net core 和 .NET Framework](/dotnet/standard/choosing-core-framework-server)。
 
 示例应用程序解决方案包括一个可在本地运行的 WCF 服务，如以下屏幕截图所示：
 
 ![示例应用程序](wcf-images/portal.png)
 
 > [!NOTE]
-> 在 iOS 9 及更高版本中，应用传输安全（ATS）在 internet 资源（如应用的后端服务器）和应用之间强制实施安全连接，从而防止意外泄漏敏感信息。 由于默认情况下在为 iOS 9 构建的应用中启用了 ATS，因此所有连接都将受到 ATS 的安全要求。 如果连接不满足这些要求，它们将失败并出现异常。
+> 在 iOS 9 及更高版本中，应用传输安全 (ATS) 强制在 internet (资源（如应用的后端服务器) 和应用）之间执行安全连接，从而防止意外泄漏敏感信息。 由于默认情况下在为 iOS 9 构建的应用中启用了 ATS，因此所有连接都将受到 ATS 的安全要求。 如果连接不满足这些要求，它们将失败并出现异常。
 >
-> 如果无法对 `HTTPS` internet 资源使用协议和安全通信，则可以选择不使用 ATS。 这可以通过更新应用的**info.plist**文件来实现。 有关详细信息，请参阅[应用传输安全性](~/ios/app-fundamentals/ats.md)。
+> 如果无法对 `HTTPS` internet 资源使用协议和安全通信，则可以选择不使用 ATS。 这可以通过更新应用的 **info.plist** 文件来实现。 有关详细信息，请参阅 [应用传输安全性](~/ios/app-fundamentals/ats.md)。
 
 ## <a name="consume-the-web-service"></a>使用 Web 服务
 
 WCF 服务提供以下操作：
 
-|操作|说明|参数|
+|操作|说明|parameters|
 |--- |--- |--- |
 |GetTodoItems|获取待办事项的列表|
 |CreateTodoItem|创建新的待办事项|XML 序列化 TodoItem|
 |EditTodoItem|更新待办事项|XML 序列化 TodoItem|
 |DeleteTodoItem|删除待办事项|XML 序列化 TodoItem|
 
-有关应用程序中使用的数据模型的详细信息，请参阅[对数据进行建模](~/xamarin-forms/data-cloud/web-services/introduction.md)。
+有关应用程序中使用的数据模型的详细信息，请参阅 [对数据进行建模](~/xamarin-forms/data-cloud/web-services/introduction.md)。
 
-必须生成*代理*以使用 WCF 服务，该服务允许应用程序连接到服务。 代理通过使用定义方法和关联服务配置的服务元数据来构造。 此元数据以 web 服务所生成的 Web 服务描述语言（WSDL）文档的形式公开。 可以使用 Visual Studio 2017 中的 Microsoft WCF Web Service Reference Provider 生成代理，以将 Web 服务的服务引用添加到 .NET Standard 库中。 在 Visual Studio 2017 中使用 Microsoft WCF Web Service Reference Provider 创建代理的一种替代方法是使用 "（svcutil.exe）"。 有关详细信息， [Svcutil.exe](/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe/)请参阅 ""
+必须生成 *代理* 以使用 WCF 服务，该服务允许应用程序连接到服务。 代理通过使用定义方法和关联服务配置的服务元数据来构造。 此元数据以 Web 服务描述语言 (web 服务生成的 WSDL) 文档的形式公开。 可以使用 Visual Studio 2017 中的 Microsoft WCF Web Service Reference Provider 生成代理，以将 Web 服务的服务引用添加到 .NET Standard 库中。 使用 Visual Studio 2017 中的 Microsoft WCF Web Service Reference Provider 创建代理的替代方法是使用 " (" 元数据实用工具 "工具，# A0) 。 有关详细信息，请参阅 " [)  ( ](/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe/)"。
 
-生成的代理类提供使用异步编程模型（APM）设计模式的 web 服务的方法。 在此模式下，异步操作作为名为*BeginOperationName*和*EndOperationName*的两个方法实现，该方法用于开始和结束异步操作。
+生成的代理类提供使用) 设计模式 (使用异步编程模型的 web 服务的方法。 在此模式下，异步操作作为名为 *BeginOperationName* 和 *EndOperationName*的两个方法实现，该方法用于开始和结束异步操作。
 
-*BeginOperationName*方法开始异步操作并返回实现接口的对象 `IAsyncResult` 。 调用*BeginOperationName*之后，应用程序可以继续在调用线程上执行指令，同时异步操作在线程池线程上发生。
+*BeginOperationName*方法开始异步操作并返回实现接口的对象 `IAsyncResult` 。 调用 *BeginOperationName*之后，应用程序可以继续在调用线程上执行指令，同时异步操作在线程池线程上发生。
 
-对于每次调用*BeginOperationName*，应用程序还应调用*EndOperationName*来获取操作的结果。 *EndOperationName*的返回值与同步 web 服务方法返回的类型相同。 例如， `EndGetTodoItems` 方法返回实例的集合 `TodoItem` 。 *EndOperationName*方法还包括一个 `IAsyncResult` 参数，该参数应设置为由对*BeginOperationName*方法的相应调用返回的实例。
+对于每次调用 *BeginOperationName*，应用程序还应调用 *EndOperationName* 来获取操作的结果。 *EndOperationName*的返回值与同步 web 服务方法返回的类型相同。 例如， `EndGetTodoItems` 方法返回实例的集合 `TodoItem` 。 *EndOperationName*方法还包括一个 `IAsyncResult` 参数，该参数应设置为由对*BeginOperationName*方法的相应调用返回的实例。
 
-任务并行库（TPL）可以通过将异步操作封装在同一对象中来简化使用 APM begin/end 方法对的过程 `Task` 。 此封装由方法的多个重载提供 `TaskFactory.FromAsync` 。
+任务并行库 (TPL) 可以通过将异步操作封装在同一对象中来简化使用 APM begin/end 方法对的过程 `Task` 。 此封装由方法的多个重载提供 `TaskFactory.FromAsync` 。
 
-有关 APM 的详细信息，请参阅 MSDN 上的[异步编程模型](https://msdn.microsoft.com/library/ms228963(v=vs.110).aspx)和[TPL 和传统 .NET Framework 异步编程](https://msdn.microsoft.com/library/dd997423(v=vs.110).aspx)。
+有关 APM 的详细信息，请参阅 MSDN 上的 [异步编程模型](/dotnet/standard/asynchronous-programming-patterns/asynchronous-programming-model-apm) 和 [TPL 和传统 .NET Framework 异步编程](/dotnet/standard/parallel-programming/tpl-and-traditional-async-programming) 。
 
 ### <a name="create-the-todoserviceclient-object"></a>创建 TodoServiceClient 对象
 
-生成的代理类提供 `TodoServiceClient` 类，该类用于通过 HTTP 与 WCF 服务进行通信。 它提供了将 web 服务方法作为 URI 标识的服务实例中的异步操作进行调用的功能。 有关异步操作的详细信息，请参阅[异步支持概述](~/cross-platform/platform/async.md)。
+生成的代理类提供 `TodoServiceClient` 类，该类用于通过 HTTP 与 WCF 服务进行通信。 它提供了将 web 服务方法作为 URI 标识的服务实例中的异步操作进行调用的功能。 有关异步操作的详细信息，请参阅 [异步支持概述](~/cross-platform/platform/async.md)。
 
 `TodoServiceClient`实例在类级声明，以便在应用程序需要使用 WCF 服务时，该对象的生存时间，如以下代码示例所示：
 
@@ -97,7 +97,7 @@ public class SoapService : ISoapService
 
 `TodoServiceClient`实例配置了绑定信息和终结点地址。 绑定用于指定应用程序和服务相互通信所需的传输、编码和协议详细信息。 `BasicHttpBinding`指定将通过 HTTP 传输协议发送文本编码的 SOAP 消息。 通过指定终结点地址，应用程序可以连接到 WCF 服务的不同实例，前提是存在多个已发布的实例。
 
-有关配置服务引用的详细信息，请参阅[配置服务引用](~/cross-platform/data-cloud/web-services/index.md#wcf)。
+有关配置服务引用的详细信息，请参阅 [配置服务引用](~/cross-platform/data-cloud/web-services/index.md#wcf)。
 
 ### <a name="create-data-transfer-objects"></a>创建数据传输对象
 
@@ -230,9 +230,9 @@ public async Task DeleteTodoItemAsync (string id)
 如果 web 服务 `FaultException` 无法找到或删除 `TodoItem` （由应用程序处理），则会引发。
 
 ## <a name="configure-remote-access-to-iis-express"></a>配置对 IIS Express 的远程访问
-在 Visual Studio 2017 或 Visual Studio 2019 中，你应该能够在没有其他配置的情况下在电脑上测试 UWP 应用程序。 测试 Android 和 iOS 客户端可能需要此部分中的其他步骤。 有关详细信息，请参阅[从 IOS 模拟器和 Android 模拟器连接到本地 Web 服务](~/cross-platform/deploy-test/connect-to-local-web-services.md)。
+在 Visual Studio 2017 或 Visual Studio 2019 中，你应该能够在没有其他配置的情况下在电脑上测试 UWP 应用程序。 测试 Android 和 iOS 客户端可能需要此部分中的其他步骤。 有关详细信息，请参阅 [从 IOS 模拟器和 Android 模拟器连接到本地 Web 服务](~/cross-platform/deploy-test/connect-to-local-web-services.md) 。
 
-默认情况下，IIS Express 仅响应对的请求 `localhost` 。 远程设备（如 Android 设备，iPhone 甚至是模拟器）将无法访问本地 WCF 服务。 需要在本地网络上了解 Windows 10 工作站的 IP 地址。 出于本示例的目的，假设工作站有 IP 地址 `192.168.1.143` 。 以下步骤说明如何配置 Windows 10 和 IIS Express 以接受远程连接并从物理或虚拟设备连接到服务：
+默认情况下，IIS Express 仅响应对的请求 `localhost` 。 远程设备 (例如 Android 设备、iPhone 甚至) 的模拟器）都不能访问本地 WCF 服务。 需要在本地网络上了解 Windows 10 工作站的 IP 地址。 出于本示例的目的，假设工作站有 IP 地址 `192.168.1.143` 。 以下步骤说明如何配置 Windows 10 和 IIS Express 以接受远程连接并从物理或虚拟设备连接到服务：
 
 1. **向 Windows 防火墙添加例外**。 必须通过 Windows 防火墙打开端口，子网中的应用程序才能使用这些应用程序与 WCF 服务进行通信。 在防火墙中创建入站规则打开端口49393。 在管理命令提示符下，运行以下命令：
 
@@ -278,17 +278,17 @@ public async Task DeleteTodoItemAsync (string id)
     >[!IMPORTANT]
     >默认情况下，出于安全原因，IIS Express 将不接受来自外部源的连接。 若要启用远程设备的连接，必须使用管理权限运行 IIS Express。 执行此操作的最简单方法是运行具有管理权限的 Visual Studio 2017。 这会在运行 TodoWCFService 时，通过管理权限启动 IIS Express。
 
-    完成这些步骤后，你应该能够运行 TodoWCFService 并从子网中的其他设备进行连接。 可以通过运行应用程序并访问来对此进行测试 `http://localhost:49393/TodoService.svc` 。 如果在访问该 URL 时收到错误**请求**错误，则 `bindings` IIS Express 配置中可能不正确（请求 IIS Express，但被拒绝）。 如果遇到其他错误，可能是因为应用程序未运行或防火墙配置不正确。
+    完成这些步骤后，你应该能够运行 TodoWCFService 并从子网中的其他设备进行连接。 可以通过运行应用程序并访问来对此进行测试 `http://localhost:49393/TodoService.svc` 。 如果在访问该 URL 时收到错误 **请求** 错误，则 `bindings` IIS Express 配置中的可能不正确， (请求 IIS Express 但被拒绝) 。 如果遇到其他错误，可能是因为应用程序未运行或防火墙配置不正确。
 
-    若要允许 IIS Express 继续运行和服务，请关闭 "项目属性" 中的 "**编辑并继续**" 选项 **> Web > 调试器**。
+    若要允许 IIS Express 继续运行和服务，请关闭 "项目属性" 中的 " **编辑并继续** " 选项 **> Web > 调试器**。
 
 1. **自定义终结点设备用于访问服务的终结点**。 此步骤包括配置在物理或模拟设备上运行的客户端应用程序，以访问 WCF 服务。
 
     Android 模拟器使用内部代理，阻止模拟器直接访问主机的 `localhost` 地址。 相反， `10.0.2.2` 模拟器上的地址 `localhost` 通过内部代理路由到主机上的。 这些代理的请求将 `127.0.0.1` 作为请求标头中的主机名，因此，在上述步骤中为此主机名创建 IIS Express 绑定的原因。
 
-    IOS 模拟器在 Mac 生成主机上运行，即使使用的是[适用于 Windows 的远程 IOS 模拟器](~/tools/ios-simulator/index.md)也是如此。 来自模拟器的网络请求将本地网络上的工作站 IP 作为主机名（在本示例中 `192.168.1.143` ，实际的 IP 地址可能不同）。 这就是在上述步骤中为此主机名创建 IIS Express 绑定的原因。
+    IOS 模拟器在 Mac 生成主机上运行，即使使用的是 [适用于 Windows 的远程 IOS 模拟器](~/tools/ios-simulator/index.md)也是如此。 来自模拟器的网络请求将在本地网络上使用工作站 IP 作为主机名 (`192.168.1.143` ，但实际的 IP 地址可能与) 不同。 这就是在上述步骤中为此主机名创建 IIS Express 绑定的原因。
 
-    确保 `SoapUrl` TodoWCF （可移植）项目中的**Constants.cs**文件中的属性的值对于你的网络是正确的：
+    确保 `SoapUrl` TodoWCF (可移植) 项目中的 **Constants.cs** 文件中的属性的值对于你的网络是正确的：
 
     ```csharp
     public static string SoapUrl
@@ -311,10 +311,10 @@ public async Task DeleteTodoItemAsync (string id)
     }
     ```
 
-    使用适当的终结点配置**Constants.cs**后，应能够从物理或虚拟设备连接到 Windows 10 工作站上运行的 TodoWCFService。
+    使用适当的终结点配置 **Constants.cs** 后，应能够从物理或虚拟设备连接到 Windows 10 工作站上运行的 TodoWCFService。
 
 ## <a name="related-links"></a>相关链接
 
-- [TodoWCF （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todowcf)
-- [如何：创建 Windows Communication Foundation 客户端](https://docs.microsoft.com/dotnet/framework/wcf/how-to-create-a-wcf-client)
-- [System.servicemodel 元数据实用工具（svcutil.exe）](https://docs.microsoft.com/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe)
+- [TodoWCF (示例) ](/samples/xamarin/xamarin-forms-samples/webservices-todowcf)
+- [如何：创建 Windows Communication Foundation 客户端](/dotnet/framework/wcf/how-to-create-a-wcf-client)
+- [ ( 2 # A0) ](/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe)

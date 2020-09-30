@@ -1,5 +1,5 @@
 ---
-title: 隐式样式Xamarin.Forms
+title: 隐式样式 Xamarin.Forms
 description: 隐式样式是同一 TargetType 的所有控件使用的样式，无需每个控件都引用该样式。
 ms.prod: xamarin
 ms.assetid: 02A75F3B-4389-49D4-A2F4-AFD473A4A161
@@ -10,14 +10,14 @@ ms.date: 01/30/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3fb6ea40ced93103ec9cc92fa707f68c674d7826
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: ad297b735449796925b92fbc9d1887db9e8a1c99
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139004"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563323"
 ---
-# <a name="implicit-styles-in-xamarinforms"></a>隐式样式Xamarin.Forms
+# <a name="implicit-styles-in-no-locxamarinforms"></a>隐式样式 Xamarin.Forms
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
 
@@ -27,7 +27,7 @@ _隐式样式是同一 TargetType 的所有控件使用的样式，无需每个�
 
 若要 [`Style`](xref:Xamarin.Forms.Style) 在页级别声明， [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 则必须将添加到页，然后一个或多个 `Style` 声明可以包含在中 `ResourceDictionary` 。 `Style`通过不指定属性使成为*隐式* `x:Key` 。 然后，样式将应用到完全匹配的视觉元素 `TargetType` ，而不是从值派生的元素 `TargetType` 。
 
-下面的代码示例演示了在页的 XAML 中声明的*隐式*样式 `ResourceDictionary` ，并将其应用于页面的 [`Entry`](xref:Xamarin.Forms.Entry) 实例：
+下面的代码示例演示了在页的 XAML 中声明的 *隐式* 样式 `ResourceDictionary` ，并将其应用于页面的 [`Entry`](xref:Xamarin.Forms.Entry) 实例：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:Styles;assembly=Styles" x:Class="Styles.ImplicitStylesPage" Title="Implicit" IconImageSource="xaml.png">
@@ -62,7 +62,7 @@ _隐式样式是同一 TargetType 的所有控件使用的样式，无需每个�
 
 ### <a name="create-an-implicit-style-at-the-control-level"></a>在控件级别创建隐式样式
 
-除了在页面级别创建*隐式*样式以外，还可以在控件级别创建它们，如下面的代码示例所示：
+除了在页面级别创建 *隐式* 样式以外，还可以在控件级别创建它们，如下面的代码示例所示：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:Styles;assembly=Styles" x:Class="Styles.ImplicitStylesPage" Title="Implicit" IconImageSource="xaml.png">
@@ -83,13 +83,13 @@ _隐式样式是同一 TargetType 的所有控件使用的样式，无需每个�
 </ContentPage>
 ```
 
-在此示例中，将*隐式* [`Style`](xref:Xamarin.Forms.Style) 分配给 [`Resources`](xref:Xamarin.Forms.VisualElement.Resources) 控件的集合 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 。 然后，可以将*隐式*样式应用于控件及其子级。
+在此示例中，将 *隐式* [`Style`](xref:Xamarin.Forms.Style) 分配给 [`Resources`](xref:Xamarin.Forms.VisualElement.Resources) 控件的集合 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 。 然后，可以将 *隐式* 样式应用于控件及其子级。
 
-有关在应用程序中创建样式的信息 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) ，请参阅[全局样式](~/xamarin-forms/user-interface/styles/application.md)。
+有关在应用程序中创建样式的信息 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) ，请参阅 [全局样式](~/xamarin-forms/user-interface/styles/application.md)。
 
 ## <a name="create-an-implicit-style-in-c35"></a>在 C 中创建隐式样式&#35;
 
-[`Style`](xref:Xamarin.Forms.Style)可以 [`Resources`](xref:Xamarin.Forms.VisualElement.Resources) 通过以下代码示例中所示，通过创建新的，然后将实例添加到来将实例添加到页的集合中 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) `Style` `ResourceDictionary` ，如下面的代码示例所示：
+[`Style`](xref:Xamarin.Forms.Style) 可以 [`Resources`](xref:Xamarin.Forms.VisualElement.Resources) 通过以下代码示例中所示，通过创建新的，然后将实例添加到来将实例添加到页的集合中 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) `Style` `ResourceDictionary` ，如下面的代码示例所示：
 
 ```csharp
 public class ImplicitStylesPageCS : ContentPage
@@ -120,7 +120,7 @@ public class ImplicitStylesPageCS : ContentPage
 }
 ```
 
-构造函数定义应用于页面实例的单个*隐式*样式 [`Entry`](xref:Xamarin.Forms.Entry) 。 `Style`用于在黄色背景上显示蓝色文本，同时还设置其他外观选项。 `Style`添加到了页中， [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 但未指定 `key` 字符串。 因此，将 `Style` 隐式应用于所有 `Entry` 实例，因为它们与 [`TargetType`](xref:Xamarin.Forms.Style.TargetType) 的属性完全匹配 `Style` 。 但是， `Style` 不会应用于 `CustomEntry` 实例，这是一个子类 `Entry` 。
+构造函数定义应用于页面实例的单个 *隐式* 样式 [`Entry`](xref:Xamarin.Forms.Entry) 。 `Style`用于在黄色背景上显示蓝色文本，同时还设置其他外观选项。 `Style`添加到了页中， [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 但未指定 `key` 字符串。 因此，将 `Style` 隐式应用于所有 `Entry` 实例，因为它们与 [`TargetType`](xref:Xamarin.Forms.Style.TargetType) 的属性完全匹配 `Style` 。 但是， `Style` 不会应用于 `CustomEntry` 实例，这是一个子类 `Entry` 。
 
 ## <a name="apply-a-style-to-derived-types"></a>将样式应用于派生类型
 
@@ -160,8 +160,8 @@ Resources = new ResourceDictionary { buttonStyle };
 ## <a name="related-links"></a>相关链接
 
 - [XAML 标记扩展](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
-- [基本样式（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
-- [使用样式（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithstyles)
+- [基本样式 (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
+- [使用样式 (示例) ](/samples/xamarin/xamarin-forms-samples/workingwithstyles)
 - [ResourceDictionary](xref:Xamarin.Forms.ResourceDictionary)
 - [样式](xref:Xamarin.Forms.Style)
 - [](xref:Xamarin.Forms.Setter)Setter

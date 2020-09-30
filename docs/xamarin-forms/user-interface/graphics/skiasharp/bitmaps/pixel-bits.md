@@ -10,18 +10,18 @@ ms.date: 07/11/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9018cbe6e41350b22a0f1f91858017531c75a0ac
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 7f0b7c61d44170ab97b060a16693287c28903660
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84135574"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562959"
 ---
 # <a name="accessing-skiasharp-bitmap-pixel-bits"></a>访问 SkiaSharp 位图像素位
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-正如你在将[**SkiaSharp 位图保存到文件**](saving.md)这篇文章中所看到的那样，位图通常以压缩格式存储在文件中，例如 JPEG 或 PNG。 在相反中，不压缩存储在内存中的 SkiaSharp 位图。 它存储为一系列有序像素。 此压缩格式便于将位图传输到显示图面。
+正如你在将 [**SkiaSharp 位图保存到文件**](saving.md)这篇文章中所看到的那样，位图通常以压缩格式存储在文件中，例如 JPEG 或 PNG。 在相反中，不压缩存储在内存中的 SkiaSharp 位图。 它存储为一系列有序像素。 此压缩格式便于将位图传输到显示图面。
 
 SkiaSharp 位图占用的内存块以非常简单的方式进行组织：从左到右，从第一行开始，然后继续第二行。 对于全颜色位图，每个像素由四个字节组成，这意味着位图所需的总内存空间是其宽度和高度的四倍。
 
@@ -31,16 +31,16 @@ SkiaSharp 位图占用的内存块以非常简单的方式进行组织：从左�
 
 ## <a name="the-techniques"></a>方法
 
-SkiaSharp 提供了几种用于访问位图的像素位的方法。 选择哪一种通常是编码便利（与维护和轻松调试相关）和性能之间的折衷。 在大多数情况下，你将使用的以下方法和属性之一 `SKBitmap` 来访问位图的像素：
+SkiaSharp 提供了几种用于访问位图的像素位的方法。 选择哪一种通常是编码便利 (之间的折衷，这与维护和) 和性能调试相关。 在大多数情况下，你将使用的以下方法和属性之一 `SKBitmap` 来访问位图的像素：
 
 - `GetPixel`和 `SetPixel` 方法允许您获取或设置单个像素的颜色。
 - `Pixels`属性获取整个位图的像素颜色数组，或设置颜色的数组。
-- `GetPixels`返回位图使用的像素内存的地址。
-- `SetPixels`替换位图使用的像素内存的地址。
+- `GetPixels` 返回位图使用的像素内存的地址。
+- `SetPixels` 替换位图使用的像素内存的地址。
 
 您可以将前两种方法视为 "高级别"，将第二种方法视为 "低级别"。 还可以使用其他一些方法和属性，但这些方法和属性是最有价值的。
 
-为了使你能够查看这些技术之间的性能差异， [**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)应用程序包含一个名为 "**渐变位图**" 的页面，它创建一个位图，该位图的像素结合了红色和蓝色底纹来创建渐变。 此程序创建了8个不同的位图副本，所有这些副本都使用不同的方法来设置位图像素。 其中的每个位图都是在单独的方法中创建的，该方法还设置了方法的简短文本说明，并计算设置所有像素所需的时间。 每个方法都循环访问像素设置逻辑100次，以获得更好的性能估算。
+为了使你能够查看这些技术之间的性能差异， [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) 应用程序包含一个名为 " **渐变位图** " 的页面，它创建一个位图，该位图的像素结合了红色和蓝色底纹来创建渐变。 此程序创建了8个不同的位图副本，所有这些副本都使用不同的方法来设置位图像素。 其中的每个位图都是在单独的方法中创建的，该方法还设置了方法的简短文本说明，并计算设置所有像素所需的时间。 每个方法都循环访问像素设置逻辑100次，以获得更好的性能估算。
 
 ### <a name="the-setpixel-method"></a>SetPixel 方法
 
@@ -54,7 +54,7 @@ SKColor color = bitmap.GetPixel(col, row);
 
 `col`参数的范围必须介于0到 `Width` 位图属性的范围之间， `row` 范围是从0到小于 `Height` 属性。
 
-下面是**渐变位图**中的方法，该方法使用方法设置位图的内容 `SetPixel` 。 位图为 256 x 256 像素， `for` 循环使用值范围进行硬编码：
+下面是 **渐变位图** 中的方法，该方法使用方法设置位图的内容 `SetPixel` 。 位图为 256 x 256 像素， `for` 循环使用值范围进行硬编码：
 
 ```csharp
 public class GradientBitmapPage : ContentPage
@@ -90,7 +90,7 @@ public class GradientBitmapPage : ContentPage
 
 ### <a name="the-pixels-property"></a>"像素" 属性
 
-`SKBitmap`定义一个 [`Pixels`](xref:SkiaSharp.SKBitmap.Pixels) 属性，该属性返回 `SKColor` 整个位图的值数组。 你还可以使用 `Pixels` 设置位图的颜色值数组：
+`SKBitmap` 定义一个 [`Pixels`](xref:SkiaSharp.SKBitmap.Pixels) 属性，该属性返回 `SKColor` 整个位图的值数组。 你还可以使用 `Pixels` 设置位图的颜色值数组：
 
 ```csharp
 SKColor[] pixels = bitmap.Pixels;
@@ -128,9 +128,9 @@ SKBitmap FillBitmapPixelsProp(out string description, out int milliseconds)
 }
 ```
 
-请注意， `pixels` 需要从和变量计算数组的索引 `row` `col` 。 行乘以每行中的像素数（在本例中为256），然后添加列。
+请注意， `pixels` 需要从和变量计算数组的索引 `row` `col` 。 在此) 示例中，将行乘以每行 (256 的像素数，然后添加列。
 
-`SKBitmap`还定义了一个类似的 `Bytes` 属性，该属性为整个位图返回一个字节数组，但对于全颜色位图更繁琐。
+`SKBitmap` 还定义了一个类似的 `Bytes` 属性，该属性为整个位图返回一个字节数组，但对于全颜色位图更繁琐。
 
 ### <a name="the-getpixels-pointer"></a>GetPixels 指针
 
@@ -156,7 +156,7 @@ byte pixelComponent = *ptr;
 *ptr = pixelComponent;
 ```
 
-在此上下文中，星号是 c #_间接寻址运算符_，用于引用所指向的内存的内容 `ptr` 。 最初， `ptr` 指向位图第一行的第一个像素的第一个字节，但您可以对变量执行算术运算， `ptr` 以将其移动到位图内的其他位置。
+在此上下文中，星号是 c # _间接寻址运算符_ ，用于引用所指向的内存的内容 `ptr` 。 最初， `ptr` 指向位图第一行的第一个像素的第一个字节，但您可以对变量执行算术运算， `ptr` 以将其移动到位图内的其他位置。
 
 一个缺点是只能 `ptr` 在用关键字标记的代码块中使用此变量 `unsafe` 。 此外，必须将程序集标记为允许不安全的块。 这是在项目的属性中完成的。
 
@@ -287,7 +287,7 @@ SKBitmap FillBitmapUintPtrColor(out string description, out int milliseconds)
 
 ### <a name="the-setpixels-method"></a>SetPixels 方法
 
-`SKBitmap`还定义了一个名为的方法 [`SetPixels`](xref:SkiaSharp.SKBitmap.SetPixels(System.IntPtr)) ，您可以调用此方法，如下所示：
+`SKBitmap` 还定义了一个名为的方法 [`SetPixels`](xref:SkiaSharp.SKBitmap.SetPixels(System.IntPtr)) ，您可以调用此方法，如下所示：
 
 ```csharp
 bitmap.SetPixels(intPtr);
@@ -402,7 +402,7 @@ SKBitmap FillBitmapUintBufferColor(out string description, out int milliseconds)
 
 ### <a name="comparing-the-techniques"></a>比较技术
 
-"**渐变颜色**" 页的构造函数将调用上面所示的所有8个方法，并保存结果：
+" **渐变颜色** " 页的构造函数将调用上面所示的所有8个方法，并保存结果：
 
 ```csharp
 public class GradientBitmapPage : ContentPage
@@ -483,7 +483,7 @@ public class GradientBitmapPage : ContentPage
 }
 ```
 
-为了允许编译器优化代码，此页在**发布**模式下运行。 这是在 MacBook Pro 上的 iPhone 8 模拟器上运行的页面，a 结点 5 Android 手机，Surface Pro 3 运行 Windows 10。 由于硬件差异，应避免在设备之间比较性能时间，而应查看每个设备的相对时间：
+为了允许编译器优化代码，此页在 **发布** 模式下运行。 这是在 MacBook Pro 上的 iPhone 8 模拟器上运行的页面，a 结点 5 Android 手机，Surface Pro 3 运行 Windows 10。 由于硬件差异，应避免在设备之间比较性能时间，而应查看每个设备的相对时间：
 
 [![渐变位图](pixel-bits-images/GradientBitmap.png "渐变位图")](pixel-bits-images/GradientBitmap-Large.png#lightbox)
 
@@ -522,11 +522,11 @@ BB GG RR AA
 
 `FillBitmapBytePtr` `FillBitmapUintPtr` **渐变位图**页中的和方法得益于 `for` 旨在按顺序填充位图的循环、从上到下行、从左到右的每行。 可以通过与指针递增的相同语句来设置像素。
 
-有时需要随机而不是按顺序访问像素。 如果使用的是 `GetPixels` 方法，则需要根据行和列计算指针。 这在**彩虹正弦**页面中进行了演示，这会创建一个位图，其中显示一条正弦曲线循环的外形。
+有时需要随机而不是按顺序访问像素。 如果使用的是 `GetPixels` 方法，则需要根据行和列计算指针。 这在 **彩虹正弦** 页面中进行了演示，这会创建一个位图，其中显示一条正弦曲线循环的外形。
 
-彩虹的颜色最容易使用 HSL （色调、饱和度、发光度）颜色模型创建。 `SKColor.FromHsl`方法 `SKColor` 使用介于0到360之间的色调值创建值（例如圆圈的角度，而从红色、绿色和蓝色，返回红色），饱和度和发光度值范围从0到100。 对于彩虹的颜色，饱和度应设置为最大值为100，将亮度设置为50的中点。
+使用 HSL (色相、饱和度、亮度) 颜色模型，彩虹的颜色最简单。 `SKColor.FromHsl`方法 `SKColor` 使用介于0到360之间的色调值创建一个值 (例如圆圈的角度，而从红色、绿色和蓝色，再到红色) ，以及从0到100的饱和度和发光度值。 对于彩虹的颜色，饱和度应设置为最大值为100，将亮度设置为50的中点。
 
-**彩虹正弦**通过循环遍历位图的各个行，然后循环到360的色调值，来创建此图像。 根据每个色相值，计算也基于正弦值的位图列：
+**彩虹正弦** 通过循环遍历位图的各个行，然后循环到360的色调值，来创建此图像。 根据每个色相值，计算也基于正弦值的位图列：
 
 ```csharp
 public class RainbowSinePage : ContentPage
@@ -616,11 +616,11 @@ uint* ptr = basePtr + bitmap.Width * row + col;
 
 ## <a name="from-one-bitmap-to-another"></a>从一个位图到另一个位图
 
-很多图像处理任务都涉及在将像素从一个位图传输到另一个位图时修改像素。 此方法在 "**颜色调整**" 页中进行演示。 页面加载某个位图资源，然后允许使用三个视图修改图像 `Slider` ：
+很多图像处理任务都涉及在将像素从一个位图传输到另一个位图时修改像素。 此方法在 " **颜色调整** " 页中进行演示。 页面加载某个位图资源，然后允许使用三个视图修改图像 `Slider` ：
 
 [![颜色调整](pixel-bits-images/ColorAdjustment.png "颜色调整")](pixel-bits-images/ColorAdjustment-Large.png#lightbox)
 
-对于每个像素颜色，第一个像素 `Slider` 将值从0到360添加到色相，但随后使用取模运算符将结果保留在0和360之间，从而有效地沿色谱方向移动颜色（如 UWP 屏幕截图所示）。 第二种 `Slider` 方式允许您选择要应用于饱和度的0.5 到2之间的乘法系数，第三个系数 `Slider` 对于亮度相同，如 Android 屏幕截图所示。
+对于每个像素颜色，第一个 `Slider` 将值从0到360添加到色相，但随后使用取模运算符将结果保留在0和360之间，从而有效地将颜色沿色谱 (，因为 UWP 屏幕截图演示了) 。 第二种 `Slider` 方式允许您选择要应用于饱和度的0.5 到2之间的乘法系数，第三个系数 `Slider` 对于亮度相同，如 Android 屏幕截图所示。
 
 程序将保留两个位图，即名为的原始源位图 `srcBitmap` 和名为的调整后目标位图 `dstBitmap` 。 每次 `Slider` 移动时，程序将在中计算所有新像素 `dstBitmap` 。 当然，用户将通过 `Slider` 非常快速地移动视图进行试验，因此你希望获得可管理的最佳性能。 这涉及 `GetPixels` 源和目标位图的方法。
 
@@ -748,9 +748,9 @@ public partial class ColorAdjustmentPage : ContentPage
 
 ## <a name="posterization"></a>Posterization
 
-其他涉及访问像素位的常见任务是_posterization_。 如果减少了位图像素中编码的颜色，使结果类似于使用有限调色板的手绘海报，则为。
+其他涉及访问像素位的常见任务是 _posterization_。 如果减少了位图像素中编码的颜色，使结果类似于使用有限调色板的手绘海报，则为。
 
-"**色调分离**" 页对其中一个猴子映像执行此过程：
+" **色调分离** " 页对其中一个猴子映像执行此过程：
 
 ```csharp
 public class PosterizePage : ContentPage
@@ -796,5 +796,5 @@ public class PosterizePage : ContentPage
 
 ## <a name="related-links"></a>相关链接
 
-- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [SkiaSharp Api](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (示例) ](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

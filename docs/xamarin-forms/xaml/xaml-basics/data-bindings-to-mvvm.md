@@ -11,18 +11,18 @@ ms.date: 10/25/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 805bdef812b33d3f4329346a437e1202a16fe3ae
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 8cb59738519af933e509ebf63a923e573667941e
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937314"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562907"
 ---
 # <a name="part-5-from-data-bindings-to-mvvm"></a>第 5 部分。 从数据绑定到 MVVM
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 
-_模型-视图-ViewModel （MVVM）体系结构模式是在概念上利用 XAML 来构建的。此模式强制分离三个软件层（XAML 用户界面，称作视图）：基本数据，称为模型;在视图和模型之间使用中间名为 ViewModel。视图和 ViewModel 通常通过 XAML 文件中定义的数据绑定连接。视图的 BindingContext 通常是 ViewModel 的实例。_
+_模型-视图-ViewModel (MVVM) 体系结构模式是通过 XAML 而构建的。此模式强制分离三个软件层（XAML 用户界面，称作视图）：基本数据，称为模型;在视图和模型之间使用中间名为 ViewModel。视图和 ViewModel 通常通过 XAML 文件中定义的数据绑定连接。视图的 BindingContext 通常是 ViewModel 的实例。_
 
 ## <a name="a-simple-viewmodel"></a>简单的 ViewModel
 
@@ -39,9 +39,9 @@ xmlns:sys="clr-namespace:System;assembly=netstandard"
 <StackLayout BindingContext="{x:Static sys:DateTime.Now}" …>
 ```
 
-`BindingContext`是一个特殊属性：当在元素上设置时，该元素的所有子级都将继承该属性 `BindingContext` 。 这意味着的所有子级 `StackLayout` 都具有相同的 `BindingContext` ，并且它们可以包含与该对象的属性的简单绑定。
+`BindingContext` 是一个特殊属性：当在元素上设置时，该元素的所有子级都将继承该属性 `BindingContext` 。 这意味着的所有子级 `StackLayout` 都具有相同的 `BindingContext` ，并且它们可以包含与该对象的属性的简单绑定。
 
-在**一键式 DateTime**程序中，有两个子项包含对该值的属性的绑定 `DateTime` ，但两个其他子级包含似乎缺少绑定路径的绑定。 这意味着 `DateTime` 值本身用于 `StringFormat` ：
+在 **一键式 DateTime** 程序中，有两个子项包含对该值的属性的绑定 `DateTime` ，但两个其他子级包含似乎缺少绑定路径的绑定。 这意味着 `DateTime` 值本身用于 `StringFormat` ：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -71,7 +71,7 @@ XAML 文件可以显示始终显示当前时间的时钟，但它需要一些代
 
 适当的模型是未知的 ViewModel，并有适当的 ViewModel 未知的。 但是，通常情况下，程序员会将 ViewModel 公开的数据类型定制到与特定用户界面相关联的数据类型。 例如，如果某个模型访问的数据库包含8位字符 ASCII 字符串，则 ViewModel 需要在这两个字符串之间进行转换，以便在用户界面中独占使用 Unicode。
 
-在 MVVM 的简单示例（如此处所示的示例）中，通常根本没有模型，该模式只涉及与数据绑定关联的视图和 ViewModel。
+在 MVVM (的简单示例中，如此处所示) ，通常根本没有模型，该模式只涉及与数据绑定关联的视图和 ViewModel。
 
 下面是一个 ViewModel，其中只包含一个名为的属性 `DateTime` ，该属性 `DateTime` 每秒更新一次该属性：
 
@@ -306,20 +306,20 @@ namespace XamlSamples
 
 但有时，视图需要包含在 ViewModel 中触发各种操作的按钮。 但 ViewModel 不能包含 `Clicked` 按钮的处理程序，因为这会将 ViewModel 关联到特定的用户界面模式。
 
-若要允许 Viewmodel 更独立于特定用户界面对象，但仍允许在 ViewModel 中调用方法，则可以使用*命令*界面。 以下元素支持此命令界面 Xamarin.Forms ：
+若要允许 Viewmodel 更独立于特定用户界面对象，但仍允许在 ViewModel 中调用方法，则可以使用 *命令* 界面。 以下元素支持此命令界面 Xamarin.Forms ：
 
 - `Button`
 - `MenuItem`
 - `ToolbarItem`
 - `SearchBar`
-- `TextCell`（因此还会 `ImageCell` ）
+- `TextCell` (，因此还 `ImageCell`) 
 - `ListView`
 - `TapGestureRecognizer`
 
 除了 `SearchBar` 和 `ListView` 元素，这些元素定义了两个属性：
 
-- `Command`类型为`System.Windows.Input.ICommand`
-- `CommandParameter`类型为`Object`
+- `Command` 类型为  `System.Windows.Input.ICommand`
+- `CommandParameter` 类型为  `Object`
 
 `SearchBar`定义 `SearchCommand` 和 `SearchCommandParameter` 属性，而 `ListView` 定义 `RefreshCommand` 类型的属性 `ICommand` 。
 
@@ -329,7 +329,7 @@ namespace XamlSamples
 - `bool CanExecute(object arg)`
 - `event EventHandler CanExecuteChanged`
 
-ViewModel 可以定义类型的属性 `ICommand` 。 然后，可以将这些属性绑定到 `Command` 每个 `Button` 或其他元素的属性，或者可能绑定到实现此接口的自定义视图。 您可以选择将 `CommandParameter` 属性设置为标识 `Button` 绑定到此 ViewModel 属性的各个对象（或其他元素）。 在内部， `Button` `Execute` 每当用户点击 `Button` ，并将其传递给方法时，都会调用方法 `Execute` `CommandParameter` 。
+ViewModel 可以定义类型的属性 `ICommand` 。 然后，可以将这些属性绑定到 `Command` 每个 `Button` 或其他元素的属性，或者可能绑定到实现此接口的自定义视图。 您可以选择将 `CommandParameter` 属性设置为标识 `Button` (或绑定到此 ViewModel 属性的其他元素) 的单个对象。 在内部， `Button` `Execute` 每当用户点击 `Button` ，并将其传递给方法时，都会调用方法 `Execute` `CommandParameter` 。
 
 `CanExecute`方法和 `CanExecuteChanged` 事件用于在 `Button` 点击可能当前无效的情况下，在这种情况下， `Button` 应禁用自身。 `Button` `CanExecute` `Command` 第一次设置属性和 `CanExecuteChanged` 触发事件时调用。 如果 `CanExecute` 返回 `false` ，则将 `Button` 禁用自身，而不会生成 `Execute` 调用。
 
@@ -443,7 +443,7 @@ namespace XamlSamples
 }
 ```
 
-此 ViewModel 假设将 `AddCharCommand` 属性绑定到 `Command` 多个按钮的属性（或具有命令界面的任何其他按钮），其中每个按钮都由标识 `CommandParameter` 。 这些按钮将字符添加到 `InputString` 属性，然后将其格式化为属性的电话号码 `DisplayText` 。
+此 ViewModel 假设 `AddCharCommand` 属性绑定到 `Command` 多个按钮的属性 (或) 具有命令界面的任何其他属性，其中每个按钮都由标识 `CommandParameter` 。 这些按钮将字符添加到 `InputString` 属性，然后将其格式化为属性的电话号码 `DisplayText` 。
 
 还有另一个名为的类型的 `ICommand` 属性 `DeleteCharCommand` 。 此项已绑定到后退间距按钮，但如果没有要删除的字符，则应禁用该按钮。
 
@@ -585,7 +585,7 @@ void Download ()
 
 ## <a name="implementing-a-navigation-menu"></a>实现导航菜单
 
-包含此系列文章中所有源代码的[XamlSamples](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)程序在其主页中使用 ViewModel。 此 ViewModel 是一个 short 类的定义，其中包含三个名为、和的属性， `Type` `Title` `Description` 其中包含每个示例页的类型、标题和简短说明。 此外，ViewModel 定义了一个名为的静态属性 `All` ，它是程序中所有页面的集合：
+包含此系列文章中所有源代码的 [XamlSamples](/samples/xamarin/xamarin-forms-samples/xamlsamples) 程序在其主页中使用 ViewModel。 此 ViewModel 是一个 short 类的定义，其中包含三个名为、和的属性， `Type` `Title` `Description` 其中包含每个示例页的类型、标题和简短说明。 此外，ViewModel 定义了一个名为的静态属性 `All` ，它是程序中所有页面的集合：
 
 ```csharp
 public class PageDataViewModel
@@ -708,13 +708,13 @@ private async void OnListViewItemSelected(object sender, SelectedItemChangedEven
 
 **Xamarin 演化2016： MVVM 使和 Prism 变得简单 Xamarin.Forms**
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 XAML 是一种功能强大的工具，用于在应用程序中定义用户界面 Xamarin.Forms ，在使用数据绑定和 MVVM 时尤其如此。 结果是用户界面的简洁、优雅且可能的 toolable 表示形式，其中包含代码中的所有背景支持。
 
 ## <a name="related-links"></a>相关链接
 
-- [XamlSamples](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
+- [XamlSamples](/samples/xamarin/xamarin-forms-samples/xamlsamples)
 - [第1部分。与 XAML 入门](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)
 - [第2部分。基本 XAML 语法](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)
 - [第3部分。XAML 标记扩展](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)

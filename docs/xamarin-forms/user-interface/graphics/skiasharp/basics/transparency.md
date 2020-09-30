@@ -10,20 +10,20 @@ ms.date: 08/23/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 735aae1b9d94865bd34450861bd6c57b08c420c2
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: af1747a19af6c715d1594122393e500d1f73c79b
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84134714"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562517"
 ---
 # <a name="skiasharp-transparency"></a>SkiaSharp 透明度
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-如您所见， [`SKPaint`](xref:SkiaSharp.SKPaint) 该类包含一个 [`Color`](xref:SkiaSharp.SKPaint.Color) 类型为的属性 [`SKColor`](xref:SkiaSharp.SKColor) 。 `SKColor`包含 alpha 通道，因此，使用值的任何颜色都 `SKColor` 可能是部分透明的。 
+如您所见， [`SKPaint`](xref:SkiaSharp.SKPaint) 该类包含一个 [`Color`](xref:SkiaSharp.SKPaint.Color) 类型为的属性 [`SKColor`](xref:SkiaSharp.SKColor) 。 `SKColor` 包含 alpha 通道，因此，使用值的任何颜色都 `SKColor` 可能是部分透明的。 
 
-在 SkiaSharp 文章的[**基本动画**](animation.md)中演示了一些透明度。 本文稍微深入地探讨了如何将多个对象组合到一个场景中，这种方法有时也称为 "_混合_"。 [**SkiaSharp 着色**](../effects/shaders/index.md)器部分的文章中介绍了更高级的混合技术。
+在 SkiaSharp 文章的 [**基本动画**](animation.md) 中演示了一些透明度。 本文稍微深入地探讨了如何将多个对象组合到一个场景中，这种方法有时也称为 " _混合_"。 [**SkiaSharp 着色**](../effects/shaders/index.md)器部分的文章中介绍了更高级的混合技术。
 
 首次使用四参数构造函数创建颜色时，可以设置透明度级别 [`SKColor`](xref:SkiaSharp.SKColor.%23ctor(System.Byte,System.Byte,System.Byte,System.Byte)) ：
 
@@ -39,7 +39,7 @@ Alpha 值0是完全透明的，alpha 值为完全不透明。 这两个极端之
 SKColor halfTransparentBlue = SKColors.Blue.WithAlpha(0x80);
 ```
 
-[**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)示例的**代码更多代码**页中演示了部分透明文本的使用。 此页通过在值中包含透明度来将两个文本字符串淡入和淡出 `SKColor` ：
+[**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)示例的**代码更多代码**页中演示了部分透明文本的使用。 此页通过在值中包含透明度来将两个文本字符串淡入和淡出 `SKColor` ：
 
 ```csharp
 public class CodeMoreCodePage : ContentPage
@@ -139,15 +139,15 @@ paint.Color = SKColors.Blue.WithAlpha((byte)(0xFF * (1 - transparency)));
 paint.Color = SKColors.Blue.WithAlpha((byte)(0xFF * transparency));
 ```
 
-动画在这两个单词之间交替，敦促用户 "代码更多" （或可能请求 "更多代码"）：
+动画会在两个单词之间交替，敦促用户 "代码更多" (或可能请求 "更多代码" ) ：
 
 [![代码更多代码](transparency-images/CodeMoreCode.png "代码更多代码")](transparency-images/CodeMoreCode-Large.png#lightbox)
 
-在上一文章 SkiaSharp 中的[**位图基础**](bitmaps.md)上，你已了解如何使用的方法之一来显示位图 [`DrawBitmap`](xref:SkiaSharp.SKCanvas.DrawBitmap*) `SKCanvas` 。 所有 `DrawBitmap` 方法都包含一个 `SKPaint` 对象作为最后一个参数。 默认情况下，此参数设置为， `null` 您可以将其忽略。 
+在上一文章 SkiaSharp 中的 [**位图基础**](bitmaps.md)上，你已了解如何使用的方法之一来显示位图 [`DrawBitmap`](xref:SkiaSharp.SKCanvas.DrawBitmap*) `SKCanvas` 。 所有 `DrawBitmap` 方法都包含一个 `SKPaint` 对象作为最后一个参数。 默认情况下，此参数设置为， `null` 您可以将其忽略。 
 
 或者，您可以设置 `Color` 此对象的属性， `SKPaint` 以显示具有一定程度的透明度的位图。 如果在的属性中设置透明度 `Color` `SKPaint` ，则可以使位图淡入和淡出，或将一个位图溶解到另一个位图。 
 
-位图**溶解在位图溶解**页中进行了演示。 XAML 文件实例化 `SKCanvasView` 和 `Slider` ：
+位图 **溶解在位图溶解** 页中进行了演示。 XAML 文件实例化 `SKCanvasView` 和 `Slider` ：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -238,9 +238,9 @@ public partial class BitmapDissolvePage : ContentPage
 
 [![位图溶解](transparency-images/BitmapDissolve.png "位图溶解")](transparency-images/BitmapDissolve-Large.png#lightbox)
 
-在过去的几篇文章中，你已了解如何使用 SkiaSharp 绘制文本、圆、椭圆、圆角矩形和位图。 下一步是[SkiaSharp 线和路径](../paths/index.md)，您将在其中学习如何在图形路径中绘制连接线条。
+在过去的几篇文章中，你已了解如何使用 SkiaSharp 绘制文本、圆、椭圆、圆角矩形和位图。 下一步是 [SkiaSharp 线和路径](../paths/index.md) ，您将在其中学习如何在图形路径中绘制连接线条。
 
 ## <a name="related-links"></a>相关链接
 
-- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [SkiaSharp Api](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (示例) ](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

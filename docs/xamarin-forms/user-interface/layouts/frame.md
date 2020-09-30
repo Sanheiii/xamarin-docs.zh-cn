@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Forms期限
+title: Xamarin.Forms 期限
 description: Xamarin.FormsFrame 类是一种布局，用于使用可以配置为颜色、阴影和其他选项的边框来包装视图或布局。
 ms.prod: xamarin
 ms.assetId: 4E074714-0928-41C8-A468-B60E23236A8C
@@ -10,24 +10,24 @@ ms.date: 08/06/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 42192111befbefda7e0f62b7691a8392c2828818
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 8a14390afc04c1a0b2ccb5199350b69a9645a794
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137184"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563544"
 ---
-# <a name="xamarinforms-frame"></a>Xamarin.Forms期限
+# <a name="no-locxamarinforms-frame"></a>Xamarin.Forms 期限
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-frame/)
 
-Xamarin.Forms [`Frame`](xref:Xamarin.Forms.Frame) 类是一种布局，用于使用可以配置颜色、阴影和其他选项的边框来包装视图。 框架通常用于在控件周围创建边框，但可用于创建更复杂的 UI。 有关详细信息，请参阅[高级帧使用](#advanced-frame-usage)。
+Xamarin.Forms [`Frame`](xref:Xamarin.Forms.Frame) 类是一种布局，用于使用可以配置颜色、阴影和其他选项的边框来包装视图。 框架通常用于在控件周围创建边框，但可用于创建更复杂的 UI。 有关详细信息，请参阅 [高级帧使用](#advanced-frame-usage)。
 
 以下屏幕截图显示了 `Frame` iOS 和 Android 上的控件：
 
 [!["IOS 和 Android 上的框架示例"](frame-images/frame-cropped.png)](frame-images/frame-full.png#lightbox "IOS 和 Android 上的框架示例")
 
-`Frame`类定义以下属性：
+`Frame` 类定义了以下属性：
 
 * [`BorderColor`](xref:Xamarin.Forms.Frame.BorderColor)`Color`确定边框颜色的值 `Frame` 。
 * [`CornerRadius`](xref:Xamarin.Forms.Frame.CornerRadius)`float`确定角的圆角半径的值。
@@ -57,7 +57,7 @@ Frame defaultFrame = new Frame
 };
 ```
 
-`Frame`通过在 XAML 中设置属性，可以自定义对象的圆角、着色边框和投影。 下面的示例演示一个自定义 `Frame` 对象：
+`Frame` 通过在 XAML 中设置属性，可以自定义对象的圆角、着色边框和投影。 下面的示例演示一个自定义 `Frame` 对象：
 
 ```xaml
 <Frame BorderColor="Orange"
@@ -189,12 +189,12 @@ Frame circleImageFrame = new Frame
 };
 ```
 
-必须将**outdoors.jpg**映像添加到每个平台项目中，此操作的实现方式因平台而异。 有关详细信息，请参阅[中 Xamarin.Forms 的图像](~/xamarin-forms/user-interface/images.md)。
+必须将 **outdoors.jpg** 映像添加到每个平台项目中，此操作的实现方式因平台而异。 有关详细信息，请参阅[中 Xamarin.Forms 的图像](~/xamarin-forms/user-interface/images.md)。
 
 > [!NOTE]
 > 圆角在各种平台上的行为略有不同。 `Image`对象的长度 `Margin` 应为图像宽度和父框架宽度之间的一半，并且应为负数以使图像在对象内均匀对齐 `Frame` 。 但是，不能保证请求的宽度和高度，因此 `Margin` ， `HeightRequest` 和 `WidthRequest` 属性可能需要根据映像大小和其他布局选项进行更改。
 
 ## <a name="related-links"></a>相关链接
 
-* [帧演示](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-frame/)
-* [中的映像Xamarin.Forms](~/xamarin-forms/user-interface/images.md)
+* [帧演示](/samples/xamarin/xamarin-forms-samples/userinterface-frame/)
+* [中的映像 Xamarin.Forms](~/xamarin-forms/user-interface/images.md)

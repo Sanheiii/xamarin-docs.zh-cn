@@ -8,14 +8,14 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
 no-loc:
-- ':::no-loc(Xamarin.Forms):::'
-- ':::no-loc(Xamarin.Essentials):::'
-ms.openlocfilehash: a721f51d3f59bc166a48f5cc3a3eec9712ace837
-ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 7eb21f9a6a679c294a848d7fa79721c6db03bb0d
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86996677"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563219"
 ---
 # <a name="visualelement-elevation-on-android"></a>Android 上的 VisualElement 提升
 
@@ -25,7 +25,7 @@ ms.locfileid: "86996677"
 
 ```xaml
 <ContentPage ...
-             xmlns:android="clr-namespace::::no-loc(Xamarin.Forms):::.PlatformConfiguration.AndroidSpecific;assembly=:::no-loc(Xamarin.Forms):::.Core"
+             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
              Title="Elevation">
     <StackLayout>
         <Grid>
@@ -43,8 +43,8 @@ ms.locfileid: "86996677"
 此外，还可以使用 Fluent API 从 c # 使用该方法：
 
 ```csharp
-using :::no-loc(Xamarin.Forms):::.PlatformConfiguration;
-using :::no-loc(Xamarin.Forms):::.PlatformConfiguration.AndroidSpecific;
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
 ...
 
 public class AndroidElevationPageCS : ContentPage
@@ -82,15 +82,15 @@ public class AndroidElevationPageCS : ContentPage
 }
 ```
 
-`Button.On<Android>`方法指定此平台特定的仅在 Android 上运行。 `VisualElement.SetElevation`命名空间中的方法 [`:::no-loc(Xamarin.Forms):::.PlatformConfiguration.AndroidSpecific`](xref::::no-loc(Xamarin.Forms):::.PlatformConfiguration.AndroidSpecific) 用于将视觉对象的提升设置为可以为 null 的 `float` 。 此外，该 `VisualElement.GetElevation` 方法可用于检索可视元素的提升值。
+`Button.On<Android>`方法指定此平台特定的仅在 Android 上运行。 `VisualElement.SetElevation`命名空间中的方法 [`Xamarin.Forms.PlatformConfiguration.AndroidSpecific`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) 用于将视觉对象的提升设置为可以为 null 的 `float` 。 此外，该 `VisualElement.GetElevation` 方法可用于检索可视元素的提升值。
 
-结果就是可以控制视觉对象的提升，使 Z 值较高的视觉元素遮蔽 Z 值的可视元素。 因此，在此示例中，第二个 [`Button`](xref::::no-loc(Xamarin.Forms):::.Button) 呈现在上方， [`BoxView`](xref::::no-loc(Xamarin.Forms):::.BoxView) 因为它具有较高的提升值：
+结果就是可以控制视觉对象的提升，使 Z 值较高的视觉元素遮蔽 Z 值的可视元素。 因此，在此示例中，第二个 [`Button`](xref:Xamarin.Forms.Button) 呈现在上方， [`BoxView`](xref:Xamarin.Forms.BoxView) 因为它具有较高的提升值：
 
 ![VisualElement 提升屏幕快照](visualelement-elevation-images/elevation.png)
 
 ## <a name="related-links"></a>相关链接
 
-- [PlatformSpecifics （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [PlatformSpecifics (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [创建平台特定信息](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
-- [AndroidSpecific API](xref::::no-loc(Xamarin.Forms):::.PlatformConfiguration.AndroidSpecific)
-- [AndroidSpecific. AppCompat API](xref::::no-loc(Xamarin.Forms):::.PlatformConfiguration.AndroidSpecific.AppCompat)
+- [AndroidSpecific API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)
+- [AndroidSpecific. AppCompat API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat)

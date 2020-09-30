@@ -10,12 +10,12 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6c73f46d2845be7bb54e24cd02ec22f3c2cd386d
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: de412e064fa84e516dcb8e9b604068c84a2689e6
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137237"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563609"
 ---
 # <a name="listview-selectionmode-on-windows"></a>Windows 上的 ListView SelectionMode
 
@@ -46,20 +46,20 @@ using Xamarin.Forms.PlatformConfiguration.WindowsSpecific;
 listView.On<Windows>().SetSelectionMode(ListViewSelectionMode.Inaccessible);
 ```
 
-`ListView.On<Windows>`方法指定此平台特定的仅在通用 Windows 平台上运行。 [ `ListView.SetSelectionMode` ] （X： Xamarin.Forms 。PlatformConfiguration. WindowsSpecific. SetSelectionMode （ Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration、 Xamarin.Forms 。ListView}， Xamarin.Forms 。PlatformConfiguration. WindowsSpecific. ListViewSelectionMode））方法在 [`Xamarin.Forms.PlatformConfiguration.WindowsSpecific`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific) 命名空间中，用于控制中的项是否 [`ListView`](xref:Xamarin.Forms.ListView) 可以响应点击的笔势，并使用 [`ListViewSelectionMode`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ListViewSelectionMode) 枚举提供两个可能的值：
+`ListView.On<Windows>`方法指定此平台特定的仅在通用 Windows 平台上运行。 [ `ListView.SetSelectionMode` ] (x： Xamarin.Forms 。PlatformConfiguration. WindowsSpecific. SetSelectionMode (Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration、 Xamarin.Forms 。ListView}， Xamarin.Forms 。PlatformConfiguration. WindowsSpecific. ListViewSelectionMode) # A3 方法在 [`Xamarin.Forms.PlatformConfiguration.WindowsSpecific`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific) 命名空间中，用来控制中的项是否 [`ListView`](xref:Xamarin.Forms.ListView) 可响应点击手势，并 [`ListViewSelectionMode`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ListViewSelectionMode) 提供可提供两个可能值的枚举：
 
-- [`Accessible`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ListViewSelectionMode.Accessible)-指示 `ListView` 将激发本机 `ItemClick` 事件来处理交互，因此提供了辅助功能。 因此，Windows 讲述人和键盘可以与进行交互 `ListView` 。 但是，中的项 `ListView` 无法响应点击手势。 这是通用 Windows 平台上的实例的默认行为 `ListView` 。
-- [`Inaccessible`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ListViewSelectionMode.Inaccessible)-指示 `ListView` 将激发本机 `Tapped` 事件来处理交互。 因此，中的项 `ListView` 可以响应点击手势。 但是，没有可访问的功能，因此 Windows 讲述人和键盘无法与交互 `ListView` 。
+- [`Accessible`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ListViewSelectionMode.Accessible) -指示 `ListView` 将激发本机 `ItemClick` 事件来处理交互，因此提供了辅助功能。 因此，Windows 讲述人和键盘可以与进行交互 `ListView` 。 但是，中的项 `ListView` 无法响应点击手势。 这是通用 Windows 平台上的实例的默认行为 `ListView` 。
+- [`Inaccessible`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ListViewSelectionMode.Inaccessible) -指示 `ListView` 将激发本机 `Tapped` 事件来处理交互。 因此，中的项 `ListView` 可以响应点击手势。 但是，没有可访问的功能，因此 Windows 讲述人和键盘无法与交互 `ListView` 。
 
 > [!NOTE]
 > `Accessible`和 `Inaccessible` 选择模式是互斥的，你将需要在 [`ListView`](xref:Xamarin.Forms.ListView) `ListView` 可响应点击手势的可访问或之间进行选择。
 
-此外，[ `GetSelectionMode` ] （x： Xamarin.Forms 。PlatformConfiguration. WindowsSpecific. GetSelectionMode （ Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration、 Xamarin.Forms 。ListView}））方法可用于返回当前 [`ListViewSelectionMode`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ListViewSelectionMode) 。
+此外，[ `GetSelectionMode` ] (x： Xamarin.Forms 。PlatformConfiguration. WindowsSpecific. GetSelectionMode (Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration、 Xamarin.Forms 。ListView} ) # A3 方法可用于返回当前 [`ListViewSelectionMode`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ListViewSelectionMode) 。
 
 结果是，指定的 [`ListViewSelectionMode`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ListViewSelectionMode) 将应用于 [`ListView`](xref:Xamarin.Forms.ListView) ，后者控制中的项是否 `ListView` 可响应点击手势，并因此是否 `ListView` 引发 `ItemClick` 或 `Tapped` 事件。
 
 ## <a name="related-links"></a>相关链接
 
-- [PlatformSpecifics （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [PlatformSpecifics (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [创建平台特定信息](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [WindowsSpecific API](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific)

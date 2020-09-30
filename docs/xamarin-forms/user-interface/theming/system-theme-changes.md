@@ -1,6 +1,6 @@
 ---
 title: 响应应用程序中的系统主题更改 Xamarin.Forms
-description: Xamarin.Forms应用程序可以使用 OnAppTheme 类型和 DynamicResource 标记扩展对操作系统主题更改做出响应。
+description: Xamarin.Forms 应用程序可以使用 OnAppTheme 类型和 DynamicResource 标记扩展对操作系统主题更改做出响应。
 ms.assetid: D10506DD-BAA0-437F-A4AD-882D16E7B60D
 ms.prod: xamarin
 ms.technology: xamarin-forms
@@ -10,26 +10,26 @@ ms.date: 08/06/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: efd9cabc9504a9fa56f1f7a763013e6852be9382
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: 258061042fc8ab80b8bbdd9a0a9a965d87a1e064
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87918098"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91557564"
 ---
 # <a name="respond-to-system-theme-changes-in-no-locxamarinforms-applications"></a>响应应用程序中的系统主题更改 Xamarin.Forms
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-systemthemesdemo/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-systemthemesdemo/)
 
 设备通常包括浅色和深色主题，它们分别引用可在操作系统级别设置的各种外观首选项。 应用程序应遵守这些系统主题，并在系统主题发生更改时立即做出响应。
 
 根据设备配置的不同原因，系统主题可能会发生变化。 这包括用户显式更改的系统主题，它因一天中的某个时间而变化，并因环境因素（如低亮度）而变化。
 
-Xamarin.Forms应用程序可以通过使用带有 `AppThemeBinding` 标记扩展的资源和 `SetAppThemeColor` 和扩展方法来响应系统主题更改 `SetOnAppTheme<T>` 。
+Xamarin.Forms 应用程序可以通过使用带有 `AppThemeBinding` 标记扩展的资源和 `SetAppThemeColor` 和扩展方法来响应系统主题更改 `SetOnAppTheme<T>`  。
 
 Xamarin.Forms为了响应系统主题更改，必须满足以下要求：
 
-- Xamarin.Forms4.6.0.967 或更高版本。
+- Xamarin.Forms 4.6.0.967 或更高版本。
 - iOS 13 或更高版本。
 - Android 10 (API 29) 或更高版本。
 - UWP 版本14393或更高版本。
@@ -92,11 +92,11 @@ Xamarin.Forms为了响应系统主题更改，必须满足以下要求：
 
 在此示例中，的背景色 [`Grid`](xref:Xamarin.Forms.Grid) 和样式根据 [`Button`](xref:Xamarin.Forms.Button) 设备使用的是背景色还是深色主题而变化。
 
-有关标记扩展的详细信息 `AppThemeBinding` ，请参阅[AppThemeBinding 标记扩展](~/xamarin-forms/xaml/markup-extensions/consuming.md#appthemebinding-markup-extension)。
+有关标记扩展的详细信息 `AppThemeBinding` ，请参阅 [AppThemeBinding 标记扩展](~/xamarin-forms/xaml/markup-extensions/consuming.md#appthemebinding-markup-extension)。
 
 ### <a name="extension-methods"></a>扩展方法
 
-Xamarin.Forms包含 `SetAppThemeColor` 和 `SetOnAppTheme<T>` 扩展方法，这些方法使 [`VisualElement`](xref:Xamarin.Forms.VisualElement) 对象能够响应系统主题更改。
+Xamarin.Forms 包含 `SetAppThemeColor` 和 `SetOnAppTheme<T>` 扩展方法，这些方法使 [`VisualElement`](xref:Xamarin.Forms.VisualElement) 对象能够响应系统主题更改。
 
 `SetAppThemeColor`方法启用 [`Color`](xref:Xamarin.Forms.Color) 要根据当前系统主题在目标属性上设置的对象：
 
@@ -145,7 +145,7 @@ Application.Current.UserAppTheme = OSAppTheme.Dark;
 
 ## <a name="react-to-theme-changes"></a>主题更改的响应
 
-设备上的系统主题可能会因多种原因而发生变化，这取决于设备的配置方式。 Xamarin.Forms当系统主题通过处理事件进行更改时，可以通知应用 `Application.RequestedThemeChanged` ：
+设备上的系统主题可能会因多种原因而发生变化，这取决于设备的配置方式。 Xamarin.Forms 当系统主题通过处理事件进行更改时，可以通知应用 `Application.RequestedThemeChanged` ：
 
 ```csharp
 Application.Current.RequestedThemeChanged += (s, a) =>
@@ -161,7 +161,7 @@ Application.Current.RequestedThemeChanged += (s, a) =>
 
 ## <a name="related-links"></a>相关链接
 
-- [SystemThemes (示例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-systemthemesdemo/)
+- [SystemThemes (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-systemthemesdemo/)
 - [AppThemeBinding 标记扩展](~/xamarin-forms/xaml/markup-extensions/consuming.md#appthemebinding-markup-extension)
 - [资源字典](~/xamarin-forms/xaml/resource-dictionaries.md)
 - [使用 XAML 样式设置 Xamarin.Forms 应用的样式](~/xamarin-forms/user-interface/styles/xaml/index.md)

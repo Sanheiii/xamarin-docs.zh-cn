@@ -10,12 +10,12 @@ ms.date: 03/05/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: aaf94536d41da47aec10fc655f9d053b753da5a2
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 0b3f7a28452d8507c4cb4a42d75b5edb5d62d8e4
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84135962"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563675"
 ---
 # <a name="masterdetailpage-shadow-on-ios"></a>IOS 上的 MasterDetailPage 阴影
 
@@ -56,6 +56,6 @@ public class iOSMasterDetailPageCS : MasterDetailPage
 
 ## <a name="related-links"></a>相关链接
 
-- [PlatformSpecifics （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [PlatformSpecifics (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [创建平台特定信息](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [iOSSpecific API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

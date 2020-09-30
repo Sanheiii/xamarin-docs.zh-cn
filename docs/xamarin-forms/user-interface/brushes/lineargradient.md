@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Forms画笔：线性渐变
+title: Xamarin.Forms 画笔：线性渐变
 description: Xamarin.FormsLinearGradientBrush 类使用线性渐变绘制区域。
 ms.prod: xamarin
 ms.assetid: BEA2B3F5-96B0-4E39-88A6-0FAFE95C3DCD
@@ -10,27 +10,27 @@ ms.date: 07/28/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 734ecae4fdafd71f0c88ddc5e4b4ed0c672f2019
-ms.sourcegitcommit: 579ec4f2884fa391e5e214a3952cd6004c521eb8
+ms.openlocfilehash: be4b868a2f38063f3a46d57ecb190b377eb89dce
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87919627"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563583"
 ---
-# <a name="no-locxamarinforms-brushes-linear-gradients"></a>Xamarin.Forms画笔：线性渐变
+# <a name="no-locxamarinforms-brushes-linear-gradients"></a>Xamarin.Forms 画笔：线性渐变
 
 ![预览 API](~/media/shared/preview.png "此 API 当前为预发布版本")
 
-[![下载示例](~/media/shared/download.png)下载示例](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/BrushDemos)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-brushdemos/)
 
-`LinearGradientBrush`类派生自 `GradientBrush` 类，并使用线性渐变绘制区域，这种方式将两个或更多的颜色沿称为渐变轴的线混合。 `GradientStop`对象用于指定渐变中的颜色及其位置。 有关对象的详细信息 `GradientStop` ，请参阅[ Xamarin.Forms 刷子：梯度](gradient.md)。
+`LinearGradientBrush`类派生自 `GradientBrush` 类，并使用线性渐变绘制区域，这种方式将两个或更多的颜色沿称为渐变轴的线混合。 `GradientStop` 对象用于指定渐变中的颜色及其位置。 有关对象的详细信息 `GradientStop` ，请参阅[ Xamarin.Forms 刷子：梯度](gradient.md)。
 
 `LinearGradientBrush` 类定义了以下属性：
 
 - `StartPoint`，类型为 [`Point`](xref:Xamarin.Forms.Point) ，表示线性渐变的二维起始坐标。 此属性的默认值为 (0，0) 。
 - `EndPoint`，类型为 [`Point`](xref:Xamarin.Forms.Point) ，表示线性渐变的二维终止坐标。 此属性的默认值为 (1、1) 。
 
-这些属性是由对象支持的 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，这意味着它们可以是数据绑定的目标和样式。
+这些属性由 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 对象提供支持；也就是说，它们可以作为数据绑定的目标，并能进行样式设置。
 
 `LinearGradientBrush`类也作为 `IsEmpty` 方法，该方法返回一个 `bool` ，该方法表示是否已为画笔分配了任何 `GradientStop` 对象。
 
@@ -134,5 +134,5 @@ ms.locfileid: "87919627"
 
 ## <a name="related-links"></a>相关链接
 
-- [BrushesDemos (示例) ](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/BrushDemos)
-- [Xamarin.Forms画笔：渐变](gradient.md)
+- [BrushesDemos (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-brushdemos/)
+- [Xamarin.Forms 画笔：渐变](gradient.md)

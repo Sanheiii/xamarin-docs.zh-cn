@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Forms标识
+title: Xamarin.Forms 标识
 description: 本文介绍如何使用 Xamarin.Forms Label 类在应用程序中显示单行文本和多行文本。
 ms.prod: xamarin
 ms.assetid: 02E6C553-5670-49A0-8EE9-5153ED21EA91
@@ -10,18 +10,18 @@ ms.date: 07/21/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 1fcfc2c3fbb91a7ee326db7aeef08459e05d834d
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: 742cc1171901d5aa9b81cab31fd45258686c2085
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87917879"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91557577"
 ---
-# <a name="no-locxamarinforms-label"></a>Xamarin.Forms标识
+# <a name="no-locxamarinforms-label"></a>Xamarin.Forms 标识
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
 
-_显示文本Xamarin.Forms_
+_显示文本 Xamarin.Forms_
 
 [`Label`](xref:Xamarin.Forms.Label)视图用于显示文本，同时为单行和多行。 标签可以具有文本修饰和彩色文本，并使用自定义字体)  (系列、大小和选项。
 
@@ -54,16 +54,16 @@ var bothLabel = new Label { Text = "This is underlined text with strikethrough."
 ![带有文本修饰的标签](label-images/label-textdecorations.png)
 
 > [!NOTE]
-> 还可以对实例应用文本修饰 [`Span`](xref:Xamarin.Forms.Span) 。 有关类的详细信息 `Span` ，请参阅[格式化文本](#formatted-text)。
+> 还可以对实例应用文本修饰 [`Span`](xref:Xamarin.Forms.Span) 。 有关类的详细信息 `Span` ，请参阅 [格式化文本](#formatted-text)。
 
 ## <a name="transform-text"></a>转换文本
 
 [`Label`](xref:Xamarin.Forms.Entry) `Text` 通过将属性设置为枚举的值，可以转换存储在属性中的文本大小写 `TextTransform` `TextTransform` 。 此枚举具有四个值：
 
-- `None`指示不转换文本。
-- `Default`指示将使用平台的默认行为。 这是 `TextTransform` 属性的默认值。
-- `Lowercase`指示文本将转换为小写。
-- `Uppercase`指示文本将转换为大写。
+- `None` 指示不转换文本。
+- `Default` 指示将使用平台的默认行为。 这是 `TextTransform` 属性的默认值。
+- `Lowercase` 指示文本将转换为小写。
+- `Uppercase` 指示文本将转换为大写。
 
 下面的示例演示如何将文本转换为大写：
 
@@ -104,7 +104,7 @@ Label label = new Label { Text = "Character spaced text", CharacterSpacing = 10 
 从 XAML 将中的文本强制插入新行有两种主要方法 [`Label`](xref:Xamarin.Forms.Label) ：
 
 1. 使用 unicode 换行符，即 " &amp; #10;"。
-1. 使用*属性元素*语法指定文本。
+1. 使用 *属性元素* 语法指定文本。
 
 下面的代码演示了这两种方法的示例：
 
@@ -167,22 +167,22 @@ public partial class LabelPage : ContentPage
 
 ![标签 TextColor 示例](label-images/textcolor.png)
 
-有关颜色的详细信息，请参阅[颜色](~/xamarin-forms/user-interface/colors.md)。
+有关颜色的详细信息，请参阅 [颜色](~/xamarin-forms/user-interface/colors.md)。
 
 ## <a name="fonts"></a>字体
 
-有关在上指定字体的详细信息 `Label` ，请参阅[字体](~/xamarin-forms/user-interface/text/fonts.md)。
+有关在上指定字体的详细信息 `Label` ，请参阅 [字体](~/xamarin-forms/user-interface/text/fonts.md)。
 
 ## <a name="truncation-and-wrapping"></a>截断和换行
 
-可以设置标签来处理无法按多种方式在一行上容纳的文本，该 `LineBreakMode` 属性由属性公开。 [`LineBreakMode`](xref:Xamarin.Forms.LineBreakMode)是具有以下值的枚举：
+可以设置标签来处理无法按多种方式在一行上容纳的文本，该 `LineBreakMode` 属性由属性公开。 [`LineBreakMode`](xref:Xamarin.Forms.LineBreakMode) 是具有以下值的枚举：
 
-- **HeadTruncation** &ndash;截断文本的开头，并显示结束。
-- **CharacterWrap** &ndash;将文本换行到字符边界处的新行。
-- **MiddleTruncation** &ndash;显示文本的开头和结尾，中间用省略号替换。
-- **NoWrap** &ndash;不会自动换行，只显示一行中可容纳的最多文本。
-- **TailTruncation** &ndash;显示文本的开头，截断结束。
-- **换行** &ndash;在字边界处环绕文本。
+- **HeadTruncation** &ndash; 截断文本的开头，并显示结束。
+- **CharacterWrap** &ndash; 将文本换行到字符边界处的新行。
+- **MiddleTruncation** &ndash; 显示文本的开头和结尾，中间用省略号替换。
+- **NoWrap** &ndash; 不会自动换行，只显示一行中可容纳的最多文本。
+- **TailTruncation** &ndash; 显示文本的开头，截断结束。
+- **换行** &ndash; 在字边界处环绕文本。
 
 ## <a name="display-a-specific-number-of-lines"></a>显示特定行数
 
@@ -219,8 +219,8 @@ var label =
 
 [`Label`](xref:Xamarin.Forms.Label)类具有 `TextType` 属性，该属性确定 `Label` 实例是否应显示纯文本或 HTML 文本。 应将此属性设置为枚举的成员之一 `TextType` ：
 
-- `Text`指示 `Label` 将显示纯文本，并且为属性的默认值 `Label.TextType` 。
-- `Html`指示 `Label` 将显示 HTML 文本。
+- `Text` 指示 `Label` 将显示纯文本，并且为属性的默认值 `Label.TextType` 。
+- `Html` 指示 `Label` 将显示 HTML 文本。
 
 因此， [`Label`](xref:Xamarin.Forms.Label) 实例可以通过将 `Label.TextType` 属性设置为 `Html` ，并将属性设置 `Label.Text` 为 HTML 字符串来显示 html：
 
@@ -266,18 +266,18 @@ Label label = new Label
 
 `FormattedText`属性的类型为 [`FormattedString`](xref:Xamarin.Forms.FormattedString) ，它包含一个或多个 [`Span`](xref:Xamarin.Forms.Span) 实例，通过属性进行设置 [`Spans`](xref:Xamarin.Forms.FormattedString.Spans) 。 以下 `Span` 属性可用于设置视觉外观：
 
-- [`BackgroundColor`](xref:Xamarin.Forms.Span.BackgroundColor)–跨距背景的颜色。
+- [`BackgroundColor`](xref:Xamarin.Forms.Span.BackgroundColor) –跨距背景的颜色。
 - `CharacterSpacing`，属于 `double` 类型，是 `Span` 文本字符之间的间距。
-- [`Font`](xref:Xamarin.Forms.Span.Font)–跨度中的文本的字体。
-- [`FontAttributes`](xref:Xamarin.Forms.Span.FontAttributes)–范围中文本的字体特性。
-- [`FontFamily`](xref:Xamarin.Forms.Span.FontFamily)–范围内的文本的字体所属的字体系列。
-- [`FontSize`](xref:Xamarin.Forms.Span.FontSize)–范围中文本的字体大小。
-- [`ForegroundColor`](xref:Xamarin.Forms.Span.ForegroundColor)–范围中文本的颜色。 此属性已过时，并且已被属性替换 `TextColor` 。
-- [`LineHeight`](xref:Xamarin.Forms.Span.LineHeight)-要应用于范围默认行高的乘数。 有关详细信息，请参阅[行高](#line-height)。
-- [`Style`](xref:Xamarin.Forms.Span.Style)–应用于范围的样式。
-- [`Text`](xref:Xamarin.Forms.Span.Text)–范围的文本。
-- [`TextColor`](xref:Xamarin.Forms.Span.TextColor)–范围中文本的颜色。
-- `TextDecorations`-要应用于范围中的文本的修饰。 有关详细信息，请参阅[文本修饰](#text-decorations)。
+- [`Font`](xref:Xamarin.Forms.Span.Font) –跨度中的文本的字体。
+- [`FontAttributes`](xref:Xamarin.Forms.Span.FontAttributes) –范围中文本的字体特性。
+- [`FontFamily`](xref:Xamarin.Forms.Span.FontFamily) –范围内的文本的字体所属的字体系列。
+- [`FontSize`](xref:Xamarin.Forms.Span.FontSize) –范围中文本的字体大小。
+- [`ForegroundColor`](xref:Xamarin.Forms.Span.ForegroundColor) –范围中文本的颜色。 此属性已过时，并且已被属性替换 `TextColor` 。
+- [`LineHeight`](xref:Xamarin.Forms.Span.LineHeight) -要应用于范围默认行高的乘数。 有关详细信息，请参阅 [行高](#line-height)。
+- [`Style`](xref:Xamarin.Forms.Span.Style)  –应用于范围的样式。
+- [`Text`](xref:Xamarin.Forms.Span.Text) –范围的文本。
+- [`TextColor`](xref:Xamarin.Forms.Span.TextColor) –范围中文本的颜色。
+- `TextDecorations` -要应用于范围中的文本的修饰。 有关详细信息，请参阅 [文本修饰](#text-decorations)。
 
 [`BackgroundColor`](xref:Xamarin.Forms.Span.BackgroundColor)、 [`Text`](xref:Xamarin.Forms.Span.Text) 和可 [`Text`](xref:Xamarin.Forms.Span.Text) 绑定属性的默认绑定模式为 [`OneWay`](xref:Xamarin.Forms.BindingMode) 。 有关此绑定模式的详细信息，请参阅[绑定模式](~/xamarin-forms/app-fundamentals/data-binding/binding-mode.md)指南中[的默认绑定模式](~/xamarin-forms/app-fundamentals/data-binding/binding-mode.md#the-default-binding-mode)。
 
@@ -455,7 +455,7 @@ Label label = new Label
 >
 > 在 Android 和通用 Windows 平台上， `Padding` 当 `Label` 创建或更高版本时，可以指定属性值。
 
-有关填充的详细信息，请参阅[边距和填充](~/xamarin-forms/user-interface/layouts/margin-and-padding.md)。
+有关填充的详细信息，请参阅 [边距和填充](~/xamarin-forms/user-interface/layouts/margin-and-padding.md)。
 
 ## <a name="hyperlinks"></a>超链接
 
@@ -466,7 +466,7 @@ Label label = new Label
 1. 定义 `ICommand` 将由执行的 [`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer) 。
 1. 编写将由执行的代码 `ICommand` 。
 
-下面的代码示例摘自[Hyperlink 演示](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-hyperlinks/)示例，它显示了 [`Label`](xref:Xamarin.Forms.Label) 其内容是从多个实例设置的 [`Span`](xref:Xamarin.Forms.Span) ：
+下面的代码示例摘自 [Hyperlink 演示](/samples/xamarin/xamarin-forms-samples/userinterface-hyperlinks/) 示例，它显示了 [`Label`](xref:Xamarin.Forms.Label) 其内容是从多个实例设置的 [`Span`](xref:Xamarin.Forms.Span) ：
 
 ```xaml
 <Label>
@@ -515,7 +515,7 @@ public partial class MainPage : ContentPage
 
 创建超链接的前一种方法需要在应用程序中每次需要超链接时编写重复代码。 不过， [`Label`](xref:Xamarin.Forms.Label) 和类都 [`Span`](xref:Xamarin.Forms.Span) 可以创建子类来创建 `HyperlinkLabel` 和 `HyperlinkSpan` 类，并在其中添加了手势识别器和文本格式代码。
 
-下面的代码示例摘自[Hyperlink 演示](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-hyperlinks/)示例，它显示了一个 `HyperlinkSpan` 类：
+下面的代码示例摘自 [Hyperlink 演示](/samples/xamarin/xamarin-forms-samples/userinterface-hyperlinks/) 示例，它显示了一个 `HyperlinkSpan` 类：
 
 ```csharp
 public class HyperlinkSpan : Span
@@ -569,12 +569,12 @@ public class HyperlinkSpan : Span
 
 ## <a name="styling-labels"></a>设置标签样式
 
-前面几节介绍 [`Label`](xref:Xamarin.Forms.Label) [`Span`](xref:Xamarin.Forms.Span) 了每个实例的设置和属性。 但是，可以将属性集分组为一个样式，该样式始终应用到一个或多个视图。 这可以提高代码的可读性，并使设计更改更易于实现。 有关详细信息，请参阅[样式](~/xamarin-forms/user-interface/text/styles.md)。
+前面几节介绍 [`Label`](xref:Xamarin.Forms.Label) [`Span`](xref:Xamarin.Forms.Span) 了每个实例的设置和属性。 但是，可以将属性集分组为一个样式，该样式始终应用到一个或多个视图。 这可以提高代码的可读性，并使设计更改更易于实现。 有关详细信息，请参阅 [样式](~/xamarin-forms/user-interface/text/styles.md)。
 
 ## <a name="related-links"></a>相关链接
 
-- [文本 (示例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
-- [超链接 (示例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-hyperlinks)
+- [文本 (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-text)
+- [超链接 (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-hyperlinks)
 - [创建移动应用 Xamarin.Forms ，第3章](https://developer.xamarin.com/r/xamarin-forms/book/chapter03.pdf)
 - [标签 API](xref:Xamarin.Forms.Label)
 - [跨 API](xref:Xamarin.Forms.Span)

@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Forms文本样式
+title: Xamarin.Forms 文本样式
 description: 本文介绍如何在应用程序中设置文本的样式 Xamarin.Forms 。 样式可定义一次，可供多个视图使用，但样式只能与一种类型的视图一起使用。
 ms.prod: xamarin
 ms.assetid: 57C0CFD6-A568-46B8-ADA1-BF25681893CF
@@ -10,25 +10,25 @@ ms.date: 05/22/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 7d82348231c4b4905f2f70b80f73c45f2f0bf66b
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: e2c6898439da5869d79bc500643ca3cfc52c2e3f
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84571995"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91557551"
 ---
-# <a name="xamarinforms-text-styles"></a>Xamarin.Forms文本样式
+# <a name="no-locxamarinforms-text-styles"></a>Xamarin.Forms 文本样式
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
 
-_为 Xamarin 中的文本设置格式_
+_设置文本样式 Xamarin.Forms_
 
 样式可用于调整标签、项和编辑器的外观。 样式可定义一次，可供多个视图使用，但样式只能与一种类型的视图一起使用。
 可以为样式提供 `Key` ，并使用特定控件的属性有选择地应用样式 `Style` 。
 
 ## <a name="built-in-styles"></a>内置样式
 
-Xamarin.Forms为常见方案包括几种[内置](xref:Xamarin.Forms.Device.Styles)样式：
+Xamarin.Forms 为常见方案包括几种 [内置](xref:Xamarin.Forms.Device.Styles) 样式：
 
 - `BodyStyle`
 - `CaptionStyle`
@@ -87,7 +87,7 @@ var label = new Label { Text = "Check out my style.", Style = LabelStyle };
 </ContentPage.Content>
 ```
 
-请注意，资源（包括所有样式）是在中定义的 `ContentPage.Resources` ，后者是更熟悉的 `ContentPage.Content` 元素的同级元素。
+请注意， (包括) 中定义的所有样式的资源 `ContentPage.Resources` ，它是更熟悉的元素的同级 `ContentPage.Content` 元素。
 
 ![自定义样式示例](styles-images/customstyle.png)
 
@@ -126,7 +126,7 @@ label.Style = (Style)Resources["LabelStyle"];
 label.Style = Device.Styles.TitleStyle;
 ```
 
-## <a name="accessibility"></a>辅助功能
+## <a name="accessibility"></a>可访问性
 
 存在内置样式，使其更易于遵循辅助功能首选项。 使用任何内置样式时，如果用户设置其辅助功能首选项，字体大小将自动增加。
 
@@ -140,11 +140,11 @@ label.Style = Device.Styles.TitleStyle;
 
 ![启用了辅助功能的设备样式](styles-images/post-access.png)
 
-若要确保可访问性，请确保在应用中将内置样式用作任何文本相关样式的基础，并一致地使用样式。 请参阅[样式](~/xamarin-forms/user-interface/styles/index.md)，更详细地了解如何扩展和使用样式。
+若要确保可访问性，请确保在应用中将内置样式用作任何文本相关样式的基础，并一致地使用样式。 请参阅 [样式](~/xamarin-forms/user-interface/styles/index.md) ，更详细地了解如何扩展和使用样式。
 
 ## <a name="related-links"></a>相关链接
 
 - [创建移动应用 Xamarin.Forms ，第12章](https://developer.xamarin.com/r/xamarin-forms/book/chapter12.pdf)
 - [样式](~/xamarin-forms/user-interface/styles/index.md)
-- [文本（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
+- [文本 (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-text)
 - [样式](xref:Xamarin.Forms.Style)

@@ -1,6 +1,6 @@
 ---
-title: 缓动函数Xamarin.Forms
-description: Xamarin.Forms包含一个缓动类，可用于指定一个传输函数，该函数控制动画在运行时的速度如何提高或减速。 本文演示如何使用预定义的缓动函数，以及如何创建自定义缓动函数。
+title: 缓动函数 Xamarin.Forms
+description: Xamarin.Forms 包含一个缓动类，可用于指定一个传输函数，该函数控制动画在运行时的速度如何提高或减速。 本文演示如何使用预定义的缓动函数，以及如何创建自定义缓动函数。
 ms.prod: xamarin
 ms.assetid: E6F124C7-A161-4C1F-AF40-52F0935E54DE
 ms.technology: xamarin-forms
@@ -10,18 +10,18 @@ ms.date: 07/14/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 574b6f82aea3c71d43799c6ca86997d895eed4c5
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 1769a1eb562d4ae0551598493afa9b04491a42d5
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84573799"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562790"
 ---
-# <a name="easing-functions-in-xamarinforms"></a>缓动函数Xamarin.Forms
+# <a name="easing-functions-in-no-locxamarinforms"></a>缓动函数 Xamarin.Forms
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-animation-easing)
 
-_Xamarin 包含一个缓动类，使你可以指定一个传输函数来控制动画在运行时的速度如何提高或减速。本文演示如何使用预定义的缓动函数，以及如何创建自定义缓动函数。_
+_Xamarin.Forms 包含一个缓动类，可用于指定一个传输函数，该函数控制动画在运行时的速度如何提高或减速。本文演示如何使用预定义的缓动函数，以及如何创建自定义缓动函数。_
 
 [`Easing`](xref:Xamarin.Forms.Easing)类定义了可由动画使用的多个缓动函数：
 
@@ -39,7 +39,7 @@ _Xamarin 包含一个缓动类，使你可以指定一个传输函数来控制�
 
 `In`和 `Out` 后缀指示缓动函数所提供的效果在动画的开头、结尾还是同时非常明显。
 
-此外，还可以创建自定义缓动函数。 有关详细信息，请参阅[自定义缓动函数](#custom-easing-functions)。
+此外，还可以创建自定义缓动函数。 有关详细信息，请参阅 [自定义缓动函数](#custom-easing-functions)。
 
 ## <a name="consuming-an-easing-function"></a>使用缓动函数
 
@@ -55,7 +55,7 @@ await image.TranslateTo(0, -200, 2000, Easing.BounceOut);
 
 通过指定动画的缓动函数，动画速度变为非线性，并产生缓动函数所提供的效果。 在创建动画时省略缓动函数会使动画使用默认 [`Linear`](xref:Xamarin.Forms.Easing.Linear) 缓动函数，这将产生线性速度。
 
-有关在类中使用动画扩展方法的详细信息 [`ViewExtensions`](xref:Xamarin.Forms.ViewExtensions) ，请参阅[简单动画](~/xamarin-forms/user-interface/animation/simple.md)。 类也可以使用缓动函数 [`Animation`](xref:Xamarin.Forms.Animation) 。 有关详细信息，请参阅[自定义动画](~/xamarin-forms/user-interface/animation/custom.md)。
+有关在类中使用动画扩展方法的详细信息 [`ViewExtensions`](xref:Xamarin.Forms.ViewExtensions) ，请参阅 [简单动画](~/xamarin-forms/user-interface/animation/simple.md)。 类也可以使用缓动函数 [`Animation`](xref:Xamarin.Forms.Animation) 。 有关详细信息，请参阅 [自定义动画](~/xamarin-forms/user-interface/animation/custom.md)。
 
 ## <a name="custom-easing-functions"></a>自定义缓动函数
 
@@ -103,13 +103,13 @@ await image.TranslateTo (0, 200, 2000, new Easing (t => 1 - Math.Cos (10 * Math.
 
 自定义缓动函数指定为构造函数的 lambda 函数参数 [`Easing`](xref:Xamarin.Forms.Easing) ，并使用 `Math.Cos` 方法来创建由方法阻碍的慢速删除效果 `Math.Exp` 。 因此， [`Image`](xref:Xamarin.Forms.Image) 实例将被转换，以使其显示在其最终的静止位置。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
-本文演示了如何使用预定义的缓动函数，以及如何创建自定义缓动函数。 Xamarin.Forms包含一个 [`Easing`](xref:Xamarin.Forms.Easing) 类，它允许您指定一个传输函数，该函数控制动画在运行时的速度如何提高或减速。
+本文演示了如何使用预定义的缓动函数，以及如何创建自定义缓动函数。 Xamarin.Forms 包含一个 [`Easing`](xref:Xamarin.Forms.Easing) 类，它允许您指定一个传输函数，该函数控制动画在运行时的速度如何提高或减速。
 
 ## <a name="related-links"></a>相关链接
 
 - [异步支持概述](~/cross-platform/platform/async.md)
-- [缓动函数（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-animation-easing)
+- [缓动函数 (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-animation-easing)
 - [减轻](xref:Xamarin.Forms.Easing)
 - [ViewExtensions](xref:Xamarin.Forms.ViewExtensions)

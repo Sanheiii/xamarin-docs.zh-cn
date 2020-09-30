@@ -1,6 +1,6 @@
 ---
 title: Xamarin.Forms 样式类
-description: Xamarin.Forms样式类可以将多个样式应用于控件，而无需采用样式继承。
+description: Xamarin.Forms 样式类可以将多个样式应用于控件，而无需采用样式继承。
 ms.prod: xamarin
 ms.assetid: 4762401E-2B48-48F1-B6E4-61F7AF8AA46F
 ms.technology: xamarin-forms
@@ -10,18 +10,18 @@ ms.date: 01/30/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2afb06c2d97e6f15c2041b9c2e9cad092b13d90d
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: f100f98418b7e3cb82939bf67dda61b66cb5864e
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138757"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91557746"
 ---
-# <a name="xamarinforms-style-classes"></a>Xamarin.Forms 样式类
+# <a name="no-locxamarinforms-style-classes"></a>Xamarin.Forms 样式类
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
 
-_Xamarin 样式类可以将多个样式应用于控件，而无需采用样式继承。_
+_Xamarin.Forms 样式类可以将多个样式应用于控件，而无需采用样式继承。_
 
 ## <a name="create-style-classes"></a>创建样式类
 
@@ -79,7 +79,7 @@ _Xamarin 样式类可以将多个样式应用于控件，而无需采用样式�
 
 `Separator`、 `Rounded` 和 `Circle` 样式类分别将属性设置 [`BoxView`](xref:Xamarin.Forms.BoxView) 为特定值。
 
-`Rotated`样式类的为 [`TargetType`](xref:Xamarin.Forms.Style.TargetType) [`VisualElement`](xref:Xamarin.Forms.VisualElement) ，这意味着它只能应用于 `VisualElement` 实例。 但是，其 [`ApplyToDerivedTypes`](xref:Xamarin.Forms.Style.ApplyToDerivedTypes) 属性设置为 `true` ，这可确保它可应用于派生自的任何控件 `VisualElement` ，例如 [`BoxView`](xref:Xamarin.Forms.BoxView) 。 有关将样式应用于派生类型的详细信息，请参阅[将样式应用于派生类型](implicit.md#apply-a-style-to-derived-types)。
+`Rotated`样式类的为 [`TargetType`](xref:Xamarin.Forms.Style.TargetType) [`VisualElement`](xref:Xamarin.Forms.VisualElement) ，这意味着它只能应用于 `VisualElement` 实例。 但是，其 [`ApplyToDerivedTypes`](xref:Xamarin.Forms.Style.ApplyToDerivedTypes) 属性设置为 `true` ，这可确保它可应用于派生自的任何控件 `VisualElement` ，例如 [`BoxView`](xref:Xamarin.Forms.BoxView) 。 有关将样式应用于派生类型的详细信息，请参阅 [将样式应用于派生类型](implicit.md#apply-a-style-to-derived-types)。
 
 等效 C# 代码如下：
 
@@ -228,4 +228,4 @@ Content = new StackLayout
 
 ## <a name="related-links"></a>相关链接
 
-- [基本样式（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
+- [基本样式 (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)

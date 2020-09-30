@@ -10,12 +10,12 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f6c8810ea37c767ef67c7f53d312b63a9de09f26
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 99a008e1b2a159c26f434644ab829851d76be59b
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136560"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563089"
 ---
 # <a name="searchbar-spell-check-on-windows"></a>Windows 上的 SearchBar 拼写检查
 
@@ -43,7 +43,7 @@ using Xamarin.Forms.PlatformConfiguration.WindowsSpecific;
 searchBar.On<Windows>().SetIsSpellCheckEnabled(true);
 ```
 
-`SearchBar.On<Windows>`方法指定此平台特定的仅在通用 Windows 平台上运行。 [ `SearchBar.SetIsSpellCheckEnabled` ] （X： Xamarin.Forms 。PlatformConfiguration. WindowsSpecific. SearchBar. SetIsSpellCheckEnabled （ Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration、 Xamarin.Forms 。SearchBar}，System.object）方法，在 [`Xamarin.Forms.PlatformConfiguration.WindowsSpecific`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific) 命名空间中打开和关闭拼写检查器。 此外，该 `SearchBar.SetIsSpellCheckEnabled` 方法可用于通过调用 [ `SearchBar.GetIsSpellCheckEnabled` ] （x：）来切换拼写检查器 Xamarin.Forms 。PlatformConfiguration. WindowsSpecific. SearchBar. GetIsSpellCheckEnabled （ Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration、 Xamarin.Forms 。SearchBar}））方法来返回是否启用拼写检查器：
+`SearchBar.On<Windows>`方法指定此平台特定的仅在通用 Windows 平台上运行。 [ `SearchBar.SetIsSpellCheckEnabled` ] (x： Xamarin.Forms 。PlatformConfiguration. WindowsSpecific. SearchBar. SetIsSpellCheckEnabled (Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration、 Xamarin.Forms 。SearchBar}，system.string) # A3 方法，在 [`Xamarin.Forms.PlatformConfiguration.WindowsSpecific`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific) 命名空间中打开和关闭拼写检查器。 此外， `SearchBar.SetIsSpellCheckEnabled` 方法可用于通过调用 [ `SearchBar.GetIsSpellCheckEnabled` ] (x：来切换拼写检查器 Xamarin.Forms 。PlatformConfiguration. WindowsSpecific. SearchBar. GetIsSpellCheckEnabled (Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration、 Xamarin.Forms 。SearchBar} ) # A3 方法，以返回是否启用拼写检查器：
 
 ```csharp
 searchBar.On<Windows>().SetIsSpellCheckEnabled(!searchBar.On<Windows>().GetIsSpellCheckEnabled());
@@ -58,6 +58,6 @@ searchBar.On<Windows>().SetIsSpellCheckEnabled(!searchBar.On<Windows>().GetIsSpe
 
 ## <a name="related-links"></a>相关链接
 
-- [PlatformSpecifics （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [PlatformSpecifics (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [创建平台特定信息](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [WindowsSpecific API](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific)

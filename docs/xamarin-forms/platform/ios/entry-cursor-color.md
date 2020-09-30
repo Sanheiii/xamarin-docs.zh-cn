@@ -10,12 +10,12 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 501210f669c7d62eddaf7ebe3b4ebf19614589a7
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: ee5c4baae0380c854bc6f1cf0f608e065924a157
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86936339"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563765"
 ---
 # <a name="entry-cursor-color-on-ios"></a>IOS 上的入口光标颜色
 
@@ -43,7 +43,7 @@ var entry = new Xamarin.Forms.Entry();
 entry.On<iOS>().SetCursorColor(Color.LimeGreen);
 ```
 
-`Entry.On<iOS>`方法指定此平台特定的仅在 iOS 上运行。 [ `Entry.SetCursorColor` ] （X： Xamarin.Forms 。PlatformConfiguration. iOSSpecific. SetCursorColor （ Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration、 Xamarin.Forms 。Entry}， Xamarin.Forms 。Color））方法，在 [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) 命名空间中，将光标颜色设置为指定的 [`Color`](xref:Xamarin.Forms.Color) 。 此外，[ `Entry.GetCursorColor` ] （x： Xamarin.Forms 。PlatformConfiguration. iOSSpecific. GetCursorColor （ Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration、 Xamarin.Forms 。Entry}））方法可用于检索当前游标的颜色。
+`Entry.On<iOS>`方法指定此平台特定的仅在 iOS 上运行。 [ `Entry.SetCursorColor` ] (x： Xamarin.Forms 。PlatformConfiguration Xamarin.Forms . SetCursorColor (。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration、 Xamarin.Forms 。Entry}， Xamarin.Forms 。颜色) # A3 方法，在 [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) 命名空间中，将光标颜色设置为指定的 [`Color`](xref:Xamarin.Forms.Color) 。 此外，[ `Entry.GetCursorColor` ] (x： Xamarin.Forms 。PlatformConfiguration Xamarin.Forms . GetCursorColor (。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration、 Xamarin.Forms 。Entry} ) # A3 方法可用于检索当前游标颜色。
 
 因此，中的光标颜色 [`Entry`](xref:Xamarin.Forms.Entry) 可以设置为特定 [`Color`](xref:Xamarin.Forms.Color) ：
 
@@ -51,6 +51,6 @@ entry.On<iOS>().SetCursorColor(Color.LimeGreen);
 
 ## <a name="related-links"></a>相关链接
 
-- [PlatformSpecifics （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [PlatformSpecifics (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [创建平台特定信息](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [iOSSpecific API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

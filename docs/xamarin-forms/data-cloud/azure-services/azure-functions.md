@@ -1,5 +1,5 @@
 ---
-title: Azure FunctionsXamarin.Forms
+title: Azure Functions Xamarin.Forms
 description: 开始使用 Azure Functions Xamarin.Forms 。
 ms.prod: xamarin
 ms.assetid: 2F311A60-A6FC-4051-B938-AEF32086642F
@@ -10,12 +10,12 @@ ms.date: 04/02/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 420cead8a43f35815110eb7ce3b183f10bb3ccd4
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: b1b8091a495a3d4f865aebd54ca1da0790c1c5f7
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84197563"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562816"
 ---
 # <a name="get-started-with-azure-functions"></a>Azure Functions 入门
 
@@ -29,7 +29,7 @@ _开始生成与交互的第一个 Azure 函数 Xamarin.Forms 。_
 
 ## <a name="step-by-step-instructions"></a>分步说明
 
-除了视频，还可以按照这些说明[使用 Visual Studio 生成第一个函数](https://docs.microsoft.com/azure/azure-functions/functions-create-your-first-function-visual-studio)。
+除了视频，还可以按照这些说明 [使用 Visual Studio 生成第一个函数](/azure/azure-functions/functions-create-your-first-function-visual-studio)。
 
 > [!NOTE]
 > 如果还没有 [Azure 订阅](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing)，可以在开始前创建一个[免费帐户](https://aka.ms/azfree-docs-mobileapps)。
@@ -40,7 +40,7 @@ _开始生成与交互的第一个 Azure 函数 Xamarin.Forms 。_
 
 ## <a name="step-by-step-instructions"></a>分步说明
 
-除了视频，还可以按照这些说明[使用 Visual Studio 生成第一个函数](https://docs.microsoft.com/azure/azure-functions/functions-create-your-first-function-visual-studio)。
+除了视频，还可以按照这些说明 [使用 Visual Studio 生成第一个函数](/azure/azure-functions/functions-create-your-first-function-visual-studio)。
 
 > [!NOTE]
 > 如果还没有 [Azure 订阅](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing)，可以在开始前创建一个[免费帐户](https://aka.ms/azfree-docs-mobileapps)。
@@ -51,7 +51,7 @@ _开始生成与交互的第一个 Azure 函数 Xamarin.Forms 。_
 
 ## <a name="step-by-step-instructions"></a>分步说明
 
-除了此视频，还提供了分步[教程](https://docs.microsoft.com/visualstudio/mac/azure-functions-lab)，说明如何在 Visual Studio for Mac 中创建和调试 Azure Functions。
+除了此视频，还提供了分步 [教程](/visualstudio/mac/azure-functions-lab) ，说明如何在 Visual Studio for Mac 中创建和调试 Azure Functions。
 
 > [!NOTE]
 > 如果还没有 [Azure 订阅](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing)，可以在开始前创建一个[免费帐户](https://aka.ms/azfree-docs-mobileapps)。
@@ -60,5 +60,5 @@ _开始生成与交互的第一个 Azure 函数 Xamarin.Forms 。_
 
 ## <a name="related-links"></a>相关链接
 
-- [Azure Functions 文档](https://docs.microsoft.com/azure/azure-functions/)
-- [使用客户端实现简单的 Azure 函数 Xamarin.Forms （示例）](https://azure.microsoft.com/resources/samples/functions-xamarin-getting-started/)
+- [Azure Functions 文档](/azure/azure-functions/)
+- [使用客户端 (示例实现简单的 Azure 函数 Xamarin.Forms) ](https://azure.microsoft.com/resources/samples/functions-xamarin-getting-started/)

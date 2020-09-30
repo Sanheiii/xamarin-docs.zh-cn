@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsWeb 服务简介
+title: Xamarin.Forms Web 服务简介
 description: 本指南提供了 Xamarin.Forms 演示如何与不同 web 服务通信的示例应用程序的演练。 虽然每个 web 服务使用单独的示例应用程序，但它们在功能上类似并共享公共类。
 ms.prod: xamarin
 ms.assetid: A3FEB262-0D79-42E6-8F8B-A565618C490B
@@ -10,14 +10,14 @@ ms.date: 02/28/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: cd9815c6448efae0bb0af982c8807c47263ae13e
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: ebff259519776718f41ab0fcc0a7abb0c692dac6
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938198"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563414"
 ---
-# <a name="xamarinforms-web-services-introduction"></a>Xamarin.FormsWeb 服务简介
+# <a name="no-locxamarinforms-web-services-introduction"></a>Xamarin.Forms Web 服务简介
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todorest)
 
@@ -37,7 +37,7 @@ _本主题提供了 Xamarin.Forms 演示如何与不同 web 服务通信的示�
 ![Todo 应用程序-第一页 ](introduction-images/app-example-1.png)
  ![ todo 应用程序-第二页](introduction-images/app-example-2.png)
 
-本指南中的每个主题都提供一个下载链接，该链接指向演示特定类型的 web 服务后端的应用程序的*不同*版本。 下载与每个 web 服务样式相关的页面上的相关示例代码。
+本指南中的每个主题都提供一个下载链接，该链接指向演示特定类型的 web 服务后端的应用程序的 *不同* 版本。 下载与每个 web 服务样式相关的页面上的相关示例代码。
 
 ## <a name="understand-the-application-anatomy"></a>了解应用程序解析
 
@@ -51,7 +51,7 @@ _本主题提供了 Xamarin.Forms 演示如何与不同 web 服务通信的示�
 
 每个应用程序的共享代码项目还包含若干重要文件：
 
-|文件|目的|
+|文件|用途|
 |--- |--- |
 |Constants.cs|`Constants`类，它指定应用程序用来与 web 服务进行通信的任何常量。 这些常量要求更新以访问在提供程序上创建的个人后端服务。|
 |ITextToSpeech.cs|`ITextToSpeech`接口，该接口指定 `Speak` 方法必须由任何实现类提供。|
@@ -96,6 +96,6 @@ Web 服务操作通过 `TodoItemManager` 类访问，类的实例可以通过属
 
 ## <a name="related-links"></a>相关链接
 
-- [.ASMX （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todoasmx)
-- [WCF （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todowcf)
-- [REST （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todorest)
+- [.ASMX (示例) ](/samples/xamarin/xamarin-forms-samples/webservices-todoasmx)
+- [WCF (示例) ](/samples/xamarin/xamarin-forms-samples/webservices-todowcf)
+- [REST (示例) ](/samples/xamarin/xamarin-forms-samples/webservices-todorest)

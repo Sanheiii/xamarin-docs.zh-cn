@@ -10,12 +10,12 @@ ms.date: 07/10/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 01f4fcf1953658af44d2a8996913860a3b605abf
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 2e0c4d247f3ecf9c1b8e077c4a96712e9ed138ca
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138653"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562946"
 ---
 # <a name="saving-skiasharp-bitmaps-to-files"></a>将 SkiaSharp 位图保存到文件中
 
@@ -32,24 +32,24 @@ ms.locfileid: "84138653"
 
 ## <a name="file-formats-and-codecs"></a>文件格式和编解码器
 
-当今最常用的位图文件格式使用压缩来减少存储空间。 压缩技术的两大类别称为有_损_和_无损_。 这些术语指示压缩算法是否会导致数据丢失。
+当今最常用的位图文件格式使用压缩来减少存储空间。 压缩技术的两大类别称为有 _损_ 和 _无损_。 这些术语指示压缩算法是否会导致数据丢失。
 
-最常见的损失格式由联合图像专家组开发，称为 JPEG。 JPEG 压缩算法使用称为_离散余弦转换_的数学工具来分析图像，并尝试删除对保留图像视觉保真不重要的数据。 可以使用通常称为 "_质量_" 的设置来控制压缩程度。 较高的质量设置会导致较大的文件。
+最常见的损失格式由联合图像专家组开发，称为 JPEG。 JPEG 压缩算法使用称为 _离散余弦转换_的数学工具来分析图像，并尝试删除对保留图像视觉保真不重要的数据。 可以使用通常称为 " _质量_" 的设置来控制压缩程度。 较高的质量设置会导致较大的文件。
 
-与此相反，无损压缩算法会分析图像的重复和像素模式，这种模式可通过减少数据的方式进行编码，但不会导致丢失任何信息。 原始位图数据可完全从压缩文件还原。 目前使用的主要无损压缩文件格式是可移植网络图形（PNG）。
+与此相反，无损压缩算法会分析图像的重复和像素模式，这种模式可通过减少数据的方式进行编码，但不会导致丢失任何信息。 原始位图数据可完全从压缩文件还原。 目前使用的主要无损压缩文件格式是可移植网络图形 (PNG) 。
 
-通常，JPEG 用于照片，而 PNG 用于已手动或算法生成的映像。 减小某些文件大小的任何无损压缩算法都必须增加其他文件的大小。 幸运的是，这种大小的增加通常仅适用于包含大量随机（或看似随机）信息的数据。
+通常，JPEG 用于照片，而 PNG 用于已手动或算法生成的映像。 减小某些文件大小的任何无损压缩算法都必须增加其他文件的大小。 幸运的是，这种大小的增加通常仅适用于包含大量随机 (或似乎随机) 信息的数据。
 
 压缩算法非常复杂，足以保证描述压缩和解压缩过程的两个术语：
 
-- _解码_ &mdash;读取位图文件格式并将其解压缩
-- _编码_ &mdash;压缩位图并写入位图文件格式
+- _解码_ &mdash; 读取位图文件格式并将其解压缩
+- _编码_ &mdash; 压缩位图并写入位图文件格式
 
 [`SKBitmap`](xref:SkiaSharp.SKBitmap)类包含多个名为 `Decode` 的方法，这些方法 `SKBitmap` 从压缩的源创建。 所需的只是提供文件名、流或字节数组。 解码器可以确定文件格式，并将其交给正确的内部解码功能。
 
-此外， [`SKCodec`](xref:SkiaSharp.SKCodec) 类具有两个名为 `Create` 的方法，该方法可以 `SKCodec` 从压缩的源创建对象，并允许应用程序在解码过程中更多地涉及。 （ `SKCodec` 类在对动画 GIF 文件进行解码的[**SkiaSharp 位图的动画**](animating.md#gif-animation)中显示。）
+此外， [`SKCodec`](xref:SkiaSharp.SKCodec) 类具有两个名为 `Create` 的方法，该方法可以 `SKCodec` 从压缩的源创建对象，并允许应用程序在解码过程中更多地涉及。  (`SKCodec` 类将在 [**SkiaSharp 位图的动画处理**](animating.md#gif-animation) 中显示，并对动画 GIF 文件进行解码。 ) 
 
-对位图进行编码时，需要更多信息：编码器必须知道应用程序要使用的特定文件格式（JPEG 或 PNG 或其他内容）。 如果需要有损格式，则编码还必须了解所需的质量级别。
+对位图进行编码时，需要更多信息：编码器必须知道应用程序想要使用的特定文件格式 (JPEG 或 PNG 或其他) 的内容。 如果需要有损格式，则编码还必须了解所需的质量级别。
 
 `SKBitmap`类定义了一个 [`Encode`](xref:SkiaSharp.SKBitmap.Encode(SkiaSharp.SKWStream,SkiaSharp.SKEncodedImageFormat,System.Int32)) 具有以下语法的方法：
 
@@ -57,7 +57,7 @@ ms.locfileid: "84138653"
 public Boolean Encode (SKWStream dst, SKEncodedImageFormat format, Int32 quality)
 ```
 
-稍后将对此方法进行更详细的介绍。 编码的位图将写入到可写流。 （"W" `SKWStream` 表示 "可写"。）第二个和第三个参数指定文件格式和（对于有损格式）所需质量（范围从0到100）。
+稍后将对此方法进行更详细的介绍。 编码的位图将写入到可写流。  (中的 "W" `SKWStream` 表示 "可写"。第二个和第三个参数 ) 指定文件格式，并将有损格式的 () 所需质量介于0到100之间。
 
 此外， [`SKImage`](xref:SkiaSharp.SKImage) 和 [`SKPixmap`](xref:SkiaSharp.SKPixmap) 类还定义 `Encode` 了一些更通用的方法，您可能更喜欢这些方法。 您可以 `SKImage` `SKBitmap` 使用静态方法从对象轻松创建对象 [`SKImage.FromBitmap`](xref:SkiaSharp.SKImage.FromBitmap(SkiaSharp.SKBitmap)) 。 您可以 `SKPixmap` `SKBitmap` 使用方法从对象获取对象 [`PeekPixels`](xref:SkiaSharp.SKBitmap.PeekPixels) 。
 
@@ -65,13 +65,13 @@ public Boolean Encode (SKWStream dst, SKEncodedImageFormat format, Int32 quality
 
 ## <a name="platform-specific-code-for-saving-bitmap-files"></a>用于保存位图文件的特定于平台的代码
 
-将 `SKBitmap` 对象编码为特定的文件格式时，通常会保留一个流对象，其中包含某种类型的流对象或一组数据。 某些 `Encode` 方法（包括没有定义的参数的 `SKImage` ）将返回一个 [`SKData`](xref:SkiaSharp.SKData) 对象，可使用方法将该对象转换为字节数组 [`ToArray`](xref:SkiaSharp.SKData.ToArray) 。 然后，必须将此数据保存到文件。
+将 `SKBitmap` 对象编码为特定的文件格式时，通常会保留一个流对象，其中包含某种类型的流对象或一组数据。 某些 `Encode` 方法 (包括不含参数的方法 `SKImage`) 返回 [`SKData`](xref:SkiaSharp.SKData) 对象，可以使用方法将其转换为字节数组 [`ToArray`](xref:SkiaSharp.SKData.ToArray) 。 然后，必须将此数据保存到文件。
 
-在应用程序本地存储中保存到文件相当容易，因为可以 `System.IO` 对此任务使用标准类和方法。 此方法在以下文章中进行演示：在连接中对[**SkiaSharp 位图**](animating.md#bitmap-animation)进行动画处理，并对 Mandelbrot 集的一系列位图进行动画处理。
+在应用程序本地存储中保存到文件相当容易，因为可以 `System.IO` 对此任务使用标准类和方法。 此方法在以下文章中进行演示：在连接中对 [**SkiaSharp 位图**](animating.md#bitmap-animation) 进行动画处理，并对 Mandelbrot 集的一系列位图进行动画处理。
 
 如果要使文件与其他应用程序共享，则必须将该文件保存到用户的照片库。 此任务需要平台特定的代码和使用 Xamarin.Forms [`DependencyService`](xref:Xamarin.Forms.DependencyService) 。
 
-[**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)应用程序中的**SkiaSharpFormsDemo**项目定义 `IPhotoLibrary` 与类一起使用的接口 `DependencyService` 。 这会定义方法的语法 `SavePhotoAsync` ：
+[**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)应用程序中的**SkiaSharpFormsDemo**项目定义 `IPhotoLibrary` 与类一起使用的接口 `DependencyService` 。 这会定义方法的语法 `SavePhotoAsync` ：
 
 ```csharp
 public interface IPhotoLibrary
@@ -114,7 +114,7 @@ public class PhotoLibrary : IPhotoLibrary
 
 遗憾的是，没有办法为映像指定文件名或文件夹。
 
-IOS 项目中的**info.plist**文件需要一个键，指示它将图像添加到照片库：
+IOS 项目中的 **info.plist** 文件需要一个键，指示它将图像添加到照片库：
 
 ```xml
 <key>NSPhotoLibraryAddUsageDescription</key>
@@ -248,7 +248,7 @@ public class PhotoLibrary : IPhotoLibrary
 public Boolean Encode (SKWStream dst, SKEncodedImageFormat format, Int32 quality)
 ```
 
-[`SKEncodedImageFormat`](xref:SkiaSharp.SKEncodedImageFormat)是包含11个位图文件格式的成员的枚举，其中的一些是，而不是难懂：
+[`SKEncodedImageFormat`](xref:SkiaSharp.SKEncodedImageFormat) 是包含11个位图文件格式的成员的枚举，其中的一些是，而不是难懂：
 
 - `Astc`&mdash;自适应可伸缩纹理压缩
 - `Bmp`&mdash;Windows 位图
@@ -259,12 +259,12 @@ public Boolean Encode (SKWStream dst, SKEncodedImageFormat format, Int32 quality
 - `Ktx`&mdash;OpenGL 的 Khronos 纹理格式
 - `Pkm`&mdash;Pokémon 保存文件
 - `Png`&mdash;可移植网络图形
-- `Wbmp`&mdash;无线应用程序协议位图格式（每像素1位）
+- `Wbmp`&mdash;无线应用程序协议位图格式 (每像素1位) 
 - `Webp`&mdash;Google WebP 格式
 
-正如您很快就会看到的，SkiaSharp 实际上只支持其中三个文件格式（ `Jpeg` 、 `Png` 和 `Webp` ）。
+正如您很快就会看到的，SkiaSharp 实际上只支持其中三个文件格式 (`Jpeg` 、 `Png` 和 `Webp`) 。
 
-若要将 `SKBitmap` 名为 `bitmap` 的对象保存到用户的照片库，还需要一个名为的 `SKEncodedImageFormat` 枚举成员 `imageFormat` 和一个整数变量（对于有损格式） `quality` 。 你可以使用以下代码将该位图保存到文件夹中名称为的文件 `filename` 中 `folder` ：
+若要将 `SKBitmap` 名为 `bitmap` 的对象保存到用户的照片库，还需要一个名为的 `SKEncodedImageFormat` 枚举成员 `imageFormat` ，并 () 整数变量的有损格式 `quality` 。 你可以使用以下代码将该位图保存到文件夹中名称为的文件 `filename` 中 `folder` ：
 
 ```csharp
 using (MemoryStream memStream = new MemoryStream())
@@ -281,9 +281,9 @@ using (SKManagedWStream wstream = new SKManagedWStream(memStream))
 }
 ```
 
-`SKManagedWStream`类派生自 `SKWStream` （表示 "可写流"）。 `Encode`方法将编码的位图文件写入该流。 此代码中的注释引用可能需要执行的一些错误检查。
+`SKManagedWStream`类派生自 `SKWStream` (，它表示 "可写流" ) 。 `Encode`方法将编码的位图文件写入该流。 此代码中的注释引用可能需要执行的一些错误检查。
 
-[**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)应用程序中的 "**保存文件格式**" 页使用类似的代码，使你可以尝试使用各种格式保存位图。
+[**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)应用程序中的 "**保存文件格式**" 页使用类似的代码，使你可以尝试使用各种格式保存位图。
 
 XAML 文件包含一个 `SKCanvasView` 显示位图的，而页面的其余部分包含应用程序调用的方法所需的所有内容 `Encode` `SKBitmap` 。 它具有一个 `Picker` 用于枚举成员的 `SKEncodedImageFormat` ，一个用于有 `Slider` 损位图格式的质量参数，两个 `Entry` 视图用于表示文件名和文件夹名称，另一个用于 `Button` 保存文件。
 
@@ -470,13 +470,13 @@ public partial class SaveFileFormatsPage : ContentPage
 
 ## <a name="saving-finger-paint-art"></a>保存 finger-画图
 
-位图的一个常见用途是在绘图程序中，它的作用就像是_阴影位图_。 所有绘图都将保留在位图上，然后由程序显示。 位图还能为保存绘图提供便利。
+位图的一个常见用途是在绘图程序中，它的作用就像是 _阴影位图_。 所有绘图都将保留在位图上，然后由程序显示。 位图还能为保存绘图提供便利。
 
 [**SkiaSharp 文章中的 Finger 绘图**](../paths/finger-paint.md)演示了如何使用触摸跟踪来实现基元 Finger 绘制程序。 程序只支持一种颜色和一个笔划宽度，但会将整个绘图保留在对象的集合中 `SKPath` 。
 
-在[**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)示例中，**使用 Save 页的 Finger 画图**还会将整个绘图保留在对象的集合中 `SKPath` ，但它还会在位图上呈现绘图，并可将其保存到照片库。
+在[**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)示例中，**使用 Save 页的 Finger 画图**还会将整个绘图保留在对象的集合中 `SKPath` ，但它还会在位图上呈现绘图，并可将其保存到照片库。
 
-此程序的大部分内容与原始**Finger 画图**程序类似。 其中一项改进是 XAML 文件现在实例化标记为 "**清除**并**保存**" 的按钮：
+此程序的大部分内容与原始 **Finger 画图** 程序类似。 其中一项改进是 XAML 文件现在实例化标记为 " **清除** 并 **保存**" 的按钮：
 
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -658,7 +658,7 @@ public partial class FingerPaintSavePage : ContentPage
 
 此 `UpdateBitmap` 方法 `saveBitmap` 通过创建一个新的 `SKCanvas` ，清除它，然后呈现位图上的所有路径来重绘。 它以失效的结束， `canvasView` 以便可以在显示时绘制位图。
 
-下面是两个按钮的处理程序。 "**清除**" 按钮清除路径集合和更新 `saveBitmap` （这会导致清除位图），并使 `SKCanvasView` ：
+下面是两个按钮的处理程序。 " **清除** " 按钮清除两个路径集合，更新 `saveBitmap` (导致清除位图) ，并使 `SKCanvasView` ：
 
 ```csharp
 public partial class FingerPaintSavePage : ContentPage
@@ -701,14 +701,14 @@ public partial class FingerPaintSavePage : ContentPage
 
 [![Finger 画图保存](saving-images/FingerPaintSave.png "Finger 画图保存")](saving-images/FingerPaintSave-Large.png#lightbox)
 
-在[**SpinPaint**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-spinpaint)示例中使用非常类似的技术。 这也是一个手指刷程序，只不过用户在旋转后的磁盘上进行绘制，然后在其他四个象限上重现设计。 当磁盘旋转时，手指画图的颜色会变化：
+在 [**SpinPaint**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-spinpaint) 示例中使用非常类似的技术。 这也是一个手指刷程序，只不过用户在旋转后的磁盘上进行绘制，然后在其他四个象限上重现设计。 当磁盘旋转时，手指画图的颜色会变化：
 
 [![旋转画图](saving-images/SpinPaint.png "旋转画图")](saving-images/SpinPaint-Large.png#lightbox)
 
-类的 "**保存**" 按钮 `SpinPaint` 类似于 "**手指画图**"，因为它将图像保存到固定文件夹名称（**SpainPaint**）和从日期和时间构造的文件名。
+类的 " **保存** " 按钮 `SpinPaint` 类似于 " **手指画图** "，因为它将图像保存到固定文件夹名称 (**SpainPaint**) 和从日期和时间构造的文件名。
 
 ## <a name="related-links"></a>相关链接
 
-- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
-- [SpinPaint （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-spinpaint)
+- [SkiaSharp Api](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (示例) ](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [SpinPaint (示例) ](/samples/xamarin/xamarin-forms-samples/skiasharpforms-spinpaint)

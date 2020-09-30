@@ -10,12 +10,12 @@ ms.date: 05/10/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ac7b90fb3e70fd07fcafe78a68136338469862e0
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 220b8a49f4f261568a653af16e333885edec23f8
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86936352"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562868"
 ---
 # <a name="perceived-emotion-recognition-using-the-face-api"></a>使用人脸 API 感知情感识别
 
@@ -25,16 +25,16 @@ ms.locfileid: "86936352"
 
 除了为面部表达式返回情感结果外，人脸 API 还可以返回检测到的人脸的边界框。
 
-情感识别可以通过客户端库和 REST API 来执行。 本文重点介绍如何通过 REST API 执行情感识别。 有关 REST API 的详细信息，请参阅人[脸 REST API](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)。
+情感识别可以通过客户端库和 REST API 来执行。 本文重点介绍如何通过 REST API 执行情感识别。 有关 REST API 的详细信息，请参阅人 [脸 REST API](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)。
 
-人脸 API 也可用于识别视频中人员的面部表情，并可返回其情感的摘要。 有关详细信息，请参阅[如何实时分析视频](/azure/cognitive-services/face/face-api-how-to-topics/howtoanalyzevideo_face/)。
+人脸 API 也可用于识别视频中人员的面部表情，并可返回其情感的摘要。 有关详细信息，请参阅 [如何实时分析视频](/azure/cognitive-services/face/face-api-how-to-topics/howtoanalyzevideo_face/)。
 
 > [!NOTE]
 > 如果还没有 [Azure 订阅](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing)，可以在开始前创建一个[免费帐户](https://aka.ms/azfree-docs-mobileapps)。
 
-必须获取 API 密钥才能使用人脸 API。 可在[试用认知服务](https://azure.microsoft.com/try/cognitive-services/?api=face-api)中获取。
+必须获取 API 密钥才能使用人脸 API。 可在 [试用认知服务](https://azure.microsoft.com/try/cognitive-services/?api=face-api)中获取。
 
-有关人脸 API 的详细信息，请参阅[人脸 API](/azure/cognitive-services/face/overview/)。
+有关人脸 API 的详细信息，请参阅 [人脸 API](/azure/cognitive-services/face/overview/)。
 
 ## <a name="authentication"></a>身份验证
 
@@ -54,9 +54,9 @@ public FaceRecognitionService()
 
 情感识别的执行方式是将包含映像的 POST 请求 `detect` 置于 `https://[location].api.cognitive.microsoft.com/face/v1.0` 中，其中 `[location]]` 是用于获取 api 密钥的区域。 可选的请求参数包括：
 
-- `returnFaceId`–是否返回检测到的人脸的 faceIds。 默认值为 `true`。
-- `returnFaceLandmarks`–是否返回检测到的人脸特征点。 默认值为 `false`。
-- `returnFaceAttributes`–是否分析并返回一个或多个指定的面部特性。 支持的面部特性包括 `age` 、 `gender` 、 `headPose` 、 `smile` 、、、 `facialHair` `glasses` `emotion` `hair` `makeup` `occlusion` `accessories` `blur` `exposure` `noise` 、、、、、、和。 请注意，人脸属性分析具有额外的计算和时间成本。
+- `returnFaceId` –是否返回检测到的人脸的 faceIds。 默认值为 `true`。
+- `returnFaceLandmarks` –是否返回检测到的人脸特征点。 默认值为 `false`。
+- `returnFaceAttributes` –是否分析并返回一个或多个指定的面部特性。 支持的面部特性包括 `age` 、 `gender` 、 `headPose` 、 `smile` 、、、 `facialHair` `glasses` `emotion` `hair` `makeup` `occlusion` `accessories` `blur` `exposure` `noise` 、、、、、、和。 请注意，人脸属性分析具有额外的计算和时间成本。
 
 图像内容必须作为 URL 或二进制数据放置在 POST 请求的正文中。
 
@@ -136,7 +136,7 @@ async Task<TResponse> SendRequestAsync<TRequest, TResponse>(HttpMethod httpMetho
 
 然后将 POST 请求发送到 `detect` API。 响应被读取、反序列化并返回到调用方法。
 
-`detect`如果请求有效，则 API 将在响应中发送 HTTP 状态代码200（正常），这表明请求已成功，并且请求的信息在响应中。 有关可能的错误响应的列表，请参阅[面部 REST API](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)。
+`detect`如果请求有效，则 API 会将 HTTP 状态代码200发送 (确定) ，这表明请求已成功，并且请求的信息在响应中。 有关可能的错误响应的列表，请参阅 [面部 REST API](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)。
 
 ### <a name="process-the-response"></a>处理响应
 
@@ -183,5 +183,5 @@ emotionResultLabel.Text = faces.FirstOrDefault().FaceAttributes.Emotion.ToRanked
 ## <a name="related-links"></a>相关链接
 
 - [人脸 API](/azure/cognitive-services/face/overview/)。
-- [Todo 认知服务（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
+- [Todo 认知服务 (示例) ](/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
 - [人脸 REST API](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)

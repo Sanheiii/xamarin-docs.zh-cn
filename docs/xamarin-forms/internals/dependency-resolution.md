@@ -10,25 +10,25 @@ ms.date: 07/27/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ae30b4a4b75906613baf8a2568548c8890ccb33a
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 6d4c9be2166881824e798e9cb801a5720ab55178
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139082"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91557851"
 ---
-# <a name="dependency-resolution-in-xamarinforms"></a>Xamarin.Forms 中的依赖项解析
+# <a name="dependency-resolution-in-no-locxamarinforms"></a>Xamarin.Forms 中的依赖项解析
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/advanced-dependencyresolution-dicontainerdemo)
 
-_本文介绍如何将依赖项解析方法注入到， Xamarin.Forms 以便应用程序的依赖关系注入容器能够控制自定义呈现器、效果和 DependencyService 实现的创建和生存期。本文中的代码示例取自[使用容器的依赖项解析](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/advanced-dependencyresolution-dicontainerdemo)示例。_
+_本文介绍如何将依赖项解析方法注入到， Xamarin.Forms 以便应用程序的依赖关系注入容器能够控制自定义呈现器、效果和 DependencyService 实现的创建和生存期。本文中的代码示例取自 [使用容器的依赖项解析](/samples/xamarin/xamarin-forms-samples/advanced-dependencyresolution-dicontainerdemo) 示例。_
 
-在 Xamarin.Forms 使用模型-视图-ViewModel （MVVM）模式的应用程序的上下文中，依赖关系注入容器可用于注册和解析视图模型，并用于注册服务并将其注入到视图模型中。 创建视图模型期间，容器将注入所需的任何依赖项。 如果尚未创建这些依赖项，则容器将首先创建和解析依赖项。 有关依赖关系注入的详细信息，包括在视图模型中注入依赖项的示例，请参阅[依赖关系注入](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md)。
+在 Xamarin.Forms 使用模型-视图-ViewModel (MVVM) 模式的应用程序的上下文中，依赖关系注入容器可用于注册和解析视图模型，以及注册服务并将其注入查看模型中。 创建视图模型期间，容器将注入所需的任何依赖项。 如果尚未创建这些依赖项，则容器将首先创建和解析依赖项。 有关依赖关系注入的详细信息，包括在视图模型中注入依赖项的示例，请参阅 [依赖关系注入](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md)。
 
-通常，在平台项目中控制类型的创建和生存期是由执行的 Xamarin.Forms ，后者使用 `Activator.CreateInstance` 方法来创建自定义呈现器、效果和实现的实例 [`DependencyService`](xref:Xamarin.Forms.DependencyService) 。 遗憾的是，这使开发人员能够控制这些类型的创建和生存期，以及向其中注入依赖项的能力。 此行为可以通过将依赖项解析方法注入到中来进行更改 Xamarin.Forms ，这些方法控制如何创建类型（通过应用程序的依赖关系注入容器）或 Xamarin.Forms 。 但请注意，不需要将依赖项解析方法注入到中 Xamarin.Forms 。 Xamarin.Forms如果未注入依赖项解析方法，将继续创建和管理平台项目中的类型生存期。
+通常，在平台项目中控制类型的创建和生存期是由执行的 Xamarin.Forms ，后者使用 `Activator.CreateInstance` 方法来创建自定义呈现器、效果和实现的实例 [`DependencyService`](xref:Xamarin.Forms.DependencyService) 。 遗憾的是，这使开发人员能够控制这些类型的创建和生存期，以及向其中注入依赖项的能力。 此行为可以通过将依赖项解析方法注入到中来进行更改 Xamarin.Forms ，这些方法控制如何创建类型（通过应用程序的依赖关系注入容器）或 Xamarin.Forms 。 但请注意，不需要将依赖项解析方法注入到中 Xamarin.Forms 。 Xamarin.Forms 如果未注入依赖项解析方法，将继续创建和管理平台项目中的类型生存期。
 
 > [!NOTE]
-> 尽管本文重点介绍如何将依赖项解析方法注入到 Xamarin.Forms 使用依赖关系注入容器解析注册的类型，但也可以注入使用工厂方法解析已注册类型的依赖项解析方法。 有关详细信息，请参阅[使用工厂方法的依赖关系解析](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/advanced-dependencyresolution-factoriesdemo)示例。
+> 尽管本文重点介绍如何将依赖项解析方法注入到 Xamarin.Forms 使用依赖关系注入容器解析注册的类型，但也可以注入使用工厂方法解析已注册类型的依赖项解析方法。 有关详细信息，请参阅 [使用工厂方法的依赖关系解析](/samples/xamarin/xamarin-forms-samples/advanced-dependencyresolution-factoriesdemo) 示例。
 
 ## <a name="injecting-a-dependency-resolution-method"></a>注入依赖项解析方法
 
@@ -143,9 +143,9 @@ public partial class App : Application
 </ContentPage>
 ```
 
-`VideoPlayer`视图在每个平台上由类实现 `VideoPlayerRenderer` ，该类提供播放视频的功能。 有关这些自定义呈现器类的详细信息，请参阅[实现视频播放器](~/xamarin-forms/app-fundamentals/custom-renderer/video-player/index.md)。
+`VideoPlayer`视图在每个平台上由类实现 `VideoPlayerRenderer` ，该类提供播放视频的功能。 有关这些自定义呈现器类的详细信息，请参阅 [实现视频播放器](~/xamarin-forms/app-fundamentals/custom-renderer/video-player/index.md)。
 
-在 iOS 和通用 Windows 平台（UWP）上， `VideoPlayerRenderer` 类具有以下需要参数的构造函数 `ILogger` ：
+在 iOS 和通用 Windows 平台 (UWP) ， `VideoPlayerRenderer` 类具有以下构造函数，该构造函数需要 `ILogger` 参数：
 
 ```csharp
 public VideoPlayerRenderer(ILogger logger)
@@ -199,7 +199,7 @@ var touchEffect = new TouchEffect();
 boxView.Effects.Add(touchEffect);
 ```
 
-`TouchEffect`类是 [`RoutingEffect`](xref:Xamarin.Forms.RoutingEffect) 在每个平台上通过一个类实现的 `TouchEffect` `PlatformEffect` 。 Platform `TouchEffect` 类提供用于拖动页面的功能 `BoxView` 。 有关这些效果类的详细信息，请参阅[从效果调用事件](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)。
+`TouchEffect`类是 [`RoutingEffect`](xref:Xamarin.Forms.RoutingEffect) 在每个平台上通过一个类实现的 `TouchEffect` `PlatformEffect` 。 Platform `TouchEffect` 类提供用于拖动页面的功能 `BoxView` 。 有关这些效果类的详细信息，请参阅 [从效果调用事件](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)。
 
 在所有平台上， `TouchEffect` 该类具有以下需要参数的构造函数 `ILogger` ：
 
@@ -234,7 +234,7 @@ public interface IPhotoPicker
 }
 ```
 
-在每个平台项目中， `PhotoPicker` 类 `IPhotoPicker` 使用平台 api 来实现接口。 有关这些依赖关系服务的详细信息，请参阅[从图片库中选择照片](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md)。
+在每个平台项目中， `PhotoPicker` 类 `IPhotoPicker` 使用平台 api 来实现接口。 有关这些依赖关系服务的详细信息，请参阅 [从图片库中选择照片](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md)。
 
 在 iOS 和 UWP 上， `PhotoPicker` 类具有以下需要参数的构造函数 `ILogger` ：
 
@@ -304,8 +304,8 @@ async void OnSelectPhotoButtonClicked(object sender, EventArgs e)
 
 ## <a name="related-links"></a>相关链接
 
-- [使用容器的依赖项解析（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/advanced-dependencyresolution-dicontainerdemo)
-- [依赖项注入](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md)
+- [使用容器 (示例) 的依赖项解析 ](/samples/xamarin/xamarin-forms-samples/advanced-dependencyresolution-dicontainerdemo)
+- [依赖关系注入](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md)
 - [实现视频播放器](~/xamarin-forms/app-fundamentals/custom-renderer/video-player/index.md)
 - [从效果调用事件](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)
 - [从图片库中选取照片](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md)

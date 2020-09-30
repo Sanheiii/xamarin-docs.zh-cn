@@ -10,12 +10,12 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 97c7305e59a023e65535186bbbe39a9c2b7d4c26
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 380c9d5b8159a1a142ebf005955e4345dbc6e6d8
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138991"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562894"
 ---
 # <a name="skiasharp-lines-and-paths"></a>SkiaSharp 线和路径
 
@@ -23,11 +23,11 @@ ms.locfileid: "84138991"
 
 _使用 SkiaSharp 绘制线条和图形路径_
 
-[上一部分](~/xamarin-forms/user-interface/graphics/skiasharp/basics/index.md)演示了 SkiaSharp `SKCanvas` 类包含若干方法，用于绘制圆、椭圆、矩形、圆角矩形、文本和位图。 本节和更高部分介绍了与创建和呈现*图形路径*相关的各种类。
+[上一部分](~/xamarin-forms/user-interface/graphics/skiasharp/basics/index.md)演示了 SkiaSharp `SKCanvas` 类包含若干方法，用于绘制圆、椭圆、矩形、圆角矩形、文本和位图。 本节和更高部分介绍了与创建和呈现 *图形路径*相关的各种类。
 
-图形路径是在 SkiaSharp 中绘制直线和曲线的最通用方法。 本部分介绍如何使用 [`SKPath`](xref:SkiaSharp.SKPath) 对象绘制直线，并使用一组小直线直线（称为*折线*）绘制可定义算法的曲线。 后面的有关[**SkiaSharp 曲线和路径**](../curves/index.md)的部分介绍了支持的各种曲线种类 `SKPath` 。
+图形路径是在 SkiaSharp 中绘制直线和曲线的最通用方法。 本部分介绍如何使用 [`SKPath`](xref:SkiaSharp.SKPath) 对象绘制直线，并使用一组小直线 (称为 *折线*) 绘制可定义算法的曲线。 后面的有关 [**SkiaSharp 曲线和路径**](../curves/index.md) 的部分介绍了支持的各种曲线种类 `SKPath` 。
 
-此部分中的所有示例程序显示在[**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)程序主页的标题**行和路径**下，以及该解决方案的 "[**路径**](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths)" 文件夹下。
+此部分中的所有示例程序显示在[**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)程序主页的标题**行和路径**下，以及该解决方案的 "[**路径**](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths)" 文件夹下。
 
 ## <a name="lines-and-stroke-caps"></a>[线和笔划大写字母](lines.md)
 
@@ -55,5 +55,5 @@ _使用 SkiaSharp 绘制线条和图形路径_
 
 ## <a name="related-links"></a>相关链接
 
-- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [SkiaSharp Api](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (示例) ](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

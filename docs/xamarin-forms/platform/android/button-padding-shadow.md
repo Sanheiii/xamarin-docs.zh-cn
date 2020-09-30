@@ -10,12 +10,12 @@ ms.date: 07/10/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3efcd5cd7c2d00e9d646c937863fd7e55d17f240
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: fa0bf466886309978743f4225b72520eb340fd1a
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86929865"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563804"
 ---
 # <a name="button-padding-and-shadows-on-android"></a>Android 上的按钮填充和阴影
 
@@ -45,7 +45,7 @@ using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
 button.On<Android>().SetUseDefaultPadding(true).SetUseDefaultShadow(true);
 ```
 
-`Button.On<Android>`方法指定此平台特定的仅在 Android 上运行。 [ `Button.SetUseDefaultPadding` ] （X： Xamarin.Forms 。PlatformConfiguration. AndroidSpecific. SetUseDefaultPadding （ Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration Xamarin.Forms 。Button}，System.object）和 [ `Button.SetUseDefaultShadow` ] （x： Xamarin.Forms 。PlatformConfiguration. AndroidSpecific. SetUseDefaultShadow （ Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration Xamarin.Forms 。Button}，System.object）方法， [`Xamarin.Forms.PlatformConfiguration.AndroidSpecific`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) 用于控制 Xamarin.Forms 按钮是否使用 Android 按钮的默认填充和阴影值。 此外，[ `Button.UseDefaultPadding` ] （x： Xamarin.Forms 。PlatformConfiguration. AndroidSpecific. UseDefaultPadding （ Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration Xamarin.Forms 。Button}））和 [ `Button.UseDefaultShadow` ] （x： Xamarin.Forms 。PlatformConfiguration. AndroidSpecific. UseDefaultShadow （ Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration Xamarin.Forms 。Button}））方法可用于返回某个按钮是否分别使用默认填充值和默认阴影值。
+`Button.On<Android>`方法指定此平台特定的仅在 Android 上运行。 [ `Button.SetUseDefaultPadding` ] (x： Xamarin.Forms 。PlatformConfiguration. AndroidSpecific. SetUseDefaultPadding (Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration Xamarin.Forms 。Button}、System.object) # A3 和 [ `Button.SetUseDefaultShadow` ] (x： Xamarin.Forms 。PlatformConfiguration. AndroidSpecific. SetUseDefaultShadow (Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration Xamarin.Forms 。Button}、system.string) # A7 方法（位于 [`Xamarin.Forms.PlatformConfiguration.AndroidSpecific`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) 命名空间中）用于控制 Xamarin.Forms 按钮是否使用 Android 按钮的默认填充和阴影值。 此外，[ `Button.UseDefaultPadding` ] (x： Xamarin.Forms 。PlatformConfiguration. AndroidSpecific. UseDefaultPadding (Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration Xamarin.Forms 。Button} ) # A3 和 [ `Button.UseDefaultShadow` ] (x： Xamarin.Forms 。PlatformConfiguration. AndroidSpecific. UseDefaultShadow (Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration Xamarin.Forms 。Button} ) # A7 方法可用于返回某个按钮是否分别使用默认填充值和默认阴影值。
 
 结果是， Xamarin.Forms 按钮可以使用 Android 按钮的默认填充和阴影值：
 
@@ -55,7 +55,7 @@ button.On<Android>().SetUseDefaultPadding(true).SetUseDefaultShadow(true);
 
 ## <a name="related-links"></a>相关链接
 
-- [PlatformSpecifics （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [PlatformSpecifics (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [创建平台特定信息](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [AndroidSpecific API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)
 - [AndroidSpecific. AppCompat API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat)

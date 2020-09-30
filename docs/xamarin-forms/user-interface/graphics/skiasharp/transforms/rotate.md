@@ -10,12 +10,12 @@ ms.date: 03/23/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 533cb607cc2c47bf108d5e03733f31ebfc2fe475
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 2a6e19d25cefb4b8fcd870a9b590f129b2d9d85b
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86934129"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91557876"
 ---
 # <a name="the-rotate-transform"></a>旋转转换
 
@@ -27,7 +27,7 @@ _探索 SkiaSharp 旋转转换可能出现的效果和动画_
 
 ![围绕中心旋转的文本](rotate-images/rotateexample.png)
 
-对于围绕点（0，0）旋转图形对象，SkiaSharp 同时支持 [`RotateDegrees`](xref:SkiaSharp.SKCanvas.RotateDegrees(System.Single)) 方法和 [`RotateRadians`](xref:SkiaSharp.SKCanvas.RotateRadians(System.Single)) 方法：
+若要围绕点旋转图形对象 (0，0) ，SkiaSharp 同时支持 [`RotateDegrees`](xref:SkiaSharp.SKCanvas.RotateDegrees(System.Single)) 方法和 [`RotateRadians`](xref:SkiaSharp.SKCanvas.RotateRadians(System.Single)) 方法：
 
 ```csharp
 public void RotateDegrees (Single degrees)
@@ -37,13 +37,13 @@ public Void RotateRadians (Single radians)
 
 360度的圆与 twoπ弧度相同，因此可以轻松地在两个单位之间进行转换。 使用哪种便捷。 .NET 类中的所有三角函数均 [`Math`](xref:System.Math) 使用弧度单位。
 
-旋转以顺时针角度增加角度。 （尽管笛卡尔坐标系统上的旋转按惯例按逆时针进行，但顺时针旋转与 SkiaSharp 中不断增长的 Y 坐标一致。）允许负数和角度大于360度。
+旋转以顺时针角度增加角度。  (尽管在笛卡尔坐标系统上的旋转按惯例逆时针旋转，但顺时针旋转与相对于在 SkiaSharp 中增加的 Y 坐标保持一致。 ) 负值和大于360度的角。
 
 用于旋转的转换公式比用于平移和缩放的公式更复杂。 对于α角度，转换公式为：
 
-x ' = x • cos （α）– y • sin （α）   
+x ' = x • cos (α) – y • sin (α)    
 
-y ' = x • sin （α） + y • cos （α）
+y ' = x • sin (α) + y • cos (α) 
 
 **基本旋转**页面演示了 `RotateDegrees` 方法。 [**BasicRotate.xaml.cs**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/BasicRotatePage.xaml.cs)文件显示其基线位于页面上的某些文本，并基于 `Slider` 范围为–360到360的进行旋转。 下面是处理程序的相关部分 `PaintSurface` ：
 
@@ -107,7 +107,7 @@ canvas.RotateDegrees(degrees);
 canvas.Translate(-px, -py);
 ```
 
-你将发现，你有时可以将 `Translate` 调用与调用组合在一起 `Rotate` 。 例如，下面是中的 `RotateDegrees` 和 `DrawText` 在**居中旋转**页中调用。
+你将发现，你有时可以将 `Translate` 调用与调用组合在一起 `Rotate` 。 例如，下面是中的 `RotateDegrees` 和 `DrawText` 在 **居中旋转** 页中调用。
 
 ```csharp
 canvas.RotateDegrees((float)rotateSlider.Value, info.Width / 2, info.Height / 2);
@@ -123,7 +123,7 @@ canvas.Translate(-info.Width / 2, -info.Height / 2);
 canvas.DrawText(Title, info.Width / 2, info.Height / 2, textPaint);
 ```
 
-在 `DrawText` 特定位置上显示文本的调用等效于对 `Translate` 该位置的调用，后跟 `DrawText` 点（0，0）：
+在 `DrawText` 特定位置上显示文本的调用等效于对 `Translate` 该位置的调用，后跟 `DrawText` (0，0) 的点：
 
 ```csharp
 canvas.Translate(info.Width / 2, info.Height / 2);
@@ -258,7 +258,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-`revolveDegrees`和 `rotateDegrees` 字段已进行动画处理。 此程序使用基于类的不同动画技术 Xamarin.Forms [`Animation`](xref:Xamarin.Forms.Animation) 。 （此类在[*使用 Xamarin.Forms 创建移动应用*的第22章](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch22-Apr2016.pdf)中进行了介绍） `OnAppearing` 重写 `Animation` 使用回叫方法创建两个对象，然后对 `Commit` 其调用动画持续时间：
+`revolveDegrees`和 `rotateDegrees` 字段已进行动画处理。 此程序使用基于类的不同动画技术 Xamarin.Forms [`Animation`](xref:Xamarin.Forms.Animation) 。  (此类在[*创建移动 Xamarin.Forms 应用*](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch22-Apr2016.pdf)) 的第22章中进行了介绍， `OnAppearing` 重写使用 `Animation` 回叫方法创建两个对象，然后对其调用 `Commit` 动画持续时间：
 
 ```csharp
 protected override void OnAppearing()
@@ -287,7 +287,7 @@ protected override void OnDisappearing()
 }
 ```
 
-很好的**模拟时钟**程序（因此所谓，因为后面的文章中将介绍更具吸引力的模拟时钟程序）使用旋转绘制时钟的分钟和小时标记，并旋转指针。 该程序使用任意坐标系统根据中心点（0，0），半径为100的圆来绘制时钟。 它使用平移和缩放功能在页面上展开并居中该圆形。
+由于后面的一篇文章中将介绍一个更具吸引力的模拟时钟程序，因此 (很好的 **模拟时钟** 程序) 使用旋转绘制时钟的分钟和小时标记并旋转。 该程序根据中心点使用任意坐标系统来绘制时钟，该圆位于中心点 (0，0) ，半径为100。 它使用平移和缩放功能在页面上展开并居中该圆形。
 
 `Translate`和 `Scale` 调用将全局应用于时钟，因此在初始化对象之后将调用它们 `SKPaint` ：
 
@@ -318,7 +318,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-有60个不同大小的标记，它们必须在一个围绕时钟的圆圈中绘制。 此 `DrawCircle` 调用在点（0，–90）上绘制圆圈，该点相对于时钟中心对应于12:00。 调用将在 `RotateDegrees` 每个刻度线后将旋转角度增加6度。 `angle`变量仅用于确定是否绘制大圆圈或小圆圈：
+有60个不同大小的标记，它们必须在一个围绕时钟的圆圈中绘制。 该 `DrawCircle` 调用将在 (0，-90) 点绘制圆圈，该点相对于时钟中心对应12:00。 调用将在 `RotateDegrees` 每个刻度线后将旋转角度增加6度。 `angle`变量仅用于确定是否绘制大圆圈或小圆圈：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -371,9 +371,9 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 [!["有缺陷的模拟时钟文本" 页的三向屏幕截图](rotate-images/uglyanalogclock-small.png)](rotate-images/uglyanalogclock-large.png#lightbox "极差模拟页面的三向屏幕截图")
 
-若要获得更具吸引力的时钟，请参阅文章[**SkiaSharp 中的 SVG 路径数据**](../curves/path-data.md)。
+若要获得更具吸引力的时钟，请参阅文章 [**SkiaSharp 中的 SVG 路径数据**](../curves/path-data.md)。
 
 ## <a name="related-links"></a>相关链接
 
-- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [SkiaSharp Api](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (示例) ](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

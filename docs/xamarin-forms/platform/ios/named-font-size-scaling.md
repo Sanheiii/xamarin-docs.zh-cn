@@ -10,12 +10,12 @@ ms.date: 06/28/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9aa29ba4d8e6bda9126ec211af1b4febebd5bab9
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: e693565bf34b2ab17992aed72d022315a33b87e3
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84128266"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563661"
 ---
 # <a name="accessibility-scaling-for-named-font-sizes-on-ios"></a>IOS 上命名字体大小的辅助功能缩放
 
@@ -45,6 +45,6 @@ Xamarin.Forms.Application.Current.On<iOS>().SetEnableAccessibilityScalingForName
 
 ## <a name="related-links"></a>相关链接
 
-- [PlatformSpecifics （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [PlatformSpecifics (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [创建平台特定信息](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [iOSSpecific API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

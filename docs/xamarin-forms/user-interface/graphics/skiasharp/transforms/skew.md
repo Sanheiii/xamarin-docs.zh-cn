@@ -10,16 +10,16 @@ ms.date: 03/20/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 998584c3deebf5ab722758aeefe7560ba738f426
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: ed1bcbed86874362e291fb23ce86dea8992d3408
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939290"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563726"
 ---
 # <a name="the-skew-transform"></a>倾斜转换
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _了解倾斜变换如何在 SkiaSharp 中创建倾斜的图形对象_
 
@@ -45,7 +45,7 @@ public void Skew (SKPoint skew)
 
 但是，不太可能使用这两种方法中的一种。
 
-"**倾斜试验**" 页允许您试验介于-10 和10之间的倾斜值。 文本字符串位于页面的左上角，其中包含从两个元素获得的倾斜值 `Slider` 。 下面是 `PaintSurface` 类中的处理程序 [`SkewExperimentPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/SkewExperimentPage.xaml.cs) ：
+" **倾斜试验** " 页允许您试验介于-10 和10之间的倾斜值。 文本字符串位于页面的左上角，其中包含从两个元素获得的倾斜值 `Slider` 。 下面是 `PaintSurface` 类中的处理程序 [`SkewExperimentPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/SkewExperimentPage.xaml.cs) ：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -87,13 +87,13 @@ y ' = ySkew ·x + y
 
 例如，对于正值 `xSkew` ，转换后的值将 `x'` 增加 `y` 。 这就是导致倾斜的原因。
 
-如果三角形的200像素宽和100像素高，则定位在点（0，0）的左上角，并呈现为 `xSkew` 1.5 值，下面的平行四边形结果：
+如果三角形200像素宽和100像素高，则定位在 (0，0) 点的左上角，而呈现 `xSkew` 的值为1.5，则以下平行四边形结果：
 
 ![倾斜变换对矩形的影响](skew-images/skeweffect.png)
 
 下边缘的坐标 `y` 值为100，因此它向右移位150像素。
 
-对于或的非零值 `xSkew` `ySkew` ，只有点（0，0）保持不变。 可以将该点视为倾斜中心。 如果需要将扭曲中心作为其他内容（通常是这种情况），则没有 `Skew` 方法可提供此功能。 你需要通过调用显式合并 `Translate` 调用 `Skew` 。 若要在 `px` 和中居中倾斜 `py` ，请进行以下调用：
+对于或的非零值 `xSkew` `ySkew` ，只 (0，0) 的点保持不变。 可以将该点视为倾斜中心。 如果需要将扭曲中心作为其他 (通常是) 的情况，则没有 `Skew` 方法可以提供该内容。 你需要通过调用显式合并 `Translate` 调用 `Skew` 。 若要在 `px` 和中居中倾斜 `py` ，请进行以下调用：
 
 ```csharp
 canvas.Translate(px, py);
@@ -103,9 +103,9 @@ canvas.Translate(-px, -py);
 
 复合转换公式为：
 
-x ' = x + xSkew ·（y – py）
+x ' = x + xSkew · (y – py) 
 
-y ' = ySkew ·（x – px） + y
+y ' = ySkew · (x-px) + y
 
 如果 `ySkew` 为零，则 `px` 不使用该值。 值不相关，并且 `ySkew` 与和类似 `py` 。
 
@@ -115,7 +115,7 @@ y ' = ySkew ·（x – px） + y
 
 150像素移位到100像素垂直的比率是该角度的正切值，在此示例中为56.3 度。
 
-"**倾斜角度试验**" 页的 XAML 文件类似于 "**倾斜角度**" 页，只不过 `Slider` 元素范围为–90度到90度。 [`SkewAngleExperiment`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/SkewAngleExperimentPage.xaml.cs)代码隐藏文件使页面上的文本居中，并使用将 `Translate` 倾斜中心设置到页面中心。 `SkewDegrees`代码底部的简短方法将角度转换为倾斜值：
+" **倾斜角度试验** " 页的 XAML 文件类似于 " **倾斜角度** " 页，只不过 `Slider` 元素范围为–90度到90度。 [`SkewAngleExperiment`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/SkewAngleExperimentPage.xaml.cs)代码隐藏文件使页面上的文本居中，并使用将 `Translate` 倾斜中心设置到页面中心。 `SkewDegrees`代码底部的简短方法将角度转换为倾斜值：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -160,7 +160,7 @@ void SkewDegrees(SKCanvas canvas, double xDegrees, double yDegrees)
 
 [![倾斜角度试验页的三向屏幕截图](skew-images/skewangleexperiment-small.png)](skew-images/skewangleexperiment-large.png#lightbox "倾斜角度试验页的三向屏幕截图")
 
-如果**倾斜文本**页面说明，较小的负水平倾斜可以模拟倾斜或倾斜文本。 [`ObliqueTextPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ObliqueTextPage.cs)类显示操作的完成方式：
+如果 **倾斜文本** 页面说明，较小的负水平倾斜可以模拟倾斜或倾斜文本。 [`ObliqueTextPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ObliqueTextPage.cs)类显示操作的完成方式：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -192,11 +192,11 @@ void SkewDegrees(SKCanvas canvas, double xDegrees, double yDegrees)
 }
 ```
 
-的 `TextAlign` 属性 `SKPaint` 设置为 `Center` 。 如果没有任何转换，则 `DrawText` 具有（0，0）坐标的调用会将文本与基线的水平中心置于左上角。 相对于基线，将 `SkewDegrees` 文本水平倾斜20度。 `Translate`调用将文本基线的水平中心移动到画布中心：
+的 `TextAlign` 属性 `SKPaint` 设置为 `Center` 。 如果没有任何转换，则 `DrawText` 通过坐标 (0，0) 的调用会将文本与基线的水平中心置于左上角。 相对于基线，将 `SkewDegrees` 文本水平倾斜20度。 `Translate`调用将文本基线的水平中心移动到画布中心：
 
 [![倾斜文本页的三向屏幕截图](skew-images/obliquetext-small.png)](skew-images/obliquetext-large.png#lightbox "倾斜文本页的三向屏幕截图")
 
-"**倾斜阴影文本**" 页演示了如何结合使用45度倾斜和垂直缩放来使文本阴影远离文本。 下面是处理程序的相关部分 `PaintSurface` ：
+" **倾斜阴影文本** " 页演示了如何结合使用45度倾斜和垂直缩放来使文本阴影远离文本。 下面是处理程序的相关部分 `PaintSurface` ：
 
 ```csharp
 using (SKPaint textPaint = new SKPaint())
@@ -255,5 +255,5 @@ canvas.Translate(-xText, -yText - textBounds.Bottom);
 
 ## <a name="related-links"></a>相关链接
 
-- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [SkiaSharp Api](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (示例) ](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
