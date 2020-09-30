@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: e0f7e89be5de282daf10f941d0f0b8d0175df81a
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 572c6d378bdc2af72277bba8726daba860ab38fe
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "71107183"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91451507"
 ---
 祝贺你完成了本教程的学习，在本教程中你学习了如何：
 
@@ -28,10 +28,10 @@ ms.locfileid: "71107183"
 - 还可以自定义每个平台上的本机控件的效果。 通过子类化 [`PlatformEffect`](xref:Xamarin.Forms.PlatformEffect`2) 类在特定于平台的项目中创建效果，并将其附加到相应的 Xamarin.Forms 控件中使用。 有关详细信息，请参阅[效果](~/xamarin-forms/app-fundamentals/effects/index.md)。
 - 共享代码可通过 [`DependencyService`](xref:Xamarin.Forms.DependencyService) 类访问本机功能。 有关详细信息，请参阅[通过 DependencyService 访问本机功能](~/xamarin-forms/app-fundamentals/dependency-service/index.md)。
 
-此外，也可以阅读 Charles Petzold 撰写的[使用 Xamarin.Forms 创建移动应用](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md)一书，了解有关 Xamarin.Forms 的详细信息。  可获取此书的 PDF 版本或多种电子书格式的版本。
+此外，也可以阅读 Charles Petzold 撰写的[使用 Xamarin.Forms 创建移动应用](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md)一书，了解有关 Xamarin.Forms 的详细信息。__ 可获取此书的 PDF 版本或多种电子书格式的版本。
 
 ## <a name="related-links"></a>相关链接
 
-- [WebServiceTutorial（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-tutorials-webservicetutorial/)
+- [WebServiceTutorial（示例）](/samples/xamarin/xamarin-forms-samples/getstarted-tutorials-webservicetutorial/)
 - [使用 RESTful Web 服务（指南）](~/xamarin-forms/data-cloud/web-services/rest.md)
 - [Newtonsoft.Json Nuget 包](https://www.nuget.org/packages/Newtonsoft.Json/)

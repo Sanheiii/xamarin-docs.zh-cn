@@ -2,7 +2,7 @@
   href: index.yml
   expanded: true
   items:
-    - name: 开始操作
+    - name: 开始使用
       href: get-started/index.md
       expanded: true
       items:
@@ -15,7 +15,7 @@
     - name: 应用程序基础知识
       href: app-fundamentals/index.md
       items:
-        - name: 可访问性
+        - name: 辅助功能
           href: app-fundamentals/accessibility.md
         - name: 常用模式和惯例
           href: app-fundamentals/patterns.md
@@ -222,6 +222,6 @@
         - name: 错误消息 (mmp)
           href: troubleshooting/mmp-errors.md
     - name: 发行说明
-      href: 'https://docs.microsoft.com/xamarin/mac/release-notes/'
+      href: /xamarin/mac/release-notes/
     - name: 示例
       href: samples/index.md

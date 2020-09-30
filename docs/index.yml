@@ -9,12 +9,12 @@ metadata:
   author: conceptdev
   ms.author: crdun
   ms.date: 09/26/2019
-  ms.openlocfilehash: 161b1570f668ed13f235b72fca064b1349e25d8b
-  ms.sourcegitcommit: 0c45e3f810947e3d43223aa01bf3e43a0defca65
+  ms.openlocfilehash: c478d4f7f93d7ddeeb307aa87f324127f98ec6f4
+  ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 09/21/2020
-  ms.locfileid: "90843533"
+  ms.lasthandoff: 09/29/2020
+  ms.locfileid: "91453228"
 highlightedContent:
   items:
   - title: 设置和安装
@@ -28,7 +28,7 @@ highlightedContent:
     url: ~/whats-new/index.yml
   - title: 提高你的移动开发技能
     itemType: learn
-    url: https://docs.microsoft.com/learn/browse/?roles=developer&products=xamarin
+    url: /learn/browse/?products=xamarin&roles=developer
 productDirectory:
   items:
   - title: Xamarin.Forms 跨平台
@@ -86,7 +86,7 @@ conceptualContent:
       url: ~/get-started/quickstarts/styling.md
       itemType: get-started
     footerLink:
-      url: https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms%20get%20started
+      url: /samples/browse/?products=xamarin&term=Xamarin.Forms%2bget%2bstarted
       text: 查找示例
   - title: 学习教程
     links:
@@ -181,7 +181,7 @@ additionalContent:
       - text: 高级概念和内部信息
         url: ~/xamarin-forms/internals/index.md
       - text: 示例
-        url: https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms
+        url: /samples/browse/?products=xamarin&term=Xamarin.Forms
     - title: Android
       links:
       - text: 应用基础知识
@@ -197,7 +197,7 @@ additionalContent:
       - text: 高级概念和内部信息
         url: ~/android/internals/index.md
       - text: 示例
-        url: https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Android
+        url: /samples/browse/?products=xamarin&term=Xamarin.Android
     - title: iOS
       links:
       - text: 应用基础知识
@@ -213,7 +213,7 @@ additionalContent:
       - text: 高级概念和内部信息
         url: ~/ios/internals/index.md
       - text: 示例
-        url: https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS
+        url: /samples/browse/?products=xamarin&term=Xamarin.iOS
     - title: Mac
       links:
       - text: 应用基础知识
@@ -227,5 +227,5 @@ additionalContent:
       - text: 高级概念和内部信息
         url: ~/mac/internals/index.md
       - text: 示例
-        url: https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Mac
+        url: /samples/browse/?products=xamarin&term=Xamarin.Mac
   footer: '[博客](https://devblogs.microsoft.com/xamarin/) - [Twitter](https://twitter.com/xamarinhq) - [堆栈溢出](https://stackoverflow.com/questions/tagged/xamarin) - [开发者社区](https://developercommunity.visualstudio.com/spaces/8/index.html)'

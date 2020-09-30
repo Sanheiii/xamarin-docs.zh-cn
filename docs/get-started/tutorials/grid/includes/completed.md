@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 36454d9fe2903bc5e9b05c7809bd09a1f305f46b
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 4ee2326079ba9ddea6b0f4c5c4356412a3d5b492
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "71059551"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91451475"
 ---
 祝贺你完成了本教程的学习，在本教程中你学习了如何：
 
@@ -23,7 +23,7 @@ ms.locfileid: "71059551"
 
 ## <a name="related-links"></a>相关链接
 
-- [GridTutorial（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-tutorials-gridtutorial/)
+- [GridTutorial（示例）](/samples/xamarin/xamarin-forms-samples/getstarted-tutorials-gridtutorial/)
 - [Xamarin.Forms 网格（指南）](~/xamarin-forms/user-interface/layouts/grid.md)
 - [边距和填充（指南）](~/xamarin-forms/user-interface/layouts/margin-and-padding.md)
 - [网格 API](xref:Xamarin.Forms.Grid)

@@ -836,6 +836,8 @@ items:
         href: ~/essentials/platform-feature-support.md?context=xamarin/xamarin-forms
       - name: 加速计
         href: ~/essentials/accelerometer.md?context=xamarin/xamarin-forms
+      - name: App Actions
+        href: ~/essentials/app-actions.md?context=xamarin/xamarin-forms
       - name: 应用信息
         href: ~/essentials/app-information.md?context=xamarin/xamarin-forms
       - name: 应用主题
@@ -852,6 +854,8 @@ items:
         href: ~/essentials/compass.md?context=xamarin/xamarin-forms
       - name: 连接性
         href: ~/essentials/connectivity.md?context=xamarin/xamarin-forms
+      - name: 联系人
+        href: ~/essentials/contacts.md?context=xamarin/xamarin-forms
       - name: 检测抖动
         href: ~/essentials/detect-shake.md?context=xamarin/xamarin-forms
       - name: 设备显示信息
@@ -860,6 +864,8 @@ items:
         href: ~/essentials/device-information.md?context=xamarin/xamarin-forms
       - name: 电子邮件
         href: ~/essentials/email.md?context=xamarin/xamarin-forms
+      - name: 文件选取器
+        href: ~/essentials/file-picker.md?context=xamarin/xamarin-forms
       - name: 文件系统帮助程序
         href: ~/essentials/file-system-helpers.md?context=xamarin/xamarin-forms
       - name: 手电筒
@@ -870,6 +876,8 @@ items:
         href: ~/essentials/geolocation.md?context=xamarin/xamarin-forms
       - name: 陀螺仪
         href: ~/essentials/gyroscope.md?context=xamarin/xamarin-forms
+      - name: Haptic 反馈
+        href: ~/essentials/haptic-feedback.md?context=xamarin/xamarin-forms
       - name: 启动器
         href: ~/essentials/launcher.md?context=xamarin/xamarin-forms
       - name: 磁力计
@@ -878,6 +886,8 @@ items:
         href: ~/essentials/main-thread.md?context=xamarin/xamarin-forms
       - name: 映射
         href: ~/essentials/maps.md?context=xamarin/xamarin-forms
+      - name: 媒体选取器
+        href: ~/essentials/media-picker.md?context=xamarin/xamarin-forms
       - name: 打开浏览器
         href: ~/essentials/open-browser.md?context=xamarin/xamarin-forms
       - name: 方向传感器
@@ -890,6 +900,8 @@ items:
         href: ~/essentials/platform-extensions.md?context=xamarin/xamarin-forms
       - name: 首选项
         href: ~/essentials/preferences.md?context=xamarin/xamarin-forms
+      - name: 屏幕快照
+        href: ~/essentials/screenshot.md?context=xamarin/xamarin-forms
       - name: 安全存储
         href: ~/essentials/secure-storage.md?context=xamarin/xamarin-forms
       - name: 共享

@@ -1,21 +1,21 @@
 ### YamlMime:Landing
 title: Xamarin.Android
-summary: Xamarin.Android 为 .NET 开发人员提供了完整的 Android SDK。 在 Visual Studio 中使用 C# 或 F# 生成完全本机的 Android 应用。
+summary: Xamarin.Android 向 .NET 开发人员公开了完整的 Android SDK。 使用 C# 或 F# 在 Visual Studio 中生成完全本机的 Android 应用。
 metadata:
   title: Xamarin.Android
-  description: Xamarin.Android 为 .NET 开发人员提供了完整的 Android SDK。
+  description: Xamarin.Android 向 .NET 开发人员公开了完整的 Android SDK。
   ms.topic: landing-page
   ms.prod: xamarin
   ms.technology: xamarin-android
   author: davidbritch
   ms.author: dabritch
   ms.date: 01/27/2020
-  ms.openlocfilehash: 394812b5150f7bbea46dff476bd2f896083b9a74
-  ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+  ms.openlocfilehash: 593d8d20433222e1b18fd65b86a7586aa5560933
+  ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 04/09/2020
-  ms.locfileid: "77374079"
+  ms.lasthandoff: 09/29/2020
+  ms.locfileid: "91454281"
 landingContent:
 - title: 入门
   linkLists:
@@ -53,7 +53,7 @@ landingContent:
       url: ~/android/app-fundamentals/permissions.md
     - text: 触控和手势
       url: ~/android/app-fundamentals/touch/index.md
-    - text: 查看更多信息 >
+    - text: 查看更多 >
       url: ~/android/app-fundamentals/index.md
 - title: 用户界面
   linkLists:
@@ -85,21 +85,21 @@ landingContent:
       url: ~/android/platform/files/index.md
     - text: 指纹身份验证
       url: ~/android/platform/fingerprint-authentication/index.md
-    - text: 片段
+    - text: Fragments
       url: ~/android/platform/fragments/index.md
     - text: Java 集成
       url: ~/android/platform/java-integration/index.md
     - text: 作业计划程序
       url: ~/android/platform/android-job-scheduler.md
-    - text: 地图和位置
+    - text: 地图与位置
       url: ~/android/platform/maps-and-location/index.md
-    - text: 查看更多信息 >
+    - text: 查看更多 >
       url: ~/android/platform/index.md
 - title: Xamarin.Essentials
   linkLists:
   - linkListType: concept
     links:
-    - text: About
+    - text: 关于
       url: ~/essentials/index.md?context=xamarin/android
     - text: 入门
       url: ~/essentials/get-started.md?context=xamarin/android
@@ -108,7 +108,7 @@ landingContent:
     - text: 疑难解答
       url: ~/essentials/troubleshooting.md?context=xamarin/android
     - text: 发行说明
-      url: https://docs.microsoft.com/xamarin/essentials/release-notes/
+      url: /xamarin/essentials/release-notes/
 - title: 数据和云服务
   linkLists:
   - linkListType: concept
@@ -139,13 +139,13 @@ landingContent:
       url: ~/android/deploy-test/performance.md
     - text: 分析
       url: ~/android/deploy-test/profiling.md
-    - text: 准备发布
+    - text: 发布准备
       url: ~/android/deploy-test/release-prep/index.md
     - text: 对 APK 进行签名
       url: ~/android/deploy-test/signing/index.md
     - text: 发布应用
       url: ~/android/deploy-test/publishing/index.md
-    - text: 查看更多信息 >
+    - text: 查看更多 >
       url: ~/android/deploy-test/index.md
 - title: 高级概念和内部信息
   linkLists:
@@ -171,7 +171,7 @@ landingContent:
       url: ~/android/wear/user-interface/index.md
     - text: 平台功能
       url: ~/android/wear/platform/index.md
-    - text: 屏幕大小
+    - text: 屏幕尺寸
       url: ~/android/wear/screen-sizes.md
     - text: 部署和测试
       url: ~/android/wear/deploy-test/index.md
