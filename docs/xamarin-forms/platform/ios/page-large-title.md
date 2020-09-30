@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 88761472c4beae3f40f2ca6852eea4db8276c4c9
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 162683c4fabb0a8b6deed1fb30bd7a7dece1f597
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86930674"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562283"
 ---
 # <a name="large-page-titles-on-ios"></a>IOS 上的大型页面标题
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 此 iOS 平台特定用于在的导航栏上将页面标题显示为大标题 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) ，适用于使用 iOS 11 或更高版本的设备。 当用户开始滚动内容时，较大的标题将左对齐并使用较大的字体，并转换为标准标题，以便有效地使用屏幕房地产。 但在横向方向，标题将返回到导航栏的中心，以优化内容布局。 它通过将 `NavigationPage.PrefersLargeTitles` 附加属性设置为值在 XAML 中使用 `boolean` ：
 
@@ -77,9 +77,9 @@ public class iOSLargeTitlePageCS : ContentPage
 
 `Page.On<iOS>`方法指定此平台特定的仅在 iOS 上运行。 `Page.SetLargeTitleDisplay`命名空间中的方法 [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) 控制中的大型标题行为 [`Page`](xref:Xamarin.Forms.Page) ， `LargeTitleDisplayMode` 枚举提供三个可能的值：
 
-- `Always`–强制导航栏和字体大小使用大格式。
-- `Automatic`–使用与导航堆栈中的上一项相同的样式（大或小）。
-- `Never`–强制使用常规的小格式导航栏。
+- `Always` –强制导航栏和字体大小使用大格式。
+- `Automatic` –使用与导航堆栈中的上一项相同的样式 (大或较小) 。
+- `Never` –强制使用常规的小格式导航栏。
 
 此外，该 `SetLargeTitleDisplay` 方法可用于通过调用返回当前的方法来切换枚举值 `LargeTitleDisplay` `LargeTitleDisplayMode` ：
 
@@ -104,6 +104,6 @@ switch (On<iOS>().LargeTitleDisplay())
 
 ## <a name="related-links"></a>相关链接
 
-- [PlatformSpecifics （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [PlatformSpecifics (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [创建平台特定信息](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [iOSSpecific API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

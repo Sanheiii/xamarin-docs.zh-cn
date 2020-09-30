@@ -10,12 +10,12 @@ ms.date: 04/24/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: de5ebf086af7fa8d7c6360bf3a1f48f57b834e44
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 01e439812c3935e890acf0b9b83579b5813d8e21
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938432"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563947"
 ---
 # <a name="device-orientation"></a>设备方向
 
@@ -29,21 +29,21 @@ ms.locfileid: "86938432"
 
 ### <a name="ios"></a>iOS
 
-在 iOS 上，使用**info.plist**文件为应用程序配置设备方向。 使用本文档顶部的 IDE 选项选择要查看的说明：
+在 iOS 上，使用 **info.plist** 文件为应用程序配置设备方向。 使用本文档顶部的 IDE 选项选择要查看的说明：
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-在 Visual Studio 中，打开 iOS 项目并打开**info.plist**。 文件将从 "iPhone 部署信息" 选项卡开始打开配置面板：
+在 Visual Studio 中，打开 iOS 项目并打开 **info.plist**。 文件将从 "iPhone 部署信息" 选项卡开始打开配置面板：
 
 ![Visual Studio 中的 iPhone 部署信息](device-orientation-images/orientation-vs.png)
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-在 Visual Studio for Mac 中，打开 iOS 项目并打开**info.plist**。 在 "**应用程序**" 选项卡下，可以使用以下各节设置方向：
+在 Visual Studio for Mac 中，打开 iOS 项目并打开 **info.plist**。 在 " **应用程序** " 选项卡下，可以使用以下各节设置方向：
 
 ![Visual Studio for Mac 中的 iPhone 部署信息](device-orientation-images/orientation-vsmac.png)
 
-如果希望使用键值编辑器界面编辑值，请选择屏幕底部的 "**源**>" 选项卡：
+如果希望使用键值编辑器界面编辑值，请选择屏幕底部的 " **源**>" 选项卡：
 
 ![Visual Studio for Mac 中支持的设备方向](device-orientation-images/orientation-source-vsmac.png)
 
@@ -51,7 +51,7 @@ ms.locfileid: "86938432"
 
 ### <a name="android"></a>Android
 
-若要控制 Android 方向，请打开**MainActivity.cs** ，并使用修饰类的属性设置方向 `MainActivity` ：
+若要控制 Android 方向，请打开 **MainActivity.cs** ，并使用修饰类的属性设置方向 `MainActivity` ：
 
 ```csharp
 namespace MyRotatingApp.Droid
@@ -65,17 +65,17 @@ namespace MyRotatingApp.Droid
 
 Xamarin 支持指定方向的几个选项：
 
-- **横向** &ndash;强制应用程序方向为横向，而不考虑传感器数据。
-- **纵向** &ndash;强制应用程序方向为纵向，而不考虑传感器数据。
-- **用户** &ndash;使应用程序使用用户的首选方向进行呈现。
-- **后面** &ndash;使应用程序的方向与其后[活动](xref:Android.App.Activity)的方向相同。
-- **传感器** &ndash;使应用程序的方向由传感器确定，即使用户已禁用自动旋转。
-- **SensorLandscape** &ndash;导致应用程序在使用传感器数据时使用横向方向，以更改屏幕的方向（以使屏幕看起来不到倒置）。
-- **SensorPortrait** &ndash;使应用程序在使用传感器数据以更改屏幕的方向时使用纵向，以使屏幕看起来不到倒置。
-- **ReverseLandscape** &ndash;使应用程序使用横向方向，使其在正常方向上朝向相反方向，以便显示 "倒置"。
-- **ReversePortrait** &ndash;使应用程序使用纵向方向，使其在正常方向上朝向相反方向，因此显示 "倒置"。
-- **FullSensor** &ndash;使应用程序依赖传感器数据来选择正确的方向（不可能为4个）。
-- **FullUser** &ndash;使应用程序使用用户的方向首选项。 如果启用了自动旋转，则可以使用所有4个方向。
+- **横向** &ndash; 强制应用程序方向为横向，而不考虑传感器数据。
+- **纵向** &ndash; 强制应用程序方向为纵向，而不考虑传感器数据。
+- **用户** &ndash; 使应用程序使用用户的首选方向进行呈现。
+- **后面** &ndash; 使应用程序的方向与其后 [活动](xref:Android.App.Activity) 的方向相同。
+- **传感器** &ndash; 使应用程序的方向由传感器确定，即使用户已禁用自动旋转。
+- **SensorLandscape** &ndash; 导致应用程序在使用传感器数据时使用横向方向，以更改屏幕所面临的方向 (使屏幕不会) 倒置。
+- **SensorPortrait** &ndash; 导致应用程序在使用传感器数据时使用纵向方向，以更改屏幕所面临的方向 (使屏幕不会) 倒置。
+- **ReverseLandscape** &ndash; 使应用程序使用横向方向，使其在正常方向上朝向相反方向，以便显示 "倒置"。
+- **ReversePortrait** &ndash; 使应用程序使用纵向方向，使其在正常方向上朝向相反方向，因此显示 "倒置"。
+- **FullSensor** &ndash; 使应用程序依赖传感器数据来选择正确的方向 (超出可能的 4) 。
+- **FullUser** &ndash; 使应用程序使用用户的方向首选项。 如果启用了自动旋转，则可以使用所有4个方向。
 - **UserLandscape** &ndash;_ \[ 不支持 \] _导致应用程序使用横向方向，除非用户启用了自动旋转，在这种情况下，它将使用传感器来确定方向。 此选项将中断编译。
 - **UserPortrait** &ndash;_ \[ 不支持 \] _导致应用程序使用纵向，除非用户启用了自动旋转，在这种情况下，它将使用传感器来确定方向。 此选项将中断编译。
 - 已**锁定** &ndash;_ \[ 不受 \] 支持_会导致应用程序在启动时使用屏幕方向，而不会响应设备物理方向的变化。 此选项将中断编译。
@@ -84,13 +84,13 @@ Xamarin 支持指定方向的几个选项：
 
 ### <a name="universal-windows-platform"></a>通用 Windows 平台
 
-在通用 Windows 平台（UWP）上，支持的方向是在**appxmanifest.xml**文件中设置的。 打开清单将显示一个配置面板，可以在其中选择支持的方向。
+在通用 Windows 平台 (UWP) 上，支持的方向是在 **appxmanifest.xml** 文件中设置的。 打开清单将显示一个配置面板，可以在其中选择支持的方向。
 
 ## <a name="reacting-to-changes-in-orientation"></a>对方向变化做出反应
 
-Xamarin.Forms不提供用于向应用程序通知共享代码中的方向更改的任何本机事件。 但是， [Xamarin.Essentials](~/essentials/index.md) 包含一个 `DeviceDisplay` 提供方向更改通知的 [] 类。
+Xamarin.Forms 不提供用于向应用程序通知共享代码中的方向更改的任何本机事件。 但是， [Xamarin.Essentials](~/essentials/index.md) 包含一个 `DeviceDisplay` 提供方向更改通知的 [] 类。
 
-若要在没有的情况下检测方向，请 Xamarin.Essentials 监视的 `SizeChanged` 事件，该事件在的 `Page` 宽度或高度 `Page` 发生更改时激发。 当的宽度 `Page` 大于高度时，设备处于横向模式。 有关详细信息，请参阅[基于屏幕方向显示图像](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/Controls/screen-orientation)。
+若要在没有的情况下检测方向，请 Xamarin.Essentials 监视的 `SizeChanged` 事件，该事件在的 `Page` 宽度或高度 `Page` 发生更改时激发。 当的宽度 `Page` 大于高度时，设备处于横向模式。 有关详细信息，请参阅 [基于屏幕方向显示图像](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/Controls/screen-orientation)。
 
 或者，可以重写 [`OnSizeAllocated`](xref:Xamarin.Forms.Page.OnSizeAllocated*) 中的方法，并在 `Page` 其中插入任何布局更改逻辑。 `OnSizeAllocated`只要 `Page` 分配新大小，就会调用方法，只要设备旋转，就会发生这种情况。 请注意，的基实现 `OnSizeAllocated` 执行重要的布局函数，因此在重写中调用基实现非常重要：
 
@@ -135,8 +135,8 @@ protected override void OnSizeAllocated(double width, double height)
 
 可以使用内置布局设计接口，使其在设备旋转时正常转换。 设计在响应方向变化时仍有吸引力的接口时，请考虑以下一般规则：
 
-- **注意比率** &ndash;当某些假设与比率有关时，方向变化可能会导致问题。 例如，在纵向屏幕垂直空间的1/3 中具有大量空间的视图可能无法适应横向垂直空间的1/3。
-- **请注意绝对值** &ndash;在横向有效的绝对（像素）值在横向可能没有意义。 如果需要绝对值，请使用嵌套布局来找出它们的影响。 例如， `TableView` `ItemTemplate` 如果项模板具有有保证的统一高度，则在中使用绝对值是合理的。
+- **注意比率** &ndash; 当某些假设与比率有关时，方向变化可能会导致问题。 例如，在纵向屏幕垂直空间的1/3 中具有大量空间的视图可能无法适应横向垂直空间的1/3。
+- **请注意绝对值** &ndash; 绝对 (像素) 值在横向上非常有意义。 如果需要绝对值，请使用嵌套布局来找出它们的影响。 例如， `TableView` `ItemTemplate` 如果项模板具有有保证的统一高度，则在中使用绝对值是合理的。
 
 在为多个屏幕大小实现接口时，上述规则也适用，通常被视为最佳做法。 本指南的其余部分将介绍使用中的每个主要布局的响应式布局的特定示例 Xamarin.Forms 。
 
@@ -215,7 +215,7 @@ protected override void OnSizeAllocated (double width, double height){
 
 注意以下事项：
 
-- `outerStack`进行调整后，根据方向，将图像和控件呈现为水平或垂直堆栈，以最好地利用可用空间。
+- `outerStack` 进行调整后，根据方向，将图像和控件呈现为水平或垂直堆栈，以最好地利用可用空间。
 
 ### <a name="absolutelayout"></a>AbsoluteLayout
 
@@ -360,7 +360,7 @@ BackgroundImageSource="deer.jpg">
 - 由于页面布局的方式，无需执行过程代码来引入响应能力。
 - 将 `ScrollView` 用于允许标签可见，即使屏幕的高度小于按钮和图像的固定高度之和也是如此。
 
-### <a name="grid"></a>网格
+### <a name="grid"></a>Grid
 
 请考虑以下应用程序，纵向显示：
 
@@ -464,7 +464,7 @@ protected override void OnSizeAllocated (double width, double height){
 
 ## <a name="related-links"></a>相关链接
 
-- [布局（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
-- [BusinessTumble 示例（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-businesstumble)
-- [响应式布局（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-responsivelayout)
+- [布局 (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-layout)
+- [BusinessTumble 示例 (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-businesstumble)
+- [响应式布局 (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-responsivelayout)
 - [基于屏幕方向显示图像](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/Controls/screen-orientation)

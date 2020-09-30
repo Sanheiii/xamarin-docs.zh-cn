@@ -10,12 +10,12 @@ ms.date: 05/06/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e0fbdc91c2661732e3afdbde44ce9891f89c5f62
-ms.sourcegitcommit: 14d67a2db82e67471584b1749e0d5b9ec0c0c09b
+ms.openlocfilehash: d535956e03ac02e2cf0c5d7528ee8e363a2a1e55
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88228633"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91561646"
 ---
 # <a name="no-locxamarinforms-webview"></a>Xamarin.Forms 切换
 
@@ -25,7 +25,7 @@ ms.locfileid: "88228633"
 
 ![在应用浏览器中](webview-images/in-app-browser.png)
 
-## <a name="content"></a>内容
+## <a name="content"></a>Content
 
 `WebView` 支持以下类型的内容：
 
@@ -351,7 +351,7 @@ Web 视图将引发以下事件，以帮助你响应状态更改：
 [`WebNavigatedEventArgs`](xref:Xamarin.Forms.WebNavigatedEventArgs)事件附带的对象 [`Navigated`](xref:Xamarin.Forms.WebView.Navigated) 具有四个属性：
 
 - `NavigationEvent` –引发的导航事件。
-- `Result` –介绍使用枚举成员的导航结果 [`WebNavigationResult`](xref:Xamarin.Forms.WebNavigationResult) 。 有效的值为 `Cancel`、`Failure`、`Success` 和 `Timeout`。
+- `Result` –介绍使用枚举成员的导航结果 [`WebNavigationResult`](xref:Xamarin.Forms.WebNavigationResult) 。 有效值为 `Cancel`、`Failure`、`Success` 和 `Timeout`。
 - `Source` –执行导航的元素。
 - `Url` –导航目标。
 
@@ -420,7 +420,7 @@ webView.Reload();
 
 `WebView` 默认情况下，Android 上的与内置浏览器的速度一样快。
 
-[UWP Web 视图](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/web-view)使用 Microsoft Edge 呈现引擎。 台式机和平板电脑的性能应与使用 Edge 浏览器本身的性能相同。
+[UWP Web 视图](/windows/uwp/design/controls-and-patterns/web-view)使用 Microsoft Edge 呈现引擎。 台式机和平板电脑的性能应与使用 Edge 浏览器本身的性能相同。
 
 ## <a name="permissions"></a>权限
 
@@ -430,7 +430,7 @@ webView.Reload();
 - **Android** &ndash;`INTERNET`仅当显示网络中的内容时才需要。 本地内容不需要特殊权限。
 - **iOS** &ndash; 不需要任何特殊权限。
 
-## <a name="layout"></a>Layout
+## <a name="layout"></a>布局
 
 与大多数其他 Xamarin.Forms 视图不同， `WebView` 需要 `HeightRequest` `WidthRequest` 在 StackLayout 或 RelativeLayout 中包含和时指定和。 如果无法指定这些属性，则 `WebView` 不会呈现。
 
@@ -490,7 +490,7 @@ RelativeLayout with WidthRequest & HeightRequest：
 
 ## <a name="invoking-javascript"></a>调用 JavaScript
 
-[`WebView`](xref:Xamarin.Forms.WebView) 包括从 c # 调用 JavaScript 函数的功能，并将任何结果返回给调用 c # 代码。 这是通过方法完成的 [`WebView.EvaluateJavaScriptAsync`](xref:Xamarin.Forms.WebView.EvaluateJavaScriptAsync*) ，如下面的示例： [WebView](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-webview)
+[`WebView`](xref:Xamarin.Forms.WebView) 包括从 c # 调用 JavaScript 函数的功能，并将任何结果返回给调用 c # 代码。 这是通过方法完成的 [`WebView.EvaluateJavaScriptAsync`](xref:Xamarin.Forms.WebView.EvaluateJavaScriptAsync*) ，如下面的示例： [WebView](/samples/xamarin/xamarin-forms-samples/userinterface-webview)
 
 ```csharp
 var numberEntry = new Entry { Text = "5" };
@@ -597,6 +597,6 @@ webView.Source = new UrlWebViewSource { Url = uri.ToString() };
 
 ## <a name="related-links"></a>相关链接
 
-- [使用 Web 视图 (示例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithwebview)
-- [Web 视图 (示例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-webview)
+- [使用 Web 视图 (示例) ](/samples/xamarin/xamarin-forms-samples/workingwithwebview)
+- [Web 视图 (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-webview)
 - [UIWebView 弃用](~/ios/user-interface/controls/webview.md#uiwebview-deprecation)

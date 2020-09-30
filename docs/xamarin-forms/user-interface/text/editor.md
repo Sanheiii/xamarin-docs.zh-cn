@@ -10,16 +10,16 @@ ms.date: 07/21/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3a7dedad6fc33b75a687f94897b64d04a72a0b08
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: 42f89f09bd84127fd19bc3ab64794bdac7f145d7
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87918433"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91561620"
 ---
 # <a name="no-locxamarinforms-editor"></a>Xamarin.Forms编辑器
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
 
 [`Editor`](xref:Xamarin.Forms.Editor)控件用于接受多行输入。
 
@@ -75,10 +75,10 @@ var editor = new Editor { Text = "This is a read-only Editor", IsReadOnly = true
 
 [`Editor`](xref:Xamarin.Forms.Editor) `Text` 通过将属性设置为枚举的值，可以转换存储在属性中的文本大小写 `TextTransform` `TextTransform` 。 此枚举具有四个值：
 
-- `None`指示不转换文本。
-- `Default`指示将使用平台的默认行为。 这是 `TextTransform` 属性的默认值。
-- `Lowercase`指示文本将转换为小写。
-- `Uppercase`指示文本将转换为大写。
+- `None` 指示不转换文本。
+- `Default` 指示将使用平台的默认行为。 这是 `TextTransform` 属性的默认值。
+- `Lowercase` 指示文本将转换为小写。
+- `Uppercase` 指示文本将转换为大写。
 
 下面的示例演示如何将文本转换为大写：
 
@@ -135,8 +135,8 @@ Editor editor = new editor { CharacterSpacing = 10 };
 
 [`Editor`](xref:Xamarin.Forms.Editor)可以通过将属性设置为来使其内容自动调整大小 [`Editor.AutoSize`](xref:Xamarin.Forms.Editor.AutoSize) [`TextChanges`](xref:Xamarin.Forms.EditorAutoSizeOption.TextChanges) ，这是枚举的值 [`EditoAutoSizeOption`](xref:Xamarin.Forms.EditorAutoSizeOption) 。 此枚举有两个值：
 
-- [`Disabled`](xref:Xamarin.Forms.EditorAutoSizeOption.Disabled)指示禁用自动调整大小，并为默认值。
-- [`TextChanges`](xref:Xamarin.Forms.EditorAutoSizeOption.TextChanges)指示启用自动调整大小。
+- [`Disabled`](xref:Xamarin.Forms.EditorAutoSizeOption.Disabled) 指示禁用自动调整大小，并为默认值。
+- [`TextChanges`](xref:Xamarin.Forms.EditorAutoSizeOption.TextChanges) 指示启用自动调整大小。
 
 这可以在代码中完成，如下所示：
 
@@ -178,7 +178,7 @@ var editor = new Editor { Text = "Enter text here", AutoSize = EditorAutoSizeOpt
 var editor = new Editor { Keyboard = Keyboard.Chat };
 ```
 
-每个键盘的示例可在我们的[食谱](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/Controls/choose-keyboard-for-entry)存储库中找到。
+每个键盘的示例可在我们的 [食谱](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/Controls/choose-keyboard-for-entry) 存储库中找到。
 
 [`Keyboard`](xref:Xamarin.Forms.Keyboard) 类还具有 [`Create`](xref:Xamarin.Forms.Keyboard.Create*) 工厂方法，可用于通过指定大小写、拼写检查和建议行为来自定义键盘。 [`KeyboardFlags`](xref:Xamarin.Forms.KeyboardFlags) 枚举值指定为方法的参数，并返回自定义的 `Keyboard`。 `KeyboardFlags` 枚举包含以下值：
 
@@ -248,7 +248,7 @@ var editor = new Editor { ... IsTextPredictionEnabled = false };
 
 ## <a name="colors"></a>颜色
 
-`Editor`可以设置为通过属性使用自定义背景色 `BackgroundColor` 。 需要特别注意，以确保每个平台的颜色都可用。 由于每个平台都有不同的文本颜色默认设置，因此可能需要为每个平台设置自定义背景色。 有关优化每个平台的 UI 的详细信息，请参阅[使用平台](~/xamarin-forms/platform/device.md)调整程序。
+`Editor` 可以设置为通过属性使用自定义背景色 `BackgroundColor` 。 需要特别注意，以确保每个平台的颜色都可用。 由于每个平台都有不同的文本颜色默认设置，因此可能需要为每个平台设置自定义背景色。 有关优化每个平台的 UI 的详细信息，请参阅 [使用平台](~/xamarin-forms/platform/device.md) 调整程序。
 
 在 C# 中：
 
@@ -296,17 +296,17 @@ public partial class EditorPage : ContentPage
 
 ## <a name="events-and-interactivity"></a>事件和交互性
 
-`Editor`公开两个事件：
+`Editor` 公开两个事件：
 
-- [TextChanged](xref:Xamarin.Forms.InputView.TextChanged) &ndash;在编辑器中的文本更改时引发。 在更改前后提供文本。
-- [已完成](xref:Xamarin.Forms.Editor.Completed) &ndash;用户通过按键盘上的 return 键结束输入时引发。
+- [TextChanged](xref:Xamarin.Forms.InputView.TextChanged) &ndash; 在编辑器中的文本更改时引发。 在更改前后提供文本。
+- [已完成](xref:Xamarin.Forms.Editor.Completed) &ndash; 用户通过按键盘上的 return 键结束输入时引发。
 
 > [!NOTE]
 > [`VisualElement`](xref:Xamarin.Forms.VisualElement)从其继承的类 [`Entry`](xref:Xamarin.Forms.Entry) 也具有 [`Focused`](xref:Xamarin.Forms.VisualElement.Focused) 和 [`Unfocused`](xref:Xamarin.Forms.VisualElement.Unfocused) 事件。
 
 ### <a name="completed"></a>已完成
 
-`Completed`事件用于响应与的交互的完成 `Editor` 。 `Completed`当用户通过输入键盘上的 return 键 (或按 UWP) 上的 Tab 键来结束输入时，将引发。 事件的处理程序是一个一般事件处理程序，该处理程序使用发送方和 `EventArgs` ：
+`Completed`事件用于响应与的交互的完成 `Editor` 。 `Completed` 当用户通过输入键盘上的 return 键 (或按 UWP) 上的 Tab 键来结束输入时，将引发。 事件的处理程序是一个一般事件处理程序，该处理程序使用发送方和 `EventArgs` ：
 
 ```csharp
 void EditorCompleted (object sender, EventArgs e)
@@ -354,7 +354,7 @@ Title="Editor Demo">
 
 `TextChanged`事件用于响应字段内容中的更改。
 
-`TextChanged`当发生更改时，将引发 `Text` `Editor` 。 事件的处理程序使用的实例 `TextChangedEventArgs` 。 `TextChangedEventArgs``Editor` `Text` 通过 `OldTextValue` 和属性提供对的旧值和新值的访问权限 `NewTextValue` ：
+`TextChanged` 当发生更改时，将引发 `Text` `Editor` 。 事件的处理程序使用的实例 `TextChangedEventArgs` 。 `TextChangedEventArgs``Editor` `Text` 通过 `OldTextValue` 和属性提供对的旧值和新值的访问权限 `NewTextValue` ：
 
 ```csharp
 void EditorTextChanged (object sender, TextChangedEventArgs e)
@@ -401,5 +401,5 @@ Title="Editor Demo">
 
 ## <a name="related-links"></a>相关链接
 
-- [文本 (示例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
+- [文本 (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-text)
 - [编辑器 API](xref:Xamarin.Forms.Editor)

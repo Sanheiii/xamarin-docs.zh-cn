@@ -10,12 +10,12 @@ ms.date: 07/17/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c045e297beca675c0582efc2f75b1d6b2bcedcf8
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 91051b1ffc859d4e3deb62d41709db0c587b2789
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84573285"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91560827"
 ---
 # <a name="creating-and-drawing-on-skiasharp-bitmaps"></a>在 SkiaSharp 位图上创建和绘制
 
@@ -27,7 +27,7 @@ ms.locfileid: "84573285"
 SKBitmap bitmap = new SKBitmap(width, height);
 ```
 
-`width`和 `height` 参数是整数，它指定位图的像素尺寸。 此构造函数将创建一个具有四个字节（每个像素）的全色位图：红色、绿色、蓝色和 alpha （不透明度）组件每一个一个字节。
+`width`和 `height` 参数是整数，它指定位图的像素尺寸。 此构造函数将创建一个具有四个字节/像素的全色位图：红色、绿色、蓝色和 alpha (不透明度) 组件的一个字节。
 
 创建新的位图后，需要在位图表面上获得一些内容。 通常采用以下两种方式之一执行此操作：
 
@@ -38,7 +38,7 @@ SKBitmap bitmap = new SKBitmap(width, height);
 
 ![绘图示例](drawing-images/DrawingSample.png "绘图示例")
 
-第二种方法在[**访问 SkiaSharp 位图像素**](pixel-bits.md)一文中进行讨论。
+第二种方法在 [**访问 SkiaSharp 位图像素**](pixel-bits.md)一文中进行讨论。
 
 ## <a name="drawing-on-the-bitmap"></a>在位图上绘制
 
@@ -59,7 +59,7 @@ using (SKCanvas canvas = new SKCanvas(bitmap))
 
 然后，可以显示位图。 稍后，该程序可以创建 `SKCanvas` 基于该位图的新对象，并对其进行更多的绘制。
 
-**[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** 应用程序中的**Hello 位图**页面写入文本 "Hello，bitmap！" ，然后将该位图多次显示。
+**[SkiaSharpFormsDemos](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** 应用程序中的**Hello 位图**页面写入文本 "Hello，bitmap！" ，然后将该位图多次显示。
 
 的构造函数 `HelloBitmapPage` 首先创建一个 `SKPaint` 用于显示文本的对象。 它确定文本字符串的尺寸，并创建具有这些尺寸的位图。 然后 `SKCanvas` ，它基于该位图创建一个对象，然后调用 `Clear` ，然后调用 `DrawText` 。 最好是 `Clear` 使用新位图调用，因为新创建的位图可能包含随机数据。
 
@@ -122,19 +122,19 @@ public partial class HelloBitmapPage : ContentPage
 
 ## <a name="clearing-and-transparency"></a>清除和透明度
 
-" **Hello 位图**" 页的显示表明，该位图创建的位图是透明的，但黑色文本除外。 这就是显示图面的浅绿色色显示的原因。
+" **Hello 位图** " 页的显示表明，该位图创建的位图是透明的，但黑色文本除外。 这就是显示图面的浅绿色色显示的原因。
 
 说明这些方法的文档中的 `Clear` `SKCanvas` 语句： "替换画布的当前剪辑中的所有像素。 使用 "替换" 一词会显示这些方法的一个重要特征：所有的绘图方法均 `SKCanvas` 可向现有的显示图面添加内容。 `Clear`方法_替换_已存在的内容。
 
-`Clear`存在于两个不同的版本中：
+`Clear` 存在于两个不同的版本中：
 
 - [`Clear`](xref:SkiaSharp.SKCanvas.Clear(SkiaSharp.SKColor))带参数的方法将 `SKColor` 显示图面的像素替换为该颜色的像素。
 
-- [`Clear`](xref:SkiaSharp.SKCanvas.Clear)不带参数的方法会将像素替换为 [`SKColors.Empty`](xref:SkiaSharp.SKColors.Empty) 颜色，这是将所有组件（红色、绿色、蓝色和 alpha）设置为零的颜色。 此颜色有时称为 "透明黑色"。
+- [`Clear`](xref:SkiaSharp.SKCanvas.Clear)不带参数的方法使用颜色替换像素 [`SKColors.Empty`](xref:SkiaSharp.SKColors.Empty) ，颜色是颜色，其中的所有组件 (红色、绿色、蓝色和 alpha) 设置为零。 此颜色有时称为 "透明黑色"。
 
 `Clear`在新位图上不使用任何参数调用会将整个位图初始化为完全透明。 随后在位图上绘制的任何内容通常都是不透明或部分不透明。
 
-下面是要尝试的操作：在 " **Hello 位图**" 页中，将 `Clear` 应用于的方法替换为以下内容 `bitmapCanvas` ：
+下面是要尝试的操作：在 " **Hello 位图** " 页中，将 `Clear` 应用于的方法替换为以下内容 `bitmapCanvas` ：
 
 ```csharp
 bitmapCanvas.Clear(new SKColor(255, 0, 0, 128));
@@ -142,7 +142,7 @@ bitmapCanvas.Clear(new SKColor(255, 0, 0, 128));
 
 `SKColor`构造函数参数的顺序为红色、绿色、蓝色和 alpha，其中每个值的范围介于0到255之间。 请记住，alpha 值0是透明的，alpha 值255是不透明的。
 
-值（255，0，0，128）将位图像素清除为具有 50% opacity 的红色像素。 这意味着位图背景为半透明。 位图的半透明红色背景与显示图面的浅绿色背景相结合，以创建灰色背景。
+ (255，0，0，128) 的值会将位图像素清除为50% 不透明度的红色像素。 这意味着位图背景为半透明。 位图的半透明红色背景与显示图面的浅绿色背景相结合，以创建灰色背景。
 
 通过在初始值设定项中放置以下赋值，尝试将文本颜色设置为透明黑色 `SKPaint` ：
 
@@ -170,16 +170,16 @@ Color = new SKColor(0, 0, 0, 0)
 - `Gray8`&mdash;每个像素都是表示灰色阴影和白色的8位
 - `RgbaF16`&mdash;每个像素为64位，在16位浮点格式中为红色、绿色、蓝色和 alpha
 
-每个像素为32像素（4字节）的两种格式通常称为_全色_格式。 很多其他格式在视频显示时的日期不能为全色。 有限颜色的位图足以满足这些显示器的需要，并允许位图占用更少的内存空间。
+两种格式，其中每个像素为32像素 (4 个字节，) 通常称为 _全色_ 格式。 很多其他格式在视频显示时的日期不能为全色。 有限颜色的位图足以满足这些显示器的需要，并允许位图占用更少的内存空间。
 
 如今，程序员几乎始终使用完全颜色的位图，而不会与其他格式一起使用。 例外情况是 `RgbaF16` 格式，它允许比全色格式更好的颜色分辨率。 但是，这种格式用于专用目的（例如医疗图像），在与标准全色显示器一起使用时，这种格式不太合理。
 
 这一系列文章会将自身限制为 `SKBitmap` 默认情况下在未指定任何成员时使用的颜色格式 `SKColorType` 。 此默认格式基于基础平台。 对于支持的平台 Xamarin.Forms ，默认颜色类型为：
 
-- `Rgba8888`适用于 iOS 和 Android
-- `Bgra8888`对于 UWP
+- `Rgba8888` 适用于 iOS 和 Android
+- `Bgra8888` 对于 UWP
 
-唯一的区别是内存中4个字节的顺序，这仅在直接访问像素位时才会出现问题。 在[**访问 SkiaSharp 位图像素**](pixel-bits.md)之前，这种情况并不重要。
+唯一的区别是内存中4个字节的顺序，这仅在直接访问像素位时才会出现问题。 在 [**访问 SkiaSharp 位图像素**](pixel-bits.md)之前，这种情况并不重要。
 
 `SKAlphaType`枚举具有四个成员：
 
@@ -202,7 +202,7 @@ Color = new SKColor(0, 0, 0, 0)
 
 不需要创建新的位图来绘制它。 您还可以在现有位图上绘图。
 
-"**猴子 Moustache** " 页使用其构造函数加载**MonkeyFace.png**映像。 然后 `SKCanvas` ，它基于该位图创建一个对象，并使用 `SKPaint` 和 `SKPath` 对象在其上绘制 moustache：
+" **猴子 Moustache** " 页使用其构造函数加载 **MonkeyFace.png** 映像。 然后 `SKCanvas` ，它基于该位图创建一个对象，并使用 `SKPaint` 和 `SKPath` 对象在其上绘制 moustache：
 
 ```csharp
 public partial class MonkeyMoustachePage : ContentPage
@@ -265,15 +265,15 @@ public partial class MonkeyMoustachePage : ContentPage
 
 `SKCanvas`可用于在位图上进行绘制的的方法包括 `DrawBitmap` 。 这意味着，可以在另一个位图上绘制位图，通常以某种方式对其进行修改。
 
-修改位图的最通用的方法是通过访问实际像素位，这篇文章介绍了**[访问 SkiaSharp 位图像素](pixel-bits.md)** 的文章。 但有许多其他方法可用于修改不需要访问像素位的位图。
+修改位图的最通用的方法是通过访问实际像素位，这篇文章介绍了 **[访问 SkiaSharp 位图像素](pixel-bits.md)** 的文章。 但有许多其他方法可用于修改不需要访问像素位的位图。
 
-**[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** 应用程序附带的以下位图的高度为360像素，高度为480像素：
+**[SkiaSharpFormsDemos](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** 应用程序附带的以下位图的高度为360像素，高度为480像素：
 
 ![山地 Climbers](drawing-images/MountainClimbers.jpg "山地 Climbers")
 
-假设你没有收到来自左侧的猴子的权限，无法发布此照片。 一种解决方法是使用称为_pixelization_的技术来掩盖猴子的面孔。 人脸的像素被替换为颜色块，因此您无法对这些功能进行设置。 颜色块通常通过对与这些块相对应的像素颜色进行求平均值，从原始图像派生。 但您不需要自行执行这一要求。 将位图复制到较小的像素维度时，会自动发生这种情况。
+假设你没有收到来自左侧的猴子的权限，无法发布此照片。 一种解决方法是使用称为 _pixelization_的技术来掩盖猴子的面孔。 人脸的像素被替换为颜色块，因此您无法对这些功能进行设置。 颜色块通常通过对与这些块相对应的像素颜色进行求平均值，从原始图像派生。 但您不需要自行执行这一要求。 将位图复制到较小的像素维度时，会自动发生这种情况。
 
-左侧的猴子面占据大约一个72像素的正方形区，其左上角位于点（112，238）。 让我们将72像素的正方形区替换为一组 9 x 9 的彩色块，其中每个块都是 8 x 8 像素正方形。
+左侧的猴子面占据大约72像素的正方形区，其左上角的位置为 (112，238) 。 让我们将72像素的正方形区替换为一组 9 x 9 的彩色块，其中每个块都是 8 x 8 像素正方形。
 
 **Pixelize 图像**页面加载到该位图，并首先创建一个名为的小9像素正方形位图 `faceBitmap` 。 这是一个用于仅复制猴子面的位置。 目标矩形只是9像素正方形，但源矩形为 72-像素正方形。 每 8 8 8 个源像素块仅向下合并到一个像素，只需对颜色求平均值。
 
@@ -358,7 +358,7 @@ using (SKCanvas canvas = new SKCanvas(rotatedBitmap))
 }
 ```
 
-旋转90度时，需要通过交换高度和宽度来创建一个与原始尺寸不同的位图。 例如，如果原始位图的宽度为1200像素，800像素高，则旋转后的位图为800像素宽和1200像素宽。 设置平移和旋转，使位图围绕其左上角旋转，然后移动到视图中。 （请记住， `Translate` 和方法的 `RotateDegrees` 调用方式与它们的应用方式相反。）下面是顺时针旋转90度的代码：
+旋转90度时，需要通过交换高度和宽度来创建一个与原始尺寸不同的位图。 例如，如果原始位图的宽度为1200像素，800像素高，则旋转后的位图为800像素宽和1200像素宽。 设置平移和旋转，使位图围绕其左上角旋转，然后移动到视图中。  (记住， `Translate` 和 `RotateDegrees` 方法的调用方式与应用它们的方式相反。 ) 以下是顺时针旋转90度的代码：
 
 ```csharp
 SKBitmap rotatedBitmap = new SKBitmap(bitmap.Height, bitmap.Width);
@@ -405,7 +405,7 @@ using (SKCanvas canvas = new SKCanvas(rotatedBitmap))
 
 但是，在一般情况下，此逻辑将裁剪旋转位图的角。 更好的方法是使用三角函数来计算旋转位图的大小，使其包含这些角。
 
-此三角函数显示在**位图旋转**页中。 XAML 文件实例化 `SKCanvasView` 和，它的范围介于 `Slider` 0 到360度之间，并 `Label` 显示当前值：
+此三角函数显示在 **位图旋转** 页中。 XAML 文件实例化 `SKCanvasView` 和，它的范围介于 `Slider` 0 到360度之间，并 `Label` 显示当前值：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -485,7 +485,7 @@ public partial class BitmapRotatorPage : ContentPage
 }
 ```
 
-的 `ValueChanged` 处理程序 `Slider` 执行基于旋转角度创建新的操作 `rotatedBitmap` 。 新的宽度和高度取决于原始宽度和高度的正弦值和余弦的绝对值。 用于在旋转位图上绘制原始位图的变换将原始位图中心移到原点，然后将其旋转指定度数，然后将该中心平移到旋转位图的中心。 （ `Translate` 和 `RotateDegrees` 方法的调用方式与应用方式相反。）
+的 `ValueChanged` 处理程序 `Slider` 执行基于旋转角度创建新的操作 `rotatedBitmap` 。 新的宽度和高度取决于原始宽度和高度的正弦值和余弦的绝对值。 用于在旋转位图上绘制原始位图的变换将原始位图中心移到原点，然后将其旋转指定度数，然后将该中心平移到旋转位图的中心。  (`Translate` 和 `RotateDegrees` 方法的调用顺序与应用方式相反。 ) 
 
 请注意，使用 `Clear` 方法来使背景 `rotatedBitmap` 浅粉色。 这只是为了说明显示的大小 `rotatedBitmap` ：
 
@@ -495,9 +495,9 @@ public partial class BitmapRotatorPage : ContentPage
 
 ## <a name="flipping-bitmaps"></a>翻转位图
 
-通常在位图上执行的另一操作称为 "_翻转_"。 从概念上讲，位图围绕垂直轴或通过位图中心沿水平轴旋转三个尺寸。 垂直翻转创建镜像图像。
+通常在位图上执行的另一操作称为 " _翻转_"。 从概念上讲，位图围绕垂直轴或通过位图中心沿水平轴旋转三个尺寸。 垂直翻转创建镜像图像。
 
-**[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** 应用程序中的**位图翻转**页面演示了这些过程。 XAML 文件包含一个 `SKCanvasView` 和两个按钮，用于垂直和水平翻转：
+**[SkiaSharpFormsDemos](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** 应用程序中的**位图翻转**页面演示了这些过程。 XAML 文件包含一个 `SKCanvasView` 和两个按钮，用于垂直和水平翻转：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -595,9 +595,9 @@ public partial class BitmapFlipperPage : ContentPage
 
 [![位图翻转](drawing-images/BitmapFlipper.png "位图翻转")](drawing-images/BitmapFlipper-Large.png#lightbox)
 
-可以使用类似的技术来处理的另一个常见任务是将位图裁剪为矩形子集。 下一文章[**裁剪 SkiaSharp 位图**](cropping.md)中介绍了这种情况。
+可以使用类似的技术来处理的另一个常见任务是将位图裁剪为矩形子集。 下一文章 [**裁剪 SkiaSharp 位图**](cropping.md)中介绍了这种情况。
 
 ## <a name="related-links"></a>相关链接
 
-- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [SkiaSharp Api](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (示例) ](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

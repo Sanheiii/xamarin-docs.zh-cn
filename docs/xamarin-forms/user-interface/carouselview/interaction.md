@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsCarouselView 交互
+title: Xamarin.Forms CarouselView 交互
 description: 可以通过 CurrentItem 和位置属性访问 CarouselView 中当前显示的项。
 ms.prod: xamarin
 ms.assetid: 854D97E5-D119-4BE2-AE7C-BD428792C992
@@ -10,18 +10,18 @@ ms.date: 02/11/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 57c501c0f789ce448d8381cbbccb46666cf06305
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 43f2e32a240b74fde50659033096c8a7246ea60c
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137405"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91564051"
 ---
-# <a name="xamarinforms-carouselview-interaction"></a>Xamarin.FormsCarouselView 交互
+# <a name="no-locxamarinforms-carouselview-interaction"></a>Xamarin.Forms CarouselView 交互
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
 
-[`CarouselView`](xref:Xamarin.Forms.CarouselView)定义以下属性，这些属性控制用户交互：
+[`CarouselView`](xref:Xamarin.Forms.CarouselView) 定义以下属性，这些属性控制用户交互：
 
 - `CurrentItem`，类型为 `object` ，当前正在显示的项。 此属性的默认绑定模式为 `TwoWay` ， `null` 如果没有要显示的数据，则具有值。
 - `CurrentItemChangedCommand`，类型 `ICommand` 为，在当前项发生更改时执行。
@@ -35,15 +35,15 @@ ms.locfileid: "84137405"
 
 所有这些属性都由 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 对象提供支持，这意味着这些属性可以作为数据绑定的目标。
 
-[`CarouselView`](xref:Xamarin.Forms.CarouselView)定义一个 `CurrentItemChanged` 事件，该事件在属性更改时触发， `CurrentItem` 无论是用户滚动还是应用程序设置属性。 `CurrentItemChangedEventArgs`事件附带的对象 `CurrentItemChanged` 有两个属性，两者均为类型 `object` ：
+[`CarouselView`](xref:Xamarin.Forms.CarouselView) 定义一个 `CurrentItemChanged` 事件，该事件在属性更改时触发， `CurrentItem` 无论是用户滚动还是应用程序设置属性。 `CurrentItemChangedEventArgs`事件附带的对象 `CurrentItemChanged` 有两个属性，两者均为类型 `object` ：
 
-- `PreviousItem`–上一项在属性更改后发生。
-- `CurrentItem`–属性更改后的当前项。
+- `PreviousItem` –上一项在属性更改后发生。
+- `CurrentItem` –属性更改后的当前项。
 
-[`CarouselView`](xref:Xamarin.Forms.CarouselView)还定义一个 `PositionChanged` 事件，该事件在属性更改时触发， `Position` 无论是用户滚动还是应用程序设置属性。 `PositionChangedEventArgs`事件附带的对象 `PositionChanged` 有两个属性，两者均为类型 `int` ：
+[`CarouselView`](xref:Xamarin.Forms.CarouselView) 还定义一个 `PositionChanged` 事件，该事件在属性更改时触发， `Position` 无论是用户滚动还是应用程序设置属性。 `PositionChangedEventArgs`事件附带的对象 `PositionChanged` 有两个属性，两者均为类型 `int` ：
 
-- `PreviousPosition`–在属性更改后的上一个位置。
-- `CurrentPosition`–属性更改后的当前位置。
+- `PreviousPosition` –在属性更改后的上一个位置。
+- `CurrentPosition` –属性更改后的当前位置。
 
 ## <a name="respond-to-the-current-item-changing"></a>响应当前项更改
 
@@ -281,12 +281,12 @@ public class MonkeysViewModel : INotifyPropertyChanged
 
 ## <a name="define-visual-states"></a>定义可视状态
 
-[`CarouselView`](xref:Xamarin.Forms.CarouselView)定义四种可视状态：
+[`CarouselView`](xref:Xamarin.Forms.CarouselView) 定义四种可视状态：
 
-- `CurrentItem`表示当前显示项的可视状态。
-- `PreviousItem`表示以前显示的项的可视状态。
-- `NextItem`表示下一项的可视状态。
-- `DefaultItem`表示项的其余部分的可视状态。
+- `CurrentItem` 表示当前显示项的可视状态。
+- `PreviousItem` 表示以前显示的项的可视状态。
+- `NextItem` 表示下一项的可视状态。
+- `DefaultItem` 表示项的其余部分的可视状态。
 
 这些可视状态可用于对所显示的项启动视觉对象更改 [`CarouselView`](xref:Xamarin.Forms.CarouselView) 。
 
@@ -362,5 +362,5 @@ public class MonkeysViewModel : INotifyPropertyChanged
 
 ## <a name="related-links"></a>相关链接
 
-- [CarouselView （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
+- [CarouselView (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
 - [Xamarin.Forms 可视状态管理器](~/xamarin-forms/user-interface/visual-state-manager.md)

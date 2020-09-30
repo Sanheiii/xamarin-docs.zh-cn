@@ -1,5 +1,5 @@
 ---
-title: 活动指示器Xamarin.Forms
+title: 活动指示器 Xamarin.Forms
 description: ActivityIndicator 控件向用户指出，应用程序参与了长时间的活动，而不提供任何进度指示。 本文介绍如何使用 XAML 和代码中的 ActivityIndicator。
 ms.prod: xamarin
 ms.assetid: 4CEED02D-5CA3-4C3A-B7ED-3193FC272261
@@ -10,14 +10,14 @@ ms.date: 07/10/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a83885175a44f2174db343abf4591f8777041d39
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 76136067f40d378a6bfa28698f15b6872bb40c93
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136508"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562337"
 ---
-# <a name="xamarinforms-activityindicator"></a>Xamarin.FormsActivityIndicator
+# <a name="no-locxamarinforms-activityindicator"></a>Xamarin.Forms ActivityIndicator
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-activityindicatordemos/)
 
 Xamarin.Forms [`ActivityIndicator`](xref:Xamarin.Forms.ActivityIndicator) 控件将显示一个动画，用于显示应用程序参与了长时间的活动。 与不同的 [`ProgressBar`](xref:Xamarin.Forms.ProgressBar) 是， `ActivityIndicator` 不提供进度指示。 `ActivityIndicator`继承自 [`View`](xref:Xamarin.Forms.View) 。
@@ -28,8 +28,8 @@ Xamarin.Forms [`ActivityIndicator`](xref:Xamarin.Forms.ActivityIndicator) 控件
 
 `ActivityIndicator`控件定义以下属性：
 
-* [`Color`](xref:Xamarin.Forms.ActivityIndicator.Color)定义的 `Color` 显示颜色的值 `ActivityIndicator` 。
-* [`IsRunning`](xref:Xamarin.Forms.ActivityIndicator.IsRunning)一个 `bool` 值，该值指示是否 `ActivityIndicator` 应显示、动画显示或隐藏。 如果值为 `false` ，则 `ActivityIndicator` 不可见。
+* [`Color`](xref:Xamarin.Forms.ActivityIndicator.Color) 定义的 `Color` 显示颜色的值 `ActivityIndicator` 。
+* [`IsRunning`](xref:Xamarin.Forms.ActivityIndicator.IsRunning) 一个 `bool` 值，该值指示是否 `ActivityIndicator` 应显示、动画显示或隐藏。 如果值为 `false` ，则 `ActivityIndicator` 不可见。
 
 这些属性是由对象支持的 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，这意味着可以对进行 `ActivityIndicator` 样式化，并使其成为数据绑定的目标。
 
@@ -67,5 +67,5 @@ ActivityIndicator activityIndicator = new ActivityIndicator { Color = Color.Oran
 
 ## <a name="related-links"></a>相关链接
 
-* [ActivityIndicator 演示](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-activityindicatordemos/)
+* [ActivityIndicator 演示](/samples/xamarin/xamarin-forms-samples/userinterface-activityindicatordemos/)
 * [ProgressBar](~/xamarin-forms/user-interface/progressbar.md)

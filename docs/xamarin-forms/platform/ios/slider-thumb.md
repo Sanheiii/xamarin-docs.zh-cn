@@ -10,12 +10,12 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d8ca0dfb533dc5fb0b7442b85de41dcf7c18fec8
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: c3e74d52eee5da11dffc3c8a778fa2f691f1ca02
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938536"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91560931"
 ---
 # <a name="slider-thumb-tap-on-ios"></a>滚动条点击 iOS
 
@@ -44,7 +44,7 @@ var slider = new Xamarin.Forms.Slider();
 slider.On<iOS>().SetUpdateOnTap(true);
 ```
 
-`Slider.On<iOS>`方法指定此平台特定的仅在 iOS 上运行。 [ `Slider.SetUpdateOnTap` ] （X： Xamarin.Forms 。PlatformConfiguration. iOSSpecific SetUpdateOnTap （ Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration、 Xamarin.Forms 。Slider}，System.object）方法， [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) 用于控制条形图上的点击是否 `Slider` 会设置 [`Slider.Value`](xref:Xamarin.Forms.Slider.Value) 属性。 此外，[ `Slider.GetUpdateOnTap` ] （x： Xamarin.Forms 。PlatformConfiguration. iOSSpecific GetUpdateOnTap （ Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration、 Xamarin.Forms 。Slider}））方法可用于返回是否在 `Slider` 条形图上点击即可设置 `Slider.Value` 属性。
+`Slider.On<iOS>`方法指定此平台特定的仅在 iOS 上运行。 [ `Slider.SetUpdateOnTap` ] (x： Xamarin.Forms 。PlatformConfiguration. iOSSpecific. SetUpdateOnTap (Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration、 Xamarin.Forms 。Slider}，System.object) # A3 方法，在 [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) 命名空间中，用来控制条形图上的点击是否 `Slider` 会设置 [`Slider.Value`](xref:Xamarin.Forms.Slider.Value) 属性。 此外，[ `Slider.GetUpdateOnTap` ] (x： Xamarin.Forms 。PlatformConfiguration. iOSSpecific. GetUpdateOnTap (Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration、 Xamarin.Forms 。Slider} ) # A3 方法可用于返回是否在 `Slider` 条形图上点击即可设置 `Slider.Value` 属性。
 
 结果是，在栏上点击 [`Slider`](xref:Xamarin.Forms.Slider) 可以移动 `Slider` 滚动块并设置 [`Slider.Value`](xref:Xamarin.Forms.Slider.Value) 属性：
 
@@ -52,6 +52,6 @@ slider.On<iOS>().SetUpdateOnTap(true);
 
 ## <a name="related-links"></a>相关链接
 
-- [PlatformSpecifics （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [PlatformSpecifics (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [创建平台特定信息](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [iOSSpecific API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsCollectionView 滚动
+title: Xamarin.Forms CollectionView 滚动
 description: 当用户 swipes 启动滚动时，可以控制滚动的结束位置，以便完全显示项。 此外，CollectionView 还定义了两个 ScrollTo 方法，这些方法以编程方式将项滚动到视图中。
 ms.prod: xamarin
 ms.assetid: 2ED719AF-33D2-434D-949A-B70B479C9BA5
@@ -10,32 +10,32 @@ ms.date: 09/17/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 04d190971fa5ef16e08091600558f7f016bc8605
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: dad0c3fd70e2484033268f9ad0686d0b3f42cb70
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84134506"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91564103"
 ---
-# <a name="xamarinforms-collectionview-scrolling"></a>Xamarin.FormsCollectionView 滚动
+# <a name="no-locxamarinforms-collectionview-scrolling"></a>Xamarin.Forms CollectionView 滚动
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)定义两个 [`ScrollTo`](xref:Xamarin.Forms.ItemsView.ScrollTo*) 方法，它们将项滚动到视图中。 其中一个重载将指定索引处的项滚动到视图中，而另一个重载将指定项滚动到视图中。 两个重载都有其他参数，可以指定这些参数来指示项所属的组、项在滚动完成后的确切位置以及是否对滚动进行动画处理。
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) 定义两个 [`ScrollTo`](xref:Xamarin.Forms.ItemsView.ScrollTo*) 方法，它们将项滚动到视图中。 其中一个重载将指定索引处的项滚动到视图中，而另一个重载将指定项滚动到视图中。 两个重载都有其他参数，可以指定这些参数来指示项所属的组、项在滚动完成后的确切位置以及是否对滚动进行动画处理。
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)定义在 [`ScrollToRequested`](xref:Xamarin.Forms.ItemsView.ScrollToRequested) 调用其中一个方法时激发的事件 [`ScrollTo`](xref:Xamarin.Forms.ItemsView.ScrollTo*) 。 [`ScrollToRequestedEventArgs`](xref:Xamarin.Forms.ScrollToRequestedEventArgs)事件附带的对象 `ScrollToRequested` 具有多个属性，包括 `IsAnimated` 、、 `Index` `Item` 和 `ScrollToPosition` 。 这些属性是从方法调用中指定的参数设置的 `ScrollTo` 。
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) 定义在 [`ScrollToRequested`](xref:Xamarin.Forms.ItemsView.ScrollToRequested) 调用其中一个方法时激发的事件 [`ScrollTo`](xref:Xamarin.Forms.ItemsView.ScrollTo*) 。 [`ScrollToRequestedEventArgs`](xref:Xamarin.Forms.ScrollToRequestedEventArgs)事件附带的对象 `ScrollToRequested` 具有多个属性，包括 `IsAnimated` 、、 `Index` `Item` 和 `ScrollToPosition` 。 这些属性是从方法调用中指定的参数设置的 `ScrollTo` 。
 
-此外，还 [`CollectionView`](xref:Xamarin.Forms.CollectionView) 定义了一个 `Scrolled` 事件，该事件将激发以指示发生滚动。 `ItemsViewScrolledEventArgs`事件附带的对象 `Scrolled` 具有多个属性。 有关详细信息，请参阅[检测滚动](#detect-scrolling)。
+此外，还 [`CollectionView`](xref:Xamarin.Forms.CollectionView) 定义了一个 `Scrolled` 事件，该事件将激发以指示发生滚动。 `ItemsViewScrolledEventArgs`事件附带的对象 `Scrolled` 具有多个属性。 有关详细信息，请参阅 [检测滚动](#detect-scrolling)。
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)还定义了一个 `ItemsUpdatingScrollMode` 属性，该属性表示在 `CollectionView` 添加新项时的滚动行为。 有关此属性的详细信息，请参阅[在添加新项时控制滚动位置](#control-scroll-position-when-new-items-are-added)。
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) 还定义了一个 `ItemsUpdatingScrollMode` 属性，该属性表示在 `CollectionView` 添加新项时的滚动行为。 有关此属性的详细信息，请参阅 [在添加新项时控制滚动位置](#control-scroll-position-when-new-items-are-added)。
 
-当用户 swipes 启动滚动时，可以控制滚动的结束位置，以便完全显示项。 此功能称为 "对齐"，因为当滚动停止时，项会对齐到位置。 有关详细信息，请参阅[对齐点](#snap-points)。
+当用户 swipes 启动滚动时，可以控制滚动的结束位置，以便完全显示项。 此功能称为 "对齐"，因为当滚动停止时，项会对齐到位置。 有关详细信息，请参阅 [对齐点](#snap-points)。
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)还可以在用户滚动时以增量方式加载数据。 有关详细信息，请参阅[以增量方式加载数据](populate-data.md#load-data-incrementally)。
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) 还可以在用户滚动时以增量方式加载数据。 有关详细信息，请参阅 [以增量方式加载数据](populate-data.md#load-data-incrementally)。
 
 ## <a name="detect-scrolling"></a>检测滚动
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)定义一个 `Scrolled` 事件，该事件将激发以指示发生滚动。 下面的 XAML 示例显示了一个 `CollectionView` ，它设置事件的事件处理程序 `Scrolled` ：
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) 定义一个 `Scrolled` 事件，该事件将激发以指示发生滚动。 下面的 XAML 示例显示了一个 `CollectionView` ，它设置事件的事件处理程序 `Scrolled` ：
 
 ```xaml
 <CollectionView Scrolled="OnCollectionViewScrolled">
@@ -149,7 +149,7 @@ collectionView.ScrollTo(monkey, position: ScrollToPosition.Start);
 
 [![在 iOS 和 Android 上将项滚动到视图中的 CollectionView 垂直列表屏幕截图](scrolling-images/scrolltoposition-start.png "具有滚动项的 CollectionView 垂直列表")](scrolling-images/scrolltoposition-start-large.png#lightbox "具有滚动项的 CollectionView 垂直列表")
 
-### <a name="center"></a>中心
+### <a name="center"></a>Center
 
 [`ScrollToPosition.Center`](xref:Xamarin.Forms.ScrollToPosition)成员指示该项应滚动到视图的中心：
 
@@ -175,11 +175,11 @@ collectionView.ScrollTo(monkey, position: ScrollToPosition.End);
 
 ## <a name="control-scroll-position-when-new-items-are-added"></a>在添加新项时控制滚动位置
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)定义一个 `ItemsUpdatingScrollMode` 属性，该属性由可绑定的属性支持。 此属性获取或设置一个 `ItemsUpdatingScrollMode` 枚举值，该值表示在 `CollectionView` 添加新项时的滚动行为。 `ItemsUpdatingScrollMode` 枚举定义下列成员：
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) 定义一个 `ItemsUpdatingScrollMode` 属性，该属性由可绑定的属性支持。 此属性获取或设置一个 `ItemsUpdatingScrollMode` 枚举值，该值表示在 `CollectionView` 添加新项时的滚动行为。 `ItemsUpdatingScrollMode` 枚举定义下列成员：
 
-- `KeepItemsInView`调整滚动偏移量，以便在添加新项时保持显示第一个可见项。
-- `KeepScrollOffset`在添加新项时，使滚动偏移量相对于列表的开头保持。
-- `KeepLastItemInView`调整滚动偏移量，以便在添加新项时使最后一项可见。
+- `KeepItemsInView` 调整滚动偏移量，以便在添加新项时保持显示第一个可见项。
+- `KeepScrollOffset` 在添加新项时，使滚动偏移量相对于列表的开头保持。
+- `KeepLastItemInView` 调整滚动偏移量，以便在添加新项时使最后一项可见。
 
 属性的默认值 `ItemsUpdatingScrollMode` 为 `KeepItemsInView` 。 因此，将新项添加到 [`CollectionView`](xref:Xamarin.Forms.CollectionView) 列表中的第一个可见项时，将保持显示。 若要确保新添加的项始终显示在列表的底部， `ItemsUpdatingScrollMode` 应将属性设置为 `KeepLastItemInView` ：
 
@@ -200,11 +200,11 @@ CollectionView collectionView = new CollectionView
 
 ## <a name="scroll-bar-visibility"></a>滚动条可见性
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)定义 `HorizontalScrollBarVisibility` `VerticalScrollBarVisibility` 由可绑定属性支持的和属性。 这些属性可获取或设置一个 [`ScrollBarVisibility`](xref:Xamarin.Forms.ScrollBarVisibility) 枚举值，该值表示水平或垂直滚动条可见的时间。 `ScrollBarVisibility` 枚举定义下列成员：
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) 定义 `HorizontalScrollBarVisibility` `VerticalScrollBarVisibility` 由可绑定属性支持的和属性。 这些属性可获取或设置一个 [`ScrollBarVisibility`](xref:Xamarin.Forms.ScrollBarVisibility) 枚举值，该值表示水平或垂直滚动条可见的时间。 `ScrollBarVisibility` 枚举定义下列成员：
 
-- [`Default`](xref:Xamarin.Forms.ScrollBarVisibility)指示平台的默认滚动条行为，是和属性的默认值 `HorizontalScrollBarVisibility` `VerticalScrollBarVisibility` 。
-- [`Always`](xref:Xamarin.Forms.ScrollBarVisibility)指示滚动条是可见的，即使在视图中显示内容时也是如此。
-- [`Never`](xref:Xamarin.Forms.ScrollBarVisibility)指示即使内容无法在视图中显示，也不会显示滚动条。
+- [`Default`](xref:Xamarin.Forms.ScrollBarVisibility) 指示平台的默认滚动条行为，是和属性的默认值 `HorizontalScrollBarVisibility` `VerticalScrollBarVisibility` 。
+- [`Always`](xref:Xamarin.Forms.ScrollBarVisibility) 指示滚动条是可见的，即使在视图中显示内容时也是如此。
+- [`Never`](xref:Xamarin.Forms.ScrollBarVisibility) 指示即使内容无法在视图中显示，也不会显示滚动条。
 
 ## <a name="snap-points"></a>贴靠点
 
@@ -222,9 +222,9 @@ CollectionView collectionView = new CollectionView
 
 [`SnapPointsType`](xref:Xamarin.Forms.SnapPointsType)枚举定义以下成员：
 
-- `None`指示滚动不会对齐到项。
-- `Mandatory`指示内容始终对齐到最接近的对齐点，滚动点沿惯性方向自然停止。
-- `MandatorySingle`指示与相同的行为 `Mandatory` ，但一次只滚动一项。
+- `None` 指示滚动不会对齐到项。
+- `Mandatory` 指示内容始终对齐到最接近的对齐点，滚动点沿惯性方向自然停止。
+- `MandatorySingle` 指示与相同的行为 `Mandatory` ，但一次只滚动一项。
 
 默认情况下， [`SnapPointsType`](xref:Xamarin.Forms.ItemsLayout.SnapPointsType) 属性设置为 `SnapPointsType.None` ，这可确保滚动不会对齐项目，如以下屏幕截图所示：
 
@@ -272,7 +272,7 @@ CollectionView collectionView = new CollectionView
 
 [![IOS 和 Android 上包含开始对齐点的 CollectionView 垂直列表的屏幕截图](scrolling-images/snappoints-start.png "带有开始对齐点的 CollectionView 垂直列表")](scrolling-images/snappoints-start-large.png#lightbox "带有开始对齐点的 CollectionView 垂直列表")
 
-#### <a name="center"></a>中心
+#### <a name="center"></a>Center
 
 `SnapPointsAlignment.Center`成员指示对齐点与项的中心对齐。 下面的 XAML 示例演示如何设置此枚举成员：
 
@@ -340,4 +340,4 @@ CollectionView collectionView = new CollectionView
 
 ## <a name="related-links"></a>相关链接
 
-- [CollectionView （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
+- [CollectionView (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)

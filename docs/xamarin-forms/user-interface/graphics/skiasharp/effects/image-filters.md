@@ -10,18 +10,18 @@ ms.date: 08/27/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: eedbca080fce9f3001a7b1e2358845fd63c6121b
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 4f10d39ff9fb08897f12cf1991ddcd2d7793b695
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136339"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91564025"
 ---
 # <a name="skiasharp-image-filters"></a>SkiaSharp 图像筛选器
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-图像筛选器是对构成图像的所有颜色位进行操作的效果。 这些筛选器比掩码筛选器更通用，只在 alpha 通道上操作，如[**SkiaSharp mask 筛选器**](mask-filters.md)一文中所述。 若要使用图像筛选器，请将的 [`ImageFilter`](xref:SkiaSharp.SKPaint.ImageFilter) 属性设置 `SKPaint` 为 [`SKImageFilter`](xref:SkiaSharp.SKImageFilter) 通过调用类的静态方法之一创建的类型的对象。
+图像筛选器是对构成图像的所有颜色位进行操作的效果。 这些筛选器比掩码筛选器更通用，只在 alpha 通道上操作，如 [**SkiaSharp mask 筛选器**](mask-filters.md)一文中所述。 若要使用图像筛选器，请将的 [`ImageFilter`](xref:SkiaSharp.SKPaint.ImageFilter) 属性设置 `SKPaint` 为 [`SKImageFilter`](xref:SkiaSharp.SKImageFilter) 通过调用类的静态方法之一创建的类型的对象。
 
 熟悉掩码筛选器的最佳方式是通过试验这些静态方法。 您可以使用掩码筛选器来模糊整个位图：
 
@@ -41,7 +41,7 @@ public static SkiaSharp.SKImageFilter CreateBlur (float sigmaX, float sigmaY,
 
 此方法具有两个西格玛值 &mdash; ：第一个用于水平方向的模糊范围，第二个值用于垂直方向。 您可以通过将其他图像筛选器指定为可选的第三个参数来层叠图像筛选器。 还可以指定裁剪矩形。
 
-[**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)中的 "**图像模糊试验**" 页包含两个 `Slider` 视图，可让您试验设置各种模糊级别：
+[**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)中的 "**图像模糊试验**" 页包含两个 `Slider` 视图，可让您试验设置各种模糊级别：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -307,7 +307,7 @@ public partial class DropShadowExperimentPage : ContentPage
 
 三维空间中的位置和方向都是用结构的值指定的 [`SKPoint3`](xref:SkiaSharp.SKPoint3) ，它类似于 `SKPoint` 但具有三个名为 `X` 、和的属性 `Y` `Z` 。
 
-这些方法的参数的数量和复杂性使得它们的试验非常困难。 为了使你开始，"**远处轻型实验**" 页可让你体验方法的参数 `CreateDistantLightDiffuse` ：
+这些方法的参数的数量和复杂性使得它们的试验非常困难。 为了使你开始，" **远处轻型实验** " 页可让你体验方法的参数 `CreateDistantLightDiffuse` ：
 
 ```csharp
 public static SKImageFilter CreateDistantLitDiffuse (SKPoint3 direction,
@@ -431,19 +431,19 @@ public partial class DistantLightExperimentPage : ContentPage
 
 的第一个参数 `SKImageFilter.CreateDistantLitDiffuse` 是光的方向。 正 X 和 Y 坐标指示光向右和向下指向。 正 Z 坐标指向屏幕。 XAML 文件允许您选择负 Z 值，但这只是为了您可以看到发生了什么变化：从概念上讲，负 Z 坐标使光源指向屏幕。 对于除小负值以外的其他任何值，灯光效果都将停止工作。
 
-`surfaceScale`参数的范围为-1 到1。 （较高或较低的值没有进一步的影响。）这些是 Z 轴中的相对值，指示画布图面上图形对象（在本例中为文本字符串）的位移。 使用负值可引发画布表面上方的文本字符串和正值，以将其插入画布中。
+`surfaceScale`参数的范围为-1 到1。  (较高或较低的值没有进一步的影响。 ) 这些是 Z 轴中的相对值，用于指示在此例中为图形对象的位移 (在这种情况下，则为画布表面的文本字符串) 。 使用负值可引发画布表面上方的文本字符串和正值，以将其插入画布中。
 
-`lightConstant`值应为正数。 （该程序允许负值，以便您可以看到它们会导致效果停止工作。）较高的值会导致更高的强度。
+`lightConstant`值应为正数。  (程序允许使用负值，这样您就可以看到它们会导致效果停止工作。 ) 较高的值会导致更高的强度。
 
-当为负时，可以平衡这些因素以获得浮雕效果 `surfaceScale` （与 iOS 和 Android 屏幕截图相同），并在为正时使用阴文效果， `surfaceScale` 如右侧的 UWP 屏幕截图所示：
+当为负 (与 iOS 和 Android 屏幕截图相同时，可以平衡这些因素以获得浮雕效果 `surfaceScale`) 并且当为正时，可以使用阴文效果 `surfaceScale` ，如右侧的 UWP 屏幕截图所示：
 
 [![远光源试验](image-filters-images/DistantLightExperiment.png "远光源试验")](image-filters-images/DistantLightExperiment-Large.png#lightbox)
 
 Android 屏幕截图的 Z 值为0，这意味着该光源只指向向下和向右。 背景未亮起，并且文本字符串的图面未亮起。 光源只会影响文本边缘，使其变得非常微妙。
 
-下面演示了 "[转换转换](../transforms/translate.md)" 一文中的一种替代方法：文本字符串显示两次，不同颜色的偏移量略有不同。
+下面演示了 " [转换转换](../transforms/translate.md)" 一文中的一种替代方法：文本字符串显示两次，不同颜色的偏移量略有不同。
 
 ## <a name="related-links"></a>相关链接
 
-- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [SkiaSharp Api](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (示例) ](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

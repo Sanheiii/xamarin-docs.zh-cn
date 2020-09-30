@@ -1,5 +1,5 @@
 ---
-title: 在 Azure 存储中存储和访问数据Xamarin.Forms
+title: 在 Azure 存储中存储和访问数据 Xamarin.Forms
 description: Azure 存储是一种可缩放的云存储解决方案，可用于存储非结构化和结构化数据。 本文介绍如何使用 Xamarin.Forms 在 Azure 存储中存储文本和二进制数据，以及如何访问数据。
 ms.prod: xamarin
 ms.assetid: 5B10D37B-839B-4CD0-9C65-91014A93F3EB
@@ -10,14 +10,14 @@ ms.date: 12/28/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d7b97f21e5184a445cfac85dc06a7da0e1a6a4c5
-ms.sourcegitcommit: f7fe46c0236a7130b63a33d9d1670d5111582dd2
+ms.openlocfilehash: cba4c670e9e092eef92f7b37eefc750782c94367
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88186208"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563830"
 ---
-# <a name="store-and-access-data-in-azure-storage-from-no-locxamarinforms"></a>在 Azure 存储中存储和访问数据Xamarin.Forms
+# <a name="store-and-access-data-in-azure-storage-from-no-locxamarinforms"></a>在 Azure 存储中存储和访问数据 Xamarin.Forms
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azurestorage)
 
@@ -37,7 +37,7 @@ Azure 存储提供以下四种存储服务：
 
 本文和随附的示例应用程序演示了如何将图像和文本文件上传到 blob 存储，以及如何下载它们。 此外，它还演示了如何从 blob 存储中检索文件列表和删除文件。
 
-有关 Azure 存储的详细信息，请参阅[存储简介](https://azure.microsoft.com/documentation/articles/storage-introduction/)。
+有关 Azure 存储的详细信息，请参阅 [存储简介](https://azure.microsoft.com/documentation/articles/storage-introduction/)。
 
 > [!NOTE]
 > 如果还没有 [Azure 订阅](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing)，可以在开始前创建一个[免费帐户](https://aka.ms/azfree-docs-mobileapps)。
@@ -61,7 +61,7 @@ Blob 是任意类型和大小的文件。 Azure 存储支持三种不同的 blob
 
 将 blob 上传到 Azure 存储，并以字节流的形式从 Azure 存储空间下载。 因此，在上传之前必须将文件转换为字节流，并在下载后转换回其原始表示形式。
 
-存储在 Azure 存储中的每个对象都有唯一的 URL 地址。 存储帐户名称构成该地址的子域，子域和域名的组合构成存储帐户的*终结点*。 例如，如果你的存储帐户名为*mystorageaccount*，则存储帐户的默认 blob 终结点为 `https://mystorageaccount.blob.core.windows.net` 。
+存储在 Azure 存储中的每个对象都有唯一的 URL 地址。 存储帐户名称构成该地址的子域，子域和域名的组合构成存储帐户的 *终结点* 。 例如，如果你的存储帐户名为 *mystorageaccount*，则存储帐户的默认 blob 终结点为 `https://mystorageaccount.blob.core.windows.net` 。
 
 用于访问存储帐户中某个对象的 URL 是通过将存储帐户中对象的位置附加到终结点而构建的。 例如，blob 地址的格式为 `https://mystorageaccount.blob.core.windows.net/mycontainer/myblob` 。
 
@@ -69,9 +69,9 @@ Blob 是任意类型和大小的文件。 Azure 存储支持三种不同的 blob
 
 将 Azure 存储帐户集成到应用程序的过程 Xamarin.Forms 如下所示：
 
-1. 创建存储帐户。 有关详细信息，请参阅[创建存储帐户](https://azure.microsoft.com/documentation/articles/storage-create-storage-account/#create-a-storage-account)。
-1. 将[Azure 存储客户端库](https://www.nuget.org/packages/WindowsAzure.Storage/)添加到 Xamarin.Forms 应用程序。
-1. 配置存储连接字符串。 有关详细信息，请参阅[连接到 Azure 存储](#connecting-to-azure-storage)。
+1. 创建存储帐户。 有关详细信息，请参阅[创建存储帐户](/azure/storage/common/storage-account-create#create-a-storage-account)。
+1. 将 [Azure 存储客户端库](https://www.nuget.org/packages/WindowsAzure.Storage/) 添加到 Xamarin.Forms 应用程序。
+1. 配置存储连接字符串。 有关详细信息，请参阅 [连接到 Azure 存储](#connecting-to-azure-storage)。
 1. 将 `using` `Microsoft.WindowsAzure.Storage` 和命名空间的指令添加 `Microsoft.WindowsAzure.Storage.Blob` 到将访问 Azure 存储的类。
 
 ## <a name="connecting-to-azure-storage"></a>连接到 Azure 存储
@@ -96,7 +96,7 @@ Azure 存储模拟器提供了一个模拟 Azure blob、队列和表服务以进
 UseDevelopmentStorage=true
 ```
 
-有关 Azure 存储模拟器的详细信息，请参阅[使用 azure 存储模拟器进行开发和测试](https://azure.microsoft.com/documentation/articles/storage-use-emulator/)。
+有关 Azure 存储模拟器的详细信息，请参阅 [使用 azure 存储模拟器进行开发和测试](/azure/storage/common/storage-use-emulator)。
 
 ### <a name="connecting-to-azure-storage-using-a-shared-key"></a>使用共享密钥连接到 Azure 存储
 
@@ -106,7 +106,7 @@ UseDevelopmentStorage=true
 DefaultEndpointsProtocol=[http|https];AccountName=myAccountName;AccountKey=myAccountKey
 ```
 
-`myAccountName`应该替换为您的存储帐户的名称，并且 `myAccountKey` 应替换为您的两个帐户访问密钥之一。
+`myAccountName` 应该替换为您的存储帐户的名称，并且 `myAccountKey` 应替换为您的两个帐户访问密钥之一。
 
 > [!NOTE]
 > 使用共享密钥身份验证时，你的帐户名称和帐户密钥将分发给使用你的应用程序的每个用户，这将提供对存储帐户的完全读/写访问权限。 因此，请使用共享密钥身份验证仅用于测试目的，而永远不会将密钥分发给其他用户。
@@ -117,12 +117,12 @@ DefaultEndpointsProtocol=[http|https];AccountName=myAccountName;AccountKey=myAcc
 
 `BlobEndpoint=myBlobEndpoint;SharedAccessSignature=mySharedAccessSignature`
 
-`myBlobEndpoint`应该替换为你的 blob 终结点的 URL，并 `mySharedAccessSignature` 应替换为你的 SAS。 SAS 提供协议、服务终结点和用于访问资源的凭据。
+`myBlobEndpoint` 应该替换为你的 blob 终结点的 URL，并 `mySharedAccessSignature` 应替换为你的 SAS。 SAS 提供协议、服务终结点和用于访问资源的凭据。
 
 > [!NOTE]
 > 对于生产应用程序，建议使用 SAS 身份验证。 但是，在生产应用程序中，应根据需要从后端服务检索 SAS，而不是将其与应用程序捆绑在一起。
 
-有关共享访问签名的详细信息，请参阅[使用共享访问签名 (SAS) ](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/)。
+有关共享访问签名的详细信息，请参阅 [使用共享访问签名 (SAS) ](/azure/storage/common/storage-sas-overview)。
 
 ## <a name="creating-a-container"></a>创建容器
 
@@ -154,7 +154,7 @@ var container = GetContainer(containerType);
 await container.CreateIfNotExistsAsync();
 ```
 
-默认情况下，新创建的容器是专用的。 这意味着，必须指定存储访问密钥才能从容器检索 blob。 有关在容器中公开 blob 的详细信息，请参阅[创建容器](https://azure.microsoft.com/documentation/articles/storage-dotnet-how-to-use-blobs/#create-a-container)。
+默认情况下，新创建的容器是专用的。 这意味着，必须指定存储访问密钥才能从容器检索 blob。 有关在容器中公开 blob 的详细信息，请参阅 [创建容器](/azure/storage/blobs/storage-quickstart-blobs-dotnet#create-a-container)。
 
 ## <a name="uploading-data-to-a-container"></a>将数据上传到容器
 
@@ -264,8 +264,8 @@ public static async Task<bool> DeleteFileAsync(ContainerType containerType, stri
 
 ## <a name="related-links"></a>相关链接
 
-- [Azure 存储 (示例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azurestorage)
+- [Azure 存储 (示例) ](/samples/xamarin/xamarin-forms-samples/webservices-azurestorage)
 - [存储简介](https://azure.microsoft.com/documentation/articles/storage-introduction/)
-- [如何通过 Xamarin 使用 Blob 存储](https://azure.microsoft.com/documentation/articles/storage-xamarin-blob-storage/)
-- [使用共享访问签名 (SAS)](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/)
+- [如何通过 Xamarin 使用 Blob 存储](/azure/storage/blobs/storage-quickstart-blobs-xamarin)
+- [使用共享访问签名 (SAS)](/azure/storage/common/storage-sas-overview)
 - [Windows Azure 存储 (NuGet) ](https://www.nuget.org/packages/WindowsAzure.Storage/)

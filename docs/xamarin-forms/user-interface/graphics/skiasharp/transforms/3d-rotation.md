@@ -10,12 +10,12 @@ ms.date: 04/14/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 855fde62483dcbc6f8769e7a8eb66d84aadfe1da
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 9bb2720d60f62c0bac6ab30007e226c362d1c5cd
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86934974"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563869"
 ---
 # <a name="3d-rotations-in-skiasharp"></a>SkiaSharp 中的三维旋转
 
@@ -31,9 +31,9 @@ _使用非仿射转换在三维空间中旋转2D 对象。_
 
 很难开发此转换， `SKMatrix` 只在两个维度中进行。 当使用三维图形中的 4 x 4 矩阵派生时，该作业就变得更加容易。 SkiaSharp 包括 [`SKMatrix44`](xref:SkiaSharp.SKMatrix44) 类用于实现此目的，但3d 图形中的某些背景是了解3d 旋转和 4 x 4 转换矩阵的必要。
 
-三维坐标系统添加了名为 Z 的第三个轴。从概念上讲，Z 轴与屏幕直角。 三维空间中的坐标点用三个数字表示：（x，y，z）。 在本文使用的3D 坐标系中，X 的增加值为向右和递增的 Y 值，就像在两个维度中一样。 增大正 Z 值将出现在屏幕上。 原点为左上角，就像在2D 图形中一样。 你可以将屏幕视为 XY 平面，其中 Z 轴与此平面的位置相同。
+三维坐标系统添加了名为 Z 的第三个轴。从概念上讲，Z 轴与屏幕直角。 三维空间中的坐标点用三个数字表示： (x、y、z) 。 在本文使用的3D 坐标系中，X 的增加值为向右和递增的 Y 值，就像在两个维度中一样。 增大正 Z 值将出现在屏幕上。 原点为左上角，就像在2D 图形中一样。 你可以将屏幕视为 XY 平面，其中 Z 轴与此平面的位置相同。
 
-这称为左侧坐标系统。 如果将左侧的食指捏向右指的是正 X 坐标（向右）的方向，中间指的是 Y 坐标（向下）的上升方向，则在 Z 坐标增加的方向上，你的拇指将从屏幕延伸。
+这称为左侧坐标系统。 如果向右) 方向 (正 X 坐标的方向，并将中间指的 Y 坐标 (向下向下移动) ，则在 Z 坐标增加的方向上，你的拇指将从屏幕延伸。
 
 在三维图形中，转换基于 4 x 4 矩阵。 下面是4四个标识矩阵：
 
@@ -55,7 +55,7 @@ _使用非仿射转换在三维空间中旋转2D 对象。_
 
 但是，SkiaSharp `Matrix44` 类略有不同。 在中设置或获取单个单元格值的唯一方式 `SKMatrix44` 是使用 [`Item`](xref:SkiaSharp.SKMatrix44.Item(System.Int32,System.Int32)) 索引器。 行索引和列索引是从零开始的，而不是从1开始的，并交换行和列。 使用对象中的索引器访问上图中的单元 M14 `[3, 0]` `SKMatrix44` 。
 
-在三维图形系统中，三维点（x，y，z）转换为 1 x 4 的矩阵，以便乘以 4 x 4 的转换矩阵：
+在3D 图形系统中，三维点 (x、y、z) 转换为 1 x 4 的矩阵，以便乘以 4 x 4 的转换矩阵：
 
 <pre>
                  |  M11  M12  M13  M14  |
@@ -117,7 +117,7 @@ _使用非仿射转换在三维空间中旋转2D 对象。_
 
 旋转方向是指坐标系统的左右手使用习惯。 这是一种左手系统，因此，如果您将左侧的值向左旋转到 X 轴并向右旋转绕 Y 轴旋转，并向您旋转围绕 Z 轴的旋转，则另一根手指的曲线会指示旋转方向为正角。
 
-`SKMatrix44`具有通用 [`CreateRotation`](xref:SkiaSharp.SKMatrix44.CreateRotation(System.Single,System.Single,System.Single,System.Single)) 的静态 [`CreateRotationDegrees`](xref:SkiaSharp.SKMatrix44.CreateRotationDegrees(System.Single,System.Single,System.Single,System.Single)) 方法和方法，使您可以指定旋转发生的轴：
+`SKMatrix44` 具有通用 [`CreateRotation`](xref:SkiaSharp.SKMatrix44.CreateRotation(System.Single,System.Single,System.Single,System.Single)) 的静态 [`CreateRotationDegrees`](xref:SkiaSharp.SKMatrix44.CreateRotationDegrees(System.Single,System.Single,System.Single,System.Single)) 方法和方法，使您可以指定旋转发生的轴：
 
 ```csharp
 public static SKMatrix44 CreateRotationDegrees (Single x, Single y, Single z, Single degrees)
@@ -145,7 +145,7 @@ perspectiveMatrix[3, 2] = -1 / depth;
 
 `w' = –z / depth + 1`
 
-这适用于以下情况：当 Z 的值小于零（在概念上位于 XY 平面后面）时，减少 X 和 Y 坐标，并为正值 Z 的正值增加 X 和 Y 坐标。当 Z 坐标为等于 `depth` ，then w 为零时，坐标变为无限大。 三维图形系统围绕照相机比喻构建， `depth` 此处的值表示相机与坐标系统原点的距离。 如果图形对象的 Z 坐标为 `depth` 从原点开始的单位，则它会在概念上触及相机的镜头，并将会无限大。
+这适用于以下情况：减小 X 和 Y 坐标，此时 Z 的值 (在概念上小于 XY 平面) 并增加 Z 值 Z 的 X 和 Y 坐标。当 Z 坐标为等于 `depth` ，then w 为零时，坐标变为无限大。 三维图形系统围绕照相机比喻构建， `depth` 此处的值表示相机与坐标系统原点的距离。 如果图形对象的 Z 坐标为 `depth` 从原点开始的单位，则它会在概念上触及相机的镜头，并将会无限大。
 
 请记住，您可能会将此 `perspectiveMatrix` 值与旋转矩阵结合使用。 如果旋转的图形对象的 X 或 Y 坐标大于 `depth` ，则此对象在三维空间中的旋转可能涉及 Z 坐标大于 `depth` 。 必须避免此情况！ 当创建时 `perspectiveMatrix` ， `depth` 无论绘图对象的旋转方式如何，都要将其设置为一个足够大的值。 这可确保永远不会有零除。
 
@@ -180,11 +180,11 @@ w ' = M14 · x + M24 · y + M44
 
 `y" = y' / w'`
 
-这意味着，可以忽略 4 x 4 矩阵的第三行*和*第三列。
+这意味着，可以忽略 4 x 4 矩阵的第三行 *和* 第三列。
 
 但如果是这样，那么为什么第一次只需要4个矩阵的矩阵？
 
-尽管 4 x 4 的第三行和第三列与二维转换无关，但在将各种值相乘后，第三行和第三*列就会扮演一个*角色 `SKMatrix44` 。 例如，假设您将围绕 Y 轴的旋转与透视转换相乘：
+尽管 4 x 4 的第三行和第三列与二维转换无关，但在将各种值相乘后，第三行和第三 *列就会扮演一个* 角色 `SKMatrix44` 。 例如，假设您将围绕 Y 轴的旋转与透视转换相乘：
 
 <pre>
 |  cos(α)  0  –sin(α)  0  |   |  1  0  0      0     |   |  cos(α)  0  –sin(α)   sin(α)/depth  |
@@ -223,7 +223,7 @@ w ' = M14 · x + M24 · y + M44
 
 `y" = y / ((sin(α)/depth)·x + 1)`
 
-当围绕 Y 轴旋转二维对象时，recede 到背景的正值 X 值，而负 X 值将位于前台。 X 值看起来与 Y 轴（由余弦值控制）更近，因为 Y 轴上的坐标从查看器进一步移动或更接近查看器。
+当围绕 Y 轴旋转二维对象时，recede 到背景的正值 X 值，而负 X 值将位于前台。 X 值看起来更接近 Y 轴 (它受余弦) 值控制，因为在从查看器进一步或更接近查看器后，从 Y 轴放大的坐标将变小或更大。
 
 使用时 `SKMatrix44` ，通过将各种值相乘来执行所有3d 旋转和透视操作 `SKMatrix44` 。 然后，可以使用类的属性，从 4 x 4 矩阵提取二维 3 x 3 矩阵 [`Matrix`](xref:SkiaSharp.SKMatrix44.Matrix) `SKMatrix44` 。 此属性返回一个熟悉的 `SKMatrix` 值。
 
@@ -446,7 +446,7 @@ public class AnimatedRotation3DPage : ContentPage
 }
 ```
 
-`OnAppearing`重写定义了三个 Xamarin.Forms `Animation` 对象 `xRotationDegrees` ，以 `yRotationDegrees` 不同速率对、和字段进行动画处理 `zRotationDegrees` 。 请注意，这些动画的时间段设置为质数（5秒、7秒和11秒），因此总体组合仅每385秒重复一次，或超过10分钟：
+`OnAppearing`重写定义了三个 Xamarin.Forms `Animation` 对象 `xRotationDegrees` ，以 `yRotationDegrees` 不同速率对、和字段进行动画处理 `zRotationDegrees` 。 请注意，这些动画的时间段设置为质数 (5 秒、7秒、11秒) 因此，总体组合仅每385秒重复一次，或超过10分钟：
 
 ```csharp
 public class AnimatedRotation3DPage : ContentPage
@@ -540,5 +540,5 @@ public class AnimatedRotation3DPage : ContentPage
 
 ## <a name="related-links"></a>相关链接
 
-- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [SkiaSharp Api](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (示例) ](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

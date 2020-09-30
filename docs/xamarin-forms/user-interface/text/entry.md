@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Forms条目
+title: Xamarin.Forms 条目
 description: 本文介绍如何使用 Xamarin.Forms Entry 类在应用程序中接受单行文本或密码输入。
 ms.prod: xamarin
 ms.assetid: 9923C541-3C10-4D14-BAB5-C4D6C514FB1E
@@ -10,16 +10,16 @@ ms.date: 07/21/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3738a0fa3519f18864c2430430a6716bed5be130
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: ab2f0880f694bd9e270385dd6e0256374ed76c43
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87918222"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562218"
 ---
-# <a name="no-locxamarinforms-entry"></a>Xamarin.Forms条目
+# <a name="no-locxamarinforms-entry"></a>Xamarin.Forms 条目
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
 
 Xamarin.Forms [`Entry`](xref:Xamarin.Forms.Entry) 用于单行文本输入。 与 `Entry` 视图一样， [`Editor`](xref:Xamarin.Forms.Editor) 支持多种键盘类型。 此外，还 `Entry` 可用作密码字段。
 
@@ -78,10 +78,10 @@ var entry = new Entry { Text = "This is a read-only Entry", IsReadOnly = true })
 
 [`Entry`](xref:Xamarin.Forms.Entry) `Text` 通过将属性设置为枚举的值，可以转换存储在属性中的文本大小写 `TextTransform` `TextTransform` 。 此枚举具有四个值：
 
-- `None`指示不转换文本。
-- `Default`指示将使用平台的默认行为。 这是 `TextTransform` 属性的默认值。
-- `Lowercase`指示文本将转换为小写。
-- `Uppercase`指示文本将转换为大写。
+- `None` 指示不转换文本。
+- `Default` 指示将使用平台的默认行为。 这是 `TextTransform` 属性的默认值。
+- `Lowercase` 指示文本将转换为小写。
+- `Uppercase` 指示文本将转换为大写。
 
 下面的示例演示如何将文本转换为大写：
 
@@ -136,7 +136,7 @@ Entry entry = new Entry { CharacterSpacing = 10 };
 
 ## <a name="password-fields"></a>密码字段
 
-`Entry`提供 `IsPassword` 属性。 当 `IsPassword` 为时 `true` ，该字段的内容将显示为黑色圆圈：
+`Entry` 提供 `IsPassword` 属性。 当 `IsPassword` 为时 `true` ，该字段的内容将显示为黑色圆圈：
 
 在 XAML 中：
 
@@ -198,8 +198,8 @@ var entry = new Entry { Text = "Cursor position and selection length set", Curso
 
 `ClearButtonVisibility`属性可用于控制是否 [`Entry`](xref:Xamarin.Forms.Entry) 显示 "清除" 按钮，该按钮使用户能够清除文本。 应将此属性设置为 `ClearButtonVisibility` 枚举成员：
 
-- `Never`指示将永远不会显示 "清除" 按钮。 这是 `Entry.ClearButtonVisibility` 属性的默认值。
-- `WhileEditing`指示将在中显示 "清除" 按钮 [`Entry`](xref:Xamarin.Forms.Entry) ，同时包含焦点和文本。
+- `Never` 指示将永远不会显示 "清除" 按钮。 这是 `Entry.ClearButtonVisibility` 属性的默认值。
+- `WhileEditing` 指示将在中显示 "清除" 按钮 [`Entry`](xref:Xamarin.Forms.Entry) ，同时包含焦点和文本。
 
 下面的示例演示如何在 XAML 中设置属性：
 
@@ -243,7 +243,7 @@ var entry = new Entry { Text = "Xamarin.Forms", ClearButtonVisibility = ClearBut
 var entry = new Entry { Keyboard = Keyboard.Chat };
 ```
 
-每个键盘的示例可在我们的[食谱](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/Controls/choose-keyboard-for-entry)存储库中找到。
+每个键盘的示例可在我们的 [食谱](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/Controls/choose-keyboard-for-entry) 存储库中找到。
 
 [`Keyboard`](xref:Xamarin.Forms.Keyboard) 类还具有 [`Create`](xref:Xamarin.Forms.Keyboard.Create*) 工厂方法，可用于通过指定大小写、拼写检查和建议行为来自定义键盘。 [`KeyboardFlags`](xref:Xamarin.Forms.KeyboardFlags) 枚举值指定为方法的参数，并返回自定义的 `Keyboard`。 `KeyboardFlags` 枚举包含以下值：
 
@@ -281,12 +281,12 @@ entry.Keyboard = Keyboard.Create(KeyboardFlags.Suggestions | KeyboardFlags.Capit
 
 可以通过将属性设置为枚举的值来自定义软键盘上的 return 键的外观，该键盘 [`Entry`](xref:Xamarin.Forms.Entry) 通过将属性设置为枚举的值来自定义 [`ReturnType`](xref:Xamarin.Forms.Entry.ReturnType) [`ReturnType`](xref:Xamarin.Forms.ReturnType) ：
 
-- [`Default`](xref:Xamarin.Forms.ReturnType.Default)–指示不需要任何特定的返回密钥，并且将使用平台默认值。
-- [`Done`](xref:Xamarin.Forms.ReturnType.Done)–指示 "完成" 返回键。
-- [`Go`](xref:Xamarin.Forms.ReturnType.Go)–表示 "中转" 返回键。
-- [`Next`](xref:Xamarin.Forms.ReturnType.Next)–表示 "下一步" 返回键。
-- [`Search`](xref:Xamarin.Forms.ReturnType.Search)–表示 "搜索" 返回键。
-- [`Send`](xref:Xamarin.Forms.ReturnType.Send)–表示 "Send" 返回键。
+- [`Default`](xref:Xamarin.Forms.ReturnType.Default) –指示不需要任何特定的返回密钥，并且将使用平台默认值。
+- [`Done`](xref:Xamarin.Forms.ReturnType.Done) –指示 "完成" 返回键。
+- [`Go`](xref:Xamarin.Forms.ReturnType.Go) –表示 "中转" 返回键。
+- [`Next`](xref:Xamarin.Forms.ReturnType.Next) –表示 "下一步" 返回键。
+- [`Search`](xref:Xamarin.Forms.ReturnType.Search) –表示 "搜索" 返回键。
+- [`Send`](xref:Xamarin.Forms.ReturnType.Send) –表示 "Send" 返回键。
 
 下面的 XAML 示例演示如何设置返回键：
 
@@ -343,8 +343,8 @@ var entry = new Entry { ... IsTextPredictionEnabled = false };
 
 可以通过以下可绑定属性将条目设置为使用自定义背景和文本颜色：
 
-- **TextColor** &ndash;设置文本的颜色。
-- **BackgroundColor** &ndash;设置文本后面显示的颜色。
+- **TextColor** &ndash; 设置文本的颜色。
+- **BackgroundColor** &ndash; 设置文本后面显示的颜色。
 
 需要特别注意，以确保每个平台的颜色都可用。 由于每个平台对于文本和背景颜色都具有不同的默认值，因此，如果设置了默认值，则通常需要设置这两个平台。
 
@@ -396,7 +396,7 @@ entry.BackgroundColor = Color.FromHex("#2c3e50");
 
 ### <a name="completed"></a>已完成
 
-`Completed`事件用于响应与项的交互的完成。 `Completed`当用户通过按键盘上的 return 键 (或按 UWP) 上的 Tab 键来结束输入时，将引发。 事件的处理程序是一个一般事件处理程序，该处理程序使用发送方和 `EventArgs` ：
+`Completed`事件用于响应与项的交互的完成。 `Completed` 当用户通过按键盘上的 return 键 (或按 UWP) 上的 Tab 键来结束输入时，将引发。 事件的处理程序是一个一般事件处理程序，该处理程序使用发送方和 `EventArgs` ：
 
 ```csharp
 void Entry_Completed (object sender, EventArgs e)
@@ -424,7 +424,7 @@ entry.Completed += Entry_Completed;
 
 `TextChanged`事件用于响应字段内容中的更改。
 
-`TextChanged`当发生更改时，将引发 `Text` `Entry` 。 事件的处理程序使用的实例 `TextChangedEventArgs` 。 `TextChangedEventArgs``Entry` `Text` 通过 `OldTextValue` 和属性提供对的旧值和新值的访问权限 `NewTextValue` ：
+`TextChanged` 当发生更改时，将引发 `Text` `Entry` 。 事件的处理程序使用的实例 `TextChangedEventArgs` 。 `TextChangedEventArgs``Entry` `Text` 通过 `OldTextValue` 和属性提供对的旧值和新值的访问权限 `NewTextValue` ：
 
 ```csharp
 void Entry_TextChanged (object sender, TextChangedEventArgs e)
@@ -449,5 +449,5 @@ entry.TextChanged += Entry_TextChanged;
 
 ## <a name="related-links"></a>相关链接
 
-- [文本 (示例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
+- [文本 (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-text)
 - [输入 API](xref:Xamarin.Forms.Entry)

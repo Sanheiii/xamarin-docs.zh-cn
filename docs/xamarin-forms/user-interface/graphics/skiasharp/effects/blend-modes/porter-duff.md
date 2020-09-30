@@ -10,12 +10,12 @@ ms.date: 08/23/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a1e6290c0f85b54c3fd8958bc43667714bdece20
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 12e3e95b0f87d0e93d157bebe057874430866c2b
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84131048"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91560775"
 ---
 # <a name="porter-duff-blend-modes"></a>Porter-Duff blend 模式
 
@@ -37,7 +37,7 @@ Duff 混合模式是在 Thomas Porter 和 Tom Duff 之后命名的，他们在�
 
 ![Porter-Duff Source](porter-duff-images/PorterDuffSrc.png "Porter-Duff Source")
 
-这称为_源_或_前台_。
+这称为 _源_ 或 _前台_。
 
 当你在目标上显示源时，你需要以下内容：
 
@@ -53,7 +53,7 @@ Duff 混合模式是在 Thomas Porter 和 Tom Duff 之后命名的，他们在�
 
 ![Porter-Duff Destination In](porter-duff-images/PorterDuffDstIn.png "Porter-Duff Destination In")
 
-"混合模式" `SKBlendMode.Xor` （"异或"）将导致显示两个区域重叠的内容：
+混合模式 `SKBlendMode.Xor` (异或) 会导致在两个区域重叠的位置不显示任何内容：
 
 ![Porter-Duff Exclusive 或](porter-duff-images/PorterDuffXor.png "Porter-Duff Exclusive 或")
 
@@ -63,15 +63,15 @@ Duff 混合模式是在 Thomas Porter 和 Tom Duff 之后命名的，他们在�
 
 右上角和左下方矩形始终为空白，因为在这些区域中，目标和源都是透明的。 目标颜色占用左上角区域，因此区域既可以用目标颜色着色，也可以根本不着色。 同样，源颜色占据右下区域，以便可以将区域与源颜色一起着色或根本不着色。 中间的目标和源的交集可以用目标颜色、源颜色或根本不着色。
 
-组合的总数为2（在左上角）的时间为2（表示中心为中心）或12。 这些是12个基本 Porter Duff 合成模式。
+组合的总数量为 2 (，适用于中心 (的右下) 倍 3) 的左上) 时间 2 (，即12。 这些是12个基本 Porter Duff 合成模式。
 
-在_复合数字图像_（页256）结束时，Porter 和 Duff 会添加一个名为_plus_的第13个模式（对应于 SKIASHARP `SKBlendMode.Plus` 成员，以及 w3c_浅_模式，这一点不会与 w3c_淡化_模式混淆）。）此 `Plus` 模式会添加目标颜色和源颜色，稍后将更详细地介绍此过程。
+在 _复合数字图像_ (page 256) 的末尾，Porter 和 Duff 将添加一个名为 _plus_ 的第13个模式， (对应于 SKIASHARP `SKBlendMode.Plus` 成员，以及 w3c _浅_ 模式 (，该模式不会与 w3c _淡化_ 模式混淆。 ) 此 `Plus` 模式会添加目标颜色和源颜色，稍后将更详细地介绍此过程。
 
 Skia 添加了一个名为 `Modulate` 的14模式，它非常类似于， `Plus` 但目标颜色和源颜色相乘。 它可以被视为附加的 Porter-Duff 混合模式。
 
 下面是 SkiaSharp 中定义的 14 Porter Duff 模式。 该表显示了如何为上面的关系图中三个非空白区域的每个区域着色：
 
-| Mode       | 目标 | 线 | 源 |
+| 模式       | 目标 | 线 | 源 |
 | ---------- |:-----------:|:------------:|:------:|
 | `Clear`    |             |              |        |
 | `Src`      |             | 源       | X      |
@@ -85,18 +85,18 @@ Skia 添加了一个名为 `Modulate` 的14模式，它非常类似于， `Plus`
 | `SrcATop`  | X           | 源       |        |
 | `DstATop`  |             | 目标  | X      |
 | `Xor`      | X           |              | X      |
-| `Plus`     | X           | SUM          | X      |
-| `Modulate` |             | Products      |        | 
+| `Plus`     | X           | Sum          | X      |
+| `Modulate` |             | 产品      |        | 
 
 这些 blend 模式为对称模式。 可以交换源和目标，并且所有模式仍可用。
 
 模式的命名约定遵循几个简单规则：
 
-- **Src**或**Dst**本身意味着只有源或目标像素可见。
+- **Src** 或 **Dst** 本身意味着只有源或目标像素可见。
 - **Over**后缀指示交集中的可见内容。 将源或目标绘制为 "over"。
 - **In**后缀意味着只有交集处于彩色。 输出仅限于源或目标的部分，该部分位于中。
 - **Out**后缀表示没有为交集着色。 输出只是位于交集的源或目标的部分。
-- 内**后缀是** **In**和**Out**的联合。它包括源或目标为另一位置的 "顶部" 区域。
+- 内 **后缀是** **In** 和 **Out**的联合。它包括源或目标为另一位置的 "顶部" 区域。
 
 请注意与和模式之间的差异 `Plus` `Modulate` 。 这些模式在源和目标像素上执行不同类型的计算。 稍后将对其进行更详细的介绍。
 
@@ -278,21 +278,21 @@ canvas.Clear(SKColors.White);
 
 完成这项更改后，某些混合模式看起来很正常，但有些则不起作用。 如果将源位图的背景设置为白色，则该 `SrcOver` 模式不起作用，因为在源位图中没有透明像素允许目标显示。 如果将目标位图的背景或画布设置为白色，则 `DstOver` 不起作用，因为目标没有任何透明像素。
 
-可能有一个用来将**Porter-Duff 网格**页中的位图替换为更简单的 `DrawRect` 调用。 这适用于目标矩形，但不适用于源矩形。 源矩形必须包含的区域不只是 bluish。 源矩形必须包含与目标的彩色区域相对应的透明区域。 只有这样才会起作用。
+可能有一个用来将 **Porter-Duff 网格** 页中的位图替换为更简单的 `DrawRect` 调用。 这适用于目标矩形，但不适用于源矩形。 源矩形必须包含的区域不只是 bluish。 源矩形必须包含与目标的彩色区域相对应的透明区域。 只有这样才会起作用。
 
 ## <a name="using-mattes-with-porter-duff"></a>将 Porter 与 Duff 配合使用
 
-"**砖墙合成**" 页显示了一个经典合成任务的示例：需要从多个部分组合图片，包括需要消除背景的位图。 下面是有问题背景的**SeatedMonkey.jpg**位图：
+" **砖墙合成** " 页显示了一个经典合成任务的示例：需要从多个部分组合图片，包括需要消除背景的位图。 下面是有问题背景的 **SeatedMonkey.jpg** 位图：
 
 ![本身的猴子](porter-duff-images/SeatedMonkey.jpg "本身的猴子")
 
-为准备合成，将创建相应的_遮罩_，这是一个黑色的另一个位图，你希望图像显示为黑色，否则为透明。 此文件的名称为 " **SeatedMonkeyMatte.png** "，位于[**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)示例中 "**媒体**" 文件夹的资源中：
+为准备合成，将创建相应的 _遮罩_ ，这是一个黑色的另一个位图，你希望图像显示为黑色，否则为透明。 此文件的名称为 " **SeatedMonkeyMatte.png** "，位于[**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)示例中 "**媒体**" 文件夹的资源中：
 
 ![固定的猴子遮罩](porter-duff-images/SeatedMonkeyMatte.png "固定的猴子遮罩")
 
-这并_不_是熟练创建的遮罩。 在最佳情况下，遮罩应在黑色像素边缘周围包含部分透明像素，而此遮罩不应。
+这并 _不_ 是熟练创建的遮罩。 在最佳情况下，遮罩应在黑色像素边缘周围包含部分透明像素，而此遮罩不应。
 
-程序**块-墙合成**页的 XAML 文件实例化一个 `SKCanvasView` 和一个 `Button` ，它将引导用户完成构成最终映像的过程：
+程序 **块-墙合成** 页的 XAML 文件实例化一个 `SKCanvasView` 和一个 `Button` ，它将引导用户完成构成最终映像的过程：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -368,7 +368,7 @@ public partial class BrickWallCompositingPage : ContentPage
 
 [![砖墙合成步骤0](porter-duff-images/BrickWallCompositing0.png "砖墙合成步骤0")](porter-duff-images/BrickWallCompositing0-Large.png#lightbox)
 
-按 `Button` 一次会使 `step` 增量为1， `PaintSurface` 处理程序现在显示**SeatedMonkey.jpg**：
+按 `Button` 一次会使 `step` 增量为1， `PaintSurface` 处理程序现在显示 **SeatedMonkey.jpg**：
 
 ```csharp
 public partial class BrickWallCompositingPage : ContentPage
@@ -394,7 +394,7 @@ public partial class BrickWallCompositingPage : ContentPage
 
 [![砖墙合成步骤1](porter-duff-images/BrickWallCompositing1.png "砖墙合成步骤1")](porter-duff-images/BrickWallCompositing1-Large.png#lightbox)
 
-再次按 `Button` ，并按 `step` 2 递增。 这是显示**SeatedMonkeyMatte.png**文件的关键步骤：
+再次按 `Button` ，并按 `step` 2 递增。 这是显示 **SeatedMonkeyMatte.png** 文件的关键步骤：
 
 ```csharp
 public partial class BrickWallCompositingPage : ContentPage
@@ -493,49 +493,49 @@ public partial class BrickWallCompositingPage : ContentPage
 
 显而易见，还可以通过其他方式撰写此场景。 它可以从后台开始，开始前进到前台。 但使用混合模式可提供更大的灵活性。 特别是，使用遮罩允许将位图的背景从组合场景中排除。
 
-正如您在[利用路径和区域进行剪辑](../../curves/clipping.md)中所了解的， `SKCanvas` 类定义了三种类型的剪辑，它们对应于 [`ClipRect`](xref:SkiaSharp.SKCanvas.ClipRect*) 、 [`ClipPath`](xref:SkiaSharp.SKCanvas.ClipPath*) 和 [`ClipRegion`](xref:SkiaSharp.SKCanvas.ClipRegion*) 方法。 Porter Duff 混合模式添加了另一种类型的剪辑，这允许将图像限制为可绘制的任何内容，包括位图。 **砖墙组合**中使用的遮罩实质上定义了剪辑区域。
+正如您在 [利用路径和区域进行剪辑](../../curves/clipping.md)中所了解的， `SKCanvas` 类定义了三种类型的剪辑，它们对应于 [`ClipRect`](xref:SkiaSharp.SKCanvas.ClipRect*) 、 [`ClipPath`](xref:SkiaSharp.SKCanvas.ClipPath*) 和 [`ClipRegion`](xref:SkiaSharp.SKCanvas.ClipRegion*) 方法。 Porter Duff 混合模式添加了另一种类型的剪辑，这允许将图像限制为可绘制的任何内容，包括位图。 **砖墙组合**中使用的遮罩实质上定义了剪辑区域。
 
 ## <a name="gradient-transparency-and-transitions"></a>梯度透明度和过渡
 
-本文前面所示的 Porter-Duff blend 模式的示例包含包含不透明像素和透明像素的所有涉及的图像，但不包括部分透明的像素。 还会为这些像素定义混合模式函数。 下表是 Porter-Duff 混合模式的更正式定义，该模式使用在 Skia [**SkBlendMode 引用**](https://skia.org/user/api/SkBlendMode_Reference)中找到的表示法。 （由于**SkBlendMode 引用**是 Skia 引用，因此将使用 c + + 语法。）
+本文前面所示的 Porter-Duff blend 模式的示例包含包含不透明像素和透明像素的所有涉及的图像，但不包括部分透明的像素。 还会为这些像素定义混合模式函数。 下表是 Porter-Duff 混合模式的更正式定义，该模式使用在 Skia [**SkBlendMode 引用**](https://skia.org/user/api/SkBlendMode_Reference)中找到的表示法。  (，因为 **SkBlendMode 引用** 是 Skia 引用，将使用 c + + 语法。 ) 
 
 从概念上讲，每个像素的红色、绿色、蓝色和 alpha 分量都从字节转换为0到1范围内的浮点数。 对于 alpha 通道，0表示完全透明，1表示完全不透明
 
 下表中的表示法使用以下缩写形式：
 
-- **Da**是目标 alpha 通道
-- **Dc**是目标 RGB 颜色
-- **Sa**是源 alpha 通道
-- **Sc**是源 RGB 颜色
+- **Da** 是目标 alpha 通道
+- **Dc** 是目标 RGB 颜色
+- **Sa** 是源 alpha 通道
+- **Sc** 是源 RGB 颜色
 
-RGB 颜色按照 alpha 值进行预处理。 例如，如果**Sc**表示纯红色但**Sa**为0x80，则 RGB 颜色为 **（0x80，0，0）**。 如果**Sa**为0，则所有 RGB 组件也都为零。
+RGB 颜色按照 alpha 值进行预处理。 例如，如果 **Sc** 表示纯红色但 **Sa** 为0x80，则 RGB 颜色为 ** (0x80，0，0) **。 如果 **Sa** 为0，则所有 RGB 组件也都为零。
 
 结果显示在带 alpha 通道的方括号中，RGB 颜色用逗号分隔： **[alpha，color]**。 对于颜色，为红色、绿色和蓝色分量单独执行计算：
 
-| Mode       | Operation |
+| 模式       | 操作 |
 | ---------- | --------- |
 | `Clear`    | [0，0]    |
 | `Src`      | [Sa，Sc]  |
 | `Dst`      | [Da，Dc]  |
-| `SrcOver`  | [Sa + Da ·（1-Sa），Sc + Dc ·（1– Sa） | 
-| `DstOver`  | [Da + Sa ·（1– Da），Dc + Sc ·（1– Da） |
+| `SrcOver`  | [Sa + Da · (1 – Sa) ，Sc + Dc · (1 – Sa)  | 
+| `DstOver`  | [Da + Sa · (1 – Da) ，Dc + Sc · (1 – Da)  |
 | `SrcIn`    | 成为Da，Sc ·特里斯坦 |
 | `DstIn`    | 特里斯坦Sa，Dc ·成为 |
-| `SrcOut`   | 成为（1– Da），Sc ·（1– Da）] |
-| `DstOut`   | 特里斯坦（1-Sa），Dc ·（1– Sa）] |
-| `SrcATop`  | [Da，Sc ·Da + Dc ·（1– Sa）] |
-| `DstATop`  | [Sa，Dc ·Sa + Sc ·（1– Da）] |
-| `Xor`      | [Sa + Da –2·成为Da，Sc ·（1– Da） + Dc ·（1– Sa）] |
+| `SrcOut`   | [Sa · (1 – Da) ，Sc · (1 – Da) ] |
+| `DstOut`   | [Da · (1 – Sa) ，Dc · (1 – Sa) ] |
+| `SrcATop`  | [Da，Sc ·Da + Dc · (1 – Sa) ] |
+| `DstATop`  | [Sa，Dc ·Sa + Sc · (1 – Da) ] |
+| `Xor`      | [Sa + Da –2·成为Da，Sc · (1 – Da) + Dc · (1 – Sa) ] |
 | `Plus`     | [Sa + Da，Sc + Dc] |
 | `Modulate` | 成为Da，Sc ·台 | 
 
-当**Da**和**Sa**为0或1时，可以更轻松地分析这些操作。 例如，对于默认 `SrcOver` 模式，如果**Sa**为0，则**Sc**也是0，结果为 **[Da，Dc]**，目标 alpha 和颜色。 如果**Sa**为1，则结果为 **[Sa，Sc]**，源 alpha 和颜色，或者 **[1，Sc]**。
+当 **Da** 和 **Sa** 为0或1时，可以更轻松地分析这些操作。 例如，对于默认 `SrcOver` 模式，如果 **Sa** 为0，则 **Sc** 也是0，结果为 **[Da，Dc]**，目标 alpha 和颜色。 如果 **Sa** 为1，则结果为 **[Sa，Sc]**，源 alpha 和颜色，或者 **[1，Sc]**。
 
-`Plus`和 `Modulate` 模式与其他模式略有不同，因为这种新颜色可以通过源和目标的组合生成。 `Plus`可以通过字节组件或浮点组件来解释此模式。 在前面所示的**Porter-Duff 网格**页中，目标颜色为 **（0xC0，0x80，0x00）** ，而源颜色为 **（0x00，0x80，0xC0）**。 每对组件都将被添加，但并不限制。 结果是颜色 **（0xC0，0xff，0xC0）**。 这是交集中显示的颜色。
+`Plus`和 `Modulate` 模式与其他模式略有不同，因为这种新颜色可以通过源和目标的组合生成。 `Plus`可以通过字节组件或浮点组件来解释此模式。 在前面所示的 **Porter-Duff 网格** 页中，目标颜色为 ** (0xC0，0x80，0x00) ** 并且源颜色为 ** (0x00，0x80，0xC0) **。 每对组件都将被添加，但并不限制。 结果是 ** (0xC0，0xff，0xC0) **的颜色。 这是交集中显示的颜色。
 
-对于 `Modulate` 模式，RGB 值必须转换为浮点值。 目标颜色为 **（0.75，0.5，0）** ，源为 **（0，0.5，0.75）**。 RGB 组件分别相乘，结果为 **（0，0.25，0）**。 这是此模式的**Porter-Duff 网格**页中的交集显示的颜色。
+对于 `Modulate` 模式，RGB 值必须转换为浮点值。 目标颜色为 ** (0.75、0.5、0) ** 并且源为 ** (0、0.5、0.75) **。 RGB 组件分别相乘，结果为 ** (0，0.25，0) **。 这是此模式的 **Porter-Duff 网格** 页中的交集显示的颜色。
 
-通过**Porter-Duff 透明度**页，可以检查 Porter-Duff blend 模式对部分透明的图形对象的操作方式。 XAML 文件包括 `Picker` 具有 Porter-Duff 模式的：
+通过 **Porter-Duff 透明度** 页，可以检查 Porter-Duff blend 模式对部分透明的图形对象的操作方式。 XAML 文件包括 `Picker` 具有 Porter-Duff 模式的：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -658,9 +658,9 @@ public partial class PorterDuffTransparencyPage : ContentPage
 
 [![Porter-Duff 透明度](porter-duff-images/PorterDuffTransparency.png "Porter-Duff 透明度")](porter-duff-images/PorterDuffTransparency-Large.png#lightbox)
 
-目标和源的配置与原始 Porter-Duff[_合成数字图像_](https://graphics.pixar.com/library/Compositing/paper.pdf)纸张的第255页中显示的关系图非常相似，但此页说明混合模式对于部分透明度的区域而言是良好的。
+目标和源的配置与原始 Porter-Duff [_合成数字图像_](https://graphics.pixar.com/library/Compositing/paper.pdf) 纸张的第255页中显示的关系图非常相似，但此页说明混合模式对于部分透明度的区域而言是良好的。
 
-可对某些不同效果使用透明渐变。 一种可能是屏蔽，这类似于 " **SkiaSharp 循环渐变" 页**的 "[**遮蔽渐变**](../shaders/circular-gradients.md#radial-gradients-for-masking)" 部分中显示的方法。 很多**组合掩码**页与上述程序类似。 它加载位图资源并确定要在其中显示它的矩形。 径向渐变基于预先确定的中心和半径创建：
+可对某些不同效果使用透明渐变。 一种可能是屏蔽，这类似于 " **SkiaSharp 循环渐变" 页**的 "[**遮蔽渐变**](../shaders/circular-gradients.md#radial-gradients-for-masking)" 部分中显示的方法。 很多 **组合掩码** 页与上述程序类似。 它加载位图资源并确定要在其中显示它的矩形。 径向渐变基于预先确定的中心和半径创建：
 
 ```csharp
 public class CompositingMaskPage : ContentPage
@@ -740,7 +740,7 @@ canvas.DrawColor(SKColors.Pink, SKBlendMode.DstOver);
 
 [![合成掩码](porter-duff-images/CompositingMask.png "合成掩码")](porter-duff-images/CompositingMask-Large.png#lightbox)
 
-还可以使用 Porter-Duff 模式，并使用部分透明的渐变从一个图像转换到另一个图像。 "**渐变转换**" 页包含一个 `Slider` 指示进度级别（从0到1的转换）和一个， `Picker` 用于选择所需的转换类型：
+还可以使用 Porter-Duff 模式，并使用部分透明的渐变从一个图像转换到另一个图像。 " **渐变转换** " 页包含一个 `Slider` 指示进度级别（从0到1的转换）和一个， `Picker` 用于选择所需的转换类型：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -772,7 +772,7 @@ canvas.DrawColor(SKColors.Pink, SKBlendMode.DstOver);
 </ContentPage>
 ```
 
-代码隐藏文件加载两个位图资源以演示转换。 本文前面的**位图溶解**页中使用的两个图像相同。 该代码还定义了一个枚举，其中三个成员对应于三种类型的渐变： &mdash; 线性、径向和扫描。 这些值将加载到中 `Picker` ：
+代码隐藏文件加载两个位图资源以演示转换。 本文前面的 **位图溶解** 页中使用的两个图像相同。 该代码还定义了一个枚举，其中三个成员对应于三种类型的渐变： &mdash; 线性、径向和扫描。 这些值将加载到中 `Picker` ：
 
 ```csharp
 public partial class GradientTransitionsPage : ContentPage
@@ -905,5 +905,5 @@ public partial class GradientTransitionsPage : ContentPage
 
 ## <a name="related-links"></a>相关链接
 
-- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [SkiaSharp Api](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (示例) ](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

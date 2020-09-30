@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Forms可绑定属性
+title: Xamarin.Forms 可绑定属性
 description: 本文介绍了可绑定的属性，并演示了如何创建和使用它们。
 ms.prod: xamarin
 ms.assetid: 1EE869D8-6FE1-45CA-A0AD-26EC7D032AD7
@@ -10,14 +10,14 @@ ms.date: 01/16/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 7d83728edc161a89b381330884e86f09b7788e3d
-ms.sourcegitcommit: 898ba8e5140ae32a7df7e07c056aff65f6fe4260
+ms.openlocfilehash: df2cf99ef0ea1fcbb1b52dda7abb6c8cfdd2d2e7
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86226776"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91561529"
 ---
-# <a name="xamarinforms-bindable-properties"></a>Xamarin.Forms可绑定属性
+# <a name="no-locxamarinforms-bindable-properties"></a>Xamarin.Forms 可绑定属性
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-eventtocommandbehavior)
 
@@ -25,8 +25,8 @@ ms.locfileid: "86226776"
 
 属性应作为可绑定属性实现，以支持下列一项或多项功能：
 
-- 用作数据绑定的有效*目标*属性。
-- 通过[样式](~/xamarin-forms/user-interface/styles/index.md)设置属性。
+- 用作数据绑定的有效 *目标* 属性。
+- 通过 [样式](~/xamarin-forms/user-interface/styles/index.md)设置属性。
 - 提供不同于属性类型默认值的默认属性值。
 - 验证属性的值。
 - 监视属性更改。
@@ -51,7 +51,7 @@ ms.locfileid: "86226776"
 创建时，必须至少指定标识符 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 以及以下参数：
 
 - 的名称 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 。
-- 属性类型。
+- 属性的类型。
 - 所属对象的类型。
 - 属性的默认值。 这可确保属性在未设置时始终返回特定的默认值，并且它可以与属性类型的默认值不同。 当 [ `ClearValue` ] (x：时，将还原默认值 Xamarin.Forms 。Msds-bindableobject. System.windows.dependencyobject.clearvalue (Xamarin.Forms 。BindableProperty 在可绑定属性上调用了 # A3 方法) 。
 
@@ -70,11 +70,11 @@ public static readonly BindableProperty EventNameProperty =
 （可选）创建 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 实例时，可以指定以下参数：
 
 - 绑定模式。 此值用于指定属性值更改将传播到的方向。 在默认绑定模式下，更改*将从源传播到**目标*。
-- 当设置属性值时将调用的验证委托。 有关详细信息，请参阅[验证回调](#validation-callbacks)。
-- 属性值更改后将调用的属性更改的委托。 有关详细信息，请参阅[检测属性更改](#detect-property-changes)。
+- 当设置属性值时将调用的验证委托。 有关详细信息，请参阅 [验证回调](#validation-callbacks)。
+- 属性值更改后将调用的属性更改的委托。 有关详细信息，请参阅 [检测属性更改](#detect-property-changes)。
 - 一个属性更改委托，该委托将在属性值更改时调用。 此委托与属性更改的委托具有相同的签名。
-- 当属性值发生更改时将调用的强制值委托。 有关详细信息，请参阅[强制值回调](#coerce-value-callbacks)。
-- `Func`用于初始化默认属性值的。 有关详细信息，请参阅[使用 Func 创建默认值](#create-a-default-value-with-a-func)。
+- 当属性值发生更改时将调用的强制值委托。 有关详细信息，请参阅 [强制值回调](#coerce-value-callbacks)。
+- `Func`用于初始化默认属性值的。 有关详细信息，请参阅 [使用 Func 创建默认值](#create-a-default-value-with-a-func)。
 
 ### <a name="create-accessors"></a>创建访问器
 
@@ -92,7 +92,7 @@ public string EventName
 
 ## <a name="consume-a-bindable-property"></a>使用可绑定属性
 
-创建可绑定属性后，可以从 XAML 或代码中使用它。 在 XAML 中，这是通过使用前缀来声明命名空间来实现的，命名空间声明指示 CLR 命名空间名称，也可以是程序集名称。 有关详细信息，请参阅[XAML 命名空间](~/xamarin-forms/xaml/namespaces.md)。
+创建可绑定属性后，可以从 XAML 或代码中使用它。 在 XAML 中，这是通过使用前缀来声明命名空间来实现的，命名空间声明指示 CLR 命名空间名称，也可以是程序集名称。 有关详细信息，请参阅 [XAML 命名空间](~/xamarin-forms/xaml/namespaces.md)。
 
 下面的代码示例演示一个自定义类型的 XAML 命名空间，该自定义类型包含一个可绑定属性，该属性在与引用自定义类型的应用程序代码相同的程序集中定义：
 
@@ -221,8 +221,8 @@ public static readonly BindableProperty SizeProperty =
 ## <a name="related-links"></a>相关链接
 
 - [XAML 命名空间](~/xamarin-forms/xaml/namespaces.md)
-- [事件到命令行为 (示例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-eventtocommandbehavior)
-- [验证回调 (示例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-validationcallback)
-- [强制值回调 (示例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-coercevaluecallback)
+- [事件到命令行为 (示例) ](/samples/xamarin/xamarin-forms-samples/behaviors-eventtocommandbehavior)
+- [验证回调 (示例) ](/samples/xamarin/xamarin-forms-samples/xaml-validationcallback)
+- [强制值回调 (示例) ](/samples/xamarin/xamarin-forms-samples/xaml-coercevaluecallback)
 - [BindableProperty API](xref:Xamarin.Forms.BindableProperty)
 - [Msds-bindableobject API](xref:Xamarin.Forms.BindableObject)

@@ -1,6 +1,6 @@
 ---
-title: Xamarin.Forms资源字典
-description: Xamarin.FormsXAML 资源是可在整个应用程序中共享和重用的对象 Xamarin.Forms 。
+title: Xamarin.Forms 资源字典
+description: Xamarin.Forms XAML 资源是可在整个应用程序中共享和重用的对象 Xamarin.Forms 。
 ms.prod: xamarin
 ms.assetid: DF103686-4A92-40FA-9CF1-A9376293B13C
 ms.technology: xamarin-forms
@@ -11,18 +11,18 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.custom: video
-ms.openlocfilehash: a1c7cfd4a0f3549b11ac51dc13b40da552f6b758
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: cdf34d78751345857e89c6bfa6862b58207ad01e
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139407"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562127"
 ---
-# <a name="xamarinforms-resource-dictionaries"></a>Xamarin.Forms资源字典
+# <a name="no-locxamarinforms-resource-dictionaries"></a>Xamarin.Forms 资源字典
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-resourcedictionaries)
 
-[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)是应用程序使用的资源的存储库 Xamarin.Forms 。 存储在中的典型资源 `ResourceDictionary` 包括[样式](~/xamarin-forms/user-interface/styles/index.md)、[控件模板](~/xamarin-forms/app-fundamentals/templates/control-template.md)、[数据模板](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)、颜色和转换器。
+[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)是应用程序使用的资源的存储库 Xamarin.Forms 。 存储在中的典型资源 `ResourceDictionary` 包括 [样式](~/xamarin-forms/user-interface/styles/index.md)、 [控件模板](~/xamarin-forms/app-fundamentals/templates/control-template.md)、 [数据模板](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)、颜色和转换器。
 
 在 XAML 中， [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 可以使用 `StaticResource` 或标记扩展引用存储在中的资源，并将其应用于元素 `DynamicResource` 。 在 c # 中，还可以在中定义资源， `ResourceDictionary` 然后使用基于字符串的索引器对其进行引用并将其应用于元素。 但是，在 c # 中使用是非常有利的， `ResourceDictionary` 因为可以将共享对象存储为字段或属性并直接访问，而无需首先从字典中检索它们。
 
@@ -82,7 +82,7 @@ Xamarin.Forms应用程序仅包含从派生的类 [`Application`](xref:Xamarin.F
 
 每个资源都有一个使用特性指定的密钥 `x:Key` ，该属性将成为中的字典键 `ResourceDictionary` 。 该键用于引用 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 具有 [`StaticResource`](xref:Xamarin.Forms.Xaml.StaticResourceExtension) 或标记扩展的中的资源 [`DynamicResource`](xref:Xamarin.Forms.Xaml.DynamicResourceExtension) 。
 
-`StaticResource`标记扩展类似于 `DynamicResource` 中的标记扩展，因为这两种方法都使用字典键来引用资源字典中的值。 但是，当 `StaticResource` 标记扩展执行单个字典查找时， `DynamicResource` 标记扩展将保留指向字典键的链接。 因此，如果替换与该键关联的字典条目，则更改将应用于该视觉对象。 这样就可以在应用程序中进行运行时资源更改。 有关标记扩展的详细信息，请参阅[XAML 标记扩展](~/xamarin-forms/xaml/markup-extensions/index.md)。
+`StaticResource`标记扩展类似于 `DynamicResource` 中的标记扩展，因为这两种方法都使用字典键来引用资源字典中的值。 但是，当 `StaticResource` 标记扩展执行单个字典查找时， `DynamicResource` 标记扩展将保留指向字典键的链接。 因此，如果替换与该键关联的字典条目，则更改将应用于该视觉对象。 这样就可以在应用程序中进行运行时资源更改。 有关标记扩展的详细信息，请参阅 [XAML 标记扩展](~/xamarin-forms/xaml/markup-extensions/index.md)。
 
 下面的 XAML 示例演示如何使用资源，并在中定义其他资源 [`StackLayout`](xref:Xamarin.Forms.StackLayout) ：
 
@@ -114,7 +114,7 @@ Xamarin.Forms应用程序仅包含从派生的类 [`Application`](xref:Xamarin.F
 [![使用 ResourceDictionary 资源](resource-dictionaries-images/consuming.png "使用 ResourceDictionary 资源")](resource-dictionaries-images/consuming-large.png#lightbox "使用 ResourceDictionary 资源")
 
 > [!IMPORTANT]
-> 特定于单个页面的资源不应包含在应用程序级别的资源字典中，因为这样将在应用程序启动时（而不是在页面要求时）分析此类资源。 有关详细信息，请参阅[降低应用程序资源字典大小](~/xamarin-forms/deploy-test/performance.md)。
+> 特定于单个页面的资源不应包含在应用程序级别的资源字典中，因为这样将在应用程序启动时（而不是在页面要求时）分析此类资源。 有关详细信息，请参阅 [降低应用程序资源字典大小](~/xamarin-forms/deploy-test/performance.md)。
 
 ## <a name="resource-lookup-behavior"></a>资源查找行为
 
@@ -135,9 +135,9 @@ Xamarin.Forms应用程序仅包含从派生的类 [`Application`](xref:Xamarin.F
 
 派生自的类 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 也可以在单独的独立文件中。 然后，可以在应用程序之间共享结果文件。
 
-若要创建此类文件，请向项目中添加一个新的**内容视图**或**内容页**项（但不包含只有 c # 文件的**内容视图**或**内容页**）。 删除代码隐藏文件，在 XAML 文件中，将基类的名称从 [`ContentView`](xref:Xamarin.Forms.ContentView) 或更改 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 为 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 。 此外，请 `x:Class` 从文件的根标记中删除该属性。
+若要创建此类文件，请将新的 **内容视图** 或 **内容页** 项添加到项目 (，但不添加 **内容视图** 或内容 **页** ，) 只使用 c # 文件。 删除代码隐藏文件，在 XAML 文件中，将基类的名称从 [`ContentView`](xref:Xamarin.Forms.ContentView) 或更改 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 为 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 。 此外，请 `x:Class` 从文件的根标记中删除该属性。
 
-下面的 XAML 示例显示了一个 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 名为**MyResourceDictionary**的：
+下面的 XAML 示例显示了一个 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 名为 **MyResourceDictionary**的：
 
 ```xaml
 <ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
@@ -166,7 +166,7 @@ Xamarin.Forms应用程序仅包含从派生的类 [`Application`](xref:Xamarin.F
 </ResourceDictionary>
 ```
 
-在此示例中， [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 包含单个资源，这是类型的对象 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 。 **MyResourceDictionary**可通过将其合并到另一个资源字典中来使用。
+在此示例中， [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 包含单个资源，这是类型的对象 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 。 **MyResourceDictionary** 可通过将其合并到另一个资源字典中来使用。
 
 ## <a name="merged-resource-dictionaries"></a>合并的资源字典
 
@@ -187,14 +187,14 @@ Xamarin.Forms应用程序仅包含从派生的类 [`Application`](xref:Xamarin.F
 </ContentPage>
 ```
 
-此语法不会实例化 `MyResourceDictionary` 类。 相反，它引用 XAML 文件。 出于此原因，在设置 [`Source`](xref:Xamarin.Forms.ResourceDictionary.Source) 属性时，不需要代码隐藏文件，并且 `x:Class` 可以从**MyResourceDictionary**文件的根标记中删除该属性。
+此语法不会实例化 `MyResourceDictionary` 类。 相反，它引用 XAML 文件。 出于此原因，在设置 [`Source`](xref:Xamarin.Forms.ResourceDictionary.Source) 属性时，不需要代码隐藏文件，并且 `x:Class` 可以从 **MyResourceDictionary** 文件的根标记中删除该属性。
 
 > [!IMPORTANT]
 > [`Source`](xref:Xamarin.Forms.ResourceDictionary.Source)属性只能从 XAML 设置。
 
 ### <a name="merge-resource-dictionaries-from-other-assemblies"></a>从其他程序集合并资源字典
 
-[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)还可以 `ResourceDictionary` 通过将添加到的属性中来合并到另一个 [`MergedDictionaries`](xref:Xamarin.Forms.ResourceDictionary.MergedDictionaries) `ResourceDictionary` 。 此方法允许合并资源字典，而不考虑它们所在的程序集。 如果从外部程序集合并资源字典，则需要将 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 生成操作设置为**EmbeddedResource**，以创建代码隐藏文件，并 `x:Class` 在文件的根标记中定义特性。
+[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)还可以 `ResourceDictionary` 通过将添加到的属性中来合并到另一个 [`MergedDictionaries`](xref:Xamarin.Forms.ResourceDictionary.MergedDictionaries) `ResourceDictionary` 。 此方法允许合并资源字典，而不考虑它们所在的程序集。 如果从外部程序集合并资源字典，则需要将 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 生成操作设置为 **EmbeddedResource**，以创建代码隐藏文件，并 `x:Class` 在文件的根标记中定义特性。
 
 > [!WARNING]
 > [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)类还定义 [`MergedWith`](xref:Xamarin.Forms.ResourceDictionary.MergedWith) 属性。 但是，此属性已弃用，不应再使用。
@@ -236,7 +236,7 @@ Xamarin.Forms应用程序仅包含从派生的类 [`Application`](xref:Xamarin.F
 
 ## <a name="related-links"></a>相关链接
 
-- [资源字典（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-resourcedictionaries)
+- [资源字典 (示例) ](/samples/xamarin/xamarin-forms-samples/xaml-resourcedictionaries)
 - [XAML 标记扩展](~/xamarin-forms/xaml/markup-extensions/index.md)
 - [Xamarin.Forms 样式](~/xamarin-forms/user-interface/styles/index.md)
 - [ResourceDictionary](xref:Xamarin.Forms.ResourceDictionary)

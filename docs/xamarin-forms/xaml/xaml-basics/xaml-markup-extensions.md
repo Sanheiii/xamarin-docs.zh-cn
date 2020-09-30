@@ -10,12 +10,12 @@ ms.date: 03/27/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3fcea963b253ea34601a36434007f18d925975eb
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 9923a7f0605a7ca5d9d81269c3d855e92fbccaf4
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84131334"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91564077"
 ---
 # <a name="part-3-xaml-markup-extensions"></a>第 3 部分。 XAML 标记扩展
 
@@ -27,7 +27,7 @@ _XAML 标记扩展在 XAML 中构成了一项重要功能，该功能允许将�
 
 通常，使用 XAML 将对象的属性设置为显式值（如字符串、数字、枚举成员）或转换为后台值的字符串。
 
-但是，有时属性必须引用在其他位置定义的值，或者在运行时代码可能需要少量处理。 为此，可以使用 XAML*标记扩展*。
+但是，有时属性必须引用在其他位置定义的值，或者在运行时代码可能需要少量处理。 为此，可以使用 XAML *标记扩展* 。
 
 这些 XAML 标记扩展不是 XML 的扩展。 XAML 是完全合法的 XML。 它们被称为 "扩展"，因为它们由实现的类中的代码支持 `IMarkupExtension` 。 您可以编写自己的自定义标记扩展。
 
@@ -74,7 +74,7 @@ _XAML 标记扩展在 XAML 中构成了一项重要功能，该功能允许将�
 
 如果需要更改这些属性中的一个，则最好只进行一次更改而不是三次更改。 如果这是代码，你可能会使用常量和静态只读对象来帮助保持此类值的一致性和修改。
 
-在 XAML 中，最常见的解决方案是将此类值或对象存储在*资源字典*中。 `VisualElement`类定义一个 `Resources` 类型为的属性 `ResourceDictionary` ，该属性是一个包含类型的键 `string` 和类型的值的字典 `object` 。 你可以将对象放入此字典，然后在 XAML 中从标记中引用它们。
+在 XAML 中，最常见的解决方案是将此类值或对象存储在 *资源字典*中。 `VisualElement`类定义一个 `Resources` 类型为的属性 `ResourceDictionary` ，该属性是一个包含类型的键 `string` 和类型的值的字典 `object` 。 你可以将对象放入此字典，然后在 XAML 中从标记中引用它们。
 
 若要在页面上使用资源字典，请包含一对 `Resources` 属性元素标记。 最方便的方法是将其放在页面顶部：
 
@@ -146,7 +146,7 @@ _XAML 标记扩展在 XAML 中构成了一项重要功能，该功能允许将�
 
 `StaticResource`标记扩展始终用大括号分隔，并包含字典键。
 
-该名称将 `StaticResource` 它与 `DynamicResource` （也支持）区分开来 Xamarin.Forms 。 `DynamicResource`用于与在运行时可能更改的值相关联的字典键，而在 `StaticResource` 构造页上的元素时仅访问字典中的元素。
+该名称将 `StaticResource` 它与 `DynamicResource` （也支持）区分开来 Xamarin.Forms 。 `DynamicResource` 用于与在运行时可能更改的值相关联的字典键，而在 `StaticResource` 构造页上的元素时仅访问字典中的元素。
 
 对于 `BorderWidth` 属性，必须在字典中存储 double。 XAML 方便地定义常见数据类型（如和）的标记 `x:Double` `x:Int32` ：
 
@@ -317,13 +317,13 @@ _XAML 标记扩展在 XAML 中构成了一项重要功能，该功能允许将�
 
 你将发现按钮的文本颜色现在为蓝色。 基本上，每当 XAML 分析器遇到 `StaticResource` 标记扩展时，它都会在可视化树中向上搜索，并使用包含该键的第一个元素 `ResourceDictionary` 。
 
-资源字典中存储的最常见的对象类型之一是 Xamarin.Forms `Style` ，它定义了属性设置的集合。 文章[样式](~/xamarin-forms/user-interface/styles/index.md)中讨论了样式。
+资源字典中存储的最常见的对象类型之一是 Xamarin.Forms `Style` ，它定义了属性设置的集合。 文章 [样式](~/xamarin-forms/user-interface/styles/index.md)中讨论了样式。
 
 有时，开发人员在 XAML 中的新用户可以在中放置一个视觉元素（如 `Label` 或） `Button` `ResourceDictionary` 。 尽管当然是可行的，但这并不是很好的做法。 的用途 `ResourceDictionary` 是共享对象。 无法共享可视元素。 同一实例不能在单个页面上出现两次。
 
 ## <a name="the-xstatic-markup-extension"></a>X:Static 标记扩展
 
-尽管其名称相似， `x:Static` 但并 `StaticResource` 不相同。 `StaticResource`从资源字典中返回 `x:Static` 一个对象，同时访问以下内容之一：
+尽管其名称相似， `x:Static` 但并 `StaticResource` 不相同。 `StaticResource` 从资源字典中返回 `x:Static` 一个对象，同时访问以下内容之一：
 
 - 公共静态字段
 - 公共静态属性
@@ -392,13 +392,13 @@ xmlns="http://xamarin.com/schemas/2014/forms"
 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 ```
 
-你将需要其他 XML 命名空间声明来访问其他类。 其他每个 XML 命名空间声明都定义一个新前缀。 若要访问共享应用程序的本地类 .NET Standard 库，如 `AppConstants` XAML 程序员通常使用前缀 `local` 。 命名空间声明必须指示 CLR （公共语言运行时）命名空间名称，也称为 .NET 命名空间名称，它是在 c # `namespace` 定义或指令中显示的名称 `using` ：
+你将需要其他 XML 命名空间声明来访问其他类。 其他每个 XML 命名空间声明都定义一个新前缀。 若要访问共享应用程序的本地类 .NET Standard 库，如 `AppConstants` XAML 程序员通常使用前缀 `local` 。 命名空间声明必须指示 CLR (公共语言运行时) 命名空间名称，也称为 .NET 命名空间名称，它是在 c # `namespace` 定义或指令中显示的名称 `using` ：
 
 ```csharp
 xmlns:local="clr-namespace:XamlSamples"
 ```
 
-你还可以在 .NET Standard 库引用的任何程序集中定义 .NET 命名空间的 XML 命名空间声明。 例如，下面是 `sys` 标准 .net `System` 命名空间的前缀，位于**netstandard**程序集中。 由于这是另一个程序集，因此还必须指定程序集名称，在本例中为**netstandard**：
+你还可以在 .NET Standard 库引用的任何程序集中定义 .NET 命名空间的 XML 命名空间声明。 例如，下面是 `sys` 标准 .net `System` 命名空间的前缀，位于 **netstandard** 程序集中。 由于这是另一个程序集，因此还必须指定程序集名称，在本例中为 **netstandard**：
 
 ```csharp
 xmlns:sys="clr-namespace:System;assembly=netstandard"
@@ -408,7 +408,7 @@ xmlns:sys="clr-namespace:System;assembly=netstandard"
 
 是的，其后有一个冒号， `clr-namespace` 但后面有一个等号 `assembly` 。 语法是特意定义的：大多数 XML 命名空间声明都引用了一个 URI，该 URI 开始使用 URI 方案名称（如 `http` ），该名称后面始终跟有一个冒号。 `clr-namespace`此字符串的组成部分旨在模拟该约定。
 
-这两个命名空间声明都包含在**StaticConstantsPage**示例中。 请注意， `BoxView` 维度设置为 `Math.PI` and `Math.E` ，但缩放比例为100：
+这两个命名空间声明都包含在 **StaticConstantsPage** 示例中。 请注意， `BoxView` 维度设置为 `Math.PI` and `Math.E` ，但缩放比例为100：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -444,10 +444,10 @@ xmlns:sys="clr-namespace:System;assembly=netstandard"
 
 多个标记扩展在 XAML 中是内部的，在 xaml 文件中受支持 Xamarin.Forms 。 其中一些方法不经常使用，但在需要时很重要：
 
-- 如果默认情况下某个属性具有非 `null` 值，但你想要将其设置为 `null` ，请将其设置为 `{x:Null}` 标记扩展。
-- 如果属性的类型为 `Type` ，则可以使用标记扩展将其分配给 `Type` 对象 `{x:Type someClass}` 。
-- 您可以使用标记扩展在 XAML 中定义数组 `x:Array` 。 此标记扩展具有一个名为的必需特性 `Type` ，该特性指示数组中的元素的类型。
-- 第 `Binding` 4 部分讨论了标记扩展[。数据绑定基础知识](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)。
+- 如果默认情况下某个属性具有非 `null` 值，但你想要将其设置为  `null` ，请将其设置为 `{x:Null}` 标记扩展。
+- 如果属性的类型为 `Type` ，则可以使用标记扩展将其分配给  `Type` 对象 `{x:Type someClass}` 。
+- 您可以使用标记扩展在 XAML 中定义数组 `x:Array` 。 此标记扩展具有一个名为的必需特性  `Type` ，该特性指示数组中的元素的类型。
+- 第 `Binding` 4 部分讨论了标记扩展 [。数据绑定基础知识](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)。
 - `RelativeSource`[相关绑定](~/xamarin-forms/app-fundamentals/data-binding/relative-bindings.md)中讨论了标记扩展。
 
 ## <a name="the-constraintexpression-markup-extension"></a>ConstraintExpression 标记扩展
@@ -557,13 +557,13 @@ xmlns:sys="clr-namespace:System;assembly=netstandard"
 
 [![使用约束的相对布局](xaml-markup-extensions-images/relativelayout.png)](xaml-markup-extensions-images/relativelayout-large.png#lightbox)
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
-此处显示的 XAML 标记扩展为 XAML 文件提供重要支持。 但最有价值的 XAML 标记扩展可能是 `Binding` ，这将在本系列的下一部分中涵盖，[第4部分。数据绑定基础知识](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)。
+此处显示的 XAML 标记扩展为 XAML 文件提供重要支持。 但最有价值的 XAML 标记扩展可能是 `Binding` ，这将在本系列的下一部分中涵盖， [第4部分。数据绑定基础知识](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)。
 
 ## <a name="related-links"></a>相关链接
 
-- [XamlSamples](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
+- [XamlSamples](/samples/xamarin/xamarin-forms-samples/xamlsamples)
 - [第1部分。与 XAML 入门](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)
 - [第2部分。基本 XAML 语法](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)
 - [第4部分。数据绑定基础知识](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)

@@ -10,12 +10,12 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 125685150243ba8e8099cbfbdfec90e5a0b4d6b7
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 5bea8b58d8b80ced97856fc7c981afdd5c2102a7
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138572"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562400"
 ---
 # <a name="simultaneous-pan-gesture-recognition-on-ios"></a>IOS 上的并发平移手势识别
 
@@ -43,12 +43,12 @@ using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 Xamarin.Forms.Application.Current.On<iOS>().SetPanGestureRecognizerShouldRecognizeSimultaneously(true);
 ```
 
-`Application.On<iOS>`方法指定此平台特定的仅在 iOS 上运行。 [ `Application.SetPanGestureRecognizerShouldRecognizeSimultaneously` ] （X： Xamarin.Forms 。PlatformConfiguration. iOSSpecific. SetPanGestureRecognizerShouldRecognizeSimultaneously （ Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration、 Xamarin.Forms 。应用程序}，System.object）方法， [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) 用于控制滚动视图中的平移手势识别器是捕获平移手势，还是使用滚动视图捕获和共享平移手势。 此外，[ `Application.GetPanGestureRecognizerShouldRecognizeSimultaneously` ] （x： Xamarin.Forms 。PlatformConfiguration. iOSSpecific. GetPanGestureRecognizerShouldRecognizeSimultaneously （ Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration、 Xamarin.Forms 。应用程序}））方法可用于返回是否与包含的滚动视图共享平移手势 [`PanGestureRecognizer`](xref:Xamarin.Forms.PanGestureRecognizer) 。
+`Application.On<iOS>`方法指定此平台特定的仅在 iOS 上运行。 [ `Application.SetPanGestureRecognizerShouldRecognizeSimultaneously` ] (x： Xamarin.Forms 。PlatformConfiguration. SetPanGestureRecognizerShouldRecognizeSimultaneously (Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration、 Xamarin.Forms 。应用程序}，system.string) # A3 方法， [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) 用于控制滚动视图中的平移手势识别器是捕获平移手势，还是使用滚动视图捕获和共享平移手势。 此外，[ `Application.GetPanGestureRecognizerShouldRecognizeSimultaneously` ] (x： Xamarin.Forms 。PlatformConfiguration. GetPanGestureRecognizerShouldRecognizeSimultaneously (Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration、 Xamarin.Forms 。应用程序} ) # A3 方法可用于返回是否与包含的滚动视图共享平移手势 [`PanGestureRecognizer`](xref:Xamarin.Forms.PanGestureRecognizer) 。
 
 因此，在此特定于平台的情况下，当包含时， [`ListView`](xref:Xamarin.Forms.ListView) [`PanGestureRecognizer`](xref:Xamarin.Forms.PanGestureRecognizer) `ListView` 和都 `PanGestureRecognizer` 将接收平移手势并进行处理。 但是，在此特定于平台的禁用中，当包含时， `ListView` `PanGestureRecognizer` `PanGestureRecognizer` 将捕获平移手势并进行处理，并且不会 `ListView` 收到平移手势。
 
 ## <a name="related-links"></a>相关链接
 
-- [PlatformSpecifics （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [PlatformSpecifics (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [创建平台特定信息](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [iOSSpecific API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

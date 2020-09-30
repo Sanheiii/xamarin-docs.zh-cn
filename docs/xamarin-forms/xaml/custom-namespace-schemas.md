@@ -1,5 +1,5 @@
 ---
-title: XAML 自定义命名空间架构Xamarin.Forms
+title: XAML 自定义命名空间架构 Xamarin.Forms
 description: 可以使用 System.windows.markup.xmlnsdefinitionattribute> 类定义 XAML 自定义命名空间架构，该类指定自定义 URL 和一个或多个 CLR 命名空间之间的映射。 然后，可以在 XAML 命名空间声明中使用自定义命名空间架构。
 ms.prod: xamarin
 ms.assetid: FDF201A1-8C35-4569-A728-F9B0A0C5B31A
@@ -10,18 +10,18 @@ ms.date: 12/21/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 41a95b1a82ab8aa1f6938e5a2bcdebcef368e72d
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 5c7e0d90358ec230436276070ea2792539c446e5
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138159"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91561477"
 ---
-# <a name="xaml-custom-namespace-schemas-in-xamarinforms"></a>XAML 自定义命名空间架构Xamarin.Forms
+# <a name="xaml-custom-namespace-schemas-in-no-locxamarinforms"></a>XAML 自定义命名空间架构 Xamarin.Forms
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-customnamespaceschemas)
 
-可以通过使用命名空间声明指定公共语言运行时（CLR）命名空间名称和程序集名称，在 XAML 中引用库中的类型：
+可以通过以下方式在 XAML 中引用库中的类型：使用命名空间声明指定公共语言运行时 (CLR) 命名空间名称和程序集名称：
 
 ```xaml
 <ContentPage ...
@@ -59,7 +59,7 @@ namespace MyCompany.Controls
 > [!NOTE]
 > `XmlnsDefinitionAttribute`该类还具有一个名为的属性 `AssemblyName` ，可以选择将其设置为程序集的名称。 仅当从引用的 CLR 命名空间 `XmlnsDefinitionAttribute` 在外部程序集中时，才需要此项。
 
-`XmlnsDefinitionAttribute`应在项目中的程序集级别定义，其中包含将在自定义命名空间架构中映射的 CLR 命名空间。 下面的示例显示示例应用程序中的**AssemblyInfo.cs**文件：
+`XmlnsDefinitionAttribute`应在项目中的程序集级别定义，其中包含将在自定义命名空间架构中映射的 CLR 命名空间。 下面的示例显示示例应用程序中的 **AssemblyInfo.cs** 文件：
 
 ```csharp
 using Xamarin.Forms;
@@ -136,7 +136,7 @@ namespace CustomNamespaceSchemaDemo
 </ContentPage>
 ```
 
-`CircleButton`然后，可以 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 通过使用命名空间前缀来声明实例，将其添加到中 `controls` 。
+`CircleButton` 然后，可以 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 通过使用命名空间前缀来声明实例，将其添加到中 `controls` 。
 
 若要查找自定义命名空间架构类型， Xamarin.Forms 将为实例搜索引用的程序集 `XmlnsDefinitionAttribute` 。 如果 `xmlns` XAML 文件中元素的属性与 `XmlNamespace` 中的属性值相匹配 `XmlnsDefinitionAttribute` ， Xamarin.Forms 则将尝试使用 `XmlnsDefinitionAttribute.ClrNamespace` 属性值来解析类型。 如果类型解析失败， Xamarin.Forms 将继续根据任何其他匹配实例尝试类型解析 `XmlnsDefinitionAttribute` 。
 
@@ -146,6 +146,6 @@ namespace CustomNamespaceSchemaDemo
 
 ## <a name="related-links"></a>相关链接
 
-- [自定义命名空间架构（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-customnamespaceschemas)
+- [自定义命名空间架构 (示例) ](/samples/xamarin/xamarin-forms-samples/xaml-customnamespaceschemas)
 - [建议的 XAML 命名空间前缀](custom-prefix.md)
-- [XAML 命名空间Xamarin.Forms](namespaces.md)
+- [XAML 命名空间 Xamarin.Forms](namespaces.md)

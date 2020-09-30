@@ -1,5 +1,5 @@
 ---
-title: 与集成Xamarin.Forms
+title: 与集成 Xamarin.Forms
 description: 本文介绍如何创建响应触控和元素的 SkiaSharp 图形 Xamarin.Forms ，并通过示例代码对此进行演示。
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
@@ -10,14 +10,14 @@ ms.date: 02/09/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 60f53fb00786b183f36f7cfefa6af9062bb682db
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: cca93508e022420e0d5d11de079420b367188052
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938159"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562244"
 ---
-# <a name="integrating-with-xamarinforms"></a>与集成Xamarin.Forms
+# <a name="integrating-with-no-locxamarinforms"></a>与集成 Xamarin.Forms
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
@@ -28,9 +28,9 @@ SkiaSharp 图形可通过多种方式与的其余部分集成 Xamarin.Forms 。 
 ![使用滑块选择颜色](integration-images/integrationexample.png)
 
 在中创建交互式 SkiaSharp 图形的另一种方法 Xamarin.Forms 是通过触摸。
-[**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)计划中的第二页有权**点击 "切换填充**"。 它绘制一个简单的圆点 &mdash; ，无需填充，并 &mdash; 通过点击切换填充。 [`TapToggleFillPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml.cs)类显示如何更改 SkiaSharp 图形以响应用户输入。
+[**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)计划中的第二页有权**点击 "切换填充**"。 它绘制一个简单的圆点 &mdash; ，无需填充，并 &mdash; 通过点击切换填充。 [`TapToggleFillPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml.cs)类显示如何更改 SkiaSharp 图形以响应用户输入。
 
-对于此页，在 `SKCanvasView` [TapToggleFill](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml)文件中实例化类，该文件还在 Xamarin.Forms [`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer) 视图上设置了：
+对于此页，在 `SKCanvasView` [TapToggleFill](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml) 文件中实例化类，该文件还在 Xamarin.Forms [`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer) 视图上设置了：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -91,7 +91,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 该 `StrokeWidth` 属性已设置为50，强调设计差异。 您还可以通过先绘制内部，然后绘制轮廓来查看整个线条宽度。 默认情况下，在事件处理程序中的后面绘制的图形图会 `PaintSurface` 掩盖之前在处理程序中绘制的图形。
 
-"**颜色浏览**" 页演示了如何将 SkiaSharp 图形与其他 Xamarin.Forms 元素集成，还演示了在 SkiaSharp 中定义颜色的两种替代方法之间的差异。 静态 [`SKColor.FromHsl`](xref:SkiaSharp.SKColor.FromHsl(System.Single,System.Single,System.Single,System.Byte)) 方法 `SKColor` 基于 "色调-饱和度-亮度" 模型创建值：
+" **颜色浏览** " 页演示了如何将 SkiaSharp 图形与其他 Xamarin.Forms 元素集成，还演示了在 SkiaSharp 中定义颜色的两种替代方法之间的差异。 静态 [`SKColor.FromHsl`](xref:SkiaSharp.SKColor.FromHsl(System.Single,System.Single,System.Single,System.Byte)) 方法 `SKColor` 基于 "色调-饱和度-亮度" 模型创建值：
 
 ```csharp
 public static SKColor FromHsl (Single h, Single s, Single l, Byte a)
@@ -103,7 +103,7 @@ public static SKColor FromHsl (Single h, Single s, Single l, Byte a)
 public static SKColor FromHsv (Single h, Single s, Single v, Byte a)
 ```
 
-在这两种情况下， `h` 自变量的范围介于0到360之间。 `s`、 `l` 和参数的 `v` 范围为0到100。 `a`（Alpha 或不透明度）参数的范围为0到255。
+在这两种情况下， `h` 自变量的范围介于0到360之间。 `s`、 `l` 和参数的 `v` 范围为0到100。 `a` (alpha 或不透明度) 参数的范围为0到255。
 
 [**ColorExplorePage**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/ColorExplorePage.xaml)文件将并行创建两个 `SKCanvasView` 对象 `StackLayout` `Slider` 以及 `Label` 允许用户选择 HSL 和 HSV 颜色值的视图：
 
@@ -234,7 +234,7 @@ public partial class ColorExplorePage : ContentPage
 
 在 HSL 和 HSV 颜色模型中，色相值的范围为0到360，表示颜色的主导色调。 下面是彩虹的传统颜色：红色、橙色、黄色、绿色、蓝色、靛蓝色、紫色，并返回到红色。
 
-在 HSL 模型中，"亮度" 的值始终为黑色，100值始终为白色。 当饱和度值为0时，介于0到100之间的亮度值为灰色阴影。 增加饱和度会增加颜色。 纯色（这是 RGB 值，其中一个组件等于255，另一个组件等于0，第三个范围为0到255）在饱和度为100且亮度为50时出现。
+在 HSL 模型中，"亮度" 的值始终为黑色，100值始终为白色。 当饱和度值为0时，介于0到100之间的亮度值为灰色阴影。 增加饱和度会增加颜色。 纯颜色 (这是 RGB 值，其中一个组件等于255，另一个组件等于0，第三个范围从0到 255) 在饱和度为100且亮度为50时出现。
 
 在 HSV 模型中，饱和度和值均为100时，纯颜色会产生结果。 当 Value 为0时，无论是否有任何其他设置，颜色都为黑色。 当饱和度为0并且值范围从0到100时，将发生灰色阴影。
 
@@ -244,5 +244,5 @@ public partial class ColorExplorePage : ContentPage
 
 ## <a name="related-links"></a>相关链接
 
-- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [SkiaSharp Api](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (示例) ](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

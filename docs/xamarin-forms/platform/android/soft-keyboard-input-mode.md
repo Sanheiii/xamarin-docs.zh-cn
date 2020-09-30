@@ -10,12 +10,12 @@ ms.date: 07/10/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 0c7a379fa0128f73af471509974a043dbf2475d3
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 3baadfcb06a595c5809dbabd484a8f886ab84aec
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86933310"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562361"
 ---
 # <a name="soft-keyboard-input-mode-on-android"></a>Android 上的软键盘输入模式
 
@@ -41,7 +41,7 @@ using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
 App.Current.On<Android>().UseWindowSoftInputModeAdjust(WindowSoftInputModeAdjust.Resize);
 ```
 
-`Application.On<Android>`方法指定此平台特定的仅在 Android 上运行。 [ `Application.UseWindowSoftInputModeAdjust` ] （X： Xamarin.Forms 。PlatformConfiguration. AndroidSpecific. UseWindowSoftInputModeAdjust （ Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration Xamarin.Forms 。应用程序}， Xamarin.Forms 。PlatformConfiguration. AndroidSpecific. WindowSoftInputModeAdjust））方法， [`Xamarin.Forms.PlatformConfiguration.AndroidSpecific`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) 用于设置软键盘输入区域操作模式， [`WindowSoftInputModeAdjust`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust) 枚举提供了两个值： [`Pan`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust.Pan) 和 [`Resize`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust.Resize) 。 `Pan`该值使用 [`AdjustPan`](xref:Android.Views.SoftInput.AdjustPan) 调整选项，该选项不会在输入控件具有焦点时调整窗口的大小。 相反，窗口的内容是平移的，因此不会由软键盘遮盖当前焦点。 `Resize`该值使用 [`AdjustResize`](xref:Android.Views.SoftInput.AdjustResize) 调整选项，该选项可在输入控件有焦点的情况下调整窗口的大小，以便为软键盘腾出空间。
+`Application.On<Android>`方法指定此平台特定的仅在 Android 上运行。 [ `Application.UseWindowSoftInputModeAdjust` ] (x： Xamarin.Forms 。PlatformConfiguration. UseWindowSoftInputModeAdjust (Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration Xamarin.Forms 。应用程序}， Xamarin.Forms 。PlatformConfiguration. AndroidSpecific. WindowSoftInputModeAdjust) # A3 方法在 [`Xamarin.Forms.PlatformConfiguration.AndroidSpecific`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) 命名空间中，用于设置软键盘输入区域的运行模式， [`WindowSoftInputModeAdjust`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust) 枚举提供了两个值： [`Pan`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust.Pan) 和 [`Resize`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust.Resize) 。 `Pan`该值使用 [`AdjustPan`](xref:Android.Views.SoftInput.AdjustPan) 调整选项，该选项不会在输入控件具有焦点时调整窗口的大小。 相反，窗口的内容是平移的，因此不会由软键盘遮盖当前焦点。 `Resize`该值使用 [`AdjustResize`](xref:Android.Views.SoftInput.AdjustResize) 调整选项，该选项可在输入控件有焦点的情况下调整窗口的大小，以便为软键盘腾出空间。
 
 结果是，当输入控件具有焦点时，可以设置软键盘输入区域操作模式：
 
@@ -49,7 +49,7 @@ App.Current.On<Android>().UseWindowSoftInputModeAdjust(WindowSoftInputModeAdjust
 
 ## <a name="related-links"></a>相关链接
 
-- [PlatformSpecifics （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [PlatformSpecifics (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [创建平台特定信息](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [AndroidSpecific API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)
 - [AndroidSpecific. AppCompat API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat)

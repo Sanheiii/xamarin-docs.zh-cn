@@ -10,22 +10,22 @@ ms.date: 08/22/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d9fa710f5dfc61c2892b8fc409a39b37cf449018
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: e63d92cde5925561dae4217c3c46af2c2c59f795
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136300"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563986"
 ---
 # <a name="skiasharp-effects"></a>SkiaSharp 效果
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-SkiaSharp [`SKPaint`](xref:SkiaSharp.SKPaint) 类定义了六个属性，这些属性可根据一般的_效果_进行分类。 这些是以某种方式更改图形的正常显示方式的属性。 SkiaSharp 效果分为六类：
+SkiaSharp [`SKPaint`](xref:SkiaSharp.SKPaint) 类定义了六个属性，这些属性可根据一般的 _效果_进行分类。 这些是以某种方式更改图形的正常显示方式的属性。 SkiaSharp 效果分为六类：
 
 ## <a name="path-effects"></a>[路径效果](../curves/effects.md)
 
-将的 [`PathEffect`](xref:SkiaSharp.SKPaint.PathEffect) 属性设置为 `SKPaint` 类型的对象 [`SKPathEffect`](xref:SkiaSharp.SKPathEffect) 可以显示虚线，或使用从路径创建的模式来描边或填充区域。 在 SkiaSharp 的文章[**路径效果**](../curves/effects.md)中，此系列中介绍了该路径效果。
+将的 [`PathEffect`](xref:SkiaSharp.SKPaint.PathEffect) 属性设置为 `SKPaint` 类型的对象 [`SKPathEffect`](xref:SkiaSharp.SKPathEffect) 可以显示虚线，或使用从路径创建的模式来描边或填充区域。 在 SkiaSharp 的文章 [**路径效果**](../curves/effects.md)中，此系列中介绍了该路径效果。
 
 ## <a name="shaders"></a>[着色器](shaders/index.md)
 
@@ -47,9 +47,9 @@ SkiaSharp [`SKPaint`](xref:SkiaSharp.SKPaint) 类定义了六个属性，这些�
 
 [`ColorFilter`](xref:SkiaSharp.SKPaint.ColorFilter) `SKPaint` 使用表或矩阵转换将的属性设置为类型的对象 [`SKColorFilter`](xref:SkiaSharp.SKColorFilter) ，从而更改颜色。
 
-这些文章的所有示例代码都位于[**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)中。 从主页中，选择 " **SkiaSharp 效果**"。
+这些文章的所有示例代码都位于 [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)中。 从主页中，选择 " **SkiaSharp 效果**"。
 
 ## <a name="related-links"></a>相关链接
 
-- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [SkiaSharp Api](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (示例) ](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

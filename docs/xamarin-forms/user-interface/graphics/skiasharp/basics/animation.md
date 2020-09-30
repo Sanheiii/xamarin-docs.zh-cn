@@ -10,16 +10,16 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 71e64f7b8286f22040a802336e9be756d932c0cd
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 3052220b914b09f18490846bbd2558bbf07e4d3a
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86936534"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562257"
 ---
 # <a name="basic-animation-in-skiasharp"></a>SkiaSharp 中的基本动画
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _了解如何对 SkiaSharp 图形进行动画处理_
 
@@ -27,7 +27,7 @@ _了解如何对 SkiaSharp 图形进行动画处理_
 
 ![看似从中心展开的几个同心圆圆圈](animation-images/animationexample.png)
 
-[**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)程序中的**Pulsating 椭圆**页对椭圆的两个轴进行动画处理，使其看起来像 Pulsating，甚至还可以控制此 pulsation 的速率。 [**PulsatingEllipsePage**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/PulsatingEllipsePage.xaml)文件实例化 Xamarin.Forms `Slider` 和 `Label` 以显示滑块的当前值。 这是将 `SKCanvasView` 与其他视图集成的常见方法 Xamarin.Forms ：
+[**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)程序中的**Pulsating 椭圆**页对椭圆的两个轴进行动画处理，使其看起来像 Pulsating，甚至还可以控制此 pulsation 的速率。 [**PulsatingEllipsePage**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/PulsatingEllipsePage.xaml)文件实例化 Xamarin.Forms `Slider` 和 `Label` 以显示滑块的当前值。 这是将 `SKCanvasView` 与其他视图集成的常见方法 Xamarin.Forms ：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -109,7 +109,7 @@ async Task AnimationLoop()
 
 ```
 
-`while`循环首先从获取的周期时间开始 `Slider` 。 这是一个时间（以秒为单位），例如5。 第二个语句 `t` 为*time*计算值。 对于 `cycleTime` 5， `t` 每5秒增加0到1。 `Math.Sin`第二个语句中函数的参数的范围为0到2π，每5秒一次。 `Math.Sin`函数返回一个介于0到1之间的值，返回0，然后返回 &ndash; 1 和0，每5秒一次，但如果值接近1或-1，则值的更改速度将变慢。 添加了值1，因此值始终为正值，然后将其除以2，因此，这些值的范围介于1/2 到1到1/2 到0到1/2 之间，但当值介于1和0之间时，它们会变慢。 此项存储在 `scale` 字段中，并且 `SKCanvasView` 无效。
+`while`循环首先从获取的周期时间开始 `Slider` 。 这是一个时间（以秒为单位），例如5。 第二个语句 `t` 为 *time*计算值。 对于 `cycleTime` 5， `t` 每5秒增加0到1。 `Math.Sin`第二个语句中函数的参数的范围为0到2π，每5秒一次。 `Math.Sin`函数返回一个介于0到1之间的值，返回0，然后返回 &ndash; 1 和0，每5秒一次，但如果值接近1或-1，则值的更改速度将变慢。 添加了值1，因此值始终为正值，然后将其除以2，因此，这些值的范围介于1/2 到1到1/2 到0到1/2 之间，但当值介于1和0之间时，它们会变慢。 此项存储在 `scale` 字段中，并且 `SKCanvasView` 无效。
 
 `PaintSurface`方法使用此 `scale` 值来计算椭圆的两个轴：
 
@@ -146,13 +146,13 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 [![Pulsating 椭圆页的三向屏幕截图](animation-images/pulsatingellipse-small.png)](animation-images/pulsatingellipse-large.png#lightbox "Pulsating 椭圆页的三向屏幕截图")
 
-请注意， `SKPaint` 对象是在块中创建的 `using` 。 与许多 SkiaSharp 类一样，派生自，后者 `SKPaint` `SKObject` `SKNativeObject` 实现 [`IDisposable`](xref:System.IDisposable) 接口。 `SKPaint`重写 `Dispose` 方法以释放非托管资源。
+请注意， `SKPaint` 对象是在块中创建的 `using` 。 与许多 SkiaSharp 类一样，派生自，后者 `SKPaint` `SKObject` `SKNativeObject` 实现 [`IDisposable`](xref:System.IDisposable) 接口。 `SKPaint` 重写 `Dispose` 方法以释放非托管资源。
 
  放 `SKPaint` 入 `using` 块可确保 `Dispose` 在块的末尾调用，以释放这些非托管资源。 当由 `SKPaint` .net 垃圾回收器释放对象所使用的内存，但在动画代码中，最好以更具序的方式释放内存，这种情况仍会发生。
 
  在这种特定情况下，更好的解决方案是创建两个 `SKPaint` 对象一次，并将其另存为字段。
 
-这就是**扩展圆圈**动画的作用。 [`ExpandingCirclesPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/ExpandingCirclesPage.cs)类首先定义多个字段，包括 `SKPaint` 对象：
+这就是 **扩展圆圈** 动画的作用。 [`ExpandingCirclesPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/ExpandingCirclesPage.cs)类首先定义多个字段，包括 `SKPaint` 对象：
 
 ```csharp
 public class ExpandingCirclesPage : ContentPage
@@ -251,5 +251,5 @@ public class ExpandingCirclesPage : ContentPage
 
 ## <a name="related-links"></a>相关链接
 
-- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [SkiaSharp Api](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (示例) ](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

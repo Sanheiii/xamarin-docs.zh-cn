@@ -10,12 +10,12 @@ ms.date: 05/24/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 7d5a4fc818cef77671b6cabddc56de8234cb858d
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: f783dcc9d0070e8e816f378d261191444822841b
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84127798"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91561945"
 ---
 # <a name="skiasharp-curves-and-paths"></a>SkiaSharp 曲线和路径
 
@@ -23,9 +23,9 @@ ms.locfileid: "84127798"
 
 _了解如何使用 SkiaSharp 绘制曲线和使用路径功能_
 
-在 [`SKPath`](xref:SkiaSharp.SKPath) [**SkiaSharp 行和路径**](../paths/index.md)一文中开始探索方法和属性。 此处的文章继续使用向对象添加曲线 `SKPath` 并利用其他强大路径功能的方法。 你将了解如何在简洁文本字符串中指定整个路径，如何使用路径效果，以及如何深入了解路径内部。
+在 [`SKPath`](xref:SkiaSharp.SKPath) [**SkiaSharp 行和路径**](../paths/index.md) 一文中开始探索方法和属性。 此处的文章继续使用向对象添加曲线 `SKPath` 并利用其他强大路径功能的方法。 你将了解如何在简洁文本字符串中指定整个路径，如何使用路径效果，以及如何深入了解路径内部。
 
-本节中的所有示例程序都可在[**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)程序的 " **SkiaSharp 曲线和路径**" 页中找到，也可在解决方案的 "[**曲线**](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves)" 文件夹中找到。
+本节中的所有示例程序都可在[**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)程序的 " **SkiaSharp 曲线和路径**" 页中找到，也可在解决方案的 "[**曲线**](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves)" 文件夹中找到。
 
 ## <a name="three-ways-to-draw-an-arc"></a>[绘制弧线的三个方法](arcs.md)
 
@@ -57,5 +57,5 @@ _了解如何使用 SkiaSharp 绘制曲线和使用路径功能_
 
 ## <a name="related-links"></a>相关链接
 
-- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [SkiaSharp Api](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (示例) ](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Forms转
+title: Xamarin.Forms 转
 description: Xamarin.Forms开关是一种按钮类型，用户可以对其进行操作以在开启和关闭状态之间切换。 本文介绍如何使用 Switch 类显示切换 UI 元素。
 ms.prod: xamarin
 ms.assetId: B2F9CC65-481B-4323-8E77-C6BE29C90DE9
@@ -10,28 +10,28 @@ ms.date: 05/19/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 12831eec6ba97eee7cde7479729c5c22dce78e90
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 94f77fd70fee595efd341ff7372828b12661442d
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84946413"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91561724"
 ---
-# <a name="xamarinforms-switch"></a>Xamarin.Forms转
+# <a name="no-locxamarinforms-switch"></a>Xamarin.Forms 转
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-switchdemos/)
 
 Xamarin.Forms [`Switch`](xref:Xamarin.Forms.Switch) 控件是一个水平切换按钮，用户可以对其进行操作以在打开和关闭状态之间切换，这些状态由一个 `boolean` 值表示。 `Switch`类继承自 [`View`](xref:Xamarin.Forms.View) 。
 
-以下屏幕截图显示了在 `Switch` iOS 和 Android 上，控件在其**打开**和**关闭**切换状态：
+以下屏幕截图显示了在 `Switch` iOS 和 Android 上，控件在其 **打开** 和 **关闭** 切换状态：
 
 ![IOS 和 Android 上的开启和关闭状态的开关屏幕截图](switch-images/switch-states-default.png "IOS 和 Android 上的交换机")
 
 `Switch`控件定义以下属性：
 
-- [`IsToggled`](xref:Xamarin.Forms.Switch.IsToggled)指示是否 `boolean` `Switch` **打开**的值。
-- [`OnColor`](xref:Xamarin.Forms.Switch.OnColor)是一个 `Color` ，它会影响 `Switch` 在切换或**开启**状态下呈现的方式。
-- `ThumbColor`是 `Color` 交换机拇指的。
+- [`IsToggled`](xref:Xamarin.Forms.Switch.IsToggled) 指示是否 `boolean` `Switch` **打开**的值。
+- [`OnColor`](xref:Xamarin.Forms.Switch.OnColor) 是一个 `Color` ，它会影响 `Switch` 在切换或 **开启**状态下呈现的方式。
+- `ThumbColor` 是 `Color` 交换机拇指的。
 
 对象支持这些属性 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，这意味着可以对其进行 `Switch` 样式化并成为数据绑定的目标。
 
@@ -125,7 +125,7 @@ switchControl.Toggled += (sender, e) =>
 
 ## <a name="switch-visual-states"></a>切换可视状态
 
-[`Switch`](xref:Xamarin.Forms.Switch)具有 `On` 和 `Off` 可视状态，可用于在属性更改时启动视觉对象更改 [`IsToggled`](xref:Xamarin.Forms.Switch.IsToggled) 。
+[`Switch`](xref:Xamarin.Forms.Switch) 具有 `On` 和 `Off` 可视状态，可用于在属性更改时启动视觉对象更改 [`IsToggled`](xref:Xamarin.Forms.Switch.IsToggled) 。
 
 下面的 XAML 示例演示如何定义和状态的可视状态 `On` `Off` ：
 
@@ -163,6 +163,6 @@ switchControl.Toggled += (sender, e) =>
 
 ## <a name="related-links"></a>相关链接
 
-- [切换演示](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-switchdemos/)
+- [切换演示](/samples/xamarin/xamarin-forms-samples/userinterface-switchdemos/)
 - [Xamarin.Forms 触发器](~/xamarin-forms/app-fundamentals/triggers.md)
 - [Xamarin.Forms 可视状态管理器](~/xamarin-forms/user-interface/visual-state-manager.md)

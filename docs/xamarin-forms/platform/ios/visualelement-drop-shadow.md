@@ -10,12 +10,12 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b4772299421ad26f0fbe0fced8c80a7f633341c6
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 2e54182ca5c1f2afbc107011aea6b84af864e78d
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938445"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562336"
 ---
 # <a name="visualelement-drop-shadows-on-ios"></a>IOS 上的 VisualElement 投影
 
@@ -62,15 +62,15 @@ boxView.On<iOS>()
        .SetShadowRadius(12);
 ```
 
-`VisualElement.On<iOS>`方法指定此平台特定的仅在 iOS 上运行。 [ `VisualElement.SetIsShadowEnabled` ] （X： Xamarin.Forms 。PlatformConfiguration. iOSSpecific. VisualElement. SetIsShadowEnabled （ Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration、 Xamarin.Forms 。VisualElement}，System.object）方法在 [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) 命名空间中，用于控制是否在上启用了投影 `VisualElement` 。 此外，可以调用以下方法来控制投影：
+`VisualElement.On<iOS>`方法指定此平台特定的仅在 iOS 上运行。 [ `VisualElement.SetIsShadowEnabled` ] (x： Xamarin.Forms 。PlatformConfiguration. iOSSpecific. VisualElement. SetIsShadowEnabled (Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration、 Xamarin.Forms 。VisualElement} （在命名空间中）) # A3 方法 [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) 用于控制是否在上启用了投影 `VisualElement` 。 此外，可以调用以下方法来控制投影：
 
-- [ `SetShadowColor` ] （x： Xamarin.Forms 。PlatformConfiguration. iOSSpecific. VisualElement. SetShadowColor （ Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration、 Xamarin.Forms 。VisualElement}， Xamarin.Forms 。颜色））–设置投影的颜色。 默认颜色为 [`Color.Default`](xref:Xamarin.Forms.Color.Default*) 。
-- [ `SetShadowOffset` ] （x： Xamarin.Forms 。PlatformConfiguration. iOSSpecific. VisualElement. SetShadowOffset （ Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration、 Xamarin.Forms 。VisualElement}， Xamarin.Forms 。大小）-设置投影的偏移量。 偏移量会更改阴影的转换方向，并指定为 [`Size`](xref:Xamarin.Forms.Size) 值。 `Size`结构值以与设备无关的单位表示，其第一个值为向左（负值）或向右（正值）的距离，第二个值为上面的距离（负值）或更低（正值）。 此属性的默认值为（0.0，0.0），这会导致在的每一侧周围都有投影 `VisualElement` 。
-- [ `SetShadowOpacity` ] （x： Xamarin.Forms 。PlatformConfiguration. iOSSpecific. VisualElement. SetShadowOpacity （ Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration、 Xamarin.Forms 。VisualElement}，System.object）–设置投影的不透明度，其值为0.0 （透明）到1.0 （不透明）范围内的值。 默认不透明度值为0.5。
-- [ `SetShadowRadius` ] （x： Xamarin.Forms 。PlatformConfiguration. iOSSpecific. VisualElement. SetShadowRadius （ Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration、 Xamarin.Forms 。VisualElement}，System.object）–设置用于渲染投影的模糊半径。 默认半径值为10.0。
+- [ `SetShadowColor` ] (x： Xamarin.Forms 。PlatformConfiguration. iOSSpecific. VisualElement. SetShadowColor (Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration、 Xamarin.Forms 。VisualElement}， Xamarin.Forms 。Color) # A3 –设置投影的颜色。 默认颜色为 [`Color.Default`](xref:Xamarin.Forms.Color.Default*) 。
+- [ `SetShadowOffset` ] (x： Xamarin.Forms 。PlatformConfiguration. iOSSpecific. VisualElement. SetShadowOffset (Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration、 Xamarin.Forms 。VisualElement}， Xamarin.Forms 。Size) # A3 –设置投影的偏移量。 偏移量会更改阴影的转换方向，并指定为 [`Size`](xref:Xamarin.Forms.Size) 值。 `Size`结构值以与设备无关的单位表示，其第一个值为向左 (负值) 或右 (正值) ，第二个值是高于正值 (或低于) 负值 (的距离。 此属性的默认值为 (0.0，0.0) ，这会导致在的每一侧周围都有投影 `VisualElement` 。
+- [ `SetShadowOpacity` ] (x： Xamarin.Forms 。PlatformConfiguration. iOSSpecific. VisualElement. SetShadowOpacity (Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration、 Xamarin.Forms 。VisualElement}，System.object) # A3 –设置投影的不透明度，其值为 0.0 (透明) 到 1.0 (不透明) 。 默认不透明度值为0.5。
+- [ `SetShadowRadius` ] (x： Xamarin.Forms 。PlatformConfiguration. iOSSpecific. VisualElement. SetShadowRadius (Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration、 Xamarin.Forms 。VisualElement}，System.object) # A3 –设置用于渲染投影的模糊半径。 默认半径值为10.0。
 
 > [!NOTE]
-> 可以通过调用 [ `GetIsShadowEnabled` ] （x：）来查询投影的状态 Xamarin.Forms 。PlatformConfiguration. iOSSpecific. VisualElement. GetIsShadowEnabled （ Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration、 Xamarin.Forms 。VisualElement}）），[ `GetShadowColor` ] （x： Xamarin.Forms 。PlatformConfiguration. iOSSpecific. VisualElement. GetShadowColor （ Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration、 Xamarin.Forms 。VisualElement}）），[ `GetShadowOffset` ] （x： Xamarin.Forms 。PlatformConfiguration. iOSSpecific. VisualElement. GetShadowOffset （ Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration、 Xamarin.Forms 。VisualElement}）），[ `GetShadowOpacity` ] （x： Xamarin.Forms 。PlatformConfiguration. iOSSpecific. VisualElement. GetShadowOpacity （ Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration、 Xamarin.Forms 。VisualElement}））和 [ `GetShadowRadius` ] （x： Xamarin.Forms 。PlatformConfiguration. iOSSpecific. VisualElement. GetShadowRadius （ Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration、 Xamarin.Forms 。VisualElement}））方法。
+> 可以通过调用 [ `GetIsShadowEnabled` ] (x：来查询投影的状态 Xamarin.Forms 。PlatformConfiguration. iOSSpecific. VisualElement. GetIsShadowEnabled (Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration、 Xamarin.Forms 。VisualElement} ) # A3，[ `GetShadowColor` ] (x： Xamarin.Forms 。PlatformConfiguration. iOSSpecific. VisualElement. GetShadowColor (Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration、 Xamarin.Forms 。VisualElement} ) # A7，[ `GetShadowOffset` ] (x： Xamarin.Forms 。PlatformConfiguration. iOSSpecific. VisualElement. GetShadowOffset (Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration、 Xamarin.Forms 。VisualElement} ) # A11，[ `GetShadowOpacity` ] (x： Xamarin.Forms 。PlatformConfiguration. iOSSpecific. VisualElement. GetShadowOpacity (Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration、 Xamarin.Forms 。VisualElement} ) # A15，[ `GetShadowRadius` ] (x： Xamarin.Forms 。PlatformConfiguration. iOSSpecific. VisualElement. GetShadowRadius (Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration、 Xamarin.Forms 。VisualElement} ) # A19 方法。
 
 结果就是可以在上启用投影 [`VisualElement`](xref:Xamarin.Forms.VisualElement) ：
 
@@ -78,6 +78,6 @@ boxView.On<iOS>()
 
 ## <a name="related-links"></a>相关链接
 
-- [PlatformSpecifics （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [PlatformSpecifics (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [创建平台特定信息](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [iOSSpecific API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

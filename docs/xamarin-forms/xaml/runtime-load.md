@@ -1,5 +1,5 @@
 ---
-title: 在运行时加载 XAMLXamarin.Forms
+title: 在运行时加载 XAML Xamarin.Forms
 description: 可以在运行时通过 LoadFromXaml 扩展方法加载和分析 XAML。
 ms.prod: xamarin
 ms.assetid: 25F73FBF-2DD3-468E-A2D8-0897414F0F4A
@@ -10,14 +10,14 @@ ms.date: 12/12/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d750aa84a48ad4c8015a619d819134cefc63c3d9
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 071a7de630d7d7b7582e3c9fa8906919e92d1fb5
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139342"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91561997"
 ---
-# <a name="loading-xaml-at-runtime-in-xamarinforms"></a>在运行时加载 XAMLXamarin.Forms
+# <a name="loading-xaml-at-runtime-in-no-locxamarinforms"></a>在运行时加载 XAML Xamarin.Forms
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-loadruntimexaml)
 
@@ -37,7 +37,7 @@ public partial class MainPage : ContentPage
 }
 ```
 
-当 Visual Studio 生成包含 XAML 文件的项目时，它会分析 XAML 文件以生成一个 c # 代码文件（例如， **MainPage.xaml.g.cs**），该文件包含方法的定义 `InitializeComponent` ：
+当 Visual Studio 生成包含 XAML 文件的项目时，它会分析 XAML 文件以生成 c # 代码文件 (例如，包含方法定义的 **MainPage.xaml.g.cs**) `InitializeComponent` ：
 
 ```csharp
 private void InitializeComponent()
@@ -47,7 +47,7 @@ private void InitializeComponent()
 }
 ```
 
-`InitializeComponent`方法调用 [`LoadFromXaml`](xref:Xamarin.Forms.Xaml.Extensions.LoadFromXaml*) 方法从 .NET Standard 库中提取 XAML 文件（或其已编译的二进制文件）。 提取后，它将初始化在 XAML 文件中定义的所有对象，将它们一起连接到父-子关系，将代码中定义的事件处理程序附加到 XAML 文件中设置的事件，并将对象的结果树设置为页面的内容。
+`InitializeComponent`方法调用 [`LoadFromXaml`](xref:Xamarin.Forms.Xaml.Extensions.LoadFromXaml*) 方法，以从 .NET Standard 库中提取 XAML 文件 (或其已编译的二进制) 。 提取后，它将初始化在 XAML 文件中定义的所有对象，将它们一起连接到父-子关系，将代码中定义的事件处理程序附加到 XAML 文件中设置的事件，并将对象的结果树设置为页面的内容。
 
 ## <a name="loading-xaml-at-runtime"></a>在运行时加载 XAML
 
@@ -88,7 +88,7 @@ await Navigation.PushAsync(page);
 
 ## <a name="accessing-elements"></a>访问元素
 
-使用方法在运行时加载 XAML [`LoadFromXaml`](xref:Xamarin.Forms.Xaml.Extensions.LoadFromXaml*) 不允许强类型访问具有指定运行时对象名称（使用）的 xaml 元素 `x:Name` 。 但是，可以使用方法检索这些 XAML 元素， [`FindByName`](xref:Xamarin.Forms.NameScopeExtensions.FindByName*) 然后根据需要进行访问：
+使用方法在运行时加载 XAML [`LoadFromXaml`](xref:Xamarin.Forms.Xaml.Extensions.LoadFromXaml*) 不允许强类型访问使用)  (指定运行时对象名称的 xaml 元素 `x:Name` 。 但是，可以使用方法检索这些 XAML 元素， [`FindByName`](xref:Xamarin.Forms.NameScopeExtensions.FindByName*) 然后根据需要进行访问：
 
 ```csharp
 // See the sample for the full XAML string
@@ -104,4 +104,4 @@ monkeyLabel.Text = "Seated Monkey";
 
 ## <a name="related-links"></a>相关链接
 
-- [LoadRuntimeXAML （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-loadruntimexaml)
+- [LoadRuntimeXAML (示例) ](/samples/xamarin/xamarin-forms-samples/xaml-loadruntimexaml)

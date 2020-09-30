@@ -10,12 +10,12 @@ ms.date: 10/25/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c400bb342568a0399e2a582496f85ead273b6994
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: e8afb0aa2a36a73af6c63e48a6c1048d8b69cf90
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84572177"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563973"
 ---
 # <a name="part-2-essential-xaml-syntax"></a>第 2 部分。 基本 XAML 语法
 
@@ -85,9 +85,9 @@ _XAML 主要用于实例化和初始化对象。但通常情况下，必须将�
 
 利用这一新语法，可以引入一些便利术语：
 
-- `Label`是一个*对象元素*。 它是 Xamarin.Forms 表示为 XML 元素的对象。
-- `Text`、 `VerticalOptions` `FontAttributes` 和 `FontSize` 是*属性特性*。 它们是 Xamarin.Forms 表示为 XML 特性的属性。
-- 在该最终代码段中， `TextColor` 已成为*属性元素*。 它是一个 Xamarin.Forms 属性，但它现在是一个 XML 元素。
+- `Label` 是一个  *对象元素*。 它是 Xamarin.Forms 表示为 XML 元素的对象。
+- `Text`、  `VerticalOptions` `FontAttributes` 和  `FontSize` 是  *属性特性*。 它们是 Xamarin.Forms 表示为 XML 特性的属性。
+- 在该最终代码段中， `TextColor` 已成为  *属性元素*。 它是一个 Xamarin.Forms 属性，但它现在是一个 XML 元素。
 
 属性元素的定义可能最初似乎违反了 XML 语法，但不是这样。 该句点在 XML 中没有任何特殊含义。 对于 XML 解码器， `Label.TextColor` 只是一个普通的子元素。
 
@@ -261,11 +261,11 @@ _XAML 主要用于实例化和初始化对象。但通常情况下，必须将�
 
 仅从语法中判断，这些 `Grid.Row` 、 `Grid.Column` 、 `Grid.RowSpan` 和 `Grid.ColumnSpan` 特性似乎是的静态字段或属性 `Grid` ，但更有趣的是， `Grid` 不定义任何名为 `Row` 、、或的内容 `Column` `RowSpan` `ColumnSpan` 。
 
-相反， `Grid` 定义了四个名为、和的可绑定属性 `RowProperty` `ColumnProperty` `RowSpanProperty` `ColumnSpanProperty` 。 这些是特殊类型的可绑定属性，称为*附加属性*。 它们由类定义， `Grid` 但在的子级上设置 `Grid` 。
+相反， `Grid` 定义了四个名为、和的可绑定属性 `RowProperty` `ColumnProperty` `RowSpanProperty` `ColumnSpanProperty` 。 这些是特殊类型的可绑定属性，称为 *附加属性*。 它们由类定义， `Grid` 但在的子级上设置 `Grid` 。
 
 若要在代码中使用这些附加属性， `Grid` 该类提供了名为的静态方法，等等 `SetRow` `GetColumn` 。 但在 XAML 中，这些附加属性 `Grid` 使用简单属性名称设置为的子级中的特性。
 
-在 XAML 文件中，附加属性始终可识别为包含以句点分隔的类和属性名称的属性。 它们被称为*附加属性*，因为它们由一个类（在本例中 `Grid` 为）定义，但附加到其他对象（在本例中为的子级 `Grid` ）。 在布局过程中， `Grid` 可以询问这些附加属性的值，以了解在何处放置每个子元素。
+在 XAML 文件中，附加属性始终可识别为包含以句点分隔的类和属性名称的属性。 它们被称为 *附加属性* ，因为在这种情况下，这些属性由一个类 (定义， `Grid`) 但附加到其他对象 (在此示例中，这是) 的子项 `Grid` 。 在布局过程中， `Grid` 可以询问这些附加属性的值，以了解在何处放置每个子元素。
 
 `AbsoluteLayout`类定义了两个名为 `LayoutBounds` 和 `LayoutFlags` 的附加属性。 下面是使用的比例定位和大小调整功能实现的棋盘模式 `AbsoluteLayout` ：
 
@@ -324,7 +324,7 @@ _XAML 主要用于实例化和初始化对象。但通常情况下，必须将�
 
 在前面的示例中， `StackLayout` 、 `Grid` 和 `AbsoluteLayout` 对象被设置为 `Content` 的属性 `ContentPage` ，并且这些布局的子级实际上是集合中的项 `Children` 。 但 `Content` `Children` XAML 文件中没有这些和属性。
 
-当然，您可以将 `Content` 和 `Children` 属性包含为属性元素，例如在**XamlPlusCode**示例中：
+当然，您可以将 `Content` 和 `Children` 属性包含为属性元素，例如在 **XamlPlusCode** 示例中：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -353,7 +353,7 @@ _XAML 主要用于实例化和初始化对象。但通常情况下，必须将�
 </ContentPage>
 ```
 
-真正的问题是：为什么 XAML 文件中*不*需要这些属性元素？
+真正的问题是：为什么 XAML 文件中 *不* 需要这些属性元素？
 
 在中 Xamarin.Forms 为使用而定义的元素允许在类的特性中有一个属性标记 `ContentProperty` 。 如果在 `ContentPage` 联机文档中查找类 Xamarin.Forms ，则会看到以下属性：
 
@@ -364,7 +364,7 @@ public class ContentPage : TemplatedPage
 
 这意味着 `Content` 不需要属性元素标记。 在开始标记和结束标记之间出现的任何 XML 内容 `ContentPage` 都假设分配给 `Content` 属性。
 
- `StackLayout`、 `Grid` 、 `AbsoluteLayout` 和 `RelativeLayout` 都派生自 `Layout<View>` ，如果你 `Layout<T>` 在文档中查找， Xamarin.Forms 你将看到另一个 `ContentProperty` 属性：
+ `StackLayout`、 `Grid` 、 `AbsoluteLayout` 和 `RelativeLayout` 都派生自 `Layout<View>` ，如果你 `Layout<T>` 在文档中查找，  Xamarin.Forms 你将看到另一个 `ContentProperty` 属性：
 
 ```csharp
 [Xamarin.Forms.ContentProperty("Children")]
@@ -400,7 +400,7 @@ if (Device.RuntimePlatform == Device.iOS)
 </ContentPage>
 ```
 
-在这些标记中，包含 `OnPlatform` 标记。 `OnPlatform`是一个泛型类。 需要指定泛型类型参数，在本例中为 `Thickness` `Padding` 属性类型。 幸运的是，有专门用于定义名为的泛型参数的 XAML 属性 `x:TypeArguments` 。 这应与要设置的属性的类型匹配：
+在这些标记中，包含 `OnPlatform` 标记。 `OnPlatform` 是一个泛型类。 需要指定泛型类型参数，在本例中为 `Thickness` `Padding` 属性类型。 幸运的是，有专门用于定义名为的泛型参数的 XAML 属性 `x:TypeArguments` 。 这应与要设置的属性的类型匹配：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -416,7 +416,7 @@ if (Device.RuntimePlatform == Device.iOS)
 </ContentPage>
 ```
 
-`OnPlatform`具有一个名为 `Platforms` 的属性，它是 `IList` `On` 对象的。 使用该属性的属性元素标记：
+`OnPlatform` 具有一个名为 `Platforms` 的属性，它是 `IList` `On` 对象的。 使用该属性的属性元素标记：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -526,15 +526,15 @@ if (Device.RuntimePlatform == Device.iOS)
 ```
 
 > [!NOTE]
-> `OnPlatform`标记扩展还可以在 XAML 中用于根据每个平台自定义 UI 外观。 它提供与和类相同的 `OnPlatform` 功能 `On` ，但具有更简洁的表示形式。 有关详细信息，请参阅[OnPlatform 标记扩展](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform-markup-extension)。
+> `OnPlatform`标记扩展还可以在 XAML 中用于根据每个平台自定义 UI 外观。 它提供与和类相同的 `OnPlatform` 功能 `On` ，但具有更简洁的表示形式。 有关详细信息，请参阅 [OnPlatform 标记扩展](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform-markup-extension)。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
-对于属性元素和附加属性，已经建立了许多基本 XAML 语法。 但是，有时需要以间接方式（例如，从资源字典）将属性设置为对象。 下一部分第3部分介绍了此方法[。XAML 标记扩展](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)。
+对于属性元素和附加属性，已经建立了许多基本 XAML 语法。 但是，有时需要以间接方式（例如，从资源字典）将属性设置为对象。 下一部分第3部分介绍了此方法 [。XAML 标记扩展](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)。
 
 ## <a name="related-links"></a>相关链接
 
-- [XamlSamples](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
+- [XamlSamples](/samples/xamarin/xamarin-forms-samples/xamlsamples)
 - [第1部分。与 XAML 入门](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)
 - [第3部分。XAML 标记扩展](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
 - [第4部分。数据绑定基础知识](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)

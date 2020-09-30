@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsDatePicker
+title: Xamarin.Forms DatePicker
 description: DatePicker 是 Xamarin.Forms 允许用户选择日期的视图。 本文介绍如何在应用程序中使用 DatePicker Xamarin.Forms 。
 ms.prod: xamarin
 ms.assetid: 68E8EF8A-42E7-4939-8ABE-64D060E609D9
@@ -10,29 +10,29 @@ ms.date: 06/04/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5c1de52e2a173e7d9a366d8fd7cbd63998b3a6d1
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: fed80f0954613a6bff49d0611d56549405c78333
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137353"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91564090"
 ---
-# <a name="xamarinforms-datepicker"></a>Xamarin.FormsDatePicker
+# <a name="no-locxamarinforms-datepicker"></a>Xamarin.Forms DatePicker
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-datepicker)
 
 _Xamarin.Forms允许用户选择日期的视图。_
 
-Xamarin.Forms [`DatePicker`](xref:Xamarin.Forms.DatePicker) 调用平台的日期选取器控件，并允许用户选择日期。 `DatePicker`定义八个属性：
+Xamarin.Forms [`DatePicker`](xref:Xamarin.Forms.DatePicker) 调用平台的日期选取器控件，并允许用户选择日期。 `DatePicker` 定义八个属性：
 
-- [`MinimumDate`](xref:Xamarin.Forms.DatePicker.MinimumDate)类型 [`DateTime`](xref:System.DateTime) 为的，默认为1900年的第一天。
-- [`MaximumDate`](xref:Xamarin.Forms.DatePicker.MaximumDate)类型 `DateTime` 为的，默认为2100年的最后一天。
-- [`Date`](xref:Xamarin.Forms.DatePicker.Date)类型为的 `DateTime` 选定日期，默认值为 [`DateTime.Today`](xref:System.DateTime.Today) 。
-- [`Format`](xref:Xamarin.Forms.DatePicker.Format)类型为的 `string` [标准](/dotnet/standard/base-types/standard-date-and-time-format-strings/)或[自定义](/dotnet/standard/base-types/custom-date-and-time-format-strings/).net 格式设置字符串，默认值为 "D"，即长日期模式。
-- [`TextColor`](xref:Xamarin.Forms.DatePicker.TextColor)类型的 [`Color`](xref:Xamarin.Forms.Color) ，用于显示选定日期的颜色，默认值为 [`Color.Default`](xref:Xamarin.Forms.Color.Default) 。
-- [`FontAttributes`](xref:Xamarin.Forms.DatePicker.FontAttributes)类型 [`FontAttributes`](xref:Xamarin.Forms.FontAttributes) 为的，默认为 [`FontAtributes.None`](xref:Xamarin.Forms.FontAttributes.None) 。
-- [`FontFamily`](xref:Xamarin.Forms.DatePicker.FontFamily)类型 `string` 为的，默认为 `null` 。
-- [`FontSize`](xref:Xamarin.Forms.DatePicker.FontSize)类型 `double` 为的，默认值为-1.0。
+- [`MinimumDate`](xref:Xamarin.Forms.DatePicker.MinimumDate) 类型 [`DateTime`](xref:System.DateTime) 为的，默认为1900年的第一天。
+- [`MaximumDate`](xref:Xamarin.Forms.DatePicker.MaximumDate) 类型 `DateTime` 为的，默认为2100年的最后一天。
+- [`Date`](xref:Xamarin.Forms.DatePicker.Date) 类型为的 `DateTime` 选定日期，默认值为 [`DateTime.Today`](xref:System.DateTime.Today) 。
+- [`Format`](xref:Xamarin.Forms.DatePicker.Format) 类型为的 `string` [标准](/dotnet/standard/base-types/standard-date-and-time-format-strings/) 或 [自定义](/dotnet/standard/base-types/custom-date-and-time-format-strings/) .net 格式设置字符串，默认值为 "D"，即长日期模式。
+- [`TextColor`](xref:Xamarin.Forms.DatePicker.TextColor) 类型的 [`Color`](xref:Xamarin.Forms.Color) ，用于显示选定日期的颜色，默认值为 [`Color.Default`](xref:Xamarin.Forms.Color.Default) 。
+- [`FontAttributes`](xref:Xamarin.Forms.DatePicker.FontAttributes) 类型 [`FontAttributes`](xref:Xamarin.Forms.FontAttributes) 为的，默认为 [`FontAtributes.None`](xref:Xamarin.Forms.FontAttributes.None) 。
+- [`FontFamily`](xref:Xamarin.Forms.DatePicker.FontFamily) 类型 `string` 为的，默认为 `null` 。
+- [`FontSize`](xref:Xamarin.Forms.DatePicker.FontSize) 类型 `double` 为的，默认值为-1.0。
 - `CharacterSpacing`，属于 `double` 类型，是 `DatePicker` 文本字符之间的间距。
 
 `DatePicker` [`DateSelected`](xref:Xamarin.Forms.DatePicker.DateSelected) 当用户选择日期时，将触发事件。
@@ -42,7 +42,7 @@ Xamarin.Forms [`DatePicker`](xref:Xamarin.Forms.DatePicker) 调用平台的日�
 
 在内部， `DatePicker` 确保在 `Date` `MinimumDate` 和 `MaximumDate` （含）之间。 如果 `MinimumDate` 设置了或， `MaximumDate` 以使 `Date` 其不在两者之间，则 `DatePicker` 会调整的值 `Date` 。
 
-所有八个属性都是由对象支持的 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，这意味着它们可以采用样式，属性可以是数据绑定的目标。 `Date`属性的默认绑定模式为 [`BindingMode.TwoWay`](xref:Xamarin.Forms.BindingMode.TwoWay) ，这意味着它可以是使用[模型-视图-ViewModel （MVVM）](~/xamarin-forms/enterprise-application-patterns/mvvm.md)体系结构的应用程序中数据绑定的目标。
+所有八个属性都是由对象支持的 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，这意味着它们可以采用样式，属性可以是数据绑定的目标。 `Date`属性的默认绑定模式为 [`BindingMode.TwoWay`](xref:Xamarin.Forms.BindingMode.TwoWay) ，这意味着它可以是使用[模型-视图-ViewModel (MVVM) ](~/xamarin-forms/enterprise-application-patterns/mvvm.md)体系结构的应用程序中数据绑定的目标。
 
 ## <a name="initializing-the-datetime-properties"></a>初始化 DateTime 属性
 
@@ -65,7 +65,7 @@ DatePicker datePicker = new DatePicker
             Date="06/21/2018" />
 ```
 
-如果将的 `BindingContext` 属性 `DatePicker` 设置为 viewmodel 的实例，并且该实例包含 `DateTime` 名为、和的类型的属性 `MinDate` `MaxDate` `SelectedDate` （例如），则可以实例化， `DatePicker` 如下所示：
+如果将的 `BindingContext` 属性 `DatePicker` 设置为 viewmodel 的实例，而该实例包含 `DateTime` 名为、)  (和的类型为的属性， `MinDate` `MaxDate` `SelectedDate` 则可以实例化， `DatePicker` 如下所示：
 
 ```xaml
 <DatePicker MinimumDate="{Binding MinDate}"
@@ -77,7 +77,7 @@ DatePicker datePicker = new DatePicker
 
 如果不 `DatePicker` 包含其属性上的绑定 `Date` ，应用程序应将处理程序附加到事件， `DateSelected` 以便在用户选择新日期时得到通知。
 
-有关设置字体属性的信息，请参阅[字体](~/xamarin-forms/user-interface/text/fonts.md)。
+有关设置字体属性的信息，请参阅 [字体](~/xamarin-forms/user-interface/text/fonts.md)。
 
 ## <a name="datepicker-and-layout"></a>DatePicker 和布局
 
@@ -96,7 +96,7 @@ DatePicker datePicker = new DatePicker
 
 ## <a name="datepicker-in-an-application"></a>应用程序中的 DatePicker
 
-[**DaysBetweenDates**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-datepicker)示例 `DatePicker` 在其页面上包含两个视图。 这些值可用于选择两个日期，程序将计算这些日期之间的天数。 此程序不会更改 `MinimumDate` 和属性的设置 `MaximumDate` ，因此两个日期必须介于1900和2100之间。
+[**DaysBetweenDates**](/samples/xamarin/xamarin-forms-samples/userinterface-datepicker)示例 `DatePicker` 在其页面上包含两个视图。 这些值可用于选择两个日期，程序将计算这些日期之间的天数。 此程序不会更改 `MinimumDate` 和属性的设置 `MaximumDate` ，因此两个日期必须介于1900和2100之间。
 
 下面是 XAML 文件：
 
@@ -200,5 +200,5 @@ public partial class MainPage : ContentPage
 
 ## <a name="related-links"></a>相关链接
 
-- [DaysBetweenDates 示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-datepicker)
+- [DaysBetweenDates 示例](/samples/xamarin/xamarin-forms-samples/userinterface-datepicker)
 - [DatePicker API](xref:Xamarin.Forms.DatePicker)
