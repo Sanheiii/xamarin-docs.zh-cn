@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: b01ea403fde614bc06e616c3b1e30bfd8ed10a0f
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 8d7572d4fb04bd7974c1badc28226c991e60ddcd
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "71107173"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91451587"
 ---
 祝贺你完成了本教程的学习，在本教程中你学习了如何：
 
@@ -24,6 +24,6 @@ ms.locfileid: "71107173"
 
 ## <a name="related-links"></a>相关链接
 
-- [ListViewTutorial（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-tutorials-listviewtutorial/)
+- [ListViewTutorial（示例）](/samples/xamarin/xamarin-forms-samples/getstarted-tutorials-listviewtutorial/)
 - [Xamarin.Forms ListView（指南）](~/xamarin-forms/user-interface/listview/index.md)
 - [ListView API](xref:Xamarin.Forms.ListView)

@@ -1,21 +1,21 @@
 ### YamlMime:Landing
 title: Xamarin.iOS
-summary: Xamarin.iOS 为 .NET 开发人员提供了完整的 iOS SDK。 在 Visual Studio 中使用 C# 或 F# 生成完全本机的 iOS 应用。
+summary: Xamarin.iOS 向 .NET 开发人员公开了完整的 iOS SDK。 使用 C# 或 F# 在 Visual Studio 中生成完全本机的 iOS 应用。
 metadata:
   title: Xamarin.iOS
-  description: Xamarin.iOS 为 .NET 开发人员提供了完整的 iOS SDK。
+  description: Xamarin.iOS 向 .NET 开发人员公开了完整的 iOS SDK。
   ms.topic: landing-page
   ms.prod: xamarin
   ms.assetid: 7DF889E9-23F6-408F-B836-E0FDF5F0FA9B
   author: davidbritch
   ms.author: dabritch
   ms.date: 01/24/2020
-  ms.openlocfilehash: f800b61bfdf9d1e79eed6e943c2b49e4724ef641
-  ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+  ms.openlocfilehash: c54bbc3d1157ad46abbfe798dbf3227efaed4f78
+  ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 04/09/2020
-  ms.locfileid: "77374105"
+  ms.lasthandoff: 09/29/2020
+  ms.locfileid: "91432232"
 landingContent:
 - title: 入门
   linkLists:
@@ -53,7 +53,7 @@ landingContent:
       url: ~/ios/app-fundamentals/security-privacy.md
     - text: 触控
       url: ~/ios/app-fundamentals/touch/index.md
-    - text: 查看更多信息 >
+    - text: 查看更多 >
       url: ~/ios/app-fundamentals/index.md
 - title: 用户界面
   linkLists:
@@ -93,13 +93,13 @@ landingContent:
       url: ~/ios/platform/3d-touch.md
     - text: Touch ID 和 Face ID
       url: ~/ios/platform/touch-id-face-id.md
-    - text: 查看更多信息 >
+    - text: 查看更多 >
       url: ~/ios/platform/index.md
 - title: Xamarin.Essentials
   linkLists:
   - linkListType: concept
     links:
-    - text: About
+    - text: 关于
       url: ~/essentials/index.md?context=xamarin/ios
     - text: 入门
       url: ~/essentials/get-started.md?context=xamarin/ios
@@ -108,7 +108,7 @@ landingContent:
     - text: 疑难解答
       url: ~/essentials/troubleshooting.md?context=xamarin/ios
     - text: 发行说明
-      url: https://docs.microsoft.com/xamarin/essentials/release-notes/
+      url: /xamarin/essentials/release-notes/
 - title: 数据和云服务
   linkLists:
   - linkListType: concept
@@ -149,7 +149,7 @@ landingContent:
       url: ~/ios/deploy-test/touch.unit.md
     - text: 无线部署
       url: ~/ios/deploy-test/wireless-deployment.md
-    - text: 查看更多信息 >
+    - text: 查看更多 >
       url: ~/ios/deploy-test/index.md
 - title: 高级概念和内部信息
   linkLists:
