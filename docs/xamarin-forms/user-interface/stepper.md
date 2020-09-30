@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Forms步进
+title: Xamarin.Forms 步进
 description: Xamarin.Forms分档器允许用户从一系列值中选择一个数值。 它包含以减号和加号标记的两个按钮。 操作这两个按钮会以增量方式更改所选值。
 ms.prod: xamarin
 ms.assetid: 62571B3E-D84B-4F52-9FC7-C105D6733B16
@@ -10,14 +10,14 @@ ms.date: 10/17/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 4f071530fb17de44d8ede786ca1b42f5e11f4f7c
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 390bca8cb74fd2da725724769956b164e0264173
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84130541"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91558751"
 ---
-# <a name="xamarinforms-stepper"></a>Xamarin.Forms步进
+# <a name="no-locxamarinforms-stepper"></a>Xamarin.Forms 步进
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-stepperdemos)
 
@@ -27,29 +27,29 @@ Xamarin.Forms [`Stepper`](xref:Xamarin.Forms.Stepper) 包含标记有减号和�
 
 [`Stepper`](xref:Xamarin.Forms.Stepper)定义类型的四个属性 `double` ：
 
-- [`Increment`](xref:Xamarin.Forms.Stepper.Increment)选定值的更改量，默认值为1。
-- [`Minimum`](xref:Xamarin.Forms.Stepper.Minimum)范围的最小值，默认值为0。
-- [`Maximum`](xref:Xamarin.Forms.Stepper.Maximum)范围的最大值，默认值为100。
-- [`Value`](xref:Xamarin.Forms.Stepper.Value)是分档器的值，它的范围可以介于和之间，其 `Minimum` `Maximum` 默认值为0。
+- [`Increment`](xref:Xamarin.Forms.Stepper.Increment) 选定值的更改量，默认值为1。
+- [`Minimum`](xref:Xamarin.Forms.Stepper.Minimum) 范围的最小值，默认值为0。
+- [`Maximum`](xref:Xamarin.Forms.Stepper.Maximum) 范围的最大值，默认值为100。
+- [`Value`](xref:Xamarin.Forms.Stepper.Value) 是分档器的值，它的范围可以介于和之间，其 `Minimum` `Maximum` 默认值为0。
 
-所有这些属性都是由对象支持的 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 。 [`Value`](xref:Xamarin.Forms.Stepper.Value)属性的默认绑定模式为 [`BindingMode.TwoWay`](xref:Xamarin.Forms.BindingMode.TwoWay) ，这意味着它适用于使用[模型-视图-ViewModel （MVVM）](~/xamarin-forms/enterprise-application-patterns/mvvm.md)体系结构的应用程序中的绑定源。
+所有这些属性都是由对象支持的 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 。 [`Value`](xref:Xamarin.Forms.Stepper.Value)属性的默认绑定模式为 [`BindingMode.TwoWay`](xref:Xamarin.Forms.BindingMode.TwoWay) ，这意味着它适用于使用[模型-视图-ViewModel (MVVM) ](~/xamarin-forms/enterprise-application-patterns/mvvm.md)体系结构的应用程序中的绑定源。
 
 > [!WARNING]
-> 在内部， [`Stepper`](xref:Xamarin.Forms.Stepper) 确保 [`Minimum`](xref:Xamarin.Forms.Stepper.Minimum) 小于 [`Maximum`](xref:Xamarin.Forms.Stepper.Maximum) 。 如果 `Minimum` `Maximum` 已将或设置 `Minimum` 为不小于 `Maximum` ，则会引发异常。 有关设置和属性的详细 `Minimum` 信息 `Maximum` ，请参阅[预防措施](#precautions)部分。
+> 在内部， [`Stepper`](xref:Xamarin.Forms.Stepper) 确保 [`Minimum`](xref:Xamarin.Forms.Stepper.Minimum) 小于 [`Maximum`](xref:Xamarin.Forms.Stepper.Maximum) 。 如果 `Minimum` `Maximum` 已将或设置 `Minimum` 为不小于 `Maximum` ，则会引发异常。 有关设置和属性的详细 `Minimum` 信息 `Maximum` ，请参阅 [预防措施](#precautions) 部分。
 
 将 [`Stepper`](xref:Xamarin.Forms.Stepper) 强制 [`Value`](xref:Xamarin.Forms.Stepper.Value) 属性，使其在 [`Minimum`](xref:Xamarin.Forms.Stepper.Minimum) 和 [`Maximum`](xref:Xamarin.Forms.Stepper.Maximum) （含）之间。 如果将 `Minimum` 属性设置为大于属性的值 `Value` ，则将 `Stepper` `Value` 属性设置为 `Minimum` 。 同样，如果 `Maximum` 将设置为小于的值 `Value` ，则 `Stepper` 将属性设置 `Value` 为 `Maximum` 。
 
-[`Stepper`](xref:Xamarin.Forms.Stepper)定义一个 [`ValueChanged`](xref:Xamarin.Forms.Stepper.ValueChanged) 事件，该事件 [`Value`](xref:Xamarin.Forms.Stepper.Value) 通过用户操作 `Stepper` 或在应用程序直接设置属性时被触发 `Value` 。 `ValueChanged`如果 `Value` 按上一段中所述强制属性，则还会触发事件。
+[`Stepper`](xref:Xamarin.Forms.Stepper) 定义一个 [`ValueChanged`](xref:Xamarin.Forms.Stepper.ValueChanged) 事件，该事件 [`Value`](xref:Xamarin.Forms.Stepper.Value) 通过用户操作 `Stepper` 或在应用程序直接设置属性时被触发 `Value` 。 `ValueChanged`如果 `Value` 按上一段中所述强制属性，则还会触发事件。
 
 [`ValueChangedEventArgs`](xref:Xamarin.Forms.ValueChangedEventArgs)事件附带的对象 [`ValueChanged`](xref:Xamarin.Forms.Stepper.ValueChanged) 具有两个属性 `double` ： [`OldValue`](xref:Xamarin.Forms.ValueChangedEventArgs.OldValue) 和 [`NewValue`](xref:Xamarin.Forms.ValueChangedEventArgs.NewValue) 。 触发事件时，的值 `NewValue` 将与 [`Value`](xref:Xamarin.Forms.Stepper.Value) 对象的属性相同 [`Stepper`](xref:Xamarin.Forms.Stepper) 。
 
 ## <a name="basic-stepper-code-and-markup"></a>基本分档器代码和标记
 
-[**StepperDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-stepperdemos)示例包含三个功能相同、但以不同方式实现的页面。 第一页仅使用 c # 代码，第二页使用 XAML 并在代码中使用事件处理程序，第三页可以通过在 XAML 文件中使用数据绑定来避免事件处理程序。
+[**StepperDemos**](/samples/xamarin/xamarin-forms-samples/userinterface-stepperdemos)示例包含三个功能相同、但以不同方式实现的页面。 第一页仅使用 c # 代码，第二页使用 XAML 并在代码中使用事件处理程序，第三页可以通过在 XAML 文件中使用数据绑定来避免事件处理程序。
 
 ### <a name="creating-a-stepper-in-code"></a>在代码中创建分档器
 
-[**StepperDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-stepperdemos)示例中的**基本分档器代码**页演示了如何 [`Stepper`](xref:Xamarin.Forms.Stepper) 在代码中创建和两个 [`Label`](xref:Xamarin.Forms.Label) 对象：
+[**StepperDemos**](/samples/xamarin/xamarin-forms-samples/userinterface-stepperdemos)示例中的**基本分档器代码**页演示了如何 [`Stepper`](xref:Xamarin.Forms.Stepper) 在代码中创建和两个 [`Label`](xref:Xamarin.Forms.Label) 对象：
 
 ```csharp
 public class BasicStepperCodePage : ContentPage
@@ -93,13 +93,13 @@ public class BasicStepperCodePage : ContentPage
 }
 ```
 
-[`Stepper`](xref:Xamarin.Forms.Stepper)初始化为具有 [`Maximum`](xref:Xamarin.Forms.Stepper.Maximum) 360 的属性，并且属性为 [`Increment`](xref:Xamarin.Forms.Stepper.Increment) 30。 操作将 `Stepper` 基于属性的值将所选值更改为在之间递增 [`Minimum`](xref:Xamarin.Forms.Stepper.Minimum) `Maximum` `Increment` 。 的 [`ValueChanged`](xref:Xamarin.Forms.Stepper.ValueChanged) 处理程序 `Stepper` 使用对象的 [`Value`](xref:Xamarin.Forms.Stepper.Value) 属性 `stepper` 来设置 [`Rotation`](xref:Xamarin.Forms.VisualElement.Rotation) 第一个的属性 [`Label`](xref:Xamarin.Forms.Label) ，并将 `string.Format` 方法与 `NewValue` 事件参数的属性一起使用来设置 [`Text`](xref:Xamarin.Forms.Label.Text) 第二个属性 `Label` 。 获取的当前值的两种方法是可 `Stepper` 互换的。
+[`Stepper`](xref:Xamarin.Forms.Stepper)初始化为具有 [`Maximum`](xref:Xamarin.Forms.Stepper.Maximum) 360 的属性，并且属性为 [`Increment`](xref:Xamarin.Forms.Stepper.Increment) 30。 操作将 `Stepper` 基于属性的值将所选值更改为在之间递增 [`Minimum`](xref:Xamarin.Forms.Stepper.Minimum) `Maximum` `Increment` 。 的 [`ValueChanged`](xref:Xamarin.Forms.Stepper.ValueChanged) 处理程序 `Stepper` 使用对象的 [`Value`](xref:Xamarin.Forms.Stepper.Value) 属性 `stepper` 来设置 [`Rotation`](xref:Xamarin.Forms.VisualElement.Rotation) 第一个的属性 [`Label`](xref:Xamarin.Forms.Label)  ，并将 `string.Format` 方法与 `NewValue` 事件参数的属性一起使用来设置 [`Text`](xref:Xamarin.Forms.Label.Text) 第二个属性 `Label` 。 获取的当前值的两种方法是可 `Stepper` 互换的。
 
-以下屏幕截图显示了**基本分档器代码**页：
+以下屏幕截图显示了 **基本分档器代码** 页：
 
 [![基本分档器代码](stepper-images/basic-stepper-code.png "基本分档器代码")](stepper-images/basic-stepper-code-large.png#lightbox)
 
-第二个在 [`Label`](xref:Xamarin.Forms.Label) 操作之前显示文本 "（未初始化）" [`Stepper`](xref:Xamarin.Forms.Stepper) ，这将导致激发第一个 [`ValueChanged`](xref:Xamarin.Forms.Stepper.ValueChanged) 事件。
+第二个在 [`Label`](xref:Xamarin.Forms.Label)  操作之前显示文本 " (未初始化) " [`Stepper`](xref:Xamarin.Forms.Stepper) ，这将导致激发第一个 [`ValueChanged`](xref:Xamarin.Forms.Stepper.ValueChanged) 事件。
 
 ### <a name="creating-a-stepper-in-xaml"></a>在 XAML 中创建分档器
 
@@ -153,7 +153,7 @@ public partial class BasicStepperXAMLPage : ContentPage
 double value = ((Stepper)sender).Value;
 ```
 
-如果在 [`Stepper`](xref:Xamarin.Forms.Stepper) XAML 文件中为该对象指定了具有特性的名称 `x:Name` （例如，"分档器"），则事件处理程序可以直接引用该对象：
+如果在 [`Stepper`](xref:Xamarin.Forms.Stepper) XAML 文件中为该对象指定了一个具有属性的名称 `x:Name` (例如，"分档器" ) ，则事件处理程序可以直接引用该对象：
 
 ```csharp
 double value = stepper.Value;
@@ -161,7 +161,7 @@ double value = stepper.Value;
 
 ### <a name="data-binding-the-stepper"></a>数据绑定分档器
 
-"**基本分档器绑定**" 页显示了如何 [`Value`](xref:Xamarin.Forms.Stepper.Value) 使用[数据绑定](~/xamarin-forms/app-fundamentals/data-binding/index.md)编写消除事件处理程序的几乎等效的应用程序：
+" **基本分档器绑定** " 页显示了如何 [`Value`](xref:Xamarin.Forms.Stepper.Value) 使用 [数据绑定](~/xamarin-forms/app-fundamentals/data-binding/index.md)编写消除事件处理程序的几乎等效的应用程序：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -226,7 +226,7 @@ XAML 中存在相同的问题。 按顺序设置属性，以确保 [`Maximum`](x
          Maximum="-180" ... />
 ```
 
-[`Value`](xref:Xamarin.Forms.Stepper.Value)属性始终大于或等于 [`Minimum`](xref:Xamarin.Forms.Stepper.Minimum) 值且小于或等于 [`Maximum`](xref:Xamarin.Forms.Stepper.Maximum) 。 如果将 `Value` 设置为超出该范围的值，则该值将被强制转换为范围内的，但不会引发异常。 例如，此代码*不*会引发异常：
+[`Value`](xref:Xamarin.Forms.Stepper.Value)属性始终大于或等于 [`Minimum`](xref:Xamarin.Forms.Stepper.Minimum) 值且小于或等于 [`Maximum`](xref:Xamarin.Forms.Stepper.Maximum) 。 如果将 `Value` 设置为超出该范围的值，则该值将被强制转换为范围内的，但不会引发异常。 例如，此代码 *不* 会引发异常：
 
 ```csharp
 Stepper stepper = new Stepper
@@ -261,5 +261,5 @@ Stepper stepper = new Stepper
 
 ## <a name="related-links"></a>相关链接
 
-- [分档器演示示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-stepperdemos)
+- [分档器演示示例](/samples/xamarin/xamarin-forms-samples/userinterface-stepperdemos)
 - [分档器 API](xref:Xamarin.Forms.Stepper)

@@ -10,12 +10,12 @@ ms.date: 01/05/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 878ebcaa5249261afac2776a9e7cf47c0c047135
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 43c8cd0dd7b50e3a5bfbd15d9858bd4502fedacc
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84130528"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91558773"
 ---
 # <a name="creating-xaml-markup-extensions"></a>创建 XAML 标记扩展
 
@@ -47,7 +47,7 @@ public interface IMarkupExtension<out T> : IMarkupExtension
 
 由于 `IMarkupExtension<T>` 派生自 `IMarkupExtension` 并且 `new` 在上包含关键字 `ProvideValue` ，因此它包含这两种 `ProvideValue` 方法。
 
-通常，XAML 标记扩展定义用于返回值的属性。 （明显的例外是 `NullExtension` ，其中 `ProvideValue` 只返回 `null` 。）`ProvideValue`此方法具有一个类型的参数 `IServiceProvider` ，本文稍后将对此进行讨论。
+通常，XAML 标记扩展定义用于返回值的属性。  (明显的例外是 `NullExtension` ，在这种情况下 `ProvideValue` 只返回 `null` 。 ) `ProvideValue` 方法具有一个类型的参数 `IServiceProvider` ，本文稍后将对此进行讨论。
 
 ## <a name="a-markup-extension-for-specifying-color"></a>用于指定颜色的标记扩展
 
@@ -78,7 +78,7 @@ public class HslColorExtension : IMarkupExtension<Color>
 
 由于 `IMarkupExtension<T>` 派生自 `IMarkupExtension` ，因此该类必须包含两个 `ProvideValue` 方法，一个返回， `Color` 另一个返回 `object` ，但第二个方法可以只调用第一个方法。
 
-" **HSL 颜色演示**" 页显示了 `HslColorExtension` 可在 XAML 文件中显示以指定的颜色的各种方式 `BoxView` ：
+" **HSL 颜色演示** " 页显示了 `HslColorExtension` 可在 XAML 文件中显示以指定的颜色的各种方式 `BoxView` ：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -156,9 +156,9 @@ class ImageResourceExtension : IMarkupExtension<ImageSource>
 }
 ```
 
-`ImageResourceExtension`当 XAML 文件需要访问作为嵌入资源存储在 .NET Standard 库项目中的图像文件时，将很有用。 它使用 `Source` 属性调用静态 `ImageSource.FromResource` 方法。 此方法需要完全限定的资源名称，该名称由程序集名称、文件夹名称和文件名分隔。 此方法的第二个参数 `ImageSource.FromResource` 提供程序集名称，并且仅对 UWP 上的发布版本是必需的。 无论如何，都 `ImageSource.FromResource` 必须从包含位图的程序集调用，这意味着此 XAML 资源扩展不能是外部库的一部分，除非图像也在该库中。 （有关访问存储为嵌入资源的位图的详细信息，请参阅[**嵌入式图像**](~/xamarin-forms/user-interface/images.md#embedded-images)一文。）
+`ImageResourceExtension` 当 XAML 文件需要访问作为嵌入资源存储在 .NET Standard 库项目中的图像文件时，将很有用。 它使用 `Source` 属性调用静态 `ImageSource.FromResource` 方法。 此方法需要完全限定的资源名称，该名称由程序集名称、文件夹名称和文件名分隔。 此方法的第二个参数 `ImageSource.FromResource` 提供程序集名称，并且仅对 UWP 上的发布版本是必需的。 无论如何，都 `ImageSource.FromResource` 必须从包含位图的程序集调用，这意味着此 XAML 资源扩展不能是外部库的一部分，除非图像也在该库中。 有关访问存储为嵌入资源的位图的详细信息，请 (参阅 [**嵌入的图像**](~/xamarin-forms/user-interface/images.md#embedded-images) 一文。 ) 
 
-尽管 `ImageResourceExtension` 需要 `Source` 设置属性，但 `Source` 属性在属性中指定为类的 content 属性。 这意味着 `Source=` 可以省略大括号中的表达式部分。 在 "**图像资源演示**" 页中， `Image` 元素使用文件夹名称和文件名（用句点分隔）提取两个图像：
+尽管 `ImageResourceExtension` 需要 `Source` 设置属性，但 `Source` 属性在属性中指定为类的 content 属性。 这意味着 `Source=` 可以省略大括号中的表达式部分。 在 " **图像资源演示** " 页中， `Image` 元素使用文件夹名称和文件名（用句点分隔）提取两个图像：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -200,11 +200,11 @@ class ImageResourceExtension : IMarkupExtension<ImageSource>
 
 `GetService`实参为的调用 `typeof(IProvideValueTarget)` 实际上返回一个类型为的对象 `SimpleValueTargetProvider` ，该对象在 `Xamarin.Forms.Xaml.Internals` 命名空间中定义。 如果将的返回值强制转换 `GetService` 为该类型，则还可以访问一个 `ParentObjects` 属性，该属性是一个包含 `Image` 元素、 `Grid` 父元素和 `ImageResourceDemoPage` 父级的数组 `Grid` 。
 
-## <a name="conclusion"></a>结束语
+## <a name="conclusion"></a>结论
 
 XAML 标记扩展在 XAML 中发挥着重要作用，因为它扩展了从多个源设置属性的功能。 此外，如果现有的 XAML 标记扩展不能准确提供所需的内容，也可以编写自己的扩展。
 
 ## <a name="related-links"></a>相关链接
 
-- [标记扩展（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
+- [标记扩展 (示例) ](/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
 - [书籍中的 XAML 标记扩展章节 Xamarin.Forms](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter10.md)

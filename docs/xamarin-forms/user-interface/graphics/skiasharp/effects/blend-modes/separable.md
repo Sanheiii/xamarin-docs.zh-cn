@@ -10,18 +10,18 @@ ms.date: 08/23/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c1939c30cbefdbf8d6546761a8c6ac7199bfff62
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 0fd934a305e34bb7406a0379a0882873e3400fe8
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139680"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91558357"
 ---
 # <a name="the-separable-blend-modes"></a>分离混合模式
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-正如你在[**SkiaSharp Porter-Duff blend 模式一**](porter-duff.md)文中看到的那样，Porter-Duff blend 模式通常执行剪辑操作。 分离混合模式不同。 分离模式改变图像的各个红色、绿色和蓝色成分。 分离混合模式可以混合颜色，以表明红色、绿色和蓝色的组合确实是白色的：
+正如你在 [**SkiaSharp Porter-Duff blend 模式一**](porter-duff.md)文中看到的那样，Porter-Duff blend 模式通常执行剪辑操作。 分离混合模式不同。 分离模式改变图像的各个红色、绿色和蓝色成分。 分离混合模式可以混合颜色，以表明红色、绿色和蓝色的组合确实是白色的：
 
 ![主要颜色](separable-images/SeparableSample.png "主要颜色")
 
@@ -29,7 +29,7 @@ ms.locfileid: "84139680"
 
 常见的位图太暗或太浅。 可以使用分离混合模式使 imabe 变浅或加深。  事实上，枚举中的两个分离混合模式 [`SKBlendMode`](xref:SkiaSharp.SKBlendMode) 都命名为 `Lighten` 和 `Darken` 。 
 
-这两种模式在 "**变亮并变暗**" 页中进行演示。 XAML 文件实例化两个 `SKCanvasView` 对象和两个 `Slider` 视图：
+这两种模式在 " **变亮并变暗** " 页中进行演示。 XAML 文件实例化两个 `SKCanvasView` 对象和两个 `Slider` 视图：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -130,11 +130,11 @@ public partial class LightenAndDarkenPage : ContentPage
 
 [![淡化和加深](separable-images/LightenAndDarken.png "淡化和加深")](separable-images/LightenAndDarken-Large.png#lightbox)
 
-此程序演示使用分离混合模式的正常方式：目标是某种类型的图像，通常是位图。 源是使用 `SKPaint` 对象（其 `BlendMode` 属性设置为分离混合模式）显示的矩形。 此矩形可以是纯色（如此处所示）或渐变。 透明度一般_不_与分离混合模式一起使用。
+此程序演示使用分离混合模式的正常方式：目标是某种类型的图像，通常是位图。 源是使用 `SKPaint` 对象（其 `BlendMode` 属性设置为分离混合模式）显示的矩形。 此矩形可以是 () 或渐变的纯色。 透明度一般 _不_ 与分离混合模式一起使用。
 
 当您试验此程序时，您会发现这两种混合模式不会将图像均匀地淡化和加深。 相反， `Slider` 似乎设置了某种类型的阈值。 例如，当你为模式增加 `Slider` `Lighten` 时，图像的较暗区域将首先获取光，而较亮的区域会保持不变。
 
-对于 `Lighten` 模式，如果目标像素是 RGB 颜色值（Dr，Dg，Db），并且源像素是颜色（Sr，Sg，Sb），则输出为（或，Og，Ob），其计算如下：
+对于 `Lighten` 模式，如果目标像素是 RGB 颜色值 (Dr，Dg，Db) ，源像素是 (Sr，Sg，Sb) ，则输出为 (或，Og，Ob) 计算如下：
 
  `Or = max(Dr, Sr)` `Og = max(Dg, Sg)`
  `Ob = max(Db, Sb)`
@@ -146,31 +146,31 @@ public partial class LightenAndDarkenPage : ContentPage
  `Or = min(Dr, Sr)` `Og = min(Dg, Sg)`
  `Ob = min(Db, Sb)`
 
-红色、绿色和蓝色分量分别进行单独处理，这就是这些混合模式被称为_分离_混合模式的原因。 出于此原因，缩写**Dc**和**Sc**可用于目标和源颜色，并且了解到分别将计算应用于每个红色、绿色和蓝色组件。
+红色、绿色和蓝色分量分别进行单独处理，这就是这些混合模式被称为 _分离_ 混合模式的原因。 出于此原因，缩写 **Dc** 和 **Sc** 可用于目标和源颜色，并且了解到分别将计算应用于每个红色、绿色和蓝色组件。
 
 下表显示了所有可分离混合模式，并简要说明了它们的作用。 第二列显示不产生变化的源颜色：
 
-| 混合模式   | 没有变化 | Operation |
+| 混合模式   | 没有变化 | 操作 |
 | ------------ | --------- | --------- |
 | `Plus`       | 黑色     | 通过添加颜色变亮： Sc + Dc |
 | `Modulate`   | 白色     | 通过按颜色加深： Sc ·台 | 
 | `Screen`     | 黑色     | 补充的产品： Sc + Dc &ndash; Sc ·台 |
-| `Overlay`    | 灰色      | 逆变`HardLight` |
-| `Darken`     | 白色     | 最小颜色： min （Sc，Dc） |
-| `Lighten`    | 黑色     | 最大颜色：最大值（Sc，Dc） |
+| `Overlay`    | 灰色      | 逆变 `HardLight` |
+| `Darken`     | 白色     | 最小颜色：最小 (Sc，Dc)  |
+| `Lighten`    | 黑色     | 最大颜色：最大 (Sc，Dc)  |
 | `ColorDodge` | 黑色     | 基于源的变亮目标 |
 | `ColorBurn`  | 白色     | 基于源加深目标 | 
 | `HardLight`  | 灰色      | 类似于恶劣聚光灯的效果 |
 | `SoftLight`  | 灰色      | 类似于软聚光灯的效果 | 
-| `Difference` | 黑色     | 从较浅的中减去较暗的： Abs （Dc &ndash; Sc） | 
+| `Difference` | 黑色     | 从较浅的： Abs (Dc Sc 中减去较暗 &ndash;)  | 
 | `Exclusion`  | 黑色     | 类似于， `Difference` 但对比度更低 |
 | `Multiply`   | 白色     | 通过按颜色加深： Sc ·台 |
 
-虽然这两个源中的表示法不相同，但可以在 W3C[**合成和混合级别 1**](https://www.w3.org/TR/compositing-1/)规范和 Skia [**SkBlendMode 引用**](https://skia.org/user/api/SkBlendMode_Reference)中找到更详细的算法。 请记住， `Plus` 通常被视为 Porter-Duff blend 模式，并且 `Modulate` 不是 W3C 规范的组成部分。
+虽然这两个源中的表示法不相同，但可以在 W3C [**合成和混合级别 1**](https://www.w3.org/TR/compositing-1/) 规范和 Skia [**SkBlendMode 引用**](https://skia.org/user/api/SkBlendMode_Reference)中找到更详细的算法。 请记住， `Plus` 通常被视为 Porter-Duff blend 模式，并且 `Modulate` 不是 W3C 规范的组成部分。
 
 如果源是透明的，则对于除之外的所有分离混合模式 `Modulate` ，混合模式不起作用。 正如前面所看到的， `Modulate` blend 模式将 alpha 通道合并为乘法。 否则，与 `Modulate` 的效果相同 `Multiply` 。 
 
-请注意两个名为和的模式 `ColorDodge` `ColorBurn` 。 图像暗室实践中的单词_减减_和_加深_。 弱视通过将光向负照射来进行照相打印。 无光源，打印为白色。 当打印时间较长时，打印会变暗。 打印人员通常使用手或小对象来阻止某些光源在打印的某个部分下降，使该区域变浅。 这称为_dodging_。 相反，其中有洞的不透明材料（或大多数光源的双手阻碍）可用于在特定位置定向更少的光线，使其变得更暗，称为_烧_。
+请注意两个名为和的模式 `ColorDodge` `ColorBurn` 。 图像暗室实践中的单词 _减减_ 和 _加深_ 。 弱视通过将光向负照射来进行照相打印。 无光源，打印为白色。 当打印时间较长时，打印会变暗。 打印人员通常使用手或小对象来阻止某些光源在打印的某个部分下降，使该区域变浅。 这称为 _dodging_。 反之，其中包含洞的不透明材料 (或直接阻碍大多数光源) ，可用于指示特定位置中的更多光源，使其变得加深（称为 _烧_）。
 
 **减减和加深**程序非常类似于**淡化和变暗**。 XAML 文件的结构是相同的，但具有不同的元素名称，并且代码隐藏文件也非常相似，但这两种混合模式的效果完全不同：
 
@@ -182,9 +182,9 @@ public partial class LightenAndDarkenPage : ContentPage
 
 ## <a name="exploring-the-separable-blend-modes"></a>探索分离混合模式
 
-"**分离混合模式**" 页允许您检查所有分离混合模式。 它使用一种 blend 模式显示位图目标和彩色矩形源。 
+" **分离混合模式** " 页允许您检查所有分离混合模式。 它使用一种 blend 模式显示位图目标和彩色矩形源。 
 
-XAML 文件定义 `Picker` （以选择混合模式）和四个滑块。 前三个滑杆允许您设置源的红色、绿色和蓝色部分。 第四个滑块旨在通过设置灰色底纹来覆盖这些值。 不确定各个滑杆，但颜色表示其功能：
+XAML 文件定义 `Picker` (来选择混合模式) 和四个滑块。 前三个滑杆允许您设置源的红色、绿色和蓝色部分。 第四个滑块旨在通过设置灰色底纹来覆盖这些值。 不确定各个滑杆，但颜色表示其功能：
 
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -334,7 +334,7 @@ public partial class SeparableBlendModesPage : ContentPage
 
 ## <a name="additive-and-subtractive-primary-colors"></a>加法和 subtractive 主要颜色
 
-"**主要颜色**" 页绘制三个交叠的红色、绿色和蓝色圆圈：
+" **主要颜色** " 页绘制三个交叠的红色、绿色和蓝色圆圈：
 
 [![加法原色](separable-images/PrimaryColors-Additive.png "加法原色")](separable-images/PrimaryColors-Additive.png#lightbox)
 
@@ -430,5 +430,5 @@ public class PrimaryColorsPage : ContentPage
 
 ## <a name="related-links"></a>相关链接
 
-- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [SkiaSharp Api](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (示例) ](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

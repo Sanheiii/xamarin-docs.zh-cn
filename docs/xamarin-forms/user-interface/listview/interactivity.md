@@ -10,12 +10,12 @@ ms.date: 09/25/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 287b116d9ba2cb84e4e196fff080b8212e4eca3b
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: d665a80d6f1e0319fc9dc8696db379cf781ee833
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938406"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91560112"
 ---
 # <a name="listview-interactivity"></a>ListView 交互性
 
@@ -27,13 +27,13 @@ Xamarin.Forms [`ListView`](xref:Xamarin.Forms.ListView) 类支持用户与它所
 
 [`ListView`](xref:Xamarin.Forms.ListView)通过将属性设置为枚举的值控制选择模式 [`ListView.SelectionMode`](xref:Xamarin.Forms.ListView.SelectionMode) [`ListViewSelectionMode`](xref:Xamarin.Forms.ListViewSelectionMode) ：
 
-- [`Single`](xref:Xamarin.Forms.ListViewSelectionMode.Single)指示可以选择单个项，突出显示选定项。 这是默认值。
-- [`None`](xref:Xamarin.Forms.ListViewSelectionMode.None)指示不能选择项。
+- [`Single`](xref:Xamarin.Forms.ListViewSelectionMode.Single) 指示可以选择单个项，突出显示选定项。 这是默认值。
+- [`None`](xref:Xamarin.Forms.ListViewSelectionMode.None) 指示不能选择项。
 
 当用户点击某项时，将触发两个事件：
 
-- [`ItemSelected`](xref:Xamarin.Forms.ListView.ItemSelected)选择新项时激发。
-- [`ItemTapped`](xref:Xamarin.Forms.ListView.ItemTapped)点击项时激发。
+- [`ItemSelected`](xref:Xamarin.Forms.ListView.ItemSelected) 选择新项时激发。
+- [`ItemTapped`](xref:Xamarin.Forms.ListView.ItemTapped) 点击项时激发。
 
 点击同一项两次将引发两个 [`ItemTapped`](xref:Xamarin.Forms.ListView.ItemTapped) 事件，但只引发单个 [`ItemSelected`](xref:Xamarin.Forms.ListView.ItemSelected) 事件。
 
@@ -76,7 +76,7 @@ var listView = new ListView { ... SelectionMode = ListViewSelectionMode.None };
 
 ### <a name="xaml"></a>XAML
 
-`MenuItem`可以在 XAML 集合中创建元素。 下面的 XAML 演示了一个自定义单元格，其中实现了两个上下文操作：
+`MenuItem` 可以在 XAML 集合中创建元素。 下面的 XAML 演示了一个自定义单元格，其中实现了两个上下文操作：
 
 ```xaml
 <ListView x:Name="ContextDemoList">
@@ -121,11 +121,11 @@ public void OnDelete (object sender, EventArgs e)
 
 ### <a name="code"></a>代码
 
-可以 `Cell` 通过创建 `MenuItem` 实例并将其添加到单元格的集合，在任何子类中实现上下文操作（前提是它不用作组头） `ContextActions` 。 您可以为上下文操作配置以下属性：
+上下文操作可以在任何子类 (中实现， `Cell` 只要它不用作组头) 通过创建 `MenuItem` 实例并将其添加到该 `ContextActions` 单元的集合中。 您可以为上下文操作配置以下属性：
 
-- **文本** &ndash;显示在菜单项中的字符串。
-- **单击** &ndash;单击项时的事件。
-- **IsDestructive** &ndash;（可选）如果为 true，则在 iOS 上以不同方式呈现项。
+- **文本** &ndash; 显示在菜单项中的字符串。
+- **单击** &ndash; 单击项时的事件。
+- **IsDestructive** &ndash; (可选) 如果为 true，则在 iOS 上以不同的方式呈现项。
 
 可以将多个上下文操作添加到一个单元，但只有一个可以 `IsDestructive` 设置为 `true` 。 下面的代码演示如何将上下文操作添加到 `ViewCell` ：
 
@@ -187,14 +187,14 @@ listView.RefreshControlColor = Color.Red;
 
 ![ListView 请求刷新完成](interactivity-images/refresh-in-progress.png)
 
-[`ListView`](xref:Xamarin.Forms.ListView)触发 [`Refreshing`](xref:Xamarin.Forms.ListView.Refreshing) 事件以启动刷新，并将 [`IsRefreshing`](xref:Xamarin.Forms.ListView.IsRefreshing) 属性设置为 `true` 。 若要刷新的内容所需的任何代码 `ListView` ，则应由事件的事件处理程序 `Refreshing` 或执行的方法执行 [`RefreshCommand`](xref:Xamarin.Forms.ListView.RefreshCommand) 。 刷新后 `ListView` ， `IsRefreshing` 应将属性设置为 `false` ，或 [`EndRefresh`](xref:Xamarin.Forms.ListView.EndRefresh) 调用方法以指示刷新已完成。
+[`ListView`](xref:Xamarin.Forms.ListView) 触发 [`Refreshing`](xref:Xamarin.Forms.ListView.Refreshing) 事件以启动刷新，并将 [`IsRefreshing`](xref:Xamarin.Forms.ListView.IsRefreshing) 属性设置为 `true` 。 若要刷新的内容所需的任何代码 `ListView` ，则应由事件的事件处理程序 `Refreshing` 或执行的方法执行 [`RefreshCommand`](xref:Xamarin.Forms.ListView.RefreshCommand) 。 刷新后 `ListView` ， `IsRefreshing` 应将属性设置为 `false` ，或 [`EndRefresh`](xref:Xamarin.Forms.ListView.EndRefresh) 调用方法以指示刷新已完成。
 
 > [!NOTE]
 > 定义时 [`RefreshCommand`](xref:Xamarin.Forms.ListView.RefreshCommand) ， `CanExecute` 可以指定命令的方法以启用或禁用该命令。
 
 ## <a name="detect-scrolling"></a>检测滚动
 
-[`ListView`](xref:Xamarin.Forms.ListView)定义一个 `Scrolled` 事件，该事件将激发以指示发生滚动。 下面的 XAML 示例显示了一个 `ListView` ，它设置事件的事件处理程序 `Scrolled` ：
+[`ListView`](xref:Xamarin.Forms.ListView) 定义一个 `Scrolled` 事件，该事件将激发以指示发生滚动。 下面的 XAML 示例显示了一个 `ListView` ，它设置事件的事件处理程序 `Scrolled` ：
 
 ```xaml
 <ListView Scrolled="OnListViewScrolled">
@@ -223,4 +223,4 @@ void OnListViewScrolled(object sender, ScrolledEventArgs e)
 
 ## <a name="related-links"></a>相关链接
 
-- [ListView 交互（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-interactivity)
+- [ListView 交互 (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-listview-interactivity)

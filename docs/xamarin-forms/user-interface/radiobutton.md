@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsRadioButton
+title: Xamarin.Forms RadioButton
 description: Xamarin.Forms单选按钮是一种允许用户从集中选择一个选项的按钮。 每个选项都由一个单选按钮表示，您只能在组中选择一个单选按钮。
 ms.prod: xamarin
 ms.assetid: E2AA40E0-69A5-41DF-BFC4-C151CA657451
@@ -10,14 +10,14 @@ ms.date: 03/13/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f7cbd11f98127cb73514112dae785102ff9c51c0
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 964bac947f46e5279cbdcc6bdb61d74deba7f622
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84127616"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91559384"
 ---
-# <a name="xamarinforms-radiobutton"></a>Xamarin.FormsRadioButton
+# <a name="no-locxamarinforms-radiobutton"></a>Xamarin.Forms RadioButton
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-radiobuttondemos/)
 
@@ -28,14 +28,14 @@ Xamarin.Forms `RadioButton` 是一种允许用户从集中选择一个选项的�
 ![IOS 和 Android 上处于选中状态和已清除状态的单选按钮的屏幕截图](radiobutton-images/radiobutton-states.png "IOS 和 Android 上的单选按钮")
 
 > [!IMPORTANT]
-> `RadioButton`当前为试验性，只能通过设置标志来使用 `RadioButton_Experimental` 。 有关详细信息，请参阅[实验标志](~/xamarin-forms/internals/experimental-flags.md)。
+> `RadioButton` 当前为试验性，只能通过设置标志来使用 `RadioButton_Experimental` 。 有关详细信息，请参阅[实验性标志](~/xamarin-forms/internals/experimental-flags.md)。
 
 `RadioButton`控件定义以下属性：
 
 - `IsChecked`，类型为 `bool` ，用于定义是否 `RadioButton` 选择。 此属性使用 `TwoWay` 绑定，其默认值为 `false` 。
 - `GroupName`，类型为 `string` ，用于定义指定哪些 `RadioButton` 控件互相排斥的名称。 此属性的默认值为 `null` 。
 
-这些属性是由对象支持的 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，这意味着它们可以是数据绑定的目标和样式。
+这些属性由 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 对象提供支持；也就是说，它们可以作为数据绑定的目标，并能进行样式设置。
 
 `RadioButton`控件定义 `CheckedChanged` `IsChecked` 通过用户或编程操作更改属性时触发的事件。 `CheckedChangedEventArgs`事件附带的对象 `CheckedChanged` 具有名为的单个属性 `Value` ，类型为 `bool` 。 触发事件时，属性的值 `Value` 设置为属性的新值 `IsChecked` 。
 
@@ -116,7 +116,7 @@ StackLayout stackLayout = new StackLayout
 
 ## <a name="respond-to-a-radiobutton-state-change"></a>响应单选按钮状态更改
 
-单选按钮有两个状态：已选择或已清除。 选中单选按钮后，其 `IsChecked` 属性为 `true` 。 当取消选中某个单选按钮时，其 `IsChecked` 属性为 `false` 。 某个单选按钮可以通过单击同一组中的另外一个单选按钮进行清除，但再次单击该按钮时将无法将其清除。 但是，您可以通过将单选按钮的属性设置为来以编程方式清除该单选按钮 `IsChecked` `false` 。
+单选按钮有两个状态：已选择或已清除。 选中单选按钮后，其 `IsChecked` 属性为 `true` 。 清除单选按钮时，其 `IsChecked` 属性为 `false`。 某个单选按钮可以通过单击同一组中的另外一个单选按钮进行清除，但再次单击该按钮时将无法将其清除。 但是，你可以通过将单选按钮的 `IsChecked` 属性设置为 `false`，以编程方式清除它。
 
 当 `IsChecked` 属性通过用户或编程操作更改时，将激发该 `CheckedChanged` 事件。 可注册此事件的事件处理程序以响应更改：
 
@@ -149,11 +149,11 @@ radioButton.CheckedChanged += (sender, e) =>
 ```
 
 > [!NOTE]
-> 响应状态更改的另一种方法 `RadioButton` 是定义 `ICommand` ，并将其分配给 `RadioButton.Command` 属性。 有关详细信息，请参阅[Button：使用命令界面](~/xamarin-forms/user-interface/button.md#using-the-command-interface)。
+> 响应状态更改的另一种方法 `RadioButton` 是定义 `ICommand` ，并将其分配给 `RadioButton.Command` 属性。 有关详细信息，请参阅 [Button：使用命令界面](~/xamarin-forms/user-interface/button.md#using-the-command-interface)。
 
 ## <a name="radiobutton-visual-states"></a>单选按钮视觉状态
 
-`RadioButton`具有一个 `IsChecked` [`VisualState`](xref:Xamarin.Forms.VisualState) ，它可用于在选择时启动视觉对象更改 `RadioButton` 。
+`RadioButton` 具有一个 `IsChecked` [`VisualState`](xref:Xamarin.Forms.VisualState) ，它可用于在选择时启动视觉对象更改 `RadioButton` 。
 
 下面的 XAML 示例演示如何为状态定义可视状态 `IsChecked` ：
 
@@ -211,6 +211,6 @@ radioButton.CheckedChanged += (sender, e) =>
 
 ## <a name="related-links"></a>相关链接
 
-- [单选按钮演示（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-radiobuttondemos/)
+- [单选按钮演示 (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-radiobuttondemos/)
 - [Xamarin.Forms 按钮](~/xamarin-forms/user-interface/button.md)
 - [Xamarin.Forms 可视状态管理器](~/xamarin-forms/user-interface/visual-state-manager.md)

@@ -1,6 +1,6 @@
 ---
-title: Xamarin.Forms形状：几何图形
-description: Xamarin.Forms使用 geometry 类可以描述二维形状的几何。
+title: Xamarin.Forms 形状：几何图形
+description: Xamarin.Forms 使用 geometry 类可以描述二维形状的几何。
 ms.prod: xamarin
 ms.assetid: 07DE3D66-1820-4642-BDDF-84146D40C99D
 ms.technology: xamarin-forms
@@ -10,20 +10,20 @@ ms.date: 06/24/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 420099cadd3a541736084403265b9302c9a32b37
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: c6c6fb0ea9d3e2b728072fa36c3cdb2a86ade131
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87918318"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91559319"
 ---
-# <a name="no-locxamarinforms-shapes-geometries"></a>Xamarin.Forms形状：几何图形
+# <a name="no-locxamarinforms-shapes-geometries"></a>Xamarin.Forms 形状：几何图形
 
 ![预发行版 API](~/media/shared/preview.png)
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
-`Geometry`类以及从中派生的类使你可以描述二维形状的几何。 `Geometry`从两个或多个 geometry 对象创建的对象可以很简单，例如矩形和圆圈，或复合对象。 此外，还可以创建包含圆弧和曲线的更复杂的几何。
+`Geometry`类以及从中派生的类使你可以描述二维形状的几何。 `Geometry` 从两个或多个 geometry 对象创建的对象可以很简单，例如矩形和圆圈，或复合对象。 此外，还可以创建包含圆弧和曲线的更复杂的几何。
 
 `Geometry`类是定义不同类别的几何图形的多个类的父类：
 
@@ -38,7 +38,7 @@ ms.locfileid: "87918318"
 以下类具有可设置为对象的属性 `Geometry` ：
 
 - `Path`类使用 `Geometry` 来描述其内容。 可以 `Geometry` 通过将 `Path.Data` 属性设置为 `Geometry` 对象，并设置 `Path` 对象的 `Fill` 和 `Stroke` 属性来呈现。
-- [`VisualElement`](xref:Xamarin.Forms.VisualElement)类具有一个类型为的 `Clip` 属性 `Geometry` ，该属性定义元素内容的轮廓。 当 `Clip` 属性设置为 `Geometry` 对象时，只有区域中的区域才 `Geometry` 可见。 有关详细信息，请参阅[使用几何图形进行剪辑](#clip-with-a-geometry)。
+- [`VisualElement`](xref:Xamarin.Forms.VisualElement)类具有一个类型为的 `Clip` 属性 `Geometry` ，该属性定义元素内容的轮廓。 当 `Clip` 属性设置为 `Geometry` 对象时，只有区域中的区域才 `Geometry` 可见。 有关详细信息，请参阅 [使用几何图形进行剪辑](#clip-with-a-geometry)。
 
 派生自类的类 `Geometry` 可以分为三个类别：简单的几何图形、路径几何图形和复合几何图形。
 
@@ -56,7 +56,7 @@ ms.locfileid: "87918318"
 - `RadiusX`，类型为 `double` ，表示几何图形的 x 轴半径值。 此属性的默认值为0.0。
 - `RadiusY`，类型为 `double` ，表示几何图形的 y 轴半径值。 此属性的默认值为0.0。
 
-这些属性是由对象支持的 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，这意味着它们可以是数据绑定的目标和样式。
+这些属性由 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 对象提供支持；也就是说，它们可以作为数据绑定的目标，并能进行样式设置。
 
 下面的示例演示如何 `EllipseGeometry` 在对象中创建和呈现 `Path` ：
 
@@ -85,7 +85,7 @@ ms.locfileid: "87918318"
 - `StartPoint`，类型为 [`Point`](xref:Xamarin.Forms.Point) ，它表示线条的起点。
 - `EndPoint`，类型为 [`Point`](xref:Xamarin.Forms.Point) ，它表示线条的终点。
 
-这些属性是由对象支持的 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，这意味着它们可以是数据绑定的目标和样式。
+这些属性由 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 对象提供支持；也就是说，它们可以作为数据绑定的目标，并能进行样式设置。
 
 下面的示例演示如何 `LineGeometry` 在对象中创建和呈现 `Path` ：
 
@@ -137,7 +137,7 @@ ms.locfileid: "87918318"
 - `Figures`，类型为 `PathFigureCollection` ，它表示 `PathFigure` 描述路径内容的对象的集合。
 - `FillRule`，类型为 `FillRule` ，确定如何组合几何图形中包含的相交区域。 此属性的默认值为 `FillRule.EvenOdd`。
 
-这些属性是由对象支持的 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，这意味着它们可以是数据绑定的目标和样式。
+这些属性由 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 对象提供支持；也就是说，它们可以作为数据绑定的目标，并能进行样式设置。
 
 有关枚举的详细信息 `FillRule` ，请参阅[ Xamarin.Forms 形状：填充规则](fillrules.md)。
 
@@ -193,7 +193,7 @@ ms.locfileid: "87918318"
 - `SweepDirection`，类型为 `SweepDirection` ，它指定弧的绘制方向。 此属性的默认值为 `SweepDirection.CounterClockwise`。
 - `IsLargeArc`，类型为 `bool` ，指示弧是否应大于180度。 此属性的默认值为 `false`。
 
-这些属性是由对象支持的 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，这意味着它们可以是数据绑定的目标和样式。
+这些属性由 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 对象提供支持；也就是说，它们可以作为数据绑定的目标，并能进行样式设置。
 
 > [!NOTE]
 > 此 `ArcSegment` 类不包含圆弧起始点的属性。它只定义它表示的弧线的终点。 圆弧的起点是添加到的的当前点 `PathFigure` `ArcSegment` 。
@@ -242,7 +242,7 @@ ms.locfileid: "87918318"
 - `Point2`，类型为 [`Point`](xref:Xamarin.Forms.Point) ，它表示曲线的第二个控制点。 此属性的默认值为 (0，0) 。
 - `Point3`，类型为 [`Point`](xref:Xamarin.Forms.Point) ，表示曲线的终点。 此属性的默认值为 (0，0) 。
 
-这些属性是由对象支持的 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，这意味着它们可以是数据绑定的目标和样式。
+这些属性由 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 对象提供支持；也就是说，它们可以作为数据绑定的目标，并能进行样式设置。
 
 > [!NOTE]
 > `BezierSegment`类不包含曲线起点的属性。 曲线的起点是添加到的的当前点 `PathFigure` `BezierSegment` 。
@@ -431,7 +431,7 @@ ms.locfileid: "87918318"
 - `Point1`，类型为 [`Point`](xref:Xamarin.Forms.Point) ，表示曲线的控制点。 此属性的默认值为 (0，0) 。
 - `Point2`，类型为 [`Point`](xref:Xamarin.Forms.Point) ，表示曲线的终点。 此属性的默认值为 (0，0) 。
 
-这些属性是由对象支持的 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，这意味着它们可以是数据绑定的目标和样式。
+这些属性由 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 对象提供支持；也就是说，它们可以作为数据绑定的目标，并能进行样式设置。
 
 > [!NOTE]
 > `QuadraticBezierSegment`类不包含曲线起点的属性。 曲线的起点是添加到的的当前点 `PathFigure` `QuadraticBezierSegment` 。
@@ -560,7 +560,7 @@ ms.locfileid: "87918318"
 - `Children`，类型为 `GeometryCollection` ，它物种定义的对象 `GeomtryGroup` 。 `GeometryCollection`是 `ObservableCollection` `Geometry` 对象的。
 - `FillRule`，类型为 `FillRule` ，它指定如何组合中的相交区域 `GeometryGroup` 。 此属性的默认值为 `FillRule.EvenOdd`。
 
-这些属性是由对象支持的 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，这意味着它们可以是数据绑定的目标和样式。
+这些属性由 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 对象提供支持；也就是说，它们可以作为数据绑定的目标，并能进行样式设置。
 
 > [!NOTE]
 > `Children`属性是类的 `ContentProperty` `GeometryGroup` ，因此不需要从 XAML 显式设置。
@@ -630,6 +630,6 @@ ms.locfileid: "87918318"
 
 ## <a name="related-links"></a>相关链接
 
-- [ShapeDemos (示例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
-- [Xamarin.Forms形状](index.md)
-- [Xamarin.Forms形状：填充规则](fillrules.md)
+- [ShapeDemos (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+- [Xamarin.Forms 形状](index.md)
+- [Xamarin.Forms 形状：填充规则](fillrules.md)

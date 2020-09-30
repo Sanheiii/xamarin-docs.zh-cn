@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsMediaElement
+title: Xamarin.Forms MediaElement
 description: 本文介绍如何使用 MediaElement 在应用程序中播放视频和音频 Xamarin.Forms 。
 ms.prod: xamarin
 ms.assetid: e65f1e56-a80d-46c7-9ff4-7ae6650a3165
@@ -10,40 +10,40 @@ ms.date: 02/18/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 4a8ca74fc12b59100cc60b72d3c2287cffadfd18
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: e868eccf446ab22879a66e6e507d810b7e0e13d7
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87918115"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91559761"
 ---
-# <a name="no-locxamarinforms-mediaelement"></a>Xamarin.FormsMediaElement
+# <a name="no-locxamarinforms-mediaelement"></a>Xamarin.Forms MediaElement
 
 ![预发行版 API](~/media/shared/preview.png)
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-mediaelementdemos/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-mediaelementdemos/)
 
-[`MediaElement`](xref:Xamarin.Forms.MediaElement)是用于播放视频和音频的视图。 可从以下源播放底层平台支持的媒体：
+[`MediaElement`](xref:Xamarin.Forms.MediaElement) 是用于播放视频和音频的视图。 可从以下源播放底层平台支持的媒体：
 
 - Web，使用 URI (HTTP 或 HTTPS) 。
 - 使用 URI 方案嵌入到平台应用程序中的资源 `ms-appx:///` 。
 - 使用 URI 方案，来自应用的本地和临时数据文件夹的文件 `ms-appdata:///` 。
 - 设备的库。
 
-[`MediaElement`](xref:Xamarin.Forms.MediaElement)可以使用平台播放控件，这些控件称为传输控件。 但是，它们在默认情况下处于禁用状态，可以替换为您自己的传输控件。 以下屏幕截图显示了 `MediaElement` 使用平台传输控件播放视频的步骤：
+[`MediaElement`](xref:Xamarin.Forms.MediaElement) 可以使用平台播放控件，这些控件称为传输控件。 但是，它们在默认情况下处于禁用状态，可以替换为您自己的传输控件。 以下屏幕截图显示了 `MediaElement` 使用平台传输控件播放视频的步骤：
 
 [![在 iOS 和 Android 上播放视频的 MediaElement 屏幕截图](mediaelement-images/playback-controls.png "播放视频的 MediaElement")](mediaelement-images/playback-controls-large.png#lightbox "播放视频的 MediaElement")
 
-[`MediaElement`](xref:Xamarin.Forms.MediaElement)在4.5 中提供 Xamarin.Forms 。 但是，当前正在试验，只能通过将以下代码行添加到*App.xaml.cs*文件中来使用：
+[`MediaElement`](xref:Xamarin.Forms.MediaElement) 在4.5 中提供 Xamarin.Forms 。 但是，当前正在试验，只能通过将以下代码行添加到 *App.xaml.cs* 文件中来使用：
 
 ```csharp
 Device.SetFlags(new string[]{ "MediaElement_Experimental" });
 ```
 
 > [!NOTE]
-> [`MediaElement`](xref:Xamarin.Forms.MediaElement)可在 iOS、Android、通用 Windows 平台 (UWP) 、macOS、Windows Presentation Foundation 和 Tizen 上使用。
+> [`MediaElement`](xref:Xamarin.Forms.MediaElement) 可在 iOS、Android、通用 Windows 平台 (UWP) 、macOS、Windows Presentation Foundation 和 Tizen 上使用。
 
-[`MediaElement`](xref:Xamarin.Forms.MediaElement)定义以下属性：
+[`MediaElement`](xref:Xamarin.Forms.MediaElement) 定义以下属性：
 
 - [`Aspect`](xref:Xamarin.Forms.MediaElement.Aspect)类型为的， [`Aspect`](xref:Xamarin.Forms.Aspect) 确定如何缩放媒体以适应显示区域。 此属性的默认值为 `AspectFit`。
 - [`AutoPlay`](xref:Xamarin.Forms.MediaElement.AutoPlay)，类型为 `bool` ，指示在设置属性时是否自动开始播放媒体 [`Source`](xref:Xamarin.Forms.MediaElement.Source) 。 此属性的默认值为 `true`。
@@ -64,14 +64,14 @@ Device.SetFlags(new string[]{ "MediaElement_Experimental" });
 
 [`MediaElement`](xref:Xamarin.Forms.MediaElement)类还定义四个事件：
 
-- [`MediaOpened`](xref:Xamarin.Forms.MediaElement.MediaOpened)当媒体流已验证并打开时，将激发。
-- [`MediaEnded`](xref:Xamarin.Forms.MediaElement.MediaEnded)当 `MediaElement` 完成播放其媒体时，将激发。
-- [`MediaFailed`](xref:Xamarin.Forms.MediaElement.MediaFailed)当存在与媒体源关联的错误时，将激发。
-- [`SeekCompleted`](xref:Xamarin.Forms.MediaElement.SeekCompleted)当请求的查找操作的查找点准备好播放时，将激发。
+- [`MediaOpened`](xref:Xamarin.Forms.MediaElement.MediaOpened) 当媒体流已验证并打开时，将激发。
+- [`MediaEnded`](xref:Xamarin.Forms.MediaElement.MediaEnded) 当 `MediaElement` 完成播放其媒体时，将激发。
+- [`MediaFailed`](xref:Xamarin.Forms.MediaElement.MediaFailed) 当存在与媒体源关联的错误时，将激发。
+- [`SeekCompleted`](xref:Xamarin.Forms.MediaElement.SeekCompleted) 当请求的查找操作的查找点准备好播放时，将激发。
 
 此外，还 [`MediaElement`](xref:Xamarin.Forms.MediaElement) 包括 [`Play`](xref:Xamarin.Forms.MediaElement.Play) 、 [`Pause`](xref:Xamarin.Forms.MediaElement.Pause) 和 [`Stop`](xref:Xamarin.Forms.MediaElement.Stop) 方法。
 
-有关 Android 上支持的媒体格式的信息，请参阅 developer.android.com 上[支持的媒体格式](https://developer.android.com/guide/topics/media/media-formats)。 有关通用 Windows 平台 (UWP) 上支持的媒体格式的信息，请参阅[支持的编解码器](/windows/uwp/audio-video-camera/supported-codecs)。
+有关 Android 上支持的媒体格式的信息，请参阅 developer.android.com 上 [支持的媒体格式](https://developer.android.com/guide/topics/media/media-formats) 。 有关通用 Windows 平台 (UWP) 上支持的媒体格式的信息，请参阅 [支持的编解码器](/windows/uwp/audio-video-camera/supported-codecs)。
 
 ## <a name="play-remote-media"></a>播放远程媒体
 
@@ -84,7 +84,7 @@ Device.SetFlags(new string[]{ "MediaElement_Experimental" });
 
 默认情况下，在打开介质后，属性定义的介质会 [`Source`](xref:Xamarin.Forms.MediaElement.Source) 立即播放。 若要禁止自动播放媒体，请将 [`AutoPlay`](xref:Xamarin.Forms.MediaElement.AutoPlay) 属性设置为 `false` 。
 
-默认情况下，禁用媒体播放控件，并通过将属性设置 [`ShowsPlaybackControls`](xref:Xamarin.Forms.MediaElement.ShowsPlaybackControls) 为来启用它们 `true` 。 [`MediaElement`](xref:Xamarin.Forms.MediaElement)然后，将使用平台播放控件。
+默认情况下，禁用媒体播放控件，并通过将属性设置 [`ShowsPlaybackControls`](xref:Xamarin.Forms.MediaElement.ShowsPlaybackControls) 为来启用它们 `true` 。 [`MediaElement`](xref:Xamarin.Forms.MediaElement) 然后，将使用平台播放控件。
 
 ## <a name="play-local-media"></a>播放本地媒体
 
@@ -94,7 +94,7 @@ Device.SetFlags(new string[]{ "MediaElement_Experimental" });
 - 使用 URI 方案，来自应用的本地和临时数据文件夹的文件 `ms-appdata:///` 。
 - 设备的库。
 
-有关这些 URI 方案的详细信息，请参阅[uri 方案](/windows/uwp/app-resources/uri-schemes)。
+有关这些 URI 方案的详细信息，请参阅 [uri 方案](/windows/uwp/app-resources/uri-schemes)。
 
 ### <a name="play-media-embedded-in-the-app-package"></a>播放嵌入在应用包中的媒体
 
@@ -102,7 +102,7 @@ Device.SetFlags(new string[]{ "MediaElement_Experimental" });
 
 对于每个平台，将媒体文件存储在平台项目中是不同的：
 
-- 在 iOS 上，必须将媒体文件存储在**resources 文件夹或** **resources**文件夹的子文件夹中。 媒体文件必须具有 `Build Action` 的 `BundleResource` 。
+- 在 iOS 上，必须将媒体文件存储在 **resources 文件夹或** **resources** 文件夹的子文件夹中。 媒体文件必须具有 `Build Action` 的 `BundleResource` 。
 - 在 Android 上，媒体文件必须存储在名为**raw**的**资源**的子文件夹中。 “raw”文件夹不能包含子文件夹。 媒体文件必须具有 `Build Action` 的 `AndroidResource` 。
 - 在 UWP 上，媒体文件可以存储在项目中的任何文件夹中。 媒体文件必须具有 `BuildAction` 的 `Content` 。
 
@@ -191,7 +191,7 @@ public class VideoSourceConverter : IValueConverter
               ShowsPlaybackControls="True" />
 ```
 
-有关 appdata URI 方案的详细信息，请参阅[appdata](/windows/uwp/app-resources/uri-schemes#ms-appdata)。
+有关 appdata URI 方案的详细信息，请参阅 [appdata](/windows/uwp/app-resources/uri-schemes#ms-appdata)。
 
 #### <a name="copying-a-media-file-to-the-apps-local-or-temporary-data-folder"></a>将媒体文件复制到应用的本地或临时数据文件夹
 
@@ -230,7 +230,7 @@ public static async Task CopyVideoIfNotExists(string filename)
 
 每个平台都包含一个设备，使用户能够从设备的库中选择媒体。 在中 Xamarin.Forms ，平台项目可以调用此功能，并且可由 [`DependencyService`](xref:Xamarin.Forms.DependencyService) 类调用。
 
-示例应用程序中使用的视频选取依赖关系服务与[从图片库选取照片](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md)中定义的服务非常相似，不同之处在于，选取器会返回文件名而不是 `Stream` 对象。 共享代码项目定义了一个名为 `IVideoPicker` 的接口，该接口定义了一个名为的方法 `GetVideoFileAsync` 。 然后，每个平台在类中实现此接口 `VideoPicker` 。
+示例应用程序中使用的视频选取依赖关系服务与 [从图片库选取照片](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md)中定义的服务非常相似，不同之处在于，选取器会返回文件名而不是 `Stream` 对象。 共享代码项目定义了一个名为 `IVideoPicker` 的接口，该接口定义了一个名为的方法 `GetVideoFileAsync` 。 然后，每个平台在类中实现此接口 `VideoPicker` 。
 
 下面的代码示例演示如何从设备库检索媒体文件：
 
@@ -251,9 +251,9 @@ if (!string.IsNullOrWhiteSpace(filename))
 
 [`Aspect`](xref:Xamarin.Forms.MediaElement.Aspect)属性确定如何缩放视频媒体以适应显示区域。 默认情况下，此属性设置为 `AspectFit` 枚举成员，但它可以设置为任何 [`Aspect`](xref:Xamarin.Forms.Aspect) 枚举成员：
 
-- `AspectFit`指示在保持纵横比的同时，要在显示区域中 letterboxed 视频。
-- `AspectFill`指示将剪切视频以使其填充显示区域，同时保留纵横比。
-- `Fill`指示将拉伸视频以填充显示区域。
+- `AspectFit` 指示在保持纵横比的同时，要在显示区域中 letterboxed 视频。
+- `AspectFill` 指示将剪切视频以使其填充显示区域，同时保留纵横比。
+- `Fill` 指示将拉伸视频以填充显示区域。
 
 ## <a name="poll-for-position-data"></a>轮询位置数据
 
@@ -313,18 +313,18 @@ protected override void OnDisappearing()
 
 [`MediaElementState`](xref:Xamarin.Forms.MediaElementState)枚举定义以下成员：
 
-- `Closed`指示 `MediaElement` 不包含媒体。
-- `Opening`指示正在 `MediaElement` 验证并尝试加载指定的源。
-- `Buffering`指示 `MediaElement` 正在加载要播放的媒体。 [`Position`](xref:Xamarin.Forms.MediaElement.Position)在此状态下，其属性不会提升。 如果 `MediaElement` 正在播放视频，它将继续显示最后显示的帧。
-- `Playing`指示 `MediaElement` 正在播放媒体源。
-- `Paused`指示不 `MediaElement` 向前移动其 [`Position`](xref:Xamarin.Forms.MediaElement.Position) 属性。 如果 `MediaElement` 正在播放视频，它将继续显示当前帧。
-- `Stopped`指示 `MediaElement` 包含媒体，但未播放或暂停。 其 [`Position`](xref:Xamarin.Forms.MediaElement.Position) 属性为0，并且不会继续。 如果加载的媒体是视频，则会 `MediaElement` 显示第一帧。
+- `Closed` 指示 `MediaElement` 不包含媒体。
+- `Opening` 指示正在 `MediaElement` 验证并尝试加载指定的源。
+- `Buffering` 指示 `MediaElement` 正在加载要播放的媒体。 [`Position`](xref:Xamarin.Forms.MediaElement.Position)在此状态下，其属性不会提升。 如果 `MediaElement` 正在播放视频，它将继续显示最后显示的帧。
+- `Playing` 指示 `MediaElement` 正在播放媒体源。
+- `Paused` 指示不 `MediaElement` 向前移动其 [`Position`](xref:Xamarin.Forms.MediaElement.Position) 属性。 如果 `MediaElement` 正在播放视频，它将继续显示当前帧。
+- `Stopped` 指示 `MediaElement` 包含媒体，但未播放或暂停。 其 [`Position`](xref:Xamarin.Forms.MediaElement.Position) 属性为0，并且不会继续。 如果加载的媒体是视频，则会 `MediaElement` 显示第一帧。
 
 [`CurrentState`](xref:Xamarin.Forms.MediaElement.CurrentState)使用传输控件时，通常不需要检查属性 [`MediaElement`](xref:Xamarin.Forms.MediaElement) 。 但是，当实现您自己的传输控制时，此属性会变得很重要。
 
 ## <a name="implement-custom-transport-controls"></a>实现自定义传输控件
 
-媒体播放器的传输控制包括执行这些功能的按钮： "**播放**"、"**暂停**" 和 "**停止**"。 这些按钮通常使用熟悉的图标而非文本来标识，且“播放”和“暂停”功能通常合并成一个按钮 。
+媒体播放器的传输控制包括执行这些功能的按钮： " **播放**"、" **暂停**" 和 " **停止**"。 这些按钮通常使用熟悉的图标而非文本来标识，且“播放”和“暂停”功能通常合并成一个按钮 。
 
 默认情况下， [`MediaElement`](xref:Xamarin.Forms.MediaElement) 播放控件处于禁用状态。 这使你能够以 `MediaElement` 编程方式控制，或者提供自己的传输控件。 为支持此， `MediaElement` 包括 [`Play`](xref:Xamarin.Forms.MediaElement.Play) 、 [`Pause`](xref:Xamarin.Forms.MediaElement.Pause) 和 [`Stop`](xref:Xamarin.Forms.MediaElement.Stop) 方法。
 
@@ -377,7 +377,7 @@ protected override void OnDisappearing()
 </ContentPage>
 ```
 
-在此示例中，自定义传输控件定义为 [`Button`](xref:Xamarin.Forms.Button) 对象。 但是，只有两个 `Button` 对象，第一个对象 `Button` 表示 "**播放**" 和 "**暂停**"，第二个对象 `Button` 表示 "**停止**"。 [`DataTrigger`](xref:Xamarin.Forms.DataTrigger)对象用于启用和禁用按钮，并用于在**播放**和**暂停**之间切换第一个按钮。 有关数据触发器的详细信息，请参阅[ Xamarin.Forms 触发器](~/xamarin-forms/app-fundamentals/triggers.md)。
+在此示例中，自定义传输控件定义为 [`Button`](xref:Xamarin.Forms.Button) 对象。 但是，只有两个 `Button` 对象，第一个对象 `Button` 表示 " **播放** " 和 " **暂停**"，第二个对象 `Button` 表示 " **停止**"。 [`DataTrigger`](xref:Xamarin.Forms.DataTrigger) 对象用于启用和禁用按钮，并用于在 **播放** 和 **暂停**之间切换第一个按钮。 有关数据触发器的详细信息，请参阅[ Xamarin.Forms 触发器](~/xamarin-forms/app-fundamentals/triggers.md)。
 
 代码隐藏文件具有事件的处理程序 [`Clicked`](xref:Xamarin.Forms.Button.Clicked) ：
 
@@ -401,15 +401,15 @@ void OnStopButtonClicked(object sender, EventArgs args)
 }
 ```
 
-启用后，可以按 "**播放**" 按钮开始播放：
+启用后，可以按 " **播放** " 按钮开始播放：
 
 [![在 iOS 和 Android 上使用自定义传输控件的 MediaElement 屏幕截图](mediaelement-images/custom-transport-playback.png "播放视频的 MediaElement")](mediaelement-images/custom-transport-playback-large.png#lightbox "播放视频的 MediaElement")
 
-按 "**暂停**" 按钮会导致播放暂停：
+按 " **暂停** " 按钮会导致播放暂停：
 
 [![在 iOS 和 Android 上暂停播放 MediaElement 的屏幕截图](mediaelement-images/custom-transport-paused.png "带有暂停视频的 MediaElement")](mediaelement-images/custom-transport-paused-large.png#lightbox "带有暂停视频的 MediaElement")
 
-按 "**停止**" 按钮将停止播放，并将媒体文件的位置返回到开始位置。
+按 " **停止** " 按钮将停止播放，并将媒体文件的位置返回到开始位置。
 
 ## <a name="implement-a-custom-position-bar"></a>实现自定义位置栏
 
@@ -418,7 +418,7 @@ void OnStopButtonClicked(object sender, EventArgs args)
 实现自定义位置栏需要知道媒体的持续时间和当前播放位置。 此数据在 [`Duration`](xref:Xamarin.Forms.MediaElement.Duration) 和属性中可用 [`Position`](xref:Xamarin.Forms.MediaElement.Position) 。
 
 > [!IMPORTANT]
-> [`Position`](xref:Xamarin.Forms.MediaElement.Position)必须轮询，才能获取准确的位置数据。 有关详细信息，请参阅[轮询位置数据](#poll-for-position-data)。
+> [`Position`](xref:Xamarin.Forms.MediaElement.Position)必须轮询，才能获取准确的位置数据。 有关详细信息，请参阅 [轮询位置数据](#poll-for-position-data)。
 
 可以使用来实现自定义位置栏 [`Slider`](xref:Xamarin.Forms.Slider) ，如下面的示例中所示：
 
@@ -540,9 +540,9 @@ public class PositionSlider : Slider
 
 ## <a name="related-links"></a>相关链接
 
-- [MediaElementDemos (示例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-mediaelementdemos/)
+- [MediaElementDemos (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-mediaelementdemos/)
 - [URI 方案](/windows/uwp/app-resources/uri-schemes)
 - [Xamarin.Forms 触发器](~/xamarin-forms/app-fundamentals/triggers.md)
-- [Xamarin.Forms滑动](~/xamarin-forms/user-interface/slider.md)
+- [Xamarin.Forms 滑动](~/xamarin-forms/user-interface/slider.md)
 - [Android：支持的媒体格式](https://developer.android.com/guide/topics/media/media-formats)
 - [UWP：支持的编解码器](/windows/uwp/audio-video-camera/supported-codecs)

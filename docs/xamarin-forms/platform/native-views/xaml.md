@@ -10,16 +10,16 @@ ms.date: 03/23/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2c271c3537c6e96497763c67c5b8128148191f16
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 78bd93e2f6556480ae7d2903771d7d6303dda148
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937353"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91558371"
 ---
 # <a name="native-views-in-xaml"></a>采用 XAML 的本机视图
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-nativeviews-nativeswitch)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-nativeviews-nativeswitch)
 
 _可以直接从 XAML 文件引用 iOS、Android 和通用 Windows 平台中的本机视图 Xamarin.Forms 。可以在本机视图上设置属性和事件处理程序，并且可以与视图进行交互 Xamarin.Forms 。本文演示如何从 XAML 文件使用本机视图 Xamarin.Forms 。_
 
@@ -31,7 +31,7 @@ _可以直接从 XAML 文件引用 iOS、Android 和通用 Windows 平台中的�
 > [!IMPORTANT]
 > 对于任何使用本机视图的 XAML 页，必须禁用已编译的 XAML。 这可以通过使用特性修饰 XAML 页的代码隐藏类来实现 `[XamlCompilation(XamlCompilationOptions.Skip)]` 。 有关 XAML 编译的详细信息，请参阅[中的 Xamarin.Forms xaml 编译](~/xamarin-forms/xaml/xamlc.md)。
 
-若要从代码隐藏文件引用本机视图，必须使用共享资产项目（SAP），并使用条件编译指令包装特定于平台的代码。 有关详细信息，请参阅[从代码引用本机视图](#refer-to-native-views-from-code)。
+若要从代码隐藏文件引用本机视图，必须使用共享资产项目 (SAP) 并使用条件编译指令来包装平台特定代码。 有关详细信息，请参阅 [从代码引用本机视图](#refer-to-native-views-from-code)。
 
 ## <a name="consume-native-views"></a>使用本机视图
 
@@ -54,7 +54,7 @@ _可以直接从 XAML 文件引用 iOS、Android 和通用 Windows 平台中的�
 </ContentPage>
 ```
 
-`clr-namespace` `assembly` 还必须指定和，以便为本机视图命名空间指定和 `targetPlatform` 。 应将此项设置为 `iOS` 、 `Android` 、 `UWP` 、 `Windows` （等效于 `UWP` ）、、、 `macOS` `GTK` `Tizen` 或 `WPF` 。 在运行时，XAML 分析器将忽略任何与 `targetPlatform` 运行应用程序的平台不匹配的 XML 命名空间前缀。
+`clr-namespace` `assembly` 还必须指定和，以便为本机视图命名空间指定和 `targetPlatform` 。 应将此项设置为 `iOS` 、 `Android` 、 (， `UWP` `Windows` 它等效于 `UWP`) 、 `macOS` 、 `GTK` 、 `Tizen` 或 `WPF` 。 在运行时，XAML 分析器将忽略任何与 `targetPlatform` 运行应用程序的平台不匹配的 XML 命名空间前缀。
 
 每个命名空间声明都可用于引用指定命名空间中的任何类或结构。 例如， `ios` 命名空间声明可用于引用 iOS 命名空间中的任何类或结构 `UIKit` 。 本机视图的属性可以通过 XAML 进行设置，但属性和对象类型必须匹配。 例如， `UILabel.TextColor` 属性设置为 `UIColor.Red` 使用 `x:Static` 标记扩展和 `ios` 命名空间。
 
@@ -63,14 +63,14 @@ _可以直接从 XAML 文件引用 iOS、Android 和通用 Windows 平台中的�
 > [!NOTE]
 > 请注意，样式不能用于本机视图，因为样式只能以对象支持的属性为目标 `BindableProperty` 。
 
-Android 小组件构造函数通常要求将 Android `Context` 对象作为参数，这可以通过类中的静态属性来使用 `MainActivity` 。 因此，在 XAML 中创建 Android 小组件时， `Context` 通常必须使用 `x:Arguments` 具有标记扩展的属性将对象传递给小组件的构造函数 `x:Static` 。 有关详细信息，请参阅[将参数传递给本机视图](#pass-arguments-to-native-views)。
+Android 小组件构造函数通常要求将 Android `Context` 对象作为参数，这可以通过类中的静态属性来使用 `MainActivity` 。 因此，在 XAML 中创建 Android 小组件时， `Context` 通常必须使用 `x:Arguments` 具有标记扩展的属性将对象传递给小组件的构造函数 `x:Static` 。 有关详细信息，请参阅 [将参数传递给本机视图](#pass-arguments-to-native-views)。
 
 > [!NOTE]
-> 请注意，不能将本机视图命名 `x:Name` 为 .NET Standard 库项目或共享资产项目（SAP）。 这样做将生成本机类型的变量，这将导致编译错误。 但是，本机视图可以包装在实例中， `ContentView` 并在代码隐藏文件中检索，前提是使用了 SAP。 有关详细信息，请参阅[从代码引用本机视图](#refer-to-native-views-from-code)。
+> 请注意， `x:Name` 不能在 .NET Standard 库项目或 (SAP) 的共享资产项目中将本机视图命名为。 这样做将生成本机类型的变量，这将导致编译错误。 但是，本机视图可以包装在实例中， `ContentView` 并在代码隐藏文件中检索，前提是使用了 SAP。 有关详细信息，请参阅 [从代码引用本机视图](#refer-to-native-views-from-code)。
 
 ## <a name="native-bindings"></a>本机绑定
 
-数据绑定用于将 UI 与其数据源同步，并简化 Xamarin.Forms 应用程序显示数据和与其数据交互的方式。 如果源对象实现 `INotifyPropertyChanged` 接口，则*源*对象中的更改会由绑定框架自动推送到*目标*对象，并且可以选择将*目标*对象中的更改推送到*源*对象。
+数据绑定用于将 UI 与其数据源同步，并简化 Xamarin.Forms 应用程序显示数据和与其数据交互的方式。 如果源对象实现 `INotifyPropertyChanged` 接口，则 *源* 对象中的更改会由绑定框架自动推送到 *目标* 对象，并且可以选择将 *目标* 对象中的更改推送到 *源* 对象。
 
 本机视图的属性也可以使用数据绑定。 下面的代码示例演示如何使用本机视图的属性进行数据绑定：
 
@@ -109,11 +109,11 @@ Android 小组件构造函数通常要求将 Android `Context` 对象作为参�
 ![已启用本机交换机禁用的 ](xaml-images/native-switch-disabled.png)
  ![ 本机切换](xaml-images/native-switch-enabled.png)
 
-自动支持双向绑定，前提是本机属性实现了 `INotifyPropertyChanged` ，或支持 iOS 上的键-值观察（KVO）或 `DependencyProperty` UWP 上的。 但是，许多本机视图不支持属性更改通知。 对于这些视图，您可以 [`UpdateSourceEventName`](xref:Xamarin.Forms.Binding.UpdateSourceEventName) 将属性值指定为绑定表达式的一部分。 应将此属性设置为本机视图中的事件名称，该事件指示目标属性已更改。 然后，当本机开关的值发生更改时， `Binding` 会通知类用户已更改开关值，并 `NativeSwitchPageViewModel.IsSwitchOn` 更新属性值。
+如果本机属性实现 `INotifyPropertyChanged` 或支持 (KVO) 在 iOS 上，或在 UWP 上为，则自动支持双向绑定 `DependencyProperty` 。 但是，许多本机视图不支持属性更改通知。 对于这些视图，您可以 [`UpdateSourceEventName`](xref:Xamarin.Forms.Binding.UpdateSourceEventName) 将属性值指定为绑定表达式的一部分。 应将此属性设置为本机视图中的事件名称，该事件指示目标属性已更改。 然后，当本机开关的值发生更改时， `Binding` 会通知类用户已更改开关值，并 `NativeSwitchPageViewModel.IsSwitchOn` 更新属性值。
 
 ## <a name="pass-arguments-to-native-views"></a>将自变量传递给本机视图
 
-构造函数参数可以使用 `x:Arguments` 具有标记扩展的属性传递给本机视图 `x:Static` 。 此外， `public static` 可以通过使用属性指定方法的名称 `x:FactoryMethod` ，并使用属性来调用本机视图工厂方法（返回与定义方法的类或结构类型相同的对象或值的方法） `x:Arguments` 。
+构造函数参数可以使用 `x:Arguments` 具有标记扩展的属性传递给本机视图 `x:Static` 。 此外，本机视图工厂方法 (`public static` 方法，这些方法返回与定义方法的类或结构相同的类型的对象或值) 可以通过使用特性指定方法的名称 `x:FactoryMethod` ，并使用属性来调用 `x:Arguments` 。
 
 下面的代码示例演示了这两种方法：
 
@@ -171,7 +171,7 @@ Android 小组件构造函数通常要求将 Android `Context` 对象作为参�
 
 [`Typeface.Create`](xref:Android.Graphics.Typeface.Create*)工厂方法用于 [`TextView.Typeface`](xref:Android.Widget.TextView.Typeface) 在 Android 上将属性设置为新的 [`Typeface`](xref:Android.Graphics.Typeface) 。 `Typeface`系列名称和样式由作为属性的子元素的方法参数指定 `x:Arguments` 。
 
-[`FontFamily`](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.fontfamily)构造函数用于将 [`TextBlock.FontFamily`](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.fontfamily) `FontFamily` 通用 Windows 平台（UWP）上的属性设置为新的。 该 `FontFamily` 名称由作为属性的子的方法参数指定 `x:Arguments` 。
+[`FontFamily`](/uwp/api/Windows.UI.Xaml.Media.FontFamily)构造函数用于将 [`TextBlock.FontFamily`](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) `FontFamily` 通用 Windows 平台 (UWP) 上的新属性设置为新的。 该 `FontFamily` 名称由作为属性的子的方法参数指定 `x:Arguments` 。
 
 > [!NOTE]
 > 参数必须与构造函数或工厂方法所需的类型相匹配。
@@ -180,7 +180,7 @@ Android 小组件构造函数通常要求将 Android `Context` 对象作为参�
 
 ![在本机视图上设置字体](xaml-images/passing-arguments.png)
 
-有关在 XAML 中传递参数的详细信息，请参阅[在 xaml 中传递参数](~/xamarin-forms/xaml/passing-arguments.md)。
+有关在 XAML 中传递参数的详细信息，请参阅 [在 xaml 中传递参数](~/xamarin-forms/xaml/passing-arguments.md)。
 
 ## <a name="refer-to-native-views-from-code"></a>从代码中引用本机视图
 
@@ -263,13 +263,13 @@ public partial class NativeViewInsideContentViewPage : ContentPage
 
 [`ContentView.Content`](xref:Xamarin.Forms.ContentView.Content)访问属性以将包装的本机视图作为特定于平台的实例检索 `NativeViewWrapper` 。 然后，将 `NativeViewWrapper.NativeElement` 访问该属性以检索本机视图的本机类型。 然后调用本机视图的 API 来执行所需的操作。
 
-IOS 和 Android 本机按钮共享同一 `OnButtonTap` 事件处理程序，因为每个本机按钮都将使用一个 `EventHandler` 委托来响应触控事件。 但是，通用 Windows 平台（UWP）使用单独的 `RoutedEventHandler` ，后者又使用 `OnButtonTap` 此示例中的事件处理程序。 因此，当单击 "本机" 按钮时， `OnButtonTap` 事件处理程序将执行，该事件处理程序会缩放和旋转包含在指定的中的本机控件 [`ContentView`](xref:Xamarin.Forms.ContentView) `contentViewTextParent` 。 下面的屏幕截图演示了每个平台上出现的情况：
+IOS 和 Android 本机按钮共享同一 `OnButtonTap` 事件处理程序，因为每个本机按钮都将使用一个 `EventHandler` 委托来响应触控事件。 但是，通用 Windows 平台 (UWP) 使用单独的 `RoutedEventHandler` ，后者又使用 `OnButtonTap` 此示例中的事件处理程序。 因此，当单击 "本机" 按钮时， `OnButtonTap` 事件处理程序将执行，该事件处理程序会缩放和旋转包含在指定的中的本机控件 [`ContentView`](xref:Xamarin.Forms.ContentView) `contentViewTextParent` 。 下面的屏幕截图演示了每个平台上出现的情况：
 
 ![包含本机控件的 ContentView](xaml-images/contentview.png)
 
 ## <a name="subclass-native-views"></a>子类本机视图
 
-许多 iOS 和 Android 本机视图不适合在 XAML 中进行实例化，因为它们使用方法而不是属性来设置控件。 此问题的解决方法是包装中的本机视图的子类，这些包装器定义更易于 XAML 的 API，该 API 使用属性来设置控件，并使用与平台无关的事件。 然后，可以将换行的本机视图置于共享资产项目（SAP）中并使用条件编译指令来放置，或者放置在平台特定的项目中，并在 .NET Standard 库项目中从 XAML 进行引用。
+许多 iOS 和 Android 本机视图不适合在 XAML 中进行实例化，因为它们使用方法而不是属性来设置控件。 此问题的解决方法是包装中的本机视图的子类，这些包装器定义更易于 XAML 的 API，该 API 使用属性来设置控件，并使用与平台无关的事件。 然后，可以将换行的本机视图置于共享资产项目 (SAP) 并使用条件编译指令进行放置，或者放置在平台特定的项目中，并在 .NET Standard 库项目中从 XAML 进行引用。
 
 下面的代码示例演示了一个 Xamarin.Forms 使用子类本机视图的页面：
 
@@ -308,7 +308,7 @@ IOS 和 Android 本机按钮共享同一 `OnButtonTap` 事件处理程序，因�
 
 ![子类本机视图](xaml-images/sub-classed.png)
 
-在 iOS 和 Android 上，本机选取器使用方法设置控件。 因此，这些选取器必须是子类才能公开属性，以使其能够识别 XAML。 在通用 Windows 平台（UWP）上， `ComboBox` 已经是 XAML 友好的，因此不需要进行子类化。
+在 iOS 和 Android 上，本机选取器使用方法设置控件。 因此，这些选取器必须是子类才能公开属性，以使其能够识别 XAML。 在通用 Windows 平台 (UWP) 上， `ComboBox` 已经是 XAML 友好的，因此不需要进行子类化。
 
 ### <a name="ios"></a>iOS
 
@@ -466,9 +466,9 @@ class MySpinner : Spinner
 
 ## <a name="related-links"></a>相关链接
 
-- [NativeSwitch （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-nativeviews-nativeswitch)
-- [Forms2Native （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/forms2native)
-- [NativeViewInsideContentView （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-nativeviews-nativeviewinsidecontentview)
-- [SubclassedNativeControls （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-nativeviews-subclassednativecontrols)
+- [NativeSwitch (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-nativeviews-nativeswitch)
+- [Forms2Native (示例) ](/samples/xamarin/xamarin-forms-samples/forms2native)
+- [NativeViewInsideContentView (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-nativeviews-nativeviewinsidecontentview)
+- [SubclassedNativeControls (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-nativeviews-subclassednativecontrols)
 - [本机窗体](~/xamarin-forms/platform/native-forms.md)
 - [在 XAML 中传递参数](~/xamarin-forms/xaml/passing-arguments.md)

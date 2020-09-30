@@ -10,12 +10,12 @@ ms.date: 04/27/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 4cad46bdee1b49c316947bc56bdb69a3b9e9a270
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 71df780c648bcaa5a2ca4db388b52ac77a64d158
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938202"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91560541"
 ---
 # <a name="native-views-in-c"></a>C 中的本机视图\#
 
@@ -33,8 +33,8 @@ Xamarin.Forms允许 `Content` 设置或具有集合的任何控件 `Children` �
 
 将平台特定的视图添加到布局的功能 Xamarin.Forms 在每个平台上都由两个扩展方法启用：
 
-- `Add`–将平台特定的视图添加到 [`Children`](xref:Xamarin.Forms.Layout`1.Children) 布局的集合。
-- `ToView`–获取特定于平台的视图，并将其包装为 Xamarin.Forms [`View`](xref:Xamarin.Forms.View) 可设置为控件的 `Content` 属性的。
+- `Add` –将平台特定的视图添加到 [`Children`](xref:Xamarin.Forms.Layout`1.Children) 布局的集合。
+- `ToView` –获取特定于平台的视图，并将其包装为 Xamarin.Forms [`View`](xref:Xamarin.Forms.View) 可设置为控件的 `Content` 属性的。
 
 在共享项目中使用这些方法 Xamarin.Forms 需要导入相应的特定于平台的 Xamarin.Forms 命名空间：
 
@@ -319,11 +319,11 @@ stackLayout.Children.Add(fixedControl, arrangeOverrideDelegate: (renderer, final
 
 ![具有 System.windows.frameworkelement.arrangeoverride 委托的 UWP CustomControl](code-images/winrt-good-measurement.png)
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 本文介绍了如何向 Xamarin.Forms 使用 c # 创建的布局添加本机视图，以及如何重写自定义视图的布局来纠正其度量 API 使用。
 
 ## <a name="related-links"></a>相关链接
 
-- [NativeEmbedding （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-nativeembedding)
+- [NativeEmbedding (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-nativeembedding)
 - [本机窗体](~/xamarin-forms/platform/native-forms.md)

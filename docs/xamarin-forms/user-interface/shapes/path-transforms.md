@@ -10,12 +10,12 @@ ms.date: 07/02/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6bc61eadb40a66c278955936e15158f34709fd18
-ms.sourcegitcommit: aeefe667156ca8d3ee2ee21d9bec0fa629589e33
+ms.openlocfilehash: 37ee7fe2278176024dc1662b87b494e84344b98c
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90928650"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91558955"
 ---
 # <a name="no-locxamarinforms-shapes-path-transforms"></a>Xamarin.Forms 形状：路径转换
 
@@ -400,5 +400,5 @@ Xamarin.Forms 具有两个支持将多个转换应用于 `Path` 对象的类。 
 
 ## <a name="related-links"></a>相关链接
 
-- [ShapeDemos (示例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+- [ShapeDemos (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 - [Xamarin.Forms 形状](index.md)

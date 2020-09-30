@@ -10,12 +10,12 @@ ms.date: 12/11/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c420fe65b020067169230dd06dbcd5ce65c036ab
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: a1c05fb6ea81827be97d1d49a8066a755ac0a1b7
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84128617"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91560658"
 ---
 # <a name="swipeview-swipe-transition-mode-on-android"></a>Android 上的 SwipeView 滑动过渡模式
 
@@ -56,8 +56,8 @@ swipeView.On<Android>().SetSwipeTransitionMode(SwipeTransitionMode.Drag);
 
 `SwipeView.On<Android>`方法指定此平台特定的仅在 Android 上运行。 `SwipeView.SetSwipeTransitionMode`命名空间中的方法 [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) 用于控制打开时使用的转换 `SwipeView` 。 `SwipeTransitionMode`枚举提供了两个可能的值：
 
-- `Reveal`指示将在内容为 "重击" 的情况下显示滑动项 `SwipeView` ，并为属性的默认值 `SwipeView.SwipeTransitionMode` 。
-- `Drag`指示当内容为重击时，将在视图中拖动滑动项 `SwipeView` 。
+- `Reveal` 指示将在内容为 "重击" 的情况下显示滑动项 `SwipeView` ，并为属性的默认值 `SwipeView.SwipeTransitionMode` 。
+- `Drag` 指示当内容为重击时，将在视图中拖动滑动项 `SwipeView` 。
 
 此外， `SwipeView.GetSwipeTransitionMode` 方法可用于返回 `SwipeTransitionMode` 应用于的 `SwipeView` 。
 
@@ -67,6 +67,6 @@ swipeView.On<Android>().SetSwipeTransitionMode(SwipeTransitionMode.Drag);
 
 ## <a name="related-links"></a>相关链接
 
-- [PlatformSpecifics （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [PlatformSpecifics (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [创建平台特定信息](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [AndroidSpecific API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)

@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Forms地图多边形、折线和圆圈
+title: Xamarin.Forms 地图多边形、折线和圆圈
 description: 本文介绍如何在地图实例上创建多边形、折线和圆圈 Xamarin.Forms 。
 ms.prod: xamarin
 ms.assetid: CDAF0B02-1AA8-4AD6-94A7-ABFC18006A2D
@@ -10,14 +10,14 @@ ms.date: 03/10/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ca813f9f0f75aeaf4a2502faa7cb96d1fbead471
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: d4b82cc9c04dd711cc99b558475c2e003e557252
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138406"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91559774"
 ---
-# <a name="xamarinforms-map-polygons-and-polylines"></a>Xamarin.Forms地图多边形和折线
+# <a name="no-locxamarinforms-map-polygons-and-polylines"></a>Xamarin.Forms 地图多边形和折线
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 
@@ -28,20 +28,20 @@ ms.locfileid: "84138406"
 
 `Polygon`、 `Polyline` 和 `Circle` 类派生自 `MapElement` 类，该类公开以下可绑定属性：
 
-- `StrokeColor`是 `Color` 确定线条颜色的对象。
+- `StrokeColor` 是 `Color` 确定线条颜色的对象。
 - `StrokeWidth``float`确定线条宽度的对象。
 
 `Polygon`类定义了其他可绑定属性：
 
-- `FillColor`是 `Color` 确定多边形背景色的对象。
+- `FillColor` 是 `Color` 确定多边形背景色的对象。
 
 此外， `Polygon` 和 `Polyline` 类都定义一个 `GeoPath` 属性，该属性是 [`Position`](xref:Xamarin.Forms.Maps.Position) 指定形状点的对象的列表。
 
 `Circle`类定义以下可绑定属性：
 
-- `Center`是一个 [`Position`](xref:Xamarin.Forms.Maps.Position) 对象，用于定义纬度和经度中的圆的中心。
-- `Radius`一个 [`Distance`](xref:Xamarin.Forms.Maps.Distance) 对象，它定义以米、公里或英里为单位的圆的半径。
-- `FillColor`是一个 `Color` 属性，它确定圆周内的颜色。
+- `Center` 是一个 [`Position`](xref:Xamarin.Forms.Maps.Position) 对象，用于定义纬度和经度中的圆的中心。
+- `Radius` 一个 [`Distance`](xref:Xamarin.Forms.Maps.Distance) 对象，它定义以米、公里或英里为单位的圆的半径。
+- `FillColor` 是一个 `Color` 属性，它确定圆周内的颜色。
 
 > [!NOTE]
 > 如果 `StrokeColor` 未指定属性，则笔划将默认为黑色。 如果 `FillColor` 未指定该属性，则填充将默认为透明。 因此，如果两个属性均未指定，则该形状将有一个不带填充的黑色轮廓。
@@ -229,8 +229,8 @@ map.MapElements.Add(circle);
 地图上的位置 `Circle` 取决于 `Center` 和属性的值 `Radius` 。 `Center`属性定义圆的中心（在纬度和经度中），而 `Radius` 属性定义圆的半径（以米为单位）。 `StrokeColor`指定了和 `StrokeWidth` 属性以自定义圆的轮廓。 `FillColor`属性值指定圆周内的颜色。 这两个颜色值都指定一个 alpha 通道，从而使基础地图可以通过圆圈可见。 将 `Circle` 对象添加到的集合后，该对象将呈现在映射上 `MapElements` `Map` 。
 
 > [!NOTE]
-> `GeographyUtils`类具有一个 `ToCircumferencePositions` 扩展方法，该方法可将 `Circle` 对象（定义 `Center` 和 `Radius` 属性值）转换为 `Position` 构成圆周的纬度和经度坐标的对象的列表。
+> `GeographyUtils`类具有一个 `ToCircumferencePositions` 扩展方法，该方法可将 `Circle` 定义 `Center` 和属性) 值的对象 (转换 `Radius` 为 `Position` 构成圆周的纬度和经度坐标的对象的列表。
 
 ## <a name="related-links"></a>相关链接
 
-- [地图示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
+- [地图示例](/samples/xamarin/xamarin-forms-samples/workingwithmaps)

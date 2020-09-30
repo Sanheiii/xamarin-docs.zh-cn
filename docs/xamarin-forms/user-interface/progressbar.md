@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsProgressBar
+title: Xamarin.Forms ProgressBar
 description: Xamarin.FormsProgressBar 是一个控件，它以直观的方式将进度表示为根据 float 属性填充的水平栏。
 ms.prod: xamarin
 ms.assetId: C2F85FED-797C-466B-A0FD-E73CFB79B267
@@ -10,14 +10,14 @@ ms.date: 07/09/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b4ac6231c0483c0c44755c2ac9539f237dd64251
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 111b3ad13902b272256464f6f70f0db3dfd015b6
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136274"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91559449"
 ---
-# <a name="xamarinforms-progressbar"></a>Xamarin.FormsProgressBar
+# <a name="no-locxamarinforms-progressbar"></a>Xamarin.Forms ProgressBar
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-progressbardemos/)
 
 Xamarin.Forms [`ProgressBar`](xref:Xamarin.Forms.ProgressBar) 控件将进度直观地表示为水平条，其填充方式为由值表示的百分比 `float` 。 `ProgressBar`类继承自 [`View`](xref:Xamarin.Forms.View) 。
@@ -28,12 +28,12 @@ Xamarin.Forms [`ProgressBar`](xref:Xamarin.Forms.ProgressBar) 控件将进度直
 
 `ProgressBar`控件定义了两个属性：
 
-* [`Progress`](xref:Xamarin.Forms.ProgressBar.Progress)`float`表示当前进度的值，该值为0到1之间的值。 `Progress`小于0的值将被限制为0，大于1的值将限制为1。
+* [`Progress`](xref:Xamarin.Forms.ProgressBar.Progress)`float`表示当前进度的值，该值为0到1之间的值。 `Progress` 小于0的值将被限制为0，大于1的值将限制为1。
 * [`ProgressColor`](xref:Xamarin.Forms.ProgressBar.ProgressColor)`Color`影响表示当前进度的内部条形颜色的。
 
 这些属性是由对象支持的 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，这意味着可以对进行 `ProgressBar` 样式化，并使其成为数据绑定的目标。
 
-该 `ProgressBar` 控件还定义了一个 `ProgressTo` 方法，该方法将从其当前值到指定值的一种动画效果。 有关详细信息，请参阅对[ProgressBar 进行动画处理](#animate-a-progressbar)。
+该 `ProgressBar` 控件还定义了一个 `ProgressTo` 方法，该方法将从其当前值到指定值的一种动画效果。 有关详细信息，请参阅对 [ProgressBar 进行动画处理](#animate-a-progressbar)。
 
 > [!NOTE]
 > 不 `ProgressBar` 接受用户操作，因此当使用 Tab 键选择控件时，将跳过该操作。
@@ -86,4 +86,4 @@ await progressBar.ProgressTo(0.75, 500, Easing.Linear);
 
 ## <a name="related-links"></a>相关链接
 
-* [ProgressBar 演示](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-progressbardemos/)
+* [ProgressBar 演示](/samples/xamarin/xamarin-forms-samples/userinterface-progressbardemos/)

@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Forms映射 Pin
+title: Xamarin.Forms 映射 Pin
 description: 本文介绍如何在地图上创建 pin Xamarin.Forms 。
 ms.prod: xamarin
 ms.assetid: F8FC081B-A811-4FBB-B8F8-30D6FD36BD40
@@ -10,14 +10,14 @@ ms.date: 10/23/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5e22888291a430863b8e45ee21d359a5acec750f
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 476ef1b8fd6c8e16c5fb3e5fdd1ac60eafd90b7c
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138432"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91559839"
 ---
-# <a name="xamarinforms-map-pins"></a>Xamarin.Forms映射 Pin
+# <a name="no-locxamarinforms-map-pins"></a>Xamarin.Forms 映射 Pin
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 
@@ -34,7 +34,7 @@ Xamarin.Forms [`Map`](xref:Xamarin.Forms.Maps.Map) 控件允许用对象标记�
 - [`Position`](xref:Xamarin.Forms.Maps.Pin.Position)，类型为 [`Position`](xref:Xamarin.Forms.Maps.Position) ，表示 pin 的纬度和经度。
 - [`Type`](xref:Xamarin.Forms.Maps.Pin.Type)，类型为 [`PinType`](xref:Xamarin.Forms.Maps.PinType) ，表示 pin 类型。
 
-这些属性是由对象支持的 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，这意味着 `Pin` 可以是数据绑定的目标。 有关数据绑定对象的详细信息 `Pin` ，请参阅[显示固定的集合](#display-a-pin-collection)。
+这些属性是由对象支持的 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，这意味着 `Pin` 可以是数据绑定的目标。 有关数据绑定对象的详细信息 `Pin` ，请参阅 [显示固定的集合](#display-a-pin-collection)。
 
 此外，类还 [`Pin`](xref:Xamarin.Forms.Maps.Pin) 定义 `MarkerClicked` 和 `InfoWindowClicked` 事件。 `MarkerClicked`点击某个 pin 时，将触发该事件，并在 `InfoWindowClicked` 点击信息窗口时激发该事件。 `PinClickedEventArgs`同时提供两个事件的对象具有 `HideInfoWindow` 类型为的单个属性 `bool` 。
 
@@ -80,7 +80,7 @@ Xamarin.Forms [`Map`](xref:Xamarin.Forms.Maps.Map) 控件允许用对象标记�
 </ContentPage>
 ```
 
-此 XAML 将创建一个 [`Map`](xref:Xamarin.Forms.Maps.Map) 对象，该对象显示对象指定的区域 [`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan) 。 `MapSpan`对象在由对象表示的纬度和经度上居中 [`Position`](xref:Xamarin.Forms.Maps.Position) ，这会延长0.01 的纬度和经度度。 [`Pin`](xref:Xamarin.Forms.Maps.Pin)对象将添加到 [`Map.Pins`](xref:Xamarin.Forms.Maps.Pin) 集合中，并在上的 `Map` 属性所指定的位置绘制 [`Position`](xref:Xamarin.Forms.Maps.Pin.Position) 。 有关结构的信息 [`Position`](xref:Xamarin.Forms.Maps.Position) ，请参阅[地图位置和距离](position-distance.md)。 有关将 XAML 中的参数传递给缺少默认构造函数的对象的信息，请参阅[在 xaml 中传递参数](~/xamarin-forms/xaml/passing-arguments.md)。
+此 XAML 将创建一个 [`Map`](xref:Xamarin.Forms.Maps.Map) 对象，该对象显示对象指定的区域 [`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan) 。 `MapSpan`对象在由对象表示的纬度和经度上居中 [`Position`](xref:Xamarin.Forms.Maps.Position) ，这会延长0.01 的纬度和经度度。 [`Pin`](xref:Xamarin.Forms.Maps.Pin)对象将添加到 [`Map.Pins`](xref:Xamarin.Forms.Maps.Pin) 集合中，并在上的 `Map` 属性所指定的位置绘制 [`Position`](xref:Xamarin.Forms.Maps.Pin.Position) 。 有关结构的信息 [`Position`](xref:Xamarin.Forms.Maps.Position) ，请参阅 [地图位置和距离](position-distance.md)。 有关将 XAML 中的参数传递给缺少默认构造函数的对象的信息，请参阅 [在 xaml 中传递参数](~/xamarin-forms/xaml/passing-arguments.md)。
 
 等效 C# 代码如下：
 
@@ -157,14 +157,14 @@ wharfPin.InfoWindowClicked += async (s, args) =>
 
 ## <a name="pin-types"></a>固定类型
 
-[`Pin`](xref:Xamarin.Forms.Maps.Pin)对象包括 [`Type`](xref:Xamarin.Forms.Maps.Pin.Type) 类型为的属性 [`PinType`](xref:Xamarin.Forms.Maps.PinType) ，表示 pin 类型。 `PinType` 枚举定义下列成员：
+[`Pin`](xref:Xamarin.Forms.Maps.Pin) 对象包括 [`Type`](xref:Xamarin.Forms.Maps.Pin.Type) 类型为的属性 [`PinType`](xref:Xamarin.Forms.Maps.PinType) ，表示 pin 类型。 `PinType` 枚举定义下列成员：
 
 - `Generic`表示泛型 pin。
 - `Place`表示位置的 pin。
 - `SavedPin`表示保存位置的 pin。
 - `SearchResult`表示搜索结果的 pin。
 
-但是，将 [`Pin.Type`](xref:Xamarin.Forms.Maps.Pin.Type) 属性设置为任何 [`PinType`](xref:Xamarin.Forms.Maps.PinType) 成员不会更改呈现的 pin 的外观。 相反，您必须创建自定义呈现器来自定义 pin 外观。 有关详细信息，请参阅[自定义地图 pin](~/xamarin-forms/app-fundamentals/custom-renderer/map-pin.md)。
+但是，将 [`Pin.Type`](xref:Xamarin.Forms.Maps.Pin.Type) 属性设置为任何 [`PinType`](xref:Xamarin.Forms.Maps.PinType) 成员不会更改呈现的 pin 的外观。 相反，您必须创建自定义呈现器来自定义 pin 外观。 有关详细信息，请参阅 [自定义地图 pin](~/xamarin-forms/app-fundamentals/custom-renderer/map-pin.md)。
 
 ## <a name="display-a-pin-collection"></a>显示固定集合
 
@@ -267,11 +267,11 @@ public class MapItemTemplateSelector : DataTemplateSelector
 > [!NOTE]
 > 此功能的一个用例是基于子类型将子归类对象的属性绑定 [`Pin`](xref:Xamarin.Forms.Maps.Pin) 到不同的属性 `Pin` 。
 
-有关数据模板选择器的详细信息，请参阅[创建 Xamarin.Forms 并重](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)。
+有关数据模板选择器的详细信息，请参阅 [创建 Xamarin.Forms 并重](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)。
 
 ## <a name="related-links"></a>相关链接
 
-- [地图示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
+- [地图示例](/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 - [映射自定义呈现器](~/xamarin-forms/app-fundamentals/custom-renderer/map-pin.md)
 - [在 XAML 中传递参数](~/xamarin-forms/xaml/passing-arguments.md)
 - [创建 Xamarin.Forms 并重](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)

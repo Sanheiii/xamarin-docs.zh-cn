@@ -10,37 +10,37 @@ ms.date: 06/17/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b23aca29fa77b58183a1f09053bc2bb9ba66bb49
-ms.sourcegitcommit: 808ff109928a1eea16e17e23ea81f8c903a239e8
+ms.openlocfilehash: ee834bf7bae945536facb576ae26b9d13f5b7bcd
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88181506"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91558942"
 ---
 # <a name="consuming-xaml-markup-extensions"></a>使用 XAML 标记扩展
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
 
 XAML 标记扩展允许从多个源设置元素特性，从而帮助提高 XAML 的功能和灵活性。 Xaml 2009 规范包含若干 XAML 标记扩展。 它们显示在 XAML 文件中 `x` ，并采用常用的命名空间前缀，并且通常引用有此前缀。 本文介绍以下标记扩展：
 
-- [`x:Static`](#xstatic-markup-extension)–引用静态属性、字段或枚举成员。
-- [`x:Reference`](#xreference-markup-extension)–引用页上的命名元素。
-- [`x:Type`](#xtype-markup-extension)–将属性设置为 `System.Type` 对象。
-- [`x:Array`](#xarray-markup-extension)–构造特定类型的对象的数组。
-- [`x:Null`](#xnull-markup-extension)–将属性设置为 `null` 值。
-- [`OnPlatform`](#onplatform-markup-extension)–根据每个平台自定义 UI 外观。
-- [`OnIdiom`](#onidiom-markup-extension)-基于运行应用程序的设备的用法自定义 UI 外观。
-- [`DataTemplate`](#datatemplate-markup-extension)–将类型转换为 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 。
-- [`FontImage`](#fontimage-markup-extension)–在可以显示的任何视图中显示字体图标 `ImageSource` 。
-- [`AppThemeBinding`](#appthemebinding-markup-extension)–根据当前系统主题使用资源。
+- [`x:Static`](#xstatic-markup-extension) –引用静态属性、字段或枚举成员。
+- [`x:Reference`](#xreference-markup-extension) –引用页上的命名元素。
+- [`x:Type`](#xtype-markup-extension) –将属性设置为 `System.Type` 对象。
+- [`x:Array`](#xarray-markup-extension) –构造特定类型的对象的数组。
+- [`x:Null`](#xnull-markup-extension) –将属性设置为 `null` 值。
+- [`OnPlatform`](#onplatform-markup-extension) –根据每个平台自定义 UI 外观。
+- [`OnIdiom`](#onidiom-markup-extension) -基于运行应用程序的设备的用法自定义 UI 外观。
+- [`DataTemplate`](#datatemplate-markup-extension) –将类型转换为 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 。
+- [`FontImage`](#fontimage-markup-extension) –在可以显示的任何视图中显示字体图标 `ImageSource` 。
+- [`AppThemeBinding`](#appthemebinding-markup-extension) –根据当前系统主题使用资源。
 
 其他 xaml 实现一直以来已支持其他 XAML 标记扩展，并且也支持 Xamarin.Forms 。 其他文章中更全面地描述了这些内容：
 
-- `StaticResource`-从资源字典引用对象，如[**资源**](~/xamarin-forms/xaml/resource-dictionaries.md)字典一文中所述。
-- `DynamicResource`-响应资源字典中对象的更改，如[**动态样式**](~/xamarin-forms/user-interface/styles/dynamic.md)一文中所述。
-- `Binding`-在两个对象的属性之间建立链接，如[**数据绑定**](~/xamarin-forms/app-fundamentals/data-binding/index.md)一文中所述。
+- `StaticResource` -从资源字典引用对象，如  [**资源**](~/xamarin-forms/xaml/resource-dictionaries.md)字典一文中所述。
+- `DynamicResource` -响应资源字典中对象的更改，如 [**动态样式**](~/xamarin-forms/user-interface/styles/dynamic.md)一文中所述。
+- `Binding` -在两个对象的属性之间建立链接，如 [**数据绑定**](~/xamarin-forms/app-fundamentals/data-binding/index.md)一文中所述。
 - `TemplateBinding`-从控件模板执行数据绑定，如文章[** Xamarin.Forms 控件模板**](~/xamarin-forms/app-fundamentals/templates/control-template.md)中所述。
-- `RelativeSource`-设置相对于绑定目标位置的绑定源，如[相关绑定](~/xamarin-forms/app-fundamentals/data-binding/relative-bindings.md)一文中所述。
+- `RelativeSource` -设置相对于绑定目标位置的绑定源，如 [相关绑定](~/xamarin-forms/app-fundamentals/data-binding/relative-bindings.md)一文中所述。
 
 [`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout)布局使用自定义标记扩展 [`ConstraintExpression`](xref:Xamarin.Forms.ConstraintExpression) 。 [**RelativeLayout**](~/xamarin-forms/user-interface/layouts/relativelayout.md)一文中介绍了此标记扩展。
 
@@ -48,7 +48,7 @@ XAML 标记扩展允许从多个源设置元素特性，从而帮助提高 XAML 
 
 `x:Static`类支持标记扩展 [`StaticExtension`](xref:Xamarin.Forms.Xaml.StaticExtension) 。 类具有一个名为 [`Member`](xref:Xamarin.Forms.Xaml.StaticExtension.Member) 的类型的属性 `string` ，该属性设置为公共常量、静态属性、静态字段或枚举成员的名称。
 
-一种常用的方法 `x:Static` 是先定义具有一些常量或静态变量的类，如 `AppConstants` [**MarkupExtensions**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)程序中的此类小类：
+一种常用的方法 `x:Static` 是先定义具有一些常量或静态变量的类，如 `AppConstants` [**MarkupExtensions**](/samples/xamarin/xamarin-forms-samples/xaml-markupextensions) 程序中的此类小类：
 
 ```csharp
 static class AppConstants
@@ -114,7 +114,7 @@ XAML 分析器还允许 `StaticExtension` 将类缩写为 `x:Static` ：
 
 这是最常见的 `x:Static` 标记扩展形式。
 
-"**静态演示**" 页包含两个其他示例。 XAML 文件的根标记包含 .NET 命名空间的 XML 命名空间声明 `System` ：
+" **静态演示** " 页包含两个其他示例。 XAML 文件的根标记包含 .NET 命名空间的 XML 命名空间声明 `System` ：
 
 ```xaml
 xmlns:sys="clr-namespace:System;assembly=netstandard"
@@ -154,7 +154,7 @@ xmlns:sys="clr-namespace:System;assembly=netstandard"
 
 `x:Reference`标记扩展将专门用于数据绑定，这将在[**数据绑定**](~/xamarin-forms/app-fundamentals/data-binding/index.md)一文中更详细地介绍。
 
-" **X:Reference 演示**" 页显示了两种用于 `x:Reference` 数据绑定的，第一种用于设置对象的 `Source` 属性，第 `Binding` 二种用于设置 `BindingContext` 两个数据绑定的属性：
+" **X:Reference 演示** " 页显示了两种用于 `x:Reference` 数据绑定的，第一种用于设置对象的 `Source` 属性，第 `Binding` 二种用于设置 `BindingContext` 两个数据绑定的属性：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -192,15 +192,15 @@ xmlns:sys="clr-namespace:System;assembly=netstandard"
 
 ## <a name="xtype-markup-extension"></a>x:Type 标记扩展
 
-`x:Type`标记扩展是等效于 c # 关键字的 XAML [`typeof`](/dotnet/csharp/language-reference/keywords/typeof/) 。 类支持它 [`TypeExtension`](xref:Xamarin.Forms.Xaml.TypeExtension) ，该类定义一个名为的类型的属性， [`TypeName`](xref:Xamarin.Forms.Xaml.TypeExtension.TypeName) 该属性 `string` 被设置为类或结构名称。 `x:Type`标记扩展返回 [`System.Type`](xref:System.Type) 该类或结构的对象。 `TypeName`是的 content 属性 `TypeExtension` ，因此 `TypeName=` 当 `x:Type` 带有大括号时不需要。
+`x:Type`标记扩展是等效于 c # 关键字的 XAML [`typeof`](/dotnet/csharp/language-reference/keywords/typeof/) 。 类支持它 [`TypeExtension`](xref:Xamarin.Forms.Xaml.TypeExtension) ，该类定义一个名为的类型的属性， [`TypeName`](xref:Xamarin.Forms.Xaml.TypeExtension.TypeName) 该属性 `string` 被设置为类或结构名称。 `x:Type`标记扩展返回 [`System.Type`](xref:System.Type) 该类或结构的对象。 `TypeName` 是的 content 属性 `TypeExtension` ，因此 `TypeName=` 当 `x:Type` 带有大括号时不需要。
 
-在中 Xamarin.Forms ，有多个具有类型的参数的属性 `Type` 。 示例包括的 [`TargetType`](xref:Xamarin.Forms.Style.TargetType) 属性 `Style` ，以及用于指定泛型类中的参数的[x:TypeArguments](~/xamarin-forms/xaml/passing-arguments.md#specifying-a-generic-type-argument)特性。 但 XAML 分析器 `typeof` 会自动执行操作，并且 `x:Type` 不会在这些情况下使用标记扩展。
+在中 Xamarin.Forms ，有多个具有类型的参数的属性 `Type` 。 示例包括的 [`TargetType`](xref:Xamarin.Forms.Style.TargetType) 属性 `Style` ，以及用于指定泛型类中的参数的 [x:TypeArguments](~/xamarin-forms/xaml/passing-arguments.md#specifying-a-generic-type-argument) 特性。 但 XAML 分析器 `typeof` 会自动执行操作，并且 `x:Type` 不会在这些情况下使用标记扩展。
 
-需要一个位置 `x:Type` *，其中*包含 `x:Array` 标记扩展，[下一节](#xarray-markup-extension)将对此进行介绍。
+需要一个位置 `x:Type` *，其中* 包含 `x:Array` 标记扩展， [下一节](#xarray-markup-extension)将对此进行介绍。
 
 `x:Type`当构造菜单，其中每个菜单项对应于特定类型的对象时，标记扩展也很有用。 可以将 `Type` 对象与每个菜单项相关联，然后在选定菜单项时实例化对象。
 
-这就是 `MainPage` **标记扩展**程序中的导航菜单的工作方式。 **MainPage**文件包含，其中 `TableView` 每个 `TextCell` 对应于程序中的特定页面：
+这就是 `MainPage` **标记扩展** 程序中的导航菜单的工作方式。 **MainPage**文件包含，其中 `TableView` 每个 `TextCell` 对应于程序中的特定页面：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -239,7 +239,7 @@ xmlns:sys="clr-namespace:System;assembly=netstandard"
 </ContentPage>
 ```
 
-下面是**标记扩展**中的打开主页：
+下面是 **标记扩展**中的打开主页：
 
 [![主页](consuming-images/mainpage-small.png "主页")](consuming-images/mainpage-large.png#lightbox "主页")
 
@@ -265,7 +265,7 @@ public partial class MainPage : ContentPage
 }
 ```
 
-`NavigateCommand`属性是一个 `Command` 对象，该对象实现具有类型为的参数的执行命令 `Type` &mdash; `CommandParameter` 。 方法使用 `Activator.CreateInstance` 来实例化页面，然后导航到该页面。 构造函数通过将页的设置 `BindingContext` 为其自身来结束，这使 `Binding` 上的能够 `Command` 正常工作。 有关此类代码的更多详细信息，请参阅[**数据绑定**](~/xamarin-forms/app-fundamentals/data-binding/index.md)一文和[**命令**](~/xamarin-forms/app-fundamentals/data-binding/commanding.md)项目。
+`NavigateCommand`属性是一个 `Command` 对象，该对象实现具有类型为的参数的执行命令 `Type` &mdash; `CommandParameter` 。 方法使用 `Activator.CreateInstance` 来实例化页面，然后导航到该页面。 构造函数通过将页的设置 `BindingContext` 为其自身来结束，这使 `Binding` 上的能够 `Command` 正常工作。 有关此类代码的更多详细信息，请参阅 [**数据绑定**](~/xamarin-forms/app-fundamentals/data-binding/index.md) 一文和 [**命令**](~/xamarin-forms/app-fundamentals/data-binding/commanding.md) 项目。
 
 **X:Type 演示**页使用类似的技术来实例化 Xamarin.Forms 元素，并将其添加到 `StackLayout` 中。 XAML 文件最初由三个元素组成， `Button` 其 `Command` 属性设置为 `Binding` ， `CommandParameter` 属性设置为三个 Xamarin.Forms 视图类型：
 
@@ -330,8 +330,8 @@ public partial class TypeDemoPage : ContentPage
 
 `x:Array`标记扩展使你能够在标记中定义数组。 [`ArrayExtension`](xref:Xamarin.Forms.Xaml.ArrayExtension)该类支持定义两个属性的类：
 
-- `Type`类型的 `Type` ，指示数组中元素的类型。
-- `Items`类型 `IList` 为的，它是项本身的集合。 这是的内容属性 `ArrayExtension` 。
+- `Type` 类型的 `Type` ，指示数组中元素的类型。
+- `Items` 类型 `IList` 为的，它是项本身的集合。 这是的内容属性 `ArrayExtension` 。
 
 `x:Array`标记扩展本身从不出现在大括号中。 相反， `x:Array` 开始标记和结束标记用于分隔项列表。 将 `Type` 属性设置为 `x:Type` 标记扩展。
 
@@ -399,7 +399,7 @@ public partial class TypeDemoPage : ContentPage
 <local:HslColor H="0.5" S="1.0" L="0.5" />
 ```
 
-定义常见类型（如字符串或数字）的数组时，请使用[**传递构造函数参数**](~/xamarin-forms/xaml/passing-arguments.md#passing-constructor-arguments)一文中列出的标记来分隔值。
+定义常见类型（如字符串或数字）的数组时，请使用 [**传递构造函数参数**](~/xamarin-forms/xaml/passing-arguments.md#passing-constructor-arguments) 一文中列出的标记来分隔值。
 
 ## <a name="xnull-markup-extension"></a>x:Null 标记扩展
 
@@ -460,16 +460,16 @@ public partial class TypeDemoPage : ContentPage
 
 `OnPlatform`类支持标记扩展 [`OnPlatformExtension`](xref:Xamarin.Forms.Xaml.OnPlatformExtension) ，该类定义以下属性：
 
-- `Default`类型为的 `object` ，它设置为应用于表示平台的属性的默认值。
-- `Android`类型为的 `object` ，它设置为要在 Android 上应用的值。
-- `GTK`类型为的 `object` ，它设置为要在 GTK 平台上应用的值。
-- `iOS`类型为的 `object` ，它设置为要在 iOS 上应用的值。
-- `macOS`类型为的 `object` ，它设置为要在 macOS 上应用的值。
-- `Tizen`类型为的 `object` ，它设置为要在 Tizen 平台上应用的值。
-- `UWP`类型为的 `object` ，它设置为要在通用 Windows 平台上应用的值。
-- `WPF`类型为的 `object` ，它设置为要在 Windows Presentation Foundation 平台上应用的值。
-- `Converter`类型的 `IValueConverter` ，可以设置为 `IValueConverter` 实现。
-- `ConverterParameter`类型的 `object` ，可设置为要传递到实现的值 `IValueConverter` 。
+- `Default` 类型为的 `object` ，它设置为应用于表示平台的属性的默认值。
+- `Android` 类型为的 `object` ，它设置为要在 Android 上应用的值。
+- `GTK` 类型为的 `object` ，它设置为要在 GTK 平台上应用的值。
+- `iOS` 类型为的 `object` ，它设置为要在 iOS 上应用的值。
+- `macOS` 类型为的 `object` ，它设置为要在 macOS 上应用的值。
+- `Tizen` 类型为的 `object` ，它设置为要在 Tizen 平台上应用的值。
+- `UWP` 类型为的 `object` ，它设置为要在通用 Windows 平台上应用的值。
+- `WPF` 类型为的 `object` ，它设置为要在 Windows Presentation Foundation 平台上应用的值。
+- `Converter` 类型的 `IValueConverter` ，可以设置为 `IValueConverter` 实现。
+- `ConverterParameter` 类型的 `object` ，可设置为要传递到实现的值 `IValueConverter` 。
 
 > [!NOTE]
 > XAML 分析器允许 [`OnPlatformExtension`](xref:Xamarin.Forms.Xaml.OnPlatformExtension) 将类缩写为 `OnPlatform` 。
@@ -498,14 +498,14 @@ public partial class TypeDemoPage : ContentPage
 
 `OnIdiom`标记扩展使你可以基于运行应用程序的设备的用法来自定义 UI 外观。 [`OnIdiomExtension`](xref:Xamarin.Forms.Xaml.OnIdiomExtension)该类由类支持，该类定义以下属性：
 
-- `Default`类型为的 `object` ，它设置为应用于表示设备惯例的属性的默认值。
-- `Phone`类型为的 `object` ，它设置为要在手机上应用的值。
-- `Tablet`类型为的 `object` ，它设置为要在平板电脑上应用的值。
-- `Desktop`类型为的 `object` ，它设置为要在桌面平台上应用的值。
-- `TV`类型为的 `object` ，它设置为要在电视平台上应用的值。
-- `Watch`类型为的 `object` ，它设置为要在监视平台上应用的值。
-- `Converter`类型的 `IValueConverter` ，可以设置为 `IValueConverter` 实现。
-- `ConverterParameter`类型的 `object` ，可设置为要传递到实现的值 `IValueConverter` 。
+- `Default` 类型为的 `object` ，它设置为应用于表示设备惯例的属性的默认值。
+- `Phone` 类型为的 `object` ，它设置为要在手机上应用的值。
+- `Tablet` 类型为的 `object` ，它设置为要在平板电脑上应用的值。
+- `Desktop` 类型为的 `object` ，它设置为要在桌面平台上应用的值。
+- `TV` 类型为的 `object` ，它设置为要在电视平台上应用的值。
+- `Watch` 类型为的 `object` ，它设置为要在监视平台上应用的值。
+- `Converter` 类型的 `IValueConverter` ，可以设置为 `IValueConverter` 实现。
+- `ConverterParameter` 类型的 `object` ，可设置为要传递到实现的值 `IValueConverter` 。
 
 > [!NOTE]
 > XAML 分析器允许 [`OnIdiomExtension`](xref:Xamarin.Forms.Xaml.OnIdiomExtension) 将类缩写为 `OnIdiom` 。
@@ -555,10 +555,10 @@ public partial class TypeDemoPage : ContentPage
 
 `FontImageExtension` 类支持 `FontImage` 标记扩展，并定义以下属性：
 
-- `FontFamily`类型的 `string` ，字体图标所属的字体系列。
-- `Glyph`类型的 `string` ，字体图标的 unicode 字符值。
-- `Color`类型 [`Color`](xref:Xamarin.Forms.Color) 为，显示字体图标时使用的颜色。
-- `Size`在呈现的字体图标的类型中， `double` 以与设备无关的单位表示的大小。 默认值为 30。 此外，此属性可以设置为命名字体大小。
+- `FontFamily` 类型的 `string` ，字体图标所属的字体系列。
+- `Glyph` 类型的 `string` ，字体图标的 unicode 字符值。
+- `Color` 类型 [`Color`](xref:Xamarin.Forms.Color) 为，显示字体图标时使用的颜色。
+- `Size` 在呈现的字体图标的类型中， `double` 以与设备无关的单位表示的大小。 默认值为 30。 此外，此属性可以设置为命名字体大小。
 
 > [!NOTE]
 > XAML 分析程序允许将 `FontImageExtension` 类缩写为 `FontImage`。
@@ -578,14 +578,14 @@ public partial class TypeDemoPage : ContentPage
 
 [![FontImage 标记扩展的屏幕截图](consuming-images/fontimagedemo.png "FontImage 演示")](consuming-images/fontimagedemo-large.png#lightbox "FontImage 演示")
 
-有关通过在对象中指定字体图标数据来显示字体图标的信息 `FontImageSource` ，请参阅[显示字体图标](~/xamarin-forms/user-interface/text/fonts.md#display-font-icons)。
+有关通过在对象中指定字体图标数据来显示字体图标的信息 `FontImageSource` ，请参阅 [显示字体图标](~/xamarin-forms/user-interface/text/fonts.md#display-font-icons)。
 
 ## <a name="appthemebinding-markup-extension"></a>AppThemeBinding 标记扩展
 
 `AppThemeBinding`标记扩展使你能够根据当前系统主题指定要使用的资源（如图像或颜色）。
 
 > [!IMPORTANT]
-> `AppThemeBinding`标记扩展具有最低操作系统要求。 有关详细信息，请参阅[响应 Xamarin.Forms 应用程序中的系统主题更改](~/xamarin-forms/user-interface/theming/system-theme-changes.md)。
+> `AppThemeBinding`标记扩展具有最低操作系统要求。 有关详细信息，请参阅 [响应 Xamarin.Forms 应用程序中的系统主题更改](~/xamarin-forms/user-interface/theming/system-theme-changes.md)。
 
 `AppThemeBindingExtension` 类支持 `AppThemeBinding` 标记扩展，并定义以下属性：
 
@@ -632,11 +632,11 @@ public partial class TypeDemoPage : ContentPage
 
 ## <a name="define-markup-extensions"></a>定义标记扩展
 
-如果你遇到了在中不可用的 XAML 标记扩展的需要 Xamarin.Forms ，则可以[创建自己](creating.md)的扩展。
+如果你遇到了在中不可用的 XAML 标记扩展的需要 Xamarin.Forms ，则可以 [创建自己](creating.md)的扩展。
 
 ## <a name="related-links"></a>相关链接
 
-- [标记扩展 (示例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
+- [标记扩展 (示例) ](/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
 - [书籍中的 XAML 标记扩展章节 Xamarin.Forms](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter10.md)
 - [资源字典](~/xamarin-forms/xaml/resource-dictionaries.md)
 - [动态样式](~/xamarin-forms/user-interface/styles/dynamic.md)

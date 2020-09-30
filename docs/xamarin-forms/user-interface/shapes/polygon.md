@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Forms形状：多边形
+title: Xamarin.Forms 形状：多边形
 description: Xamarin.Forms多边形类可用于绘制多边形，多边形是形成闭合形状的连接的一系列线条。
 ms.prod: xamarin
 ms.assetid: D6539F60-A5AC-46EF-86EB-E9F508EB1FA8
@@ -10,18 +10,18 @@ ms.date: 06/16/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 52043bd507d35a1ebe2628c13c14429c604569c9
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: 7464b3e4088986a87aa29c77ee8c6baa78266f84
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87918484"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91558968"
 ---
-# <a name="no-locxamarinforms-shapes-polygon"></a>Xamarin.Forms形状：多边形
+# <a name="no-locxamarinforms-shapes-polygon"></a>Xamarin.Forms 形状：多边形
 
 ![预发行版 API](~/media/shared/preview.png)
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
 `Polygon`类派生自 `Shape` 类，可用于绘制多边形，这系列线条是形成闭合形状的线。 有关 `Polygon` 该类继承自类的属性的信息 `Shape` ，请参阅[ Xamarin.Forms 形状](index.md)。
 
@@ -30,7 +30,7 @@ ms.locfileid: "87918484"
 - `Points`，类型为 `PointCollection` ，它是 [`Point`](xref:Xamarin.Forms.Point) 描述多边形顶点的结构的集合。
 - `FillRule`，类型为 `FillRule` ，它指定如何确定形状的内部填充。 此属性的默认值为 `FillRule.EvenOdd`。
 
-这些属性是由对象支持的 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，这意味着它们可以是数据绑定的目标和样式。
+这些属性由 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 对象提供支持；也就是说，它们可以作为数据绑定的目标，并能进行样式设置。
 
 `PointsCollection`类型是 `ObservableCollection` [`Point`](xref:Xamarin.Forms.Point) 对象的。 `Point`结构定义 `X` 类型的和属性， `Y` `double` 表示二维空间中的 x 坐标和 y 坐标对。 因此， `Points` 应将属性设置为 x 坐标和 y 坐标对的列表，它们描述多边形顶点点，并用单个逗号和/或一个或多个空格分隔。 例如，"40，10 70，80" 和 "40 10，70 80" 都是有效的。
 
@@ -68,7 +68,7 @@ ms.locfileid: "87918484"
 
 ![虚线多边形](polygon-images/dashed.png "虚线多边形")
 
-有关绘制虚线多边形的详细信息，请参阅[绘制虚线形状](index.md#draw-dashed-shapes)。
+有关绘制虚线多边形的详细信息，请参阅 [绘制虚线形状](index.md#draw-dashed-shapes)。
 
 下面的 XAML 示例显示了使用默认填充规则的多边形：
 
@@ -99,6 +99,6 @@ ms.locfileid: "87918484"
 
 ## <a name="related-links"></a>相关链接
 
-- [ShapeDemos (示例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
-- [Xamarin.Forms形状](index.md)
-- [Xamarin.Forms形状：填充规则](fillrules.md)
+- [ShapeDemos (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+- [Xamarin.Forms 形状](index.md)
+- [Xamarin.Forms 形状：填充规则](fillrules.md)

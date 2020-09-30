@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Forms形状：矩形
+title: Xamarin.Forms 形状：矩形
 description: Xamarin.FormsRectangle 类可用于绘制矩形。
 ms.prod: xamarin
 ms.assetid: 2DD663D3-DAEC-495C-AB6D-8A143FC97637
@@ -10,18 +10,18 @@ ms.date: 06/20/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 42ecfc9f09683ccc61640520975b3f50beedaaf5
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: 48d8d61633d09212e445d37f6bd282677ef6b1b1
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87918503"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91558838"
 ---
-# <a name="no-locxamarinforms-shapes-rectangle"></a>Xamarin.Forms形状：矩形
+# <a name="no-locxamarinforms-shapes-rectangle"></a>Xamarin.Forms 形状：矩形
 
 ![预发行版 API](~/media/shared/preview.png)
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
 `Rectangle`类派生自 `Shape` 类，可用于绘制矩形和正方形。 有关 `Rectangle` 该类继承自类的属性的信息 `Shape` ，请参阅[ Xamarin.Forms 形状](index.md)。
 
@@ -30,9 +30,9 @@ ms.locfileid: "87918503"
 - `RadiusX`，类型为 `double` ，它是用于圆角化矩形角的 x 轴半径。 此属性的默认值为0.0。
 - `RadiusY`，类型为 `double` ，它是用于圆角化矩形角的 y 轴半径。 此属性的默认值为0.0。
 
-这些属性是由对象支持的 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，这意味着它们可以是数据绑定的目标和样式。
+这些属性由 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 对象提供支持；也就是说，它们可以作为数据绑定的目标，并能进行样式设置。
 
-`Rectangle`类将 `Aspect` 从类继承的属性设置 `Shape` 为 `Stretch.Fill` 。 有关属性的详细信息 `Aspect` ，请参阅[拉伸形状](index.md#stretch-shapes)。
+`Rectangle`类将 `Aspect` 从类继承的属性设置 `Shape` 为 `Stretch.Fill` 。 有关属性的详细信息 `Aspect` ，请参阅 [拉伸形状](index.md#stretch-shapes)。
 
 ## <a name="create-a-rectangle"></a>创建矩形
 
@@ -72,9 +72,9 @@ ms.locfileid: "87918503"
 
 ![带圆角的矩形](rectangle-images/rounded.png "带圆角的矩形")
 
-有关绘制虚线矩形的信息，请参阅[绘制虚线形状](index.md#draw-dashed-shapes)。
+有关绘制虚线矩形的信息，请参阅 [绘制虚线形状](index.md#draw-dashed-shapes)。
 
 ## <a name="related-links"></a>相关链接
 
-- [ShapeDemos (示例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
-- [Xamarin.Forms形状](index.md)
+- [ShapeDemos (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+- [Xamarin.Forms 形状](index.md)

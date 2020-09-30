@@ -10,12 +10,12 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f6db5014050ad3f037869120d017e51803a7c48f
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 60b331b01f7ba16bd2ea828d429ee64ae25766ea
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136534"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91560268"
 ---
 # <a name="tabbedpage-icons-on-windows"></a>Windows 上的 TabbedPage 图标
 
@@ -68,7 +68,7 @@ public class WindowsTabbedPageIconsCS : Xamarin.Forms.TabbedPage
 }
 ```
 
-`TabbedPage.On<Windows>`方法指定此平台特定的仅在通用 Windows 平台上运行。 [ `TabbedPage.SetHeaderIconsEnabled` ] （X： Xamarin.Forms 。PlatformConfiguration. WindowsSpecific. TabbedPage. SetHeaderIconsEnabled （ Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration、 Xamarin.Forms 。TabbedPage}，System.object）方法， [`Xamarin.Forms.PlatformConfiguration.WindowsSpecific`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific) 用于打开或关闭标头图标。 [ `TabbedPage.SetHeaderIconsSize` ] （X： Xamarin.Forms 。PlatformConfiguration. WindowsSpecific. TabbedPage. SetHeaderIconsSize （ Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration、 Xamarin.Forms 。TabbedPage}， Xamarin.Forms 。Size））方法可以选择使用值指定标头图标大小 [`Size`](xref:Xamarin.Forms.Size) 。
+`TabbedPage.On<Windows>`方法指定此平台特定的仅在通用 Windows 平台上运行。 [ `TabbedPage.SetHeaderIconsEnabled` ] (x： Xamarin.Forms 。PlatformConfiguration. WindowsSpecific. TabbedPage. SetHeaderIconsEnabled (Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration、 Xamarin.Forms 。TabbedPage} （在命名空间中，) # A3 方法） [`Xamarin.Forms.PlatformConfiguration.WindowsSpecific`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific) 用于打开或关闭标题图标。 [ `TabbedPage.SetHeaderIconsSize` ] (x： Xamarin.Forms 。PlatformConfiguration. WindowsSpecific. TabbedPage. SetHeaderIconsSize (Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration、 Xamarin.Forms 。TabbedPage}， Xamarin.Forms 。Size) # A3 方法可选择使用值指定标头图标大小 [`Size`](xref:Xamarin.Forms.Size) 。
 
 此外， `TabbedPage` 命名空间中的类 `Xamarin.Forms.PlatformConfiguration.WindowsSpecific` 还提供了一个 [`EnableHeaderIcons`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.EnableHeaderIcons*) 方法，该方法可启用标头图标、 [`DisableHeaderIcons`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.DisableHeaderIcons*) 禁用标题图标的方法和 [`IsHeaderIconsEnabled`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.IsHeaderIconsEnabled*) 返回 `boolean` 指示是否启用了标头图标的值的方法。
 
@@ -78,6 +78,6 @@ public class WindowsTabbedPageIconsCS : Xamarin.Forms.TabbedPage
 
 ## <a name="related-links"></a>相关链接
 
-- [PlatformSpecifics （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [PlatformSpecifics (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [创建平台特定信息](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [WindowsSpecific API](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific)

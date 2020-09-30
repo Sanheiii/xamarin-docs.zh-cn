@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Forms地图地理编码
+title: Xamarin.Forms 地图地理编码
 description: 本文说明如何使用地理编码和反向地理编码映射数据 Xamarin.Forms 。Maps Geocoder 类。
 ms.prod: xamarin
 ms.assetid: DE7DB31A-8921-4614-8B49-DAEF1E7B03B3
@@ -10,18 +10,18 @@ ms.date: 10/22/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 7e92385f3a82c2d12881be4ff3e54bc47533696d
-ms.sourcegitcommit: ea2abdc789d0e292c3e1700a2b53b92097e0e542
+ms.openlocfilehash: d6a63e952d7466dc4b7f2d3e8cfc39d6c63e4daf
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87517488"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91559969"
 ---
-# <a name="no-locxamarinforms-map-geocoding"></a>Xamarin.Forms地图地理编码
+# <a name="no-locxamarinforms-map-geocoding"></a>Xamarin.Forms 地图地理编码
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 
-[`Xamarin.Forms.Maps`](xref:Xamarin.Forms.Maps)命名空间提供了 [`Geocoder`](xref:Xamarin.Forms.Maps.Geocoder) 一个类，该类在存储在对象中的字符串地址、纬度和经度坐标之间进行转换 [`Position`](xref:Xamarin.Forms.Maps.Position) 。 有关结构的详细信息 [`Position`](xref:Xamarin.Forms.Maps.Position) ，请参阅[地图位置和距离](position-distance.md)。
+[`Xamarin.Forms.Maps`](xref:Xamarin.Forms.Maps)命名空间提供了 [`Geocoder`](xref:Xamarin.Forms.Maps.Geocoder) 一个类，该类在存储在对象中的字符串地址、纬度和经度坐标之间进行转换 [`Position`](xref:Xamarin.Forms.Maps.Position) 。 有关结构的详细信息 [`Position`](xref:Xamarin.Forms.Maps.Position) ，请参阅 [地图位置和距离](position-distance.md)。
 
 > [!NOTE]
 > 替代的地理编码 API 是提供的 Xamarin.Essentials 。 Xamarin.Essentials `Geocoding` 地理编码地址时，api 提供结构化地址数据，而不是此 api 返回的字符串。 有关详细信息，请参阅[ Xamarin.Essentials ：地理编码](~/essentials/geocoding.md)。
@@ -60,6 +60,6 @@ string address = possibleAddresses.FirstOrDefault();
 
 ## <a name="related-links"></a>相关链接
 
-- [地图示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
-- [Xamarin.Forms地图位置和距离](position-distance.md)
+- [地图示例](/samples/xamarin/xamarin-forms-samples/workingwithmaps)
+- [Xamarin.Forms 地图位置和距离](position-distance.md)
 - [Geocoder API](xref:Xamarin.Forms.Maps.Geocoder)

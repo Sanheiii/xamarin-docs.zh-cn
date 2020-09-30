@@ -1,6 +1,6 @@
 ---
-title: Xamarin.Forms形状：填充规则
-description: Xamarin.Forms形状填充规则确定点是否位于形状的填充区域。
+title: Xamarin.Forms 形状：填充规则
+description: Xamarin.Forms 形状填充规则确定点是否位于形状的填充区域。
 ms.prod: xamarin
 ms.assetid: 5CABB22B-C6BE-43D1-91D9-6E90A4BD5622
 ms.technology: xamarin-forms
@@ -10,18 +10,18 @@ ms.date: 06/24/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 536992f5a8501f51e14dc15caa9825771e4ed950
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: a1277b0acda598128e69b39a99910a468f6baa11
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87918600"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91559254"
 ---
-# <a name="no-locxamarinforms-shapes-fill-rules"></a>Xamarin.Forms形状：填充规则
+# <a name="no-locxamarinforms-shapes-fill-rules"></a>Xamarin.Forms 形状：填充规则
 
 ![预发行版 API](~/media/shared/preview.png)
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
 多个 Xamarin.Forms 形状类具有 `FillRule` 类型为的属性 `FillRule` 。 其中包括 `Polygon` 、 `Polyline` 和 `GeometryGroup` 。
 
@@ -192,5 +192,5 @@ ms.locfileid: "87918600"
 
 ## <a name="related-links"></a>相关链接
 
-- [ShapeDemos (示例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
-- [Xamarin.Forms形状](index.md)
+- [ShapeDemos (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+- [Xamarin.Forms 形状](index.md)

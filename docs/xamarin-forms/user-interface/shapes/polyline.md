@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Forms形状：折线
+title: Xamarin.Forms 形状：折线
 description: Xamarin.Forms折线类可用于绘制一系列连接的直线。
 ms.prod: xamarin
 ms.assetid: 15D02690-AC03-457E-8815-8E4C17E4D642
@@ -10,18 +10,18 @@ ms.date: 06/21/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5b7e6404dec40814b800aef696afd058cafb69e5
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: 3926e063fcabf9c70103e3ee72a4723358f26b2a
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87918352"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91558864"
 ---
-# <a name="no-locxamarinforms-shapes-polyline"></a>Xamarin.Forms形状：折线
+# <a name="no-locxamarinforms-shapes-polyline"></a>Xamarin.Forms 形状：折线
 
 ![预发行版 API](~/media/shared/preview.png)
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
 `Polyline`类派生自 `Shape` 类，可用于绘制一系列连接的直线。 折线类似于多边形，只不过折线中的最后一个点未连接到第一个点。 有关 `Polyline` 该类继承自类的属性的信息 `Shape` ，请参阅[ Xamarin.Forms 形状](index.md)。
 
@@ -30,7 +30,7 @@ ms.locfileid: "87918352"
 - `Points`，类型为 `PointCollection` ，它是 `Point` 描述折线顶点的结构的集合。
 - `FillRule`，类型为 `FillRule` ，指定如何组合折线中的相交区域。 此属性的默认值为 `FillRule.EvenOdd`。
 
-这些属性是由对象支持的 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，这意味着它们可以是数据绑定的目标和样式。
+这些属性由 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 对象提供支持；也就是说，它们可以作为数据绑定的目标，并能进行样式设置。
 
 `PointsCollection`类型是 `ObservableCollection` [`Point`](xref:Xamarin.Forms.Point) 对象的。 `Point`结构定义 `X` 类型的和属性， `Y` `double` 表示二维空间中的 x 坐标和 y 坐标对。 因此， `Points` 应将属性设置为描述折线顶点点的 x 坐标和 y 坐标对的列表，并用单个逗号和/或一个或多个空格分隔。 例如，"40，10 70，80" 和 "40 10，70 80" 都是有效的。
 
@@ -69,7 +69,7 @@ ms.locfileid: "87918352"
 
 ![虚线折线](polyline-images/dashed.png "虚线折线")
 
-有关绘制虚线折线的详细信息，请参阅[绘制虚线形状](index.md#draw-dashed-shapes)。
+有关绘制虚线折线的详细信息，请参阅 [绘制虚线形状](index.md#draw-dashed-shapes)。
 
 下面的 XAML 示例显示了使用默认填充规则的折线：
 
@@ -100,6 +100,6 @@ ms.locfileid: "87918352"
 
 ## <a name="related-links"></a>相关链接
 
-- [ShapeDemos (示例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
-- [Xamarin.Forms形状](index.md)
-- [Xamarin.Forms形状：填充规则](fillrules.md)
+- [ShapeDemos (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+- [Xamarin.Forms 形状](index.md)
+- [Xamarin.Forms 形状：填充规则](fillrules.md)

@@ -10,12 +10,12 @@ ms.date: 09/12/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 05a001d3b49f38b2cb5306d8a19a08b4f8392425
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: d3deb5631bd37e4081ebaa591a52adb09d9db274
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86935559"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91560294"
 ---
 # <a name="customizing-listview-cell-appearance"></a>自定义 ListView 单元格外观
 
@@ -24,18 +24,18 @@ ms.locfileid: "86935559"
 Xamarin.Forms [`ListView`](xref:Xamarin.Forms.ListView) 类用于显示可滚动列表，可通过使用元素进行自定义 `ViewCell` 。 `ViewCell`元素可以显示文本和图像，指示真/假状态和接收用户输入。
 
 ## <a name="built-in-cells"></a>内置单元格
-Xamarin.Forms附带了适用于许多应用程序的内置单元：
+Xamarin.Forms 附带了适用于许多应用程序的内置单元：
 
-- [`TextCell`](#textcell)控件用于显示文本，其中包含可选的第二行详细信息文本。
-- [`ImageCell`](#imagecell)控件类似于， `TextCell` 但在文本左侧包含一个图像。
-- `SwitchCell`控件用于显示和捕获开启/关闭或真/假状态。
-- `EntryCell`控件用于显示用户可编辑的文本数据。
+- [`TextCell`](#textcell) 控件用于显示文本，其中包含可选的第二行详细信息文本。
+- [`ImageCell`](#imagecell) 控件类似于， `TextCell` 但在文本左侧包含一个图像。
+- `SwitchCell` 控件用于显示和捕获开启/关闭或真/假状态。
+- `EntryCell` 控件用于显示用户可编辑的文本数据。
 
 [`SwitchCell`](~/xamarin-forms/user-interface/tableview.md#switchcell)和 [`EntryCell`](~/xamarin-forms/user-interface/tableview.md#entrycell) 控件更常见地用于的上下文中 [`TableView`](~/xamarin-forms/user-interface/tableview.md) 。
 
 ### <a name="textcell"></a>TextCell
 
-[`TextCell`](xref:Xamarin.Forms.TextCell)用于显示文本的单元格，可选择使用第二行作为详细信息文本。 以下屏幕截图显示 `TextCell` iOS 和 Android 上的项：
+[`TextCell`](xref:Xamarin.Forms.TextCell) 用于显示文本的单元格，可选择使用第二行作为详细信息文本。 以下屏幕截图显示 `TextCell` iOS 和 Android 上的项：
 
 ![默认 TextCell 示例](customizing-cell-appearance-images/text-cell-default.png)
 
@@ -52,11 +52,11 @@ TextCells 在运行时呈现为本机控件，因此与自定义相比，性能�
 
 ### <a name="imagecell"></a>ImageCell
 
-[`ImageCell`](xref:Xamarin.Forms.ImageCell)与类似 `TextCell` ，可用于显示文本和辅助详细信息文本，并通过使用每个平台的本机控件提供出色的性能。 `ImageCell`与的不同之处在于 `TextCell` ，它在文本左侧显示图像。
+[`ImageCell`](xref:Xamarin.Forms.ImageCell)与类似 `TextCell` ，可用于显示文本和辅助详细信息文本，并通过使用每个平台的本机控件提供出色的性能。 `ImageCell` 与的不同之处在于 `TextCell` ，它在文本左侧显示图像。
 
 以下屏幕截图显示 `ImageCell` iOS 和 Android 上的项： !["Default ImageCell Example"](customizing-cell-appearance-images/image-cell-default.png "默认 ImageCell 示例")
 
-`ImageCell`当您需要显示具有可视方位的数据列表（如联系人或电影列表）时，此方法非常有用。 `ImageCell`可自定义，允许设置：
+`ImageCell` 当您需要显示具有可视方位的数据列表（如联系人或电影列表）时，此方法非常有用。 `ImageCell`可自定义，允许设置：
 
 - `Text`在 &ndash; 第一行中显示的文本，采用大字体
 - `Detail`&ndash;以较小字体显示在第一行下的文本
@@ -67,11 +67,11 @@ TextCells 在运行时呈现为本机控件，因此与自定义相比，性能�
 以下屏幕截图显示 `ImageCell` 具有自定义颜色属性的项： !["自定义的 ImageCell 示例"](customizing-cell-appearance-images/image-cell-custom.png "自定义的 ImageCell 示例")
 
 ## <a name="custom-cells"></a>自定义单元
-自定义单元使您能够创建内置单元不支持的单元布局。 例如，您可能想要显示一个单元格，其中包含两个具有相同权重的标签。 `TextCell`由于 `TextCell` 有一个较小的标签，因此将无法使用。 大多数单元自定义添加了额外的只读数据（如其他标签、图像或其他显示信息）。
+自定义单元使您能够创建内置单元不支持的单元布局。 例如，您可能想要显示一个单元格，其中包含两个具有相同权重的标签。 `TextCell`由于 `TextCell` 有一个较小的标签，因此将无法使用。 大多数单元自定义添加了额外的只读数据 (如其他标签、图像或其他显示信息) 。
 
 所有自定义单元必须派生自 [`ViewCell`](xref:Xamarin.Forms.ViewCell) 所有内置单元类型使用的相同基类。
 
-Xamarin.Forms在控件上提供[缓存行为](~/xamarin-forms/user-interface/listview/performance.md#caching-strategy)， `ListView` 该行为可提高某些类型的自定义单元的滚动性能。
+Xamarin.Forms 在控件上提供 [缓存行为](~/xamarin-forms/user-interface/listview/performance.md#caching-strategy) ， `ListView` 该行为可提高某些类型的自定义单元的滚动性能。
 
 以下屏幕截图显示了自定义单元格的示例：
 
@@ -112,7 +112,7 @@ x:Class="demoListView.ImageCellPage">
 XAML 的工作方式如下：
 
 - 自定义单元格嵌套在内的中 `DataTemplate` `ListView.ItemTemplate` 。 这与使用任何内置单元的过程相同。
-- `ViewCell`自定义单元格的类型。 元素的子级 `DataTemplate` 必须是类或派生自 `ViewCell` 类。
+- `ViewCell` 自定义单元格的类型。 元素的子级 `DataTemplate` 必须是类或派生自 `ViewCell` 类。
 - 在中 `ViewCell` ，布局可以由任何布局管理 Xamarin.Forms 。 在此示例中，布局由管理 `StackLayout` ，这允许自定义背景色。
 
 > [!NOTE]
@@ -254,10 +254,10 @@ var listView = new ListView
 };
 ```
 
-在 iOS 和 Android 上，如果 [`ListView`](xref:Xamarin.Forms.ListView) 是回收元素，并且自定义单元格使用自定义呈现器，则自定义呈现器必须正确实现属性更改通知。 当重复使用单元格时，将在绑定上下文更新到可用单元格的事件时更改其属性值，并 `PropertyChanged` 引发事件。 有关详细信息，请参阅[自定义 ViewCell](~/xamarin-forms/app-fundamentals/custom-renderer/viewcell.md)。 有关回收单元的详细信息，请参阅[缓存策略](~/xamarin-forms/user-interface/listview/performance.md#caching-strategy)。
+在 iOS 和 Android 上，如果 [`ListView`](xref:Xamarin.Forms.ListView) 是回收元素，并且自定义单元格使用自定义呈现器，则自定义呈现器必须正确实现属性更改通知。 当重复使用单元格时，将在绑定上下文更新到可用单元格的事件时更改其属性值，并 `PropertyChanged` 引发事件。 有关详细信息，请参阅 [自定义 ViewCell](~/xamarin-forms/app-fundamentals/custom-renderer/viewcell.md)。 有关回收单元的详细信息，请参阅 [缓存策略](~/xamarin-forms/user-interface/listview/performance.md#caching-strategy)。
 
 ## <a name="related-links"></a>相关链接
 
-- [内置单元格（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-builtincells)
-- [自定义单元格（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-customcells)
-- [绑定上下文已更改（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-bindingcontextchanged)
+- [内置单元 (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-listview-builtincells)
+- [自定义单元 (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-listview-customcells)
+- [绑定上下文 (示例) 更改 ](/samples/xamarin/xamarin-forms-samples/userinterface-listview-bindingcontextchanged)

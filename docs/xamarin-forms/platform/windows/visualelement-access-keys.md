@@ -10,18 +10,18 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 1bfd61e79a2b4697e884afb45e4b9080ee939b87
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 6e25654fb856935c119d731df5db3eaa2d501930
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136521"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91560242"
 ---
 # <a name="visualelement-access-keys-on-windows"></a>Windows 上的 VisualElement 访问密钥
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-访问密钥是通过键盘快捷方式改善了通用 Windows 平台（UWP）上应用的可用性和可访问性，为用户提供了一种直观的方式，使用户能够通过键盘而不是通过触摸或鼠标快速导航并与应用的可见 UI 交互。 它们是 Alt 键和一个或多个字母数字键的组合，通常按顺序排列。 使用单个字母数字字符的访问密钥会自动支持键盘快捷方式。
+访问密钥是通过键盘快捷方式提高应用程序的可用性和可访问性通用 Windows 平台 (UWP) ，为用户提供一种直观的方式，使用户能够通过键盘而不是通过触摸或鼠标快速导航并与应用程序的可见 UI 交互。 它们是 Alt 键和一个或多个字母数字键的组合，通常按顺序排列。 使用单个字母数字字符的访问密钥会自动支持键盘快捷方式。
 
 访问键提示是在包含访问键的控件的旁边显示的浮动徽章。 每个访问键提示都包含激活关联控件的字母数字键。 当用户按下 Alt 键时，将显示访问键提示。
 
@@ -78,24 +78,24 @@ button4.On<Windows>()
 ...
 ```
 
-`VisualElement.On<Windows>`方法指定此平台特定的仅在通用 Windows 平台上运行。 [ `VisualElement.SetAccessKey` ] （X： Xamarin.Forms 。PlatformConfiguration. WindowsSpecific. VisualElement. SetAccessKey （ Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration、 Xamarin.Forms 。VisualElement}，System.object）方法，该方法 [`Xamarin.Forms.PlatformConfiguration.WindowsSpecific`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific) 用于设置的访问密钥值 `VisualElement` 。 [ `VisualElement.SetAccessKeyPlacement` ] （X： Xamarin.Forms 。PlatformConfiguration. WindowsSpecific. VisualElement. SetAccessKeyPlacement （ Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration、 Xamarin.Forms 。VisualElement}， Xamarin.Forms 。AccessKeyPlacement））方法，还可以选择使用 [`AccessKeyPlacement`](xref:Xamarin.Forms.AccessKeyPlacement) 枚举提供以下可能的值来指定用于显示访问键提示的位置：
+`VisualElement.On<Windows>`方法指定此平台特定的仅在通用 Windows 平台上运行。 [ `VisualElement.SetAccessKey` ] (x： Xamarin.Forms 。PlatformConfiguration. WindowsSpecific. VisualElement. SetAccessKey (Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration、 Xamarin.Forms 。VisualElement} （在命名空间中) # A3 方法） [`Xamarin.Forms.PlatformConfiguration.WindowsSpecific`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific) 用于设置的访问密钥值 `VisualElement` 。 [ `VisualElement.SetAccessKeyPlacement` ] (x： Xamarin.Forms 。PlatformConfiguration. WindowsSpecific. VisualElement. SetAccessKeyPlacement (Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration、 Xamarin.Forms 。VisualElement}， Xamarin.Forms 。AccessKeyPlacement) # A3 方法，还可以选择指定用于显示访问键提示的位置， [`AccessKeyPlacement`](xref:Xamarin.Forms.AccessKeyPlacement) 枚举提供以下可能的值：
 
-- [`Auto`](xref:Xamarin.Forms.AccessKeyPlacement.Auto)-指示访问密钥提示位置将由操作系统确定。
-- [`Top`](xref:Xamarin.Forms.AccessKeyPlacement.Top)-指示访问键提示将显示在上边缘的上方 `VisualElement` 。
-- [`Bottom`](xref:Xamarin.Forms.AccessKeyPlacement.Bottom)-指示访问键提示将显示在下方的下边缘下 `VisualElement` 。
-- [`Right`](xref:Xamarin.Forms.AccessKeyPlacement.Right)-指示访问键提示将显示在右边缘的右侧 `VisualElement` 。
-- [`Left`](xref:Xamarin.Forms.AccessKeyPlacement.Left)–指示访问键提示将显示在的左边缘的左侧 `VisualElement` 。
-- [`Center`](xref:Xamarin.Forms.AccessKeyPlacement.Center)-指示访问键提示将显示在中心 `VisualElement` 。
+- [`Auto`](xref:Xamarin.Forms.AccessKeyPlacement.Auto) -指示访问密钥提示位置将由操作系统确定。
+- [`Top`](xref:Xamarin.Forms.AccessKeyPlacement.Top) -指示访问键提示将显示在上边缘的上方 `VisualElement` 。
+- [`Bottom`](xref:Xamarin.Forms.AccessKeyPlacement.Bottom) -指示访问键提示将显示在下方的下边缘下 `VisualElement` 。
+- [`Right`](xref:Xamarin.Forms.AccessKeyPlacement.Right) -指示访问键提示将显示在右边缘的右侧 `VisualElement` 。
+- [`Left`](xref:Xamarin.Forms.AccessKeyPlacement.Left) –指示访问键提示将显示在的左边缘的左侧 `VisualElement` 。
+- [`Center`](xref:Xamarin.Forms.AccessKeyPlacement.Center) -指示访问键提示将显示在中心 `VisualElement` 。
 
 > [!NOTE]
 > 通常， [`Auto`](xref:Xamarin.Forms.AccessKeyPlacement.Auto) 关键提示位置就足够了，其中包括对自适应用户界面的支持。
 
-[ `VisualElement.SetAccessKeyHorizontalOffset` ] （X： Xamarin.Forms 。PlatformConfiguration. WindowsSpecific. VisualElement. SetAccessKeyHorizontalOffset （ Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration、 Xamarin.Forms 。VisualElement}，System.object）和 [ `VisualElement.SetAccessKeyVerticalOffset` ] （x： Xamarin.Forms 。PlatformConfiguration. WindowsSpecific. VisualElement. SetAccessKeyVerticalOffset （ Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration、 Xamarin.Forms 。VisualElement}，System.object）方法可用于更精细地控制访问密钥提示位置。 方法的参数 `SetAccessKeyHorizontalOffset` 指示访问键提示向左或向右移动的距离，并且该方法的参数 `SetAccessKeyVerticalOffset` 指示向上或向下移动访问密钥提示的距离。
+[ `VisualElement.SetAccessKeyHorizontalOffset` ] (x： Xamarin.Forms 。PlatformConfiguration. WindowsSpecific. VisualElement. SetAccessKeyHorizontalOffset (Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration、 Xamarin.Forms 。VisualElement}、system.exception) # A3 和 [ `VisualElement.SetAccessKeyVerticalOffset` ] (x： Xamarin.Forms 。PlatformConfiguration. WindowsSpecific. VisualElement. SetAccessKeyVerticalOffset (Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration、 Xamarin.Forms 。VisualElement}、system.exception) # A7 方法可用于对访问密钥提示位置进行更精细的控制。 方法的参数 `SetAccessKeyHorizontalOffset` 指示访问键提示向左或向右移动的距离，并且该方法的参数 `SetAccessKeyVerticalOffset` 指示向上或向下移动访问密钥提示的距离。
 
 >[!NOTE]
 > 设置访问密钥位置时无法设置访问密钥提示偏移量 `Auto` 。
 
-此外，[ `GetAccessKey` ] （x： Xamarin.Forms 。PlatformConfiguration. WindowsSpecific. VisualElement. GetAccessKey （ Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration、 Xamarin.Forms 。VisualElement}）），[ `GetAccessKeyPlacement` ] （x： Xamarin.Forms 。PlatformConfiguration. WindowsSpecific. VisualElement. GetAccessKeyPlacement （ Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration、 Xamarin.Forms 。VisualElement}）），[ `GetAccessKeyHorizontalOffset` ] （x： Xamarin.Forms 。PlatformConfiguration. WindowsSpecific. VisualElement. GetAccessKeyHorizontalOffset （ Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration、 Xamarin.Forms 。VisualElement}））和 [ `GetAccessKeyVerticalOffset` ] （x： Xamarin.Forms 。PlatformConfiguration. WindowsSpecific. VisualElement. GetAccessKeyVerticalOffset （ Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration、 Xamarin.Forms 。VisualElement}））可以使用方法检索访问密钥值及其位置。
+此外，[ `GetAccessKey` ] (x： Xamarin.Forms 。PlatformConfiguration. WindowsSpecific. VisualElement. GetAccessKey (Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration、 Xamarin.Forms 。VisualElement} ) # A3，[ `GetAccessKeyPlacement` ] (x： Xamarin.Forms 。PlatformConfiguration. WindowsSpecific. VisualElement. GetAccessKeyPlacement (Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration、 Xamarin.Forms 。VisualElement} ) # A7，[ `GetAccessKeyHorizontalOffset` ] (x： Xamarin.Forms 。PlatformConfiguration. WindowsSpecific. VisualElement. GetAccessKeyHorizontalOffset (Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration、 Xamarin.Forms 。VisualElement} ) # A11，[ `GetAccessKeyVerticalOffset` ] (x： Xamarin.Forms 。PlatformConfiguration. WindowsSpecific. VisualElement. GetAccessKeyVerticalOffset (Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration、 Xamarin.Forms 。VisualElement} ) # A15 方法可用于检索访问密钥值及其位置。
 
 结果是，可以 [`VisualElement`](xref:Xamarin.Forms.VisualElement) 通过按 Alt 键，在任何定义访问密钥的实例旁显示访问键提示：
 
@@ -103,10 +103,10 @@ button4.On<Windows>()
 
 用户激活访问密钥时，按 Alt 键，然后按 "访问键"，将执行的默认操作 `VisualElement` 。 例如，当用户激活上的访问密钥时，将 [`Switch`](xref:Xamarin.Forms.Switch) `Switch` 切换。 当用户激活上的访问密钥时 [`Entry`](xref:Xamarin.Forms.Entry) ， `Entry` 获得焦点。 当用户激活上的访问键时 [`Button`](xref:Xamarin.Forms.Button) ，将执行该事件的事件处理程序 [`Clicked`](xref:Xamarin.Forms.Button.Clicked) 。
 
-有关访问密钥的详细信息，请参阅[访问密钥](/windows/uwp/design/input/access-keys#key-tip-positioning)。
+有关访问密钥的详细信息，请参阅 [访问密钥](/windows/uwp/design/input/access-keys#key-tip-positioning)。
 
 ## <a name="related-links"></a>相关链接
 
-- [PlatformSpecifics （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [PlatformSpecifics (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [创建平台特定信息](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [WindowsSpecific API](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific)

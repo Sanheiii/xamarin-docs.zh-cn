@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Forms形状：线条
+title: Xamarin.Forms 形状：线条
 description: Xamarin.FormsLine 类可用于绘制线条。
 ms.prod: xamarin
 ms.assetid: 384F1A72-6D3B-4FD3-BC40-E00A73A463EC
@@ -10,18 +10,18 @@ ms.date: 06/20/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a5d130922a9bd8f30b33b99f7f3dc512f056269f
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: 845e5842f91a1da415509631ec2472330d972dfb
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87918626"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91559150"
 ---
-# <a name="no-locxamarinforms-shapes-line"></a>Xamarin.Forms形状：线条
+# <a name="no-locxamarinforms-shapes-line"></a>Xamarin.Forms 形状：线条
 
 ![预发行版 API](~/media/shared/preview.png)
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
 `Line`类派生自 `Shape` 类，可用于绘制线条。 有关 `Line` 该类继承自类的属性的信息 `Shape` ，请参阅[ Xamarin.Forms 形状](index.md)。
 
@@ -32,9 +32,9 @@ ms.locfileid: "87918626"
 - `X2`类型为 double，表示直线终点的 x 坐标。 此属性的默认值为0.0。
 - `Y2`类型为 double，表示直线终点的 y 坐标。 此属性的默认值为0.0。
 
-这些属性是由对象支持的 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，这意味着它们可以是数据绑定的目标和样式。
+这些属性由 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 对象提供支持；也就是说，它们可以作为数据绑定的目标，并能进行样式设置。
 
-有关控制行结束绘制方式的信息，请参阅[控制线端](index.md#control-line-ends)。
+有关控制行结束绘制方式的信息，请参阅 [控制线端](index.md#control-line-ends)。
 
 ## <a name="create-a-line"></a>创建行
 
@@ -85,9 +85,9 @@ ms.locfileid: "87918626"
 
 ![虚线](line-images/dashed-line.png "虚线")
 
-有关绘制虚线的详细信息，请参阅[绘制虚线形状](index.md#draw-dashed-shapes)。
+有关绘制虚线的详细信息，请参阅 [绘制虚线形状](index.md#draw-dashed-shapes)。
 
 ## <a name="related-links"></a>相关链接
 
-- [ShapeDemos (示例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
-- [Xamarin.Forms形状](index.md)
+- [ShapeDemos (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+- [Xamarin.Forms 形状](index.md)

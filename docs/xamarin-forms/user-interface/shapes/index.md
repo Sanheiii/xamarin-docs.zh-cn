@@ -1,6 +1,6 @@
 ---
-title: Xamarin.Forms形状
-description: Xamarin.Forms形状是使您能够在屏幕上绘制形状的视图类型。
+title: Xamarin.Forms 形状
+description: Xamarin.Forms 形状是使您能够在屏幕上绘制形状的视图类型。
 ms.prod: xamarin
 ms.assetid: 4E749FE8-852C-46DA-BB1E-652936106357
 ms.technology: xamarin-forms
@@ -10,23 +10,23 @@ ms.date: 07/30/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6a0771ac0dbbbc89301aeca3812c3b49e14655a2
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: 07765fdb9f67f21415db495da1b635b0507b7ed1
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87918460"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91559202"
 ---
-# <a name="no-locxamarinforms-shapes"></a>Xamarin.Forms形状
+# <a name="no-locxamarinforms-shapes"></a>Xamarin.Forms 形状
 
 ![预发行版 API](~/media/shared/preview.png)
 
-`Shape`是的一种类型 [`View`](xref:Xamarin.Forms.View) ，它使您能够在屏幕上绘制形状。 `Shape`对象可在布局类和大多数控件内使用，因为 `Shape` 该类派生自 `View` 类。
+`Shape`是的一种类型 [`View`](xref:Xamarin.Forms.View) ，它使您能够在屏幕上绘制形状。 `Shape` 对象可在布局类和大多数控件内使用，因为 `Shape` 该类派生自 `View` 类。
 
-Xamarin.Forms可在 `Xamarin.Forms.Shapes` iOS、Android、macOS、通用 Windows 平台 (UWP) 上的命名空间中使用形状，并在 WPF (Windows Presentation Foundation) 。
+Xamarin.Forms 可在 `Xamarin.Forms.Shapes` iOS、Android、macOS、通用 Windows 平台 (UWP) 上的命名空间中使用形状，并在 WPF (Windows Presentation Foundation) 。
 
 > [!IMPORTANT]
-> Xamarin.Forms形状当前为实验性，只能通过设置标志来使用 `Shapes_Experimental` 。 有关详细信息，请参阅[实验标志](~/xamarin-forms/internals/experimental-flags.md)。
+> Xamarin.Forms 形状当前为实验性，只能通过设置标志来使用 `Shapes_Experimental` 。 有关详细信息，请参阅[实验性标志](~/xamarin-forms/internals/experimental-flags.md)。
 
 `Shape` 定义以下属性:
 
@@ -40,13 +40,13 @@ Xamarin.Forms可在 `Xamarin.Forms.Shapes` iOS、Android、macOS、通用 Window
 - `StrokeMiterLimit`类型为的，它 `double` 指定对斜接长度与形状一半的比值的限制 `StrokeThickness` 。 此属性的默认值为10.0。
 - `StrokeThickness`类型为的， `double` 指示形状轮廓的宽度。 此属性的默认值为0.0。
 
-这些属性是由对象支持的 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，这意味着它们可以是数据绑定的目标和样式。
+这些属性由 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 对象提供支持；也就是说，它们可以作为数据绑定的目标，并能进行样式设置。
 
-Xamarin.Forms定义派生自类的多个对象 `Shape` 。 它们包括 `Ellipse` 、、、 `Line` `Path` `Polygon` 、 `Polyline` 和 `Rectangle` 。
+Xamarin.Forms 定义派生自类的多个对象 `Shape` 。 它们包括 `Ellipse` 、、、 `Line` `Path` `Polygon` 、 `Polyline` 和 `Rectangle` 。
 
 ## <a name="paint-shapes"></a>绘制形状
 
-`Brush`对象用于绘制形状的 `Stroke` 和 `Fill` ：
+`Brush` 对象用于绘制形状的 `Stroke` 和 `Fill` ：
 
 ```xaml
 <Ellipse Fill="DarkBlue"
@@ -62,7 +62,7 @@ Xamarin.Forms定义派生自类的多个对象 `Shape` 。 它们包括 `Ellipse
 ![绘制形状](images/ellipse.png "绘制形状")
 
 > [!IMPORTANT]
-> `Brush`对象使用类型转换器，该转换器允许为 [`Color`](xref:Xamarin.Forms.Color) 属性指定值 `Stroke` 。
+> `Brush` 对象使用类型转换器，该转换器允许为 [`Color`](xref:Xamarin.Forms.Color) 属性指定值 `Stroke` 。
 
 如果没有 `Brush` 为指定对象 `Stroke` ，或如果将设置 `StrokeThickness` 为0，则不会绘制形状周围的边框。
 
@@ -70,7 +70,7 @@ Xamarin.Forms定义派生自类的多个对象 `Shape` 。 它们包括 `Ellipse
 
 ## <a name="stretch-shapes"></a>Stretch 形状
 
-`Shape`对象具有 `Aspect` 类型为的属性 `Stretch` 。 此属性确定如何 `Shape` 拉伸对象的内容以填充 `Shape` 对象的布局空间。 `Shape`对象的布局空间是布局系统分配的空间量 `Shape` Xamarin.Forms ，因为显式 `WidthRequest` 和设置， `HeightRequest` 或者因为其 `HorizontalOptions` 和设置而设置 `VerticalOptions` 。
+`Shape` 对象具有 `Aspect` 类型为的属性 `Stretch` 。 此属性确定如何 `Shape` 拉伸对象的内容以填充 `Shape` 对象的布局空间。 `Shape`对象的布局空间是布局系统分配的空间量 `Shape` Xamarin.Forms ，因为显式 `WidthRequest` 和设置， `HeightRequest` 或者因为其 `HorizontalOptions` 和设置而设置 `VerticalOptions` 。
 
 `Stretch` 枚举定义下列成员：
 
@@ -102,9 +102,9 @@ Xamarin.Forms定义派生自类的多个对象 `Shape` 。 它们包括 `Ellipse
 
 ## <a name="draw-dashed-shapes"></a>绘制虚线形状
 
-`Shape`对象具有 `StrokeDashArray` 类型为的属性 `DoubleCollection` 。 此属性表示值的集合 `double` ，这些值指示用于勾勒形状轮廓的虚线和间隙的模式。 `DoubleCollection`是 `ObservableCollection` `double` 值的。 集合中的每个 `double` 指定短划线或间隔的长度。 集合中的第一项（位于索引0处）指定短划线的长度。 集合中的第二个位于索引1处的项指定间隔的长度。 因此，具有偶数索引值的对象指定短划线，而具有奇数索引值的对象指定间距。
+`Shape` 对象具有 `StrokeDashArray` 类型为的属性 `DoubleCollection` 。 此属性表示值的集合 `double` ，这些值指示用于勾勒形状轮廓的虚线和间隙的模式。 `DoubleCollection`是 `ObservableCollection` `double` 值的。 集合中的每个 `double` 指定短划线或间隔的长度。 集合中的第一项（位于索引0处）指定短划线的长度。 集合中的第二个位于索引1处的项指定间隔的长度。 因此，具有偶数索引值的对象指定短划线，而具有奇数索引值的对象指定间距。
 
-`Shape`对象还具有 `StrokeDashOffset` 类型为的属性 `double` ，该属性指定短划线模式内虚线开始处的距离。 如果未设置此属性，则会导致 `Shape` 带有纯色的轮廓。
+`Shape` 对象还具有 `StrokeDashOffset` 类型为的属性 `double` ，该属性指定短划线模式内虚线开始处的距离。 如果未设置此属性，则会导致 `Shape` 带有纯色的轮廓。
 
 可以通过设置和属性来绘制虚线形状 `StrokeDashArray` `StrokeDashOffset` 。 `StrokeDashArray`应将属性设置为一个或多个 `double` 值，每个值由一个逗号和/或一个或多个空格分隔。 例如，"0.5 1.0" 和 "0.5，1.0" 都是有效的。
 
@@ -129,7 +129,7 @@ Xamarin.Forms定义派生自类的多个对象 `Shape` 。 它们包括 `Ellipse
 
 线条有三个部分：起始端、线体和结束端。 开始和结束端描述线条或线段开头和结尾处的形状。
 
-`Shape`对象具有类型为的 `StrokeLineCap` 属性 `PenLineCap` ，该属性描述直线或线段的开头和结尾处的形状。 `PenLineCap` 枚举定义下列成员：
+`Shape` 对象具有类型为的 `StrokeLineCap` 属性 `PenLineCap` ，该属性描述直线或线段的开头和结尾处的形状。 `PenLineCap` 枚举定义下列成员：
 
 - `Flat`，它表示不会延伸到行的最后一个点之外的端点。 这相当于没有行帽，并且是属性的默认值 `StrokeLineCap` 。
 - `Square`，它表示一个高度等于直线粗细、长度等于直线粗细一半的矩形。
@@ -156,7 +156,7 @@ Xamarin.Forms定义派生自类的多个对象 `Shape` 。 它们包括 `Ellipse
 
 ## <a name="control-line-joins"></a>控制行联接
 
-`Shape`对象具有 `StrokeLineJoin` 类型为的属性 `PenLineJoin` ，该属性指定在该形状的顶点处使用的联接类型。 `PenLineJoin` 枚举定义下列成员：
+`Shape` 对象具有 `StrokeLineJoin` 类型为的属性 `PenLineJoin` ，该属性指定在该形状的顶点处使用的联接类型。 `PenLineJoin` 枚举定义下列成员：
 
 - `Miter`，它表示常规角顶点。 这是 `StrokeLineJoin` 属性的默认值。
 - `Bevel`，它表示凹凸顶点。
@@ -180,6 +180,6 @@ Xamarin.Forms定义派生自类的多个对象 `Shape` 。 它们包括 `Ellipse
 
 ## <a name="related-links"></a>相关链接
 
-- [ShapeDemos (示例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
-- [Xamarin.Forms刷子](~/xamarin-forms/user-interface/brushes/index.md)
-- [颜色Xamarin.Forms](~/xamarin-forms/user-interface/colors.md)
+- [ShapeDemos (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+- [Xamarin.Forms 画笔](~/xamarin-forms/user-interface/brushes/index.md)
+- [颜色 Xamarin.Forms](~/xamarin-forms/user-interface/colors.md)

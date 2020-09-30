@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsMap Control
+title: Xamarin.Forms Map Control
 description: 地图控件是一个跨平台视图，用于显示和批注地图。 它使用每个平台的本机地图控件，为用户提供快速且熟悉的地图体验。
 ms.prod: xamarin
 ms.assetid: 22C99029-0B16-43A6-BF58-26B48C4AED38
@@ -10,14 +10,14 @@ ms.date: 05/20/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 1aee81b6988e1f3a7099c2722b6f336f071ad8c0
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: df3189455102cedab232e0c629e63f65e242c9b5
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84946359"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91560047"
 ---
-# <a name="xamarinforms-map-control"></a>Xamarin.FormsMap Control
+# <a name="no-locxamarinforms-map-control"></a>Xamarin.Forms Map Control
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 
@@ -42,9 +42,9 @@ ms.locfileid: "84946359"
 
 这些属性（ `MapElements` 、 `Pins` 和 `VisibleRegion` 属性除外）由对象提供支持， [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 这意味着它们可以是数据绑定的目标。
 
-[`Map`](xref:Xamarin.Forms.Maps.Map)类还定义在 `MapClicked` 点击映射时触发的事件。 `MapClickedEventArgs`事件附带的对象具有名为的单个属性 `Position` ，类型为 [`Position`](xref:Xamarin.Forms.Maps.Position) 。 触发事件时， `Position` 属性将设置为点击的映射位置。 有关结构的信息 [`Position`](xref:Xamarin.Forms.Maps.Position) ，请参阅[地图位置和距离](position-distance.md)。
+[`Map`](xref:Xamarin.Forms.Maps.Map)类还定义在 `MapClicked` 点击映射时触发的事件。 `MapClickedEventArgs`事件附带的对象具有名为的单个属性 `Position` ，类型为 [`Position`](xref:Xamarin.Forms.Maps.Position) 。 触发事件时， `Position` 属性将设置为点击的映射位置。 有关结构的信息 [`Position`](xref:Xamarin.Forms.Maps.Position) ，请参阅 [地图位置和距离](position-distance.md)。
 
-有关 [`ItemsSource`](xref:Xamarin.Forms.Maps.Map.ItemsSource) 、 [`ItemTemplate`](xref:Xamarin.Forms.Maps.Map.ItemTemplate) 和属性的信息 `ItemTemplateSelector` ，请参阅[显示 pin 集合](pins.md#display-a-pin-collection)。
+有关 [`ItemsSource`](xref:Xamarin.Forms.Maps.Map.ItemsSource) 、 [`ItemTemplate`](xref:Xamarin.Forms.Maps.Map.ItemTemplate) 和属性的信息 `ItemTemplateSelector` ，请参阅 [显示 pin 集合](pins.md#display-a-pin-collection)。
 
 ## <a name="display-a-map"></a>显示地图
 
@@ -83,15 +83,15 @@ namespace WorkingWithMaps
 
 [![在 iOS 和 Android 上具有默认位置的地图控件屏幕截图](map-images/map-default.png "具有默认位置的地图控件")](map-images/map-default-large.png#lightbox "具有默认位置的地图控件")
 
-另外，还 [`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan) 可以将参数传递给 [`Map`](xref:Xamarin.Forms.Maps.Map) 构造函数，以便在加载时设置地图的中心点和缩放级别。 有关详细信息，请参阅[在地图上显示特定位置](#display-a-specific-location-on-a-map)。
+另外，还 [`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan) 可以将参数传递给 [`Map`](xref:Xamarin.Forms.Maps.Map) 构造函数，以便在加载时设置地图的中心点和缩放级别。 有关详细信息，请参阅 [在地图上显示特定位置](#display-a-specific-location-on-a-map)。
 
 ## <a name="map-types"></a>映射类型
 
 [`Map.MapType`](xref:Xamarin.Forms.Maps.Map.MapType)属性可以设置为 [`MapType`](xref:Xamarin.Forms.Maps.MapType) 枚举成员，以定义地图的显示样式。 `MapType` 枚举定义下列成员：
 
-- `Street`指定将显示街道地图。
-- `Satellite`指定将显示包含附属图像的地图。
-- `Hybrid`指定将显示组合街道和附属数据的映射。
+- `Street` 指定将显示街道地图。
+- `Satellite` 指定将显示包含附属图像的地图。
+- `Hybrid` 指定将显示组合街道和附属数据的映射。
 
 默认情况下， [`Map`](xref:Xamarin.Forms.Maps.Map) 如果未定义该属性，则将显示街道地图 [`MapType`](xref:Xamarin.Forms.Maps.Map.MapType) 。 或者， `MapType` 可以将属性设置为 [`MapType`](xref:Xamarin.Forms.Maps.MapType) 枚举成员之一：
 
@@ -151,7 +151,7 @@ MapSpan mapSpan = new MapSpan(position, 0.01, 0.01);
 Map map = new Map(mapSpan);
 ```
 
-此示例将创建一个 [`Map`](xref:Xamarin.Forms.Maps.Map) 对象，该对象显示对象指定的区域 [`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan) 。 `MapSpan`对象以对象所表示的纬度和经度为中心 [`Position`](xref:Xamarin.Forms.Maps.Position) ，并跨0.01 纬度和0.01 经度度。 有关结构的信息 [`Position`](xref:Xamarin.Forms.Maps.Position) ，请参阅[地图位置和距离](position-distance.md)。 有关在 XAML 中传递自变量的信息，请参阅[在 xaml 中传递参数](~/xamarin-forms/xaml/passing-arguments.md)。
+此示例将创建一个 [`Map`](xref:Xamarin.Forms.Maps.Map) 对象，该对象显示对象指定的区域 [`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan) 。 `MapSpan`对象以对象所表示的纬度和经度为中心 [`Position`](xref:Xamarin.Forms.Maps.Position) ，并跨0.01 纬度和0.01 经度度。 有关结构的信息 [`Position`](xref:Xamarin.Forms.Maps.Position) ，请参阅 [地图位置和距离](position-distance.md)。 有关在 XAML 中传递自变量的信息，请参阅 [在 xaml 中传递参数](~/xamarin-forms/xaml/passing-arguments.md)。
 
 这样做的结果是：当显示地图时，它将位于特定位置，并跨越特定数量的纬度和经度度：
 
@@ -159,15 +159,15 @@ Map map = new Map(mapSpan);
 
 ## <a name="create-a-mapspan-object"></a>创建 MapSpan 对象
 
-有多种方法可以创建 [`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan) 对象。 常见的方法是向构造函数提供所需的参数 `MapSpan` 。 这些是由对象表示的纬度和经度 [`Position`](xref:Xamarin.Forms.Maps.Position) ，以及 `double` 表示所跨的纬度和经度度的值 `MapSpan` 。 有关结构的信息 [`Position`](xref:Xamarin.Forms.Maps.Position) ，请参阅[地图位置和距离](position-distance.md)。
+有多种方法可以创建 [`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan) 对象。 常见的方法是向构造函数提供所需的参数 `MapSpan` 。 这些是由对象表示的纬度和经度 [`Position`](xref:Xamarin.Forms.Maps.Position) ，以及 `double` 表示所跨的纬度和经度度的值 `MapSpan` 。 有关结构的信息 [`Position`](xref:Xamarin.Forms.Maps.Position) ，请参阅 [地图位置和距离](position-distance.md)。
 
 另外，类中有三种方法 [`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan) 返回新的 `MapSpan` 对象：
 
-1. [`ClampLatitude`](xref:Xamarin.Forms.Maps.MapSpan.ClampLatitude*)返回一个， `MapSpan` 它与 `LongitudeDegrees` 方法的类实例以及由其和参数定义的 radius 相同 `north` `south` 。
-1. [`FromCenterAndRadius`](xref:Xamarin.Forms.Maps.MapSpan.FromCenterAndRadius*)返回 `MapSpan` 由其和参数定义的 [`Position`](xref:Xamarin.Forms.Maps.Position) [`Distance`](xref:Xamarin.Forms.Maps.Distance) 。
-1. [`WithZoom`](xref:Xamarin.Forms.Maps.MapSpan.WithZoom*)返回 `MapSpan` 具有与方法的类实例相同的中心的，但其半径乘以其 `double` 参数。
+1. [`ClampLatitude`](xref:Xamarin.Forms.Maps.MapSpan.ClampLatitude*) 返回一个， `MapSpan` 它与 `LongitudeDegrees` 方法的类实例以及由其和参数定义的 radius 相同 `north` `south` 。
+1. [`FromCenterAndRadius`](xref:Xamarin.Forms.Maps.MapSpan.FromCenterAndRadius*) 返回 `MapSpan` 由其和参数定义的 [`Position`](xref:Xamarin.Forms.Maps.Position) [`Distance`](xref:Xamarin.Forms.Maps.Distance) 。
+1. [`WithZoom`](xref:Xamarin.Forms.Maps.MapSpan.WithZoom*) 返回 `MapSpan` 具有与方法的类实例相同的中心的，但其半径乘以其 `double` 参数。
 
-有关结构的信息 [`Distance`](xref:Xamarin.Forms.Maps.Distance) ，请参阅[地图位置和距离](position-distance.md)。
+有关结构的信息 [`Distance`](xref:Xamarin.Forms.Maps.Distance) ，请参阅 [地图位置和距离](position-distance.md)。
 
 创建后 [`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan) ，可以访问以下属性来检索有关它的数据：
 
@@ -203,14 +203,14 @@ if (map.VisibleRegion != null)
 在此示例中， [`MoveToRegion`](xref:Xamarin.Forms.Maps.Map.MoveToRegion*) 使用参数调用方法，该 [`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan) 自变量通过属性指定地图的当前位置， [`Map.VisibleRegion`](xref:Xamarin.Forms.Maps.Map.VisibleRegion) 并将缩放级别指定为纬度和经度的度数。 总体结果是更改了地图的缩放级别，但其位置却不是。 在地图上实现缩放的另一种方法是使用 [`MapSpan.WithZoom`](xref:Xamarin.Forms.Maps.MapSpan.WithZoom*) 方法控制缩放系数。
 
 > [!IMPORTANT]
-> 无论是通过映射 UI 还是以编程方式缩放地图， [`Map.HasZoomEnabled`](xref:Xamarin.Forms.Maps.Map.HasZoomEnabled) 都需要属性为 `true` 。 有关此属性的详细信息，请参阅[禁用缩放](#disable-zoom)。
+> 无论是通过映射 UI 还是以编程方式缩放地图， [`Map.HasZoomEnabled`](xref:Xamarin.Forms.Maps.Map.HasZoomEnabled) 都需要属性为 `true` 。 有关此属性的详细信息，请参阅 [禁用缩放](#disable-zoom)。
 
 ## <a name="customize-map-behavior"></a>自定义映射行为
 
 [`Map`](xref:Xamarin.Forms.Maps.Map)可以通过设置其一些属性并通过处理事件自定义的行为 `MapClicked` 。
 
 > [!NOTE]
-> 可以通过创建地图自定义呈现器来实现其他映射行为自定义。 有关详细信息，请参阅[自定义 Xamarin.Forms 映射](~/xamarin-forms/app-fundamentals/custom-renderer/map-pin.md)。
+> 可以通过创建地图自定义呈现器来实现其他映射行为自定义。 有关详细信息，请参阅 [自定义 Xamarin.Forms 映射](~/xamarin-forms/app-fundamentals/custom-renderer/map-pin.md)。
 
 ### <a name="show-traffic-data"></a>显示交通情况数据
 
@@ -281,7 +281,7 @@ Map map = new Map
 ```
 
 > [!IMPORTANT]
-> 在 iOS、Android 和通用 Windows 平台上，访问用户的位置时，需要授予应用程序的位置权限。 有关详细信息，请参阅[平台配置](setup.md#platform-configuration)。
+> 在 iOS、Android 和通用 Windows 平台上，访问用户的位置时，需要授予应用程序的位置权限。 有关详细信息，请参阅 [平台配置](setup.md#platform-configuration)。
 
 ### <a name="maintain-map-region-on-layout-change"></a>维护布局更改时的地图区域
 
@@ -302,7 +302,7 @@ Map map = new Map
 
 ### <a name="map-clicks"></a>地图单击
 
-[`Map`](xref:Xamarin.Forms.Maps.Map)类定义在 `MapClicked` 点击映射时触发的事件。 `MapClickedEventArgs`事件附带的对象具有名为的单个属性 `Position` ，类型为 [`Position`](xref:Xamarin.Forms.Maps.Position) 。 触发事件时， `Position` 属性将设置为点击的映射位置。 有关结构的信息 [`Position`](xref:Xamarin.Forms.Maps.Position) ，请参阅[地图位置和距离](position-distance.md)。
+[`Map`](xref:Xamarin.Forms.Maps.Map)类定义在 `MapClicked` 点击映射时触发的事件。 `MapClickedEventArgs`事件附带的对象具有名为的单个属性 `Position` ，类型为 [`Position`](xref:Xamarin.Forms.Maps.Position) 。 触发事件时， `Position` 属性将设置为点击的映射位置。 有关结构的信息 [`Position`](xref:Xamarin.Forms.Maps.Position) ，请参阅 [地图位置和距离](position-distance.md)。
 
 下面的代码示例演示事件的事件处理程序 `MapClicked` ：
 
@@ -328,7 +328,7 @@ map.MapClicked += OnMapClicked;
 
 ## <a name="related-links"></a>相关链接
 
-- [地图示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
+- [地图示例](/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 - [地图位置和距离](position-distance.md)
 - [自定义 Xamarin.Forms 地图](~/xamarin-forms/app-fundamentals/custom-renderer/map-pin.md)
 - [在 XAML 中传递参数](~/xamarin-forms/xaml/passing-arguments.md)

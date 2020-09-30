@@ -10,12 +10,12 @@ ms.date: 10/25/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 08be571d3ba69891a56c08efd556a999e51431c8
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 2dd2abed23704f6a67ac34bc828c48e7200cf99a
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139849"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91558711"
 ---
 # <a name="part-4-data-binding-basics"></a>第 4 部分。 数据绑定基础知识
 
@@ -25,7 +25,7 @@ _数据绑定允许对两个对象的属性进行链接，以便其中一个对�
 
 ## <a name="data-bindings"></a>数据绑定
 
-数据绑定连接两个对象（称为 "*源*" 和 "*目标*"）的属性。 在代码中，需要两个步骤： `BindingContext` 目标对象的属性必须设置为源对象，并且 `SetBinding` 必须在目标对象上调用方法（通常与类结合使用 `Binding` ），以将该对象的属性绑定到源对象的属性。
+数据绑定连接两个对象（称为 " *源* " 和 " *目标*"）的属性。 在代码中，需要两个步骤： `BindingContext` 目标对象的属性必须设置为源对象，并且 `SetBinding` (经常与类一起使用的方法 `Binding`) 必须在目标对象上调用该方法以将该对象的属性绑定到源对象的属性。
 
 目标属性必须是可绑定属性，这意味着目标对象必须派生自 `BindableObject` 。 联机 Xamarin.Forms 文档指示哪些属性是可绑定属性。 等的属性 `Label` `Text` 与可绑定属性关联 `TextProperty` 。
 
@@ -33,7 +33,7 @@ _数据绑定允许对两个对象的属性进行链接，以便其中一个对�
 
 但是，当您在 XAML 中定义数据绑定时，可以通过多种方式设置 `BindingContext` 目标对象的。 有时，它是从代码隐藏文件（有时使用 `StaticResource` 或 `x:Static` 标记扩展）设置的，有时是 `BindingContext` 属性元素标记的内容。
 
-绑定最常用于将程序的视觉对象连接到基础数据模型，这通常是为了实现 MVVM （ViewModel）应用程序体系结构，如第[5 部分所述。从数据绑定到 MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)，但可以实现其他方案。
+绑定最常用于将程序的视觉对象连接到基础数据模型，这通常是为了实现 MVVM (模型-ViewModel) 应用程序体系结构，如第 [5 部分所述。从数据绑定到 MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)，但可以实现其他方案。
 
 ## <a name="view-to-view-bindings"></a>视图到视图绑定
 
@@ -114,10 +114,10 @@ Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
 此问题和其他问题的解决方案涉及到 `Mode` 属性，该属性设置为枚举的成员 `BindingMode` ：
 
 - `Default`
-- `OneWay`-值从源传输到目标
-- `OneWayToSource`-值从目标传输到源
-- `TwoWay`-源和目标之间的双向传输值
-- `OneTime`-数据从源到目标进行，但仅当 `BindingContext` 发生更改时，
+- `OneWay` -值从源传输到目标
+- `OneWayToSource` -值从目标传输到源
+- `TwoWay` -源和目标之间的双向传输值
+- `OneTime` -数据从源到目标进行，但仅当 `BindingContext` 发生更改时，
 
 下面的程序演示了 `OneWayToSource` 和绑定模式的一个常见用法 `TwoWay` 。 四个 `Slider` 视图旨在控制的 `Scale` 、、 `Rotate` `RotateX` 和 `RotateY` 属性 `Label` 。 最初，似乎这四个属性 `Label` 应为数据绑定目标，因为每个属性都是由设置的 `Slider` 。 但是， `BindingContext` 的只能 `Label` 是一个对象，有四个不同的滑块。
 
@@ -213,9 +213,9 @@ Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
 
 XAML 和数据绑定的强大功能比模板更好 `ListView` 。
 
-`ListView`定义 `ItemsSource` 类型的属性 `IEnumerable` ，并显示该集合中的项。 这些项可以是任何类型的对象。 默认情况下， `ListView` 使用 `ToString` 每个项的方法来显示该项。 有时这只是所需的内容，但在许多情况下， `ToString` 只返回对象的完全限定类名。
+`ListView` 定义 `ItemsSource` 类型的属性 `IEnumerable` ，并显示该集合中的项。 这些项可以是任何类型的对象。 默认情况下， `ListView` 使用 `ToString` 每个项的方法来显示该项。 有时这只是所需的内容，但在许多情况下， `ToString` 只返回对象的完全限定类名。
 
-但是， `ListView` 可以通过使用*模板*以任何所需的方式显示集合中的项，这涉及派生自的类 `Cell` 。 将为中的每个项克隆模板 `ListView` ，对模板设置的数据绑定会传输到各个克隆。
+但是， `ListView` 可以通过使用 *模板*以任何所需的方式显示集合中的项，这涉及派生自的类 `Cell` 。 将为中的每个项克隆模板 `ListView` ，对模板设置的数据绑定会传输到各个克隆。
 
 通常，您需要使用类为这些项创建自定义单元格 `ViewCell` 。 此过程在代码中有些混乱，但在 XAML 中很简单。
 
@@ -260,7 +260,7 @@ XamlSamples 项目包含一个名为的类 `NamedColor` 。 每个 `NamedColor` 
 > [!NOTE]
 > 单元格的绑定源和单元格的子元素是 `ListView.ItemsSource` 集合。
 
-`Label`元素设置为 `View` 的属性 `ViewCell` 。 （ `ViewCell.View` 由于 `View` 属性是的内容属性，因此不需要标记 `ViewCell` 。）此标记显示 `FriendlyName` 每个对象的 `NamedColor` 属性：
+`Label`元素设置为 `View` 的属性 `ViewCell` 。  (`ViewCell.View` 不需要标记，因为 `View` 属性是的内容属性 `ViewCell` 。 ) 此标记显示 `FriendlyName` 每个对象的属性 `NamedColor` ：
 
 [![绑定到具有 System.windows.datatemplate> 的集合](data-binding-basics-images/listview2.png)](data-binding-basics-images/listview2-large.png#lightbox)
 
@@ -340,9 +340,9 @@ XamlSamples 项目包含一个名为的类 `NamedColor` 。 每个 `NamedColor` 
 
 ## <a name="binding-value-converters"></a>绑定值转换器
 
-前面的**ListView 演示**XAML 文件显示结构的单个 `R` 、 `G` 和 `B` 属性 Xamarin.Forms `Color` 。 这些属性的类型为 `double` ，范围为0到1。 如果希望显示十六进制值，则不能只使用 `StringFormat` 带有 "X2" 格式规范的。 这仅适用于整数，并且 `double` 值需要乘以255。
+前面的 **ListView 演示** XAML 文件显示结构的单个 `R` 、 `G` 和 `B` 属性 Xamarin.Forms `Color` 。 这些属性的类型为 `double` ，范围为0到1。 如果希望显示十六进制值，则不能只使用 `StringFormat` 带有 "X2" 格式规范的。 这仅适用于整数，并且 `double` 值需要乘以255。
 
-此小问题已通过*值转换器*解决，也称为*绑定转换器*。 这是实现接口的类 `IValueConverter` ，这意味着它有两个名为和的方法 `Convert` `ConvertBack` 。 `Convert`当值从源传输到目标时，将调用方法; `ConvertBack` 从目标到源的传输或绑定中将调用方法 `OneWayToSource` `TwoWay` ：
+此小问题已通过 *值转换器*解决，也称为 *绑定转换器*。 这是实现接口的类 `IValueConverter` ，这意味着它有两个名为和的方法 `Convert` `ConvertBack` 。 `Convert`当值从源传输到目标时，将调用方法; `ConvertBack` 从目标到源的传输或绑定中将调用方法 `OneWayToSource` `TwoWay` ：
 
 ```csharp
 using System;
@@ -401,18 +401,18 @@ namespace XamlSamples
 
 [![绑定到具有 System.windows.datatemplate> 和转换器的集合](data-binding-basics-images/listview3.png)](data-binding-basics-images/listview3-large.png#lightbox)
 
-`ListView`在处理可能会动态出现在基础数据中的更改时，它非常复杂，只是在执行某些步骤时。 如果在运行时中分配给的属性的项的集合 `ItemsSource` `ListView` （即，如果可以在集合中添加或移除项），请将 `ObservableCollection` 类用于这些项。 `ObservableCollection`实现 `INotifyCollectionChanged` 接口，并 `ListView` 将安装该事件的处理程序 `CollectionChanged` 。
+`ListView`在处理可能会动态出现在基础数据中的更改时，它非常复杂，只是在执行某些步骤时。 如果在运行时中分配给的属性的项的集合 `ItemsSource` `ListView` （即，如果可以在集合中添加或移除项），请将 `ObservableCollection` 类用于这些项。 `ObservableCollection` 实现 `INotifyCollectionChanged` 接口，并 `ListView` 将安装该事件的处理程序 `CollectionChanged` 。
 
-如果项的属性在运行时本身发生了更改，则集合中的项应实现 `INotifyPropertyChanged` 接口，并使用事件对属性值进行信号更改 `PropertyChanged` 。 本系列的下一部分中对此进行了说明，第[5 部分。从数据绑定到 MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)。
+如果项的属性在运行时本身发生了更改，则集合中的项应实现 `INotifyPropertyChanged` 接口，并使用事件对属性值进行信号更改 `PropertyChanged` 。 本系列的下一部分中对此进行了说明，第 [5 部分。从数据绑定到 MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
-数据绑定提供一种功能强大的机制，用于在页面内的两个对象之间或在视觉对象与基础数据之间链接属性。 但当应用程序开始使用数据源时，常用的应用程序体系结构模式就会成为一种非常有用的范例。 第5部分对此进行了介绍[。从数据绑定到 MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)。
+数据绑定提供一种功能强大的机制，用于在页面内的两个对象之间或在视觉对象与基础数据之间链接属性。 但当应用程序开始使用数据源时，常用的应用程序体系结构模式就会成为一种非常有用的范例。 第5部分对此进行了介绍 [。从数据绑定到 MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)。
 
 ## <a name="related-links"></a>相关链接
 
-- [XamlSamples](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
-- [第1部分。入门 with XAML （示例）](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)
-- [第2部分。基本 XAML 语法（示例）](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)
-- [第3部分。XAML 标记扩展（示例）](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
-- [第5部分。从数据绑定到 MVVM （示例）](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)
+- [XamlSamples](/samples/xamarin/xamarin-forms-samples/xamlsamples)
+- [第1部分。入门 XAML (示例) ](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)
+- [第2部分。基本 XAML 语法 (示例) ](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)
+- [第3部分。XAML 标记扩展 (示例) ](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
+- [第5部分。从数据绑定到 MVVM (示例) ](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)

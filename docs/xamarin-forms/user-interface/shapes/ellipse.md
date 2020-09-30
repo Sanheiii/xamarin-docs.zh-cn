@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Forms形状：椭圆形
+title: Xamarin.Forms 形状：椭圆形
 description: Xamarin.Forms可以使用椭圆形类来绘制椭圆和圆圈。
 ms.prod: xamarin
 ms.assetid: 5BF81E25-12E5-49F0-A40C-0CF4C5D63B9B
@@ -10,22 +10,22 @@ ms.date: 06/20/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 0796ba2a3b1ab28370fd8280e12df273223b9f4d
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: d0379f37a48a4cd11de06868a7616882a598e6a6
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87917730"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91559241"
 ---
-# <a name="no-locxamarinforms-shapes-ellipse"></a>Xamarin.Forms形状：椭圆形
+# <a name="no-locxamarinforms-shapes-ellipse"></a>Xamarin.Forms 形状：椭圆形
 
 ![预发行版 API](~/media/shared/preview.png)
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
 `Ellipse`类派生自 `Shape` 类，可用于绘制椭圆和圆。 有关 `Ellipse` 该类继承自类的属性的信息 `Shape` ，请参阅[ Xamarin.Forms 形状](index.md)。
 
-`Ellipse`类将 `Aspect` 从类继承的属性设置 `Shape` 为 `Stretch.Fill` 。 有关属性的详细信息 `Aspect` ，请参阅[拉伸形状](index.md#stretch-shapes)。
+`Ellipse`类将 `Aspect` 从类继承的属性设置 `Shape` 为 `Stretch.Fill` 。 有关属性的详细信息 `Aspect` ，请参阅 [拉伸形状](index.md#stretch-shapes)。
 
 ## <a name="create-an-ellipse"></a>创建一个椭圆形
 
@@ -60,9 +60,9 @@ ms.locfileid: "87917730"
 
 ![圆形](ellipse-images/circle.png "圆形")
 
-有关绘制虚线椭圆的信息，请参阅[绘制虚线形状](index.md#draw-dashed-shapes)。
+有关绘制虚线椭圆的信息，请参阅 [绘制虚线形状](index.md#draw-dashed-shapes)。
 
 ## <a name="related-links"></a>相关链接
 
-- [ShapeDemos (示例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
-- [Xamarin.Forms形状](index.md)
+- [ShapeDemos (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+- [Xamarin.Forms 形状](index.md)

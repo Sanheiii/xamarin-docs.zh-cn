@@ -10,12 +10,12 @@ ms.date: 02/26/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a15ca2e11dabb73054f5f0a1dc3f79342d8ce7f5
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 395536752fb0d581408d0b8f91ef623d926aeeb4
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938601"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91559540"
 ---
 # <a name="setting-a-pickers-itemssource-property"></a>设置选取器的 ItemsSource 属性
 
@@ -23,7 +23,7 @@ ms.locfileid: "86938601"
 
 _"选取器" 视图是用于从数据列表中选择文本项的控件。本文介绍如何通过设置 System.windows.controls.itemscontrol.itemssource 属性来使用数据填充选取器，以及如何响应用户选择的项。_
 
-Xamarin.Forms2.3.4 增强了 [`Picker`](xref:Xamarin.Forms.Picker) 视图的功能，方法是通过设置其 [`ItemsSource`](xref:Xamarin.Forms.Picker.ItemsSource) 属性并从属性中检索所选的项来填充数据 [`SelectedItem`](xref:Xamarin.Forms.Picker.SelectedItem) 。 此外，可以通过将属性设置为来更改选定项的文本颜色 [`TextColor`](xref:Xamarin.Forms.Picker.TextColor) [`Color`](xref:Xamarin.Forms.Color) 。
+Xamarin.Forms 2.3.4 增强了 [`Picker`](xref:Xamarin.Forms.Picker) 视图的功能，方法是通过设置其 [`ItemsSource`](xref:Xamarin.Forms.Picker.ItemsSource) 属性并从属性中检索所选的项来填充数据 [`SelectedItem`](xref:Xamarin.Forms.Picker.SelectedItem) 。 此外，可以通过将属性设置为来更改选定项的文本颜色 [`TextColor`](xref:Xamarin.Forms.Picker.TextColor) [`Color`](xref:Xamarin.Forms.Color) 。
 
 ## <a name="populating-a-picker-with-data"></a>使用数据填充选取器
 
@@ -71,7 +71,7 @@ picker.ItemsSource = monkeyList;
 [`Picker`](xref:Xamarin.Forms.Picker)支持一次选择一个项。 当用户选择某一项时，将 [`SelectedIndexChanged`](xref:Xamarin.Forms.Picker.SelectedIndexChanged) 激发该事件， [`SelectedIndex`](xref:Xamarin.Forms.Picker.SelectedIndex) 并将属性更新为一个整数，该整数表示列表中选定项的索引，并且该 [`SelectedItem`](xref:Xamarin.Forms.Picker.SelectedItem) 属性将更新为 `object` 表示选定项的。 [`SelectedIndex`](xref:Xamarin.Forms.Picker.SelectedIndex)属性是一个从零开始的数字，指示用户选择的项。 如果未选择任何项（如果 [`Picker`](xref:Xamarin.Forms.Picker) 是首次创建和初始化项，则为 `SelectedIndex` -1）。
 
 > [!NOTE]
-> 可在 iOS 上使用特定于平台的对中的项选择行为 [`Picker`](xref:Xamarin.Forms.Picker) 进行自定义。 有关详细信息，请参阅[控制选取器项选择](~/xamarin-forms/platform/ios/picker-selection.md)。
+> 可在 iOS 上使用特定于平台的对中的项选择行为 [`Picker`](xref:Xamarin.Forms.Picker) 进行自定义。 有关详细信息，请参阅 [控制选取器项选择](~/xamarin-forms/platform/ios/picker-selection.md)。
 
 下面的代码示例演示如何 [`SelectedItem`](xref:Xamarin.Forms.Picker.SelectedItem) [`Picker`](xref:Xamarin.Forms.Picker) 在 XAML 中从中检索属性值：
 
@@ -185,7 +185,7 @@ detailsLabel.SetBinding(Label.TextProperty, "SelectedMonkey.Details");
 
 ## <a name="related-links"></a>相关链接
 
-- [选取器演示（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-pickerdemo)
-- [猴子应用（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-monkeyapppicker)
-- [可绑定选取器（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-bindablepicker)
+- [选取器演示 (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-pickerdemo)
+- [猴子 App (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-monkeyapppicker)
+- [可绑定选取器 (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-bindablepicker)
 - [选取器 API](xref:Xamarin.Forms.Picker)

@@ -10,12 +10,12 @@ ms.date: 12/13/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: be8dd5d29aebf29395885d650fbd28082013d0d1
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: dcf4e7ca0f081ff000aaa69d8be3a3cb3aa43e8e
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86929159"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91560281"
 ---
 # <a name="listview-appearance"></a>ListView 外观
 
@@ -31,11 +31,11 @@ Xamarin.Forms [`ListView`](xref:Xamarin.Forms.ListView) 允许您自定义列表
 
 启用分组：
 
-- 创建列表列表（组列表，每个组都是元素列表）。
+- 创建列表列表 (列表，每个组都是) 元素的列表。
 - 将的 `ListView` 设置 `ItemsSource` 为该列表。
 - 将 `IsGroupingEnabled` 设置为 true。
 - 设置 [`GroupDisplayBinding`](xref:Xamarin.Forms.ListView.GroupDisplayBinding) 为将绑定到用作组标题的组的属性。
-- 可有可无设置 [`GroupShortNameBinding`](xref:Xamarin.Forms.ListView.GroupShortNameBinding) 为，则绑定到用作组的短名称的组的属性。 短名称用于跳转列表（iOS 上的右侧列）。
+- 可有可无设置 [`GroupShortNameBinding`](xref:Xamarin.Forms.ListView.GroupShortNameBinding) 为，则绑定到用作组的短名称的组的属性。 短名称用于 "跳转列表" (iOS) 上的右侧列。
 
 首先为组创建类：
 
@@ -55,7 +55,7 @@ public class PageTypeGroup : List<PageModel>
     }
 ```
 
-在上面的代码中， `All` 将为我们的 ListView 提供作为绑定源的列表。 `Title`和 `ShortName` 是将用于组标题的属性。
+在上面的代码中， `All` 将为我们的 ListView 提供作为绑定源的列表。 `Title` 和 `ShortName` 是将用于组标题的属性。
 
 在此阶段， `All` 为空列表。 添加静态构造函数，以便在程序启动时填充列表：
 
@@ -159,7 +159,7 @@ static PageTypeGroup()
 
 ## <a name="headers-and-footers"></a>页眉和页脚
 
-ListView 可以呈现使用列表的元素进行滚动的页眉和页脚。 页眉和页脚可以是文本字符串，也可以是更复杂的布局。 此行为与[节组](#grouping)不同。
+ListView 可以呈现使用列表的元素进行滚动的页眉和页脚。 页眉和页脚可以是文本字符串，也可以是更复杂的布局。 此行为与 [节组](#grouping)不同。
 
 您可以将 `Header` 和/或设置为 `Footer` 一个 `string` 值，也可以将其设置为更复杂的布局。 还提供了 `HeaderTemplate` 和 `FooterTemplate` 属性，可用于为支持数据绑定的页眉和页脚创建更复杂的布局。
 
@@ -210,16 +210,16 @@ ListView HeaderList = new ListView()
 
 [`ListView`](xref:Xamarin.Forms.ListView)类具有 `HorizontalScrollBarVisibility` 和 `VerticalScrollBarVisibility` 属性，这些属性可获取或设置一个 [`ScrollBarVisibility`](xref:Xamarin.Forms.ScrollBarVisibility) 值，该值表示水平或垂直滚动条可见的时间。 这两个属性都可以设置为以下值：
 
-- [`Default`](xref:Xamarin.Forms.ScrollBarVisibility)指示平台的默认滚动条行为，是和属性的默认值 `HorizontalScrollBarVisibility` `VerticalScrollBarVisibility` 。
-- [`Always`](xref:Xamarin.Forms.ScrollBarVisibility)指示滚动条是可见的，即使在视图中显示内容时也是如此。
-- [`Never`](xref:Xamarin.Forms.ScrollBarVisibility)指示即使内容无法在视图中显示，也不会显示滚动条。
+- [`Default`](xref:Xamarin.Forms.ScrollBarVisibility) 指示平台的默认滚动条行为，是和属性的默认值 `HorizontalScrollBarVisibility` `VerticalScrollBarVisibility` 。
+- [`Always`](xref:Xamarin.Forms.ScrollBarVisibility) 指示滚动条是可见的，即使在视图中显示内容时也是如此。
+- [`Never`](xref:Xamarin.Forms.ScrollBarVisibility) 指示即使内容无法在视图中显示，也不会显示滚动条。
 
 ## <a name="row-separators"></a>行分隔符
 
 `ListView`默认情况下，在 iOS 和 Android 上的元素之间显示分隔符线。 如果希望隐藏 iOS 和 Android 上的分隔线，请在 ListView 上设置 `SeparatorVisibility` 属性。 的选项 `SeparatorVisibility` 有：
 
-- **默认值**-显示 IOS 和 Android 上的分隔线。
-- **无**-隐藏所有平台上的分隔符。
+- **默认值** -显示 IOS 和 Android 上的分隔线。
+- **无** -隐藏所有平台上的分隔符。
 
 默认可见性：
 
@@ -341,8 +341,8 @@ void OnImageTapped (object sender, EventArgs args)
 
 ## <a name="related-links"></a>相关链接
 
-- [分组（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-grouping)
-- [自定义呈现器视图（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithlistviewnative)
-- [动态调整行的大小（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-dynamicunevenlistcells)
+- [分组 (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-listview-grouping)
+- [自定义呈现器视图 (示例) ](/samples/xamarin/xamarin-forms-samples/workingwithlistviewnative)
+- [动态调整行的大小 (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-listview-dynamicunevenlistcells)
 - [1.4 发行说明](https://forums.xamarin.com/discussion/35451/xamarin-forms-1-4-0-released/)
 - [1.3 发行说明](https://forums.xamarin.com/discussion/29934/xamarin-forms-1-3-0-released/)

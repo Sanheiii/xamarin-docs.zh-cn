@@ -10,12 +10,12 @@ ms.date: 03/23/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 1e5f3b6cb84081f5e167d9afe7e7f2f2dffce247
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: c77a219ab1b729aa279708d04610911fbbfe4e81
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938107"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91560125"
 ---
 # <a name="listview-data-sources"></a>ListView 数据源
 
@@ -65,9 +65,9 @@ listView.ItemsSource = new string[]
 
 ![ListView 显示字符串列表](data-and-databinding-images/itemssource-simple.png)
 
-此方法将 `ListView` 使用字符串列表填充。 默认情况下， `ListView` 将 `ToString` 为每行调用并显示中的结果 `TextCell` 。 若要自定义数据的显示方式，请参阅[单元格外观](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md)。
+此方法将 `ListView` 使用字符串列表填充。 默认情况下， `ListView` 将 `ToString` 为每行调用并显示中的结果 `TextCell` 。 若要自定义数据的显示方式，请参阅 [单元格外观](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md)。
 
-由于已 `ItemsSource` 发送到数组，因此，当基础列表或数组发生变化时，内容将不会更新。 如果要在基础列表中添加、删除和更改项时，ListView 自动更新，则需要使用 `ObservableCollection` 。 [`ObservableCollection`](xref:System.Collections.ObjectModel.ObservableCollection`1)在和中定义的与 `System.Collections.ObjectModel` 类似 `List` ，只不过它可以通知 `ListView` 所有更改：
+由于已 `ItemsSource` 发送到数组，因此，当基础列表或数组发生变化时，内容将不会更新。 如果要在基础列表中添加、删除和更改项时，ListView 自动更新，则需要使用 `ObservableCollection` 。 [`ObservableCollection`](xref:System.Collections.ObjectModel.ObservableCollection`1) 在和中定义的与 `System.Collections.ObjectModel` 类似 `List` ，只不过它可以通知 `ListView` 所有更改：
 
 ```csharp
 ObservableCollection<Employee> employees = new ObservableCollection<Employee>();
@@ -87,7 +87,7 @@ employees.Add(new Employee(){ DisplayName="Mr. Mono"});
 
 ### <a name="binding-cells"></a>绑定单元
 
-单元格（和单元格的子元素）的属性可以绑定到中的对象的属性 `ItemsSource` 。 例如， `ListView` 可以使用来显示雇员列表。
+单元格) 的单元格的属性 (可以绑定到中的对象的属性 `ItemsSource` 。 例如， `ListView` 可以使用来显示雇员列表。
 
 Employee 类：
 
@@ -120,7 +120,7 @@ public EmployeeListPage()
 ```
 
 > [!WARNING]
-> 虽然 `ListView` 将更新以响应其基础的更改，但 `ObservableCollection` 如果将 `ListView` 不同的 `ObservableCollection` 实例分配给原始 `ObservableCollection` 引用（例如），则将不会更新 `employees = otherObservableCollection;` 。
+> 虽然 `ListView` 将更新以响应其基础的更改，但 `ObservableCollection` 如果将 `ListView` 不同 `ObservableCollection` 的实例分配给原始 `ObservableCollection` 引用 (例如) ，则将不会更新 `employees = otherObservableCollection;` 。
 
 下面的代码片段演示了一个 `ListView` 绑定到员工列表的：
 
@@ -165,4 +165,4 @@ public EmployeeListPage()
 
 ## <a name="related-links"></a>相关链接
 
-- [双向绑定（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-switchentrytwobinding)
+- [双向绑定 (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-listview-switchentrytwobinding)

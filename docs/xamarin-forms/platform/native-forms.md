@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Forms在 Xamarin 本机项目中
+title: Xamarin.Forms 在 Xamarin 本机项目中
 description: 本文介绍如何使用直接添加到 Xamarin 本机项目的 ContentPage 派生页面，以及如何在这些页面之间导航。
 ms.prod: xamarin
 ms.assetid: f343fc21-dfb1-4364-a332-9da6705d36bc
@@ -10,18 +10,18 @@ ms.date: 08/19/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9fb741a03d1c8dd2a8754120d0b46567d8889a0b
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: e34144f253b19796ea6ec83cb3873fe373aeb914
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84132270"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91560606"
 ---
-# <a name="xamarinforms-in-xamarin-native-projects"></a>Xamarin.Forms在 Xamarin 本机项目中
+# <a name="no-locxamarinforms-in-xamarin-native-projects"></a>Xamarin.Forms 在 Xamarin 本机项目中
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/native2forms)
 
-通常， Xamarin.Forms 应用程序包含一个或多个派生自的页面 [`ContentPage`](xref:Xamarin.Forms.ContentPage) ，这些页面由 .NET Standard 库项目或共享项目中的所有平台共享。 但是，本机窗体允许 `ContentPage` 派生页面直接添加到本机 Xamarin iOS、Xamarin 和 UWP 应用程序。 与本机项目 `ContentPage` 从 .NET Standard 库项目或共享项目使用派生页面相比，将页面直接添加到本机项目的优势在于，可以使用本机视图扩展页面。 然后，可以在 XAML 中将本机视图命名为，并在代码隐藏中对其进行 `x:Name` 引用。 有关本机视图的详细信息，请参阅[本机视图](~/xamarin-forms/platform/native-views/index.md)。
+通常， Xamarin.Forms 应用程序包含一个或多个派生自的页面 [`ContentPage`](xref:Xamarin.Forms.ContentPage) ，这些页面由 .NET Standard 库项目或共享项目中的所有平台共享。 但是，本机窗体允许 `ContentPage` 派生页面直接添加到本机 Xamarin iOS、Xamarin 和 UWP 应用程序。 与本机项目 `ContentPage` 从 .NET Standard 库项目或共享项目使用派生页面相比，将页面直接添加到本机项目的优势在于，可以使用本机视图扩展页面。 然后，可以在 XAML 中将本机视图命名为，并在代码隐藏中对其进行 `x:Name` 引用。 有关本机视图的详细信息，请参阅 [本机视图](~/xamarin-forms/platform/native-views/index.md)。
 
 Xamarin.Forms [`ContentPage`](xref:Xamarin.Forms.ContentPage) 在本机项目中使用派生页的过程如下所示：
 
@@ -31,7 +31,7 @@ Xamarin.Forms [`ContentPage`](xref:Xamarin.Forms.ContentPage) 在本机项目中
 1. [`ContentPage`](xref:Xamarin.Forms.ContentPage)使用以下扩展方法之一构造派生页面的实例并将其转换为适当的本机类型： `CreateViewController` 适用于 IOS、 `CreateSupportFragment` Android 或 `CreateFrameworkElement` UWP。
 1. 使用本机导航 API 定位到派生页面的本机类型表示形式 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 。
 
-Xamarin.Forms必须通过调用方法进行初始化， `Forms.Init` 本机项目才能构造 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 派生页。 选择执行此操作的时间主要取决于在应用程序流中最便利的时间，可以在应用程序启动时执行，也可以在 `ContentPage` 构造派生页面之前执行。 在本文和随附的示例应用程序中，将 `Forms.Init` 在应用程序启动时调用方法。
+Xamarin.Forms 必须通过调用方法进行初始化， `Forms.Init` 本机项目才能构造 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 派生页。 选择执行此操作的时间主要取决于在应用程序流中最便利的时间，可以在应用程序启动时执行，也可以在 `ContentPage` 构造派生页面之前执行。 在本文和随附的示例应用程序中，将 `Forms.Init` 在应用程序启动时调用方法。
 
 > [!NOTE]
 > **NativeForms**示例应用程序解决方案不包含任何 Xamarin.Forms 项目。 相反，它包括 Xamarin iOS 项目、Xamarin Android 项目和 UWP 项目。 每个项目都是使用本机窗体来使用派生页面的本机项目 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 。 但是，本地项目无法使用 `ContentPage` 从 .NET Standard 库项目或共享项目派生的页面的原因。
@@ -80,7 +80,7 @@ public class AppDelegate : UIApplicationDelegate
 
 `FinishedLaunching` 方法执行以下任务：
 
-- Xamarin.Forms通过调用方法进行初始化 `Forms.Init` 。
+- Xamarin.Forms 通过调用方法进行初始化 `Forms.Init` 。
 - 对类的引用 `AppDelegate` 存储在 `static` `Instance` 字段中。 这是为了为其他类提供一种机制，用于调用类中定义的方法 `AppDelegate` 。
 - 创建的是 `UIWindow` 本机 iOS 应用程序中的视图的主要容器。
 - `FolderPath`将属性初始化为设备上存储注释数据的路径。
@@ -181,7 +181,7 @@ public class MainActivity : AppCompatActivity
 
 `OnCreate` 方法执行以下任务：
 
-- Xamarin.Forms通过调用方法进行初始化 `Forms.Init` 。
+- Xamarin.Forms 通过调用方法进行初始化 `Forms.Init` 。
 - 对类的引用 `MainActivity` 存储在 `static` `Instance` 字段中。 这是为了为其他类提供一种机制，用于调用类中定义的方法 `MainActivity` 。
 - `Activity`内容是从布局资源设置的。 在示例应用程序中，布局 `LinearLayout` 包含一个，它包含一个 `Toolbar` 和一个用作 `FrameLayout` 片段容器的。
 - `Toolbar`检索并将设置为的操作栏 `Activity` ，并设置操作栏标题。
@@ -189,7 +189,7 @@ public class MainActivity : AppCompatActivity
 - `NotesPage`类（ Xamarin.Forms [`ContentPage`](xref:Xamarin.Forms.ContentPage) 在 XAML 中定义的派生页） `Fragment` 使用扩展方法构造并转换为 `CreateSupportFragment` 。
 - `SupportFragmentManager`类创建并提交一个事务，该事务将 `FrameLayout` 实例替换 `Fragment` 为类的 `NotesPage` 。
 
-有关片段的详细信息，请参阅[片段](~/android/platform/fragments/index.md)。
+有关片段的详细信息，请参阅 [片段](~/android/platform/fragments/index.md)。
 
 `OnCreate`执行方法后，将显示类中定义的 UI Xamarin.Forms `NotesPage` ，如以下屏幕截图所示：
 
@@ -278,7 +278,7 @@ protected override void OnActivityResult(int requestCode, Result resultCode, Int
 
 ## <a name="uwp"></a>UWP
 
-在 UWP 上，本机 `App` 类通常用于执行与应用程序启动相关的任务。 Xamarin.Forms通常在 Xamarin.Forms UWP 应用程序中，在 `OnLaunched` 本机类的重写中初始化， `App` 以将 `LaunchActivatedEventArgs` 参数传递给 `Forms.Init` 方法。 出于此原因，使用派生页的本机 UWP 应用程序 Xamarin.Forms [`ContentPage`](xref:Xamarin.Forms.ContentPage) 可以很容易地 `Forms.Init` 从方法中调用方法 `App.OnLaunched` 。
+在 UWP 上，本机 `App` 类通常用于执行与应用程序启动相关的任务。 Xamarin.Forms 通常在 Xamarin.Forms UWP 应用程序中，在 `OnLaunched` 本机类的重写中初始化， `App` 以将 `LaunchActivatedEventArgs` 参数传递给 `Forms.Init` 方法。 出于此原因，使用派生页的本机 UWP 应用程序 Xamarin.Forms [`ContentPage`](xref:Xamarin.Forms.ContentPage) 可以很容易地 `Forms.Init` 从方法中调用方法 `App.OnLaunched` 。
 
 默认情况下，本机 `App` 类将 `MainPage` 类作为应用程序的第一页启动。 下面的代码示例演示 `MainPage` 示例应用程序中的类：
 
@@ -314,7 +314,7 @@ public sealed partial class MainPage : Page
 
 `MainPage`执行构造函数后，将显示类中定义的 UI Xamarin.Forms `NotesPage` ，如以下屏幕截图所示：
 
-[![使用通过 XAML 定义的 UI 的 UWP 应用程序的屏幕截图 Xamarin.Forms](native-forms-images/uwp-notespage.png "带有 [！基金.无 LOC （Xamarin）] XAML UI")](native-forms-images/uwp-notespage-large.png#lightbox "带有 [！基金.无 LOC （Xamarin）] XAML UI")
+[![UWP 应用程序的屏幕截图，此应用程序使用通过：：： no (Xamarin. Forms) ：：： XAML 定义的 UI](native-forms-images/uwp-notespage.png "具有：：： no (Xamarin 的 UWP 应用) ：：： XAML UI")](native-forms-images/uwp-notespage-large.png#lightbox "具有：：： no (Xamarin 的 UWP 应用) ：：： XAML UI")
 
 与 UI 交互（例如通过点击 **+** [`Button`](xref:Xamarin.Forms.Button) ），将导致代码隐藏执行中的以下事件处理程序 `NotesPage` ：
 
@@ -338,9 +338,9 @@ public void NavigateToNoteEntryPage(Note note)
 }
 ```
 
-UWP 中的导航通常使用方法执行 `Frame.Navigate` ，该方法采用 `Page` 自变量。 Xamarin.Forms定义一个 `Frame.Navigate` 扩展方法，该方法采用 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 派生的页实例。 因此，当 `NavigateToNoteEntryPage` 方法执行时，将显示中定义的 UI Xamarin.Forms `NoteEntryPage` ，如以下屏幕截图所示：
+UWP 中的导航通常使用方法执行 `Frame.Navigate` ，该方法采用 `Page` 自变量。 Xamarin.Forms 定义一个 `Frame.Navigate` 扩展方法，该方法采用 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 派生的页实例。 因此，当 `NavigateToNoteEntryPage` 方法执行时，将显示中定义的 UI Xamarin.Forms `NoteEntryPage` ，如以下屏幕截图所示：
 
-[![使用通过 XAML 定义的 UI 的 UWP 应用程序的屏幕截图 Xamarin.Forms](native-forms-images/uwp-noteentrypage.png "带有 [！基金.无 LOC （Xamarin）] XAML UI")](native-forms-images/uwp-noteentrypage-large.png#lightbox "带有 [！基金.无 LOC （Xamarin）] XAML UI")
+[![UWP 应用程序的屏幕截图，此应用程序使用通过：：： no (Xamarin. Forms) ：：： XAML 定义的 UI](native-forms-images/uwp-noteentrypage.png "具有：：： no (Xamarin 的 UWP 应用) ：：： XAML UI")](native-forms-images/uwp-noteentrypage-large.png#lightbox "具有：：： no (Xamarin 的 UWP 应用) ：：： XAML UI")
 
 当 `NoteEntryPage` 显示时，点击后退箭头将 `FrameworkElement` `NoteEntryPage` 从应用程序后端堆栈中弹出，并将用户返回到 `FrameworkElement` 类的 `NotesPage` 。
 
@@ -415,9 +415,9 @@ void OnNavigated(object sender, NavigationEventArgs e)
 
 `OnNavigated`发生页面导航时，为响应事件触发而执行的事件处理程序将 `Navigated` 更新标题栏后退按钮的可见性。 这可确保在应用程序后端堆栈不为空时，标题栏的 "后退" 按钮可见，或在应用内返回堆栈为空的情况下从标题栏中删除。
 
-有关 UWP 的后退导航支持的详细信息，请参阅[uwp 应用的导航历史记录和向后导航](/windows/uwp/design/basics/navigation-history-and-backwards-navigation/)。
+有关 UWP 的后退导航支持的详细信息，请参阅 [uwp 应用的导航历史记录和向后导航](/windows/uwp/design/basics/navigation-history-and-backwards-navigation/)。
 
 ## <a name="related-links"></a>相关链接
 
-- [NativeForms （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/native2forms)
+- [NativeForms (示例) ](/samples/xamarin/xamarin-forms-samples/native2forms)
 - [本机视图](~/xamarin-forms/platform/native-views/index.md)

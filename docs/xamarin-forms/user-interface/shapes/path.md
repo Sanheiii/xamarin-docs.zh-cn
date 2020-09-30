@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Forms形状：路径
+title: Xamarin.Forms 形状：路径
 description: Xamarin.FormsPath 类可用于绘制曲线和复杂形状。
 ms.prod: xamarin
 ms.assetid: B29486F4-9A5E-4588-ABDF-7EB1E69B9AE6
@@ -10,18 +10,18 @@ ms.date: 06/21/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 274ff08d7fffc1cd3a817906e14ebddfac2c9337
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: 80b0bcd84602fc999764e7e0896a44f83401a9dd
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87918253"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91558890"
 ---
-# <a name="no-locxamarinforms-shapes-path"></a>Xamarin.Forms形状：路径
+# <a name="no-locxamarinforms-shapes-path"></a>Xamarin.Forms 形状：路径
 
 ![预发行版 API](~/media/shared/preview.png)
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
 `Path`类派生自 `Shape` 类，可用于绘制曲线和复杂形状。 这些曲线和形状通常使用对象进行描述 `Geometry` 。 有关 `Path` 该类继承自类的属性的信息 `Shape` ，请参阅[ Xamarin.Forms 形状](index.md)。
 
@@ -30,7 +30,7 @@ ms.locfileid: "87918253"
 - `Data`，类型为 `Geometry` ，它指定要绘制的形状。
 - `RenderTransform`，类型为 `Transform` ，表示在绘制路径之前应用于该路径的几何图形的转换。
 
-这些属性是由对象支持的 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，这意味着它们可以是数据绑定的目标和样式。
+这些属性由 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 对象提供支持；也就是说，它们可以作为数据绑定的目标，并能进行样式设置。
 
 有关转换的详细信息，请参阅[ Xamarin.Forms 路径转换](path-transforms.md)。
 
@@ -53,7 +53,7 @@ ms.locfileid: "87918253"
       HorizontalOptions="Start" />
 ```
 
-该 `Data` 字符串以 move 命令开头，并由指示 `M` ，这将为路径建立绝对起始点。 `L`line 命令，它创建从起点到指定终点的直线。 `Z`是 close 命令，用于创建将当前点连接到起始点的线条。 结果是一个三角形：
+该 `Data` 字符串以 move 命令开头，并由指示 `M` ，这将为路径建立绝对起始点。 `L` line 命令，它创建从起点到指定终点的直线。 `Z` 是 close 命令，用于创建将当前点连接到起始点的线条。 结果是一个三角形：
 
 ![路径三角形](path-images/triangle.png "路径三角形")
 
@@ -66,7 +66,7 @@ ms.locfileid: "87918253"
 
 可以使用对象描述曲线和形状 `Geometry` ，这些对象用于设置 `Path` 对象的 `Data` 属性。 有多种 `Geometry` 可供选择的对象。 `EllipseGeometry`、 `LineGeometry` 和 `RectangleGeometry` 类描述相对简单的形状。 若要创建更复杂的形状或创建曲线，请使用 `PathGeometry` 。
 
-`PathGeometry`对象由一个或多个 `PathFigure` 对象组成。 每个 `PathFigure` 对象都表示不同的形状。 每个 `PathFigure` 对象都由一个或多个 `PathSegment` 对象组成，每个对象表示形状的连接部分。 段类型包括 `LineSegment` 、 `BezierSegment` 、和 `ArcSegment` 类。
+`PathGeometry` 对象由一个或多个 `PathFigure` 对象组成。 每个 `PathFigure` 对象都表示不同的形状。 每个 `PathFigure` 对象都由一个或多个 `PathSegment` 对象组成，每个对象表示形状的连接部分。 段类型包括 `LineSegment` 、 `BezierSegment` 、和 `ArcSegment` 类。
 
 下面的 XAML 示例演示如何使用对象绘制三角形 `PathGeometry` ：
 
@@ -103,8 +103,8 @@ ms.locfileid: "87918253"
 
 ## <a name="related-links"></a>相关链接
 
-- [ShapeDemos (示例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
-- [Xamarin.Forms形状](index.md)
-- [Xamarin.Forms几何图形](geometries.md)
-- [Xamarin.Forms路径标记语法](path-markup-syntax.md)
-- [Xamarin.Forms路径转换](path-transforms.md)
+- [ShapeDemos (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+- [Xamarin.Forms 形状](index.md)
+- [Xamarin.Forms 几何图形](geometries.md)
+- [Xamarin.Forms 路径标记语法](path-markup-syntax.md)
+- [Xamarin.Forms 路径转换](path-transforms.md)

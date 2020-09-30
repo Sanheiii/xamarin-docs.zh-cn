@@ -1,6 +1,6 @@
 ---
 title: 显示弹出窗口
-description: Xamarin.Forms提供三个类似于弹出式的用户界面元素-警报、操作表和提示。 本文演示如何使用警报、操作表和提示 Api 来显示询问用户简单问题的对话框、指导用户完成任务以及显示提示。
+description: Xamarin.Forms 提供三个类似于弹出式的用户界面元素-警报、操作表和提示。 本文演示如何使用警报、操作表和提示 Api 来显示询问用户简单问题的对话框、指导用户完成任务以及显示提示。
 ms.prod: xamarin
 ms.assetid: 46AB0D5E-0025-4A8A-9D00-3E66C3D0BA2E
 ms.technology: xamarin-forms
@@ -10,18 +10,18 @@ ms.date: 03/10/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 75cc3070f552ef05c3e8702d27caf7c353ac0a8f
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 58ab2f785c26019c90b91c928daed864c3c6098b
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86931867"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91559566"
 ---
 # <a name="display-pop-ups"></a>显示弹出窗口
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-pop-ups)
 
-显示警报，要求用户进行选择或显示提示是常见的 UI 任务。 Xamarin.Forms在类上有三种方法 [`Page`](xref:Xamarin.Forms.Page) ，可通过弹出窗口与用户进行交互： [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert*) 、 [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*) 和 `DisplayPromptAsync` 。 在每个平台上使用相应的本机控件呈现。
+显示警报，要求用户进行选择或显示提示是常见的 UI 任务。 Xamarin.Forms 在类上有三种方法 [`Page`](xref:Xamarin.Forms.Page) ，可通过弹出窗口与用户进行交互： [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert*) 、 [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*) 和 `DisplayPromptAsync` 。 在每个平台上使用相应的本机控件呈现。
 
 ## <a name="display-an-alert"></a>显示警报
 
@@ -112,4 +112,4 @@ string result = await DisplayPromptAsync("Question 2", "What's 5 + 5?", initialV
 
 ## <a name="related-links"></a>相关链接
 
-- [PopupsSample](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-pop-ups)
+- [PopupsSample](/samples/xamarin/xamarin-forms-samples/navigation-pop-ups)

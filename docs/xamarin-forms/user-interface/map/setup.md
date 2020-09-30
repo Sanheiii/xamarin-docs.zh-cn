@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Forms映射初始化和配置
+title: Xamarin.Forms 映射初始化和配置
 description: Xamarin.Forms。在应用程序中使用地图功能需要 maps NuGet 包。 此外，访问用户的位置时，需要向应用程序授予 location 权限。
 ms.prod: xamarin
 ms.assetid: 59CD1344-8248-406C-9144-0C8A67141E5B
@@ -10,14 +10,14 @@ ms.date: 02/07/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 52e2ac5f8075c57f533fcba064223f355e07ba48
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 3da0223bf72e4de60cc50be2562a0fdbd279f52e
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139836"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91559735"
 ---
-# <a name="xamarinforms-map-initialization-and-configuration"></a>Xamarin.Forms映射初始化和配置
+# <a name="no-locxamarinforms-map-initialization-and-configuration"></a>Xamarin.Forms 映射初始化和配置
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 
@@ -29,42 +29,42 @@ ms.locfileid: "84139836"
 
 安装后[ Xamarin.Forms 。映射](https://www.nuget.org/packages/Xamarin.Forms.Maps/)NuGet 包，必须在每个平台项目中对其进行初始化。
 
-在 iOS 上，此方法应在**AppDelegate.cs**中出现，方法是在 `Xamarin.FormsMaps.Init` 方法*之后*调用方法 `Xamarin.Forms.Forms.Init` ：
+在 iOS 上，此方法应在 **AppDelegate.cs** 中出现，方法是在 `Xamarin.FormsMaps.Init` 方法 *之后* 调用方法 `Xamarin.Forms.Forms.Init` ：
 
 ```csharp
 Xamarin.FormsMaps.Init();
 ```
 
-在 Android 上，此方法应在**MainActivity.cs**中出现，方法是在 `Xamarin.FormsMaps.Init` 方法*之后*调用方法 `Xamarin.Forms.Forms.Init` ：
+在 Android 上，此方法应在 **MainActivity.cs** 中出现，方法是在 `Xamarin.FormsMaps.Init` 方法 *之后* 调用方法 `Xamarin.Forms.Forms.Init` ：
 
 ```csharp
 Xamarin.FormsMaps.Init(this, savedInstanceState);
 ```
 
-在通用 Windows 平台（UWP）上，这应在**MainPage.xaml.cs**中通过调用 `Xamarin.FormsMaps.Init` 构造函数中的方法来发生 `MainPage` ：
+在通用 Windows 平台 (UWP) 上，此操作应在 **MainPage.xaml.cs** 中通过调用 `Xamarin.FormsMaps.Init` 构造函数中的方法来执行 `MainPage` ：
 
 ```csharp
 Xamarin.FormsMaps.Init("INSERT_AUTHENTICATION_TOKEN_HERE");
 ```
 
-有关 UWP 所需的身份验证令牌的信息，请参阅[通用 Windows 平台](#universal-windows-platform)。
+有关 UWP 所需的身份验证令牌的信息，请参阅 [通用 Windows 平台](#universal-windows-platform)。
 
 添加 NuGet 包并在每个应用程序内调用初始化方法后， `Xamarin.Forms.Maps` 可以在共享代码项目中使用 api。
 
 ## <a name="platform-configuration"></a>平台配置
 
-需要在 Android 和通用 Windows 平台（UWP）上进行其他配置，地图才会显示。 此外，在 iOS、Android 和 UWP 上，访问用户的位置时，需要授予对应用程序的位置权限。
+在显示地图之前，Android 和通用 Windows 平台 (UWP) 需要其他配置。 此外，在 iOS、Android 和 UWP 上，访问用户的位置时，需要授予对应用程序的位置权限。
 
 ### <a name="ios"></a>iOS
 
-在 iOS 上显示和与地图进行交互不需要任何其他配置。 但是，若要访问位置服务，必须在**info.plist**中设置以下项：
+在 iOS 上显示和与地图进行交互不需要任何其他配置。 但是，若要访问位置服务，必须在 **info.plist**中设置以下项：
 
 - iOS 11 及更高版本
-  - [`NSLocationWhenInUseUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW26)–用于在应用程序使用时使用定位服务
-  - [`NSLocationAlwaysAndWhenInUseUsageDescription`](https://developer.apple.com/documentation/bundleresources/information_property_list/nslocationalwaysandwheninuseusagedescription)–用于始终使用定位服务
+  - [`NSLocationWhenInUseUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW26) –用于在应用程序使用时使用定位服务
+  - [`NSLocationAlwaysAndWhenInUseUsageDescription`](https://developer.apple.com/documentation/bundleresources/information_property_list/nslocationalwaysandwheninuseusagedescription) –用于始终使用定位服务
 - iOS 10 及更早版本
-  - [`NSLocationWhenInUseUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW26)–用于在应用程序使用时使用定位服务
-  - [`NSLocationAlwaysUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW18)–用于始终使用定位服务    
+  - [`NSLocationWhenInUseUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW26) –用于在应用程序使用时使用定位服务
+  - [`NSLocationAlwaysUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW18) –用于始终使用定位服务    
 
 若要支持 iOS 11 和更早版本，你可以包含所有三个键： `NSLocationWhenInUseUsageDescription` 、 `NSLocationAlwaysAndWhenInUseUsageDescription` 和 `NSLocationAlwaysUsageDescription` 。
 
@@ -98,13 +98,13 @@ Xamarin.FormsMaps.Init("INSERT_AUTHENTICATION_TOKEN_HERE");
 1. 可有可无指定清单中的位置权限。
 1. 可有可无类中的请求运行时位置权限 `MainActivity` 。
 
-有关正确配置的清单文件的示例，请参阅示例应用程序中的[AndroidManifest.xml](https://github.com/xamarin/xamarin-forms-samples/blob/master/WorkingWithMaps/WorkingWithMaps/WorkingWithMaps.Android/Properties/AndroidManifest.xml) 。
+有关正确配置的清单文件的示例，请参阅示例应用程序中的 [AndroidManifest.xml](https://github.com/xamarin/xamarin-forms-samples/blob/master/WorkingWithMaps/WorkingWithMaps/WorkingWithMaps.Android/Properties/AndroidManifest.xml) 。
 
 #### <a name="get-a-google-maps-api-key"></a>获取 Google Maps API 密钥
 
-若要在 Android 上使用[Google MAPS api](https://developers.google.com/maps/documentation/android/) ，必须生成 API 密钥。 为此，请按照[获取 Google MAPS API 密钥](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)中的说明进行操作。
+若要在 Android 上使用 [Google MAPS api](https://developers.google.com/maps/documentation/android/) ，必须生成 API 密钥。 为此，请按照 [获取 Google MAPS API 密钥](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)中的说明进行操作。
 
-获取 API 密钥后，必须将其添加到 `<application>` **Properties/AndroidManifest.xml**文件的元素中：
+获取 API 密钥后，必须将其添加到 `<application>` **Properties/AndroidManifest.xml** 文件的元素中：
 
 ```xml
 <application ...>
@@ -115,9 +115,9 @@ Xamarin.FormsMaps.Init("INSERT_AUTHENTICATION_TOKEN_HERE");
 这会将 API 密钥嵌入清单中。 如果没有有效的 API 密钥， [`Map`](xref:Xamarin.Forms.Maps.Map) 控件将显示空白网格。
 
 > [!NOTE]
-> `com.google.android.geo.API_KEY`是 API 密钥的建议的元数据名称。 为了向后兼容， `com.google.android.maps.v2.API_KEY` 可以使用元数据名称，但仅允许对 Android MAPS API v2 进行身份验证。
+> `com.google.android.geo.API_KEY` 是 API 密钥的建议的元数据名称。 为了向后兼容， `com.google.android.maps.v2.API_KEY` 可以使用元数据名称，但仅允许对 Android MAPS API v2 进行身份验证。
 
-要使 APK 能够访问 Google Maps，你必须为每个用于签署 APK 的密钥存储（调试和发布）包含 SHA-1 指纹和包名称。 例如，如果你使用一台计算机进行调试，将另一台计算机用于生成发布 APK，则应在第一台计算机的调试密钥存储中包含 SHA-1 证书指纹，并在第二台计算机的版本存储库中包含 SHA-1 证书指纹。 另外，请记住，如果应用的**包名称**发生更改，则编辑密钥凭据。 请参阅[获取 Google MAPS API 密钥](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)。
+要使 APK 能够访问 Google Maps，必须包含每个密钥存储的 SHA-1 指纹和包名称， (调试和发布) 用于对 APK 进行签名。 例如，如果你使用一台计算机进行调试，将另一台计算机用于生成发布 APK，则应在第一台计算机的调试密钥存储中包含 SHA-1 证书指纹，并在第二台计算机的版本存储库中包含 SHA-1 证书指纹。 另外，请记住，如果应用的 **包名称** 发生更改，则编辑密钥凭据。 请参阅 [获取 Google MAPS API 密钥](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)。
 
 #### <a name="specify-the-google-play-services-version-number"></a>指定 Google Play 服务版本号
 
@@ -151,7 +151,7 @@ Xamarin.FormsMaps.Init("INSERT_AUTHENTICATION_TOKEN_HERE");
 
 #### <a name="specify-location-permissions"></a>指定位置权限
 
-如果你的应用程序需要访问用户的位置，则必须通过将 `ACCESS_COARSE_LOCATION` 或 `ACCESS_FINE_LOCATION` 权限添加到清单（或两者）来请求权限，作为元素的子 `<manifest>` 元素：
+如果你的应用程序需要访问用户的位置，则必须通过将 `ACCESS_COARSE_LOCATION` 或 `ACCESS_FINE_LOCATION` 权限添加到清单 (或同时作为元素的子元素) 来请求权限 `<manifest>` ：
 
 ```xml
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.companyname.myapp">
@@ -161,7 +161,7 @@ Xamarin.FormsMaps.Init("INSERT_AUTHENTICATION_TOKEN_HERE");
 </manifest>
 ```
 
-此 `ACCESS_COARSE_LOCATION` 权限允许 API 使用 WiFi 或移动数据，或者同时使用这两种方法来确定设备的位置。 `ACCESS_FINE_LOCATION`权限允许 API 使用全球定位系统（GPS）、WiFi 或移动数据来确定尽可能精确的位置。
+此 `ACCESS_COARSE_LOCATION` 权限允许 API 使用 WiFi 或移动数据，或者同时使用这两种方法来确定设备的位置。 这些 `ACCESS_FINE_LOCATION` 权限允许 API 使用 (GPS) 、WiFi 或移动数据全球定位系统来确定尽可能精确的位置。
 
 或者，可以通过使用清单编辑器添加以下权限来启用这些权限：
 
@@ -238,7 +238,7 @@ Xamarin.FormsMaps.Init("INSERT_AUTHENTICATION_TOKEN_HERE");
 
 ### <a name="universal-windows-platform"></a>通用 Windows 平台
 
-在 UWP 上，必须先对应用程序进行身份验证，然后才能显示地图并使用地图服务。 若要对应用程序进行身份验证，必须指定映射身份验证密钥。 有关详细信息，请参阅[请求映射身份验证密钥](/windows/uwp/maps-and-location/authentication-key)。 然后，应在方法调用中指定身份验证令牌 `FormsMaps.Init("AUTHORIZATION_TOKEN")` ，以便用 Bing 地图对应用程序进行身份验证。
+在 UWP 上，必须先对应用程序进行身份验证，然后才能显示地图并使用地图服务。 若要对应用程序进行身份验证，必须指定映射身份验证密钥。 有关详细信息，请参阅 [请求映射身份验证密钥](/windows/uwp/maps-and-location/authentication-key)。 然后，应在方法调用中指定身份验证令牌 `FormsMaps.Init("AUTHORIZATION_TOKEN")` ，以便用 Bing 地图对应用程序进行身份验证。
 
 > [!NOTE]
 > 在 UWP 上，若要使用地图服务（如地理编码），还必须将 `MapService.ServiceToken` 属性设置为 "身份验证密钥" 值。 这可以通过以下代码行完成： `Windows.Services.Maps.MapService.ServiceToken = "INSERT_AUTH_TOKEN_HERE";` 。
@@ -257,7 +257,7 @@ Xamarin.FormsMaps.Init("INSERT_AUTHENTICATION_TOKEN_HERE");
 
 #### <a name="release-builds"></a>发布版本
 
-UWP 发布版本使用 .NET 本机编译将应用程序直接编译为本机代码。 但是，这种情况的结果是，UWP 上的控件的呈现器 [`Map`](xref:Xamarin.Forms.Maps.Map) 可能与可执行文件链接。 这可以通过 `Forms.Init` 在**App.xaml.cs**中使用方法的 UWP 特定重载来修复：
+UWP 发布版本使用 .NET 本机编译将应用程序直接编译为本机代码。 但是，这种情况的结果是，UWP 上的控件的呈现器 [`Map`](xref:Xamarin.Forms.Maps.Map) 可能与可执行文件链接。 这可以通过 `Forms.Init` 在 **App.xaml.cs**中使用方法的 UWP 特定重载来修复：
 
 ```csharp
 var assembliesToInclude = new [] { typeof(Xamarin.Forms.Maps.UWP.MapRenderer).GetTypeInfo().Assembly };
@@ -271,7 +271,7 @@ Xamarin.Forms.Forms.Init(e, assembliesToInclude);
 
 ## <a name="related-links"></a>相关链接
 
-- [地图示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
+- [地图示例](/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 - [Xamarin.Forms.映射 Pin](~/xamarin-forms/user-interface/map/pins.md)。
 - [地图 API](xref:Xamarin.Forms.Maps)
 - [映射自定义呈现器](~/xamarin-forms/app-fundamentals/custom-renderer/map-pin.md)
