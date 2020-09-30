@@ -1,6 +1,6 @@
 ---
-title: 颜色Xamarin.Forms
-description: Xamarin.Forms提供灵活的跨平台颜色类。 本文介绍了 Color 类提供的功能，以及如何使用它。
+title: 颜色 Xamarin.Forms
+description: Xamarin.Forms 提供灵活的跨平台颜色类。 本文介绍了 Color 类提供的功能，以及如何使用它。
 ms.prod: xamarin
 ms.assetid: 22288ABF-57BE-47A9-ACC3-AC604D787C46
 ms.technology: xamarin-forms
@@ -10,31 +10,31 @@ ms.date: 04/02/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a02fe7451702367d85d322b756df4a547a009454
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 6b4e44cb667335ecca7a0c7e5ec77d6e14ed975c
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137340"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91557226"
 ---
-# <a name="colors-in-xamarinforms"></a>颜色Xamarin.Forms
+# <a name="colors-in-no-locxamarinforms"></a>颜色 Xamarin.Forms
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithcolors)
 
-_Xamarin 提供了一个灵活的跨平台颜色类。_
+_Xamarin.Forms 提供灵活的跨平台颜色类。_
 
 本文介绍 [`Color`](xref:Xamarin.Forms.Color) 可在中使用类的各种方法 Xamarin.Forms 。
 
 [`Color`](xref:Xamarin.Forms.Color)类提供多种方法来生成 `Color` 实例：
 
-- **命名颜色**-常见命名颜色的集合，包括 `Red` 、 `Green` 和 `Blue` 。
-- `FromHex`-与 HTML 中使用的语法类似的字符串值，例如 "00FF00"。 可以选择将 Alpha 指定为第一对字符（"CC00FF00"）。
-- `FromHsla`-色调、饱和度和发光度 `double` 值，具有可选的 alpha 值（0.0-1.0）。
-- `FromHsv`-色调、饱和度和值 `int` `double` 。
-- `FromHsva`-色调、饱和度和值 `int` `double` 。
-- `FromRgb`-红色、绿色和蓝色 `int` 值（0-255）。
-- `FromRgba`-红色、绿色、蓝色和 alpha `int` 值（0-255）。
-- `FromUint`-设置 `double` 表示**argb**的单个值。
+- **命名颜色** -常见命名颜色的集合，包括 `Red` 、 `Green` 和 `Blue` 。
+- `FromHex` -与 HTML 中使用的语法类似的字符串值，例如 "00FF00"。 可以选择将 Alpha 指定为 ( "CC00FF00" ) 的第一对字符。
+- `FromHsla` -色调、饱和度和发光度 `double` 值，其 alpha 值 (0.0-1.0) 。
+- `FromHsv` -色调、饱和度和值 `int` `double` 。
+- `FromHsva` -色调、饱和度和值 `int` `double` 。
+- `FromRgb` -红色、绿色和蓝色 `int` 值 (0-255) 。
+- `FromRgba` -红色、绿色、蓝色和 alpha  `int` 值 (0-255) 。
+- `FromUint` -设置 `double` 表示 **argb**的单个值。
 
 下面是一些示例颜色，分配给某些标签的，其中 `BackgroundColor` 使用了允许语法的不同变体：
 
@@ -58,9 +58,9 @@ var accent = new Label      { Text = "Accent",     BackgroundColor = Color.Accen
 
 ## <a name="colordefault"></a>Color。默认值
 
-使用将 `Default` 颜色值设置（或重新设置）到平台默认值（了解每个属性的每个平台上的基础颜色都不同）。
+使用 `Default` 设置 (或重新设置) 颜色值返回到平台默认值 (了解这对于每个属性) 在每个平台上表示不同的基础颜色。
 
-开发人员可以使用此值来设置 `Color` 属性，但**不**应为其组件 RGB 值查询此实例（它们都设置为-1）。
+开发人员可以使用此值来设置 `Color` 属性，但 **不** 应在此实例的组件 RGB 值中查询 (它们都设置为-1) 。
 
 ## <a name="colortransparent"></a>Color。透明
 
@@ -72,14 +72,14 @@ var accent = new Label      { Text = "Accent",     BackgroundColor = Color.Accen
 
 ## <a name="additional-methods"></a>其他方法
 
-[`Color`](xref:Xamarin.Forms.Color)实例包括以下附加方法：
+[`Color`](xref:Xamarin.Forms.Color) 实例包括以下附加方法：
 
-- `AddLuminosity`-通过用 `Color` 提供的增量修改发光度来返回。
-- `MultiplyAlpha`- `Color` 通过修改 alpha 返回，并将其乘以提供的 alpha 值。
-- `ToHex`-返回的十六进制 `string` 表示形式 `Color` 。
-- `WithHue`-返回 `Color` ，将色相替换为提供的值。
-- `WithLuminosity`-返回 `Color` ，将发光度替换为提供的值。
-- `WithSaturation`-返回 `Color` ，将饱和度替换为提供的值。
+- `AddLuminosity` -通过用 `Color` 提供的增量修改发光度来返回。
+- `MultiplyAlpha` - `Color` 通过修改 alpha 返回，并将其乘以提供的 alpha 值。
+- `ToHex` -返回的十六进制 `string` 表示形式 `Color` 。
+- `WithHue` -返回 `Color` ，将色相替换为提供的值。
+- `WithLuminosity` -返回 `Color` ，将发光度替换为提供的值。
+- `WithSaturation` -返回 `Color` ，将饱和度替换为提供的值。
 
 ## <a name="implicit-conversions"></a>隐式转换
 
@@ -125,5 +125,5 @@ ActivityIndicator activityIndicator = new ActivityIndicator
 
 ## <a name="related-links"></a>相关链接
 
-- [ColorsSample](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithcolors)
-- [可绑定选取器（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-bindablepicker)
+- [ColorsSample](/samples/xamarin/xamarin-forms-samples/workingwithcolors)
+- [可绑定选取器 (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-bindablepicker)

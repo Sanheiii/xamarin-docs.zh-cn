@@ -1,34 +1,23 @@
 ---
-title: Xamarin.Forms旁边
-description: Xamarin.Forms复选框是可以选中或为空的按钮类型。 选中复选框后，它将被视为已启用。 如果复选框为空，则将其视为关闭。
-ms.prod: xamarin
-ms.assetid: B8B9268B-BCB8-42B9-B08C-C0F22C137238
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 06/11/2019
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 8399dde2e4e2c9fb53b38fca2923eb0e3bfc6ce3
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
-ms.translationtype: MT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136469"
+标题： " Xamarin.Forms 复选框" 说明： Xamarin.Forms 复选框是可以选中或空的按钮类型。 选中复选框后，它将被视为已启用。 如果复选框为空，则将其视为关闭。
+ms-chap： xamarin assetid： B8B9268B-BCB8-42B9-B08C-C0F22C137238： xamarin 窗体作者： davidbritch： dabritch ms. 日期：06/11/2019 非 loc：
+- "Xamarin.Forms"
+- "Xamarin.Essentials"
+
 ---
-# <a name="xamarinforms-checkbox"></a>Xamarin.Forms旁边
+
+# <a name="no-locxamarinforms-checkbox"></a>Xamarin.Forms 旁边
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-checkboxdemos/)
 
 Xamarin.Forms `CheckBox` 是可以选中或空的按钮类型。 选中复选框后，它将被视为已启用。 如果复选框为空，则将其视为关闭。
 
-`CheckBox`定义一个 `bool` 名为的属性 `IsChecked` ，指示是否 `CheckBox` 选中。 对象也支持此属性，这 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 意味着它可以进行样式设计，并且是数据绑定的目标。
+`CheckBox` 定义一个 `bool` 名为的属性 `IsChecked` ，指示是否 `CheckBox` 选中。 对象也支持此属性，这 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 意味着它可以进行样式设计，并且是数据绑定的目标。
 
 > [!NOTE]
 > 可 `IsChecked` 绑定的属性的默认绑定模式为 [`BindingMode.TwoWay`](xref:Xamarin.Forms.BindingMode.TwoWay) 。
 
-`CheckBox`定义一个 `CheckedChanged` 事件，该事件在 `IsChecked` 属性更改时通过用户操作或应用程序设置属性时引发 `IsChecked` 。 `CheckedChangedEventArgs`事件附带的对象 `CheckedChanged` 具有名为的单个属性 `Value` ，类型为 `bool` 。 触发事件时，属性的值 `Value` 设置为属性的新值 `IsChecked` 。
+`CheckBox` 定义一个 `CheckedChanged` 事件，该事件在 `IsChecked` 属性更改时通过用户操作或应用程序设置属性时引发 `IsChecked` 。 `CheckedChangedEventArgs`事件附带的对象 `CheckedChanged` 具有名为的单个属性 `Value` ，类型为 `bool` 。 触发事件时，属性的值 `Value` 设置为属性的新值 `IsChecked` 。
 
 ## <a name="create-a-checkbox"></a>创建复选框
 
@@ -133,7 +122,7 @@ checkBox.CheckedChanged += (sender, e) =>
 
 ## <a name="checkbox-visual-states"></a>复选框可视状态
 
-`CheckBox`包含一个 `IsChecked` [`VisualState`](xref:Xamarin.Forms.VisualState) ，它可用于在检查时启动对的视觉对象更改 `CheckBox` 。
+`CheckBox` 包含一个 `IsChecked` [`VisualState`](xref:Xamarin.Forms.VisualState) ，它可用于在检查时启动对的视觉对象更改 `CheckBox` 。
 
 下面的 XAML 示例演示如何为状态定义可视状态 `IsChecked` ：
 
@@ -165,6 +154,6 @@ checkBox.CheckedChanged += (sender, e) =>
 
 ## <a name="related-links"></a>相关链接
 
-- [复选框演示（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-checkboxdemos/)
+- [CheckBox 演示 (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-checkboxdemos/)
 - [Xamarin.Forms 触发器](~/xamarin-forms/app-fundamentals/triggers.md)
 - [Xamarin.Forms 可视状态管理器](~/xamarin-forms/user-interface/visual-state-manager.md)

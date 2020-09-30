@@ -1,5 +1,5 @@
 ---
-title: 'Xamarin.FormsC # 标记'
+title: 'Xamarin.Forms C # 标记'
 description: 'C # 标记是一组乐观的帮助器方法和类，用于简化 Xamarin.Forms 在 c # 中生成声明性用户界面的过程。'
 ms.prod: xamarin
 ms.assetid: D41B9DCD-5C34-4C2F-B177-FC082AB2E9E0
@@ -10,24 +10,24 @@ ms.date: 05/15/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3e8c95e84dd525c274403290712260ba86abd677
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: a07931bfa53a5e4d77c2755b08745b8dd962b695
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87918568"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91557148"
 ---
-# <a name="no-locxamarinforms-c-markup"></a>Xamarin.FormsC # 标记
+# <a name="no-locxamarinforms-c-markup"></a>Xamarin.Forms C # 标记
 
 ![预发行版 API](~/media/shared/preview.png)
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-csharpmarkupdemos/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-csharpmarkupdemos/)
 
 C # 标记是一组乐观的帮助器方法和类，用于简化 Xamarin.Forms 在 c # 中生成声明性用户界面的过程。 命名空间中提供了 c # 标记提供的 Fluent API `Xamarin.Forms.Markup` 。
 
-与 XAML 一样，c # 标记可实现 UI 标记和 UI 逻辑之间的完全分离。 这可以通过将 UI 标记和 UI 逻辑分成不同的分部类文件来实现。 例如，对于登录页，UI 标记将位于名为*LoginPage.cs*的文件中，而 ui 逻辑位于名为*LoginPage.logic.cs*的文件中。
+与 XAML 一样，c # 标记可实现 UI 标记和 UI 逻辑之间的完全分离。 这可以通过将 UI 标记和 UI 逻辑分成不同的分部类文件来实现。 例如，对于登录页，UI 标记将位于名为 *LoginPage.cs*的文件中，而 ui 逻辑位于名为 *LoginPage.logic.cs*的文件中。
 
-C # 标记在4.6 中提供 Xamarin.Forms 。 但是，当前正在试验，只能通过将以下代码行添加到*App.cs*文件中来使用：
+C # 标记在4.6 中提供 Xamarin.Forms 。 但是，当前正在试验，只能通过将以下代码行添加到 *App.cs* 文件中来使用：
 
 ```csharp
 Device.SetFlags(new string[]{ "Markup_Experimental" });
@@ -207,7 +207,7 @@ new Label { } .FormattedText (
 
 ### <a name="gesture-recognizers"></a>手势识别器
 
-`Command`和 `CommandParameter` 属性可以是 `GestureElement` `View` 使用 `BindClickGesture` 、 `BindSwipeGesture` 和 `BindTapGesture` 扩展方法绑定到和类型的数据：
+`Command` 和 `CommandParameter` 属性可以是 `GestureElement` `View` 使用 `BindClickGesture` 、 `BindSwipeGesture` 和 `BindTapGesture` 扩展方法绑定到和类型的数据：
 
 ```csharp
 using Xamarin.Forms.Markup;
@@ -523,7 +523,7 @@ public static T iOSGroupHeaderStyle<T>(this T listView, PciOS.GroupHeaderStyle s
 new ListView { } .iOSGroupHeaderStyle(PciOS.GroupHeaderStyle.Grouped)
 ```
 
-有关平台细节的详细信息，请参阅[Android 平台](~/xamarin-forms/platform/android/index.md)功能、 [iOS 平台功能](~/xamarin-forms/platform/ios/index.md)和[Windows 平台功能](~/xamarin-forms/platform/windows/index.md)。
+有关平台细节的详细信息，请参阅 [Android 平台](~/xamarin-forms/platform/android/index.md)功能、 [iOS 平台功能](~/xamarin-forms/platform/ios/index.md)和 [Windows 平台功能](~/xamarin-forms/platform/windows/index.md)。
 
 ## <a name="recommended-convention"></a>推荐的约定
 
@@ -532,7 +532,7 @@ new ListView { } .iOSGroupHeaderStyle(PciOS.GroupHeaderStyle.Grouped)
 - **目的**：其值标识控件用途的任何属性或 helper 方法 (例如 `Text` ， `Placeholder` `Assign`) 。
 - **其他**：在同一行或多行上不是布局或绑定的所有属性或 helper 方法。
 - **布局**：布局按顺序排列：行和列、布局选项、边距、大小、填充和内容对齐方式。
-- **Bind**：在方法链的末尾执行数据绑定，每行有一个绑定属性。 如果绑定了*默认*的可绑定属性，则它应位于方法链的末尾。
+- **Bind**：在方法链的末尾执行数据绑定，每行有一个绑定属性。 如果绑定了 *默认* 的可绑定属性，则它应位于方法链的末尾。
 
 下面的代码演示了遵循此约定的示例：
 
@@ -553,7 +553,7 @@ new Label { }
 
 ## <a name="related-links"></a>相关链接
 
-- [CSharpForMarkupDemos (示例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-csharpmarkupdemos/)
+- [CSharpForMarkupDemos (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-csharpmarkupdemos/)
 - [Android 平台功能](~/xamarin-forms/platform/android/index.md)
 - [iOS 平台功能](~/xamarin-forms/platform/ios/index.md)
 - [Windows 平台功能](~/xamarin-forms/platform/windows/index.md)

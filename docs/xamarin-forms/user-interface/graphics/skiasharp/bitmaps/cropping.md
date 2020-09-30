@@ -10,12 +10,12 @@ ms.date: 07/17/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d613c4f73c0a377a599b0137ce2f2b557c04ad6a
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 45634695050dc6f74a9b1617a2180481e3788d11
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84572333"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91557317"
 ---
 # <a name="cropping-skiasharp-bitmaps"></a>裁剪 SkiaSharp 位图
 
@@ -108,7 +108,7 @@ class CroppingRectangle
 }
 ```
 
-此数组用于以下调用的方法 `HitTest` 。 `SKPoint`参数是与手指触摸或鼠标单击对应的点。 方法返回对应于手指或鼠标指针接触的角的索引（0、1、2或3），该索引在参数给定的距离内 `radius` ：
+此数组用于以下调用的方法 `HitTest` 。 `SKPoint`参数是与手指触摸或鼠标单击对应的点。 方法返回 (0、1、2或 3) 的索引，该索引对应于手指或鼠标指针接触的角，在参数给定的距离内 `radius` ：
 
 ```csharp
 class CroppingRectangle
@@ -448,7 +448,7 @@ class PhotoCropperCanvasView : SKCanvasView
 
 ## <a name="hosting-the-photo-cropper-canvas-view"></a>承载 photo cropper canvas 视图
 
-对于这两个处理裁剪逻辑的类， **[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** 应用程序中的**照片裁剪**页面几乎不需要执行任何操作。 XAML 文件将实例化 `Grid` 以承载 `PhotoCropperCanvasView` 和 "**完成**" 按钮：
+对于这两个处理裁剪逻辑的类， **[SkiaSharpFormsDemos](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** 应用程序中的**照片裁剪**页面几乎不需要执行任何操作。 XAML 文件将实例化 `Grid` 以承载 `PhotoCropperCanvasView` 和 " **完成** " 按钮：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -521,11 +521,11 @@ public partial class PhotoCroppingPage : ContentPage
 
 [![Photo Cropper 1](cropping-images/PhotoCropping1.png "Photo Cropper 1")](cropping-images/PhotoCropping1-Large.png#lightbox)
 
-定义好裁剪矩形后，单击 "**完成**" 按钮。 `Clicked`处理程序从的属性获取裁剪后的位图 `CroppedBitmap` `PhotoCropperCanvasView` ，并用 `SKCanvasView` 显示此裁剪位图的新对象替换页面的所有内容：
+定义好裁剪矩形后，单击 " **完成** " 按钮。 `Clicked`处理程序从的属性获取裁剪后的位图 `CroppedBitmap` `PhotoCropperCanvasView` ，并用 `SKCanvasView` 显示此裁剪位图的新对象替换页面的所有内容：
 
 [![Photo Cropper 2](cropping-images/PhotoCropping2.png "Photo Cropper 2")](cropping-images/PhotoCropping2-Large.png#lightbox)
 
-尝试将第二个参数设置 `PhotoCropperCanvasView` 为 1.78 f （例如）：
+尝试将第二个参数设置 `PhotoCropperCanvasView` 为 1.78 f (例如) ：
 
 ```csharp
 photoCropper = new PhotoCropperCanvasView(bitmap, 1.78f);
@@ -535,9 +535,9 @@ photoCropper = new PhotoCropperCanvasView(bitmap, 1.78f);
 
 ## <a name="dividing-a-bitmap-into-tiles"></a>将位图分割为磁贴
 
-Xamarin.Forms[_使用 Xamarin 创建移动应用程序_](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md)的第22章中显示了著名14-15 谜题的一个版本，可以将其下载为[**XamagonXuzzle**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/XamagonXuzzle)。 但是，当其基于您自己的照片库中的图像时，谜题就会变得更加有趣（并且通常更具挑战性）。
+该 Xamarin.Forms 版本的著名14-15 谜题出现在[_创建移动应用的 Xamarin.Forms _](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md)书籍第22章，并可下载为[**XamagonXuzzle**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/XamagonXuzzle)。 不过，谜题更有趣 (，当它基于您自己的照片库中的图像时，) 通常更具挑战性。
 
-此版本的14-15 谜题是**[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** 应用程序的一部分，由一系列标题为**Photo 谜**的页面组成。
+此版本的14-15 谜题是 **[SkiaSharpFormsDemos](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** 应用程序的一部分，由一系列标题为 **Photo 谜**的页面组成。
 
 **PhotoPuzzlePage1**文件由 `Button` 以下内容组成：
 
@@ -583,9 +583,9 @@ public partial class PhotoPuzzlePage1 : ContentPage
 
 然后，该方法导航到 `PhotoPuzzlePage2` ，并将其传递给构造。
 
-从库中选择的照片可能不会在照片库中显示，而是旋转或颠倒。 （这尤其是 iOS 设备的问题。）出于此原因， `PhotoPuzzlePage2` 允许您将图像旋转到所需的方向。 XAML 文件包含三个标签为**90&#x00B0; Right** （表示顺时针）、 **90&#x00B0; 左**（逆时针）和**完成**。
+从库中选择的照片可能不会在照片库中显示，而是旋转或颠倒。  (这尤其是 iOS 设备的问题。出于这种原因 ) ， `PhotoPuzzlePage2` 你可以将图像旋转到所需的方向。 该 XAML 文件包含三个标签为 **90&#x00B0; 右** (表示顺时针) 、 **90&#x00B0; 左** (逆时针) 和 **完成**。
 
-代码隐藏文件实现了在**[SkiaSharp 位图上创建和绘制](drawing.md#rotating-bitmaps)** 文章中所示的位图旋转逻辑。 用户可以顺时针或逆时针旋转图像90：
+代码隐藏文件实现了在 **[SkiaSharp 位图上创建和绘制](drawing.md#rotating-bitmaps)** 文章中所示的位图旋转逻辑。 用户可以顺时针或逆时针旋转图像90：
 
 ```csharp
 public partial class PhotoPuzzlePage2 : ContentPage
@@ -648,9 +648,9 @@ public partial class PhotoPuzzlePage2 : ContentPage
 }
 ```
 
-当用户单击 "**完成**" 按钮时， `Clicked` 处理程序将导航到 `PhotoPuzzlePage3` ，同时传递该页的构造函数中的最终旋转位图。
+当用户单击 " **完成** " 按钮时， `Clicked` 处理程序将导航到 `PhotoPuzzlePage3` ，同时传递该页的构造函数中的最终旋转位图。
 
-`PhotoPuzzlePage3`允许裁剪照片。 该程序需要将正方形位图分成图块的 4 x 4 网格。
+`PhotoPuzzlePage3` 允许裁剪照片。 该程序需要将正方形位图分成图块的 4 x 4 网格。
 
 **PhotoPuzzlePage3**文件包含 `Label` 、 `Grid` 用于承载的 `PhotoCropperCanvasView` 和另一个 "**完成**" 按钮：
 
@@ -737,9 +737,9 @@ public partial class PhotoPuzzlePage3 : ContentPage
 }
 ```
 
-"**完成**" 按钮处理程序获取裁剪位图的宽度和高度（这两个值应相同），然后将其划分为15个单独的位图，其中每个位图的宽度和高度均为1/4。 （不会创建最后一个可能的16个位图。）`DrawBitmap`使用 "源" 和 "目标" 矩形的方法允许基于较大位图的子集创建位图。
+" **完成** " 按钮处理程序可获取裁剪后的位图的宽度和高度 (这两个值应为同一) ，然后将其划分为15个单独的位图，其中每个位图的宽度和高度均为1/4。  (不会创建最新的16个位图。 ) `DrawBitmap` 使用源和目标矩形的方法，可基于更大位图的子集创建位图。
 
-## <a name="converting-to-xamarinforms-bitmaps"></a>转换为 Xamarin.Forms 位图
+## <a name="converting-to-no-locxamarinforms-bitmaps"></a>转换为 Xamarin.Forms 位图
 
 在 `OnDoneButtonClicked` 方法中，为15个位图创建的数组的类型为 [`ImageSource`](xref:Xamarin.Forms.ImageSource) ：
 
@@ -747,17 +747,17 @@ public partial class PhotoPuzzlePage3 : ContentPage
 ImageSource[] imgSources = new ImageSource[15];
 ```
 
-`ImageSource`是 Xamarin.Forms 封装位图的基类型。 幸运的是，SkiaSharp 允许从 SkiaSharp 位图转换为 Xamarin.Forms 位图。 **SkiaSharp**程序集定义一个 [`SKBitmapImageSource`](xref:SkiaSharp.Views.Forms.SKBitmapImageSource) 派生自的类， `ImageSource` 但可以基于 SkiaSharp 对象创建该类 `SKBitmap` 。 `SKBitmapImageSource`甚至还定义了和之间的转换， `SKBitmapImageSource` `SKBitmap` 这也就是 `SKBitmap` 对象在数组中的存储方式 Xamarin.Forms ：
+`ImageSource` 是 Xamarin.Forms 封装位图的基类型。 幸运的是，SkiaSharp 允许从 SkiaSharp 位图转换为 Xamarin.Forms 位图。 **SkiaSharp**程序集定义一个 [`SKBitmapImageSource`](xref:SkiaSharp.Views.Forms.SKBitmapImageSource) 派生自的类， `ImageSource` 但可以基于 SkiaSharp 对象创建该类 `SKBitmap` 。 `SKBitmapImageSource` 甚至还定义了和之间的转换， `SKBitmapImageSource` `SKBitmap` 这也就是 `SKBitmap` 对象在数组中的存储方式 Xamarin.Forms ：
 
 ```csharp
 imgSources[4 * row + col] = (SKBitmapImageSource)bitmap;
 ```
 
-此位图数组作为构造函数传递给 `PhotoPuzzlePage4` 。 该页完全不 Xamarin.Forms 使用任何 SkiaSharp。 它非常类似于[**XamagonXuzzle**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/XamagonXuzzle)，因此不会在此处进行描述，但会显示选定的照片，分为15个正方形磁贴：
+此位图数组作为构造函数传递给 `PhotoPuzzlePage4` 。 该页完全不 Xamarin.Forms 使用任何 SkiaSharp。 它非常类似于 [**XamagonXuzzle**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/XamagonXuzzle)，因此不会在此处进行描述，但会显示选定的照片，分为15个正方形磁贴：
 
 [![照片测验题1](cropping-images/PhotoPuzzle1.png "照片测验题1")](cropping-images/PhotoPuzzle1-Large.png#lightbox)
 
-按 "**随机化**" 按钮将会混合所有磁贴：
+按 " **随机化** " 按钮将会混合所有磁贴：
 
 [![照片测验题2](cropping-images/PhotoPuzzle2.png "照片测验题2")](cropping-images/PhotoPuzzle2-Large.png#lightbox)
 
@@ -765,5 +765,5 @@ imgSources[4 * row + col] = (SKBitmapImageSource)bitmap;
 
 ## <a name="related-links"></a>相关链接
 
-- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [SkiaSharp Api](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (示例) ](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

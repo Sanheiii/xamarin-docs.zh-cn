@@ -10,12 +10,12 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 46e8dec3d5644defdeb8a2265a73815adfde92d8
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: b8be4610a327fb9902d62efb061406bff16de484
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136027"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91557473"
 ---
 # <a name="listview-group-header-style-on-ios"></a>IOS 上的 ListView 组标头样式
 
@@ -46,8 +46,8 @@ listView.On<iOS>().SetGroupHeaderStyle(GroupHeaderStyle.Grouped);
 
 `ListView.On<iOS>`方法指定此平台特定的仅在 iOS 上运行。 `ListView.SetGroupHeaderStyle`命名空间中的方法 [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) 用于控制 [`ListView`](xref:Xamarin.Forms.ListView) 标题单元是否在滚动过程中浮动。 `GroupHeaderStyle`枚举提供了两个可能的值：
 
-- `Plain`–指示在滚动时标题单元浮动 [`ListView`](xref:Xamarin.Forms.ListView) （默认值）。
-- `Grouped`–指示在滚动时，标头单元格不浮动 [`ListView`](xref:Xamarin.Forms.ListView) 。
+- `Plain` –指示当滚动 (默认) 时，标头单元格 [`ListView`](xref:Xamarin.Forms.ListView) 为 float。
+- `Grouped` –指示在滚动时，标头单元格不浮动 [`ListView`](xref:Xamarin.Forms.ListView) 。
 
 此外， `ListView.GetGroupHeaderStyle` 方法可用于返回 `GroupHeaderStyle` 应用于的 [`ListView`](xref:Xamarin.Forms.ListView) 。
 
@@ -57,6 +57,6 @@ listView.On<iOS>().SetGroupHeaderStyle(GroupHeaderStyle.Grouped);
 
 ## <a name="related-links"></a>相关链接
 
-- [PlatformSpecifics （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [PlatformSpecifics (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [创建平台特定信息](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [iOSSpecific API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

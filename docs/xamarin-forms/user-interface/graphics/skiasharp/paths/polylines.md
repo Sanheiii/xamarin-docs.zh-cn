@@ -10,12 +10,12 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8ffa7ab7c9d2cebb9854ed155c3a00fe65e497c9
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 75f6f9b3e7a493121b8f4dacb87749d4a9616dee
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86936131"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91557096"
 ---
 # <a name="polylines-and-parametric-equations"></a>折线和参数等式
 
@@ -23,11 +23,11 @@ ms.locfileid: "86936131"
 
 _使用 SkiaSharp 呈现可以使用参数化公式定义的任何行_
 
-在本指南的 " [**SkiaSharp 曲线和路径**](../curves/index.md)" 部分中，您将看到 [`SKPath`](xref:SkiaSharp.SKPath) 定义用于呈现特定曲线类型的各种方法。 但是，有时需要绘制不直接支持的曲线类型 `SKPath` 。 在这种情况下，您可以使用折线（一系列连接的线）绘制您可以数学定义的任何曲线。 如果使线条足够小并且足够大，结果将显示为曲线。 此螺旋实际上是3600小行：
+在本指南的 " [**SkiaSharp 曲线和路径**](../curves/index.md) " 部分中，您将看到 [`SKPath`](xref:SkiaSharp.SKPath) 定义用于呈现特定曲线类型的各种方法。 但是，有时需要绘制不直接支持的曲线类型 `SKPath` 。 在这种情况下，您可以使用折线 (一系列连接的直线) 绘制您可以数学定义的任何曲线。 如果使线条足够小并且足够大，结果将显示为曲线。 此螺旋实际上是3600小行：
 
 ![螺旋](polylines-images/spiralexample.png)
 
-通常，最好按照一对参数方程来定义曲线。 它们是 X 和 Y 坐标的等式，它们依赖于第三个变量（有时称为 "时间"） `t` 。 例如，下面的参数方程定义一个圆，其半径为1，中心为0到1之间的*t* （0，0）：
+通常，最好按照一对参数方程来定义曲线。 它们是 X 和 Y 坐标的等式，它们依赖于第三个变量（有时称为 "时间"） `t` 。 例如，以下参数公式定义一个圆，其半径为1，介于0和 *1 之间 (* 0，0) ：
 
 `x = cos(2πt)`
 
@@ -118,7 +118,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-结果也称为*算术螺旋*，因为每个循环之间的偏移是常量：
+结果也称为 *算术螺旋* ，因为每个循环之间的偏移是常量：
 
 [![Archimedean 螺旋页面的三向屏幕截图](polylines-images/archimedeanspiral-small.png)](polylines-images/archimedeanspiral-large.png#lightbox "Archimedean 螺旋页面的三向屏幕截图")
 
@@ -126,5 +126,5 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ## <a name="related-links"></a>相关链接
 
-- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [SkiaSharp Api](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (示例) ](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

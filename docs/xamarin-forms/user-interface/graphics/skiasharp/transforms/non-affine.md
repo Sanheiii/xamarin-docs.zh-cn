@@ -10,12 +10,12 @@ ms.date: 04/14/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b4c6569acbade7edf64c9aaf54237ebaa342ea54
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 6de5e21c509203c5402ed8c7e75908b54808d140
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86936638"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556888"
 ---
 # <a name="non-affine-transforms"></a>非仿射转换
 
@@ -23,7 +23,7 @@ ms.locfileid: "86936638"
 
 _利用转换矩阵的第三列创建透视和锥度效果_
 
-平移、缩放、旋转和倾斜都分类为*仿射*转换。 仿射转换保留了平行线。 如果在转换之前并行两行，它们将在转换后保持平行。 矩形始终转换为 parallelograms。
+平移、缩放、旋转和倾斜都分类为 *仿射* 转换。 仿射转换保留了平行线。 如果在转换之前并行两行，它们将在转换后保持平行。 矩形始终转换为 parallelograms。
 
 但是，SkiaSharp 还支持非仿射转换，这种转换可以将矩形转换为任意凸四边形：
 
@@ -57,7 +57,7 @@ y "= y"/z
 
 z "= z"/z "= 1
 
-这些*坐标称为同类坐标*，它们是由 Mathematician 8 月 Ferdinand Möbius 开发的，更好地称为拓扑 Oddity，Möbius 条。
+这些 *坐标称为同类坐标* ，它们是由 Mathematician 8 月 Ferdinand Möbius 开发的，更好地称为拓扑 Oddity，Möbius 条。
 
 如果 z "为0，则除法运算将导致无限坐标。 事实上，开发同类坐标的 Möbius's 动机之一是能够用有限数值来表示无限值。
 
@@ -69,7 +69,7 @@ z "= Persp0 · x + Persp1 · y + Persp2
 
 因此，这些值有一些切实可行的限制： 
 
-`Persp2`单元格可以为零或不为零。 如果 `Persp2` 为零，则点（0，0）的 z "为零，这通常不是必需的，因为该点在二维图形中非常常见。 如果不 `Persp2` 等于零，则如果 `Persp2` 固定在1，则不会丢失一般性。 例如，如果您确定 `Persp2` 应该为5，则可以只将矩阵中的所有单元除以5，这 `Persp2` 等于1，结果将相同。
+`Persp2`单元格可以为零或不为零。 如果 `Persp2` 为零，则点 (0，0) ，z "为零，这通常不是必需的，因为该点在二维图形中非常常见。 如果不 `Persp2` 等于零，则如果 `Persp2` 固定在1，则不会丢失一般性。 例如，如果您确定 `Persp2` 应该为5，则可以只将矩阵中的所有单元除以5，这 `Persp2` 等于1，结果将相同。
 
 由于这些原因， `Persp2` 通常在1处固定，这与恒等矩阵中的值相同。
 
@@ -83,19 +83,19 @@ z "= Persp0 · x + Persp1 · y + Persp2
 
 转换公式为：
 
-x ' = x/（0.01 · x + 1）
+x ' = x/ (0.01 · x + 1) 
 
-y "= y/（0.01 · x + 1）
+y "= y/ (0.01 · x + 1) 
 
 现在使用此转换来呈现位于原点的100像素方框。 下面是四个角的转换方式：
 
-（0，0）→（0，0）
+ (0，0) → (0，0) 
 
-（0，100）→（0，100）
+ (0，100) → (0，100) 
 
-（100，0）→（50，0）
+ (100，0) → (50，0) 
 
-（100，100）→（50，50）
+ (100，100) → (50，50) 
 
 当 x 为100时，z 的分母为2，因此 x 和 y 坐标实际上减半。 框的右侧将变短于左侧：
 
@@ -103,7 +103,7 @@ y "= y/（0.01 · x + 1）
 
 `Persp`这些单元格名称的一部分是指 "透视"，因为透视收缩建议该框现在与查看器的右侧倾斜。
 
-使用 "**测试透视**" 页，您可以体验的值 `Persp0` 并对 `Pers1` 其工作方式感到满意。 这些矩阵单元的合理值非常小，因为 `Slider` 通用 Windows 平台无法正确处理它们。 为了容纳 UWP 问题， `Slider` 需要将[**TestPerspective**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TestPerspectivePage.xaml)中的两个元素初始化为介于-1 到1之间的范围：
+使用 " **测试透视** " 页，您可以体验的值 `Persp0` 并对 `Pers1` 其工作方式感到满意。 这些矩阵单元的合理值非常小，因为 `Slider` 通用 Windows 平台无法正确处理它们。 为了容纳 UWP 问题， `Slider` 需要将 [**TestPerspective**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TestPerspectivePage.xaml) 中的两个元素初始化为介于-1 到1之间的范围：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -243,7 +243,7 @@ z "= Persp0 · x + Persp1 · y + 1
 
 通常，不会设置 `Persp0` 和 `Persp1` 隔离。 通常还需要将矩阵中的其他单元格设置为实现某些类型的非仿射转换。
 
-这种非仿射转换是一个*锥形转换*。 这种类型的非仿射转换将保留矩形的整体尺寸，但 tapers 一侧：
+这种非仿射转换是一个 *锥形转换*。 这种类型的非仿射转换将保留矩形的整体尺寸，但 tapers 一侧：
 
 ![对锥形转换的 box](non-affine-images/tapertransform.png)
 
@@ -356,7 +356,7 @@ static class TaperTransform
 }
 ```
 
-此类在 "**锥度转换**" 页中使用。 XAML 文件实例化两个 `Picker` 元素以选择枚举值，并实例化一个 `Slider` 用于选择锥度分数的元素。 [`PaintSurface`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TaperTransformPage.xaml.cs#L55)处理程序将锥形转换与两个转换转换组合，以使变换相对于位图的左上角：
+此类在 " **锥度转换** " 页中使用。 XAML 文件实例化两个 `Picker` 元素以选择枚举值，并实例化一个 `Slider` 用于选择锥度分数的元素。 [`PaintSurface`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TaperTransformPage.xaml.cs#L55)处理程序将锥形转换与两个转换转换组合，以使变换相对于位图的左上角：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -399,9 +399,9 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 [!["锥度转换" 页的三向屏幕截图](non-affine-images/tapertransform-small.png)](non-affine-images/tapertransform-large.png#lightbox ""锥度转换" 页的三向屏幕截图")
 
-另一种通用化非仿射转换是三维旋转，这在下一篇[**三维**](3d-rotation.md)旋转中进行了演示。
+另一种通用化非仿射转换是三维旋转，这在下一篇 [**三维**](3d-rotation.md)旋转中进行了演示。
 
-非仿射转换可以将矩形转换为任意凸四边形。 "**显示非仿射矩阵**" 页演示了这种情况。 它与 "显示[**矩阵转换**](matrix.md)" 一文中的 "**显示仿射矩阵**" 页非常相似，不同之处在于它具有 `TouchPoint` 用于处理位图第四个角的第四个对象：
+非仿射转换可以将矩形转换为任意凸四边形。 " **显示非仿射矩阵** " 页演示了这种情况。 它与 "显示[**矩阵转换**](matrix.md)" 一文中的 "**显示仿射矩阵**" 页非常相似，不同之处在于它具有 `TouchPoint` 用于处理位图第四个角的第四个对象：
 
 [!["显示非仿射矩阵" 页的三个屏幕截图](non-affine-images/shownonaffinematrix-small.png)](non-affine-images/shownonaffinematrix-large.png#lightbox ""显示非仿射矩阵" 页的三个屏幕截图")
 
@@ -456,23 +456,23 @@ static SKMatrix ComputeMatrix(SKSize size, SKPoint ptUL, SKPoint ptUR, SKPoint p
 
 为了便于进行计算，此方法将整体转换获取为三个不同转换的产品，其中之后的箭头显示了这些转换如何修改位图的四个角：
 
-（0，0）→（0，0）→（0，0）→（x0，y0）（左上方）
+ (0，0) → (0，0) → (0，0) → (x0，y0)  (左上) 
 
-（0，H）→（0，1）→（0，1）→（x1，y1）（左下方）
+ (0，H) → (0，1) → (0，1) → (x1，y1)  (左下) 
 
-（W，0）→（1，0）→（1，0）→（x2，y2）（右上方）
+ (W，0) → (1，0) → (1，0) → (x2，y2)  () 
 
-（W，H）→（1，1）→（a，b）→（x3，y3）（右下）
+ (W，H) → (1，1) → (a，b) → (x3，y3)  (右下) 
 
 右侧的最终坐标是与四个触控点相关联的四个点。 这是位图拐角的最终坐标。
 
-W 和 H 表示位图的宽度和高度。 第一个转换 `S` 只是将位图缩放为1个像素的正方形。 第二个转换为非仿射转换 `N` ，第三个转换为仿射变换 `A` 。 此仿射转换基于三个点，因此它与早期的仿射方法相同， [`ComputeMatrix`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ShowAffineMatrixPage.xaml.cs#L68) 并且不涉及第四行（a，b）点。
+W 和 H 表示位图的宽度和高度。 第一个转换 `S` 只是将位图缩放为1个像素的正方形。 第二个转换为非仿射转换 `N` ，第三个转换为仿射变换 `A` 。 此仿射转换基于三个点，因此它与早期的仿射方法相同， [`ComputeMatrix`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ShowAffineMatrixPage.xaml.cs#L68) 并且不涉及第四行，其中包含 (a，b) 点。
 
-`a`计算和 `b` 值，以便第三个转换为仿射转换。 此代码获取仿射转换的逆元，然后使用它来映射右下角。 这就是点（a，b）。
+`a`计算和 `b` 值，以便第三个转换为仿射转换。 此代码获取仿射转换的逆元，然后使用它来映射右下角。 这就是 (a、b) 的要点。
 
-非仿射转换的另一种用法是模拟三维图形。 在下一篇文章中，[**三维旋转**](3d-rotation.md)可了解如何在三维空间中旋转二维图形。
+非仿射转换的另一种用法是模拟三维图形。 在下一篇文章中， [**三维旋转**](3d-rotation.md) 可了解如何在三维空间中旋转二维图形。
 
 ## <a name="related-links"></a>相关链接
 
-- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [SkiaSharp Api](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (示例) ](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

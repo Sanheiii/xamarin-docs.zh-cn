@@ -10,24 +10,24 @@ ms.date: 08/23/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 45ec48c0b7b58e26fa47d7343e96bb49591cb339
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 00b6251f530a4927d069ae92ec919645a06baf15
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84127759"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91555393"
 ---
 # <a name="skiasharp-noise-and-composing"></a>SkiaSharp 干扰和撰写
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-简单的矢量图形往往看起来非自然。 直线、平滑曲线和纯色与现实世界对象的缺陷不相似。 使用用于1982电影_Tron_的计算机生成的图形时，计算机科学家 Ken Perlin 开始开发算法，这些算法使用随机过程为这些图像提供更逼真的纹理。 在1997中，Ken Perlin 赢得了一项院校奖励。 他的工作被称为 Perlin 干扰，在 SkiaSharp 中受支持。 下面是一个示例：
+简单的矢量图形往往看起来非自然。 直线、平滑曲线和纯色与现实世界对象的缺陷不相似。 使用用于1982电影 _Tron_的计算机生成的图形时，计算机科学家 Ken Perlin 开始开发算法，这些算法使用随机过程为这些图像提供更逼真的纹理。 在1997中，Ken Perlin 赢得了一项院校奖励。 他的工作被称为 Perlin 干扰，在 SkiaSharp 中受支持。 下面是一个示例：
 
 ![Perlin 噪音示例](noise-images/NoiseSample.png "Perlin 噪音示例")
 
 正如您所看到的，每个像素不是随机颜色值。 从像素到像素的连续性导致随机形状。
 
-Skia 中对 Perlin 干扰的支持基于 CSS 和 SVG 的 W3C 规范。 第8.20 节[**筛选器效果模块级别 1**](https://www.w3.org/TR/filter-effects-1/#feTurbulenceElement)在 C 代码中包含基础 Perlin 干扰算法。
+Skia 中对 Perlin 干扰的支持基于 CSS 和 SVG 的 W3C 规范。 第8.20 节 [**筛选器效果模块级别 1**](https://www.w3.org/TR/filter-effects-1/#feTurbulenceElement) 在 C 代码中包含基础 Perlin 干扰算法。
 
 ## <a name="exploring-perlin-noise"></a>探索 Perlin 干扰
 
@@ -47,7 +47,7 @@ public static SkiaSharp.SKShader CreatePerlinNoiseTurbulence (float baseFrequenc
 
 `seed`参数是随机数生成器的起点。 虽然指定为浮点值，但该分数在使用之前将被截断，0与1相同。
 
-[ **SkiaSharpFormsDemos**）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)示例中的**Perlin 噪声**页允许您试验和参数的各个值 `baseFrequency` `numOctaves` 。 下面是 XAML 文件：
+利用[ **SkiaSharpFormsDemos**) ](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)示例中的**Perlin 噪声**页，您可以试验和参数的各种 `baseFrequency` 值 `numOctaves` 。 下面是 XAML 文件：
 
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -168,13 +168,13 @@ public partial class PerlinNoisePage : ContentPage
 }
 ```
 
-下面是在 iOS、Android 和通用 Windows 平台（UWP）设备上运行的程序。 分形噪音显示在画布的上半部分。 Turbulence 噪声在下半部分：
+下面是在 iOS、Android 和通用 Windows 平台 (UWP) 设备上运行的程序。 分形噪音显示在画布的上半部分。 Turbulence 噪声在下半部分：
 
 [![Perlin 干扰](noise-images/PerlinNoise.png "Perlin 干扰")](noise-images/PerlinNoise-Large.png#lightbox)
 
 相同的参数始终生成从左上角开始的相同模式。 当调整 UWP 窗口的宽度和高度时，这种一致性非常明显。 当 Windows 10 重绘屏幕时，画布上半部分的模式将保持不变。
 
-干扰模式包含各种透明度。 如果在调用中设置了颜色，透明度就会变得很明显 `canvas.Clear()` 。 该颜色在模式中变得很明显。 在[**组合多个着色**](#combining-multiple-shaders)器部分中，您还会看到此效果。
+干扰模式包含各种透明度。 如果在调用中设置了颜色，透明度就会变得很明显 `canvas.Clear()` 。 该颜色在模式中变得很明显。 在 [**组合多个着色**](#combining-multiple-shaders)器部分中，您还会看到此效果。
 
 这些 Perlin 干扰模式本身很少使用。 通常，它们会被用于混合模式和在以后的文章中讨论的颜色筛选器。
 
@@ -188,9 +188,9 @@ public static SKShader CreatePerlinNoiseFractalNoise (float baseFrequencyX, floa
 public static SKShader CreatePerlinNoiseTurbulence (float baseFrequencyX, float baseFrequencyY, int numOctaves, float seed, SKPointI tileSize);
 ```
 
-[`SKPointI`](xref:SkiaSharp.SKPointI)结构是熟悉的结构的整数版本 [`SKPoint`](xref:SkiaSharp.SKPoint) 。 `SKPointI`定义 `X` `Y` 类型的和属性， `int` 而不是 `float` 。
+[`SKPointI`](xref:SkiaSharp.SKPointI)结构是熟悉的结构的整数版本 [`SKPoint`](xref:SkiaSharp.SKPoint) 。 `SKPointI` 定义 `X` `Y` 类型的和属性， `int` 而不是 `float` 。
 
-这些方法创建指定大小的重复模式。 在每个磁贴中，右边缘与左边缘相同，上边缘与下边缘相同。 此特征在**平铺的 Perlin 噪声**页中进行了演示。 该 XAML 文件与前面的示例类似，但它只有一个 `Stepper` 用于更改参数的视图 `seed` ：
+这些方法创建指定大小的重复模式。 在每个磁贴中，右边缘与左边缘相同，上边缘与下边缘相同。 此特征在 **平铺的 Perlin 噪声** 页中进行了演示。 该 XAML 文件与前面的示例类似，但它只有一个 `Stepper` 用于更改参数的视图 `seed` ：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -318,11 +318,11 @@ paint.Shader = SKShader.CreateBitmap(bitmap,
 public static SKShader CreateCompose (SKShader dstShader, SKShader srcShader);
 ```
 
-`srcShader`（源着色器）实际上是在 `dstShader` （目标着色器）的基础上绘制的。 如果源着色器是纯色或渐变而没有透明度，则目标着色器将完全遮蔽。
+`srcShader` (源着色器) 有效地绘制在 `dstShader` (目标着色器) 的顶层。 如果源着色器是纯色或渐变而没有透明度，则目标着色器将完全遮蔽。
 
 Perlin 杂色着色器包含透明度。 如果该着色器为源，则目标着色器会透过透明区域显示。
 
-**组合 Perlin 噪声**页的 XAML 文件与第一个**Perlin 噪音**页几乎完全相同。 代码隐藏文件也是类似的。 但原始**Perlin 噪声**页将的 `Shader` 属性设置 `SKPaint` 为从静态和方法返回的着色 `CreatePerlinNoiseFractalNoise` 器 `CreatePerlinNoiseTurbulence` 。 此组合着色器的**Perlin 噪音**页面调用 `CreateCompose` 。 目标是使用创建的纯色蓝色着色器 `CreateColor` 。 源是 Perlin 的杂色着色器：
+**组合 Perlin 噪声**页的 XAML 文件与第一个**Perlin 噪音**页几乎完全相同。 代码隐藏文件也是类似的。 但原始 **Perlin 噪声** 页将的 `Shader` 属性设置 `SKPaint` 为从静态和方法返回的着色 `CreatePerlinNoiseFractalNoise` 器 `CreatePerlinNoiseTurbulence` 。 此组合着色器的 **Perlin 噪音** 页面调用 `CreateCompose` 。 目标是使用创建的纯色蓝色着色器 `CreateColor` 。 源是 Perlin 的杂色着色器：
 
 ```csharp
 public partial class ComposedPerlinNoisePage : ContentPage
@@ -389,7 +389,7 @@ public partial class ComposedPerlinNoisePage : ContentPage
 
 [![组合 Perlin 干扰](noise-images/ComposedPerlinNoise.png "组合 Perlin 干扰")](noise-images/ComposedPerlinNoise-Large.png#lightbox)
 
-请注意，这些着色器比**Perlin 杂色**页面显示的 bluer 有多少。 差别说明了噪音着色器中的透明度。
+请注意，这些着色器比 **Perlin 杂色** 页面显示的 bluer 有多少。 差别说明了噪音着色器中的透明度。
 
 还存在方法的重载 [`CreateCompose`](xref:SkiaSharp.SKShader.CreateCompose(SkiaSharp.SKShader,SkiaSharp.SKShader,SkiaSharp.SKBlendMode)) ：
 
@@ -397,9 +397,9 @@ public partial class ComposedPerlinNoisePage : ContentPage
 public static SKShader CreateCompose (SKShader dstShader, SKShader srcShader, SKBlendMode blendMode);
 ```
 
-最后一个参数是枚举的一个成员 `SKBlendMode` ，它是一个包含29个成员的枚举，将在下一系列有关[**SkiaSharp 组合和 blend 模式**](../blend-modes/index.md)的文章中讨论。
+最后一个参数是枚举的一个成员 `SKBlendMode` ，它是一个包含29个成员的枚举，将在下一系列有关 [**SkiaSharp 组合和 blend 模式**](../blend-modes/index.md)的文章中讨论。
 
 ## <a name="related-links"></a>相关链接
 
-- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [SkiaSharp Api](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (示例) ](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

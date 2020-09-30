@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsCollectionView EmptyView
+title: Xamarin.Forms CollectionView EmptyView
 description: 在 CollectionView 中，可以指定一个空视图，在没有可显示的数据时向用户提供反馈。 空视图可以是字符串、视图或多个视图。
 ms.prod: xamarin
 ms.assetid: 6CEBCFE6-5577-4F68-9709-431062609153
@@ -10,18 +10,18 @@ ms.date: 05/06/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d35e39e55d66452e47c7a3e3faf86a7a7d6adaca
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 041e614d94342834ed8e62c0f432794b3bc7d21a
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136482"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556407"
 ---
-# <a name="xamarinforms-collectionview-emptyview"></a>Xamarin.FormsCollectionView EmptyView
+# <a name="no-locxamarinforms-collectionview-emptyview"></a>Xamarin.Forms CollectionView EmptyView
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)定义以下属性，这些属性可用于在没有要显示的数据时提供用户反馈：
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) 定义以下属性，这些属性可用于在没有要显示的数据时提供用户反馈：
 
 - [`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView)、类型 `object` 、属性为时将显示的字符串、绑定或视图， [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource) `null` 或由属性指定的集合 `ItemsSource` 为 `null` 或为空。 默认值为 `null`。
 - [`EmptyViewTemplate`](xref:Xamarin.Forms.ItemsView.EmptyViewTemplate)，类型为 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) ，用于设置指定的格式的模板 `EmptyView` 。 默认值为 `null`。
@@ -326,11 +326,11 @@ public class SearchTermDataTemplateSelector : DataTemplateSelector
 
 [![IOS 和 Android 上的 CollectionView 运行时空视图模板选择的屏幕截图](emptyview-images/datatemplateselector.png "CollectionView 中的运行时空视图模板选择")](emptyview-images/datatemplateselector-large.png#lightbox "CollectionView 中的运行时空视图模板选择")
 
-有关数据模板选择器的详细信息，请参阅[创建 Xamarin.Forms 并重](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)。
+有关数据模板选择器的详细信息，请参阅 [创建 Xamarin.Forms 并重](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)。
 
 ## <a name="related-links"></a>相关链接
 
-- [CollectionView （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
-- [Xamarin.Forms数据模板](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)
+- [CollectionView (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
+- [Xamarin.Forms 数据模板](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)
 - [Xamarin.Forms 资源字典](~/xamarin-forms/xaml/resource-dictionaries.md)
 - [创建 Xamarin.Forms 并重](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)

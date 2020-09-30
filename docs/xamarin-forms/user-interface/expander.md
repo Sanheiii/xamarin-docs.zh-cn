@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Forms扩展器
+title: Xamarin.Forms 扩展器
 description: Xamarin.Forms扩展器控件提供了一个可扩展容器来托管任何内容。 通过点击扩展器标头来显示或隐藏内容。
 ms.prod: xamarin
 ms.assetid: 381DCB55-522D-4414-B45B-E8DD70AA9985
@@ -10,25 +10,25 @@ ms.date: 04/15/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 33659dd52452c575c403d0a25b24f17daf9e3f17
-ms.sourcegitcommit: 8a18471b3d96f3f726b66f9bc50a829f1c122f29
+ms.openlocfilehash: 4be3744e0cce465aab8fc4af39495d2f7d8e9004
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84988219"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556602"
 ---
-# <a name="xamarinforms-expander"></a>Xamarin.Forms扩展器
+# <a name="no-locxamarinforms-expander"></a>Xamarin.Forms 扩展器
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-expanderdemos/)
 
-Xamarin.Forms `Expander` 控件提供可扩展容器以承载任何内容。 控件具有标题和内容，并通过点击标题显示或隐藏内容 `Expander` 。 仅 `Expander` 显示标头时， `Expander` 会*折叠*。 如果 `Expander` 内容可见，则 `Expander` *展开*。
+Xamarin.Forms `Expander` 控件提供可扩展容器以承载任何内容。 控件具有标题和内容，并通过点击标题显示或隐藏内容 `Expander` 。 仅 `Expander` 显示标头时， `Expander` 会 *折叠*。 如果 `Expander` 内容可见，则 `Expander` *展开*。
 
 下面的屏幕截图显示 `Expander` 其折叠和展开状态，其中显示了指示标题和内容的红框：
 
 ![在 iOS 和 Android 上折叠和展开状态的扩展器的屏幕截图](expander-images/expander.png "IOS 和 Android 上的扩展器")
 
 > [!IMPORTANT]
-> `Expander`当前为试验性，只能通过设置标志来使用 `Expander_Experimental` 。 有关详细信息，请参阅[实验标志](~/xamarin-forms/internals/experimental-flags.md)。
+> `Expander` 当前为试验性，只能通过设置标志来使用 `Expander_Experimental` 。 有关详细信息，请参阅[实验性标志](~/xamarin-forms/internals/experimental-flags.md)。
 >
 > 此外， `Expander` 控件完全在 `Xamarin.Forms` 命名空间中实现。 因此，它在支持的所有平台上可用 Xamarin.Forms 。
 
@@ -47,17 +47,17 @@ Xamarin.Forms `Expander` 控件提供可扩展容器以承载任何内容。 控
 - `IsExpanded`，类型为 `bool` ，确定 `Expander` 是否已展开。 此属性使用 `TwoWay` 绑定模式，其默认值为 `false` 。
 - `State`，类型为 `ExpanderState` ，表示的状态 `Expander` 。 此属性使用 `OneWayToSource` 绑定模式。
 
-这些属性是由对象支持的 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，这意味着它们可以是数据绑定的目标和样式。
+这些属性由 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 对象提供支持；也就是说，它们可以作为数据绑定的目标，并能进行样式设置。
 
 > [!NOTE]
-> `Content`属性是类的 content 属性 `Expander` ，因此不需要从 XAML 显式设置。
+> 由于 `Content` 属性是 `Expander` 类的内容属性，因此不需要通过 XAML 显式设置。
 
 `ExpanderState` 枚举定义下列成员：
 
-- `Expanding`指示 `Expander` 正在进行扩展。
-- `Expanded`指示 `Expander` 已展开。
-- `Collapsing`指示 `Expander` 折叠。
-- `Collapsed`指示 `Expander` 已折叠。
+- `Expanding` 指示 `Expander` 正在进行扩展。
+- `Expanded` 指示 `Expander` 已展开。
+- `Collapsing` 指示 `Expander` 折叠。
+- `Collapsed` 指示 `Expander` 已折叠。
 
 该 `Expander` 控件还定义 `Tapped` 在点击标头时触发的事件 `Expander` 。 此外，还 `Expander` 包括一个 `ForceUpdateSize` 方法，可以调用该方法以编程方式 `Expander` 在运行时调整大小。
 
@@ -91,7 +91,7 @@ Xamarin.Forms `Expander` 控件提供可扩展容器以承载任何内容。 控
 在此示例中， `Expander` 默认情况下折叠，并将 [`Label`](xref:Xamarin.Forms.Label) 显示为其标头。 点击标头会导致 `Expander` 展开以显示其内容，这是一个 [`Grid`](xref:Xamarin.Forms.Grid) 包含子控件的。 展开时 `Expander` ，点击其标头会折叠 `Expander` 。
 
 > [!IMPORTANT]
-> 当 `Expander.Content` 隐式或显式设置属性时，将在 `Expander` 包含它的页被导航到时创建内容，即使 `Expander` 已折叠。 但是， `Expander.ContentTemplate` 可以将属性设置为仅在 `Expander` 第一次展开时才会放大的内容。 有关详细信息，请参阅[按需创建扩展器内容](#create-expander-content-on-demand)。
+> 当 `Expander.Content` 隐式或显式设置属性时，将在 `Expander` 包含它的页被导航到时创建内容，即使 `Expander` 已折叠。 但是， `Expander.ContentTemplate` 可以将属性设置为仅在 `Expander` 第一次展开时才会放大的内容。 有关详细信息，请参阅 [按需创建扩展器内容](#create-expander-content-on-demand)。
 
 或者， `Expander` 可以在代码中创建：
 
@@ -135,7 +135,7 @@ expander.Content = grid;
 
 ## <a name="create-expander-content-on-demand"></a>按需创建扩展器内容
 
-`Expander`可以按需创建内容，以响应 `Expander` 展开。 这可以通过将 `Expander.ContentTemplate` 属性设置为包含内容的来实现 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) ：
+`Expander` 可以按需创建内容，以响应 `Expander` 展开。 这可以通过将 `Expander.ContentTemplate` 属性设置为包含内容的来实现 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) ：
 
 ```xaml
 <Expander>
@@ -340,7 +340,7 @@ void OnLabelTapped(object sender, EventArgs e)
 
 ## <a name="related-links"></a>相关链接
 
-- [扩展器演示（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-expanderdemos/)
-- [Xamarin.Forms缓动函数](~/xamarin-forms/user-interface/animation/easing.md)
+- [扩展演示 (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-expanderdemos/)
+- [Xamarin.Forms 缓动函数](~/xamarin-forms/user-interface/animation/easing.md)
 - [Xamarin.Forms 触发器](~/xamarin-forms/app-fundamentals/triggers.md)
-- [Xamarin.Forms可绑定布局](~/xamarin-forms/user-interface/layouts/bindable-layouts.md)
+- [Xamarin.Forms 可绑定布局](~/xamarin-forms/user-interface/layouts/bindable-layouts.md)

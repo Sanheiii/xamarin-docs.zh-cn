@@ -10,24 +10,24 @@ ms.date: 08/23/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 52be7641ac3b2983f537e11bccd76f2a5b52574d
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: a77ebb07a09c1bbd2df482c81040f271cdf8f56e
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84130177"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556342"
 ---
 # <a name="the-non-separable-blend-modes"></a>非分离混合模式
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-正如您在[**SkiaSharp 分离混合模式**](separable.md)一文中看到的那样，分离混合模式分别对红色、绿色和蓝色通道执行操作。 非分离混合模式不能。 通过在颜色的色调、饱和度和发光度上操作，不可分离的混合模式可以以有趣的方式改变颜色：
+正如您在 [**SkiaSharp 分离混合模式**](separable.md)一文中看到的那样，分离混合模式分别对红色、绿色和蓝色通道执行操作。 非分离混合模式不能。 通过在颜色的色调、饱和度和发光度上操作，不可分离的混合模式可以以有趣的方式改变颜色：
 
 ![不可分离的示例](non-separable-images/NonSeparableSample.png "不可分离的示例")
 
 ## <a name="the-hue-saturation-luminosity-model"></a>色调-饱和度-明度模型
 
-若要理解非分离混合模式，必须将目标和源像素视为色调-饱和度-明度模型中的颜色。 （发光度也称为亮度。）
+若要理解非分离混合模式，必须将目标和源像素视为色调-饱和度-明度模型中的颜色。  (发光度也称为亮度。 ) 
 
 HSL 颜色模型已在 "[**与 Xamarin.Forms 集成**](../../basics/integration.md)" 和 "示例程序" 一文中讨论，它允许使用 HSL 颜色进行试验。 您可以通过 `SKColor` 静态方法使用色调、饱和度和亮度值创建值 [`SKColor.FromHsl`](xref:SkiaSharp.SKColor.FromHsl*) 。
 
@@ -37,13 +37,13 @@ HSL 颜色模型已在 "[**与 Xamarin.Forms 集成**](../../basics/integration.
 
 饱和度值的范围为0到100，表示颜色的纯度。 饱和度值100是最纯粹颜色，而小于100的值会导致颜色变得更 grayish。 饱和度值为0时会产生灰色阴影。
 
-亮度（或亮度）值指示颜色的亮度。 亮度值0为黑色，而不考虑其他设置。 同样，发光度值100为白色。 
+亮度 (或亮度) 值指示颜色的明亮程度。 亮度值0为黑色，而不考虑其他设置。 同样，发光度值100为白色。 
 
-HSL 值（0，100，50）是 RGB 值（FF，00，00），这是纯红色。 HSL 值（180，100，50）是 RGB 值（00，FF，FF），纯青色。 当饱和度降低时，主导色组件会减少，并增加其他组件。 如果饱和度级别为0，则所有组件都是相同的，颜色为灰色阴影。 降低亮度以转为黑色;增加亮度以转为白。
+HSL 值 (0，100，50) 是 RGB 值 (FF，00，00) ，它是纯红色。 HSL 值 (180，100，50) 是 RGB 值 (00，FF，FF) ，纯青色。 当饱和度降低时，主导色组件会减少，并增加其他组件。 如果饱和度级别为0，则所有组件都是相同的，颜色为灰色阴影。 降低亮度以转为黑色;增加亮度以转为白。
 
 ## <a name="the-blend-modes-in-detail"></a>混合模式详细信息
 
-与其他混合模式一样，四个非分离混合模式都涉及目标（通常是位图图像）和源（通常是一种颜色或渐变）。 混合模式结合了目标和源中的色相、饱和度和明度值：
+与其他混合模式一样，四个非分离混合模式都涉及目标 (这通常是位图图像) 和源（通常是一种颜色或渐变）。 混合模式结合了目标和源中的色相、饱和度和明度值：
 
 | 混合模式   | 来自源的组件 | 目标中的组件 |
 | ------------ | ---------------------- | --------------------------- |
@@ -52,7 +52,7 @@ HSL 值（0，100，50）是 RGB 值（FF，00，00），这是纯红色。 HSL 
 | `Color`      | 色调和饱和度     | 明度                  | 
 | `Luminosity` | 明度             | 色调和饱和度          | 
 
-请参阅算法的 W3C[**合成和混合等级 1**](https://www.w3.org/TR/compositing-1/)规范。
+请参阅算法的 W3C [**合成和混合等级 1**](https://www.w3.org/TR/compositing-1/) 规范。
 
 **非分离混合模式**页面包含 `Picker` 用于选择其中一个混合模式的，三个 `Slider` 视图用于选择 HSL 颜色：
 
@@ -181,19 +181,19 @@ public partial class NonSeparableBlendModesPage : ContentPage
 
 请注意，该程序不显示由三个滑块选定的 HSL 颜色值。 相反，它会从这些滑块创建颜色值，然后使用 [`ToHsl`](xref:SkiaSharp.SKColor.ToHsl*) 方法来获取色相、饱和度和发光度值。 这是因为 `FromHsl` 方法会将 HSL 颜色转换为 RGB 颜色，这是在结构内部存储的 `SKColor` 。 `ToHsl`方法将从 RGB 转换为 HSL，但结果不会始终是原始值。 
 
-例如， `FromHsl` 将 HSL 值（180，50，0）转换为 RGB 颜色（0，0，0），因为 `Luminosity` 为零。 `ToHsl`方法将 RGB 颜色（0，0，0）转换为 HSL 颜色（0，0，0），因为色相和饱和度值无关。 使用此程序时，您可以看到该程序正在使用的 HSL 颜色的表示形式，而不是您使用滑块指定的那个颜色。
+例如， `FromHsl` 将 HSL 值 (180、50、0) 转换为 RGB 颜色 (0，0，0) ，因为 `Luminosity` 为零。 `ToHsl`方法将 (0，0，0) 的 RGB 颜色转换为 HSL 色 (0，0，0) ，因为色相和饱和度值无关。 使用此程序时，您可以看到该程序正在使用的 HSL 颜色的表示形式，而不是您使用滑块指定的那个颜色。
 
 `SKBlendModes.Hue`混合模式使用源的色调级别，同时保留目标的饱和度和发光度级别。 在测试此混合模式时，饱和度和发光度滑块必须设置为0或100以外的内容，因为在这些情况下，不会唯一定义色调。
 
 [![非分离混合模式-色调](non-separable-images/NonSeparableBlendModes-Hue.png "非分离混合模式-色调")](non-separable-images/NonSeparableBlendModes-Hue-Large.png#lightbox)
 
-当使用 "将滑块设置为 0" 时，所有内容都将变为 "reddish"。 但这并不意味着图像完全没有绿色和蓝色。 显然，结果中仍存在灰色阴影。 例如，RGB 颜色（40，40，C0）等效于 HSL 颜色（240、50、50）。 色调为蓝色，但饱和度值为50，表示还存在红色和绿色组件。 如果色相设置为 0 `SKBlendModes.Hue` ，则 HSL 颜色为（0，50，50），这是 RGB 颜色（c0，40，40）。 还有蓝色和绿色的组件，但现在主导组件为红色。
+使用将滑块设置为0时 (如) 左侧的 iOS 屏幕截图所示，所有内容都会变为 reddish。 但这并不意味着图像完全没有绿色和蓝色。 显然，结果中仍存在灰色阴影。 例如，RGB 颜色 (40，40，C0) 等效于 HSL 色 (240，50，50) 。 色调为蓝色，但饱和度值为50，表示还存在红色和绿色组件。 如果色调设置为0，则 `SKBlendModes.Hue` HSL 颜色为 (0，50，50) ，这是 RGB 颜色 (c0，40，40) 。 还有蓝色和绿色的组件，但现在主导组件为红色。
 
 `SKBlendModes.Saturation`混合模式将源的饱和度级别与目标的色调和发光度组合在一起。 与色调一样，如果亮度为0或100，则饱和度不会定义得很好。 理论上，这两个极端之间的任何发光度设置都应该有效。 但是，发光度设置似乎会影响结果的影响。 将亮度设置为50，你可以了解如何设置图片的饱和度级别：
 
 [![非分离混合模式-饱和度](non-separable-images/NonSeparableBlendModes-Saturation.png "非分离混合模式-饱和度")](non-separable-images/NonSeparableBlendModes-Saturation-Large.png#lightbox)
 
-您可以使用这种混合模式增加单调图像的颜色饱和度，或者可以将饱和度减小到零（如在左侧的 iOS 屏幕截图中），以获取仅由灰色阴影组成的结果图像。
+您可以使用这种混合模式增加单调图像的颜色饱和度，也可以将饱和度降低到零 (如) 的 iOS 屏幕截图中的 iOS 屏幕截图，只包含灰色阴影。
 
 `SKBlendModes.Color`混合模式保留目标的发光度，但使用源的色调和饱和度。 同样，这意味着，极端情况下的亮度滑块的任何设置都应能正常工作。 
 
@@ -211,11 +211,11 @@ public partial class NonSeparableBlendModesPage : ContentPage
 
 ## <a name="a-matte-for-a-separable-mode"></a>分离模式的遮罩
 
-下面是[**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)示例中作为一项资源包含的位图。 文件名为**Banana.jpg**：
+下面是 [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) 示例中作为一项资源包含的位图。 文件名为 **Banana.jpg**：
 
 ![香蕉猴子](non-separable-images/Banana.jpg "香蕉猴子")
 
-可以创建只包含香蕉的遮罩。 这也是[**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)示例中的资源。 文件名为**BananaMatte.png**：
+可以创建只包含香蕉的遮罩。 这也是 [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) 示例中的资源。 文件名为 **BananaMatte.png**：
 
 ![香蕉遮罩](non-separable-images/BananaMatte.png "香蕉遮罩")
 
@@ -223,7 +223,7 @@ public partial class NonSeparableBlendModesPage : ContentPage
 
 **Blue 香蕉**页面使用该遮罩改变猴子所持有的香蕉的色调和饱和度，但不更改图像中的任何其他内容。 
 
-在下面的 `BlueBananaPage` 类中， **Banana.jpg**位图作为一个字段加载。 构造函数将**BananaMatte.png**位图作为对象加载 `matteBitmap` ，但它不会将该对象保留在构造函数之外。 而是创建一个名为的第三个位图 `blueBananaBitmap` 。 `matteBitmap`绘制 `blueBananaBitmap` 后跟一个， `SKPaint` 其 `Color` 设置为蓝色，其 `BlendMode` 设置为 `SKBlendMode.SrcIn` 。 `blueBananaBitmap`通常是透明的，但具有纯纯蓝色的香蕉图像：
+在下面的 `BlueBananaPage` 类中， **Banana.jpg** 位图作为一个字段加载。 构造函数将 **BananaMatte.png** 位图作为对象加载 `matteBitmap` ，但它不会将该对象保留在构造函数之外。 而是创建一个名为的第三个位图 `blueBananaBitmap` 。 `matteBitmap`绘制 `blueBananaBitmap` 后跟一个， `SKPaint` 其 `Color` 设置为蓝色，其 `BlendMode` 设置为 `SKBlendMode.SrcIn` 。 `blueBananaBitmap`通常是透明的，但具有纯纯蓝色的香蕉图像：
 
 ```csharp
 public class BlueBananaPage : ContentPage
@@ -294,5 +294,5 @@ public class BlueBananaPage : ContentPage
 
 ## <a name="related-links"></a>相关链接
 
-- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [SkiaSharp Api](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (示例) ](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

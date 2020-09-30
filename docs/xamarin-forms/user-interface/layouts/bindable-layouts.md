@@ -1,5 +1,5 @@
 ---
-title: 可绑定布局Xamarin.Forms
+title: 可绑定布局 Xamarin.Forms
 description: 可绑定布局通过绑定到项的集合，使布局类能够生成其内容，并且可以选择使用 System.windows.datatemplate> 设置每个项的外观。
 ms.prod: xamarin
 ms.assetid: 824C3319-20A0-42D0-8632-CDECD98349C3
@@ -10,37 +10,37 @@ ms.date: 03/09/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9d0497c0c0593b54f69bac84307976c4050e9c95
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: a5b1e43586810521e87360d8b6537d9bafdabad7
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138237"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91555432"
 ---
-# <a name="bindable-layouts-in-xamarinforms"></a>可绑定布局Xamarin.Forms
+# <a name="bindable-layouts-in-no-locxamarinforms"></a>可绑定布局 Xamarin.Forms
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-bindablelayouts)
 
 绑定布局支持从类派生的任何布局类 [`Layout<T>`](xref:Xamarin.Forms.Layout`1) ，通过绑定到项的集合来生成其内容，并且可以选择使用设置每个项的外观 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 。 可绑定布局由类提供 `BindableLayout` ，该类公开了以下附加属性：
 
-- `ItemsSource`–指定 `IEnumerable` 布局要显示的项的集合。
-- `ItemTemplate`–指定 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 要应用于布局所显示的项集合中的每个项的。
-- `ItemTemplateSelector`–指定 [`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector) 将用于 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 在运行时为项选择的。
+- `ItemsSource` –指定 `IEnumerable` 布局要显示的项的集合。
+- `ItemTemplate` –指定 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 要应用于布局所显示的项集合中的每个项的。
+- `ItemTemplateSelector` –指定 [`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector) 将用于 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 在运行时为项选择的。
 
 > [!NOTE]
 > `ItemTemplate`当设置了和属性时，属性将优先 `ItemTemplate` `ItemTemplateSelector` 。
 
 此外， `BindableLayout` 类公开以下可绑定属性：
 
-- `EmptyView`–指定 `string` 当 `ItemsSource` 属性为时 `null` 或属性指定的集合 `ItemsSource` 为 `null` 或空时将显示的或视图。 默认值为 `null`。
-- `EmptyViewTemplate`–指定在 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) `ItemsSource` 属性为时 `null` 或属性指定的集合 `ItemsSource` 为 `null` 或空时要显示的。 默认值为 `null`。
+- `EmptyView` –指定 `string` 当 `ItemsSource` 属性为时 `null` 或属性指定的集合 `ItemsSource` 为 `null` 或空时将显示的或视图。 默认值为 `null`。
+- `EmptyViewTemplate` –指定在 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) `ItemsSource` 属性为时 `null` 或属性指定的集合 `ItemsSource` 为 `null` 或空时要显示的。 默认值为 `null`。
 
 > [!NOTE]
 > `EmptyViewTemplate`当设置了和属性时，属性将优先 `EmptyView` `EmptyViewTemplate` 。
 
 所有这些属性都可以连接到、、 [`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout) 、 [`FlexLayout`](xref:Xamarin.Forms.FlexLayout) [`Grid`](xref:Xamarin.Forms.Grid) [`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout) 和 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 类，它们都派生自 [`Layout<T>`](xref:Xamarin.Forms.Layout`1) 类。
 
-`Layout<T>`类公开一个 [`Children`](xref:Xamarin.Forms.Layout`1.Children) 集合，其中向其中添加了布局的子元素。 当 `BinableLayout.ItemsSource` 属性设置为项的集合并附加到 [`Layout<T>`](xref:Xamarin.Forms.Layout`1) 派生类时，集合中的每一项都将添加到集合中， `Layout<T>.Children` 以供布局显示。 `Layout<T>`如果基础集合发生更改，则派生的类将更新其子视图。 有关布局周期的详细信息 Xamarin.Forms ，请参阅[创建自定义布局](~/xamarin-forms/user-interface/layouts/custom.md)。
+`Layout<T>`类公开一个 [`Children`](xref:Xamarin.Forms.Layout`1.Children) 集合，其中向其中添加了布局的子元素。 当 `BinableLayout.ItemsSource` 属性设置为项的集合并附加到 [`Layout<T>`](xref:Xamarin.Forms.Layout`1) 派生类时，集合中的每一项都将添加到集合中， `Layout<T>.Children` 以供布局显示。 `Layout<T>`如果基础集合发生更改，则派生的类将更新其子视图。 有关布局周期的详细信息 Xamarin.Forms ，请参阅 [创建自定义布局](~/xamarin-forms/user-interface/layouts/custom.md)。
 
 仅当要显示的项的集合较小时，并且不需要滚动和选择时，才应使用可绑定的布局。 虽然滚动可以通过在中包装可绑定布局来提供 [`ScrollView`](xref:Xamarin.Forms.ScrollView) ，但不建议将其作为可绑定布局缺少 UI 虚拟化。 需要滚动时，应该使用包括 UI 虚拟化的可滚动视图，例如 [`ListView`](xref:Xamarin.Forms.ListView) 或 [`CollectionView`](xref:Xamarin.Forms.CollectionView) 。 如果未遵守此建议，可能会导致性能问题。
 
@@ -138,7 +138,7 @@ public class TechItemTemplateSelector : DataTemplateSelector
 
 ![具有并重的可绑定布局](bindable-layouts-images/favorite-tech.png "使用数据模板选择器的可绑定布局")
 
-有关数据模板选择器的详细信息，请参阅[创建 Xamarin.Forms 并重](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)。
+有关数据模板选择器的详细信息，请参阅 [创建 Xamarin.Forms 并重](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)。
 
 ## <a name="display-a-string-when-data-is-unavailable"></a>数据不可用时显示字符串
 
@@ -253,7 +253,7 @@ void ToggleEmptyView(bool isToggled)
 
 ## <a name="related-links"></a>相关链接
 
-- [可绑定布局演示（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-bindablelayouts)
+- [可绑定布局演示 (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-bindablelayouts)
 - [创建自定义布局](~/xamarin-forms/user-interface/layouts/custom.md)
-- [Xamarin.Forms数据模板](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)
+- [Xamarin.Forms 数据模板](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)
 - [创建 Xamarin.Forms 并重](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)

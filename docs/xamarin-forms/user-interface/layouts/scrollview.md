@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsScrollView
+title: Xamarin.Forms ScrollView
 description: Xamarin.FormsScrollView 是能够滚动其内容的布局。
 ms.prod: xamarin
 ms.assetid: 7B542872-B3D1-49B3-B15E-0E98F53C1F6E
@@ -10,25 +10,25 @@ ms.date: 05/27/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f527acabe3b051cbfd6450ba6f5328449b1a728c
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: af8513d86b7cf02ec7adcee75241d8ce99e2dfab
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84199193"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556823"
 ---
-# <a name="xamarinforms-scrollview"></a>Xamarin.FormsScrollView
+# <a name="no-locxamarinforms-scrollview"></a>Xamarin.Forms ScrollView
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-scrollviewdemos)
 
-[![Xamarin.FormsScrollView](scrollview-images/layouts.png "[!基金.非 LOC （Xamarin）] ScrollView")](scrollview-images/layouts-large.png#lightbox "[!基金.非 LOC （Xamarin）] ScrollView")
+[![：： no (Xamarin。 Forms) ：：： ScrollView](scrollview-images/layouts.png "：： no (Xamarin。 Forms) ：：： ScrollView")](scrollview-images/layouts-large.png#lightbox "：： no (Xamarin。 Forms) ：：： ScrollView")
 
-[`ScrollView`](xref:Xamarin.Forms.ScrollView)是能够滚动其内容的布局。 `ScrollView`类派生自 [`Layout`](xref:Xamarin.Forms.Layout) 类，默认情况下，它会垂直滚动其内容。 `ScrollView`只能有一个子级，尽管这可以是其他布局。
+[`ScrollView`](xref:Xamarin.Forms.ScrollView) 是能够滚动其内容的布局。 `ScrollView`类派生自 [`Layout`](xref:Xamarin.Forms.Layout) 类，默认情况下，它会垂直滚动其内容。 `ScrollView`只能有一个子级，尽管这可以是其他布局。
 
 > [!WARNING]
-> [`ScrollView`](xref:Xamarin.Forms.ScrollView)对象不应嵌套。 此外， `ScrollView` 对象不应与提供滚动的其他控件嵌套，例如 [`CollectionView`](xref:Xamarin.Forms.CollectionView) 、 [`ListView`](xref:Xamarin.Forms.ListView) 和 [`WebView`](xref:Xamarin.Forms.WebView) 。
+> [`ScrollView`](xref:Xamarin.Forms.ScrollView) 对象不应嵌套。 此外， `ScrollView` 对象不应与提供滚动的其他控件嵌套，例如 [`CollectionView`](xref:Xamarin.Forms.CollectionView) 、 [`ListView`](xref:Xamarin.Forms.ListView) 和 [`WebView`](xref:Xamarin.Forms.WebView) 。
 
-[`ScrollView`](xref:Xamarin.Forms.ScrollView)定义以下属性：
+[`ScrollView`](xref:Xamarin.Forms.ScrollView) 定义以下属性：
 
 - [`Content`](xref:Xamarin.Forms.ScrollView.Content)，类型为 [`View`](xref:Xamarin.Forms.View) ，表示要在中显示的内容 [`ScrollView`](xref:Xamarin.Forms.ScrollView) 。
 - [`ContentSize`](xref:Xamarin.Forms.ScrollView)类型为的 [`Size`](xref:Xamarin.Forms.Size) 表示内容的大小。 这是只读属性。
@@ -43,7 +43,7 @@ ms.locfileid: "84199193"
 [`Content`](xref:Xamarin.Forms.ScrollView.Content)属性是类的 [`ContentProperty`](xref:Xamarin.Forms.ContentPropertyAttribute) [`ScrollView`](xref:Xamarin.Forms.ScrollView) ，因此无需从 XAML 显式设置。
 
 > [!TIP]
-> 若要获得最佳布局性能，请遵循[优化布局性能](~/xamarin-forms/deploy-test/performance.md#optimize-layout-performance)中的准则。
+> 若要获得最佳布局性能，请遵循 [优化布局性能](~/xamarin-forms/deploy-test/performance.md#optimize-layout-performance)中的准则。
 
 ## <a name="scrollview-as-a-root-layout"></a>ScrollView 作为根布局
 
@@ -205,19 +205,19 @@ public class BlackCatPageCS : ContentPage
 
 ## <a name="orientation"></a>方向
 
-[`ScrollView`](xref:Xamarin.Forms.ScrollView)具有一个 [`Orientation`](xref:Xamarin.Forms.ScrollView.Orientation) 属性，该属性表示的滚动方向 `ScrollView` 。 此属性的类型为 [`ScrollOrientation`](xref:Xamarin.Forms.ScrollOrientation) ，它定义以下成员：
+[`ScrollView`](xref:Xamarin.Forms.ScrollView) 具有一个 [`Orientation`](xref:Xamarin.Forms.ScrollView.Orientation) 属性，该属性表示的滚动方向 `ScrollView` 。 此属性的类型为 [`ScrollOrientation`](xref:Xamarin.Forms.ScrollOrientation) ，它定义以下成员：
 
-- `Vertical`指示 `ScrollView` 将垂直滚动。 此成员是属性的默认值 [`Orientation`](xref:Xamarin.Forms.ScrollView.Orientation) 。
-- `Horizontal`指示 `ScrollView` 将水平滚动。
-- `Both`指示 `ScrollView` 将水平和垂直滚动。
-- `Neither`指示 `ScrollView` 不滚动。
+- `Vertical` 指示 `ScrollView` 将垂直滚动。 此成员是属性的默认值 [`Orientation`](xref:Xamarin.Forms.ScrollView.Orientation) 。
+- `Horizontal` 指示 `ScrollView` 将水平滚动。
+- `Both` 指示 `ScrollView` 将水平和垂直滚动。
+- `Neither` 指示 `ScrollView` 不滚动。
 
 > [!TIP]
 > 可以通过将 [`Orientation`](xref:Xamarin.Forms.ScrollView.OrientationProperty) 属性设置为来禁用滚动 `Neither` 。
 
 ## <a name="detect-scrolling"></a>检测滚动
 
-[`ScrollView`](xref:Xamarin.Forms.ScrollView)定义一个 [`Scrolled`](xref:Xamarin.Forms.ScrollView.Scrolled) 事件，该事件将激发以指示发生滚动。 [`ScrolledEventArgs`](xref:Xamarin.Forms.ScrolledEventArgs)事件附带的对象 `Scrolled` 具有 `ScrollX` 和 `ScrollY` 属性，这两种类型均为 `double` 。
+[`ScrollView`](xref:Xamarin.Forms.ScrollView) 定义一个 [`Scrolled`](xref:Xamarin.Forms.ScrollView.Scrolled) 事件，该事件将激发以指示发生滚动。 [`ScrolledEventArgs`](xref:Xamarin.Forms.ScrolledEventArgs)事件附带的对象 `Scrolled` 具有 `ScrollX` 和 `ScrollY` 属性，这两种类型均为 `double` 。
 
 > [!IMPORTANT]
 > `ScrolledEventArgs.ScrollX`和 `ScrolledEventArgs.ScrollY` 属性的值可以为负值，因为当滚动回开头时出现弹跳效果 [`ScrollView`](xref:Xamarin.Forms.ScrollView) 。
@@ -253,7 +253,7 @@ void OnScrollViewScrolled(object sender, ScrolledEventArgs e)
 
 ## <a name="scroll-programmatically"></a>以编程方式滚动
 
-[`ScrollView`](xref:Xamarin.Forms.ScrollView)定义两个 [`ScrollToAsync`](xref:Xamarin.Forms.ScrollView.ScrollToAsync*) 方法，这些方法以异步方式滚动 `ScrollView` 。 某个重载滚动到中的指定位置 `ScrollView` ，而另一个重载将指定的元素滚动到视图中。 这两个重载都有一个额外的参数，可用于指示是否对滚动进行动画处理。
+[`ScrollView`](xref:Xamarin.Forms.ScrollView) 定义两个 [`ScrollToAsync`](xref:Xamarin.Forms.ScrollView.ScrollToAsync*) 方法，这些方法以异步方式滚动 `ScrollView` 。 某个重载滚动到中的指定位置 `ScrollView` ，而另一个重载将指定的元素滚动到视图中。 这两个重载都有一个额外的参数，可用于指示是否对滚动进行动画处理。
 
 > [!IMPORTANT]
 > [`ScrollToAsync`](xref:Xamarin.Forms.ScrollView.ScrollToAsync*)当属性设置为时，方法不会导致滚动 [`ScrollView.Orientation`](xref:Xamarin.Forms.ScrollView.OrientationProperty) `Neither` 。
@@ -280,21 +280,21 @@ await scrollView.ScrollToAsync(label, ScrollToPosition.End, true);
 
 在将元素滚动到视图中时，可以使用方法的第二个参数来设置元素在滚动完成后的确切位置 `position` [`ScrollToAsync`](xref:Xamarin.Forms.ScrollView.ScrollToAsync*) 。 此参数接受 [`ScrollToPosition`](xref:Xamarin.Forms.ScrollToPosition) 枚举成员：
 
-- `MakeVisible`指示应滚动元素，直到它在中可见 `ScrollView` 。
-- `Start`指示元素应滚动到的开头 `ScrollView` 。
-- `Center`指示元素应滚动到的中心 `ScrollView` 。
-- `End`指示元素应滚动到的末尾 `ScrollView` 。
+- `MakeVisible` 指示应滚动元素，直到它在中可见 `ScrollView` 。
+- `Start` 指示元素应滚动到的开头 `ScrollView` 。
+- `Center` 指示元素应滚动到的中心 `ScrollView` 。
+- `End` 指示元素应滚动到的末尾 `ScrollView` 。
 
 ## <a name="scroll-bar-visibility"></a>滚动条可见性
 
-[`ScrollView`](xref:Xamarin.Forms.ScrollView)定义 [`HorizontalScrollBarVisibility`](xref:Xamarin.Forms.ScrollView) [`VerticalScrollBarVisibility`](xref:Xamarin.Forms.ScrollView) 由可绑定属性支持的和属性。 这些属性可获取或设置一个 [`ScrollBarVisibility`](xref:Xamarin.Forms.ScrollView.HorizontalScrollBarVisibility) 枚举值，该值表示水平或垂直滚动条是否可见。 `ScrollBarVisibility` 枚举定义下列成员：
+[`ScrollView`](xref:Xamarin.Forms.ScrollView) 定义 [`HorizontalScrollBarVisibility`](xref:Xamarin.Forms.ScrollView) [`VerticalScrollBarVisibility`](xref:Xamarin.Forms.ScrollView) 由可绑定属性支持的和属性。 这些属性可获取或设置一个 [`ScrollBarVisibility`](xref:Xamarin.Forms.ScrollView.HorizontalScrollBarVisibility) 枚举值，该值表示水平或垂直滚动条是否可见。 `ScrollBarVisibility` 枚举定义下列成员：
 
-- `Default`指示平台的默认滚动条行为，是和属性的默认值 `HorizontalScrollBarVisibility` `VerticalScrollBarVisibility` 。
-- `Always`指示滚动条是可见的，即使在视图中显示内容时也是如此。
-- `Never`指示即使内容无法在视图中显示，也不会显示滚动条。
+- `Default` 指示平台的默认滚动条行为，是和属性的默认值 `HorizontalScrollBarVisibility` `VerticalScrollBarVisibility` 。
+- `Always` 指示滚动条是可见的，即使在视图中显示内容时也是如此。
+- `Never` 指示即使内容无法在视图中显示，也不会显示滚动条。
 
 ## <a name="related-links"></a>相关链接
 
-- [ScrollView 演示（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-scrollviewdemos)
-- [Xamarin.FormsStackLayout](stacklayout.md)
-- [可绑定布局Xamarin.Forms](bindable-layouts.md)
+- [ScrollView 演示 (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-scrollviewdemos)
+- [Xamarin.Forms StackLayout](stacklayout.md)
+- [可绑定布局 Xamarin.Forms](bindable-layouts.md)

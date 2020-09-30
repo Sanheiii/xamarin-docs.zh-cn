@@ -10,12 +10,12 @@ ms.date: 09/20/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 46a1b4d00b9eea276b9a3b3d5bffbdac3d31e0ef
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: b5c1310e300373fe75cbcd1464220acf989516ba
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136573"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91555679"
 ---
 # <a name="refreshview-pull-direction-on-windows"></a>Windows 上的 RefreshView 拉取方向
 
@@ -47,10 +47,10 @@ refreshView.On<Windows>().SetRefreshPullDirection(RefreshPullDirection.LeftToRig
 
 `RefreshView.On<Windows>`方法指定此平台特定的仅在通用 Windows 平台上运行。 `RefreshView.SetRefreshPullDirection`命名空间中的方法 [`Xamarin.Forms.PlatformConfiguration.WindowsSpecific`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific) 用于设置的请求方向 `RefreshView` ， `RefreshPullDirection` 枚举提供了四个可能的值：
 
-- `LeftToRight`指示从左到右的请求启动刷新。
-- `TopToBottom`指示从上到下的请求启动刷新，并且是的默认拉取方向 `RefreshView` 。
-- `RightToLeft`指示从右到左的请求启动刷新。
-- `BottomToTop`指示从下到上的请求启动刷新。
+- `LeftToRight` 指示从左到右的请求启动刷新。
+- `TopToBottom` 指示从上到下的请求启动刷新，并且是的默认拉取方向 `RefreshView` 。
+- `RightToLeft` 指示从右到左的请求启动刷新。
+- `BottomToTop` 指示从下到上的请求启动刷新。
 
 此外， `GetRefreshPullDirection` 方法可用于返回的当前 `RefreshPullDirection` `RefreshView` 。
 
@@ -63,6 +63,6 @@ refreshView.On<Windows>().SetRefreshPullDirection(RefreshPullDirection.LeftToRig
 
 ## <a name="related-links"></a>相关链接
 
-- [PlatformSpecifics （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [PlatformSpecifics (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [创建平台特定信息](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [WindowsSpecific API](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific)

@@ -10,12 +10,12 @@ ms.date: 07/17/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5c3909271580d0568d7c603de0d434ff5b3f3bc4
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 9a39433a0bad518055542adb190f4f441675ddfb
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138666"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556368"
 ---
 # <a name="segmented-display-of-skiasharp-bitmaps"></a>SkiaSharp 位图的分段显示
 
@@ -27,7 +27,7 @@ SkiaSharp `SKCanvas` 对象定义了一个名为 `DrawBitmapNinePatch` 的方法
 
 这些方法通常用于呈现构成部分用户界面对象（如按钮）的位图。 设计按钮时，通常希望按钮的大小基于按钮的内容，但您可能希望按钮的边框与按钮的内容相同，而不管按钮的内容如何。 这是的理想应用 `DrawBitmapNinePatch` 。
 
-`DrawBitmapNinePatch`是一种特殊情况， `DrawBitmapLattice` 但使用和理解这种方法更为简单。
+`DrawBitmapNinePatch` 是一种特殊情况， `DrawBitmapLattice` 但使用和理解这种方法更为简单。
 
 ## <a name="the-nine-patch-display"></a>九修补程序显示 
 
@@ -45,9 +45,9 @@ SkiaSharp `SKCanvas` 对象定义了一个名为 `DrawBitmapNinePatch` 的方法
 canvas.DrawBitmapNinePatch(bitmap, centerRectangle, destRectangle, paint);
 ```
 
-中心矩形相对于位图。 它是一个 `SKRectI` 值（的整数版本 `SKRect` ），并且所有坐标和大小都以像素为单位。 目标矩形相对于显示图面。 `paint` 参数是可选的。
+中心矩形相对于位图。 它是 `SKRectI`) 的整数版本 (的值 `SKRect` ，并且所有坐标和大小都以像素为单位。 目标矩形相对于显示图面。 `paint` 参数是可选的。
 
-[**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)示例中的 "**九修补程序显示**" 页首先使用静态构造函数来创建类型的公共静态属性 `SKBitmap` ：
+[**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)示例中的 "**九修补程序显示**" 页首先使用静态构造函数来创建类型的公共静态属性 `SKBitmap` ：
 
 ```csharp
 public partial class NinePatchDisplayPage : ContentPage
@@ -141,8 +141,8 @@ SKRectI centerRect = new SKRectI(150, 150, 350, 350);
 
 根据 Skia 文档，该 `Flags` 数组包含一个用于每个矩形的元素，首先是矩形的首行，然后是第二行，依此类推。 `Flags`数组的类型为 [`SKLatticeFlags`](xref:SkiaSharp.SKLatticeFlags) ，具有以下成员的枚举：
 
-- `Default`值为0
-- `Transparent`值为1
+- `Default` 值为0
+- `Transparent` 值为1
 
 不过，这些标志看起来不像期望的那样工作，因此最好忽略这些标志。 但不要将 `Flags` 属性设置为 `null` 。 将其设置为一个 `SKLatticeFlags` 足够大的值数组，使其包含矩形的总数量。
 
@@ -178,7 +178,7 @@ public class LatticeNinePatchPage : ContentPage
 }
 ```
 
-`XDivs`和 `YDivs` 属性都设置为仅包含两个整数的数组，将位图拆分为三个垂直方向和垂直方向：从像素0到像素100（以像素大小显示）、从像素100到像素400（拉伸）以及从像素400到像素500（像素大小）。 同时 `XDivs` `YDivs` 定义总计9个矩形，即数组的大小 `Flags` 。 只需创建数组即可创建 `SKLatticeFlags.Default` 值数组。
+`XDivs`和 `YDivs` 属性都设置为仅包含两个整数的数组，在水平和垂直方向上分别将位图拆分为三个分界线：从像素0到像素 100 (在像素大小) 呈现，从像素100到像素 400 (拉伸) ，从像素400到像素 500 (像素大小) 。 同时 `XDivs` `YDivs` 定义总计9个矩形，即数组的大小 `Flags` 。 只需创建数组即可创建 `SKLatticeFlags.Default` 值数组。
 
 此显示与以前的程序相同：
 
@@ -230,5 +230,5 @@ public class LatticeDisplayPage : ContentPage
 
 ## <a name="related-links"></a>相关链接
 
-- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [SkiaSharp Api](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (示例) ](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

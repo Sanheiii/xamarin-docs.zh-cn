@@ -10,12 +10,12 @@ ms.date: 08/23/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 418d29010a8cce81d2bb8c365608c54b61739622
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: ec84ac906ac146f37ba5b161a898582ce483bc95
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84135637"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556667"
 ---
 # <a name="the-skiasharp-circular-gradients"></a>SkiaSharp 循环渐变
 
@@ -53,11 +53,11 @@ public static SKShader CreateRadialGradient (SKPoint center,
 
 [`CreateRadialGradient`](xref:SkiaSharp.SKShader.CreateRadialGradient(SkiaSharp.SKPoint,System.Single,SkiaSharp.SKColor[],System.Single[],SkiaSharp.SKShaderTileMode,SkiaSharp.SKMatrix))重载还包含转换矩阵参数。
 
-前两个自变量指定圆的中心和半径。 渐变从该中心开始，并向外扩展以获取 `radius` 像素。 发生的情况 `radius` 取决于 [`SKShaderTileMode`](xref:SkiaSharp.SKShaderTileMode) 参数。 `colors`参数是具有两个或两个以上颜色的数组（与线性渐变方法相同）， `colorPos` 是0到1范围内的整数数组。 这些整数表示颜色沿线条的相对位置 `radius` 。 您可以将该参数设置为， `null` 以便对颜色均匀地设置间距。
+前两个自变量指定圆的中心和半径。 渐变从该中心开始，并向外扩展以获取 `radius` 像素。 发生的情况 `radius` 取决于 [`SKShaderTileMode`](xref:SkiaSharp.SKShaderTileMode) 参数。 `colors`参数是一个由两个或多个颜色组成的数组， (与线性渐变方法) 的一样， `colorPos` 是介于0到1范围内的整数数组。 这些整数表示颜色沿线条的相对位置 `radius` 。 您可以将该参数设置为， `null` 以便对颜色均匀地设置间距。
 
 如果使用 `CreateRadialGradient` 填充圆，则可以将渐变中心设置为圆的中心，将渐变的半径设置为圆的半径。 在这种情况下，该 `SKShaderTileMode` 参数对渐变的呈现不起作用。 但如果渐变填充的区域大于渐变定义的圆，则 `SKShaderTileMode` 参数对圆外发生的情况有深远的影响。
 
-的效果在 `SKShaderMode` [**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)示例中的**径向渐变**页中进行了演示。 此页的 XAML 文件将实例化 `Picker` ，使您可以选择枚举中的三个成员之一 `SKShaderTileMode` ：
+的效果在 `SKShaderMode` [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)示例中的**径向渐变**页中进行了演示。 此页的 XAML 文件将实例化 `Picker` ，使您可以选择枚举中的三个成员之一 `SKShaderTileMode` ：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -215,7 +215,7 @@ public class RainbowArcGradientPage : ContentPage
 
 ## <a name="radial-gradients-for-masking"></a>屏蔽的径向渐变
 
-与线性渐变一样，径向渐变可以包含透明或部分透明的颜色。 此功能适用于称为 "_屏蔽_" 的进程，该进程隐藏部分图像以强调设计图像的另一部分。
+与线性渐变一样，径向渐变可以包含透明或部分透明的颜色。 此功能适用于称为 " _屏蔽_" 的进程，该进程隐藏部分图像以强调设计图像的另一部分。
 
 **径向渐变掩码**页显示了一个示例。 程序加载一个资源位图。 `CENTER`和 `RADIUS` 字段是从位图检查中确定的，并引用应突出显示的区域。 `PaintSurface`处理程序首先计算一个矩形以便显示位图，然后将其显示在该矩形中：
 
@@ -289,7 +289,7 @@ public class RadialGradientMaskPage : ContentPage
 
 ## <a name="radial-gradients-for-specular-highlights"></a>反射高光的径向渐变
 
-当光源出现圆时，它会在许多方向上反映光，但某些光源会直接转换为观看者的眼睛。 这通常会在图面上创建一个称为_反射高光_的模糊空白区域。
+当光源出现圆时，它会在许多方向上反映光，但某些光源会直接转换为观看者的眼睛。 这通常会在图面上创建一个称为 _反射高光_的模糊空白区域。
 
 在三维图形中，反射高光通常由用于确定光路径和阴影的算法引起。 在二维图形中，反射高光有时会添加到建议三维表面的外观。 反射高光可以将平面红色圆圈转换为圆形红球。
 
@@ -334,7 +334,7 @@ public class RadialSpecularHighlightPage : ContentPage
 }
 ```
 
-`CreateRadialGradient`调用会创建一个渐变，该渐变在该点处以白色开始，以 `offCenter` 红色以半径的一半结束。 如下所示：
+`CreateRadialGradient`调用会创建一个渐变，该渐变在该点处以白色开始，以 `offCenter` 红色以半径的一半结束。 它的外观如下所示：
 
 [![径向镜面高光](circular-gradients-images/RadialSpecularHighlight.png "径向镜面高光")](circular-gradients-images/RadialSpecularHighlight-Large.png#lightbox)
 
@@ -354,11 +354,11 @@ public static SKShader CreateSweepGradient (SKPoint center,
 
 [`CreateSweepGradient`](xref:SkiaSharp.SKShader.CreateSweepGradient(SkiaSharp.SKPoint,SkiaSharp.SKColor[],System.Single[],SkiaSharp.SKMatrix))带有矩阵转换参数的重载也可用。 您可以对渐变应用旋转转换以更改起点。 还可以应用缩放转换，将方向从顺时针更改为逆时针。
 
-"**扫描渐变**" 页使用扫描渐变为笔划宽度为50像素的圆形着色：
+" **扫描渐变** " 页使用扫描渐变为笔划宽度为50像素的圆形着色：
 
 [![扫描渐变](circular-gradients-images/SweepGradient.png "扫描渐变")](circular-gradients-images/SweepGradient-Large.png#lightbox)
 
-`SweepGradientPage`类定义具有不同色相值的8种颜色的数组。 请注意，该数组以红色（色相值0或360）开头和结尾，这会显示在屏幕截图最右侧：
+`SweepGradientPage`类定义具有不同色相值的8种颜色的数组。 请注意，该数组以 red (值0或 360) （显示在屏幕截图的最右侧）开头和结尾：
 
 ```csharp
 public class SweepGradientPage : ContentPage
@@ -444,11 +444,11 @@ public static SKShader CreateTwoPointConicalGradient (SKPoint startCenter,
                                                       SKShaderTileMode mode)
 ```
 
-参数以中心点和半径（两个圆圈）开头，称为_开始_圆圈和_结束_圆圈。 其余三个参数与和的参数相同 `CreateLinearGradient` `CreateRadialGradient` 。 [`CreateTwoPointConicalGradient`](xref:SkiaSharp.SKShader.CreateTwoPointConicalGradient(SkiaSharp.SKPoint,System.Single,SkiaSharp.SKPoint,System.Single,SkiaSharp.SKColor[],System.Single[],SkiaSharp.SKShaderTileMode,SkiaSharp.SKMatrix))重载包括矩阵转换。
+参数以中心点和半径（两个圆圈）开头，称为 _开始_ 圆圈和 _结束_ 圆圈。 其余三个参数与和的参数相同 `CreateLinearGradient` `CreateRadialGradient` 。 [`CreateTwoPointConicalGradient`](xref:SkiaSharp.SKShader.CreateTwoPointConicalGradient(SkiaSharp.SKPoint,System.Single,SkiaSharp.SKPoint,System.Single,SkiaSharp.SKColor[],System.Single[],SkiaSharp.SKShaderTileMode,SkiaSharp.SKMatrix))重载包括矩阵转换。
 
 渐变从起始圆开始，以结束圆结束。 `SKShaderTileMode`参数控制在两个圆圈外发生的情况。 双点圆锥渐变是唯一不完全填充区域的渐变。 如果两个圆圈具有相同的半径，则将渐变限制为宽度与圆直径相同的矩形。 如果这两个圆的半径不同，则渐变将形成一个锥。
 
-您可能想要试验双点圆锥渐变，因此，**圆锥的渐变**页面从派生，以允许两个 `InteractivePage` 触摸点四处移动两个圆圈半径：
+您可能想要试验双点圆锥渐变，因此， **圆锥的渐变** 页面从派生，以允许两个 `InteractivePage` 触摸点四处移动两个圆圈半径：
 
 ```xaml
 <local:InteractivePage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -622,5 +622,5 @@ public class ConicalSpecularHighlightPage : ContentPage
 
 ## <a name="related-links"></a>相关链接
 
-- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [SkiaSharp Api](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (示例) ](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

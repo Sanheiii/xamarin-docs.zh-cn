@@ -10,14 +10,14 @@ ms.date: 08/14/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 46d2abf895ffe31bd1dc1c22caf36440c54b331c
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: eb94b2943cfe4659bb77764f810d45dc8b189005
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84130099"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91555367"
 ---
-# <a name="xamarinforms-contentview"></a>Xamarin.Forms ContentView
+# <a name="no-locxamarinforms-contentview"></a>Xamarin.Forms ContentView
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-contentviewdemos/)
 
@@ -29,13 +29,13 @@ Xamarin.Forms [`ContentView`](xref:Xamarin.Forms.ContentView) 类是一个类型
 
 `ContentView`类定义单个属性：
 
-* [`Content`](xref:Xamarin.Forms.ContentView.Content)是一个 `View` 对象。 此属性由 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 对象支持，因此它可以是数据绑定的目标。
+* [`Content`](xref:Xamarin.Forms.ContentView.Content) 是一个 `View` 对象。 此属性由 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 对象支持，因此它可以是数据绑定的目标。
 
 `ContentView`还继承类的属性 `TemplatedView` ：
 
 * [`ControlTemplate`](xref:Xamarin.Forms.TemplatedView.ControlTemplate)`ControlTemplate`可定义或重写控件外观的。
 
-有关属性的详细信息 `ControlTemplate` ，请参阅[使用 System.windows.controls.controltemplate> 自定义外观](#customize-appearance-with-a-controltemplate)。
+有关属性的详细信息 `ControlTemplate` ，请参阅 [使用 System.windows.controls.controltemplate> 自定义外观](#customize-appearance-with-a-controltemplate)。
 
 ## <a name="create-a-custom-control"></a>创建自定义控件
 
@@ -48,7 +48,7 @@ Xamarin.Forms [`ContentView`](xref:Xamarin.Forms.ContentView) 类是一个类型
 1. 为自定义控件创建 UI。
 
 > [!NOTE]
-> 可以创建自定义控件，其布局是在代码中定义的，而不是在 XAML 中定义的。 为简单起见，示例应用程序仅定义了一个 `CardView` 具有 XAML 布局的类。 但是，示例应用程序包含一个**CardViewCodePage**类，该类显示在代码中使用自定义控件的过程。
+> 可以创建自定义控件，其布局是在代码中定义的，而不是在 XAML 中定义的。 为简单起见，示例应用程序仅定义了一个 `CardView` 具有 XAML 布局的类。 但是，示例应用程序包含一个 **CardViewCodePage** 类，该类显示在代码中使用自定义控件的过程。
 
 ### <a name="create-code-behind-properties"></a>创建代码隐藏属性
 
@@ -86,7 +86,7 @@ public string CardTitle
 }
 ```
 
-有关对象的详细信息 `BindableProperty` ，请参阅可[绑定属性](~/xamarin-forms/xaml/bindable-properties.md)。
+有关对象的详细信息 `BindableProperty` ，请参阅可 [绑定属性](~/xamarin-forms/xaml/bindable-properties.md)。
 
 ### <a name="define-ui"></a>定义 UI
 
@@ -124,11 +124,11 @@ public string CardTitle
 若要深入了解数据绑定，请参阅 [Xamarin.Forms 数据绑定](~/xamarin-forms/app-fundamentals/data-binding/index.md)。
 
 > [!NOTE]
-> `FallbackValue`属性提供了一个默认值（如果绑定为） `null` 。 这也允许 Visual Studio 中的[XAML 预览](~/xamarin-forms/xaml/xaml-previewer/index.md)器呈现 `CardView` 控件。
+> `FallbackValue`属性提供了一个默认值（如果绑定为） `null` 。 这也允许 Visual Studio 中的 [XAML 预览](~/xamarin-forms/xaml/xaml-previewer/index.md) 器呈现 `CardView` 控件。
 
 ## <a name="instantiate-a-custom-control"></a>实例化自定义控件
 
-必须将对自定义控件命名空间的引用添加到实例化自定义控件的页中。 下面的示例演示了一个名为**控件**的命名空间引用，这些控件添加到了 `ContentPage` XAML 的实例中：
+必须将对自定义控件命名空间的引用添加到实例化自定义控件的页中。 下面的示例演示了一个名为 **控件** 的命名空间引用，这些控件添加到了 `ContentPage` XAML 的实例中：
 
 ```xaml
 <ContentPage ...
@@ -211,7 +211,7 @@ CardView card = new CardView
 
 ## <a name="related-links"></a>相关链接
 
-* [ContentView 示例应用程序](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-contentviewdemos/)
+* [ContentView 示例应用程序](/samples/xamarin/xamarin-forms-samples/userinterface-contentviewdemos/)
 * [Xamarin.Forms数据绑定](~/xamarin-forms/app-fundamentals/data-binding/index.md)
 * 可[绑定属性](~/xamarin-forms/xaml/bindable-properties.md)。
 * [Xamarin.Forms 控件模板](~/xamarin-forms/app-fundamentals/templates/control-template.md)

@@ -1,5 +1,5 @@
 ---
-title: 文件处理Xamarin.Forms
+title: 文件处理 Xamarin.Forms
 description: 使用 Xamarin.Forms .NET Standard 库中的代码或使用嵌入的资源即可实现文件处理。
 ms.prod: xamarin
 ms.assetid: 9987C3F6-5F04-403B-BBB4-ECB024EA6CC8
@@ -10,14 +10,14 @@ ms.date: 06/21/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f62e5522b5b9a10a3806a70fe949561d77ce0d4e
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: f8d81e037d63a7144263ce4b3520647e6829bd57
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84574348"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91557252"
 ---
-# <a name="file-handling-in-xamarinforms"></a>文件处理Xamarin.Forms
+# <a name="file-handling-in-no-locxamarinforms"></a>文件处理 Xamarin.Forms
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithfiles)
 
@@ -25,7 +25,7 @@ _使用 Xamarin.Forms .NET Standard 库中的代码或使用嵌入的资源即�
 
 ## <a name="overview"></a>概述
 
-Xamarin.Forms代码在多个平台上运行-每个平台都有自己的文件系统。 以前，这意味着在每个平台上使用本机文件 API 最容易执行文件读写。 此外，嵌入式资源是一种更简单的解决方案，可以通过应用分发数据文件。 但是，使用 .NET Standard 2.0 可以共享 .NET Standard 库中的文件访问代码。
+Xamarin.Forms 代码在多个平台上运行-每个平台都有自己的文件系统。 以前，这意味着在每个平台上使用本机文件 API 最容易执行文件读写。 此外，嵌入式资源是一种更简单的解决方案，可以通过应用分发数据文件。 但是，使用 .NET Standard 2.0 可以共享 .NET Standard 库中的文件访问代码。
 
 有关处理图像文件的信息，请参阅[处理图像](~/xamarin-forms/user-interface/images.md)页。
 
@@ -75,7 +75,7 @@ string fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFold
 
 -----
 
-`GetManifestResourceStream` 用于使用其“资源 ID”访问嵌入文件****。 默认情况下，资源 ID 是以其嵌入的项目的默认命名空间为前缀的文件名，在这种情况下，程序集是**WorkingWithFiles**的，文件名是**LibTextResource.txt**的，因此资源 ID 是 `WorkingWithFiles.LibTextResource.txt` 。
+`GetManifestResourceStream` 用于使用其“资源 ID”访问嵌入文件****。 默认情况下，资源 ID 是以其嵌入的项目的默认命名空间为前缀的文件名，在这种情况下，程序集是 **WorkingWithFiles** 的，文件名是 **LibTextResource.txt**的，因此资源 ID 是 `WorkingWithFiles.LibTextResource.txt` 。
 
 ```csharp
 var assembly = IntrospectionExtensions.GetTypeInfo(typeof(LoadResourceText)).Assembly;
@@ -87,7 +87,7 @@ using (var reader = new System.IO.StreamReader (stream))
 }
 ```
 
-然后，可以使用 `text` 变量来显示文本，或者在代码中以其他方式使用它。 [示例应用](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithfiles)的屏幕截图显示了在 `Label` 控件中呈现的文本。
+然后，可以使用 `text` 变量来显示文本，或者在代码中以其他方式使用它。 [示例应用](/samples/xamarin/xamarin-forms-samples/workingwithfiles)的屏幕截图显示了在 `Label` 控件中呈现的文本。
 
  [![.NET standard 库中嵌入的文本文件](files-images/pcltext-sml.png "应用中显示 .NET Standard 库中的嵌入文本文件")](files-images/pcltext.png#lightbox "应用中显示 .NET Standard 库中的嵌入文本文件")
 
@@ -153,12 +153,12 @@ foreach (var res in assembly.GetManifestResourceNames()) {
 }
 ```
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 本文介绍了一些用于在设备上保存和加载文本以及加载嵌入式资源的简单文件操作。 使用 .NET Standard 2.0，可以共享 .NET Standard 库中的文件访问代码。
 
 ## <a name="related-links"></a>相关链接
 
-- [FilesSample](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithfiles)
+- [FilesSample](/samples/xamarin/xamarin-forms-samples/workingwithfiles)
 - [Xamarin.Forms 示例](https://github.com/xamarin/xamarin-forms-samples)
 - [使用 Xamarin.iOS 中的文件系统](~/ios/app-fundamentals/file-system.md)

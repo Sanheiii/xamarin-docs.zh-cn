@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsCollectionView 布局
+title: Xamarin.Forms CollectionView 布局
 description: 默认情况下，CollectionView 会在垂直列表中显示其项。 但是，可以指定垂直和水平列表以及网格。
 ms.prod: xamarin
 ms.assetid: 5FE78207-1BD6-4706-91EF-B13932321FC9
@@ -10,18 +10,18 @@ ms.date: 07/20/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 73e7ace96c17aea2b397f2706e128ea498338b09
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: e399ae590dbd1260f3b2a403c39ef7e7d98d3592
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87918271"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91557356"
 ---
-# <a name="no-locxamarinforms-collectionview-layout"></a>Xamarin.FormsCollectionView 布局
+# <a name="no-locxamarinforms-collectionview-layout"></a>Xamarin.Forms CollectionView 布局
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)定义用于控制布局的下列属性：
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) 定义用于控制布局的下列属性：
 
 - [`ItemsLayout`](xref:Xamarin.Forms.ItemsLayout)类型为的 [`IItemsLayout`](xref:Xamarin.Forms.IItemsLayout) 指定要使用的布局。
 - [`ItemSizingStrategy`](xref:Xamarin.Forms.StructuredItemsView.ItemSizingStrategy)类型为的 [`ItemSizingStrategy`](xref:Xamarin.Forms.ItemSizingStrategy) 指定要使用的项度量策略。
@@ -35,7 +35,7 @@ ms.locfileid: "87918271"
 - 垂直网格–在添加新项时垂直增长的多列网格。
 - 水平网格–在添加新项时水平增长的多行网格。
 
-可以通过将 [`ItemsLayout`](xref:Xamarin.Forms.StructuredItemsView.ItemsLayout) 属性设置为从类派生的类来指定这些布局 [`ItemsLayout`](xref:Xamarin.Forms.ItemsLayout) 。 此类定义以下属性：
+可以通过将 [`ItemsLayout`](xref:Xamarin.Forms.StructuredItemsView.ItemsLayout) 属性设置为从类派生的类来指定这些布局 [`ItemsLayout`](xref:Xamarin.Forms.ItemsLayout) 。 此类定义了以下属性：
 
 - [`Orientation`](xref:Xamarin.Forms.ItemsLayout.Orientation)类型为的 [`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation) 指定 [`CollectionView`](xref:Xamarin.Forms.CollectionView) 添加添加项的方向。
 - [`SnapPointsAlignment`](xref:Xamarin.Forms.ItemsLayout.SnapPointsAlignment)类型为的 [`SnapPointsAlignment`](xref:Xamarin.Forms.SnapPointsAlignment) 指定对齐点如何与项对齐。
@@ -45,8 +45,8 @@ ms.locfileid: "87918271"
 
 [`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation)枚举定义以下成员：
 
-- `Vertical`指示 [`CollectionView`](xref:Xamarin.Forms.CollectionView) 添加项时将垂直扩展。
-- `Horizontal`指示 [`CollectionView`](xref:Xamarin.Forms.CollectionView) 添加项时将水平扩展。
+- `Vertical` 指示 [`CollectionView`](xref:Xamarin.Forms.CollectionView) 添加项时将垂直扩展。
+- `Horizontal` 指示 [`CollectionView`](xref:Xamarin.Forms.CollectionView) 添加项时将水平扩展。
 
 `LinearItemsLayout`类从 [`ItemsLayout`](xref:Xamarin.Forms.ItemsLayout) 类继承，并定义一个类型为的属性， `ItemSpacing` `double` 该属性表示每个项周围的空白区域。 此属性的默认值为0，其值必须始终大于或等于0。 `LinearItemsLayout`类还定义静态 `Vertical` 和 `Horizontal` 成员。 这些成员可以分别用来创建垂直或水平列表。 或者， `LinearItemsLayout` 可以创建一个对象， [`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation) 并将枚举成员指定为参数。
 
@@ -59,7 +59,7 @@ ms.locfileid: "87918271"
 这些属性是由对象支持的 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ，这意味着属性可以是数据绑定的目标。
 
 > [!NOTE]
-> [`CollectionView`](xref:Xamarin.Forms.CollectionView)使用本机布局引擎执行布局。
+> [`CollectionView`](xref:Xamarin.Forms.CollectionView) 使用本机布局引擎执行布局。
 
 ## <a name="vertical-list"></a>垂直列表
 
@@ -327,9 +327,9 @@ CollectionView collectionView = new CollectionView
 
 ## <a name="headers-and-footers"></a>页眉和页脚
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)可以显示通过列表中的项滚动的页眉和页脚。 页眉和页脚可以是字符串、视图或 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 对象。
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) 可以显示通过列表中的项滚动的页眉和页脚。 页眉和页脚可以是字符串、视图或 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 对象。
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)为指定页眉和页脚定义以下属性：
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) 为指定页眉和页脚定义以下属性：
 
 - `Header`类型为的 `object` 指定要在列表开头显示的字符串、绑定或视图。
 - `HeaderTemplate`类型为的 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 指定用于 `DataTemplate` 格式化的 `Header` 。
@@ -550,8 +550,8 @@ CollectionView collectionView = new CollectionView
 
 默认情况下，中的每一项 [`CollectionView`](xref:Xamarin.Forms.CollectionView) 都是单独测量和调整大小的，前提是中的 UI 元素 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 不指定固定的大小。 此行为可以更改，由 [`CollectionView.ItemSizingStrategy`](xref:Xamarin.Forms.StructuredItemsView.ItemSizingStrategy) 属性值指定。 此属性值可以设置为 [`ItemSizingStrategy`](xref:Xamarin.Forms.ItemSizingStrategy) 枚举成员之一：
 
-- `MeasureAllItems`–每个项都单独进行度量。 这是默认值。
-- `MeasureFirstItem`–仅度量第一项，并为所有后续项提供与第一个项相同的大小。
+- `MeasureAllItems` –每个项都单独进行度量。 这是默认值。
+- `MeasureFirstItem` –仅度量第一项，并为所有后续项提供与第一个项相同的大小。
 
 > [!IMPORTANT]
 > `MeasureFirstItem`当在项大小旨在跨所有项的情况下使用时，大小调整策略会提高性能。
@@ -593,7 +593,7 @@ void OnImageTapped(object sender, EventArgs e)
 
 ## <a name="right-to-left-layout"></a>从右到左布局
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)可以通过将其属性设置为，从右到左的流方向布局其内容 [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) [`RightToLeft`](xref:Xamarin.Forms.FlowDirection.RightToLeft) 。 但是，在 `FlowDirection` 理想情况下，应在页面或根布局上设置属性，这会使页面或根布局中的所有元素响应流方向：
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) 可以通过将其属性设置为，从右到左的流方向布局其内容 [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) [`RightToLeft`](xref:Xamarin.Forms.FlowDirection.RightToLeft) 。 但是，在 `FlowDirection` 理想情况下，应在页面或根布局上设置属性，这会使页面或根布局中的所有元素响应流方向：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -613,10 +613,10 @@ void OnImageTapped(object sender, EventArgs e)
 
 [![IOS 和 Android 上的 CollectionView 从右到左垂直列表布局的屏幕截图](layout-images/vertical-list-rtl.png "CollectionView 从右到左垂直列表布局")](layout-images/vertical-list-rtl-large.png#lightbox "CollectionView 从右到左垂直列表布局")
 
-有关流方向的详细信息，请参阅[从右到左的本地化](~/xamarin-forms/app-fundamentals/localization/right-to-left.md)。
+有关流方向的详细信息，请参阅 [从右到左的本地化](~/xamarin-forms/app-fundamentals/localization/right-to-left.md)。
 
 ## <a name="related-links"></a>相关链接
 
-- [CollectionView (示例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
+- [CollectionView (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 - [从右到左的本地化](~/xamarin-forms/app-fundamentals/localization/right-to-left.md)
-- [Xamarin.FormsCollectionView 滚动](scrolling.md)
+- [Xamarin.Forms CollectionView 滚动](scrolling.md)

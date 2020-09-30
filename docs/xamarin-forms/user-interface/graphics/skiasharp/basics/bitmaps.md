@@ -10,12 +10,12 @@ ms.date: 07/17/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 440a078857a940f57f5700a18f91fc8b25bdfae8
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: a62d8f8e04d97b45fff779739d817defce1414f2
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937197"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556862"
 ---
 # <a name="bitmap-basics-in-skiasharp"></a>SkiaSharp 中的位图基础知识
 
@@ -27,7 +27,7 @@ _从各种源加载位图并显示它们。_
 
 ![两个位图的显示](bitmaps-images/basicbitmaps-small.png)
 
-可以在[SkiaSharp 位图](../bitmaps/index.md)部分找到更深入的位图浏览。
+可以在 [SkiaSharp 位图](../bitmaps/index.md)部分找到更深入的位图浏览。
 
 SkiaSharp 位图是类型的对象 [`SKBitmap`](xref:SkiaSharp.SKBitmap) 。 有多种方法可以创建位图，但本文会将自身限制为 [`SKBitmap.Decode`](xref:SkiaSharp.SKBitmap.Decode(System.IO.Stream)) 从 .net 对象加载位图的方法 `Stream` 。
 
@@ -68,7 +68,7 @@ public class BasicBitmapsPage : ContentPage
 HttpClient httpClient = new HttpClient();
 ```
 
-使用 `HttpClient` iOS 和 Android 应用程序时，需要按照**[传输层安全性（TLS） 1.2](~/cross-platform/app-fundamentals/transport-layer-security.md)** 文档中所述设置项目属性。
+使用 `HttpClient` iOS 和 Android 应用程序时，需要按照 **[传输层安全性 (TLS) 1.2](~/cross-platform/app-fundamentals/transport-layer-security.md)** 上的文档中所述设置项目属性。
 
 由于将运算符与结合使用最为方便 `await` ，因此 `HttpClient` 不能在构造函数中执行代码 `BasicBitmapsPage` 。 相反，它是替代的一部分 `OnAppearing` 。 此处的 URL 指向 Xamarin 网站上的某个区域，其中包含一些示例位图。 网站上的包允许追加用于将位图调整为特定宽度的规范：
 
@@ -106,7 +106,7 @@ protected override async void OnAppearing()
 
 就代码而言，加载位图的最简单方法是直接在应用程序中包括位图资源。 **SkiaSharpFormsDemos**程序包含一个名为**Media**的文件夹，其中包含多个位图文件，其中包含一个名为**monkey.png**。 对于存储为程序资源的位图，必须使用 "**属性**" 对话框为该文件提供**嵌入资源**的**生成操作**！
 
-每个嵌入资源都有一个*资源 ID* ，其中包含项目名称、文件夹和文件名，所有这些都按句点进行连接： **SkiaSharpFormsDemos.Media.monkey.png**。 可以通过指定资源 ID 作为类的方法的参数来获取对此资源的访问权限 [`GetManifestResourceStream`](xref:System.Reflection.Assembly.GetManifestResourceStream(System.String)) [`Assembly`](xref:System.Reflection.Assembly) ：
+每个嵌入资源都有一个 *资源 ID* ，其中包含项目名称、文件夹和文件名，所有这些都按句点进行连接： **SkiaSharpFormsDemos.Media.monkey.png**。 可以通过指定资源 ID 作为类的方法的参数来获取对此资源的访问权限 [`GetManifestResourceStream`](xref:System.Reflection.Assembly.GetManifestResourceStream(System.String)) [`Assembly`](xref:System.Reflection.Assembly) ：
 
 ```csharp
 string resourceID = "SkiaSharpFormsDemos.Media.monkey.png";
@@ -122,9 +122,9 @@ using (Stream stream = assembly.GetManifestResourceStream(resourceID))
 
 ## <a name="loading-a-bitmap-from-the-photo-library"></a>从照片库加载位图
 
-用户还可以从设备的图片库中加载照片。 此功能本身不提供此功能 Xamarin.Forms 。 该作业需要一个依赖项服务，例如[从图片库中选取照片](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md)一文中所述的服务。
+用户还可以从设备的图片库中加载照片。 此功能本身不提供此功能 Xamarin.Forms 。 该作业需要一个依赖项服务，例如 [从图片库中选取照片](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md)一文中所述的服务。
 
-**SkiaSharpFormsDemos**项目中的**IPhotoLibrary.cs**文件和平台项目中的三个**PhotoLibrary.cs**文件已从该文章中改编。 此外，Android **MainActivity.cs**文件已按照本文中的说明进行了修改，并且已向 iOS 项目授予访问照片库的权限，并在**info.plist**文件的底部有两行。
+**SkiaSharpFormsDemos**项目中的**IPhotoLibrary.cs**文件和平台项目中的三个**PhotoLibrary.cs**文件已从该文章中改编。 此外，Android **MainActivity.cs** 文件已按照本文中的说明进行了修改，并且已向 iOS 项目授予访问照片库的权限，并在 **info.plist** 文件的底部有两行。
 
 `BasicBitmapsPage`构造函数将添加 `TapGestureRecognizer` 到 `SKCanvasView` 以在点击时获得通知。 收到点击后， `Tapped` 处理程序将获取对图片选取器依赖项服务的访问权限，并调用 `PickPhotoAsync` 。 如果 `Stream` 返回对象，则会将该对象传递给 `SKBitmap.Decode` 方法：
 
@@ -247,10 +247,10 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 如果尚未从图片库中加载位图，则 `else` 块会显示一些文本以提示用户点击屏幕。
 
-可以显示具有各种透明度的位图， [**SkiaSharp 透明度**](transparency.md)上的下一篇文章介绍了如何操作。
+可以显示具有各种透明度的位图， [**SkiaSharp 透明度**](transparency.md) 上的下一篇文章介绍了如何操作。
 
 ## <a name="related-links"></a>相关链接
 
-- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [SkiaSharp Api](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (示例) ](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 - [从图片库中选取照片](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md)

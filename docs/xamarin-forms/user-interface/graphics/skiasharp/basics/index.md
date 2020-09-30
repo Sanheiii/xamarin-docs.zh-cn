@@ -10,12 +10,12 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: fd82f7ffe135c12c9dfc59c3353d7d9f5d73068c
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 4c205c033f7032eb093b91c10292610bacc12a26
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137704"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556511"
 ---
 # <a name="skiasharp-drawing-basics"></a>SkiaSharp 绘制基础知识
 
@@ -23,15 +23,15 @@ ms.locfileid: "84137704"
 
 _了解 SkiaSharp 图形概念和坐标的基础知识_
 
-将 SkiaSharp NuGet 包添加到 Xamarin.Forms 应用程序后，可以开始使用 SkiaSharp 图形。 [**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)解决方案包含许多页面，它们在渐进更高级的课程中演示 SkiaSharp 编程技术。
+将 SkiaSharp NuGet 包添加到 Xamarin.Forms 应用程序后，可以开始使用 SkiaSharp 图形。 [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)解决方案包含许多页面，它们在渐进更高级的课程中演示 SkiaSharp 编程技术。
 
-本部分中的所有示例程序都显示在[**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)程序主页的 " **SkiaSharp 绘图基础知识**" 下，并在解决方案的 "[**基本**](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics)信息" 文件夹中。
+本部分中的所有示例程序都显示在[**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)程序主页的 " **SkiaSharp 绘图基础知识**" 下，并在解决方案的 "[**基本**](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics)信息" 文件夹中。
 
 ## <a name="drawing-a-simple-circle"></a>[绘制一个简单的圆圈](circle.md)
 
 了解 SkiaSharp 绘图（包括画布和画图对象）的基础知识。
 
-## <a name="integrating-with-xamarinformsintegrationmd"></a>[与集成Xamarin.Forms](integration.md)
+## <a name="integrating-with-no-locxamarinforms"></a>[与集成 Xamarin.Forms](integration.md)
 
 通过响应触摸输入并与元素集成来创建交互式 SkiaSharp 图形 Xamarin.Forms 。
 
@@ -57,5 +57,5 @@ _了解 SkiaSharp 图形概念和坐标的基础知识_
 
 ## <a name="related-links"></a>相关链接
 
-- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [SkiaSharp Api](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (示例) ](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

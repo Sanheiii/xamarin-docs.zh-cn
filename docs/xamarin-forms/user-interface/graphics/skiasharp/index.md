@@ -1,5 +1,5 @@
 ---
-title: SkiaSharp 图形Xamarin.Forms
+title: SkiaSharp 图形 Xamarin.Forms
 description: 'SkiaSharp 是适用于 .NET 和 c # 的2D 图形系统，由在 Google 产品中广泛使用的开源 Skia 图形引擎提供支持。 本指南说明如何在应用程序中使用 SkiaSharp for 2D 图形 Xamarin.Forms 。'
 ms.prod: xamarin
 ms.assetid: 2C348BEA-81DF-4794-8857-EB1DFF5E11DB
@@ -9,32 +9,32 @@ ms.date: 09/11/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: da00aafb9f659d8af119e00476a9a243a2f91023
-ms.sourcegitcommit: 91b4d2f93687fadec5c3f80aadc8f7298d911624
+ms.openlocfilehash: 6ca08815e422b9ec96dcb11d6b069a227bf62866
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85795073"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91555263"
 ---
-# <a name="skiasharp-graphics-in-xamarinforms"></a>SkiaSharp 图形Xamarin.Forms
+# <a name="skiasharp-graphics-in-no-locxamarinforms"></a>SkiaSharp 图形 Xamarin.Forms
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _在应用程序中使用 SkiaSharp for 2D 图形 Xamarin.Forms_
 
-SkiaSharp 是适用于 .NET 和 c # 的2D 图形系统，由在 Google 产品中广泛使用的开源 Skia 图形引擎提供支持。 可以在应用程序中使用 SkiaSharp Xamarin.Forms 来绘制2d 矢量图形、位图和文本。 有关 SkiaSharp 库和其他教程的更多常规信息，请参阅[2D 绘图](~/graphics-games/skiasharp/index.md)指南。
+SkiaSharp 是适用于 .NET 和 c # 的2D 图形系统，由在 Google 产品中广泛使用的开源 Skia 图形引擎提供支持。 可以在应用程序中使用 SkiaSharp Xamarin.Forms 来绘制2d 矢量图形、位图和文本。 有关 SkiaSharp 库和其他教程的更多常规信息，请参阅 [2D 绘图](~/graphics-games/skiasharp/index.md) 指南。
 
 本指南假定你熟悉 Xamarin.Forms 编程。
 
 > [!VIDEO https://channel9.msdn.com/Events/Xamarin/Xamarin-University-Presents-Webinar-Series/SkiaSharp-Graphics-for-XamarinForms/player]
 
-**网络研讨会： SkiaSharpXamarin.Forms**
+**网络研讨会： SkiaSharp Xamarin.Forms**
 
 ## <a name="skiasharp-preliminaries"></a>SkiaSharp 初步
 
-的 SkiaSharp Xamarin.Forms 打包为 NuGet 包。 Xamarin.Forms在 Visual Studio 或 Visual Studio for Mac 中创建解决方案后，可以使用 NuGet 包管理器搜索**SkiaSharp**包，并将其添加到解决方案中。 如果在添加 SkiaSharp 之后检查每个项目的 "**引用**" 部分，可以看到已将各种**SkiaSharp**库添加到了解决方案中的每个项目。
+的 SkiaSharp Xamarin.Forms 打包为 NuGet 包。 Xamarin.Forms在 Visual Studio 或 Visual Studio for Mac 中创建解决方案后，可以使用 NuGet 包管理器搜索**SkiaSharp**包，并将其添加到解决方案中。 如果在添加 SkiaSharp 之后检查每个项目的 " **引用** " 部分，可以看到已将各种 **SkiaSharp** 库添加到了解决方案中的每个项目。
 
-如果你的 Xamarin.Forms 应用程序面向 ios，请编辑其**info.plist**文件，将最低部署目标更改为 ios 8.0。
+如果你的 Xamarin.Forms 应用程序面向 ios，请编辑其 **info.plist** 文件，将最低部署目标更改为 ios 8.0。
 
 在任何使用 SkiaSharp 的 c # 页面中，你都需要为 `using` 命名空间包含一个指令 [`SkiaSharp`](xref:SkiaSharp) ，其中包含你将在图形编程中使用的所有 SkiaSharp 类、结构和枚举。 还需要一个 `using` 用于 [`SkiaSharp.Views.Forms`](xref:SkiaSharp.Views.Forms) 特定于的类的命名空间的指令 Xamarin.Forms 。 这是一个很小的命名空间，最重要的类是 [`SKCanvasView`](xref:SkiaSharp.Views.Forms.SKCanvasView) 。 此类派生自 Xamarin.Forms `View` 类，并托管你的 SkiaSharp 图形输出。
 
@@ -67,6 +67,6 @@ SkiaSharp 是适用于 .NET 和 c # 的2D 图形系统，由在 Google 产品中
 
 ## <a name="related-links"></a>相关链接
 
-- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
-- [SkiaSharp Xamarin.Forms 网络研讨会（视频）](https://channel9.msdn.com/Events/Xamarin/Xamarin-University-Presents-Webinar-Series/SkiaSharp-Graphics-for-XamarinForms)
+- [SkiaSharp Api](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (示例) ](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [SkiaSharp Xamarin.Forms 网络研讨会 (视频) ](https://channel9.msdn.com/Events/Xamarin/Xamarin-University-Presents-Webinar-Series/SkiaSharp-Graphics-for-XamarinForms)

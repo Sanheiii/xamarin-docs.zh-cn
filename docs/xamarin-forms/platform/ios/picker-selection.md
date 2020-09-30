@@ -10,18 +10,18 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f7149a818506611176f7c34a6fae4ec733cd2ad9
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 8e8c5696235e0258ab4e300a821c1ef804e6bd50
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938562"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556680"
 ---
 # <a name="picker-item-selection-on-ios"></a>IOS 上的选取器项选择
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-此 iOS 平台特定的控件：当项在中发生选择时 [`Picker`](xref:Xamarin.Forms.Picker) ，允许用户指定在浏览控件中的项时或在按 "**完成**" 按钮后所做的选择。 它通过将 `Picker.UpdateMode` 附加属性设置为枚举的值，在 XAML 中使用 `UpdateMode` ：
+此 iOS 平台特定的控件：当项在中发生选择时 [`Picker`](xref:Xamarin.Forms.Picker) ，允许用户指定在浏览控件中的项时或在按 " **完成** " 按钮后所做的选择。 它通过将 `Picker.UpdateMode` 附加属性设置为枚举的值，在 XAML 中使用 `UpdateMode` ：
 
 ```xaml
 <ContentPage ...
@@ -47,8 +47,8 @@ picker.On<iOS>().SetUpdateMode(UpdateMode.WhenFinished);
 
 `Picker.On<iOS>`方法指定此平台特定的仅在 iOS 上运行。 `Picker.SetUpdateMode`命名空间中的方法 [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) 用于控制项的选择发生的时间， `UpdateMode` 枚举提供了两个可能的值：
 
-- `Immediately`–当用户浏览中的项时，将发生项选择 [`Picker`](xref:Xamarin.Forms.Picker) 。 这是中的默认行为 Xamarin.Forms 。
-- `WhenFinished`-仅当用户按下了 "**完成**" 按钮后，才会进行项目选择 [`Picker`](xref:Xamarin.Forms.Picker) 。
+- `Immediately` –当用户浏览中的项时，将发生项选择 [`Picker`](xref:Xamarin.Forms.Picker) 。 这是中的默认行为 Xamarin.Forms 。
+- `WhenFinished` -仅当用户按下了 " **完成** " 按钮后，才会进行项目选择 [`Picker`](xref:Xamarin.Forms.Picker) 。
 
 此外，该 `SetUpdateMode` 方法可用于通过调用返回当前的方法来切换枚举值 `UpdateMode` `UpdateMode` ：
 
@@ -70,6 +70,6 @@ switch (picker.On<iOS>().UpdateMode())
 
 ## <a name="related-links"></a>相关链接
 
-- [PlatformSpecifics （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [PlatformSpecifics (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [创建平台特定信息](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [iOSSpecific API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsCollectionView 选择
+title: Xamarin.Forms CollectionView 选择
 description: 默认情况下，CollectionView 选择处于禁用状态。 但是，可以启用单个和多个选择。
 ms.prod: xamarin
 ms.assetid: 423D91C7-1E58-4735-9E80-58F11CDFD953
@@ -10,18 +10,18 @@ ms.date: 05/06/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 39f118d7073fc551923f891681c8c6cf6a4c5ddd
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: c432c1981ba057f61bba780b7997c8b78f8cef3f
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137379"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91557343"
 ---
-# <a name="xamarinforms-collectionview-selection"></a>Xamarin.FormsCollectionView 选择
+# <a name="no-locxamarinforms-collectionview-selection"></a>Xamarin.Forms CollectionView 选择
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)定义控制项选择的下列属性：
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) 定义控制项选择的下列属性：
 
 - [`SelectionMode`](xref:Xamarin.Forms.SelectableItemsView.SelectionMode)类型为 [`SelectionMode`](xref:Xamarin.Forms.SelectionMode) 的选择模式。
 - [`SelectedItem`](xref:Xamarin.Forms.SelectableItemsView.SelectedItem)，类型为 `object` ，列表中的选定项。 此属性的默认绑定模式为 `TwoWay` ， `null` 在未选择任何项时具有值。
@@ -33,20 +33,20 @@ ms.locfileid: "84137379"
 
 默认情况下， [`CollectionView`](xref:Xamarin.Forms.CollectionView) 选定内容处于禁用状态。 但是，可以通过将 [`SelectionMode`](xref:Xamarin.Forms.SelectableItemsView.SelectionMode) 属性值设置为枚举成员之一来更改此行为 [`SelectionMode`](xref:Xamarin.Forms.SelectionMode) ：
 
-- `None`–表示无法选择项。 这是默认值。
-- `Single`–指示可以选择单个项，突出显示选定项。
-- `Multiple`–指示可以选择多个项，突出显示选定项。
+- `None` –表示无法选择项。 这是默认值。
+- `Single` –指示可以选择单个项，突出显示选定项。
+- `Multiple` –指示可以选择多个项，突出显示选定项。
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)定义一个 [`SelectionChanged`](xref:Xamarin.Forms.SelectableItemsView.SelectionChanged) 事件，该事件在 [`SelectedItem`](xref:Xamarin.Forms.SelectableItemsView.SelectedItem) 属性发生更改时触发，无论用户是从列表中选择项，还是应用程序设置属性。 此外，当属性发生更改时，也会触发此事件 [`SelectedItems`](xref:Xamarin.Forms.SelectableItemsView.SelectedItems) 。 [`SelectionChangedEventArgs`](xref:Xamarin.Forms.SelectionChangedEventArgs)事件附带的对象 `SelectionChanged` 有两个属性，两者均为类型 `IReadOnlyList<object>` ：
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) 定义一个 [`SelectionChanged`](xref:Xamarin.Forms.SelectableItemsView.SelectionChanged) 事件，该事件在 [`SelectedItem`](xref:Xamarin.Forms.SelectableItemsView.SelectedItem) 属性发生更改时触发，无论用户是从列表中选择项，还是应用程序设置属性。 此外，当属性发生更改时，也会触发此事件 [`SelectedItems`](xref:Xamarin.Forms.SelectableItemsView.SelectedItems) 。 [`SelectionChangedEventArgs`](xref:Xamarin.Forms.SelectionChangedEventArgs)事件附带的对象 `SelectionChanged` 有两个属性，两者均为类型 `IReadOnlyList<object>` ：
 
-- `PreviousSelection`–选定内容更改之前选定的项的列表。
-- `CurrentSelection`–选定内容更改后所选择的项的列表。
+- `PreviousSelection` –选定内容更改之前选定的项的列表。
+- `CurrentSelection` –选定内容更改后所选择的项的列表。
 
 此外， [`CollectionView`](xref:Xamarin.Forms.CollectionView) 还提供了一个 `UpdateSelectedItems` 方法，该方法 [`SelectedItems`](xref:Xamarin.Forms.SelectableItemsView.SelectedItems) 用选定项的列表来更新属性，同时仅引发单个更改通知。
 
 ## <a name="single-selection"></a>单选
 
-当 [`SelectionMode`](xref:Xamarin.Forms.SelectableItemsView.SelectionMode) 属性设置为时 `Single` ，可以选择中的单个项 [`CollectionView`](xref:Xamarin.Forms.CollectionView) 。 选择项时， [`SelectedItem`](xref:Xamarin.Forms.SelectableItemsView.SelectedItem) 属性将设置为选定项的值。 此属性发生更改时，将 [`SelectionChangedCommand`](xref:Xamarin.Forms.SelectableItemsView.SelectionChangedCommand) 执行（将的值 [`SelectionChangedCommandParameter`](xref:Xamarin.Forms.SelectableItemsView.SelectionChangedCommandParameter) 传递到 `ICommand` ），并 [`SelectionChanged`](xref:Xamarin.Forms.SelectableItemsView.SelectionChanged) 触发事件。
+当 [`SelectionMode`](xref:Xamarin.Forms.SelectableItemsView.SelectionMode) 属性设置为时 `Single` ，可以选择中的单个项 [`CollectionView`](xref:Xamarin.Forms.CollectionView) 。 选择项时， [`SelectedItem`](xref:Xamarin.Forms.SelectableItemsView.SelectedItem) 属性将设置为选定项的值。 此属性发生更改时，将执行 (，并将 [`SelectionChangedCommand`](xref:Xamarin.Forms.SelectableItemsView.SelectionChangedCommand) 值 [`SelectionChangedCommandParameter`](xref:Xamarin.Forms.SelectableItemsView.SelectionChangedCommandParameter) 传递到 `ICommand`) ，并 [`SelectionChanged`](xref:Xamarin.Forms.SelectableItemsView.SelectionChanged) 引发事件。
 
 下面的 XAML 示例显示了一个 [`CollectionView`](xref:Xamarin.Forms.CollectionView) 可响应单项选择的：
 
@@ -89,7 +89,7 @@ void OnCollectionViewSelectionChanged(object sender, SelectionChangedEventArgs e
 
 ## <a name="multiple-selection"></a>多重选择
 
-当 [`SelectionMode`](xref:Xamarin.Forms.SelectableItemsView.SelectionMode) 属性设置为时 `Multiple` ，可以选择中的多个项 [`CollectionView`](xref:Xamarin.Forms.CollectionView) 。 选择项时， [`SelectedItems`](xref:Xamarin.Forms.SelectableItemsView.SelectedItems) 属性将设置为所选的项。 此属性发生更改时，将 [`SelectionChangedCommand`](xref:Xamarin.Forms.SelectableItemsView.SelectionChangedCommand) 执行（将的值 [`SelectionChangedCommandParameter`](xref:Xamarin.Forms.SelectableItemsView.SelectionChangedCommandParameter) 传递到 `ICommand` ），并 [`SelectionChanged`](xref:Xamarin.Forms.SelectableItemsView.SelectionChanged) 触发事件。
+当 [`SelectionMode`](xref:Xamarin.Forms.SelectableItemsView.SelectionMode) 属性设置为时 `Multiple` ，可以选择中的多个项 [`CollectionView`](xref:Xamarin.Forms.CollectionView) 。 选择项时， [`SelectedItems`](xref:Xamarin.Forms.SelectableItemsView.SelectedItems) 属性将设置为所选的项。 此属性发生更改时，将执行 (，并将 [`SelectionChangedCommand`](xref:Xamarin.Forms.SelectableItemsView.SelectionChangedCommand) 值 [`SelectionChangedCommandParameter`](xref:Xamarin.Forms.SelectableItemsView.SelectionChangedCommandParameter) 传递到 `ICommand`) ，并 [`SelectionChanged`](xref:Xamarin.Forms.SelectableItemsView.SelectionChanged) 引发事件。
 
 下面的 XAML 示例显示了一个 [`CollectionView`](xref:Xamarin.Forms.CollectionView) 可响应多项选择的：
 
@@ -267,7 +267,7 @@ namespace CollectionViewDemos.ViewModels
 
 ## <a name="change-selected-item-color"></a>更改选定项的颜色
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)具有 `Selected` [`VisualState`](xref:Xamarin.Forms.VisualState) ，可用于启动对中的选定项的视觉更改 `CollectionView` 。 这种情况的一个常见用例 `VisualState` 是更改选定项的背景色，如下面的 XAML 示例中所示：
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) 具有 `Selected` [`VisualState`](xref:Xamarin.Forms.VisualState) ，可用于启动对中的选定项的视觉更改 `CollectionView` 。 这种情况的一个常见用例 `VisualState` 是更改选定项的背景色，如下面的 XAML 示例中所示：
 
 ```xaml
 <ContentPage ...>
@@ -314,7 +314,7 @@ namespace CollectionViewDemos.ViewModels
 
 ## <a name="disable-selection"></a>禁用选定内容
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)默认情况下禁用选择。 但是，如果 `CollectionView` 启用了选择，则可以通过将 [`SelectionMode`](xref:Xamarin.Forms.SelectableItemsView.SelectionMode) 属性设置为来禁用它 `None` ：
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) 默认情况下禁用选择。 但是，如果 `CollectionView` 启用了选择，则可以通过将 [`SelectionMode`](xref:Xamarin.Forms.SelectableItemsView.SelectionMode) 属性设置为来禁用它 `None` ：
 
 ```xaml
 <CollectionView ...
@@ -338,5 +338,5 @@ CollectionView collectionView = new CollectionView
 
 ## <a name="related-links"></a>相关链接
 
-- [CollectionView （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
+- [CollectionView (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 - [Xamarin.Forms 可视状态管理器](~/xamarin-forms/user-interface/visual-state-manager.md)

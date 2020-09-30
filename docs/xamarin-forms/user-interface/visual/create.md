@@ -10,33 +10,33 @@ ms.date: 03/12/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 23edbb007e912d13858686d1c5ec574c9e3349c7
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: a8e8388a6a460b3a2958d3ab3b9a4c9c34ea1831
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84127135"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556459"
 ---
-# <a name="create-a-xamarinforms-visual-renderer"></a>创建 Xamarin.Forms 可视化呈现器
+# <a name="create-a-no-locxamarinforms-visual-renderer"></a>创建 Xamarin.Forms 可视化呈现器
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-visualdemos)
 
-Xamarin.Forms视觉对象允许创建呈现器并有选择地应用于 [`VisualElement`](xref:Xamarin.Forms.VisualElement) 对象，而无需为视图创建子类 Xamarin.Forms 。 指定一个 `IVisual` 类型（作为其一部分）的呈现器 `ExportRendererAttribute` 将用于呈现所选择的视图，而不是默认呈现器。 在呈现器选择时间，将 `Visual` 检查视图的属性并将其包含在呈现器选择过程中。
+Xamarin.Forms 视觉对象允许创建呈现器并有选择地应用于 [`VisualElement`](xref:Xamarin.Forms.VisualElement) 对象，而无需为视图创建子类 Xamarin.Forms 。 指定一个 `IVisual` 类型（作为其一部分）的呈现器 `ExportRendererAttribute` 将用于呈现所选择的视图，而不是默认呈现器。 在呈现器选择时间，将 `Visual` 检查视图的属性并将其包含在呈现器选择过程中。
 
 > [!IMPORTANT]
 > 当前，在 [`Visual`](xref:Xamarin.Forms.VisualElement.Visual) 视图呈现后无法更改属性，但在将来的版本中将发生更改。
 
 创建和使用可视化呈现器的过程 Xamarin.Forms 如下：
 
-1. 为所需视图创建平台呈现器。 有关详细信息，请参阅[创建呈现](#create-platform-renderers)器。
-1. 创建一个派生自的类型 `IVisual` 。 有关详细信息，请参阅[Create a IVisual type](#create-an-ivisual-type)。
-1. `IVisual`将类型注册为修饰呈现器的的一部分 `ExportRendererAttribute` 。 有关详细信息，请参阅[注册 IVisual 类型](#register-the-ivisual-type)。
-1. 通过将 [`Visual`](xref:Xamarin.Forms.VisualElement.Visual) 视图的属性设置为名称来使用可视化呈现器 `IVisual` 。 有关详细信息，请参阅[使用视觉呈现](#consume-the-visual-renderer)器。
-1. 可有可无注册类型的名称 `IVisual` 。 有关详细信息，请参阅[注册 IVisual 类型的名称](#register-a-name-for-the-ivisual-type)。
+1. 为所需视图创建平台呈现器。 有关详细信息，请参阅 [创建呈现](#create-platform-renderers)器。
+1. 创建一个派生自的类型 `IVisual` 。 有关详细信息，请参阅 [Create a IVisual type](#create-an-ivisual-type)。
+1. `IVisual`将类型注册为修饰呈现器的的一部分 `ExportRendererAttribute` 。 有关详细信息，请参阅 [注册 IVisual 类型](#register-the-ivisual-type)。
+1. 通过将 [`Visual`](xref:Xamarin.Forms.VisualElement.Visual) 视图的属性设置为名称来使用可视化呈现器 `IVisual` 。 有关详细信息，请参阅 [使用视觉呈现](#consume-the-visual-renderer)器。
+1. 可有可无注册类型的名称 `IVisual` 。 有关详细信息，请参阅 [注册 IVisual 类型的名称](#register-a-name-for-the-ivisual-type)。
 
 ## <a name="create-platform-renderers"></a>创建平台呈现器
 
-有关创建呈现器类的信息，请参阅[自定义呈现](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)器。 但请注意， Xamarin.Forms 无需为视图划分子类，即可将可视化呈现器应用于视图。
+有关创建呈现器类的信息，请参阅 [自定义呈现](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)器。 但请注意， Xamarin.Forms 无需为视图划分子类，即可将可视化呈现器应用于视图。
 
 此处所述的呈现器类实现了一个 [`Button`](xref:Xamarin.Forms.Button) 使用阴影显示其文本的自定义。
 
@@ -175,6 +175,6 @@ button.Visual = new CustomVisual();
 
 ## <a name="related-links"></a>相关链接
 
-- [材料视觉对象（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-visualdemos)
+- [材料视觉 (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-visualdemos)
 - [Xamarin.Forms 材料视觉对象](material-visual.md)
 - [自定义呈现器](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)

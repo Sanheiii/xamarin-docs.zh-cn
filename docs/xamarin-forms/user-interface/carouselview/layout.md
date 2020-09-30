@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsCarouselView 布局
+title: Xamarin.Forms CarouselView 布局
 description: 默认情况下，CarouselView 会水平显示其项。 但是，也可以使用垂直方向。
 ms.prod: xamarin
 ms.assetid: fede0382-c972-4023-a4ea-fe5cadec91a6
@@ -10,20 +10,20 @@ ms.date: 01/28/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b45b1375ab7676e96976951e10b903d25c88bc14
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: b9edd2cc8c0376a3d20c17bfb6e3fbdef16e4aa1
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87918526"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556693"
 ---
-# <a name="no-locxamarinforms-carouselview-layout"></a>Xamarin.FormsCarouselView 布局
+# <a name="no-locxamarinforms-carouselview-layout"></a>Xamarin.Forms CarouselView 布局
 
 ![预发行版 API](~/media/shared/preview.png)
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
 
-[`CarouselView`](xref:Xamarin.Forms.CarouselView)定义用于控制布局的下列属性：
+[`CarouselView`](xref:Xamarin.Forms.CarouselView) 定义用于控制布局的下列属性：
 
 - [`ItemsLayout`](xref:Xamarin.Forms.ItemsLayout)类型为的 `LinearItemsLayout` 指定要使用的布局。
 - `PeekAreaInsets`类型为的 [`Thickness`](xref:Xamarin.Forms.Thickness) 指定使相邻项部分可见的程度。
@@ -40,13 +40,13 @@ ms.locfileid: "87918526"
 
 [`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation)枚举定义以下成员：
 
-- `Vertical`指示 [`CarouselView`](xref:Xamarin.Forms.CarouselView) 添加项时将垂直扩展。
-- `Horizontal`指示 [`CarouselView`](xref:Xamarin.Forms.CarouselView) 添加项时将水平扩展。
+- `Vertical` 指示 [`CarouselView`](xref:Xamarin.Forms.CarouselView) 添加项时将垂直扩展。
+- `Horizontal` 指示 [`CarouselView`](xref:Xamarin.Forms.CarouselView) 添加项时将水平扩展。
 
 `LinearItemsLayout`类从 [`ItemsLayout`](xref:Xamarin.Forms.ItemsLayout) 类继承，并定义一个类型为的属性， `ItemSpacing` `double` 该属性表示每个项周围的空白区域。 此属性的默认值为0，其值必须始终大于或等于0。 `LinearItemsLayout`类还定义静态 `Vertical` 和 `Horizontal` 成员。 这些成员可以分别用来创建垂直或水平列表。 或者， `LinearItemsLayout` 可以创建一个对象， [`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation) 并将枚举成员指定为参数。
 
 > [!NOTE]
-> [`CarouselView`](xref:Xamarin.Forms.CarouselView)使用本机布局引擎执行布局。
+> [`CarouselView`](xref:Xamarin.Forms.CarouselView) 使用本机布局引擎执行布局。
 
 ## <a name="horizontal-layout"></a>水平布局
 
@@ -117,7 +117,7 @@ CarouselView carouselView = new CarouselView
 
 ## <a name="vertical-layout"></a>垂直布局
 
-[`CarouselView`](xref:Xamarin.Forms.CarouselView)可以通过将 [`ItemsLayout`](xref:Xamarin.Forms.CarouselView.ItemsLayout) 属性设置为 `LinearItemsLayout` 对象，并将 `Vertical` [`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation) 枚举成员指定为 `Orientation` 属性值，来垂直显示其项：
+[`CarouselView`](xref:Xamarin.Forms.CarouselView) 可以通过将 [`ItemsLayout`](xref:Xamarin.Forms.CarouselView.ItemsLayout) 属性设置为 `LinearItemsLayout` 对象，并将 `Vertical` [`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation) 枚举成员指定为 `Orientation` 属性值，来垂直显示其项：
 
 ```xaml
 <CarouselView ItemsSource="{Binding Monkeys}">
@@ -253,7 +253,7 @@ void OnImageTapped(object sender, EventArgs e)
 
 ## <a name="right-to-left-layout"></a>从右到左布局
 
-[`CarouselView`](xref:Xamarin.Forms.CarouselView)可以通过将其属性设置为，从右到左的流方向布局其内容 [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) [`RightToLeft`](xref:Xamarin.Forms.FlowDirection.RightToLeft) 。 但是，在 `FlowDirection` 理想情况下，应在页面或根布局上设置属性，这会使页面或根布局中的所有元素响应流方向：
+[`CarouselView`](xref:Xamarin.Forms.CarouselView) 可以通过将其属性设置为，从右到左的流方向布局其内容 [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) [`RightToLeft`](xref:Xamarin.Forms.FlowDirection.RightToLeft) 。 但是，在 `FlowDirection` 理想情况下，应在页面或根布局上设置属性，这会使页面或根布局中的所有元素响应流方向：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -269,10 +269,10 @@ void OnImageTapped(object sender, EventArgs e)
 
 具有父级的元素的默认值 [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) 为 [`MatchParent`](xref:Xamarin.Forms.FlowDirection.MatchParent) 。 因此， [`CarouselView`](xref:Xamarin.Forms.CarouselView) `FlowDirection` 从继承属性值 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 。
 
-有关流方向的详细信息，请参阅[从右到左的本地化](~/xamarin-forms/app-fundamentals/localization/right-to-left.md)。
+有关流方向的详细信息，请参阅 [从右到左的本地化](~/xamarin-forms/app-fundamentals/localization/right-to-left.md)。
 
 ## <a name="related-links"></a>相关链接
 
-- [CarouselView (示例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
+- [CarouselView (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
 - [从右到左的本地化](~/xamarin-forms/app-fundamentals/localization/right-to-left.md)
-- [Xamarin.FormsCarouselView 滚动](scrolling.md)
+- [Xamarin.Forms CarouselView 滚动](scrolling.md)

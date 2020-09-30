@@ -10,12 +10,12 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b7d039d26895b50f937392941e42a92a6e51f322
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: c7ff394fbe050fbd97c574c7edc32376e7d1b069
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137483"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91557213"
 ---
 # <a name="webview-javascript-alerts-on-windows"></a>Windows 上的 Web 视图 JavaScript 警报
 
@@ -50,7 +50,7 @@ var webView = new Xamarin.Forms.WebView
 webView.On<Windows>().SetIsJavaScriptAlertEnabled(true);
 ```
 
-`WebView.On<Windows>`方法指定此平台特定的仅在通用 Windows 平台上运行。 [ `WebView.SetIsJavaScriptAlertEnabled` ] （X： Xamarin.Forms 。PlatformConfiguration. WindowsSpecific SetIsJavaScriptAlertEnabled （ Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration、 Xamarin.Forms 。Web 视图}，System.object）方法， [`Xamarin.Forms.PlatformConfiguration.WindowsSpecific`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific) 用于控制是否启用 JavaScript 警报。 此外，该 `WebView.SetIsJavaScriptAlertEnabled` 方法还可用于通过调用 [`IsJavaScriptAlertEnabled`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.WebView.IsJavaScriptAlertEnabled*) 方法返回是否已启用 JavaScript 警报来切换这些警报：
+`WebView.On<Windows>`方法指定此平台特定的仅在通用 Windows 平台上运行。 [ `WebView.SetIsJavaScriptAlertEnabled` ] (x： Xamarin.Forms 。PlatformConfiguration. WindowsSpecific. SetIsJavaScriptAlertEnabled (Xamarin.Forms 。IPlatformElementConfiguration { Xamarin.Forms 。PlatformConfiguration、 Xamarin.Forms 。在命名空间中，Web 视图}、) # A3 方法 [`Xamarin.Forms.PlatformConfiguration.WindowsSpecific`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific) 用于控制是否启用 JavaScript 警报。 此外，该 `WebView.SetIsJavaScriptAlertEnabled` 方法还可用于通过调用 [`IsJavaScriptAlertEnabled`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.WebView.IsJavaScriptAlertEnabled*) 方法返回是否已启用 JavaScript 警报来切换这些警报：
 
 ```csharp
 _webView.On<Windows>().SetIsJavaScriptAlertEnabled(!_webView.On<Windows>().IsJavaScriptAlertEnabled());
@@ -62,6 +62,6 @@ _webView.On<Windows>().SetIsJavaScriptAlertEnabled(!_webView.On<Windows>().IsJav
 
 ## <a name="related-links"></a>相关链接
 
-- [PlatformSpecifics （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [PlatformSpecifics (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [创建平台特定信息](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [WindowsSpecific API](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific)

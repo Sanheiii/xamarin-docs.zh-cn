@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsStackLayout
+title: Xamarin.Forms StackLayout
 description: StackLayout 在一维堆栈中的水平或垂直方向上组织子视图。
 ms.prod: xamarin
 ms.assetid: 6A91EA70-268C-462C-AAAF-F8DA011403F8
@@ -10,18 +10,18 @@ ms.date: 05/11/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f624674cc6d4ba1bdc34a42fb52fb63ff8a7135a
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 0c8e7c0e3edb581e13944ce48e2241f035791574
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137964"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556849"
 ---
-# <a name="xamarinforms-stacklayout"></a>Xamarin.FormsStackLayout
+# <a name="no-locxamarinforms-stacklayout"></a>Xamarin.Forms StackLayout
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-stacklayoutdemos)
 
-[![Xamarin.FormsStackLayout](stacklayout-images/layouts.png "[!基金.非 LOC （Xamarin）] StackLayout")](stacklayout-images/layouts-large.png#lightbox "[!基金.非 LOC （Xamarin）] StackLayout")
+[![：： no (Xamarin。 Forms) ：：： StackLayout](stacklayout-images/layouts.png "：： no (Xamarin。 Forms) ：：： StackLayout")](stacklayout-images/layouts-large.png#lightbox "：： no (Xamarin。 Forms) ：：： StackLayout")
 
 在 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 一维堆栈中，在水平或垂直方向上组织子视图。 默认情况下， `StackLayout` 垂直方向。 此外，还 `StackLayout` 可用作包含其他子布局的父布局。
 
@@ -35,7 +35,7 @@ ms.locfileid: "84137964"
 [`StackLayout`](xref:Xamarin.Forms.StackLayout)类派生自 `Layout<T>` 类，该类定义 `Children` 类型的属性 `IList<T>` 。 `Children`属性是类的 `ContentProperty` `Layout<T>` ，因此无需从 XAML 显式设置。
 
 > [!TIP]
-> 若要获得最佳布局性能，请遵循[优化布局性能](~/xamarin-forms/deploy-test/performance.md#optimize-layout-performance)中的准则。
+> 若要获得最佳布局性能，请遵循 [优化布局性能](~/xamarin-forms/deploy-test/performance.md#optimize-layout-performance)中的准则。
 
 ## <a name="vertical-orientation"></a>垂直方向
 
@@ -207,8 +207,8 @@ public class StackLayoutSpacingPageCS : ContentPage
 
 及其 [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) 子视图的和属性 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 可以设置为结构中的字段， [`LayoutOptions`](xref:Xamarin.Forms.LayoutOptions) 该结构封装两个布局首选项：
 
-- *对齐方式*确定子视图在其父布局中的位置和大小。
-- *展开*指示子视图是否应使用额外的空间（如果有）。
+- *对齐方式* 确定子视图在其父布局中的位置和大小。
+- *展开* 指示子视图是否应使用额外的空间（如果有）。
 
 > [!TIP]
 > 除非需要，否则不要设置的 [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 和 [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) 属性 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 。 `LayoutOptions.Fill` 和 `LayoutOptions.FillAndExpand` 的默认值可以实现最佳布局优化。 更改这些属性将会产生费用，甚至会消耗内存，即使在将它们设置回默认值时也是如此。
@@ -401,7 +401,7 @@ public ExpansionPageCS()
 [![嵌套 StackLayout 对象的屏幕截图](stacklayout-images/combined.png "嵌套 StackLayouts")](stacklayout-images/combined-large.png#lightbox "嵌套 StackLayouts")
 
 > [!IMPORTANT]
-> 嵌套 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 对象和其他布局的深度越多，嵌套布局就会影响性能。 有关详细信息，请参阅[选择正确的布局](~/xamarin-forms/deploy-test/performance.md#choose-the-correct-layout)。
+> 嵌套 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 对象和其他布局的深度越多，嵌套布局就会影响性能。 有关详细信息，请参阅 [选择正确的布局](~/xamarin-forms/deploy-test/performance.md#choose-the-correct-layout)。
 
 等效 C# 代码如下：
 
@@ -471,7 +471,7 @@ public class CombinedStackLayoutPageCS : ContentPage
 
 ## <a name="related-links"></a>相关链接
 
-- [StackLayout 演示（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-stacklayoutdemos)
-- [布局选项Xamarin.Forms](layout-options.md)
+- [StackLayout 演示 (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-stacklayoutdemos)
+- [布局选项 Xamarin.Forms](layout-options.md)
 - [选择 Xamarin.Forms 布局](choose-layout.md)
 - [提高 Xamarin.Forms 应用程序性能](~/xamarin-forms/deploy-test/performance.md)

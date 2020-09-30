@@ -10,12 +10,12 @@ ms.date: 09/14/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6de2caf95d4ce983f7e97e0bc017932df534aedb
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: c6d568e948f02952fa71ed21af48160a53bfc419
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86931854"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556537"
 ---
 # <a name="touch-manipulations"></a>触摸操作
 
@@ -27,7 +27,7 @@ _使用矩阵变换实现触控拖动、收缩和旋转_
 
 ![用于转换、缩放和旋转的位图](touch-images/touchmanipulationsexample.png)
 
-此处显示的所有示例都使用 Xamarin.Forms 在[**调用来自效果的事件**](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)一文中介绍的触摸跟踪效果。
+此处显示的所有示例都使用 Xamarin.Forms 在 [**调用来自效果的事件**](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)一文中介绍的触摸跟踪效果。
 
 ## <a name="dragging-and-translation"></a>拖动和转换
 
@@ -96,7 +96,7 @@ public partial class BitmapDraggingPage : ContentPage
 
 如果没有任何其他代码， `SKMatrix` 值始终为 "标识" 矩阵，并且不会影响位图的显示。 `OnTouchEffectAction`XAML 文件中的处理程序集的目标是更改矩阵值，以反映触控操作。
 
-`OnTouchEffectAction`处理程序从将值转换 Xamarin.Forms `Point` 为 SkiaSharp 值开始 `SKPoint` 。 这只是基于的 `Width` 和 `Height` 属性 `SKCanvasView` （与设备无关的单位）和 `CanvasSize` 属性（以像素为单位）进行缩放的简单问题：
+`OnTouchEffectAction`处理程序从将值转换 Xamarin.Forms `Point` 为 SkiaSharp 值开始 `SKPoint` 。 这只是基于 `Width` 与设备无关的单位 (的和属性进行缩放的简单因素， `Height` `SKCanvasView`) 和 `CanvasSize` 属性（以像素为单位）：
 
 ```csharp
 public partial class BitmapDraggingPage : ContentPage
@@ -150,7 +150,7 @@ public partial class BitmapDraggingPage : ContentPage
 }
 ```
 
-当手指首次触摸屏幕时， `TouchActionType.Pressed` 将激发类型为的事件。 第一种任务是确定手指是否接触到位。 此类任务通常称为_命中测试_。 在这种情况下，可以通过以下方法来完成命中测试：创建 `SKRect` 对应于位图的值，对其应用矩阵转换，然后 `MapRect` 确定触摸点是否位于已转换的矩形内。
+当手指首次触摸屏幕时， `TouchActionType.Pressed` 将激发类型为的事件。 第一种任务是确定手指是否接触到位。 此类任务通常称为 _命中测试_。 在这种情况下，可以通过以下方法来完成命中测试：创建 `SKRect` 对应于位图的值，对其应用矩阵转换，然后 `MapRect` 确定触摸点是否位于已转换的矩形内。
 
 如果是这种情况，则 `touchId` 字段将设置为 TOUCH ID，并保存 finger 位置。
 
@@ -160,9 +160,9 @@ public partial class BitmapDraggingPage : ContentPage
 
 ## <a name="pinching-and-scaling"></a>收缩和缩放
 
-如果两根手指接触位图，会发生什么情况？ 如果两根手指并行移动，则可能希望位图与手指一起移动。 如果两根手指执行 "缩小" 或 "拉伸" 操作，则可能希望将位图旋转（在下一节中进行讨论）或缩放。 缩放位图时，两根手指在相对于位图的位置保持不变，并相应地缩放位图。
+如果两根手指接触位图，会发生什么情况？ 如果两根手指并行移动，则可能希望位图与手指一起移动。 如果两根手指执行 "延展" 或 "拉伸" 操作，则您可能希望将位图旋转 (以便在下一部分) 或缩放。 缩放位图时，两根手指在相对于位图的位置保持不变，并相应地缩放位图。
 
-同时处理两个手指看起来很复杂，但请记住， `TouchAction` 处理程序一次只接收一根手指的信息。 如果两根手指正在操作位图，则对于每个事件，一个手指已更改位置，而另一个手指未更改。 在下面的**位图缩放**页代码中，未更改位置的手指称为_透视_点，因为转换相对于该点。
+同时处理两个手指看起来很复杂，但请记住， `TouchAction` 处理程序一次只接收一根手指的信息。 如果两根手指正在操作位图，则对于每个事件，一个手指已更改位置，而另一个手指未更改。 在下面的 **位图缩放** 页代码中，未更改位置的手指称为 _透视_ 点，因为转换相对于该点。
 
 此程序与上一个程序之间的一个区别是必须保存多个 touch Id。 字典用于此目的，其中 touch ID 是字典键，字典值是该手指的当前位置：
 
@@ -266,13 +266,13 @@ public partial class BitmapScalingPage : ContentPage
 
 `Moved`不过，对操作的处理更为复杂。 如果只涉及一根手指，则处理过程与以前的程序非常相似。 对于两个或多个手指，程序还必须从涉及未移动的手指的字典中获取信息。 它通过将字典键复制到数组中，然后将第一个键与要移动的 finger 的 ID 进行比较来实现此功能。 这允许程序获取与未移动的手指相对应的透视点。
 
-接下来，该程序计算与透视点相关的新手指位置的两个向量，以及相对于该轴点的旧 finger 位置。 这些矢量的比率是缩放系数。 因为被零除是一种可能性，所以必须检查它们的值是否为无限值或 NaN （不是数字）。 如果一切正常，将使用 `SKMatrix` 保存为字段的值连接缩放转换。
+接下来，该程序计算与透视点相关的新手指位置的两个向量，以及相对于该轴点的旧 finger 位置。 这些矢量的比率是缩放系数。 由于可以使用被零除的情况，因此必须检查这些值是否为无限值或 NaN (不是数值) 值。 如果一切正常，将使用 `SKMatrix` 保存为字段的值连接缩放转换。
 
-当你尝试此页时，你会注意到，你可以用一或两根手指拖动位图，或者用两根手指缩放位图。 缩放为_各向异性_，这意味着在水平和垂直方向上缩放可能会有所不同。 这会扭曲纵横比，还允许您翻转位图以生成镜像图像。 您还可能发现您可以将位图缩小为零维度，并且它将消失。 在生产代码中，您需要防范这种情况。
+当你尝试此页时，你会注意到，你可以用一或两根手指拖动位图，或者用两根手指缩放位图。 缩放为 _各向异性_，这意味着在水平和垂直方向上缩放可能会有所不同。 这会扭曲纵横比，还允许您翻转位图以生成镜像图像。 您还可能发现您可以将位图缩小为零维度，并且它将消失。 在生产代码中，您需要防范这种情况。
 
 ## <a name="two-finger-rotation"></a>双指旋转
 
-"**位图旋转**" 页允许您使用两根手指进行旋转或 isotropic 缩放。 位图始终保持正确的纵横比。 同时使用两根手指进行旋转和各向异性缩放不会很好地工作，因为这两个任务的手指移动非常类似。
+" **位图旋转** " 页允许您使用两根手指进行旋转或 isotropic 缩放。 位图始终保持正确的纵横比。 同时使用两根手指进行旋转和各向异性缩放不会很好地工作，因为这两个任务的手指移动非常类似。
 
 此程序的第一个重要区别是命中测试逻辑。 之前的程序使用的 `Contains` 方法 `SKRect` 来确定触摸点是否在与位图相对应的已转换矩形内。 但当用户对位图进行操作时，位图可能会旋转，并且 `SKRect` 无法正确表示旋转的矩形。 在这种情况下，你可能会担心命中测试逻辑需要实现而不是复杂的分析几何。
 
@@ -401,7 +401,7 @@ public partial class BitmapRotationPage : ContentPage
 
 还可能会涉及缩放，因此将基于旋转角度旋转旧矢量。 现在，两个向量的相对大小为缩放系数。 请注意，相同的 `scale` 值用于水平和垂直缩放，因此缩放是 isotropic 的。 此 `matrix` 字段由旋转矩阵和刻度矩阵进行调整。
 
-如果你的应用程序需要为单个位图（或其他对象）实现触控处理，则可以将这三个示例中的代码调整为适用于你自己的应用程序。 但如果需要为多个位图实现触控处理，则可能需要在其他类中封装这些触控操作。
+如果你的应用程序需要为单个位图实现触控处理 (或其他对象) ，你可以将这三个示例中的代码调整为你自己的应用程序。 但如果需要为多个位图实现触控处理，则可能需要在其他类中封装这些触控操作。
 
 ## <a name="encapsulating-the-touch-operations"></a>封装触控操作
 
@@ -419,7 +419,7 @@ enum TouchManipulationMode
 }
 ```
 
-`PanOnly`是使用平移实现的单指拖动。 所有后续选项还包括平移，但涉及两根手指： `IsotropicScale` 是一项挤压操作，使对象在水平和垂直方向上均匀缩放。 `AnisotropicScale`允许不相等缩放。
+`PanOnly` 是使用平移实现的单指拖动。 所有后续选项还包括平移，但涉及两根手指： `IsotropicScale` 是一项挤压操作，使对象在水平和垂直方向上均匀缩放。 `AnisotropicScale` 允许不相等缩放。
 
 `ScaleRotate`选项用于双指缩放和旋转。 缩放是 isotropic 的。 如前文所述，通过各向异性缩放实现双指旋转是有问题的，因为 finger 移动实质上是相同的。
 
@@ -476,7 +476,7 @@ enum TouchManipulationMode
 
 到底部是一个 `SKCanvasView` ， `TouchEffect` 附加到括着它的单单元格 `Grid` 。
 
-[**TouchManipulationPage.xaml.cs**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TouchManipulationPage.xaml.cs)代码隐藏文件有一个 `bitmap` 字段，但它的类型不是 `SKBitmap` 。 类型为 `TouchManipulationBitmap` （稍后将看到的类）：
+[**TouchManipulationPage.xaml.cs**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TouchManipulationPage.xaml.cs)代码隐藏文件有一个 `bitmap` 字段，但它的类型不是 `SKBitmap` 。 此类型 `TouchManipulationBitmap` (你将很快) 的类：
 
 ```csharp
 public partial class TouchManipulationPage : ContentPage
@@ -574,9 +574,9 @@ public partial class TouchManipulationPage : ContentPage
 
 如果该 `HitTest` 方法返回表示 `true` &mdash; 手指已在由位图占用的区域内触摸屏幕，则 &mdash; touch ID 将添加到 `TouchIds` 集合中。 此 ID 表示该手指的触摸事件顺序，直到手指从屏幕上移开。 如果有多个手指触摸位图，则 `touchIds` 集合中每个手指都包含一个 TOUCH ID。
 
-`TouchAction`处理程序还会调用 `ProcessTouchEvent` 中的类 `TouchManipulationBitmap` 。 这就是实际触控处理的某些（但不是全部）情况。
+`TouchAction`处理程序还会调用 `ProcessTouchEvent` 中的类 `TouchManipulationBitmap` 。 在这种情况下，某些 (（但不是所有）实际触控处理) 。
 
-[`TouchManipulationBitmap`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TouchManipulationBitmap.cs)类是的包装类 `SKBitmap` ，它包含用于呈现位图和处理触摸事件的代码。 它与类中的更一般化代码结合使用 `TouchManipulationManager` （稍后会看到）。
+[`TouchManipulationBitmap`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TouchManipulationBitmap.cs)类是的包装类 `SKBitmap` ，它包含用于呈现位图和处理触摸事件的代码。 它与类中更一般化的代码一起工作， `TouchManipulationManager` (稍后会看到) 。
 
 `TouchManipulationBitmap`构造函数保存 `SKBitmap` 并实例化两个属性 `TouchManager` ：类型的属性 `TouchManipulationManager` 和类型为的 `Matrix` 属性 `SKMatrix` ：
 
@@ -624,7 +624,7 @@ class TouchManipulationBitmap
 }
 ```
 
-`HitTest` `true` 如果用户在位图边界内的某个点上触及屏幕，则该方法返回。 这将使用前面在**位图旋转**页面中显示的逻辑：
+`HitTest` `true` 如果用户在位图边界内的某个点上触及屏幕，则该方法返回。 这将使用前面在 **位图旋转** 页面中显示的逻辑：
 
 ```csharp
 class TouchManipulationBitmap
@@ -706,9 +706,9 @@ class TouchManipulationBitmap
 
 在 `Moved` 和 `Released` 事件中，方法调用 `Manipulate` 。 在这些情况下， `touchDictionary` 包含一个或多个 `TouchManipulationInfo` 对象。 如果 `touchDictionary` 包含一个项，则 `PreviousPoint` 和 `NewPoint` 值可能不相等，并且表示手指的移动。 如果有多个手指接触位图，则字典包含多个项，但其中只有一个项具有不同的 `PreviousPoint` 和 `NewPoint` 值。 所有其余部分都具有相同的 `PreviousPoint` `NewPoint` 值和值。
 
-这一点很重要： `Manipulate` 方法可以假定它只处理一个手指的移动。 在此调用时，任何其他手指都不会移动，如果它们确实在移动（可能的情况下），则会在以后对这些移动进行处理 `Manipulate` 。
+这一点很重要： `Manipulate` 方法可以假定它只处理一个手指的移动。 在此调用时，任何其他手指都不会移动，如果它们确实移动 (可能会) ，则在以后对这些移动进行处理 `Manipulate` 。
 
-此 `Manipulate` 方法首先将字典复制到数组，以方便使用。 它忽略前两项以外的任何项。 如果两个手指尝试操作位图，则忽略其他手指。 `Manipulate`是的最终成员 `TouchManipulationBitmap` ：
+此 `Manipulate` 方法首先将字典复制到数组，以方便使用。 它忽略前两项以外的任何项。 如果两个手指尝试操作位图，则忽略其他手指。 `Manipulate` 是的最终成员 `TouchManipulationBitmap` ：
 
 ```csharp
 class TouchManipulationBitmap
@@ -751,7 +751,7 @@ class TouchManipulationBitmap
 
 在这两种情况下， `TouchManipulationManager` 将返回一个 `SKMatrix` 值，该方法将该方法与 `Matrix` `TouchManipulationPage` 用来呈现位图的当前属性连接起来。
 
-`TouchManipulationManager`是通用化的，除了使用以外的其他文件 `TouchManipulationMode` 。 您可以在自己的应用程序中使用此类，而无需更改。 它定义类型为 `TouchManipulationMode` 的单一属性：
+`TouchManipulationManager` 是通用化的，除了使用以外的其他文件 `TouchManipulationMode` 。 您可以在自己的应用程序中使用此类，而无需更改。 它定义类型为 `TouchManipulationMode` 的单一属性：
 
 ```csharp
 class TouchManipulationManager
@@ -763,7 +763,7 @@ class TouchManipulationManager
 
 不过，您可能希望避免此 `AnisotropicScale` 选项。 通过此选项，可以非常轻松地处理位图，使其中一个缩放因子变为零。 这会使位图消失，不会返回。 如果确实需要进行各向异性缩放，则需要增强逻辑，以避免产生不良结果。
 
-`TouchManipulationManager`使用向量，但由于 `SKVector` SkiaSharp 中没有结构，因此 `SKPoint` 改用。 `SKPoint`支持减法运算符，并可将结果视为向量。 唯一需要添加的特定于向量的逻辑是 `Magnitude` 计算：
+`TouchManipulationManager` 使用向量，但由于 `SKVector` SkiaSharp 中没有结构，因此 `SKPoint` 改用。 `SKPoint` 支持减法运算符，并可将结果视为向量。 唯一需要添加的特定于向量的逻辑是 `Magnitude` 计算：
 
 ```csharp
 class TouchManipulationManager
@@ -778,7 +778,7 @@ class TouchManipulationManager
 
 选择旋转后，两个单向和双指操作方法首先处理旋转。 如果检测到任何旋转，则会有效地删除旋转组件。 仍会将其视为平移和缩放。
 
-下面是 `OneFingerManipulate` 方法。 如果尚未启用单指旋转，则逻辑简单， &mdash; 只需使用上一个点和新点来构造一个名为 `delta` 的向量，该向量精确对应于转换。 在启用了单指旋转的情况下，该方法使用从透视点（位图中心）到上一个点和新点的角度来构造旋转矩阵：
+下面是 `OneFingerManipulate` 方法。 如果尚未启用单指旋转，则逻辑简单， &mdash; 只需使用上一个点和新点来构造一个名为 `delta` 的向量，该向量精确对应于转换。 启用了单指旋转后，该方法使用从) 位图中心 (点到上一个点和新点的角度来构造旋转矩阵：
 
 ```csharp
 class TouchManipulationManager
@@ -829,7 +829,7 @@ class TouchManipulationManager
 }
 ```
 
-在 `TwoFingerManipulate` 方法中，"透视点" 是指在此特定触摸事件中未移动的手指的位置。 旋转非常类似于单指旋转，然后针对旋转调整名为的向量 `oldVector` （基于前一个点）。 其余移动被解释为缩放：
+在 `TwoFingerManipulate` 方法中，"透视点" 是指在此特定触摸事件中未移动的手指的位置。 旋转非常类似于单指旋转，然后基于上一个点) 的名为 `oldVector` (的矢量针对旋转进行调整。 其余移动被解释为缩放：
 
 ```csharp
 class TouchManipulationManager
@@ -1064,7 +1064,7 @@ public partial class BitmapScatterViewPage : ContentPage
 
 缩放操作通常需要使用两根手指来使用一条挤压手势。 但是，可以通过用手指移动位图的角来实现使用单个手指进行缩放。
 
-这会在**单指角缩放**页面中进行演示。 由于此示例使用的缩放类型略微不同于在类中实现的类型 `TouchManipulationManager` ，因此它不使用该类或 `TouchManipulationBitmap` 类。 相反，所有触控逻辑都在代码隐藏文件中。 此逻辑比平时更简单，因为它一次只跟踪一个手指，而只是忽略可能触摸屏幕的任何辅助手指。
+这会在 **单指角缩放** 页面中进行演示。 由于此示例使用的缩放类型略微不同于在类中实现的类型 `TouchManipulationManager` ，因此它不使用该类或 `TouchManipulationBitmap` 类。 相反，所有触控逻辑都在代码隐藏文件中。 此逻辑比平时更简单，因为它一次只跟踪一个手指，而只是忽略可能触摸屏幕的任何辅助手指。
 
 [**SingleFingerCornerScale**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/SingleFingerCornerScalePage.xaml)页实例化 `SKCanvasView` 类并创建 `TouchEffect` 用于跟踪触控事件的对象：
 
@@ -1273,6 +1273,6 @@ else
 
 ## <a name="related-links"></a>相关链接
 
-- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [SkiaSharp Api](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (示例) ](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 - [从效果调用事件](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)

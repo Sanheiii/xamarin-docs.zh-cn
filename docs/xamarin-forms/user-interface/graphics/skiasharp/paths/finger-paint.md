@@ -10,12 +10,12 @@ ms.date: 04/05/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 074b782bfc5458cf89e593913b6f31de633ffd73
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 98722d29a674e4d69f31a670a541eaabb550898e
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938146"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91555640"
 ---
 # <a name="finger-painting-in-skiasharp"></a>SkiaSharp 中的 Finger 绘图
 
@@ -27,9 +27,9 @@ _使用手指在画布上绘制。_
 
 ![手指绘制中的练习](finger-paint-images/fingerpaintsample.png)
 
-中的触摸支持 Xamarin.Forms 不允许在屏幕上跟踪单个手指，因此开发了 Xamarin.Forms 触摸跟踪效果以提供额外的触控支持。 此效果在[**从效果中调用事件**](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)一文中进行了介绍。 示例程序[**触摸跟踪效果演示**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-touchtrackingeffect/)包含使用 SkiaSharp 的两个页面，其中包括一个手指刷程序。
+中的触摸支持 Xamarin.Forms 不允许在屏幕上跟踪单个手指，因此开发了 Xamarin.Forms 触摸跟踪效果以提供额外的触控支持。 此效果在 [**从效果中调用事件**](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)一文中进行了介绍。 示例程序 [**触摸跟踪效果演示**](/samples/xamarin/xamarin-forms-samples/effects-touchtrackingeffect/) 包含使用 SkiaSharp 的两个页面，其中包括一个手指刷程序。
 
-[**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)解决方案包括此触摸跟踪事件。 .NET Standard 库项目包括 `TouchEffect` 类、 `TouchActionType` 枚举、 `TouchActionEventHandler` 委托和 `TouchActionEventArgs` 类。 每个平台项目都包含一个 `TouchEffect` 适用于该平台的类; iOS 项目还包含一个 `TouchRecognizer` 类。
+[**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)解决方案包括此触摸跟踪事件。 .NET Standard 库项目包括 `TouchEffect` 类、 `TouchActionType` 枚举、 `TouchActionEventHandler` 委托和 `TouchActionEventArgs` 类。 每个平台项目都包含一个 `TouchEffect` 适用于该平台的类; iOS 项目还包含一个 `TouchRecognizer` 类。
 
 **SkiaSharpFormsDemos**中的**finger 绘图**页是一种简化的 finger 绘制实现。 它不允许选择颜色或描边宽度，它无法清除画布，当然也无法保存图稿。
 
@@ -170,11 +170,11 @@ public partial class FingerPaintPage : ContentPage
 
 [![手指绘制页的三重屏幕截图](finger-paint-images/fingerpaint-small.png)](finger-paint-images/fingerpaint-large.png#lightbox "手指绘制页的三重屏幕截图")
 
-现在，您已了解如何绘制线条并使用参数方程定义曲线。 后面的有关[**SkiaSharp 曲线和路径**](../curves/index.md)的部分介绍了支持的各种曲线类型 `SKPath` 。 但有一个有用的先决条件就是探索[**SkiaSharp 转换**](../transforms/index.md)。
+现在，您已了解如何绘制线条并使用参数方程定义曲线。 后面的有关 [**SkiaSharp 曲线和路径**](../curves/index.md) 的部分介绍了支持的各种曲线类型 `SKPath` 。 但有一个有用的先决条件就是探索 [**SkiaSharp 转换**](../transforms/index.md)。
 
 ## <a name="related-links"></a>相关链接
 
-- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
-- [触摸跟踪效果演示（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-touchtrackingeffect/)
+- [SkiaSharp Api](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (示例) ](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [触摸跟踪效果演示 (示例) ](/samples/xamarin/xamarin-forms-samples/effects-touchtrackingeffect/)
 - [从效果调用事件](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)

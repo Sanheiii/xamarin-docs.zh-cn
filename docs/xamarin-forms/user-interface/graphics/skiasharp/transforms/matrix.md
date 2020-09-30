@@ -10,16 +10,16 @@ ms.date: 04/12/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 020319761ba1274495b7595a0d18435f98a5f990
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 911365b6293fecd3bf309f3e61d9b232d90b7a13
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937171"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556550"
 ---
 # <a name="matrix-transforms-in-skiasharp"></a>SkiaSharp 中的矩阵转换
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _利用多样的转换矩阵深入了解 SkiaSharp 转换_
 
@@ -41,7 +41,7 @@ _利用多样的转换矩阵深入了解 SkiaSharp 转换_
 | 0  0  1 |
 </pre>
 
-您可以使用静态方法创建一个标识矩阵 [`SKMatrix.MakeIdentity`](xref:SkiaSharp.SKMatrix.MakeIdentity) ：
+您可以使用静态方法创建一个标识矩阵  [`SKMatrix.MakeIdentity`](xref:SkiaSharp.SKMatrix.MakeIdentity) ：
 
 ```csharp
 SKMatrix matrix = SKMatrix.MakeIdentity();
@@ -49,13 +49,13 @@ SKMatrix matrix = SKMatrix.MakeIdentity();
 
 `SKMatrix`默认构造函数不*not*返回恒等矩阵。 它将返回一个矩阵，其中所有单元格均设置为零。 `SKMatrix`除非你计划手动设置这些单元格，否则不要使用构造函数。
 
-当 SkiaSharp 呈现图形对象时，每个点（x，y）都将有效地转换为第三列中的 1 x 3 矩阵：
+当 SkiaSharp 呈现图形对象时，每个点 (x，y) 会有效地转换为第三列中的 1 x 3 矩阵：
 
 <pre>
 | x  y  1 |
 </pre>
 
-这一 3 x 3 的矩阵表示一个三维点，其中 Z 坐标设置为1。 有一些数学原因（稍后讨论），二维矩阵转换需要在三个维度中工作。 您可以将此 1 x 3 矩阵视为表示3D 坐标系中的一个点，但始终在 Z 等于1的2D 平面上。
+这一 3 x 3 的矩阵表示一个三维点，其中 Z 坐标设置为1。  (稍后将介绍一些数学原因) 二维矩阵转换需要在三个维度中工作。 您可以将此 1 x 3 矩阵视为表示3D 坐标系中的一个点，但始终在 Z 等于1的2D 平面上。
 
 然后，这一 3 x 3 的矩阵与变换矩阵相乘，结果是在画布上呈现的点：
 
@@ -149,15 +149,15 @@ SKMatrix matrix = SKMatrix.MakeIdentity();
 
 180度旋转等效于水平和垂直翻转对象，这也是通过设置–1的缩放因子来完成的。
 
-所有这些类型的转换都分类为*仿射*转换。 仿射转换从不涉及矩阵的第三列，这将保留默认值0、0和1。 [**非仿射转换**](non-affine.md)一文介绍了非仿射转换。
+所有这些类型的转换都分类为 *仿射* 转换。 仿射转换从不涉及矩阵的第三列，这将保留默认值0、0和1。 [**非仿射转换**](non-affine.md)一文介绍了非仿射转换。
 
 ## <a name="matrix-multiplication"></a>矩阵相乘
 
-使用转换矩阵的一个明显优势是，可通过矩阵乘法获取复合转换，这在 SkiaSharp 文档中通常称为 "*串联*"。 在中，许多与转换相关的方法是 `SKCanvas` 指 "串联" 或 "预先连接"。 这是指乘法的阶数，这一点非常重要，因为矩阵乘法不能交换。
+使用转换矩阵的一个明显优势是，可通过矩阵乘法获取复合转换，这在 SkiaSharp 文档中通常称为 " *串联*"。 在中，许多与转换相关的方法是 `SKCanvas` 指 "串联" 或 "预先连接"。 这是指乘法的阶数，这一点非常重要，因为矩阵乘法不能交换。
 
 例如，该方法的文档 [`Translate`](xref:SkiaSharp.SKCanvas.Translate(System.Single,System.Single)) 指出它 "用指定的翻译预 concats 当前矩阵"，而该方法的文档 [`Scale`](xref:SkiaSharp.SKCanvas.Scale(System.Single,System.Single)) 指出它 "用指定的刻度预 concats 当前矩阵"。
 
-这意味着由方法调用指定的转换为乘数（左操作数），而当前转换矩阵为被乘数（右操作数）。
+这意味着由方法调用指定的转换是左操作数 (的乘数) 并且当前的转换矩阵是右操作数)  (被乘数。
 
 假设 `Translate` 调用后跟 `Scale` ：
 
@@ -221,7 +221,7 @@ canvas.Translate(–px, –py);
 │ TransX  TransY  Persp2 │
 </pre>
 
-`SKMatrix`还定义了一个名为 [`Values`](xref:SkiaSharp.SKMatrix.Values) 的类型的属性 `float[]` 。 此属性可用于在顺序、、、、、、、和中的一次拍摄中设置或获取九个值 `ScaleX` `SkewX` `TransX` `SkewY` `ScaleY` `TransY` `Persp0` `Persp1` `Persp2` 。
+`SKMatrix` 还定义了一个名为 [`Values`](xref:SkiaSharp.SKMatrix.Values) 的类型的属性 `float[]` 。 此属性可用于在顺序、、、、、、、和中的一次拍摄中设置或获取九个值 `ScaleX` `SkewX` `TransX` `SkewY` `ScaleY` `TransY` `Persp0` `Persp1` `Persp2` 。
 
 `Persp0` `Persp1` `Persp2` [**非仿射转换**](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/non-affine.md)一文中讨论了、和单元。 如果这些单元格的默认值为0、0和1，则转换将乘以坐标点，如下所示：
 
@@ -243,14 +243,14 @@ canvas.Translate(–px, –py);
 
 - [`MakeTranslation`](xref:SkiaSharp.SKMatrix.MakeTranslation(System.Single,System.Single))
 - [`MakeScale`](xref:SkiaSharp.SKMatrix.MakeScale(System.Single,System.Single))
-- [`MakeScale`](xref:SkiaSharp.SKMatrix.MakeScale(System.Single,System.Single,System.Single,System.Single))使用透视点
-- [`MakeRotation`](xref:SkiaSharp.SKMatrix.MakeRotation(System.Single))以弧度表示的角度
-- [`MakeRotation`](xref:SkiaSharp.SKMatrix.MakeRotation(System.Single,System.Single,System.Single))对于具有透视点的以弧度表示的角度
+- [`MakeScale`](xref:SkiaSharp.SKMatrix.MakeScale(System.Single,System.Single,System.Single,System.Single)) 使用透视点
+- [`MakeRotation`](xref:SkiaSharp.SKMatrix.MakeRotation(System.Single)) 以弧度表示的角度
+- [`MakeRotation`](xref:SkiaSharp.SKMatrix.MakeRotation(System.Single,System.Single,System.Single)) 对于具有透视点的以弧度表示的角度
 - [`MakeRotationDegrees`](xref:SkiaSharp.SKMatrix.MakeRotationDegrees(System.Single))
-- [`MakeRotationDegrees`](xref:SkiaSharp.SKMatrix.MakeRotationDegrees(System.Single,System.Single,System.Single))使用透视点
+- [`MakeRotationDegrees`](xref:SkiaSharp.SKMatrix.MakeRotationDegrees(System.Single,System.Single,System.Single)) 使用透视点
 - [`MakeSkew`](xref:SkiaSharp.SKMatrix.MakeSkew(System.Single,System.Single))
 
-`SKMatrix`还定义了多个连接两个矩阵的静态方法，这意味着将它们相乘。 这些方法的名称分别为 [`Concat`](xref:SkiaSharp.SKMatrix.Concat*) 、 [`PostConcat`](xref:SkiaSharp.SKMatrix.PostConcat*) 和 [`PreConcat`](xref:SkiaSharp.SKMatrix.PreConcat*) ，每个都有两个版本。 这些方法没有返回值;相反，它们 `SKMatrix` 通过参数引用现有值 `ref` 。 在下面的示例中，、 `A` `B` 和 `R` （对于 "结果"）都是 `SKMatrix` 值。
+`SKMatrix` 还定义了多个连接两个矩阵的静态方法，这意味着将它们相乘。 这些方法的名称分别为 [`Concat`](xref:SkiaSharp.SKMatrix.Concat*) 、 [`PostConcat`](xref:SkiaSharp.SKMatrix.PostConcat*) 和 [`PreConcat`](xref:SkiaSharp.SKMatrix.PreConcat*) ，每个都有两个版本。 这些方法没有返回值;相反，它们 `SKMatrix` 通过参数引用现有值 `ref` 。 在下面的示例中 `A` ， `B` `R` "result" ) 的、和 (都是 `SKMatrix` 值。
 
 这两种 `Concat` 方法的调用方式如下：
 
@@ -325,9 +325,9 @@ SKMatrix.RotateDegrees(ref R, degrees);
 SKMatrix.RotateDegrees(ref R, degrees, px, py);
 ```
 
-这些方法*不会*将旋转转换连接到现有转换。 方法设置矩阵的所有单元格。 它们在功能上与 `MakeRotation` 和方法相同， `MakeRotationDegrees` 不同之处在于它们不会实例化 `SKMatrix` 该值。
+这些方法 *不会* 将旋转转换连接到现有转换。 方法设置矩阵的所有单元格。 它们在功能上与 `MakeRotation` 和方法相同， `MakeRotationDegrees` 不同之处在于它们不会实例化 `SKMatrix` 该值。
 
-假设你有一个 `SKPath` 要显示的对象，但你希望它具有稍有不同的方向或不同的中心点。 可以通过调用 [`Transform`](xref:SkiaSharp.SKPath.Transform(SkiaSharp.SKMatrix)) 具有参数的的方法来修改该路径的所有坐标 `SKPath` `SKMatrix` 。 "**路径转换**" 页演示了如何执行此操作。 [`PathTransform`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/PathTransformPage.cs)类引用 `HendecagramPath` 字段中的对象，但使用其构造函数将转换应用于该路径：
+假设你有一个 `SKPath` 要显示的对象，但你希望它具有稍有不同的方向或不同的中心点。 可以通过调用 [`Transform`](xref:SkiaSharp.SKPath.Transform(SkiaSharp.SKMatrix)) 具有参数的的方法来修改该路径的所有坐标 `SKPath` `SKMatrix` 。 " **路径转换** " 页演示了如何执行此操作。 [`PathTransform`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/PathTransformPage.cs)类引用 `HendecagramPath` 字段中的对象，但使用其构造函数将转换应用于该路径：
 
 ```csharp
 public class PathTransformPage : ContentPage
@@ -352,7 +352,7 @@ public class PathTransformPage : ContentPage
 }
 ```
 
-`HendecagramPath`对象的中心位于（0，0），星形的11个点从该中心向外延伸，方向为100。 这意味着路径具有正坐标和负坐标。 **路径转换**页面首选使用星形三次，并具有所有正坐标。 此外，它也不希望星形上的一个点直接指向。 它需要改用星号的一个点来向下直接指向。 （由于星形有11个点，因此不能同时具有这两者。）这需要将星形旋转360度除以22。
+`HendecagramPath`对象的中心位于 (0，0) ，星号的11个点从该中心向外延伸，方向为100个单位。 这意味着路径具有正坐标和负坐标。 **路径转换**页面首选使用星形三次，并具有所有正坐标。 此外，它也不希望星形上的一个点直接指向。 它需要改用星号的一个点来向下直接指向。  (因为星形包含11个点，所以不能同时具有这两个点。 ) 这需要将星形旋转360度除以22。
 
 构造函数 `SKMatrix` 使用方法从三个单独的转换生成一个对象 `PostConcat` ，该方法采用以下模式，其中 A、B 和 C 是的实例 `SKMatrix` ：
 
@@ -376,7 +376,7 @@ SKMatrix.PostConcat(ref matrix, SKMatrix.MakeTranslation(100, 100));
 SKMatrix.PostConcat(ref matrix, SKMatrix.MakeScale(3, 3));
 ```
 
-这会先围绕中心旋转路径，然后将其向右和向下平移100像素，以使所有坐标为正值。 然后，星号相对于其新的左上角（0，0）的大小增加。
+这会先围绕中心旋转路径，然后将其向右和向下平移100像素，以使所有坐标为正值。 然后，该星形相对于其新的左上角的大小增加，这是 (0，0) 的点。
 
 `PaintSurface`处理程序可以简单地呈现以下路径：
 
@@ -415,7 +415,7 @@ public class PathTransformPage : ContentPage
 transformedPath.Transform(matrix);
 ```
 
-该路径*不*会将此矩阵保留为属性。 相反，它会将转换应用于路径的所有坐标。 如果 `Transform` 再次调用，将再次应用该转换，而您可以返回的唯一方法是应用另一个撤消转换的矩阵。 幸运的是，该 `SKMatrix` 结构定义了一个 [`TryInvert`](xref:SkiaSharp.SKMatrix.TryInvert*) 方法，该方法可获取反向给定矩阵的矩阵：
+该路径 *不* 会将此矩阵保留为属性。 相反，它会将转换应用于路径的所有坐标。 如果 `Transform` 再次调用，将再次应用该转换，而您可以返回的唯一方法是应用另一个撤消转换的矩阵。 幸运的是，该 `SKMatrix` 结构定义了一个 [`TryInvert`](xref:SkiaSharp.SKMatrix.TryInvert*) 方法，该方法可获取反向给定矩阵的矩阵：
 
 ```csharp
 SKMatrix inverse;
@@ -442,15 +442,15 @@ SKRect transformedRect = matrix.MapRect(rect);
 
 ## <a name="interactive-experimentation"></a>交互式试验
 
-获得仿射转换的一种方法是在屏幕上以交互方式移动位图的三个角并查看转换结果。 这是 "**显示仿射矩阵**" 页面背后的概念。 此页需要另外两个也用于其他演示的类：
+获得仿射转换的一种方法是在屏幕上以交互方式移动位图的三个角并查看转换结果。 这是 " **显示仿射矩阵** " 页面背后的概念。 此页需要另外两个也用于其他演示的类：
 
-[`TouchPoint`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/TouchPoint.cs)类显示可在屏幕上拖动的半透明圆圈。 `TouchPoint`要求作为的 `SKCanvasView` 父级的或元素 `SKCanvasView` 具有 [`TouchEffect`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/TouchEffect.cs) 附加的。 将 `Capture` 属性设置为 `true`。 在 `TouchAction` 事件处理程序中，程序必须 `ProcessTouchEvent` `TouchPoint` 为每个实例调用中的方法 `TouchPoint` 。 `true`如果触摸事件导致触摸点移动，则方法返回。 而且， `PaintSurface` 处理程序必须 `Paint` 在每个实例中调用方法 `TouchPoint` ，并向其传递 `SKCanvas` 对象。
+[`TouchPoint`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/TouchPoint.cs)类显示可在屏幕上拖动的半透明圆圈。 `TouchPoint` 要求作为的 `SKCanvasView` 父级的或元素 `SKCanvasView` 具有 [`TouchEffect`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/TouchEffect.cs) 附加的。 将 `Capture` 属性设置为 `true`。 在 `TouchAction` 事件处理程序中，程序必须 `ProcessTouchEvent` `TouchPoint` 为每个实例调用中的方法 `TouchPoint` 。 `true`如果触摸事件导致触摸点移动，则方法返回。 而且， `PaintSurface` 处理程序必须 `Paint` 在每个实例中调用方法 `TouchPoint` ，并向其传递 `SKCanvas` 对象。
 
-`TouchPoint`演示 SkiaSharp 视觉对象可以在单独的类中封装的常见方法。 类可定义用于指定视觉对象特性的属性，并且具有参数的名为 `Paint` 的方法 `SKCanvas` 可以呈现视觉对象。
+`TouchPoint` 演示 SkiaSharp 视觉对象可以在单独的类中封装的常见方法。 类可定义用于指定视觉对象特性的属性，并且具有参数的名为 `Paint` 的方法 `SKCanvas` 可以呈现视觉对象。
 
 的 `Center` 属性 `TouchPoint` 指示对象的位置。 此属性可设置为初始化位置;当用户在画布上拖动圆圈时，属性将发生变化。
 
-"**显示仿射矩阵" 页**还需要 [`MatrixDisplay`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/MatrixDisplay.cs) 类。 此类显示对象的单元格 `SKMatrix` 。 它有两个公共方法： `Measure` 若要获取呈现的矩阵的尺寸，并 `Paint` 显示它。 类包含类型为的 `MatrixPaint` 属性 `SKPaint` ，可将其替换为不同的字号或颜色。
+" **显示仿射矩阵" 页** 还需要 [`MatrixDisplay`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/MatrixDisplay.cs) 类。 此类显示对象的单元格 `SKMatrix` 。 它有两个公共方法： `Measure` 若要获取呈现的矩阵的尺寸，并 `Paint` 显示它。 类包含类型为的 `MatrixPaint` 属性 `SKPaint` ，可将其替换为不同的字号或颜色。
 
 [**ShowAffineMatrixPage**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ShowAffineMatrixPage.xaml)文件实例化 `SKCanvasView` 并附加一个 `TouchEffect` 。 [**ShowAffineMatrixPage.xaml.cs**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ShowAffineMatrixPage.xaml.cs)代码隐藏文件创建三个 `TouchPoint` 对象，然后将其设置为与从嵌入资源加载的位图的三个角相对应的位置：
 
@@ -597,7 +597,7 @@ public partial class ShowAffineMatrixPage : ContentPage
 
 尽管触摸点看起来好像是触摸点，但这只是一种错觉。 从触摸点计算的矩阵会转换位图，使拐角与触摸点重合。
 
-用户对位图进行移动、调整大小和旋转，并不是通过拖动角来实现，但通过直接在对象上使用一个或两个手指进行拖动、缩小和旋转，这种方式更加自然。 下一文[**触摸操作**](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/touch.md)中对此进行了介绍。
+用户对位图进行移动、调整大小和旋转，并不是通过拖动角来实现，但通过直接在对象上使用一个或两个手指进行拖动、缩小和旋转，这种方式更加自然。 下一文 [**触摸操作**](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/touch.md)中对此进行了介绍。
 
 ## <a name="the-reason-for-the-3-by-3-matrix"></a>3 x 3 矩阵的原因
 
@@ -611,7 +611,7 @@ public partial class ShowAffineMatrixPage : ContentPage
 
 这适用于缩放、旋转甚至扭曲，但它不能是转换的最基本转换。
 
-问题在于，2 x 2 的矩阵表示两个维度中的*线性*转换。 线性转换保留一些基本算术运算，但其中一个含义是线性转换决不会改变点（0，0）。 线性转换无法进行转换。
+问题在于，2 x 2 的矩阵表示两个维度中的 *线性* 转换。 线性转换保留一些基本算术运算，但其中一个含义是线性转换永远不会改变点 (0，0) 。 线性转换无法进行转换。
 
 在三个维度中，线性变换矩阵如下所示：
 
@@ -641,7 +641,7 @@ public partial class ShowAffineMatrixPage : ContentPage
 
 所有内容保持在二维平面上，其中 Z 等于1，但 `SkewXZ` 和 `SkewYZ` 单元格实际上变成了二维转换因素。
 
-这就是三维线性转换如何作为二维非线性转换的方式。 （与此类似，3D 图形中的转换基于 4 x 4 矩阵。）
+这就是三维线性转换如何作为二维非线性转换的方式。 按照类比 (，3D 图形中的变换基于4个 4 x 4 的矩阵。 ) 
 
 `SKMatrix`SkiaSharp 中的结构定义该第三行的属性：
 
@@ -651,9 +651,9 @@ public partial class ShowAffineMatrixPage : ContentPage
               │ TransX  TransY  Persp2 │
 </pre>
 
-和的非零值 `Persp0` 会 `Persp1` 导致在 Z 等于1的情况下将对象移出二维平面的变换。 在[**非仿射转换**](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/non-affine.md)一文中介绍了将这些对象移回该平面时会发生什么情况。
+和的非零值 `Persp0` 会 `Persp1` 导致在 Z 等于1的情况下将对象移出二维平面的变换。 在 [**非仿射转换**](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/non-affine.md)一文中介绍了将这些对象移回该平面时会发生什么情况。
 
 ## <a name="related-links"></a>相关链接
 
-- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [SkiaSharp Api](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (示例) ](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

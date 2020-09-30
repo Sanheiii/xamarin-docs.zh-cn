@@ -10,27 +10,27 @@ ms.date: 08/23/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 43aa429046c1b0f72a1cbe6a5b921da9b8907a49
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 2cc0806af28360cf4bf2bb7e382e8d0a423abab9
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84132218"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91555523"
 ---
 # <a name="the-skiasharp-linear-gradient"></a>SkiaSharp 线性渐变
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-[`SKPaint`](xref:SkiaSharp.SKPaint)类定义一个 [`Color`](xref:SkiaSharp.SKPaint.Color) 属性，该属性用于对线条进行描边或用纯色填充区域。 您还可以通过渐变线条或用_渐变_填充区域，这是一种逐渐混合的颜色：
+[`SKPaint`](xref:SkiaSharp.SKPaint)类定义一个 [`Color`](xref:SkiaSharp.SKPaint.Color) 属性，该属性用于对线条进行描边或用纯色填充区域。 您还可以通过渐变线条或用 _渐变_填充区域，这是一种逐渐混合的颜色：
 
 ![线性渐变示例](linear-gradient-images/LinearGradientSample.png "线性渐变示例")
 
-最基本的渐变类型是_线性_渐变。 颜色混合出现在直线上（称为_渐变线_）。 垂直于渐变线的线条具有相同的颜色。 使用这两种静态方法之一创建线性渐变 [`SKShader.CreateLinearGradient`](xref:SkiaSharp.SKShader.CreateLinearGradient*) 。 这两个重载的区别在于其中一个重载包含矩阵转换，而另一个重载不包含矩阵转换。 
+最基本的渐变类型是 _线性_ 渐变。 颜色混合出现 _在) 从_ 一个点到另一个点的 (。 垂直于渐变线的线条具有相同的颜色。 使用这两种静态方法之一创建线性渐变 [`SKShader.CreateLinearGradient`](xref:SkiaSharp.SKShader.CreateLinearGradient*) 。 这两个重载的区别在于其中一个重载包含矩阵转换，而另一个重载不包含矩阵转换。 
 
 这些方法返回一个类型为的对象 [`SKShader`](xref:SkiaSharp.SKShader) ，该对象的 [`Shader`](xref:SkiaSharp.SKPaint.Shader) 属性设置为 `SKPaint` 。 如果该 `Shader` 属性为非 null，则它将重写 `Color` 属性。 描边的任何线条或使用此对象填充的任何区域 `SKPaint` 都基于渐变而不是纯色。
 
 > [!NOTE]
-> `Shader`如果 `SKPaint` 在调用中包含对象，则将忽略属性 `DrawBitmap` 。 您可以使用的 `Color` 属性 `SKPaint` 来设置显示位图的透明度级别（如[显示 SkiaSharp 位图](../../bitmaps/displaying.md#displaying-in-pixel-dimensions)一文中所述），但不能使用 `Shader` 属性来显示具有渐变透明度的位图。 其他方法可用于显示具有渐变透明度的位图：文章[SkiaSharp 循环渐变](circular-gradients.md#radial-gradients-for-masking)和[SkiaSharp 合成模式和混合模式](../blend-modes/porter-duff.md#gradient-transparency-and-transitions)。
+> `Shader`如果 `SKPaint` 在调用中包含对象，则将忽略属性 `DrawBitmap` 。 您可以使用的 `Color` 属性 `SKPaint` 来设置显示位图 (的透明度级别，如) [显示 SkiaSharp 位图](../../bitmaps/displaying.md#displaying-in-pixel-dimensions) 一文中所述），但不能使用 `Shader` 属性来显示具有渐变透明度的位图。 其他方法可用于显示具有渐变透明度的位图：文章 [SkiaSharp 循环渐变](circular-gradients.md#radial-gradients-for-masking) 和 [SkiaSharp 合成模式和混合模式](../blend-modes/porter-duff.md#gradient-transparency-and-transitions)。
 
 ## <a name="corner-to-corner-gradients"></a>角部渐变
 
@@ -40,7 +40,7 @@ ms.locfileid: "84132218"
 - 水平到右上角
 - 对角向右下角
 
-对角线性渐变在 SkiaSharp 着色器的第一页和[**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)示例的**其他效果**部分中进行了演示。 **角部渐变**页面 `SKCanvasView` 在其构造函数中创建。 `PaintSurface`处理程序 `SKPaint` 在语句中创建一个对象 `using` ，然后定义一个中心在画布中的300像素的方形矩形：
+对角线性渐变在 SkiaSharp 着色器的第一页和[**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)示例的**其他效果**部分中进行了演示。 **角部渐变**页面 `SKCanvasView` 在其构造函数中创建。 `PaintSurface`处理程序 `SKPaint` 在语句中创建一个对象 `using` ，然后定义一个中心在画布中的300像素的方形矩形：
 
 ```csharp
 public class CornerToCornerGradientPage : ContentPage
@@ -95,11 +95,11 @@ public class CornerToCornerGradientPage : ContentPage
 - 值的数组 `float` ，指示渐变线中颜色的相对位置
 - 枚举的成员 [`SKShaderTileMode`](xref:SkiaSharp.SKShaderTileMode) ，指示渐变的行为如何超出渐变线的末端
 
-创建渐变对象之后，该方法会 `DrawRect` 使用包含着色器的对象绘制300像素的正方形矩形 `SKPaint` 。 它在 iOS、Android 和通用 Windows 平台（UWP）上运行：
+创建渐变对象之后，该方法会 `DrawRect` 使用包含着色器的对象绘制300像素的正方形矩形 `SKPaint` 。 此处它在 iOS、Android 和通用 Windows 平台 (UWP) 上运行：
 
 [![角部到角渐变](linear-gradient-images/CornerToCornerGradient.png "角部到角渐变")](linear-gradient-images/CornerToCornerGradient-Large.png#lightbox)
 
-渐变线由指定为前两个自变量的两个点定义。 请注意，这些点相对于_画布_，而_不_是与渐变一起显示的图形对象。 沿渐变线，颜色逐渐从左上角的红色过渡到右下角的蓝色。 垂直于渐变线的任何线条都具有恒定颜色。
+渐变线由指定为前两个自变量的两个点定义。 请注意，这些点相对于 _画布_ ，而 _不_ 是与渐变一起显示的图形对象。 沿渐变线，颜色逐渐从左上角的红色过渡到右下角的蓝色。 垂直于渐变线的任何线条都具有恒定颜色。
 
 `float`指定为第四个参数的值数组与颜色数组之间具有一对一的对应关系。 值指示在渐变线上出现这些颜色的相对位置。 此处，0表示 `Red` 在渐变线的开头发生，1表示 `Blue` 在行尾发生。 数字必须是升序，并且应在0到1的范围内。 如果它们不在该范围内，则将其调整为在该范围内。
 
@@ -158,13 +158,13 @@ public class CornerToCornerGradientPage : ContentPage
 
 [![角部到角梯度已满](linear-gradient-images/CornerToCornerGradientFull.png "角部到角梯度已满")](linear-gradient-images/CornerToCornerGradientFull-Large.png#lightbox)
 
-请注意，渐变在定义渐变线的点之外的同一模式中重复出现。 发生此重复的原因是的最后一个参数 `CreateLinearGradient` 为 `SKShaderTileMode.Repeat` 。 （稍后会显示其他选项。）
+请注意，渐变在定义渐变线的点之外的同一模式中重复出现。 发生此重复的原因是的最后一个参数 `CreateLinearGradient` 为 `SKShaderTileMode.Repeat` 。  (稍后会显示其他选项。 ) 
 
 另请注意，用来指定渐变线的点不是唯一的。 垂直于渐变线的线条具有相同的颜色，因此，您可以为相同的效果指定无限多的渐变线条。 例如，在使用水平渐变填充矩形时，可以指定左上角和右上角，或指定左上角和右下角，或者使用和与这些线条并行的任意两个点。
 
 ## <a name="interactively-experiment"></a>交互式试验
 
-可以通过**交互式线性渐变**页面以交互方式试验线性渐变。 本页使用 `InteractivePage` [**第三种方法绘制圆弧**](../../curves/arcs.md)一文中引入的类。 `InteractivePage` 处理 [`TouchEffect`](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md) 事件以维护 `TouchPoint` 对象的集合，这些对象可使用手指或鼠标移动。
+可以通过 **交互式线性渐变** 页面以交互方式试验线性渐变。 本页使用 `InteractivePage` [**第三种方法绘制圆弧**](../../curves/arcs.md)一文中引入的类。 `InteractivePage` 处理 [`TouchEffect`](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md) 事件以维护 `TouchPoint` 对象的集合，这些对象可使用手指或鼠标移动。
 
 XAML 文件将附加 `TouchEffect` 到的父 `SKCanvasView` ，还包括一个 `Picker` ，它允许您选择枚举的三个成员之一 [`SKShaderTileMode`](xref:SkiaSharp.SKShaderTileMode) ：
 
@@ -214,7 +214,7 @@ XAML 文件将附加 `TouchEffect` 到的父 `SKCanvasView` ，还包括一个 `
 </local:InteractivePage>
 ```
 
-代码隐藏文件中的构造函数 `TouchPoint` 为线性渐变的起点和终点创建两个对象。 `PaintSurface`处理程序定义三种颜色的数组（用于从红色到绿色的渐变到蓝色）并从获取当前的 `SKShaderTileMode` `Picker` ：
+代码隐藏文件中的构造函数 `TouchPoint` 为线性渐变的起点和终点创建两个对象。 `PaintSurface`处理程序定义三种颜色的数组， (用于从红色到绿色到蓝色) 的渐变，并从获取当前的 `SKShaderTileMode` `Picker` ：
 
 ```csharp
 public partial class InteractiveLinearGradientPage : InteractivePage
@@ -337,7 +337,7 @@ public partial class InteractiveLinearGradientPage : InteractivePage
 
 `SKShader`类不定义除之外的公共属性或方法 `Dispose` 。 `SKShader`因此，通过其静态方法创建的对象是不可变的。 即使您对两个不同的对象使用相同的渐变，您也可能希望略微改变梯度。 为此，您需要创建一个新的 `SKShader` 对象。
 
-"**渐变文本**" 页显示带有类似渐变的彩色文本和后台：
+" **渐变文本** " 页显示带有类似渐变的彩色文本和后台：
 
 [![渐变文本](linear-gradient-images/GradientText.png "渐变文本")](linear-gradient-images/GradientText-Large.png#lightbox)
 
@@ -514,7 +514,7 @@ public class GradientAnimationPage : ContentPage
 }
 ```
 
-略有不同的方法需要较少的代码。 此方法使用 [`SKShader.CreateLinearGradient`](xref:SkiaSharp.SKShader.CreateLinearGradient(SkiaSharp.SKPoint,SkiaSharp.SKPoint,SkiaSharp.SKColor[],System.Single[],SkiaSharp.SKShaderTileMode,SkiaSharp.SKMatrix)) 带有矩阵转换的重载方法作为最后一个参数。 此方法是[**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)示例中的版本：
+略有不同的方法需要较少的代码。 此方法使用 [`SKShader.CreateLinearGradient`](xref:SkiaSharp.SKShader.CreateLinearGradient(SkiaSharp.SKPoint,SkiaSharp.SKPoint,SkiaSharp.SKColor[],System.Single[],SkiaSharp.SKShaderTileMode,SkiaSharp.SKMatrix)) 带有矩阵转换的重载方法作为最后一个参数。 此方法是 [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) 示例中的版本：
 
 ```csharp
 public class GradientAnimationPage : ContentPage
@@ -545,13 +545,13 @@ public class GradientAnimationPage : ContentPage
 }
 ```
 
-如果画布的宽度小于高度，则将两个渐变点设置为（0，0）和（ `info.Width` ，0）。 作为最后一个参数传递的旋转转换，以 `CreateLinearGradient` 有效地在屏幕中心周围旋转这两个点。
+如果画布的宽度小于高度，则将两个渐变点设置为 (0，0) ， (`info.Width` ，0) 。 作为最后一个参数传递的旋转转换，以 `CreateLinearGradient` 有效地在屏幕中心周围旋转这两个点。
 
-请注意，如果角度为0，则没有旋转，两个渐变点为画布的左上角和右上角。 这些点不是计算得出的相同渐变点，如前一次调用中所示 `CreateLinearGradient` 。 但这些点_平行_于 bisects 画布中心的水平渐变线，它们会产生相同的渐变效果。
+请注意，如果角度为0，则没有旋转，两个渐变点为画布的左上角和右上角。 这些点不是计算得出的相同渐变点，如前一次调用中所示 `CreateLinearGradient` 。 但这些点 _平行_ 于 bisects 画布中心的水平渐变线，它们会产生相同的渐变效果。
 
 **彩虹渐变**
 
-**彩虹渐变**页面从画布的左上角到右下角绘制一个彩虹。 但这种彩虹的渐变与真实的彩虹无关。 它是直接的，而不是弯曲的，但它基于8个 HSL （色调-饱和度-亮度）的颜色，这些颜色通过从0到360的色调值循环来确定：
+**彩虹渐变**页面从画布的左上角到右下角绘制一个彩虹。 但这种彩虹的渐变与真实的彩虹无关。 它是直接的，而不是弯曲的，但它基于8个 HSL (色调-饱和度-亮度) 颜色，这些颜色通过从0到360的色调值进行循环确定：
 
 ```csharp
 SKColor[] colors = new SKColor[8];
@@ -626,7 +626,7 @@ public class RainbowGradientPage : ContentPage
 
 这是一个有趣的图像，但并不是那么重要。 问题在于，当创建线性渐变时，恒定颜色的线条垂直于渐变线条。 渐变线条基于该图形触及顶部和左侧的点，并且该线条通常不垂直于向右下角延伸的图形的边缘。 仅当画布是正方形时，此方法才有效。
 
-若要创建适当的彩虹渐变，渐变线必须垂直于彩虹的边缘。 这是一个更复杂的计算。 必须定义平行于图形长边的矢量。 矢量旋转了90度，以使其垂直于该边。 然后，通过将其与相乘，使其成为图形的宽度 `rainbowWidth` 。 这两个渐变点根据图形一侧的点进行计算，而该点与矢量相加。 下面是在[**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)示例的**彩虹渐变**页面中显示的代码：
+若要创建适当的彩虹渐变，渐变线必须垂直于彩虹的边缘。 这是一个更复杂的计算。 必须定义平行于图形长边的矢量。 矢量旋转了90度，以使其垂直于该边。 然后，通过将其与相乘，使其成为图形的宽度 `rainbowWidth` 。 这两个渐变点根据图形一侧的点进行计算，而该点与矢量相加。 下面是在[**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)示例的**彩虹渐变**页面中显示的代码：
 
 ```csharp
 public class RainbowGradientPage : ContentPage
@@ -681,7 +681,7 @@ public class RainbowGradientPage : ContentPage
 
 **无穷色**
 
-"**无限大颜色**" 页中也使用彩虹渐变。 此页使用[**第三种贝塞尔曲线类型**](../../curves/beziers.md#bezier-curve-approximation-to-circular-arcs)一文中所述的路径对象来绘制无穷号。 然后，将使用一个动画彩虹渐变对图像进行着色，并跨图像持续扫描。
+" **无限大颜色** " 页中也使用彩虹渐变。 此页使用 [**第三种贝塞尔曲线类型**](../../curves/beziers.md#bezier-curve-approximation-to-circular-arcs)一文中所述的路径对象来绘制无穷号。 然后，将使用一个动画彩虹渐变对图像进行着色，并跨图像持续扫描。
 
 构造函数创建 `SKPath` 描述无穷符号的对象。 创建路径后，构造函数还可以获取路径的矩形边界。 然后计算一个名为的值 `gradientCycleLength` 。 如果渐变基于矩形的左上角和右下角 `pathBounds` ，则此 `gradientCycleLength` 值为渐变模式的总水平宽度：
 
@@ -780,7 +780,7 @@ public class InfinityColorsPage : ContentPage
 }
 ```
 
-最后， `PaintSurface` 处理程序将呈现无穷符号。 由于路径包含围绕中心点（0，0）的正片坐标和正坐标， `Translate` 画布上的变换用于将其移到中心。 转换转换后跟一个 `Scale` 转换，该转换应用可使无穷符号尽可能大的缩放因子，同时仍保持在画布宽度和高度的95% 范围内。 
+最后， `PaintSurface` 处理程序将呈现无穷符号。 由于路径包含围绕 (0，0) 中心点的负坐标和正坐标，因此 `Translate` 画布上的变换用于将其移到中心。 转换转换后跟一个 `Scale` 转换，该转换应用可使无穷符号尽可能大的缩放因子，同时仍保持在画布宽度和高度的95% 范围内。 
 
 请注意， `STROKE_WIDTH` 常数添加到了路径边框的宽度和高度。 该路径将使用此宽度的线条进行描边，因此，呈现的无穷大小的大小将在所有四个边的宽度上增加一半：
 
@@ -821,9 +821,9 @@ public class InfinityColorsPage : ContentPage
 }
 ```
 
-查看作为的前两个参数传递的点 `SKShader.CreateLinearGradient` 。 这些点基于原始路径边界矩形。 第一个点为（ &ndash; 250， &ndash; 100），第二个点为（250，100）。 在 SkiaSharp 内部，这些点受到当前画布转换的干扰，使其与显示的无穷符号正确对齐。
+查看作为的前两个参数传递的点 `SKShader.CreateLinearGradient` 。 这些点基于原始路径边界矩形。 第一点是 (&ndash; 250， &ndash; 100) ，第二个点是 (250，100) 。 在 SkiaSharp 内部，这些点受到当前画布转换的干扰，使其与显示的无穷符号正确对齐。
 
-如果没有的最后一个参数 `CreateLinearGradient` ，您将看到一个从无穷符号的左上角到右下角的彩虹梯度。 （实际上，渐变从边框的左上角到右下角进行扩展。 呈现的无穷符号大于边界矩形的 `STROKE_WIDTH` 所有边的值的一半。 因为渐变在开始和结束时都是红色的，而渐变是用来创建的 `SKShaderTileMode.Repeat` ，所以差异并不明显。）
+如果没有的最后一个参数 `CreateLinearGradient` ，您将看到一个从无穷符号的左上角到右下角的彩虹梯度。  (实际上，渐变从边框的左上角到右下角进行扩展。 呈现的无穷符号大于边界矩形的 `STROKE_WIDTH` 所有边的值的一半。 因为渐变在开始和结束时都是红色的，而渐变是用来创建的 `SKShaderTileMode.Repeat` ，所以差异并不明显。 ) 
 
 对于的最后一个参数 `CreateLinearGradient` ，渐变模式将在图像上持续扫描：
 
@@ -907,7 +907,7 @@ public class ReflectionGradientPage : ContentPage
 }
 ```
 
-这些值 `xText` 和 `yText` 值与用于在 `DrawText` 处理程序底部的调用中显示反射文本的值相同 `PaintSurface` 。 但在该代码之前，你会看到对的方法的调用 `Scale` `SKCanvas` 。 此 `Scale` 方法水平缩放1（不执行任何操作），但垂直缩放 &ndash; 1，这会有效地翻转所有内容。 旋转中心设置为点（0， `yText` ），其中 `yText` 是画布的垂直中心，最初 `info.Height` 按2进行计算。
+这些值 `xText` 和 `yText` 值与用于在 `DrawText` 处理程序底部的调用中显示反射文本的值相同 `PaintSurface` 。 但在该代码之前，你会看到对的方法的调用 `Scale` `SKCanvas` 。 此 `Scale` 方法水平缩放 (不执行任何操作) 但会将其垂直 &ndash; 翻转1，这会有效地翻转所有内容。 旋转中心设置为 (0) 的点 `yText` ，其中 `yText` 是画布的垂直中心，最初 `info.Height` 按2进行计算。
 
 请记住，在画布转换之前，Skia 使用梯度来着色图形对象。 绘制 unreflected 文本后， `textBounds` 矩形将会移位，使其对应于显示的文本：
 
@@ -915,9 +915,9 @@ public class ReflectionGradientPage : ContentPage
 textBounds.Offset(xText, yText);
 ```
 
-该 `CreateLinearGradient` 调用定义了从该矩形顶部到底部的渐变。 渐变是从完全透明的蓝（ `paint.Color.WithAlpha(0)` ）到50% 透明蓝色（ `paint.Color.WithAlpha(0x80)` ）。 画布转换反转文本，因此，50% 透明蓝色从基线开始，并在文本顶部变为透明。
+该 `CreateLinearGradient` 调用定义了从该矩形顶部到底部的渐变。 渐变是从完全透明的蓝色 (`paint.Color.WithAlpha(0)`) 到50% 透明蓝色 (`paint.Color.WithAlpha(0x80)`) 。 画布转换反转文本，因此，50% 透明蓝色从基线开始，并在文本顶部变为透明。
 
 ## <a name="related-links"></a>相关链接
 
-- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [SkiaSharp Api](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (示例) ](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

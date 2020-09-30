@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsCollectionView 分组
+title: Xamarin.Forms CollectionView 分组
 description: CollectionView 可以通过将其 IsGrouped 属性设置为 true 来显示正确分组的数据。
 ms.prod: xamarin
 ms.assetid: 7E494245-FDBD-49D6-B7FA-CEF976EB59BB
@@ -10,20 +10,20 @@ ms.date: 09/17/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 51661d6573d78386f4ca8bfea0063b752295c2d8
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 51bdcc6f9a95911c548269dbf7b3050cc5921183
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136456"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556615"
 ---
-# <a name="xamarinforms-collectionview-grouping"></a>Xamarin.FormsCollectionView 分组
+# <a name="no-locxamarinforms-collectionview-grouping"></a>Xamarin.Forms CollectionView 分组
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 
 经常滚动列表中的大型数据集可能会变得难以使用。 在这种情况下，将数据组织成组可以更轻松地导航数据，从而改善用户体验。
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)支持显示分组数据，并定义以下属性，这些属性控制其显示方式：
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) 支持显示分组数据，并定义以下属性，这些属性控制其显示方式：
 
 - `IsGrouped`类型为的， `bool` 指示是否应在组中显示基础数据。 此属性的默认值为 `false`。
 - `GroupHeaderTemplate`，类型为 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) ，要用于每个组的标头的模板。
@@ -142,7 +142,7 @@ Animals.Add(new AnimalGroup("Monkeys", new List<Animal>
 
 ## <a name="display-grouped-data"></a>显示分组数据
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)通过将属性设置为，可显示分组数据，前提是数据已正确分组 `IsGrouped` `true` ：
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) 通过将属性设置为，可显示分组数据，前提是数据已正确分组 `IsGrouped` `true` ：
 
 ```xaml
 <CollectionView ItemsSource="{Binding Animals}"
@@ -181,7 +181,7 @@ collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Animals");
 // ...
 ```
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)通过将属性设置为，可以定义中每个项的外观 [`CollectionView.ItemTemplate`](xref:Xamarin.Forms.ItemsView.ItemTemplate) [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 。 有关详细信息，请参阅[定义项外观](~/xamarin-forms/user-interface/collectionview/populate-data.md#define-item-appearance)。
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)通过将属性设置为，可以定义中每个项的外观 [`CollectionView.ItemTemplate`](xref:Xamarin.Forms.ItemsView.ItemTemplate) [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 。 有关详细信息，请参阅 [定义项外观](~/xamarin-forms/user-interface/collectionview/populate-data.md#define-item-appearance)。
 
 > [!NOTE]
 > 默认情况下， [`CollectionView`](xref:Xamarin.Forms.CollectionView) 将在组标头和表尾中显示组名。 可以通过自定义组头和组尾来更改此行为。
@@ -241,7 +241,7 @@ collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Animals");
 
 ## <a name="group-without-templates"></a>无模板组
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)可以显示正确的分组数据，而不将 [`CollectionView.ItemTemplate`](xref:Xamarin.Forms.ItemsView.ItemTemplate) 属性设置为 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) ：
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) 可以显示正确的分组数据，而不将 [`CollectionView.ItemTemplate`](xref:Xamarin.Forms.ItemsView.ItemTemplate) 属性设置为 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) ：
 
 ```xaml
 <CollectionView ItemsSource="{Binding Animals}"
@@ -252,5 +252,5 @@ collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Animals");
 
 ## <a name="related-links"></a>相关链接
 
-- [CollectionView （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
-- [Xamarin.Forms数据模板](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)
+- [CollectionView (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
+- [Xamarin.Forms 数据模板](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)

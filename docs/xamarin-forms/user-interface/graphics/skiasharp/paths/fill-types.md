@@ -10,12 +10,12 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e82572d88e380997fb2435179dba824c1b3f0c2f
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: aa427035dc33b617bed14e0c6aa0b0db27efca7f
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86936183"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556563"
 ---
 # <a name="the-path-fill-types"></a>路径填充类型
 
@@ -38,7 +38,7 @@ _发现 SkiaSharp 路径填充类型可能产生的不同效果_
 
 对于许多例程路径，缠绕算法通常会填充路径的所有封闭区域。 偶-奇算法通常产生更有趣的结果。
 
-典型示例是一个五向星形，如**五星星形**页中所示。 [**FivePointedStarPage**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/FivePointedStarPage.xaml)文件实例化两个 `Picker` 视图以选择路径填充类型，并确定路径是描边还是填充，或按何种顺序进行：
+典型示例是一个五向星形，如 **五星星形** 页中所示。 [**FivePointedStarPage**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/FivePointedStarPage.xaml)文件实例化两个 `Picker` 视图以选择路径填充类型，并确定路径是描边还是填充，或按何种顺序进行：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -184,7 +184,7 @@ Android 屏幕快照显示了典型的偶数和缠绕效果，但笔划和填充
 
 中 `SKPath` 包含参数的方法 `SKPathDirection` 为其指定了默认值 `Clockwise` 。
 
-"**重叠圆圈**" 页将创建一个路径，该路径包含四个具有偶数类路径填充类型的重叠圆圈：
+" **重叠圆圈** " 页将创建一个路径，该路径包含四个具有偶数类路径填充类型的重叠圆圈：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -230,5 +230,5 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ## <a name="related-links"></a>相关链接
 
-- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [SkiaSharp Api](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (示例) ](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

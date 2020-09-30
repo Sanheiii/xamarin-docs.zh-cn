@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Forms画笔：纯色
+title: Xamarin.Forms 画笔：纯色
 description: Xamarin.FormsSystem.windows.media.solidcolorbrush> 类使用纯色绘制区域。
 ms.prod: xamarin
 ms.assetid: 4225D40A-16C1-40E1-ACBE-23E321E7FDE4
@@ -10,18 +10,18 @@ ms.date: 07/27/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 7b77cab7c0f87dbedf66651c3ab59ef20b7f3ecd
-ms.sourcegitcommit: 579ec4f2884fa391e5e214a3952cd6004c521eb8
+ms.openlocfilehash: 3c3caf064ca550086f8e7924786ac8bcaf1badfc
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87919558"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556277"
 ---
-# <a name="no-locxamarinforms-brushes-solid-colors"></a>Xamarin.Forms画笔：纯色
+# <a name="no-locxamarinforms-brushes-solid-colors"></a>Xamarin.Forms 画笔：纯色
 
 ![预览 API](~/media/shared/preview.png "此 API 当前为预发布版本")
 
-[![下载示例](~/media/shared/download.png)下载示例](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/BrushDemos)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-brushdemos/)
 
 `SolidColorBrush`类派生自 `Brush` 类，用于绘制带有纯色的区域。 有多种方法可以指定的颜色 `SolidColorBrush` 。 例如，你可以使用值指定其颜色， [`Color`](xref:Xamarin.Forms.Color) 或者使用类提供的预定义对象之一指定其颜色 `SolidColorBrush` `Brush` 。
 
@@ -35,7 +35,7 @@ ms.locfileid: "87919558"
 
 ### <a name="use-a-predefined-color"></a>使用预定义的颜色
 
-Xamarin.Forms包括从值创建的类型转换器 `SolidColorBrush` [`Color`](xref:Xamarin.Forms.Color) 。 在 XAML 中，这使得可以 `SolidColorBrush` 从预定义的 `Color` 值创建：
+Xamarin.Forms 包括从值创建的类型转换器 `SolidColorBrush` [`Color`](xref:Xamarin.Forms.Color) 。 在 XAML 中，这使得可以 `SolidColorBrush` 从预定义的 `Color` 值创建：
 
 ```xaml
 <Frame Background="DarkBlue"
@@ -94,15 +94,15 @@ Frame frame = new Frame
 
 ![用预定义的 System.windows.media.solidcolorbrush> 绘制的帧](solidcolor-images/predefined-brush.png)
 
-有关类提供的预定义 `SolidColorBrush` 对象的列表 `Brush` ，请参阅[纯色画笔](#solid-color-brushes)。
+有关类提供的预定义 `SolidColorBrush` 对象的列表 `Brush` ，请参阅 [纯色画笔](#solid-color-brushes)。
 
 ### <a name="use-hexadecimal-notation"></a>使用十六进制表示法
 
-`SolidColorBrush`还可以使用十六进制表示法来创建对象。 使用此方法时，将使用红色、绿色和蓝色的量来指定颜色，以将其合并为一种颜色。 使用十六进制表示法指定颜色的主要格式为 `#rrggbb` ，其中：
+`SolidColorBrush` 还可以使用十六进制表示法来创建对象。 使用此方法时，将使用红色、绿色和蓝色的量来指定颜色，以将其合并为一种颜色。 使用十六进制表示法指定颜色的主要格式为 `#rrggbb` ，其中：
 
-- `rr`指定红色相对量的两位十六进制数。
-- `gg`指定绿色相对量的两位十六进制数。
-- `bb`指定蓝色的相对量的两位十六进制数。
+- `rr` 指定红色相对量的两位十六进制数。
+- `gg` 指定绿色相对量的两位十六进制数。
+- `bb` 指定蓝色的相对量的两位十六进制数。
 
 此外，还可以指定颜色， `#aarrggbb` 其中 `aa` 指定颜色的 alpha 值或透明度。 使用此方法能够创建部分透明的颜色。
 
@@ -131,5 +131,5 @@ Frame frame = new Frame
 
 ## <a name="related-links"></a>相关链接
 
-- [BrushesDemos (示例) ](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/BrushDemos)
-- [颜色Xamarin.Forms](~/xamarin-forms/user-interface/colors.md)
+- [BrushesDemos (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-brushdemos/)
+- [颜色 Xamarin.Forms](~/xamarin-forms/user-interface/colors.md)

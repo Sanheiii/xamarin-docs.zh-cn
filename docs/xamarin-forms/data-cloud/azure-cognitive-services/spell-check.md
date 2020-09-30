@@ -10,16 +10,16 @@ ms.date: 02/08/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 4c07f2667230695c6b884eb4902e68f7f4120f6b
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 719bc923a53d6a2ce9250def48a99893cadac32d
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939498"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91555302"
 ---
 # <a name="spell-checking-using-the-bing-spell-check-api"></a>使用必应拼写检查 API 进行拼写检查
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
 
 _必应拼写检查对文本执行上下文拼写检查，并为拼写错误的单词提供内联建议。本文介绍如何使用必应拼写检查 REST API 更正应用程序中的拼写错误 Xamarin.Forms 。_
 
@@ -27,15 +27,15 @@ _必应拼写检查对文本执行上下文拼写检查，并为拼写错误的�
 
 必应拼写检查 REST API 具有两种运行模式，并且在向 API 发出请求时必须指定模式：
 
-- `Spell`更正短文本（不包括任何大小写）。
-- `Proof`更正长文本，提供大小写更正和基本标点，并取消主动更正。
+- `Spell` 更正短文本 (最多9个单词) 不更改任何大小写。
+- `Proof` 更正长文本，提供大小写更正和基本标点，并取消主动更正。
 
 > [!NOTE]
 > 如果还没有 [Azure 订阅](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing)，可以在开始前创建一个[免费帐户](https://aka.ms/azfree-docs-mobileapps)。
 
-必须获取 API 密钥才能使用必应拼写检查 API。 可在[试用认知服务](https://azure.microsoft.com/try/cognitive-services/)
+必须获取 API 密钥才能使用必应拼写检查 API。 可在 [试用认知服务](https://azure.microsoft.com/try/cognitive-services/)
 
-有关必应拼写检查 API 支持的语言的列表，请参阅支持的[语言](/azure/cognitive-services/bing-spell-check/bing-spell-check-supported-languages/)。 有关必应拼写检查 API 的详细信息，请参阅[必应拼写检查文档](/azure/cognitive-services/bing-spell-check/)。
+有关必应拼写检查 API 支持的语言的列表，请参阅支持的 [语言](/azure/cognitive-services/bing-spell-check/bing-spell-check-supported-languages/)。 有关必应拼写检查 API 的详细信息，请参阅 [必应拼写检查文档](/azure/cognitive-services/bing-spell-check/)。
 
 ## <a name="authentication"></a>身份验证
 
@@ -85,7 +85,7 @@ string GenerateRequestUri(string spellCheckEndpoint, string text, SpellCheckMode
 
 此方法将文本设置为拼写检查，并将拼写检查模式设置为。
 
-有关必应拼写检查 REST API 的详细信息，请参阅[拼写检查 API v7 参考](/rest/api/cognitiveservices/bing-spell-check-api-v7-reference/)。
+有关必应拼写检查 REST API 的详细信息，请参阅 [拼写检查 API v7 参考](/rest/api/cognitiveservices/bing-spell-check-api-v7-reference/)。
 
 ### <a name="sending-the-request"></a>正在发送请求
 
@@ -101,7 +101,7 @@ async Task<string> SendRequestAsync(string url)
 
 此方法将 GET 请求发送到 `SpellCheck` API，并将请求 URL 指定为要转换的文本和拼写检查模式。 然后，将读取响应并将其返回给调用方法。
 
-`SpellCheck`如果请求有效，则 API 将在响应中发送 HTTP 状态代码200（正常），这表明请求已成功，并且请求的信息在响应中。 有关响应对象的列表，请参阅[response 对象](/rest/api/cognitiveservices/bing-spell-check-api-v7-reference#response-objects)。
+`SpellCheck`如果请求有效，则 API 会将 HTTP 状态代码200发送 (确定) ，这表明请求已成功，并且请求的信息在响应中。 有关响应对象的列表，请参阅 [response 对象](/rest/api/cognitiveservices/bing-spell-check-api-v7-reference#response-objects)。
 
 ### <a name="processing-the-response"></a>处理响应
 
@@ -140,10 +140,10 @@ API 响应以 JSON 格式返回。 以下 JSON 数据显示拼写错误的文本
 
 `flaggedTokens`数组包含文本中被标记为不正确或语法不正确的单词的数组。 如果未找到拼写或语法错误，则数组将为空。 数组中的标记为：
 
-- `offset`–从文本字符串的开头到标记的单词的从零开始的偏移量。
-- `token`–文本字符串中拼写错误或语法错误的词。
-- `type`–导致单词被标记的错误的类型。 有两个可能的值 `RepeatedToken` `UnknownToken` ：和。
-- `suggestions`–将更正拼写或语法错误的单词的数组。 数组由 `suggestion` 和组成 `score` ，这表示建议的更正正确的置信度级别。
+- `offset` –从文本字符串的开头到标记的单词的从零开始的偏移量。
+- `token` –文本字符串中拼写错误或语法错误的词。
+- `type` –导致单词被标记的错误的类型。 有两个可能的值 `RepeatedToken` `UnknownToken` ：和。
+- `suggestions` –将更正拼写或语法错误的单词的数组。 数组由 `suggestion` 和组成 `score` ，这表示建议的更正正确的置信度级别。
 
 在示例应用程序中，JSON 响应将反序列化为 `SpellCheckResult` 实例，并将结果返回给要显示的调用方法。 下面的代码示例演示如何 `SpellCheckResult` 处理实例以便显示：
 
@@ -172,5 +172,5 @@ foreach (var flaggedToken in spellCheckResult.FlaggedTokens)
 
 - [必应拼写检查文档](/azure/cognitive-services/bing-spell-check/)
 - [使用 RESTful Web 服务](~/xamarin-forms/data-cloud/web-services/rest.md)
-- [Todo 认知服务（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
+- [Todo 认知服务 (示例) ](/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
 - [必应拼写检查 API v7 参考](/rest/api/cognitiveservices/bing-spell-check-api-v7-reference/)

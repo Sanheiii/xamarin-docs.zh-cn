@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsCarouselView EmptyView
+title: Xamarin.Forms CarouselView EmptyView
 description: 在 CarouselView 中，可以指定一个空视图，在没有可显示的数据时向用户提供反馈。 空视图可以是字符串、视图或多个视图。
 ms.prod: xamarin
 ms.assetid: C6DEE1A9-63FC-4889-BC77-F401D5D7DF32
@@ -10,20 +10,20 @@ ms.date: 10/03/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 0dd1f4a15d9a8c1315cd3f0f71b641c82bebe004
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: 5a6ca7926196a993dda301bac1b87041a975da71
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87918661"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91557382"
 ---
-# <a name="no-locxamarinforms-carouselview-emptyview"></a>Xamarin.FormsCarouselView EmptyView
+# <a name="no-locxamarinforms-carouselview-emptyview"></a>Xamarin.Forms CarouselView EmptyView
 
 ![预发行版 API](~/media/shared/preview.png)
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
 
-[`CarouselView`](xref:Xamarin.Forms.CarouselView)定义以下属性，这些属性可用于在没有要显示的数据时提供用户反馈：
+[`CarouselView`](xref:Xamarin.Forms.CarouselView) 定义以下属性，这些属性可用于在没有要显示的数据时提供用户反馈：
 
 - [`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView)、类型 `object` 、属性为时将显示的字符串、绑定或视图， [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource) `null` 或由属性指定的集合 `ItemsSource` 为 `null` 或为空。 默认值为 `null`。
 - [`EmptyViewTemplate`](xref:Xamarin.Forms.ItemsView.EmptyViewTemplate)，类型为 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) ，用于设置指定的格式的模板 `EmptyView` 。 默认值为 `null`。
@@ -317,11 +317,11 @@ public class SearchTermDataTemplateSelector : DataTemplateSelector
 
 `SearchTermTemplateSelector`类定义了 `DefaultTemplate` 并 `OtherTemplate` [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 将属性设置为不同的数据模板。 `OnSelectTemplate` `DefaultTemplate` 当搜索查询不等于 "xamarin" 时，重写将返回，后者向用户显示一条消息。 当搜索查询等于 "xamarin" 时， `OnSelectTemplate` 重写将返回 `OtherTemplate` ，后者向用户显示基本消息。
 
-有关数据模板选择器的详细信息，请参阅[创建 Xamarin.Forms 并重](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)。
+有关数据模板选择器的详细信息，请参阅 [创建 Xamarin.Forms 并重](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)。
 
 ## <a name="related-links"></a>相关链接
 
-- [CarouselView (示例) ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
-- [Xamarin.Forms数据模板](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)
+- [CarouselView (示例) ](/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
+- [Xamarin.Forms 数据模板](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)
 - [Xamarin.Forms 资源字典](~/xamarin-forms/xaml/resource-dictionaries.md)
 - [创建 Xamarin.Forms 并重](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)

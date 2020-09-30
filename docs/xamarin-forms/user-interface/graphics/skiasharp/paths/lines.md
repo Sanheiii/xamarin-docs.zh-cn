@@ -10,20 +10,20 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 644e6ab4acffa7acf2d86733d68fed8db07a752a
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 75d19e41243076da127d58defdabeca908d900cd
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86932361"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556082"
 ---
 # <a name="lines-and-stroke-caps"></a>线和笔划大写字母
 
-[![下载示例](~/media/shared/download.png)下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _了解如何使用 SkiaSharp 来绘制具有不同笔划帽的线条_
 
-在 SkiaSharp 中，呈现单行与呈现一系列连接的直线非常不同。 不过，即使在绘制单条行时，也经常需要为行指定一个特定的笔划宽度。 当这些行变宽时，行尾的外观也会变得很重要。 线条末尾的外观称为 "*笔划帽*"：
+在 SkiaSharp 中，呈现单行与呈现一系列连接的直线非常不同。 不过，即使在绘制单条行时，也经常需要为行指定一个特定的笔划宽度。 当这些行变宽时，行尾的外观也会变得很重要。 线条末尾的外观称为 " *笔划帽*"：
 
 ![三个笔划大写字母选项](lines-images/strokecapsexample.png)
 
@@ -35,13 +35,13 @@ canvas.DrawLine (x0, y0, x1, y1, paint);
 
 默认情况下， [`StrokeWidth`](xref:SkiaSharp.SKPaint.StrokeWidth) 新实例化的对象的属性 `SKPaint` 为0，它在呈现宽度为1个像素的行时具有与值1相同的效果。 这在高分辨率设备（如手机）上显得非常小，因此你可能需要将设置 `StrokeWidth` 为更大的值。 但一旦开始绘制可调整大小的粗细的线条，就会引发另一个问题：如何呈现这些粗线条的开头和结尾？
 
-行的开头和结尾的外观称为*线帽*，在 Skia 中，为*描边帽*。 这种上下文中的 "cap" 一词是指位于行末尾的一种 hat &mdash; 。 将对象的 [`StrokeCap`](xref:SkiaSharp.SKPaint.StrokeCap) 属性设置 `SKPaint` 为枚举的以下成员之一 [`SKStrokeCap`](xref:SkiaSharp.SKStrokeCap) ：
+行的开头和结尾的外观称为 *线帽* ，在 Skia 中，为 *描边帽*。 这种上下文中的 "cap" 一词是指位于行末尾的一种 hat &mdash; 。 将对象的 [`StrokeCap`](xref:SkiaSharp.SKPaint.StrokeCap) 属性设置 `SKPaint` 为枚举的以下成员之一 [`SKStrokeCap`](xref:SkiaSharp.SKStrokeCap) ：
 
-- `Butt`（默认值）
+- `Butt` (默认) 
 - `Square`
 - `Round`
 
-下面是一个示例程序的最佳说明。 [**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)程序的 " **SkiaSharp 行和路径**" 部分从标题为 "**笔划大写**" 的页开始 [`StrokeCapsPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/StrokeCapsPage.cs) 。 此页定义了一个 `PaintSurface` 事件处理程序，该事件处理程序遍历枚举的三个成员 `SKStrokeCap` ，同时显示枚举成员的名称并使用该笔划帽绘制一行：
+下面是一个示例程序的最佳说明。 [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)程序的 " **SkiaSharp 行和路径**" 部分从标题为 "**笔划大写**" 的页开始 [`StrokeCapsPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/StrokeCapsPage.cs) 。 此页定义了一个 `PaintSurface` 事件处理程序，该事件处理程序遍历枚举的三个成员 `SKStrokeCap` ，同时显示枚举成员的名称并使用该笔划帽绘制一行：
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -109,11 +109,11 @@ DrawPoints (SKPointMode mode, points, paint)
 
 `points`参数是一个值数组，它 `SKPoint` `mode` 是枚举的成员 [`SKPointMode`](xref:SkiaSharp.SKPointMode) ，它具有三个成员：
 
-- `Points`呈现各个点
-- `Lines`连接每对点
-- `Polygon`连接所有连续点
+- `Points` 呈现各个点
+- `Lines` 连接每对点
+- `Polygon` 连接所有连续点
 
-"**多行**" 页演示了此方法。 [**MultipleLinesPage**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/MultipleLinesPage.xaml)文件实例化两个 `Picker` 视图，使您可以选择枚举的成员 `SKPointMode` 和枚举的成员 `SKStrokeCap` ：
+" **多行** " 页演示了此方法。 [**MultipleLinesPage**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/MultipleLinesPage.xaml)文件实例化两个 `Picker` 视图，使您可以选择枚举的成员 `SKPointMode` 和枚举的成员 `SKStrokeCap` ：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -243,5 +243,5 @@ Android 屏幕截图显示了的结果 `SKPointMode.Lines` 。 `DrawPoints` `SKP
 
 ## <a name="related-links"></a>相关链接
 
-- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos （示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [SkiaSharp Api](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (示例) ](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
