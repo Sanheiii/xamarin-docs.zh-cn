@@ -6,12 +6,12 @@ ms.assetid: 63c50190-7e54-4140-a30d-1a0e577c47d7
 author: davidortinau
 ms.author: daortin
 ms.date: 04/26/2019
-ms.openlocfilehash: 84c5a72f887f38c5efcee09cfc19986093db226e
-ms.sourcegitcommit: d86b7a18cf8b1ef28cd0fe1d311f1c58a65101a8
+ms.openlocfilehash: 826fb2bbfb202507bf4ffe062004fb0137e19176
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85101349"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91456660"
 ---
 # <a name="remoted-ios-simulator-for-windows"></a>适用于 Windows 的远程 iOS 模拟器
 
@@ -80,4 +80,4 @@ Windows 计算机上不会听到 iOS 声音。
 - **Mac** – `~/Library/Logs/Xamarin/Simulator.Server`
 - **Windows** – `%LOCALAPPDATA%\Xamarin\Logs\Xamarin.Simulator`
 
-如果你要[报告 Visual Studio 中的问题](https://docs.microsoft.com/visualstudio/ide/how-to-report-a-problem-with-visual-studio)，附加这些日志可能会很有帮助（有一些选项可使上传内容保持专用）。
+如果你要[报告 Visual Studio 中的问题](/visualstudio/ide/how-to-report-a-problem-with-visual-studio)，附加这些日志可能会很有帮助（有一些选项可使上传内容保持专用）。

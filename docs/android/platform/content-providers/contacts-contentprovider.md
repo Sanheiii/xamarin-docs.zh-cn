@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 01/22/2018
-ms.openlocfilehash: fca57b7af34ae2b28dda9bf20a95183138cbc641
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 8c3608837132e221bec12b2c00fb2dd0b1730e76
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73020547"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91454073"
 ---
 # <a name="using-the-contacts-contentprovider"></a>使用联系人 ContentProvider
 
@@ -197,4 +197,4 @@ listView.Adapter = adapter;
 
 ## <a name="related-links"></a>相关链接
 
-- [ContactsAdapter 演示（示例）](https://docs.microsoft.com/samples/xamarin/monodroid-samples/platformfeatures-contactsadapterdemo)
+- [ContactsAdapter 演示（示例）](/samples/xamarin/monodroid-samples/platformfeatures-contactsadapterdemo)

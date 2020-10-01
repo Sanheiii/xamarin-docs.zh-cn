@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: alexeystrakh
 ms.author: alstrakh
 ms.date: 02/11/2020
-ms.openlocfilehash: af926b518c55bd0d6c73180e512dd669e93778f7
-ms.sourcegitcommit: a3f13a216fab4fc20a9adf343895b9d6a54634a5
+ms.openlocfilehash: d75ec48bf9736297c31e0bb5af5a71de4332c66b
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85853060"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91454268"
 ---
 # <a name="walkthrough-bind-an-android-kotlin-library"></a>演练：绑定 Android Kotlin 库
 
@@ -27,7 +27,7 @@ Android 平台及其本机语言和工具不断发展，其中包括最近引入
 
 ## <a name="background"></a>背景
 
-Kotlin 于 2016 年 2 月发布，并于 2017 年作为标准 Java 编译器的替代项定位到 Android Studio。 后来在 2019 年，Google 宣布 Kotlin 编程语言将成为 Android 应用开发人员的首选语言。 高级绑定方法类似于[常规 Java 库的绑定过程](https://docs.microsoft.com/xamarin/android/platform/binding-java-library/)，只需几个重要的 Kotlin 特定步骤即可完成。
+Kotlin 于 2016 年 2 月发布，并于 2017 年作为标准 Java 编译器的替代项定位到 Android Studio。 后来在 2019 年，Google 宣布 Kotlin 编程语言将成为 Android 应用开发人员的首选语言。 高级绑定方法类似于[常规 Java 库的绑定过程](../binding-java-library/index.md)，只需几个重要的 Kotlin 特定步骤即可完成。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -103,7 +103,7 @@ AAR 文件是 Android 存档，其中包含 Android 使用此 SDK 运行应用�
 
 第二步是准备由 Xamarin.Android 使用的元数据转换文件，以生成相应的 C# 类。 Xamarin.Android 绑定项目将发现给定 Android 存档中的所有本机类和成员，而后使用相应的元数据生成 XML 文件。 然后将手动创建的元数据转换文件将应用于以前生成的基线，以创建用于生成 C# 代码的最终 XML 定义文件。
 
-元数据使用 [XPath](https://www.w3.org/TR/xpath/)  语法，由绑定生成器用来影响绑定程序集的创建。 [Java 绑定元数据](https://docs.microsoft.com/xamarin/android/platform/binding-java-library/customizing-bindings/java-bindings-metadata)一文提供了有关转换的详细信息，可应用这些信息：
+元数据使用 [XPath](https://www.w3.org/TR/xpath/)  语法，由绑定生成器用来影响绑定程序集的创建。 [Java 绑定元数据](../binding-java-library/customizing-bindings/java-bindings-metadata.md)一文提供了有关转换的详细信息，可应用这些信息：
 
 1. 创建一个空的 Metadata.xml 文件：
 
@@ -198,7 +198,7 @@ AAR 文件是 Android 存档，其中包含 Android 使用此 SDK 运行应用�
     Xamarin.Android 绑定不支持 Java 和 Xamarin Kotlin 泛型，因此会创建一个通用 C# 方法来访问通用 API。 作为一种解决方法，你可以创建一个包装器 Kotlin 库，并以强类型方式公开所需的 API，而无需使用泛型。 另外，还可以通过强类型 API 以相同的方式在 C# 端创建帮助程序来解决此问题。
 
     > [!TIP]
-    > 通过转换元数据，可以将任何更改应用到生成的绑定。 [绑定 Java 库](https://docs.microsoft.com/xamarin/android/platform/binding-java-library/)一文详细说明了如何生成和处理元数据。
+    > 通过转换元数据，可以将任何更改应用到生成的绑定。 [绑定 Java 库](../binding-java-library/index.md)一文详细说明了如何生成和处理元数据。
 
 ## <a name="build-a-binding-library"></a>生成绑定库
 
@@ -342,8 +342,8 @@ AAR 文件是 Android 存档，其中包含 Android 使用此 SDK 运行应用�
 - [Visual Studio for Mac](https://visualstudio.microsoft.com/downloads)
 - [Java 反编译程序](http://java-decompiler.github.io/)
 - [BubblePicker Kotlin 库](https://github.com/igalata/Bubble-Picker)
-- [绑定 Java 库](https://docs.microsoft.com/xamarin/android/platform/binding-java-library/)
+- [绑定 Java 库](../binding-java-library/index.md)
 - [XPath](https://www.w3.org/TR/xpath/)
-- [Java 绑定元数据](https://docs.microsoft.com/xamarin/android/platform/binding-java-library/customizing-bindings/java-bindings-metadata)
+- [Java 绑定元数据](../binding-java-library/customizing-bindings/java-bindings-metadata.md)
 - [Xamarin.Kotlin.StdLib NuGet](https://www.nuget.org/packages/Xamarin.Kotlin.StdLib/)
 - [示例项目存储库](https://github.com/alexeystrakh/xamarin-binding-kotlin-framework)

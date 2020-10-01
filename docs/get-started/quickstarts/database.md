@@ -12,12 +12,12 @@ ms.date: 04/01/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a28e391c6bacd460f095c94e30b2d9433a5191e4
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 8f19595fdabd663312e6346deaed65f85aed1280
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86931789"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436969"
 ---
 # <a name="store-data-in-a-local-sqlitenet-database"></a>将数据存储在本地 SQLite.NET 数据库中
 
@@ -35,7 +35,7 @@ ms.locfileid: "86931789"
 
 ## <a name="prerequisites"></a>先决条件
 
-在尝试本快速入门之前，应成功完成[上一个快速入门](multi-page.md)。 或者，下载[上一个快速入门示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-multipage/)并将它用作本快速入门的起点。
+在尝试本快速入门之前，应成功完成[上一个快速入门](multi-page.md)。 或者，下载[上一个快速入门示例](/samples/xamarin/xamarin-forms-samples/getstarted-notes-multipage/)并将它用作本快速入门的起点。
 
 ::: zone pivot="windows"
 
@@ -486,5 +486,5 @@ ms.locfileid: "86931789"
 
 ## <a name="related-links"></a>相关链接
 
-- [便笺（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-database/)
+- [便笺（示例）](/samples/xamarin/xamarin-forms-samples/getstarted-notes-database/)
 - [Xamarin.Forms 快速入门深入探讨](deepdive.md)

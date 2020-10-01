@@ -9,12 +9,12 @@ ms.date: 05/11/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3599958a493dd4051064b5e7f54aa5901e6bf32c
-ms.sourcegitcommit: f6a2f07d2e689e0cfd01b30008d50c83c63fa70c
+ms.openlocfilehash: f8a65c7bd3476114b849bb0e9383227e2ec78c7c
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89052755"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91432614"
 ---
 # <a name="get-started-with-no-locxamarinessentials"></a>Xamarin.Essentials 入门
 
@@ -58,7 +58,7 @@ Xamarin.Essentials 可用作 NuGet 包并包含在 Visual Studio 的每个新项
 
     针对 Android 9.0 进行编译时，Xamarin.Essentials 将安装必需的 28.0.0.3 版 Xamarin.Android.Support 库。 还应使用 NuGet 包管理器将应用所需的其他任何 Xamarin.Android.Support 库更新到版本 28.0.0.3。 应用使用的所有 Xamarin.Android.Support 库都应相同，且版本不得低于 28.0.0.3。 如果在解决方案中添加 Xamarin.Essentials NuGet 或更新 NuGet 时遇到问题，请参阅[疑难解答页面](troubleshooting.md)。
 
-    从版本 1.5.0 开始，在针对 Android 10.0 进行编译时，Xamarin.Essentials 将安装必需的 AndroidX 支持库。 如果尚未转换，请阅读 [AndroidX 文档](https://docs.microsoft.com/xamarin/android/platform/androidx)。
+    从版本 1.5.0 开始，在针对 Android 10.0 进行编译时，Xamarin.Essentials 将安装必需的 AndroidX 支持库。 如果尚未转换，请阅读 [AndroidX 文档](../android/platform/androidx.md)。
 
     在 Android 项目的 `MainLauncher` 或任何已启动的 `Activity` 中，必须在 `OnCreate` 方法中初始化 Xamarin.Essentials：
 

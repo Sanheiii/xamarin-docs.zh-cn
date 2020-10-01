@@ -1,6 +1,6 @@
 ---
-title: title:"Xamarin.Forms绑定值转换器”说明：“本文介绍如何通过实现值转换器（也称为绑定转换器或绑定值转换器）来强制转换或转换 Xamarin.Forms 数据绑定中的值。”
-description: 'ms.prod: xamarin ms.assetid:02B1BBE6-D804-490D-BDD4-8ACED8B70C92 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:2018/01/05 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: Xamarin.Forms 绑定值转换器
+description: 此文章介绍了如何通过实现值转换器（也称为绑定转换器或绑定值转换器）来强制转换或转换 Xamarin.Forms 数据绑定中的值。
 ms.prod: xamarin
 ms.assetid: 02B1BBE6-D804-490D-BDD4-8ACED8B70C92
 ms.technology: xamarin-forms
@@ -10,14 +10,14 @@ ms.date: 01/05/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e1a4faabc8f0703b497062a8c5d587221692dab7
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.openlocfilehash: 2a5912d18787543b05b3937f2b8b5c6a36b04873
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84139752"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556810"
 ---
-# <a name="xamarinforms-binding-value-converters"></a>Xamarin.Forms 绑定值转换器
+# <a name="no-locxamarinforms-binding-value-converters"></a>Xamarin.Forms 绑定值转换器
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
@@ -54,7 +54,7 @@ public class IntToBoolConverter : IValueConverter
 
 如果数据绑定还包括 `StringFormat` 设置，则在结果格式化为字符串之前调用值转换器。
 
-[数据绑定演示](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)示例中的启用按钮页面演示了如何在数据绑定中使用此值转换器 。 `IntToBoolConverter` 在页面的资源字典中实例化。 然后使用 `StaticResource` 标记扩展引用它以在两个数据绑定中设置 `Converter` 属性。 在页面中的多个数据绑定中共享数据转换器是很常见的：
+[数据绑定演示](/samples/xamarin/xamarin-forms-samples/databindingdemos)示例中的启用按钮页面演示了如何在数据绑定中使用此值转换器 。 `IntToBoolConverter` 在页面的资源字典中实例化。 然后使用 `StaticResource` 标记扩展引用它以在两个数据绑定中设置 `Converter` 属性。 在页面中的多个数据绑定中共享数据转换器是很常见的：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -469,5 +469,5 @@ RGB 颜色选择器页面遵照两个隐式样式的定义在其资源字典中�
 
 ## <a name="related-links"></a>相关链接
 
-- [数据绑定演示（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+- [数据绑定演示（示例）](/samples/xamarin/xamarin-forms-samples/databindingdemos)
 - [Xamarin.Forms 书籍中的数据绑定章节](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)

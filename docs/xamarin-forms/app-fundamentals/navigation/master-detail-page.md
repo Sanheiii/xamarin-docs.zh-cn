@@ -10,14 +10,14 @@ ms.date: 12/01/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3a65e9bb90f01bcb5e0b1182a21d998e2335da9a
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: d29dafd5bcdf991f275580850d77a4923d37286e
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86934519"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563050"
 ---
-# <a name="xamarinforms-master-detail-page"></a>Xamarin.Forms 母版页详细信息页
+# <a name="no-locxamarinforms-master-detail-page"></a>Xamarin.Forms 母版页详细信息页
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-masterdetailpage)
 
@@ -296,5 +296,5 @@ public class MainPageCS : MasterDetailPage
 ## <a name="related-links"></a>相关链接
 
 - [页类型](https://developer.xamarin.com/r/xamarin-forms/book/chapter25.pdf)
-- [MasterDetailPage（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-masterdetailpage)
+- [MasterDetailPage（示例）](/samples/xamarin/xamarin-forms-samples/navigation-masterdetailpage)
 - [MasterDetailPage](xref:Xamarin.Forms.MasterDetailPage)

@@ -10,14 +10,14 @@ ms.date: 10/08/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c817936c77764b95842226b9a9a31c26667d6d0f
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: d24ff6831bb8b52d840ff2db7c13c3eb674b7bd8
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937444"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91555783"
 ---
-# <a name="xamarinforms-messagingcenter"></a>Xamarin.Forms MessagingCenter
+# <a name="no-locxamarinforms-messagingcenter"></a>Xamarin.Forms MessagingCenter
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/usingmessagingcenter)
 
@@ -109,4 +109,4 @@ MessagingCenter.Unsubscribe<MainPage, string>(this, "Hi");
 
 ## <a name="related-links"></a>相关链接
 
-- [MessagingCenterSample](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/usingmessagingcenter)
+- [MessagingCenterSample](/samples/xamarin/xamarin-forms-samples/usingmessagingcenter)

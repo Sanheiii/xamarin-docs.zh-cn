@@ -10,12 +10,12 @@ ms.date: 03/06/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9f999d56fbf178be160e91756643c127d574b090
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 083c8b97d158f817dbe98212bc244e8d1cac845c
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84197559"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556771"
 ---
 # <a name="picking-a-photo-from-the-picture-library"></a>从图片库中选取照片
 
@@ -86,7 +86,7 @@ namespace DependencyServiceDemos.iOS
 
 `GetImageStreamAsync` 方法创建 `UIImagePickerController` 并初始化它，以从照片库中选择图像。 需要两个事件处理程序：一个用于用户选择照片，另一个用于用户取消照片库的显示。 然后 `PresentViewController` 方法向用户显示照片图库。
 
-此时，`GetImageStreamAsync` 方法必须将 `Task<Stream>` 对象返回给调用它的代码。 只有用户已完成与照片库的交互并调用其中一个事件处理程序时，该任务才会完成。 对于这种情况，[`TaskCompletionSource`](https://msdn.microsoft.com/library/dd449174(v=vs.110).aspx) 类是必不可少的。 该类提供要从 `GetImageStreamAsync` 方法返回的适当泛型类型的 `Task` 对象，稍后完成任务时该类将收到通知。
+此时，`GetImageStreamAsync` 方法必须将 `Task<Stream>` 对象返回给调用它的代码。 只有用户已完成与照片库的交互并调用其中一个事件处理程序时，该任务才会完成。 对于这种情况，[`TaskCompletionSource`](/dotnet/api/system.threading.tasks.taskcompletionsource-1) 类是必不可少的。 该类提供要从 `GetImageStreamAsync` 方法返回的适当泛型类型的 `Task` 对象，稍后完成任务时该类将收到通知。
 
 用户已选择图片时，将调用 `FinishedPickingMedia` 事件处理程序。 但是，处理程序提供 `UIImage` 对象，而 `Task` 必须返回 .NET `Stream` 对象。 这需要执行两个步骤来完成：首先将 `UIImage` 对象转换为存储在 `NSData` 对象中的内存中 PNG 或 JPEG 文件，然后将 `NSData` 对象转换为 .NET `Stream` 对象。 通过调用 `TaskCompletionSource` 对象的 `SetResult` 方法，以提供 `Stream` 对象的方式完成任务：
 
@@ -297,6 +297,6 @@ async void OnPickPhotoButtonClicked(object sender, EventArgs e)
 
 ## <a name="related-links"></a>相关链接
 
-- [DependencyService（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/dependencyservice/)
+- [DependencyService（示例）](/samples/xamarin/xamarin-forms-samples/dependencyservice/)
 - [从库 (iOS) 中选择照片](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery)
 - [选择图像 (Android)](https://github.com/xamarin/recipes/tree/master/Recipes/android/other_ux/pick_image)

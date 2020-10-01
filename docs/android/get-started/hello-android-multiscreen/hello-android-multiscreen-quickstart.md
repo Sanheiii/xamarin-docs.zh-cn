@@ -9,18 +9,18 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: b8f7d882306ed5c00404ae7a050da8e02a49d609
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 91583ff57c7336f6dabf7e83301ebfde7274ddbd
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "75607901"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91454775"
 ---
 # <a name="hello-android-multiscreen-quickstart"></a>了解 Android 多屏显示：快速入门
 
 _本指南分为两部分，介绍了扩展 Phoneword 应用程序以处理第二个屏幕的情况。与此同时，介绍了基础的 Android 应用程序构建基块，便于更深入探讨 Android 体系结构。_
 
-在本指南的演练部分中，将向 [Phoneword](https://docs.microsoft.com/samples/xamarin/monodroid-samples/phoneword) 应用程序添加第二个屏幕，用于跟踪使用此应用转换的号码的相关历史记录。 [最终的应用程序](https://docs.microsoft.com/samples/xamarin/monodroid-samples/phonewordmultiscreen)将具有第二个屏幕，可显示“已转换”的号码，如右侧屏幕截图所示：
+在本指南的演练部分中，将向 [Phoneword](/samples/xamarin/monodroid-samples/phoneword) 应用程序添加第二个屏幕，用于跟踪使用此应用转换的号码的相关历史记录。 [最终的应用程序](/samples/xamarin/monodroid-samples/phonewordmultiscreen)将具有第二个屏幕，可显示“已转换”的号码，如右侧屏幕截图所示：
 
 [![示例应用屏幕截图](hello-android-multiscreen-quickstart-images/screenshot-sml.png)](hello-android-multiscreen-quickstart-images/screenshot.png#lightbox)
 
@@ -29,7 +29,7 @@ _本指南分为两部分，介绍了扩展 Phoneword 应用程序以处理第�
 ## <a name="requirements"></a>要求
 
 由于本指南紧接[了解 Android](~/android/get-started/hello-android/index.md) 中的内容，因此需要完成[了解 Android 快速入门](~/android/get-started/hello-android/hello-android-quickstart.md)。
-如果想要直接跳到以下演练，可下载完整版的 [Phoneword](https://docs.microsoft.com/samples/xamarin/monodroid-samples/phoneword)（参见“了解 Android 快速入门”），然后使用该版本进行演练。
+如果想要直接跳到以下演练，可下载完整版的 [Phoneword](/samples/xamarin/monodroid-samples/phoneword)（参见“了解 Android 快速入门”），然后使用该版本进行演练。
 
 ## <a name="walkthrough"></a>演练
 
@@ -322,5 +322,5 @@ translateButton.Click += (sender, e) =>
 ## <a name="related-links"></a>相关链接
 
 - [Xamarin 应用图标和启动屏幕 (ZIP)](https://github.com/xamarin/monodroid-samples/blob/master/Phoneword/Resources/XamarinAndroidIcons.zip?raw=true)
-- [Phoneword（示例）](https://docs.microsoft.com/samples/xamarin/monodroid-samples/phoneword)
-- [PhonewordMultiscreen（示例）](https://docs.microsoft.com/samples/xamarin/monodroid-samples/phonewordmultiscreen)
+- [Phoneword（示例）](/samples/xamarin/monodroid-samples/phoneword)
+- [PhonewordMultiscreen（示例）](/samples/xamarin/monodroid-samples/phonewordmultiscreen)

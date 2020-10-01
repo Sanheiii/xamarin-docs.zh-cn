@@ -1,6 +1,6 @@
 ---
-title: title:"Xamarin.Forms基本绑定”说明：“本文介绍了如何使用 Xamarin.Forms 数据绑定，将两个对象之间的一对属性连接起来，其中至少有一个通常是用户界面对象。
-description: '这两个对象称为“目标”和“源”。” ms.prod: xamarin ms.assetid:96553DF7-12EA-4FB2-AE85-3D1D59382B40 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:2019/01/22 no-loc: [Xamarin.Forms, Xamarin.Essentials] ms.custom: video'
+title: Xamarin.Forms 基本绑定
+description: 本文介绍了如何使用 Xamarin.Forms 数据绑定，将两个对象之间的一对属性连接起来，其中至少有一个通常是用户界面对象。 这两个对象称为“目标”和“源”。
 ms.prod: xamarin
 ms.assetid: 96553DF7-12EA-4FB2-AE85-3D1D59382B40
 ms.technology: xamarin-forms
@@ -11,14 +11,14 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.custom: video
-ms.openlocfilehash: c0c6bc6e1005997548952aedc09cd83a451e7caa
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.openlocfilehash: 9bedde64f0eda233c289cb31296854b5cbca54a1
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84133518"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91561113"
 ---
-# <a name="xamarinforms-basic-bindings"></a>Xamarin.Forms 基本绑定
+# <a name="no-locxamarinforms-basic-bindings"></a>Xamarin.Forms 基本绑定
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
@@ -334,7 +334,7 @@ Scale="{Binding Value, Source={x:Reference slider}}" />
 
 ## <a name="related-links"></a>相关链接
 
-- [数据绑定演示（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+- [数据绑定演示（示例）](/samples/xamarin/xamarin-forms-samples/databindingdemos)
 - [Xamarin.Forms 书籍中的数据绑定章节](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)
 
 ## <a name="related-video"></a>相关视频

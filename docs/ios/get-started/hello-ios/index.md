@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: af0b9b4a73a82afbaef314384b10d6b9465a4b29
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: f1a95bd49588077b6765eaec0a8e038f33f94109
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73022817"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436411"
 ---
 # <a name="sample-app-hello-ios"></a>示例应用：Hello，iOS
 
@@ -21,10 +21,10 @@ ms.locfileid: "73022817"
 
 本指南的第一部分介绍如何创建一个应用程序，它将用户输入的字母数字电话号码转换为数字电话号码，然后呼叫该号码。
 
-## <a name="part-2-deep-dive"></a>[第 2 部分：深入了解](~/ios/get-started/hello-ios/hello-ios-deepdive.md)
+## <a name="part-2-deep-dive"></a>[第 2 部分：深度分析](~/ios/get-started/hello-ios/hello-ios-deepdive.md)
 
 本文档的第二部分将回顾所生成的应用程序，并提供对 iOS 应用程序工作原理的基本了解。
 
 ## <a name="related-links"></a>相关链接
 
-- [Hello，iOS（示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/hello-ios)
+- [Hello，iOS（示例）](/samples/xamarin/ios-samples/hello-ios)

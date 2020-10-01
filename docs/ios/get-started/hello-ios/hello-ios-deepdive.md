@@ -9,12 +9,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: 60c62bf4d2887cec3d68d44e7d384daae35c066f
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 4b9043d70bb7460abf62c964da8041f345cd1be6
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86929038"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91435607"
 ---
 # <a name="hello-ios--deep-dive"></a>Hello，iOS - 深入了解
 
@@ -26,7 +26,7 @@ ms.locfileid: "86929038"
 
 ## <a name="introduction-to-visual-studio-for-mac"></a>Visual Studio for Mac 简介
 
-Visual Studio for Mac 是将来自 Visual Studio 和 XCode 的功能结合在一起的免费开放源代码 IDE。 它采用完全集成的可视化设计器、包含重构工具的文本编辑器、程序集浏览器、源代码集成等。 本指南介绍一些基本的 Visual Studio for Mac 功能，但如果初次使用 Visual Studio for Mac，请查看 [Visual Studio for Mac](https://docs.microsoft.com/visualstudio/mac/) 文档。
+Visual Studio for Mac 是将来自 Visual Studio 和 XCode 的功能结合在一起的免费开放源代码 IDE。 它采用完全集成的可视化设计器、包含重构工具的文本编辑器、程序集浏览器、源代码集成等。 本指南介绍一些基本的 Visual Studio for Mac 功能，但如果初次使用 Visual Studio for Mac，请查看 [Visual Studio for Mac](/visualstudio/mac/) 文档。
 
 Visual Studio for Mac 遵循将代码组织为解决方案和项目的 Visual Studio 做法   。 解决方案是可以容纳一个或多个项目的容器。 项目可以是应用程序（如 iOS 或 Android）、支持库、测试应用程序等。 在 Phoneword 应用中，使用“单视图应用程序”模板添加了新 iPhone 项目  。 初始解决方案如下所示：
 
@@ -64,7 +64,7 @@ Visual Studio 将代码组织为解决方案和项目。 解决方案是可以�
 
 在[了解 iOS](~/ios/get-started/hello-ios/hello-ios-quickstart.md) 演练中，你创建了一个名为 Phoneword 的解决方案，并将一个 iOS 项目 (Phoneword_iOS) 置于其内部 。 项目内的项包括：
 
-- **引用** - 包含生成和运行应用程序所需的程序集。 展开该目录可查看对 .NET 程序集（如 [System](https://docs.microsoft.com/dotnet/api/system)、System.Core 和 [System.Xml](https://docs.microsoft.com/dotnet/api/system.xml)）的引用以及对 Xamarin.iOS 程序集的引用。
+- **引用** - 包含生成和运行应用程序所需的程序集。 展开该目录可查看对 .NET 程序集（如 [System](/dotnet/api/system)、System.Core 和 [System.Xml](/dotnet/api/system.xml)）的引用以及对 Xamarin.iOS 程序集的引用。
 - **包** - 包目录包含现成的 NuGet 包。
 - **资源** - 资源文件夹存储其他媒体。
 - **Main.cs** – 此项包含应用程序的主入口点。 若要启动应用程序，应传入主应用程序类 `AppDelegate` 的名称。
@@ -459,6 +459,6 @@ iOS 模拟器是测试应用程序的快速方法。 该模拟器具有一些针
 
 ## <a name="related-links"></a>相关链接
 
-- [Hello，iOS（示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/hello-ios)
+- [Hello，iOS（示例）](/samples/xamarin/ios-samples/hello-ios)
 - [iOS 人机界面指南](https://developer.apple.com/design/human-interface-guidelines/ios/overview/themes/)
 - [iOS 预配门户](https://developer.apple.com/account/#/overview)

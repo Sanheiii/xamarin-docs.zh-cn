@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/09/2018
-ms.openlocfilehash: 496e5c092c79f4f71bddaad30bea6acd1d58d375
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 00da8b668ea26aa9146ff0c30d07a60cefe6695a
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73027544"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91454008"
 ---
 # <a name="intro-to-contentproviders"></a>ContentProvider 简介
 
@@ -20,7 +20,7 @@ _Android 操作系统使用内容提供程序来帮助访问共享数据，例�
 
 ## <a name="content-providers-overview"></a>内容提供程序概述
 
-ContentProvider  封装数据存储库，并提供了一个用于访问它的 API。 该提供程序是 Android 应用程序的一部分，通常还提供用于显示/管理数据的 UI。 使用内容提供程序的主要好处是使其他应用程序可以使用提供程序客户端对象（称为 ContentResolver  ）轻松访问封装的数据。 内容提供程序和内容解析器一起提供一个易于生成和使用的一致的应用程序间 API，用于访问数据。 任何应用程序都可以选择使用 `ContentProviders` 在内部管理数据，也可以将其公开给其他应用程序。
+ContentProvider 封装数据存储库，并提供了一个用于访问它的 API。 该提供程序是 Android 应用程序的一部分，通常还提供用于显示/管理数据的 UI。 使用内容提供程序的主要好处是使其他应用程序可以使用提供程序客户端对象（称为 ContentResolver）轻松访问封装的数据。 内容提供程序和内容解析器一起提供一个易于生成和使用的一致的应用程序间 API，用于访问数据。 任何应用程序都可以选择使用 `ContentProviders` 在内部管理数据，也可以将其公开给其他应用程序。
 
 应用程序还需要 `ContentProvider` 来提供自定义搜索建议，或者希望能够将复杂数据从你的应用程序复制并粘贴到其他应用程序，也会需要它。 本文档说明了如何使用 Xamarin.Android 访问和生成 `ContentProviders`。
 
@@ -42,8 +42,8 @@ Android（或其他应用程序）公开的 `ContentProviders` 是在应用程�
 
 ## <a name="related-links"></a>相关链接
 
-- [ContactsAdapter 演示（示例）](https://docs.microsoft.com/samples/xamarin/monodroid-samples/platformfeatures-contactsadapterdemo)
-- [SimpleContentProvider（示例）](https://docs.microsoft.com/samples/xamarin/monodroid-samples/platformfeatures-simplecontentprovider)
+- [ContactsAdapter 演示（示例）](/samples/xamarin/monodroid-samples/platformfeatures-contactsadapterdemo)
+- [SimpleContentProvider（示例）](/samples/xamarin/monodroid-samples/platformfeatures-simplecontentprovider)
 - [内容提供程序开发人员指南](https://developer.android.com/guide/topics/providers/content-providers.html)
 - [ContentProvider 类引用](xref:Android.Content.ContentProvider)
 - [ContentResolver 类引用](xref:Android.Content.ContentResolver)

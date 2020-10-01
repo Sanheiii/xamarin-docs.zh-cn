@@ -10,12 +10,12 @@ ms.date: 11/06/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 4a9dca7556e9e08915e7e8915a0c01cd1ce6f676
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 13d9ddb5ba13960b4ed5af8f4fdb98b486b7e93e
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86935715"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562270"
 ---
 # <a name="customizing-a-map-pin"></a>自定义图钉
 
@@ -650,11 +650,11 @@ private async void OnInfoButtonTapped(object sender, TappedRoutedEventArgs e)
 
 此方法打开 Web 浏览器并导航到 `CustomPin` 实例的 `Url` 属性中存储的地址。 请注意，地址是在 .NET Standard 库项目中创建 `CustomPin` 集合时定义的。
 
-有关自定义 `MapControl` 实例的详细信息，请参阅 MSDN 上的[地图和位置概述](https://msdn.microsoft.com/library/windows/apps/mt219699.aspx)。
+有关自定义 `MapControl` 实例的详细信息，请参阅 MSDN 上的[地图和位置概述](/windows/uwp/maps-and-location/)。
 
 ## <a name="related-links"></a>相关链接
 
 - [地图控件](~/xamarin-forms/user-interface/map/index.md)
 - [iOS 地图](~/ios/user-interface/controls/ios-maps/index.md)
 - [地图 API](~/android/platform/maps-and-location/maps/maps-api.md)
-- [自定义的图钉（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-map-pin)
+- [自定义的图钉（示例）](/samples/xamarin/xamarin-forms-samples/customrenderers-map-pin)

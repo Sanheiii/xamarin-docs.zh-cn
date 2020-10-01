@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/01/2018
-ms.openlocfilehash: a638ccf7810c737faaeded7fcc98fcf657c85288
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 55969993a4cb3755f5a26e681ae21bf993307a0a
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73027200"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91456881"
 ---
 # <a name="jelly-bean-features"></a>Jelly Bean 功能
 
@@ -236,7 +236,7 @@ Android 4.1 使应用程序更灵活，并控制显示通知。 现在，应用�
 
 ## <a name="related-links"></a>相关链接
 
-- [时间动画示例（示例）](https://docs.microsoft.com/samples/xamarin/monodroid-samples/platformfeatures-timeanimatorexample)
+- [时间动画示例（示例）](/samples/xamarin/monodroid-samples/platformfeatures-timeanimatorexample)
 - [Android 4.1 API](https://developer.android.com/about/versions/android-4.1.html)
 - [任务和后台堆栈](https://developer.android.com/guide/components/tasks-and-back-stack.html)
 - [用返回和向上箭头导航](https://developer.android.com/design/patterns/navigation.html)

@@ -10,12 +10,12 @@ ms.date: 01/05/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ad36bd5efe09909753fed948a961a690feb0592a
-ms.sourcegitcommit: a003b036f6fb83818e2ecc9c72a641e3aeb373bd
+ms.openlocfilehash: 7edde81a926b142a5e792a203e96ee61b1fdfb7b
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88964657"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562699"
 ---
 # <a name="the-no-locxamarinforms-command-interface"></a>Xamarin.Forms 命令接口
 
@@ -89,7 +89,7 @@ ViewModel 定义 `ICommand` 类型的属性时，它还必须包含或引用实�
 
 ## <a name="basic-commanding"></a>基本命令
 
-[数据绑定演示](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)程序中的“人员录入”页演示了在 ViewModel 中实现的一些简单命令 。
+[数据绑定演示](/samples/xamarin/xamarin-forms-samples/databindingdemos)程序中的“人员录入”页演示了在 ViewModel 中实现的一些简单命令 。
 
 `PersonViewModel` 定义了分别名为 `Name`、`Age` 和 `Skills` 的三个属性，这三个属性定义一个人。 此类不包含任何 `ICommand` 属性
 
@@ -691,7 +691,7 @@ public class DecimalKeypadViewModel : INotifyPropertyChanged
 
 ## <a name="asynchronous-commanding-for-navigation-menus"></a>导航菜单的异步命令
 
-命令便于实现导航菜单，比如[数据绑定演示](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)程序自身的导航菜单。 以下是部分“MainPage.xaml”：
+命令便于实现导航菜单，比如[数据绑定演示](/samples/xamarin/xamarin-forms-samples/databindingdemos)程序自身的导航菜单。 以下是部分“MainPage.xaml”：
 
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -765,5 +765,5 @@ public partial class MainPage : ContentPage
 
 ## <a name="related-links"></a>相关链接
 
-- [数据绑定演示（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+- [数据绑定演示（示例）](/samples/xamarin/xamarin-forms-samples/databindingdemos)
 - [Xamarin.Forms 书籍中的数据绑定章节](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter18.md)

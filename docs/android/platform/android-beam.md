@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 06/06/2017
-ms.openlocfilehash: aab121ed5f811baf38eed48cf891ccdf076eaf44
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 8132be3e709e6cfe519934ce6c16ae16ac7054c6
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "76723810"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91454216"
 ---
 # <a name="android-beam"></a>Android 无线发送
 
@@ -72,10 +72,10 @@ IParcelable [] rawMsgs = intent.GetParcelableArrayExtra (NfcAdapter.ExtraNdefMes
 NdefMessage msg = (NdefMessage) rawMsgs [0];
 ```
 
-有关使用 Android Beam 的完整代码示例（如下面的屏幕截图所示），请参阅示例库中的 [Android Beam 演示](https://docs.microsoft.com/samples/xamarin/monodroid-samples/androidbeamdemo)。
+有关使用 Android Beam 的完整代码示例（如下面的屏幕截图所示），请参阅示例库中的 [Android Beam 演示](/samples/xamarin/monodroid-samples/androidbeamdemo)。
 
 [![“Android Beam 演示”中的示例屏幕截图](android-beam-images/24.png)](android-beam-images/24.png#lightbox)
 
 ## <a name="related-links"></a>相关链接
 
-- [Android Beam 演示（示例）](https://docs.microsoft.com/samples/xamarin/monodroid-samples/androidbeamdemo)
+- [Android Beam 演示（示例）](/samples/xamarin/monodroid-samples/androidbeamdemo)

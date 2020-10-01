@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: jondouglas
 ms.author: jodou
 ms.date: 02/13/2020
-ms.openlocfilehash: 93336f5a741cf9643288163f2bf1d8ef44ea52d2
-ms.sourcegitcommit: d42dadc6da584953865b1adb616489d91a7b25d0
+ms.openlocfilehash: baeabf2cde7e0aabe3439d698e63636810069705
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86473432"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91454606"
 ---
 # <a name="hardware-acceleration-for-emulator-performance-hyper-v--haxm"></a>通过硬件加速提高仿真器性能 (Hyper-V & HAXM)
 
@@ -37,7 +37,7 @@ Visual Studio 便于开发人员在无法使用 Android 设备的情况下通过
 以下虚拟化技术可用于加速 Android Emulator：
 
 1. **Microsoft 的 Hyper-V 和 Windows 虚拟机监控程序平台 (WHPX)** 。
-   [Hyper-V](https://docs.microsoft.com/virtualization/hyper-v-on-windows/) 是 Windows 的虚拟化功能，使虚拟的计算机系统可以在物理主计算机上运行。
+   [Hyper-V](/virtualization/hyper-v-on-windows/) 是 Windows 的虚拟化功能，使虚拟的计算机系统可以在物理主计算机上运行。
 
 2. **Intel 硬件加速执行管理器 (HAXM)** 。
    HAXM 是运行 Intel CPU 的计算机所用的虚拟化引擎。

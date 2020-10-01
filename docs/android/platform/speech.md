@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 04/02/2018
-ms.openlocfilehash: e8c7d1a4fb3537644ed3b7737158a5e50abcdae5
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: ce94179fe0ae7f3df1f2fa5ead20ec09fd6f8f5e
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73019758"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91457908"
 ---
 # <a name="android-speech"></a>Android 语音
 
@@ -123,7 +123,7 @@ protected override void OnActivityResult(int requestCode, Result resultVal, Inte
 }
 ```
 
-## <a name="text-to-speech"></a>文本到语音转换
+## <a name="text-to-speech"></a>文本转语音
 
 文本转语音并不完全是语音转文本的反向，它依赖于两个关键组件：在设备上安装的文本转语音引擎，以及安装的语言。
 
@@ -196,7 +196,7 @@ protected override void OnActivityResult(int req, Result res, Intent data)
 
 `TextToSpeech.Engine.ActionCheckTtsData` 测试语言资源的可用性。 此测试完成时将调用 `OnActivityResult`。 如果需要下载语言资源，`OnActivityResult` 会触发 `TextToSpeech.Engine.ActionInstallTtsData` 操作，以启动一个活动来允许用户下载所需的语言。 请注意，此 `OnActivityResult` 实现不检查 `Result` 代码，因为在此简化示例中，已确定需要下载语言包。
 
-`TextToSpeech.Engine.ActionInstallTtsData` 操作将向用户显示“Google TTS 语音数据”  活动，以选择要下载的语言：
+`TextToSpeech.Engine.ActionInstallTtsData` 操作将向用户显示“Google TTS 语音数据”活动，以选择要下载的语言：
 
 ![Google TTS 语音数据活动](speech-images/01-google-tts-voice-data.png)
 
@@ -231,8 +231,8 @@ void TextToSpeech.IOnInitListener.OnInit(OperationResult status)
 
 ## <a name="related-links"></a>相关链接
 
-- [Xamarin.Forms DependencyService](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/dependencyservice//)
-- [文本转语音（示例）](https://docs.microsoft.com/samples/xamarin/monodroid-samples/platformfeatures-texttospeech)
-- [语音转文本（示例）](https://docs.microsoft.com/samples/xamarin/monodroid-samples/platformfeatures-speechtotext)
+- [Xamarin.Forms DependencyService](/samples/xamarin/xamarin-forms-samples/dependencyservice//)
+- [文本转语音（示例）](/samples/xamarin/monodroid-samples/platformfeatures-texttospeech)
+- [语音转文本（示例）](/samples/xamarin/monodroid-samples/platformfeatures-speechtotext)
 - [Android.Speech 命名空间](xref:Android.Speech)
 - [Android.Speech.Tts 命名空间](xref:Android.Speech.Tts)

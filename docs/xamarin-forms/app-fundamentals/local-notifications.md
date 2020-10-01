@@ -10,12 +10,12 @@ ms.date: 10/10/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: da867dd017ed50ccbc09f969891bb91011379d3f
-ms.sourcegitcommit: f6a2f07d2e689e0cfd01b30008d50c83c63fa70c
+ms.openlocfilehash: 8c62d03e785e02160d9c0f83c3375383d890d62b
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89052742"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91558266"
 ---
 # <a name="local-notifications-in-no-locxamarinforms"></a>Xamarin.Forms 中的本地通知
 
@@ -410,7 +410,7 @@ iOS 为通知提供多个高级选项。 有关详细信息，请参阅 [Xamarin
 
 ## <a name="related-links"></a>相关链接
 
-- [示例项目](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/local-notifications)
+- [示例项目](/samples/xamarin/xamarin-forms-samples/local-notifications)
 - [Xamarin.Android 中的通知](~/android/app-fundamentals/notifications/index.md)
 - [Xamarin.iOS 中的通知](~/ios/platform/user-notifications/index.md)
 - [Xamarin.Forms Dependency.Service](~/xamarin-forms/app-fundamentals/dependency-service/introduction.md)

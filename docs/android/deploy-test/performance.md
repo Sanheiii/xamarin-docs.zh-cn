@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: 63365ebc12089ced7de621b3a510996fa66119ce
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: e49c6d92d4c6bcabf45047321e183fe36d19096b
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571956"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91454710"
 ---
 # <a name="xamarinandroid-performance"></a>Xamarin.Android 性能
 
@@ -232,7 +232,7 @@ App.Current.Service1.Updated -= service1UpdateHandler;
 
 ## <a name="dispose-of-unused-image-resources"></a>释放未使用的图像资源
 
-为了节省内存使用，最好释放不再需要的大型图像资源。 但是，请必须确保图像被正确地释放。 可以利用 [using](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/using-statement) 语句以确保正确使用 `.Dispose()` 对话，而不利用显式 `IDisposable` 调用。 
+为了节省内存使用，最好释放不再需要的大型图像资源。 但是，请必须确保图像被正确地释放。 可以利用 [using](/dotnet/csharp/language-reference/keywords/using-statement) 语句以确保正确使用 `.Dispose()` 对话，而不利用显式 `IDisposable` 调用。 
 
 例如，[位图](xref:Android.Graphics.Bitmap)类可实现 `IDisposable`。 在 `using` 块中包装 `BitMap` 对象的实例化可确保从块中退出时它能被正确地释放：
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/01/2018
-ms.openlocfilehash: fb1ba92be9527d490b3d34bd4c0e454b0a750837
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 52c44efa335d81004ce2e3dbf0d9160640118bea
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73019988"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91453540"
 ---
 # <a name="marshmallow-features"></a>Marshmallow 功能
 
@@ -131,7 +131,7 @@ Android Marshmallow 中引入的许多更改都侧重于改善 Android 用户体
 自 Android Lollipop 以来，Android 权限系统经过了大幅优化和简化。 在 Android Marshmallow 中，用户在运行时（而不是在安装时）根据具体情况授予权限。 若要在 Android Marshmallow 和更高版本上支持此功能，请将应用程序设计为在运行时提示用户权限（在需要权限的上下文中）。 此更改使用户能够更轻松地立即开始使用应用程序，因为它简化了安装和升级应用的过程。 
 
 若要详细了解如何在 Xamarin.Android 应用程序中实现运行时权限（包括示例代码），请参阅[在 Android Marshmallow 中请求运行时权限](https://blog.xamarin.com/requesting-runtime-permissions-in-android-marshmallow/)。
-Xamarin 还提供了一个示例应用，演示运行时权限在 Android Marshmallow（及更高版本）中的工作方式：[RuntimePermissions](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-m-runtimepermissions)。
+Xamarin 还提供了一个示例应用，演示运行时权限在 Android Marshmallow（及更高版本）中的工作方式：[RuntimePermissions](/samples/xamarin/monodroid-samples/android-m-runtimepermissions)。
 
 此示例应用对下列内容进行了说明：
 
@@ -160,7 +160,7 @@ Android Marshmallow 包括两个身份验证增强功能，无需提供密码：
 在支持指纹扫描硬件的设备上，可以使用新的 `FingerPrintManager` 类来对用户进行身份验证。
 有关 Android Marshmallow 中的指纹身份验证功能的详细信息，请参阅[指纹身份验证](https://developer.android.com/preview/api-overview.html#fingerprint-authentication)。
 
-Xamarin 提供了一个示例应用，演示如何使用注册的指纹在应用中对用户进行身份验证：[FingerprintDialog](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-m-fingerprintdialog)。
+Xamarin 提供了一个示例应用，演示如何使用注册的指纹在应用中对用户进行身份验证：[FingerprintDialog](/samples/xamarin/monodroid-samples/android-m-fingerprintdialog)。
 
 使用此示例应用：
 
@@ -182,7 +182,7 @@ Android Marshmallow 中引入了新的语音交互功能，使应用程序用户
 通过使用 Android Marshmallow 新的“确认凭据”  功能，可以根据设备的解锁时间对用户进行身份验证，使用户无需记住和输入特定于应用的密码。
 为此，请使用 `KeyGenerator` 的新 `SetUserAuthenticationValidityDurationSeconds` 方法。 使用 `KeyGuardManager` 的 `CreateConfirmDeviceCredentialIntent` 方法在应用中重新对用户进行身份验证。 有关 Android Marshmallow 中的这一新功能的详细信息，请参阅[确认凭据](https://developer.android.com/preview/api-overview.html#confirm-credential)。
 
-Xamarin 提供了一个示例应用，演示如何在应用中使用设备凭据（如 PIN、模式或密码）：[ConfirmCredential](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-m-confirmcredential)
+Xamarin 提供了一个示例应用，演示如何在应用中使用设备凭据（如 PIN、模式或密码）：[ConfirmCredential](/samples/xamarin/monodroid-samples/android-m-confirmcredential)
 
 使用此示例应用：
 
@@ -227,7 +227,7 @@ Android Lollipop 引入了[材料设计](https://www.google.com/design/spec/mate
 若要利用 Xamarin.Android 应用中的[设计支持库](https://developer.android.com/tools/support-library/features.html#design)，请下载并安装 Xamarin [Xamarin 支持库设计](https://www.nuget.org/packages/Xamarin.Android.Support.Design/) NuGet 包。
 
 有关在 Xamarin.Android 应用中使用材料设计支持库的更多详细信息（包括代码示例），请参阅[带有 Android 支持设计库的精美材料设计](https://blog.xamarin.com/add-beautiful-material-design-with-the-android-support-design-library/)。
-Xamarin 提供了一个示例应用，演示了 Xamarin.Android 上的新 Android 设计库 &ndash; [Cheesesquare](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android50-cheesesquare)。
+Xamarin 提供了一个示例应用，演示了 Xamarin.Android 上的新 Android 设计库 &ndash; [Cheesesquare](/samples/xamarin/monodroid-samples/android50-cheesesquare)。
 此示例演示设计库的以下功能：
 
 - 折叠工具栏
@@ -258,6 +258,6 @@ Xamarin 提供了一个示例应用，演示了 Xamarin.Android 上的新 Androi
 - [获取 Android SDK](https://developer.android.com/sdk/index.html#Other)
 - [功能概述](https://developer.android.com/preview/api-overview.html)
 - [发行说明](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/android/xamarin.android_5/xamarin.android_5.1.99/index.md)
-- [RuntimePermissions（示例）](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-m-runtimepermissions)
-- [ConfirmCredential（示例）](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-m-confirmcredential)
-- [FingerprintDialog（示例）](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-m-fingerprintdialog)
+- [RuntimePermissions（示例）](/samples/xamarin/monodroid-samples/android-m-runtimepermissions)
+- [ConfirmCredential（示例）](/samples/xamarin/monodroid-samples/android-m-confirmcredential)
+- [FingerprintDialog（示例）](/samples/xamarin/monodroid-samples/android-m-fingerprintdialog)

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/29/2018
-ms.openlocfilehash: 7bc6a7ce1b8cd20aa782ddde42925e4e72374ec4
-ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
+ms.openlocfilehash: 8cbed52524eac05cc4a737936fd6ee7d90279f8e
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86996941"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91435451"
 ---
 # <a name="pair-to-mac-for-xamarinios-development"></a>通过“与 Mac 配对”进行 Xamarin.iOS 开发
 
@@ -43,7 +43,7 @@ Visual Studio 2019 的“与 Mac 配对”功能会发现、连接到 Mac 生成
 > 按照本指南中的说明进行操作之前，请完成以下步骤：
 >
 > - 在 Windows 计算机上，[安装 Visual Studio 2019](~/get-started/installation/windows.md)
-> - 在 Mac 上，[安装 Xcode](https://itunes.apple.com/us/app/xcode/id497799835?mt=12) 和 [Visual Studio for Mac](https://docs.microsoft.com/visualstudio/mac/installation)
+> - 在 Mac 上，[安装 Xcode](https://itunes.apple.com/us/app/xcode/id497799835?mt=12) 和 [Visual Studio for Mac](/visualstudio/mac/installation)
 >   - _安装后必须手动打开 Xcode_，以便它可以添加任何其他的组件。
 >
 > 如果不想安装 Visual Studio for Mac，Visual Studio 2019 可以使用 Xamarin.iOS 和 Mono 自动配置 Mac 生成主机。
@@ -101,7 +101,7 @@ Visual Studio 2019 的“与 Mac 配对”功能会发现、连接到 Mac 生成
 
 5. “与 Mac 配对”会自动配置 Mac。
 
-    [从 Visual Studio 2019 版本 15.6 开始](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-relnotes#automatic-macos-provisioning)，Visual Studio 2019 会根据需要在已连接的 Mac 生成主机上安装或更新 Mono 和 Xamarin.iOS（请注意，仍须手动安装 Xcode）。 有关详细信息，请参阅[自动预配 Mac ](#automatic-mac-provisioning)。
+    [从 Visual Studio 2019 版本 15.6 开始](/visualstudio/releasenotes/vs2017-relnotes#automatic-macos-provisioning)，Visual Studio 2019 会根据需要在已连接的 Mac 生成主机上安装或更新 Mono 和 Xamarin.iOS（请注意，仍须手动安装 Xcode）。 有关详细信息，请参阅[自动预配 Mac ](#automatic-mac-provisioning)。
 
 6. 查找连接状态图标。
 
@@ -160,7 +160,7 @@ Visual Studio 2019 的“与 Mac 配对”功能会发现、连接到 Mac 生成
 
 ## <a name="automatic-mac-provisioning"></a>自动预配 Mac
 
-自 [Visual Studio 2019 版本 15.6](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-relnotes#automatic-macos-provisioning) 起，与 Mac 配对后会使用构建 Xamarin.iOS 应用程序所必需的软件来自动预配 Mac：Mono、Xamarin.iOS（软件框架，而不是 Visual Studio for Mac IDE），以及与 Xcode 相关的工具（但不是 Xcode 本身）。
+自 [Visual Studio 2019 版本 15.6](/visualstudio/releasenotes/vs2017-relnotes#automatic-macos-provisioning) 起，与 Mac 配对后会使用构建 Xamarin.iOS 应用程序所必需的软件来自动预配 Mac：Mono、Xamarin.iOS（软件框架，而不是 Visual Studio for Mac IDE），以及与 Xcode 相关的工具（但不是 Xcode 本身）。
 
 > [!IMPORTANT]
 >
@@ -185,7 +185,7 @@ Visual Studio 2019 [连接到 Mac](#connect-to-the-mac-from-visual-studio-2019) 
 “与 Mac 配对”升级 Mac 上的 Xamarin.iOS，以匹配 Windows 计算机上安装的版本。
 
 > [!IMPORTANT]
-> “与 Mac 配对”不会把 Mac 上的 Xamarin.iOS 从 alpha/beta 版本降级为稳定版本。 如果已安装 Visual Studio for Mac，请设置[发布通道](https://docs.microsoft.com/visualstudio/mac/update)，如下所示：
+> “与 Mac 配对”不会把 Mac 上的 Xamarin.iOS 从 alpha/beta 版本降级为稳定版本。 如果已安装 Visual Studio for Mac，请设置[发布通道](/visualstudio/mac/update)，如下所示：
 >
 > - 如果使用 Visual Studio 2019，选择 Visual Studio for Mac 中的“稳定”更新通道。
 > - 如果使用 Visual Studio 2019 预览版，选择 Visual Studio for Mac 中的“Alpha”更新通道。

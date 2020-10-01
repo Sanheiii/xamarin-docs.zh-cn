@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 10/16/2019
-ms.openlocfilehash: 76696c094634c90fc0f9d445b932e04f53bc87c7
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 9754018d48a64c3f3df27f3c0979939ee3cbfee3
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73022526"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91435413"
 ---
 # <a name="xamarinios-installation"></a>Xamarin.iOS 安装
 
-## <a name="required-components"></a>必需组件
+## <a name="required-components"></a>所需的组件
 
 若要针对 Xamarin.iOS 构建，需具备以下条件：
 
@@ -33,7 +33,7 @@ Xcode 的最新版可通过 [iOS 开发人员中心](https://developer.apple.com
 
 ## <a name="mac-installation"></a>Mac 安装
 
-有关在 Mac 上安装 Xamarin.iOS 的说明，请参阅 [Mac 安装](https://docs.microsoft.com/visualstudio/mac/installation)指南。
+有关在 Mac 上安装 Xamarin.iOS 的说明，请参阅 [Mac 安装](/visualstudio/mac/installation)指南。
 
 ## <a name="windows-installation"></a>Windows 安装
 

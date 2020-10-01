@@ -8,14 +8,14 @@ ms.date: 03/13/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 56cb9619a4132f6568cee8fbf590965934024639
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 4a13ed8e12e11595c6c1b7617e32a492205a9175
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84801889"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436575"
 ---
-# <a name="xamarinessentials-platform-extensions"></a>Xamarin.Essentials：平台扩展
+# <a name="no-locxamarinessentials-platform-extensions"></a>Xamarin.Essentials：平台扩展
 
 必须使用矩形、大小和点等平台类型时，Xamarin.Essentials 提供了几种平台扩展方法。 这意味着可以针对其 iOS、Android 和 UWP 特定类型在这些类型的 `System` 版本之间进行转换。
 
@@ -89,7 +89,7 @@ Activity 状态如下所示：
 * 已开始
 * 已停止
 
-有关详细信息，请参阅 [Activity 生命周期](https://docs.microsoft.com/xamarin/android/app-fundamentals/activity-lifecycle/)文档。
+有关详细信息，请参阅 [Activity 生命周期](../android/app-fundamentals/activity-lifecycle/index.md)文档。
 
 ## <a name="ios-extensions"></a>iOS 扩展
 

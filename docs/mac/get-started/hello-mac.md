@@ -8,12 +8,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 09/02/2018
-ms.openlocfilehash: fe052fee9bd72164ce0d739f01cc1c21a9517cc6
-ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
+ms.openlocfilehash: 49a4597aec37c1a9be550f62f4f97dd8fe7def08
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86997158"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91430619"
 ---
 # <a name="hello-mac-walkthrough"></a>Hello, Mac – 演练
 
@@ -39,7 +39,7 @@ Xamarin.Mac 应用程序开发需要以下条件：
 
 - 运行 macOS High Sierra (10.13) 或更高版本的 Mac 计算机。
 - [Xcode 10 或更高版本](https://itunes.apple.com/us/app/xcode/id497799835?mt=12)。
-- 最新版本的 [Xamarin.Mac 和 Visual Studio for Mac](https://docs.microsoft.com/visualstudio/mac/installation/)。
+- 最新版本的 [Xamarin.Mac 和 Visual Studio for Mac](/visualstudio/mac/installation/)。
 
 若要运行使用 Xamarin.Mac 构建的应用程序，需要：
 
@@ -579,9 +579,9 @@ partial void ClickedButton (Foundation.NSObject sender) {
 - [集合视图](~/mac/user-interface/collection-view.md) - 本文介绍如何在 Xamarin.Mac 应用程序中使用集合视图。 其中包含如何在 Xcode 和 Interface Builder 中创建和维护集合视图、如何使用操作对代码公开集合视图元素、如何填充集合视图以及响应 C# 代码中的集合视图。
 - [图像](~/mac/app-fundamentals/image.md) - 本文介绍如何在 Xamarin.Mac 应用中使用图像和图标。 其中包括如何创建和维护用于创建应用图标的图像以及如何在 C# 代码和 Xcode 的 Interface Builder 中使用图像。
 
-[Mac 示例库](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Mac)包含即时可用的代码示例，以便于学习 Xamarin.Mac。
+[Mac 示例库](/samples/browse/?products=xamarin&term=Xamarin.Mac)包含即时可用的代码示例，以便于学习 Xamarin.Mac。
 
-[SourceWriter 示例应用](https://docs.microsoft.com/samples/xamarin/mac-samples/sourcewriter)是一个完整的 Xamarin.Mac 应用示例（其中包含用户在典型 Mac 应用程序中可能希望找到的许多功能）。 SourceWriter 是一个非常简单的源代码编辑器，提供代码补全和简单语法突出显示支持。
+[SourceWriter 示例应用](/samples/xamarin/mac-samples/sourcewriter)是一个完整的 Xamarin.Mac 应用示例（其中包含用户在典型 Mac 应用程序中可能希望找到的许多功能）。 SourceWriter 是一个非常简单的源代码编辑器，提供代码补全和简单语法突出显示支持。
 
 SourceWriter 代码已经完全注释，且在可用时，提供了相关链接，链接涵盖了从关键技术或方法到 Xamarin.Mac 文档中的相关信息。
 
@@ -591,5 +591,5 @@ SourceWriter 代码已经完全注释，且在可用时，提供了相关链接�
 
 ## <a name="related-links"></a>相关链接
 
-- [Hello，Mac（示例）](https://docs.microsoft.com/samples/xamarin/mac-samples/hello-mac)
+- [Hello，Mac（示例）](/samples/xamarin/mac-samples/hello-mac)
 - [macOS 人机界面指南](https://developer.apple.com/design/human-interface-guidelines/macos/overview/themes/)

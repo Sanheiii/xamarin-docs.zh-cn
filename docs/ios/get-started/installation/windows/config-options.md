@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 04/16/2018
-ms.openlocfilehash: c5c819221bc08f1c39bde9b5900c2f9f9889764d
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 0f57c10ea263a3dcf882d2cf75a57105e7f7d0d4
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73022536"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91434524"
 ---
 # <a name="configuring-visual-studio-for-ios-development"></a>配置 Visual Studio 以进行 iOS 开发
 
@@ -27,7 +27,7 @@ Visual Studio 2019 或 Visual Studio 2017 必须使用 Mac 生成主机上安装
 - 如果使用 Visual Studio 2019 预览版，选择 Visual Studio for Mac 中的“Alpha”更新通道  。
 
 > [!NOTE]
-> 从 [Visual Studio 2017 版本 15.6](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-relnotes#automatic-macos-provisioning) 开始，Visual Studio 2017 自动检测 Mac 生成主机是否使用与 Windows 相同的 Xamarin.iOS 版本。 如果版本不匹配，则 Visual Studio 2017 自动在 Mac 生成主机上远程安装正确版本。 有关详细信息，请查看[与 Mac 配对](~/ios/get-started/installation/windows/connecting-to-mac/index.md)指南中的[自动预配 Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md#automatic-mac-provisioning) 部分。
+> 从 [Visual Studio 2017 版本 15.6](/visualstudio/releasenotes/vs2017-relnotes#automatic-macos-provisioning) 开始，Visual Studio 2017 自动检测 Mac 生成主机是否使用与 Windows 相同的 Xamarin.iOS 版本。 如果版本不匹配，则 Visual Studio 2017 自动在 Mac 生成主机上远程安装正确版本。 有关详细信息，请查看[与 Mac 配对](~/ios/get-started/installation/windows/connecting-to-mac/index.md)指南中的[自动预配 Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md#automatic-mac-provisioning) 部分。
 
 ## <a name="ios-toolbar"></a>iOS 工具栏
 

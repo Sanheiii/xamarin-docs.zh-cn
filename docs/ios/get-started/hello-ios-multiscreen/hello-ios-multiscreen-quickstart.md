@@ -9,12 +9,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: b937cc653275f509b7f759af5c3d995e84381cb2
-ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
+ms.openlocfilehash: 94bb87e10b8cab2a9a37c7701b59d621f6329b8d
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86997340"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436174"
 ---
 # <a name="hello-ios-multiscreen--quickstart"></a>Hello，iOS 多屏显示 – 快速入门
 
@@ -26,7 +26,7 @@ ms.locfileid: "86997340"
 
 ## <a name="requirements"></a>要求
 
-本指南将从《了解 iOS》文档中断的位置继续，并要求完成[了解 iOS 快速入门](~/ios/get-started/hello-ios/index.md)。 可从 [iOS 示例入门](https://docs.microsoft.com/samples/xamarin/ios-samples/hello-ios)下载 Phoneword 应用的已完成版本。
+本指南将从《了解 iOS》文档中断的位置继续，并要求完成[了解 iOS 快速入门](~/ios/get-started/hello-ios/index.md)。 可从 [iOS 示例入门](/samples/xamarin/ios-samples/hello-ios)下载 Phoneword 应用的已完成版本。
 
 ::: zone pivot="macos"
 
@@ -34,7 +34,7 @@ ms.locfileid: "86997340"
 
 本演练将向 **Phoneword** 应用程序添加一个“呼叫历史记录”屏幕。
 
-1. 在 Visual Studio for Mac 中打开 **Phoneword** 应用程序。 如有必要，可从[此处](https://docs.microsoft.com/samples/xamarin/ios-samples/hello-ios)下载 [了解 iOS 演练](~/ios/get-started/hello-ios/index.md)指南中涉及的完整 Phoneword 应用程序。
+1. 在 Visual Studio for Mac 中打开 **Phoneword** 应用程序。 如有必要，可从[此处](/samples/xamarin/ios-samples/hello-ios)下载 [了解 iOS 演练](~/ios/get-started/hello-ios/index.md)指南中涉及的完整 Phoneword 应用程序。
 
 2. 从 **Solution Pad** 打开 **Main.storyboard** 文件：
 
@@ -275,7 +275,7 @@ ms.locfileid: "86997340"
 
 本演练将向 **Phoneword** 应用程序添加一个“呼叫历史记录”屏幕。
 
-1. 在 Visual Studio 中打开 **Phoneword** 应用程序。 如有必要，可从[了解 iOS 演练](~/ios/get-started/hello-ios/index.md)指南下载[完整的 Phoneword 应用程序](https://docs.microsoft.com/samples/xamarin/ios-samples/hello-ios)。 注意，必须连接 [Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md) 才可使用 iOS 设计器和 iOS 模拟器。
+1. 在 Visual Studio 中打开 **Phoneword** 应用程序。 如有必要，可从[了解 iOS 演练](~/ios/get-started/hello-ios/index.md)指南下载[完整的 Phoneword 应用程序](/samples/xamarin/ios-samples/hello-ios)。 注意，必须连接 [Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md) 才可使用 iOS 设计器和 iOS 模拟器。
 
 2. 从编辑用户界面开始。 从“解决方案资源管理器”打开 **Main.storyboard** 文件，确保“查看方式”已设为 iPhone 6：
 
@@ -517,6 +517,6 @@ ms.locfileid: "86997340"
 
 ## <a name="related-links"></a>相关链接
 
-- [Hello，iOS（示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/hello-ios)
+- [Hello，iOS（示例）](/samples/xamarin/ios-samples/hello-ios)
 - [iOS 人机界面指南](https://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/Introduction/Introduction.html)
 - [iOS 预配门户](https://developer.apple.com/ios/manage/overview/index.action)

@@ -10,12 +10,12 @@ ms.date: 07/19/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: de85e9108244230e9c0a740b1aa9140ecf92a033
-ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
+ms.openlocfilehash: af6da36e242ae2d967d795b61d65a38e5e43e22b
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86997392"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91557278"
 ---
 # <a name="creating-mobile-apps-with-no-locxamarinforms-book"></a>《使用 Xamarin.Forms 创建移动应用》书籍
 
@@ -88,7 +88,7 @@ ms.locfileid: "86997392"
 
 ## <a name="ways-in-which-the-book-is-outdated"></a>本电子图书有哪些过时内容
 
-在《使用 Xamarin.Forms 创建移动应用》出版后，Xamarin.Forms 新增了多项功能。 [Xamarin.Forms](/xamarin/) 文档的各篇文章介绍了这些新功能。
+在《使用 Xamarin.Forms 创建移动应用》出版后，Xamarin.Forms 新增了多项功能。 [Xamarin.Forms](../../index.yml) 文档的各篇文章介绍了这些新功能。
 
 另外，还有其他更改导致本电子图书的一些内容过时：
 
@@ -131,5 +131,5 @@ Xamarin.Forms 提供对 [Mac](~/xamarin-forms/platform/other/mac.md)、[WPF](~/x
 
 ## <a name="related-links"></a>相关链接
 
-- [MS 新闻博客](https://blogs.msdn.microsoft.com/microsoft_press/2016/03/31/free-ebook-creating-mobile-apps-with-xamarin-forms/)
+- [MS 新闻博客](/archive/blogs/microsoft_press/free-ebook-creating-mobile-apps-with-xamarin-forms)
 - [本电子图书中的示例代码](https://github.com/xamarin/xamarin-forms-book-samples)

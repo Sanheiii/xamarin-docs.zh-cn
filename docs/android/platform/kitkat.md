@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/01/2018
-ms.openlocfilehash: 7a3fd9e22bcf037ec669c77ac919035b0d04b942
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 4616d5eb9dde29faaf1e2fefe5e3e9917fdc078e
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84567926"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91456712"
 ---
 # <a name="kitkat-features"></a>KitKat 功能
 
@@ -699,6 +699,6 @@ adb shell screenrecord --bit-rate 8000000 --time-limit 60 /sdcard/screencast.mp4
 
 ## <a name="related-links"></a>相关链接
 
-- [KitKat 示例](https://docs.microsoft.com/samples/xamarin/monodroid-samples/kitkat)
+- [KitKat 示例](/samples/xamarin/monodroid-samples/kitkat)
 - [Android 4.4 API](https://developer.android.com/about/versions/android-4.4.html)
 - [Android KitKat](https://developer.android.com/about/versions/kitkat.html)

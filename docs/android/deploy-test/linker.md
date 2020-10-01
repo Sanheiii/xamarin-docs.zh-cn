@@ -6,18 +6,18 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/30/2018
-ms.openlocfilehash: 729dede97a9b153738ca72af499d4d1e9d77fae0
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 3c42743a26ab4ec5388c1d3458d88ef4d161a1f3
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73021444"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91454840"
 ---
 # <a name="linking-on-android"></a>在 Android 上链接
 
-Xamarin.Android 应用程序使用链接器  缩减应用程序大小。 链接器使用应用程序的静态分析来确定实际使用的程序集、类型以及成员。 然后，链接器像垃圾回收器  一样运行，不断寻找被引用的程序集、类型和成员，直到找到引用的程序集、类型和成员的完整闭包。 然后，放弃  此闭包之外的所有内容。
+Xamarin.Android 应用程序使用链接器** 缩减应用程序大小。 链接器使用应用程序的静态分析来确定实际使用的程序集、类型以及成员。 然后，链接器像垃圾回收器** 一样运行，不断寻找被引用的程序集、类型和成员，直到找到引用的程序集、类型和成员的完整闭包。 然后，放弃** 此闭包之外的所有内容。
 
-例如，[Hello，Android](https://docs.microsoft.com/samples/xamarin/monodroid-samples/hellom4a) 示例：
+例如，[Hello，Android](/samples/xamarin/monodroid-samples/hellom4a) 示例：
 
 |Configuration|1.2.0 大小|4.0.1 大小|
 |---|---|---|
@@ -26,9 +26,9 @@ Xamarin.Android 应用程序使用链接器  缩减应用程序大小。 链接�
 
 链接导致程序包的大小是 1.2.0 中原始（未链接）程序包大小的 30%，是 4.0.1 中未链接程序包大小的 18%。
 
-## <a name="control"></a>控件
+## <a name="control"></a>控制
 
-链接基于静态分析  。 因此，不会检测到任何依赖于运行时环境的内容：
+链接基于静态分析**。 因此，不会检测到任何依赖于运行时环境的内容：
 
 ```csharp
 // To play along at home, Example must be in a different assembly from MyActivity.
@@ -50,20 +50,20 @@ public class MyActivity {
 
 ### <a name="linker-behavior"></a>链接器行为
 
-用于控制链接器的主要机制为“项目选项”  对话框中的“链接器行为”  （在 Visual Studio 中为“链接”  ）下拉列表。 有三个选项：
+用于控制链接器的主要机制为“项目选项”**** 对话框中的“链接器行为”****（在 Visual Studio 中为“链接”**）下拉列表。 有三个选项：
 
-1. **不链接**（在 Visual Studio 中为“无”  ）
-1. **链接 SDK 程序集**（仅 SDK 程序集  ）
-1. **链接所有程序集**（SDK 和用户程序集  ）
+1. **不链接**（在 Visual Studio 中为“无”**）
+1. **链接 SDK 程序集**（仅 SDK 程序集**）
+1. **链接所有程序集**（SDK 和用户程序集**）
 
-“不链接”  选项会关闭链接器；上述“在不链接的情况下进行发布”应用程序大小示例使用了此行为。 这对排除运行时故障很有用，可了解链接器是否负责。 通常不建议将此设置用于生产版本。
+“不链接”**** 选项会关闭链接器；上述“在不链接的情况下进行发布”应用程序大小示例使用了此行为。 这对排除运行时故障很有用，可了解链接器是否负责。 通常不建议将此设置用于生产版本。
 
-“链接 SDK 程序集”  选项仅链接 [Xamarin.Android 附带的程序集](~/cross-platform/internals/available-assemblies.md)。
+“链接 SDK 程序集”**** 选项仅链接 [Xamarin.Android 附带的程序集](~/cross-platform/internals/available-assemblies.md)。
 不会链接所有其他程序集（如你的代码）。
 
-“链接所有程序集”  选项将链接所有程序集，这意味着如果没有静态引用，你的代码也可能会被删除。
+“链接所有程序集”**** 选项将链接所有程序集，这意味着如果没有静态引用，你的代码也可能会被删除。
 
-上述示例将使用“不链接”  和“链接 SDK 程序集”  选项，并且使用“链接所有程序集”  行为将会失败，并生成以下错误：
+上述示例将使用“不链接”** 和“链接 SDK 程序集”** 选项，并且使用“链接所有程序集”** 行为将会失败，并生成以下错误：
 
 ```shell
 E/mono    (17755): [0xafd4d440:] EXCEPTION handling: System.MissingMethodException: Default constructor not found for type ExampleLibrary.Example.
@@ -168,7 +168,7 @@ class MyActivity {
 
 ### <a name="linkskip"></a>linkskip
 
-可以指定根本不应链接一组用户提供的程序集，同时允许使用 [AndroidLinkSkip MSBuild 属性](~/android/deploy-test/building-apps/build-process.md)通过“链接 SDK 程序集”  行为跳过其他用户程序集：
+可以指定根本不应链接一组用户提供的程序集，同时允许使用 [AndroidLinkSkip MSBuild 属性](~/android/deploy-test/building-apps/build-process.md)通过“链接 SDK 程序集”** 行为跳过其他用户程序集：
 
 ```xml
 <PropertyGroup>

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 04/11/2018
-ms.openlocfilehash: 514157873412b3af31e43ba211aa636c9b53c112
-ms.sourcegitcommit: a3f13a216fab4fc20a9adf343895b9d6a54634a5
+ms.openlocfilehash: 489408400a7a900bf867a4303188cdc927020f7f
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85853107"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91454463"
 ---
 # <a name="binding-an-aar"></a>绑定 .AAR
 
@@ -303,5 +303,5 @@ textanalyzer.aar 示例包含一个位于 res/drawable/monkey.png 的图像文�
 - [生成 Java 绑定库（视频）](https://university.xamarin.com/classes#10090)
 - [绑定 .JAR](~/android/platform/binding-java-library/binding-a-jar.md)
 - [绑定 Java 库](~/android/platform/binding-java-library/index.md)
-- [AarBinding（示例）](https://docs.microsoft.com/samples/xamarin/monodroid-samples/javaintegration-aarbinding)
+- [AarBinding（示例）](/samples/xamarin/monodroid-samples/javaintegration-aarbinding)
 - [Bug 44573 - 一个项目无法绑定多个 .aar 文件](https://bugzilla.xamarin.com/show_bug.cgi?id=44573)

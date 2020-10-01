@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 1214360f98464e1451da58aaca13df6a3964aba9
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 56c4e9c5b0ca44500ca3930a63b300b6bd3fb33f
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86933063"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436598"
 ---
 # <a name="connection-troubleshooting-for-a-xamarinios-build-host"></a>Xamarin.iOS 生成主机连接疑难解答
 
@@ -268,7 +268,7 @@ ms.locfileid: "86933063"
 
 1. 退出 Visual Studio。
 
-2. 启动[**开发人员命令提示**](https://msdn.microsoft.com/library/ms229859(v=vs.110).aspx)。
+2. 启动[**开发人员命令提示**](/dotnet/framework/tools/developer-command-prompt-for-vs)。
 
 3. 在命令提示中运行以下命令，以启动具有详细日志记录的 Visual Studio：
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/15/2018
-ms.openlocfilehash: 0520439b89458b7f73a025cd8d6b2cf8fc41dac0
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 0a066b9f1c75093257e364070e48f0cfbeb565ce
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "76940639"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91455087"
 ---
 # <a name="building-abi-specific-apks"></a>构建特定于 ABI 的 APK
 
@@ -157,7 +157,7 @@ rake 任务完成后，将有三个包含文件 `xamarin.helloworld.apk` 的 `bi
 [![包含 xamarin.helloworld.apk 的平台特定文件夹的位置](abi-specific-apks-images/image01.png)](abi-specific-apks-images/image01.png#lightbox)
 
 > [!NOTE]
-> 本指南中概述的构建过程可以在许多不同的构建系统之一中实现。 尽管我们没有预先编写的示例，但 [Powershell](https://technet.microsoft.com/scriptcenter/powershell.aspx) / [psake](https://github.com/psake/psake) 或 [Fake](https://fsharp.github.io/FAKE/) 应该也适用。
+> 本指南中概述的构建过程可以在许多不同的构建系统之一中实现。 尽管我们没有预先编写的示例，但 [Powershell](/powershell/) / [psake](https://github.com/psake/psake) 或 [Fake](https://fsharp.github.io/FAKE/) 应该也适用。
 
 ## <a name="summary"></a>总结
 
@@ -165,6 +165,6 @@ rake 任务完成后，将有三个包含文件 `xamarin.helloworld.apk` 的 `bi
 
 ## <a name="related-links"></a>相关链接
 
-- [OneABIPerAPK（示例）](https://docs.microsoft.com/samples/xamarin/monodroid-samples/oneabiperapk)
+- [OneABIPerAPK（示例）](/samples/xamarin/monodroid-samples/oneabiperapk)
 - [发布应用程序](~/android/deploy-test/publishing/index.md)
 - [面向 Google Play 的多 APK 支持](https://developer.android.com/google/play/publishing/multiple-apks.html)

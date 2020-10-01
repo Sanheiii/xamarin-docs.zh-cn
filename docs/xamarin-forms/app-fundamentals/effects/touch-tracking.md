@@ -10,12 +10,12 @@ ms.date: 12/14/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: cc150ecffbf9b6b31ec2f533bcc33876100614dc
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 3bbad7f96403cb1f386b80b2923b0cdd222f9596
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86936846"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91555874"
 ---
 # <a name="invoking-events-from-effects"></a>从效果调用事件
 
@@ -55,7 +55,7 @@ UWP 方法证明对某些类型的应用程序非常有用，例如音乐键盘�
 
 ## <a name="the-touch-tracking-effect-api"></a>触控跟踪效果 API
 
-[触控跟踪效果演示](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-touchtrackingeffect/)示例包含实现低级别触控跟踪的类（和枚举）。 这些类型属于命名空间 `TouchTracking`，以单词 `Touch` 开头。 TouchTrackingEffectDemos .NET Standard 库项目包括触摸事件类型的 `TouchActionType` 枚举：
+[触控跟踪效果演示](/samples/xamarin/xamarin-forms-samples/effects-touchtrackingeffect/)示例包含实现低级别触控跟踪的类（和枚举）。 这些类型属于命名空间 `TouchTracking`，以单词 `Touch` 开头。 TouchTrackingEffectDemos .NET Standard 库项目包括触摸事件类型的 `TouchActionType` 枚举：
 
 ```csharp
 public enum TouchActionType
@@ -362,7 +362,7 @@ static Dictionary<long, TouchRecognizer> idToTouchDictionary =
 
 ## <a name="putting-the-touch-effect-to-work"></a>使触控效果发挥作用
 
-[TouchTrackingEffectDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-touchtrackingeffect/) 程序包含五个页面，用于测试常见任务的触控跟踪效果。
+[TouchTrackingEffectDemos](/samples/xamarin/xamarin-forms-samples/effects-touchtrackingeffect/) 程序包含五个页面，用于测试常见任务的触控跟踪效果。
 
 BoxView 拖动页面允许将 `BoxView` 元素添加到 `AbsoluteLayout`然后在屏幕上拖动它们。 [XAML 文件](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffect/TouchTrackingEffect/TouchTrackingEffect/BoxViewDraggingPage.xaml)实例化两个 `Button` 视图，用于将 `BoxView` 元素添加到 `AbsoluteLayout` 并清除 `AbsoluteLayout`。
 
@@ -811,4 +811,4 @@ void OnTouchEffectAction(object sender, TouchActionEventArgs args)
 
 - [iOS 中的多点触控手指跟踪](~/ios/app-fundamentals/touch/touch-tracking.md)
 - [Android 中的多点触控手指跟踪](~/android/app-fundamentals/touch/touch-tracking.md)
-- [触控跟踪效果（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-touchtrackingeffect/)
+- [触控跟踪效果（示例）](/samples/xamarin/xamarin-forms-samples/effects-touchtrackingeffect/)

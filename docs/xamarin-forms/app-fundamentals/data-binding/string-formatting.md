@@ -10,14 +10,14 @@ ms.date: 01/05/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d08a89d5394a227e3cee76603e4e97d2cf9495e0
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 8e05420e41509c82c1912a4639159fb58b1a30dc
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84135754"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91558578"
 ---
-# <a name="xamarinforms-string-formatting"></a>Xamarin.Forms 字符串格式设置
+# <a name="no-locxamarinforms-string-formatting"></a>Xamarin.Forms 字符串格式设置
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
@@ -189,5 +189,5 @@ XAML 文件的下一部分是 `StackLayout`，其中 `BindingContext` 设置为�
 
 ## <a name="related-links"></a>相关链接
 
-- [数据绑定演示（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+- [数据绑定演示（示例）](/samples/xamarin/xamarin-forms-samples/databindingdemos)
 - [Xamarin.Forms 书籍中的数据绑定章节](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)

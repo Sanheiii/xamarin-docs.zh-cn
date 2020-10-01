@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: d0acd44561b220507aafda7af05cd2862f6c9009
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: fdc132143905db6cc32ebd9aeb07268e69bf2070
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73021705"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91434679"
 ---
 # <a name="application-icon-for-xamarinmac-apps"></a>Xamarin.Mac 应用的应用程序图标
 
@@ -108,7 +108,7 @@ Apple 建议在设计应用程序的图标时使用以下技巧：
 
 ## <a name="related-links"></a>相关链接
 
-- [MacImages（示例）](https://docs.microsoft.com/samples/xamarin/mac-samples/macimages)
+- [MacImages（示例）](/samples/xamarin/mac-samples/macimages)
 - [了解 Mac](~/mac/get-started/hello-mac.md)
 - [使用图像](~/mac/app-fundamentals/image.md)
 - [macOS 人机接口指南 - 图标和图像](https://developer.apple.com/macos/human-interface-guidelines/icons-and-images/image-size-and-resolution/)

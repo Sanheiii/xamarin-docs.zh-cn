@@ -1,6 +1,6 @@
 ---
-title: title:"Xamarin.FormsShell 导航”说明："Xamarin.FormsShell 应用程序可以利用基于 URI 的导航体验：可以导航到应用程序中的任何页面，而无需遵循设置的导航层次结构。”
-description: 'ms.prod: xamarin ms.assetid:57079D89-D1CB-48BD-9FEE-539CEC29EABB ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:2020/04/02 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: Xamarin.Forms Shell 导航
+description: Xamarin.Forms Shell 应用程序可以利用基于 URI 的导航体验：可以导航到应用程序中的任何页面，而无需遵循设置的导航层次结构。
 ms.prod: xamarin
 ms.assetid: 57079D89-D1CB-48BD-9FEE-539CEC29EABB
 ms.technology: xamarin-forms
@@ -10,14 +10,14 @@ ms.date: 04/02/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e67d49f300a8a98ec5685c33abf98f5b2ded08ed
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.openlocfilehash: 6cf4932c3265d1d66200ae12ba448a758586f11c
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84132387"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563141"
 ---
-# <a name="xamarinforms-shell-navigation"></a>Xamarin.Forms Shell 导航
+# <a name="no-locxamarinforms-shell-navigation"></a>Xamarin.Forms Shell 导航
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 
@@ -372,4 +372,4 @@ Shell.SetBackButtonBehavior(this, new BackButtonBehavior
 
 ## <a name="related-links"></a>相关链接
 
-- [Xaminals（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
+- [Xaminals（示例）](/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)

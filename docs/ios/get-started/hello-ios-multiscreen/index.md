@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: 871a94d06048f893cf06b00de46d66dd59b3703e
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 01980ab03119729d5405691f94d2509ca9b1beee
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73023221"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91435682"
 ---
 # <a name="hello-ios-multiscreen"></a>Hello，iOS 多屏显示
 
@@ -21,12 +21,12 @@ ms.locfileid: "73023221"
 
 本指南的第一部分向 Phoneword 示例应用程序添加第二个屏幕，用于跟踪输入号码的历史记录。
 
-## <a name="part-2-deep-dive"></a>[第 2 部分：深入了解](~/ios/get-started/hello-ios-multiscreen/hello-ios-multiscreen-deepdive.md)
+## <a name="part-2-deep-dive"></a>[第 2 部分：深度分析](~/ios/get-started/hello-ios-multiscreen/hello-ios-multiscreen-deepdive.md)
 
 本文档的第二部分介绍已生成的应用程序，讨论体系结构和导航，以及期间遇到的其他新的 iOS 概念。
 
 ## <a name="related-links"></a>相关链接
 
-- [Hello，iOS（示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/hello-ios)
+- [Hello，iOS（示例）](/samples/xamarin/ios-samples/hello-ios)
 - [iOS 人机界面指南](https://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/Introduction/Introduction.html)
 - [iOS 预配门户](https://developer.apple.com/ios/manage/overview/index.action)

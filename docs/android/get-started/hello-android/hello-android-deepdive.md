@@ -9,12 +9,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: 2f8c6a80b00a4a91c40c70af05ac0ebe18daaed3
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: e07a7e6ea11cbf717db22dd46eaa5e28d907bafa
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571436"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91454918"
 ---
 # <a name="hello-android-deep-dive"></a>Hello, Android：深入了解
 
@@ -70,7 +70,7 @@ Visual Studio 将代码组织为解决方案  和项目  。 解决方案是可�
 
 ## <a name="introduction-to-visual-studio-for-mac"></a>Visual Studio for Mac 简介
 
-Visual Studio for Mac 是免费的开源 IDE，类似于 Visual Studio。 它采用完全集成的可视化设计器、包含重构工具的文本编辑器、程序集浏览器、源代码集成等。 本指南介绍如何使用 Visual Studio for Mac 中的一些基本功能。 如果是初次接触 Visual Studio for Mac，可能需阅读更深入的 [Visual Studio for Mac 简介](https://docs.microsoft.com/visualstudio/mac/)。
+Visual Studio for Mac 是免费的开源 IDE，类似于 Visual Studio。 它采用完全集成的可视化设计器、包含重构工具的文本编辑器、程序集浏览器、源代码集成等。 本指南介绍如何使用 Visual Studio for Mac 中的一些基本功能。 如果是初次接触 Visual Studio for Mac，可能需阅读更深入的 [Visual Studio for Mac 简介](/visualstudio/mac/)。
 
 Visual Studio for Mac 遵循将代码组织为解决方案和项目的 Visual Studio 做法   。 解决方案是可以容纳一个或多个项目的容器。 项目可以是应用程序（如 iOS 或 Android）、支持库、测试应用程序等。 在 **Phoneword** 应用中，你已使用了“Android 应用程序”  模板将新的 Android 项目添加到了在[了解 Android](~/android/get-started/hello-android/hello-android-quickstart.md)指南中所创建的 **Phoneword** 解决方案中。
 

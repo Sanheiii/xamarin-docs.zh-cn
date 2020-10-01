@@ -6,12 +6,12 @@ ms.assetid: FD8FE199-898B-4841-8041-CC9CA1A00917
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/29/2020
-ms.openlocfilehash: 29875b3f6c747d5dc2f45eb876a269d2bc7e85c6
-ms.sourcegitcommit: 443ecd9146fe2a7bbb9b5ab6d33c835876efcf1f
+ms.openlocfilehash: 9520f4e81403869542cf758627b8e3cfc9fabdd8
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82852459"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91457973"
 ---
 # <a name="connect-to-local-web-services-from-ios-simulators-and-android-emulators"></a>从 iOS 模拟器和 Android 模拟器连接到本地 Web 服务
 
@@ -126,7 +126,7 @@ public HttpClientHandler GetInsecureHandler()
 
 ## <a name="related-links"></a>相关链接
 
-- [TodoREST（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todorest/)
+- [TodoREST（示例）](/samples/xamarin/xamarin-forms-samples/webservices-todorest/)
 - [启用本地 HTTPS](/aspnet/core/getting-started#enable-local-https)
 - [iOS/macOS 的 HttpClient 和 SSL/TLS 实现选择器](~/cross-platform/macios/http-stack.md)
 - [Android 的 HttpClient 堆栈和 SSL/TLS 实现选择器](~/android/app-fundamentals/http-stack.md)

@@ -7,19 +7,19 @@ ms.technology: xamarin-android
 author: alexeystrakh
 ms.author: alstrakh
 ms.date: 02/11/2020
-ms.openlocfilehash: d2251a0219ca25ecd37e42361e49ac966bac131d
-ms.sourcegitcommit: a3f13a216fab4fc20a9adf343895b9d6a54634a5
+ms.openlocfilehash: 4fcb36f76ff2714a7a783b716abfe44de51b2855
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85852990"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91454138"
 ---
 # <a name="bind-android-kotlin-libraries"></a>绑定 Android Kotlin 库
 
 > [!IMPORTANT]
 > 我们当前正在调查 Xamarin 平台上的自定义绑定使用情况。 请参与[此调查](https://www.surveymonkey.com/r/KKBHNLT)，告诉我们将来应该进行哪些开发工作。
 
-Android 平台及其本地语言和工具正在不断发展，并且已经有许多使用最新产品/服务开发的第三方库。 最大化代码和组件的重用性是跨平台开发的主要目标之一。 随着 Xamarin 开发人员在开发人员队伍中的受欢迎程度不断提高，重用 Kotlin 生成的组件的能力已变得越来越重要。 你可能已熟悉绑定常规 [Java](https://docs.microsoft.com/xamarin/android/platform/binding-java-library/) 库的过程。 现在可以使用其他文档介绍[绑定 Kotlin 库](walkthrough.md)的过程，以便 Xamarin 应用程序可以采用相同的方式使用它们。 本文档旨在介绍为 Xamarin 创建 Kotlin 绑定的高级方法。
+Android 平台及其本地语言和工具正在不断发展，并且已经有许多使用最新产品/服务开发的第三方库。 最大化代码和组件的重用性是跨平台开发的主要目标之一。 随着 Xamarin 开发人员在开发人员队伍中的受欢迎程度不断提高，重用 Kotlin 生成的组件的能力已变得越来越重要。 你可能已熟悉绑定常规 [Java](../binding-java-library/index.md) 库的过程。 现在可以使用其他文档介绍[绑定 Kotlin 库](walkthrough.md)的过程，以便 Xamarin 应用程序可以采用相同的方式使用它们。 本文档旨在介绍为 Xamarin 创建 Kotlin 绑定的高级方法。
 
 ## <a name="high-level-approach"></a>高级方法
 
@@ -59,8 +59,8 @@ Android 平台及其本地语言和工具正在不断发展，并且已经有许
 - [Visual Studio for Mac](https://visualstudio.microsoft.com/downloads)
 - [Java 反编译程序](http://java-decompiler.github.io/)
 - [BubblePicker Kotlin 库](https://github.com/igalata/Bubble-Picker)
-- [绑定 Java 库](https://docs.microsoft.com/xamarin/android/platform/binding-java-library/)
+- [绑定 Java 库](../binding-java-library/index.md)
 - [XPath](https://www.w3.org/TR/xpath/)
-- [Java 绑定元数据](https://docs.microsoft.com/xamarin/android/platform/binding-java-library/customizing-bindings/java-bindings-metadata)
+- [Java 绑定元数据](../binding-java-library/customizing-bindings/java-bindings-metadata.md)
 - [Xamarin.Kotlin.StdLib NuGet](https://www.nuget.org/packages/Xamarin.Kotlin.StdLib/)
 - [示例项目存储库](https://github.com/xamcat/xamarin-binding-kotlin-framework)

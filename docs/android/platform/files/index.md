@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 07/23/2018
-ms.openlocfilehash: 746433293c52d7071a3289962ea021f716fd0cfe
-ms.sourcegitcommit: f7fe46c0236a7130b63a33d9d1670d5111582dd2
+ms.openlocfilehash: 69c99d6aa132bb5326085f752b9220054e9f3e69
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88186169"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91453917"
 ---
 # <a name="file-storage-and-access-with-xamarinandroid"></a>使用 Xamarin.Android 进行文件存储和访问
 
@@ -81,7 +81,7 @@ Android 应用的一个常见要求是对文件执行操作 &ndash; 保存图片
 
 ### <a name="reading-or-writing-to-files-on-internal-storage"></a>内部存储上的文件读写
 
-任何[用于写入文件的 C# API](https://docs.microsoft.com/dotnet/csharp/programming-guide/file-system/how-to-write-to-a-text-file) 都可以；要执行的操作只是获取分配给应用程序的目录中的文件的路径。 强烈建议使用 .NET API 的异步版本，以尽量减少与阻止主线程的文件访问相关的任何问题。
+任何[用于写入文件的 C# API](/dotnet/csharp/programming-guide/file-system/how-to-write-to-a-text-file) 都可以；要执行的操作只是获取分配给应用程序的目录中的文件的路径。 强烈建议使用 .NET API 的异步版本，以尽量减少与阻止主线程的文件访问相关的任何问题。
 
 以下代码片段是将整数写入应用程序内部存储目录的 UTF-8 文本文件的示例：
 

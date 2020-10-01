@@ -10,12 +10,12 @@ ms.date: 07/30/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 821eafab6896d8771ba38332a43c0cbc319797a7
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: a0ec978c1947cde4bd6f7fd619ad8cd2f0dbdbce
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87917843"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563037"
 ---
 # <a name="no-locxamarinforms-shell-flyout"></a>Xamarin.Forms Shell 浮出控件
 
@@ -690,7 +690,7 @@ Shell 包括三个可自动应用于 `FlyoutItem` 和 `MenuItem` 对象的样式
 
 ## <a name="related-links"></a>相关链接
 
-- [Xaminals（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
+- [Xaminals（示例）](/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 - [Xamarin.Forms 样式类](~/xamarin-forms/user-interface/styles/xaml/style-class.md)
 - [Xamarin.Forms 可视状态管理器](~/xamarin-forms/user-interface/visual-state-manager.md)
 - [Xamarin.Forms 画笔](~/xamarin-forms/user-interface/brushes/index.md)

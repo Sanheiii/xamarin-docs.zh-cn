@@ -10,12 +10,12 @@ ms.date: 04/17/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: fa907babc8dae0f466fd870f55b0e5be23114498
-ms.sourcegitcommit: 37ad3c1ef8faa5bfeeb305fde06e7b4654a643e1
+ms.openlocfilehash: 29fb1300e62d15130e999f6816e2afefcd3fba3b
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87795989"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562595"
 ---
 # <a name="no-locxamarinforms-triggers"></a>Xamarin.Forms 触发器
 
@@ -623,6 +623,6 @@ Unchecked state active: True
 
 ## <a name="related-links"></a>相关链接
 
-- [触发器示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithtriggers)
+- [触发器示例](/samples/xamarin/xamarin-forms-samples/workingwithtriggers)
 - [Xamarin.Forms 可视状态管理器](~/xamarin-forms/user-interface/visual-state-manager.md)
 - [Xamarin.Forms 触发器 API](xref:Xamarin.Forms.TriggerAction`1)

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 08/21/2018
-ms.openlocfilehash: 0105b43116df697bc6688becb77298c236dfa601
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 6f192e9171a9da2e2ef7e0478b5bb6838676faee
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73019877"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91453436"
 ---
 # <a name="android-pie-features"></a>Android Pie 功能
 
@@ -24,7 +24,7 @@ Google 现已提供 [Android 9 Pie](https://developer.android.com/about/versions
 
 本文旨在帮助你开始开发适用于 Android Pie 的 Xamarin.Android 应用。 它介绍如何安装必要的更新、如何配置 SDK，以及如何准备用于测试的仿真器或设备。 它还概要介绍了 Android Pie 中的新增功能，并提供了演示如何使用 Android Pie 的一些关键功能的示例源代码。
 
-Xamarin.Android 9.0 为 Android Pie 提供支持。 若要详细了解对 Android Pie 的 Xamarin.Android 支持，请参阅 [Android P 开发人员预览版 3](https://docs.microsoft.com/xamarin/android/release-notes/9/9.0/#android-p-dp1) 发行说明。
+Xamarin.Android 9.0 为 Android Pie 提供支持。 若要详细了解对 Android Pie 的 Xamarin.Android 支持，请参阅 [Android P 开发人员预览版 3](/xamarin/android/release-notes/9/9.0/#android-p-dp1) 发行说明。
 
 ## <a name="requirements"></a>要求
 
@@ -43,7 +43,7 @@ Xamarin.Android 9.0 为 Android Pie 提供支持。 若要详细了解对 Androi
 
 若要开始使用 Xamarin.Android 开发 Android Pie 应用，必须先下载并安装最新的工具和 SDK 包，然后才能开始创建 Android Pie 项目：
 
-1. 建议使用 Visual Studio 2019。 如果你使用的是 Visual Studio 2017，请更新为 [Visual Studio 2017 版本 15.8](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-relnotes) 或更高版本。 如果你使用的是 Visual Studio for Mac，请更新为 [Visual Studio 2017 for Mac 版本 7.6](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-relnotes) 或更高版本。
+1. 建议使用 Visual Studio 2019。 如果你使用的是 Visual Studio 2017，请更新为 [Visual Studio 2017 版本 15.8](/visualstudio/releasenotes/vs2017-relnotes) 或更高版本。 如果你使用的是 Visual Studio for Mac，请更新为 [Visual Studio 2017 for Mac 版本 7.6](/visualstudio/releasenotes/vs2017-relnotes) 或更高版本。
 
 2. 通过 SDK 管理器安装 Android Pie (API 28)  包和工具。
 
@@ -57,7 +57,7 @@ Xamarin.Android 9.0 为 Android Pie 提供支持。 若要详细了解对 Androi
 
 要使用 Xamarin 生成 Android Pie 应用，建议使用 Visual Studio 2019。
 
-如果你使用的是 Visual Studio 2017，请更新为 Visual Studio 2017 版本 15.8 或更高版本（有关说明，请参阅[将 Visual Studio 2017 更新为最新版本](https://docs.microsoft.com/visualstudio/install/update-visual-studio)）。 在 macOS 上，更新为 Visual Studio 2017 for Mac 7.6 或更高版本（有关说明，请参阅[设置和安装 Visual Studio for Mac](https://docs.microsoft.com/visualstudio/mac/installation)）。
+如果你使用的是 Visual Studio 2017，请更新为 Visual Studio 2017 版本 15.8 或更高版本（有关说明，请参阅[将 Visual Studio 2017 更新为最新版本](/visualstudio/install/update-visual-studio)）。 在 macOS 上，更新为 Visual Studio 2017 for Mac 7.6 或更高版本（有关说明，请参阅[设置和安装 Visual Studio for Mac](/visualstudio/mac/installation)）。
 
 ### <a name="install-the-android-sdk"></a>安装 Android SDK
 

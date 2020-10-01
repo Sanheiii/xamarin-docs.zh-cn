@@ -9,14 +9,14 @@ ms.date: 03/13/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f54c31afef691d316cbc3108792ab3158359c47c
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 4a671be5f65e0e35c89f4acec17f406a214b9fa9
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84802327"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91434621"
 ---
-# <a name="xamarinessentials-geolocation"></a>Xamarin.Essentials：地理位置
+# <a name="no-locxamarinessentials-geolocation"></a>Xamarin.Essentials：地理位置
 
 Geolocation 提供 API 以检索设备的当前地理位置坐标。
 
@@ -238,7 +238,7 @@ double miles = Location.CalculateDistance(boston, sanFrancisco, DistanceUnits.Mi
 
 # <a name="uwp"></a>[UWP](#tab/uwp)
 
-UWP 上以米为单位返回海拔高度。 有关详细信息，请参阅 [AltitudeReferenceSystem](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geopoint.altitudereferencesystem#Windows_Devices_Geolocation_Geopoint_AltitudeReferenceSystem) 文档。
+UWP 上以米为单位返回海拔高度。 有关详细信息，请参阅 [AltitudeReferenceSystem](/uwp/api/windows.devices.geolocation.geopoint.altitudereferencesystem#Windows_Devices_Geolocation_Geopoint_AltitudeReferenceSystem) 文档。
 
 -----
 

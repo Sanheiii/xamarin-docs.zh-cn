@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/18/2020
-ms.openlocfilehash: 0aafe01fcbde6cf1aacf3e2dd47444d4b77021e2
-ms.sourcegitcommit: 79ba3deb031c8a60d0841bb3dbeaaf65daf2b224
+ms.openlocfilehash: 0c10e73d8d6c2dcafacbb069eaf905a227030b87
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85846382"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91557525"
 ---
 # <a name="xamarinforms-multi-bindings"></a>Xamarin.Forms 多绑定
 
@@ -273,7 +273,7 @@ public class AllTrueMultiConverter : IMultiValueConverter
 
 ## <a name="related-links"></a>相关链接
 
-- [数据绑定演示（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+- [数据绑定演示（示例）](/samples/xamarin/xamarin-forms-samples/databindingdemos)
 - [Xamarin.Forms 字符串格式设置](string-formatting.md)
 - [Xamarin.Forms 绑定回退](binding-fallbacks.md)
 - [Xamarin.Forms 相对绑定](relative-bindings.md)

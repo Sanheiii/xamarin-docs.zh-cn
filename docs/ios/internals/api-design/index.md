@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 173af9638f4e7b2da39a89dd745ec53f54cf6c39
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 4ba1daeb94706efc9d27136c6bd4b4d13e774689
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937561"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91437209"
 ---
 # <a name="xamarinios-api-design"></a>Xamarin.iOS API 设计
 
@@ -26,7 +26,7 @@ Xamarin.iOS 的核心有一个互操作引擎，它将 C# 环境与 Objective-C 
 
 下面介绍我们对 Xamarin.iOS 绑定的一些设计原理（也适用于 Xamarin.Mac，即 macOS 上 Objective-C 的 Mono 绑定）：
 
-- 遵循[框架设计准则](https://docs.microsoft.com/dotnet/standard/design-guidelines)
+- 遵循[框架设计准则](/dotnet/standard/design-guidelines)
 - 允许开发人员对 Objective-C 类设置子类：
 
   - 从现有类派生
@@ -665,7 +665,7 @@ Xamarin.iOS 具有垃圾回收器，当不再使用资源时，它将负责释�
 
 公开 `IDisposable` 接口是帮助开发人员释放可能封装大内存块的对象的一种便捷方式（例如，`UIImage` 可能只是一个无恶意的指针，但可能会指向 2 MB 的图像）以及其他重要和有限的资源（如视频解码缓冲区）。
 
-NSObject 实现 IDisposable 接口，同时还实现 [.NET Dispose 模式](https://msdn.microsoft.com/library/fs2xkftw.aspx)。 这使得子类化 NSObject 的开发人员可以替代 Dispose 行为，并按需释放自己的资源。 例如，假设有如下视图控制器，它保留一组图像：
+NSObject 实现 IDisposable 接口，同时还实现 [.NET Dispose 模式](/dotnet/standard/garbage-collection/implementing-dispose)。 这使得子类化 NSObject 的开发人员可以替代 Dispose 行为，并按需释放自己的资源。 例如，假设有如下视图控制器，它保留一组图像：
 
 ```csharp
 class MenuViewController : UIViewController {

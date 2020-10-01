@@ -10,18 +10,18 @@ ms.date: 02/12/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c02764d6160bb8ce2481a3cf67e357933d25934f
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: d417f5e0b2b0bea5a3e129c87e94b289dc7201ed
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84133726"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562478"
 ---
 # <a name="binding-video-sources-to-the-player"></a>将视频源绑定到播放器
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
 
-如果将 `VideoPlayer` 视图的 `Source` 属性设置为新视频文件，当前视频会停止播放并且开始播放新视频。 这通过[“VideoPlayerDemos”](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)示例的“选择 Web 视频”页演示 。 该页包含 `ListView`，并且三个视频的标题引用自“App.xaml”文件：
+如果将 `VideoPlayer` 视图的 `Source` 属性设置为新视频文件，当前视频会停止播放并且开始播放新视频。 这通过[“VideoPlayerDemos”](/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)示例的“选择 Web 视频”页演示 。 该页包含 `ListView`，并且三个视频的标题引用自“App.xaml”文件：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -144,4 +144,4 @@ BindToVideoPlayer.xaml 文件中的 `ListView` 包含这些 `VideoInfo` 对象�
 
 ## <a name="related-links"></a>相关链接
 
-- [视频播放器演示（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
+- [视频播放器演示（示例）](/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)

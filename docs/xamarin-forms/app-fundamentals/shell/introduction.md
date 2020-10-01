@@ -10,14 +10,14 @@ ms.date: 09/20/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 29a99161ff2ef2d71b6c803db994522bfe80ed03
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 61e48328aea01347678540cde5141a29387e92f5
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138731"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563167"
 ---
-# <a name="xamarinforms-shell-introduction"></a>Xamarin.Forms Shell 简介
+# <a name="no-locxamarinforms-shell-introduction"></a>Xamarin.Forms Shell 简介
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 
@@ -66,4 +66,4 @@ Shell 提供了基于浮出控件和选项卡的固定导航体验。 Shell 应�
 
 ## <a name="related-links"></a>相关链接
 
-- [Xaminals（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
+- [Xaminals（示例）](/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)

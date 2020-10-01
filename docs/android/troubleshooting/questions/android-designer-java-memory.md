@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 06/02/2018
-ms.openlocfilehash: 9c9b9f5a205a2eef7db9f27e8d09b10ce65a4318
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 5a692a931bfcdc1e8eee534de3adfff0de688891
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73027046"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91457895"
 ---
 # <a name="adjusting-java-memory-parameters-for-the-android-designer"></a>调整 Android Designer 的 Java 内存参数
 
@@ -34,7 +34,7 @@ ms.locfileid: "73027046"
 
 1. 在 Visual Studio 中打开解决方案。
 
-2. 在解决方案资源管理器中逐个选择每个 Android 项目，然后在每个项目上单击[“显示所有文件”](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/4afxey9h(v=vs.90))两次。 可以跳过不包含任何 `.axml` 布局文件的项目。 此步骤将确保每个项目目录都包含一个 `.csproj.user` 文件。
+2. 在解决方案资源管理器中逐个选择每个 Android 项目，然后在每个项目上单击[“显示所有文件”](/previous-versions/visualstudio/visual-studio-2008/4afxey9h(v=vs.90))两次。 可以跳过不包含任何 `.axml` 布局文件的项目。 此步骤将确保每个项目目录都包含一个 `.csproj.user` 文件。
 
 3. 退出 Visual Studio。
 

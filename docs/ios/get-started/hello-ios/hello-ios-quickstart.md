@@ -9,12 +9,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: 655cf1efcb479df27131029aa30036f0343c1841
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: bde05cfeecaeba389224bbbdb7ae01fcb7bcb56c
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86931152"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91434106"
 ---
 # <a name="hello-ios--quickstart"></a>Hello，iOS - 快速入门
 
@@ -495,6 +495,6 @@ Xamarin.iOS 适用于以下设置：
 ## <a name="related-links"></a>相关链接
 
 - [Xamarin 应用图标和启动图像（示例）](https://github.com/xamarin/ios-samples/blob/master/Hello_iOS/Resources/XamarinAppIconsandLaunchImages.zip?raw=true)
-- [Hello，iOS（示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/hello-ios)
+- [Hello，iOS（示例）](/samples/xamarin/ios-samples/hello-ios)
 - [iOS 人机界面指南](https://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/Introduction/Introduction.html)
 - [iOS 预配门户](https://developer.apple.com/ios/manage/overview/index.action)

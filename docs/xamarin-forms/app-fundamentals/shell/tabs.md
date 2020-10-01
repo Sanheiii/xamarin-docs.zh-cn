@@ -10,12 +10,12 @@ ms.date: 11/06/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9ecdc3aca3264b52163d35e29659f434f521147f
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: 59c7435273d7c01f93ef0bbfb0240e3917f8b716
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87918612"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563011"
 ---
 # <a name="no-locxamarinforms-shell-tabs"></a>Xamarin.Forms Shell 选项卡
 
@@ -301,6 +301,6 @@ Shell 具有隐式转换运算符，可以简化 Shell 的视觉层次结构，�
 
 ## <a name="related-links"></a>相关链接
 
-- [Xaminals（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
+- [Xaminals（示例）](/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 - [Xamarin.Forms Shell 导航](navigation.md)
 - [Xamarin.Forms CSS Shell 特定属性](~/xamarin-forms/user-interface/styles/css/index.md#xamarinforms-shell-specific-properties)

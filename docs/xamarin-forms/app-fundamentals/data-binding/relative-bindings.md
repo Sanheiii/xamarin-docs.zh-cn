@@ -10,14 +10,14 @@ ms.date: 12/04/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8d4e2696e6027f07b7b8e638cd1e0f1d65a5503d
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 24fa816519b05b46c38015fa602a4e70fbc07d16
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139706"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91560385"
 ---
-# <a name="xamarinforms-relative-bindings"></a>Xamarin.Forms 相对绑定
+# <a name="no-locxamarinforms-relative-bindings"></a>Xamarin.Forms 相对绑定
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
@@ -186,6 +186,6 @@ ms.locfileid: "84139706"
 
 ## <a name="related-links"></a>相关链接
 
-- [数据绑定演示（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+- [数据绑定演示（示例）](/samples/xamarin/xamarin-forms-samples/databindingdemos)
 - [XAML 标记扩展](~/xamarin-forms/xaml/markup-extensions/index.md)
 - [Xamarin.Forms 控件模板](~/xamarin-forms/app-fundamentals/templates/control-template.md)

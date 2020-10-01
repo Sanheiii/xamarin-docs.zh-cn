@@ -10,12 +10,12 @@ ms.date: 11/29/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: adbceca38fca2cbe65c739f0d7fe26f18bdf5450
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 4d9749c110019f2cf711c1df56196d3296223641
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939849"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91557967"
 ---
 # <a name="customizing-a-contentpage"></a>自定义 ContentPage
 
@@ -37,7 +37,7 @@ ContentPage 是一个可视元素，它显示单个视图并占据大部分屏�
 
 现在将依次介绍每个项，以实现 `CameraPage`，提供实时摄像头源和捕获照片的功能。
 
-## <a name="creating-the-xamarinforms-page"></a>创建 Xamarin.Forms 页面
+## <a name="creating-the-no-locxamarinforms-page"></a>创建 Xamarin.Forms 页面
 
 可向共享的 Xamarin.Forms 项目添加未更改的 [`ContentPage`](xref:Xamarin.Forms.ContentPage)，如下面的 XAML 代码示例中所示：
 
@@ -76,7 +76,7 @@ public class CameraPageCS : ContentPage
 
 `CameraPage` 的实例将用于在每个平台上显示实时摄像头源。 控件的自定义内容将在自定义呈现器中进行设置，因此 `CameraPage` 类中无需任何其他实现。
 
-## <a name="consuming-the-xamarinforms-page"></a>使用 Xamarin.Forms 页面
+## <a name="consuming-the-no-locxamarinforms-page"></a>使用 Xamarin.Forms 页面
 
 空白的 `CameraPage` 必须由 Xamarin.Forms 应用程序显示。 单击 `MainPage` 实例上的按钮时将发生此情况，这将反过来执行 `OnTakePhotoButtonClicked` 方法，如下面的代码示例中所示：
 
@@ -196,7 +196,7 @@ namespace CustomRenderer.Droid
 
 调用基类的 `OnElementChanged` 方法可对 Android `ViewGroup` 控件实例化，该控件是一组视图。 实时摄像头流仅在呈现器尚未附加到现有 Xamarin.Forms 元素的前提下呈现，并且假设存在自定义呈现器正在呈现的页面实例。
 
-然后，将通过调用使用 `Camera` API 的一系列方法自定义页面，以在调用 `AddView` 方法之前提供来自摄像头的实时流和捕获照片的功能，以向 `ViewGroup` 添加实时摄像头流 UI。 请注意，在 Android 上，还有必要替代 `OnLayout` 方法以对视图执行测量和布局操作。 有关详细信息，请参阅 [ContentPage 呈现器示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-contentpage)。
+然后，将通过调用使用 `Camera` API 的一系列方法自定义页面，以在调用 `AddView` 方法之前提供来自摄像头的实时流和捕获照片的功能，以向 `ViewGroup` 添加实时摄像头流 UI。 请注意，在 Android 上，还有必要替代 `OnLayout` 方法以对视图执行测量和布局操作。 有关详细信息，请参阅 [ContentPage 呈现器示例](/samples/xamarin/xamarin-forms-samples/customrenderers-contentpage)。
 
 ### <a name="creating-the-page-renderer-on-uwp"></a>在 UWP 上创建页面呈现器
 
@@ -245,7 +245,7 @@ namespace CustomRenderer.UWP
 在 UWP 上实现派生自 `PageRenderer` 的自定义呈现器时，还应呈现 `ArrangeOverride` 方法，以排列页面控件，因为基础呈现器不知道如何处理它们。 否则，将生成空白页。 因此，在此示例中，`ArrangeOverride` 方法将对 `Page` 实例调用 `Arrange` 方法。
 
 > [!NOTE]
-> 停止和释放 UWP 应用程序中提供对摄像头的访问权限的对象至关重要。 如果不这样做，可能会影响尝试访问设备的摄像头的其他应用程序。 有关详细信息，请参阅[显示摄像头预览](https://msdn.microsoft.com/windows/uwp/audio-video-camera/simple-camera-preview-access)。
+> 停止和释放 UWP 应用程序中提供对摄像头的访问权限的对象至关重要。 如果不这样做，可能会影响尝试访问设备的摄像头的其他应用程序。 有关详细信息，请参阅[显示摄像头预览](/windows/uwp/audio-video-camera/simple-camera-preview-access)。
 
 ## <a name="summary"></a>总结
 
@@ -253,4 +253,4 @@ namespace CustomRenderer.UWP
 
 ## <a name="related-links"></a>相关链接
 
-- [CustomRendererContentPage（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-contentpage)
+- [CustomRendererContentPage（示例）](/samples/xamarin/xamarin-forms-samples/customrenderers-contentpage)

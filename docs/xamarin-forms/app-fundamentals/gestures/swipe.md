@@ -10,18 +10,18 @@ ms.date: 08/14/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: db0beb59ed882d76288968a239f0a0dd735d9990
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: cbd1bdd097bc205f82f98574df5c356b03769e29
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87918480"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562647"
 ---
 # <a name="add-a-swipe-gesture-recognizer"></a>添加轻扫手势识别器
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-swipegesture)
 
-“手指在水平或垂直方向上滑过屏幕即产生轻扫手势，该手势通常用于启动内容导航。在本文中的代码示例摘自[轻扫手势](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-swipegesture)示例。
+“手指在水平或垂直方向上滑过屏幕即产生轻扫手势，该手势通常用于启动内容导航。在本文中的代码示例摘自[轻扫手势](/samples/xamarin/xamarin-forms-samples/workingwithgestures-swipegesture)示例。
 
 若要使 [`View`](xref:Xamarin.Forms.View) 识别轻扫手势，请创建 [`SwipeGestureRecognizer`](xref:Xamarin.Forms.SwipeGestureRecognizer) 实例，将 [`Direction`](xref:Xamarin.Forms.SwipeGestureRecognizer.Direction) 属性设置为 [`SwipeDirection`](xref:Xamarin.Forms.SwipeDirection) 枚举值（`Left`、`Right`、`Up` 或 `Down`），或者根据需要设置 [`Threshold`](xref:Xamarin.Forms.SwipeGestureRecognizer.Threshold) 属性、处理 [`Swiped`](xref:Xamarin.Forms.SwipeGestureRecognizer.Swiped) 事件，以及将新的笔势识别器添加到视图上的 [`GestureRecognizers`](xref:Xamarin.Forms.View.GestureRecognizers) 集合。 下面的代码示例显示附加到 [`BoxView`](xref:Xamarin.Forms.BoxView) 上的 `SwipeGestureRecognizer`：
 
@@ -210,6 +210,6 @@ public class SwipeContainerPageCS : ContentPage
 
 ## <a name="related-links"></a>相关链接
 
-- [轻扫手势（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-swipegesture)
+- [轻扫手势（示例）](/samples/xamarin/xamarin-forms-samples/workingwithgestures-swipegesture)
 - [GestureRecognizer](xref:Xamarin.Forms.GestureRecognizer)
 - [SwipeGestureRecognizer](xref:Xamarin.Forms.SwipeGestureRecognizer)

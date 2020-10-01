@@ -10,20 +10,20 @@ ms.date: 05/01/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c14215071a1d9d3ec804c307fa6edbbe4ddcf8e9
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 8a7c62ec6d7329227abd8f52644212341098185f
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139771"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556433"
 ---
-# <a name="xamarinforms-binding-mode"></a>Xamarin.Forms 绑定模式
+# <a name="no-locxamarinforms-binding-mode"></a>Xamarin.Forms 绑定模式
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
 在[上一篇文章](basic-bindings.md)中，“替代代码绑定”和“替代 XAML 绑定”页面都有一个 `Label`，其 `Scale` 属性绑定到 `Slider` 的 `Value` 属性 。 由于 `Slider` 初始值为 0，所以这导致 `Label` 的 `Scale` 属性被设置为 0 而不是 1，并且 `Label` 消失。
 
-在 [DataBindingDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos) 示例中，“反向绑定”页面类似于上一篇文章中的程序，只是数据绑定是针对 `Slider` 而非 `Label` 定义的 ：
+在 [DataBindingDemos](/samples/xamarin/xamarin-forms-samples/databindingdemos) 示例中，“反向绑定”页面类似于上一篇文章中的程序，只是数据绑定是针对 `Slider` 而非 `Label` 定义的 ：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -686,5 +686,5 @@ public partial class SampleSettingsPage : ContentPage
 
 ## <a name="related-links"></a>相关链接
 
-- [数据绑定演示（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+- [数据绑定演示（示例）](/samples/xamarin/xamarin-forms-samples/databindingdemos)
 - [Xamarin.Forms 书籍中的数据绑定章节](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)

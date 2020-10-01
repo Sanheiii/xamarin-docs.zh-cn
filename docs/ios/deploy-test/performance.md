@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 01/29/2016
-ms.openlocfilehash: bfa8c2cdcdcd6305618c0cd8e9cb69bde59b4f0b
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 06d413b2bf07df38f78e93af027de2c7dc0badcc
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73030208"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436774"
 ---
 # <a name="xamarinios-performance"></a>Xamarin.iOS 性能
 
@@ -58,7 +58,7 @@ container.AddSubview (new MyView (container));
 
 此外，对 `container.AddSubview` 的调用将增加未托管 `MyView` 实例上的引用数。 出现此情况时，Xamarin.iOS 运行时会创建一个 `GCHandle` 实例以使 `MyView` 对象在托管代码中处于活动状态，因为无法保证所有托管对象保留对该对象的引用。 从托管代码的角度看，如果 `MyView` 对象不适用于 `GCHandle`，则将在 [`AddSubview`](xref:UIKit.UIView.AddSubview(UIKit.UIView)) 调用后将该对象回收。
 
-未托管的 `MyView` 对象具有指向托管对象的 `GCHandle`，称为强链接  。 托管对象包含一个对 `Container` 实例的引用。 反之，`Container` 实例则有一个对 `MyView` 对象的托管引用。
+未托管的 `MyView` 对象具有指向托管对象的 `GCHandle`，称为强链接**。 托管对象包含一个对 `Container` 实例的引用。 反之，`Container` 实例则有一个对 `MyView` 对象的托管引用。
 
 在所含对象保留对其容器的链接的情况下，可通过多种选项处理循环引用：
 
@@ -109,7 +109,7 @@ container.AddSubview (new MyView (container));
 
 #### <a name="weak-attribute"></a>弱特性
 
-[Xamarin.iOS 11.10](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/ios/xamarin.ios_11/xamarin.ios_11.10.md#WeakAttribute) 采用了 `[Weak]` 特性。 与 `WeakReference <T>` 类似，`[Weak]` 可用于中断[强循环引用](https://docs.microsoft.com/xamarin/ios/deploy-test/performance#avoid-strong-circular-references)，但使用的代码数量更少。
+[Xamarin.iOS 11.10](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/ios/xamarin.ios_11/xamarin.ios_11.10.md#WeakAttribute) 采用了 `[Weak]` 特性。 与 `WeakReference <T>` 类似，`[Weak]` 可用于中断[强循环引用](#avoid-strong-circular-references)，但使用的代码数量更少。
 
 请看以下使用 `WeakReference <T>` 的代码：
 
@@ -211,7 +211,7 @@ class MyChild : UIView
 ```
 
 有关释放强引用的详细信息，请参阅[释放 IDisposable 资源](~/cross-platform/deploy-test/memory-perf-best-practices.md#idisposable)。
-在下面这篇博客文章中也进行了详细探讨：[Xamarin.iOS，垃圾回收器和我](https://c-sharx.net/2015-04-27-xamarin-ios-the-garbage-collector-and-me)。
+另外，此博客文章也对其进行了适当探讨：[Xamarin.iOS, the garbage collector and me](https://c-sharx.net/2015-04-27-xamarin-ios-the-garbage-collector-and-me)（Xamarin.iOS、垃圾回收器和我）。
 
 ### <a name="more-information"></a>详细信息
 
@@ -286,7 +286,7 @@ class MyTableSource : UITableViewSource
 
 ## <a name="avoid-code-generation"></a>避免代码生成
 
-必须避免使用 `System.Reflection.Emit` 或动态语言运行时  动态生成代码，因为 iOS 内核会阻止动态代码执行。
+必须避免使用 `System.Reflection.Emit` 或动态语言运行时** 动态生成代码，因为 iOS 内核会阻止动态代码执行。
 
 ## <a name="summary"></a>总结
 

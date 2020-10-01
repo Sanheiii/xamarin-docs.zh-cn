@@ -11,12 +11,12 @@ ms.date: 11/01/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 727bac49c5bff522125a2f21a9742e428b81c924
-ms.sourcegitcommit: bb18e6b3b5d592374b17932efa1e85c3b5fbad57
+ms.openlocfilehash: fac41e57d13815dcd202521d16ae4730e1d99cfa
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88950737"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91555861"
 ---
 # <a name="no-locxamarinforms-string-and-image-localization"></a>Xamarin.Forms 字符串和图像本地化
 
@@ -26,7 +26,7 @@ ms.locfileid: "88950737"
 
 ![iOS 和 Android 上的本地化应用程序的屏幕截图](text-images/localizationdemo-screenshots.png)
 
-.NET Framework 包含一个使用 [Resx 资源文件](https://docs.microsoft.com/dotnet/framework/resources/creating-resource-files-for-desktop-apps)进行应用程序本地化的内置机制。 资源文件将文本和其他内容存储为名称/值对，让应用程序能在内容中检索所提供的键。 资源文件可使本地化的内容与应用程序代码分开。
+.NET Framework 包含一个使用 [Resx 资源文件](/dotnet/framework/resources/creating-resource-files-for-desktop-apps)进行应用程序本地化的内置机制。 资源文件将文本和其他内容存储为名称/值对，让应用程序能在内容中检索所提供的键。 资源文件可使本地化的内容与应用程序代码分开。
 
 要使用资源文件进行 Xamarin.Forms 应用程序的本地化，需要执行以下步骤：
 
@@ -153,7 +153,7 @@ using System.Resources;
 
 创建默认资源文件并在 AssemblyInfo.cs 文件中指定默认区域性后，应用程序可在运行时期间检索已本地化的字符串。
 
-要详细了解资源文件，请参阅 [Create resource files for .NET apps](https://docs.microsoft.com/dotnet/framework/resources/creating-resource-files-for-desktop-apps)（为 .NET 应用创建资源文件）。
+要详细了解资源文件，请参阅 [Create resource files for .NET apps](/dotnet/framework/resources/creating-resource-files-for-desktop-apps)（为 .NET 应用创建资源文件）。
 
 ## <a name="specify-supported-languages-on-ios"></a>指定 iOS 上支持的语言
 
@@ -306,7 +306,7 @@ Image flag = new Image
 
 ## <a name="localize-the-application-name"></a>对应用程序名称进行本地化
 
-应用程序名称是按平台指定的，不使用 Resx 资源文件。 若要在 Android 上对应用程序名称进行本地化，请参阅[在 Android 上对应用名称进行本地化](~/android/app-fundamentals/localization.md#stringsxml-file-format)。 若要在 iOS 上对应用程序名称进行本地化，请参阅[在 iOS 上对应用名称进行本地化](~/ios/app-fundamentals/localization/index.md#app-name)。 若要在 UWP 上对应用程序名称进行本地化，请参阅[对 UWP 程序包清单中的字符串进行本地化](https://docs.microsoft.com/windows/uwp/app-resources/localize-strings-ui-manifest)。
+应用程序名称是按平台指定的，不使用 Resx 资源文件。 若要在 Android 上对应用程序名称进行本地化，请参阅[在 Android 上对应用名称进行本地化](~/android/app-fundamentals/localization.md#stringsxml-file-format)。 若要在 iOS 上对应用程序名称进行本地化，请参阅[在 iOS 上对应用名称进行本地化](~/ios/app-fundamentals/localization/index.md#app-name)。 若要在 UWP 上对应用程序名称进行本地化，请参阅[对 UWP 程序包清单中的字符串进行本地化](/windows/uwp/app-resources/localize-strings-ui-manifest)。
 
 ## <a name="test-localization"></a>对本地化进行测试
 
@@ -318,11 +318,11 @@ Image flag = new Image
 
 ## <a name="related-links"></a>相关链接
 
-- [本地化示例项目](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/usingresxlocalization)
-- [Create resource files for .NET apps](https://docs.microsoft.com/dotnet/framework/resources/creating-resource-files-for-desktop-apps)（为 .NET 应用创建资源文件）
+- [本地化示例项目](/samples/xamarin/xamarin-forms-samples/usingresxlocalization)
+- [Create resource files for .NET apps](/dotnet/framework/resources/creating-resource-files-for-desktop-apps)（为 .NET 应用创建资源文件）
 - [跨平台本地化](~/cross-platform/app-fundamentals/localization.md)
-- [使用 CultureInfo 类 (MSDN)](https://docs.microsoft.com/dotnet/api/system.globalization.cultureinfo)
+- [使用 CultureInfo 类 (MSDN)](/dotnet/api/system.globalization.cultureinfo)
 - [Android 本地化](~/android/app-fundamentals/localization.md)
 - [iOS 本地化](~/ios/app-fundamentals/localization/index.md)
 - [UWP 本地化](/windows/uwp/design/globalizing/globalizing-portal/)
-- [使用特定区域性的资源 (MSDN)](https://msdn.microsoft.com/library/s9ckwb4b%28v=vs.90%29.aspx)
+- [使用特定区域性的资源 (MSDN)](/previous-versions/visualstudio/visual-studio-2008/s9ckwb4b(v=vs.90))

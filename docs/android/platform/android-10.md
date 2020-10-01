@@ -5,12 +5,12 @@ ms.assetid: B3342772-FB88-4B7F-BC15-8BC78EED749E
 author: JonDouglas
 ms.author: jodou
 ms.date: 09/17/2019
-ms.openlocfilehash: b26d99c131e9759da3077a767476de38712bcb18
-ms.sourcegitcommit: a9280318bf7bb69e4e5744ee739e76a9cba36b28
+ms.openlocfilehash: 1ce0233a45211ee91b9f1e30247ac18cdd5c5a66
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82047568"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91454294"
 ---
 # <a name="android-10-with-xamarin"></a>结合使用 Android 10 和 Xamarin
 
@@ -22,7 +22,7 @@ Google 现已提供 Android 10。 此版本提供了许多新功能和 API，在
 
 本文旨在帮助你开始开发适用于 Android 10 的 Xamarin.Android 应用。 它介绍如何安装必要的更新、如何配置 SDK，以及如何准备用于测试的仿真器或设备。 它还概要介绍了 Android 10 中的新增功能，并提供了演示如何使用 Android 10 的一些关键功能的示例源代码。
 
-Xamarin.Android 10.0 为 Android 10 提供支持。 若要详细了解对 Android 10 的 Xamarin.Android 支持，请参阅 [Xamarin.Android 10.0 发行说明](https://docs.microsoft.com/xamarin/android/release-notes/10/10.0)。
+Xamarin.Android 10.0 为 Android 10 提供支持。 若要详细了解对 Android 10 的 Xamarin.Android 支持，请参阅 [Xamarin.Android 10.0 发行说明](/xamarin/android/release-notes/10/10.0)。
 
 ## <a name="requirements"></a>要求
 
@@ -53,7 +53,7 @@ Xamarin.Android 10.0 为 Android 10 提供支持。 若要详细了解对 Androi
 
 要使用 Xamarin 生成 Android 10 应用，建议使用 Visual Studio 2019。
 
-如果你使用的是 Visual Studio 2019，请更新为 Visual Studio 2019 版本 16.3 或更高版本（有关说明，请参阅[将 Visual Studio 2019 更新为最新版本](https://docs.microsoft.com/visualstudio/install/update-visual-studio)）。 在 macOS 上，请更新为 Visual Studio 2019 for Mac 8.3 或更高版本（有关说明，请参阅[将 Visual Studio 2019 for Mac 更新为最新版本](https://docs.microsoft.com/visualstudio/mac/update)）。
+如果你使用的是 Visual Studio 2019，请更新为 Visual Studio 2019 版本 16.3 或更高版本（有关说明，请参阅[将 Visual Studio 2019 更新为最新版本](/visualstudio/install/update-visual-studio)）。 在 macOS 上，请更新为 Visual Studio 2019 for Mac 8.3 或更高版本（有关说明，请参阅[将 Visual Studio 2019 for Mac 更新为最新版本](/visualstudio/mac/update)）。
 
 ### <a name="install-the-android-sdk"></a>安装 Android SDK
 
@@ -64,15 +64,15 @@ Xamarin.Android 10.0 为 Android 10 提供支持。 若要详细了解对 Androi
 
     ![Android SDK 管理器的“存储库”选择](~/android/platform/android-10-images/sdkrepository.png)
 
-3. 安装 Android 10 SDK 平台包，这些包在“平台”选项卡中列为 Android SDK 平台 29（有关使用 SDK 管理器的详细信息，请参阅 [Android SDK 设置](https://docs.microsoft.com/xamarin/android/get-started/installation/android-sdk)）    ：
+3. 安装 Android 10 SDK 平台包，这些包在“平台”选项卡中列为 Android SDK 平台 29（有关使用 SDK 管理器的详细信息，请参阅 [Android SDK 设置](../get-started/installation/android-sdk.md)）    ：
 
     ![Android SDK 管理器的“平台”选项卡](~/android/platform/android-10-images/sdkplatforms.png)
 
 ### <a name="create-a-xamarinandroid-project"></a>创建 Xamarin.Android 项目
 
-创建新的 Xamarin.Android 项目。 如果你不熟悉如何使用 Xamarin 开发 Android，请参阅 [Hello, Android](https://docs.microsoft.com/xamarin/android/get-started/hello-android/index) 了解如何创建 Xamarin.Android 项目。
+创建新的 Xamarin.Android 项目。 如果你不熟悉如何使用 Xamarin 开发 Android，请参阅 [Hello, Android](../get-started/hello-android/index.md) 了解如何创建 Xamarin.Android 项目。
 
-在创建 Android 项目时，必须将版本设置配置为面向 Android 10.0 或更高版本。 例如，若要使项目面向 Android 10，必须将项目的目标 Android API 级别配置为“Android 10.0 (API 29)”  。 这需要同时将“目标框架版本”  和“目标 Android SDK 版本”  设置为 API 29 或更高级别。 有关配置 Android API 级别的详细信息，请参阅[了解 Android API 级别](https://docs.microsoft.com/xamarin/android/app-fundamentals/android-api-levels)。
+在创建 Android 项目时，必须将版本设置配置为面向 Android 10.0 或更高版本。 例如，若要使项目面向 Android 10，必须将项目的目标 Android API 级别配置为“Android 10.0 (API 29)”  。 这需要同时将“目标框架版本”  和“目标 Android SDK 版本”  设置为 API 29 或更高级别。 有关配置 Android API 级别的详细信息，请参阅[了解 Android API 级别](../app-fundamentals/android-api-levels.md)。
 
 ![Xamarin.Android 目标框架](~/android/platform/android-10-images/targetframework.png)
 
@@ -80,7 +80,7 @@ Xamarin.Android 10.0 为 Android 10 提供支持。 若要详细了解对 Androi
 
 如果你使用的是物理设备（如 Pixel），可在手机的设置中转到“系统”>“系统更新”>“检查更新”，来下载 Android 10 更新。 如果倾向于刷机，请参阅有关将[出厂映像](https://developers.google.com/android/images)或 [OTA 映像](https://developers.google.com/android/ota)更新到设备的说明。
 
-如果使用的是仿真器，请为 API 级别 29 创建虚拟设备，并选择基于 x86 的映像。 有关使用 Android 设备管理器创建和管理虚拟设备的信息，请参阅[使用 Android 设备管理器管理虚拟设备](https://docs.microsoft.com/xamarin/android/get-started/installation/android-emulator/device-manager)。 有关使用 Android 仿真器进行测试和调试的信息，请参阅 [Android 仿真器调试](https://docs.microsoft.com/xamarin/android/deploy-test/debugging/debug-on-emulator)。
+如果使用的是仿真器，请为 API 级别 29 创建虚拟设备，并选择基于 x86 的映像。 有关使用 Android 设备管理器创建和管理虚拟设备的信息，请参阅[使用 Android 设备管理器管理虚拟设备](../get-started/installation/android-emulator/device-manager.md)。 有关使用 Android 仿真器进行测试和调试的信息，请参阅 [Android 仿真器调试](../deploy-test/debugging/debug-on-emulator.md)。
 
 ## <a name="new-features"></a>新增功能
 

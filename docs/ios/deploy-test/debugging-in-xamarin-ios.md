@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: a5135d9bb481afcaefc851e392196a87b8ef80dd
-ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
+ms.openlocfilehash: 8d4b60a2e8e53b5b3f97a781b7f1888239541f1a
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86997197"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91431872"
 ---
 # <a name="debugging-xamarinios-apps"></a>调试 Xamarin.iOS 应用
 
@@ -126,7 +126,7 @@ Xamarin.iOS 调试器使用 [Mono 软调试器](https://www.mono-project.com/doc
 
 可在此处输入想要断点发生的条件
 
-有关在 Visual Studio 早期版本中使用断点条件的详细信息，请参阅关于本主题的 [Visual Studio文档](https://docs.microsoft.com/visualstudio/debugger/using-breakpoints)。
+有关在 Visual Studio 早期版本中使用断点条件的详细信息，请参阅关于本主题的 [Visual Studio文档](/visualstudio/debugger/using-breakpoints)。
 
 -----
 
@@ -160,7 +160,7 @@ Xamarin.iOS 调试器使用 [Mono 软调试器](https://www.mono-project.com/doc
 - “单步执行 (F10)” - 此按钮也执行下一行代码。 如果下一行是函数调用，“单步执行”将在该函数的第一行停止，允许继续进行函数的逐行调试。 如果下一行不是函数，其行为与“单步跳过”相同。
 - “跳出 (Shift+F11)” - 此按钮返回到调用当前函数的行。
 
-有关调试的更多详细文档，请参阅[使用 Visual Studio 调试器浏览代码](https://docs.microsoft.com/visualstudio/debugger/navigating-through-code-with-the-debugger)。
+有关调试的更多详细文档，请参阅[使用 Visual Studio 调试器浏览代码](/visualstudio/debugger/navigating-through-code-with-the-debugger)。
 
 -----
 

@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 05/29/2018
-ms.openlocfilehash: ffe88546ff58387865d71268bd64ec05c8aec3c5
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: d58cb676b347caac00c39a381de94954219d1865
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73026793"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91456855"
 ---
 # <a name="how-do-i-resolve-a-pathtoolongexception-error"></a>如何解决 PathTooLongException 错误？
 
@@ -24,7 +24,7 @@ Xamarin.Android 项目中生成的路径名可能很长。
 
 **C:\\Some\\Directory\\Solution\\Project\\obj\\Debug\\__library_projects__\\Xamarin.Forms.Platform.Android\\library_project_imports\\assets**
 
-在 Windows 上（路径的最大长度为 [260 个字符](https://msdn.microsoft.com/library/windows/desktop/aa365247.aspx)），如果生成的路径超过最大长度，则在构建项目时可能会生成 PathTooLongException  。 
+在 Windows 上（路径的最大长度为 [260 个字符](/windows/win32/fileio/naming-a-file)），如果生成的路径超过最大长度，则在构建项目时可能会生成 PathTooLongException  。 
 
 ## <a name="fix"></a>修补程序
 
@@ -41,7 +41,7 @@ Xamarin.Android 项目中生成的路径名可能很长。
 </PropertyGroup>
 ```
 
-如果设置此标记不修复 PathTooLongException  错误，则另一种方法通过在项目 .csproj 文件  中设置 `IntermediateOutputPath` 来为解决方案中的项目指定[公共中间输出根](https://blogs.msdn.microsoft.com/kirillosenkov/2015/04/04/using-a-common-intermediate-and-output-directory-for-your-solution/)。 尝试使用相对较短的路径。 例如：
+如果设置此标记不修复 PathTooLongException  错误，则另一种方法通过在项目 .csproj 文件  中设置 `IntermediateOutputPath` 来为解决方案中的项目指定[公共中间输出根](/archive/blogs/kirillosenkov/using-a-common-intermediate-and-output-directory-for-your-solution)。 尝试使用相对较短的路径。 例如：
 
 ```xml
 <PropertyGroup>

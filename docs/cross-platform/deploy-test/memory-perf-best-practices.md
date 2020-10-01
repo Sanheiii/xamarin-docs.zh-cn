@@ -6,12 +6,12 @@ ms.assetid: 9ce61f18-22ac-4b93-91be-5b499677d661
 author: davidortinau
 ms.author: daortin
 ms.date: 03/24/2017
-ms.openlocfilehash: 89b5dc2ae296b9e9033c45bf93c87de83054f721
-ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
+ms.openlocfilehash: f7f5d7daed42eeb3a36dd9b0d09b31a06b0de142
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86996482"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91457947"
 ---
 # <a name="cross-platform-performance"></a>跨平台性能
 
@@ -207,7 +207,7 @@ double Compute(double x)
 
 首次访问 `Lazy<T>.Value` 属性时出现延迟初始化。 首次访问包装类型时，会创建并返回该包装类型，并将其存储起来以备将来随意访问。
 
-有关延迟初始化的详细信息，请参阅[延迟初始化](https://msdn.microsoft.com/library/dd997286(v=vs.110).aspx)。
+有关延迟初始化的详细信息，请参阅[延迟初始化](/dotnet/framework/performance/lazy-initialization)。
 
 <a name="async"></a>
 

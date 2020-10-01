@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: 3062afda82be2b45146687b9d77210a42f8f55fa
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 0b44cbf754e8d1be66b0f3bf09badb78852978eb
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "75487953"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91454632"
 ---
 # <a name="publishing-an-application"></a>发布应用程序
 
@@ -31,9 +31,9 @@ Xamarin.Android 应用程序开发的最终步骤是发布应用程序。 发布
 
 如上图所示，所有分发方式的准备过程都是相同的。 可通过以下几种方式将 Android 应用程序发布给用户：
 
-- **通过网站** &ndash; Xamarin.Android 应用程序可通过在网站下载获得，用户可在网站中单击链接安装应用程序。
-- **通过电子邮件** &ndash; 用户可以从电子邮件安装 Xamarin.Android 应用程序。 在 Android 设备上打开附件时会安装应用程序。
-- **通过应用商店** &ndash; 有多个应用市场可用于分发，例如 [Google Play](https://play.google.com/) 或 [Android 版 Amazon 应用商店](https://www.amazon.com/mobile-apps/b?ie=UTF8&node=2350149011)。
+- **通过网站 ** &ndash; Xamarin.Android 应用程序可通过在网站下载获得，用户可在网站中单击链接安装应用程序。
+- **通过电子邮件 ** &ndash; 用户可以从电子邮件安装 Xamarin.Android 应用程序。 在 Android 设备上打开附件时会安装应用程序。
+- **通过应用商店 ** &ndash; 有多个应用市场可用于分发，例如 [Google Play](https://play.google.com/) 或 [Android 版 Amazon 应用商店](https://www.amazon.com/mobile-apps/b?ie=UTF8&node=2350149011)。
 
 发布应用程序最常见的方法是通过知名的应用商店，因为它可以提供最广的市场范围和达到最佳的分发控制。 但是，通过应用市场发布应用程序需要进行其他工作。
 
@@ -52,11 +52,11 @@ Google Play 无疑是最全面和最受欢迎的 Android 应用程序应用市�
 
 ## <a name="related-links"></a>相关链接
 
-- [HelloWorldPublishing（示例）](https://docs.microsoft.com/samples/xamarin/monodroid-samples/helloworldpublishing)
+- [HelloWorldPublishing（示例）](/samples/xamarin/monodroid-samples/helloworldpublishing)
 - [生成过程](~/android/deploy-test/building-apps/build-process.md)
 - [链接](~/android/deploy-test/linker.md)
 - [获取 Google Maps API 密钥](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)
-- [通过 Visual Studio 应用中心部署](https://docs.microsoft.com/appcenter/distribution/stores/googleplay)
+- [通过 Visual Studio 应用中心部署](/appcenter/distribution/stores/googleplay)
 - [应用程序签名](https://source.android.com/security/apksigning/)
 - [发布到 Google Play](https://developer.android.com/distribute/googleplay/publish/index.html)
 - [Google 应用程序授权](https://developer.android.com/guide/google/play/licensing/index.html)

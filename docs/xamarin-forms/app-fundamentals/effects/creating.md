@@ -10,12 +10,12 @@ ms.date: 10/24/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: bb4e0c81fb3f2e58be9c44d1ec7fddcf4d72a656
-ms.sourcegitcommit: a003b036f6fb83818e2ecc9c72a641e3aeb373bd
+ms.openlocfilehash: b109459f583afd491b613b4e32e4e4530eeb5ca4
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88964592"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562686"
 ---
 # <a name="creating-an-effect"></a>创建效果
 
@@ -274,5 +274,5 @@ public HomePageCS ()
 - [自定义呈现器](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)
 - [效果](xref:Xamarin.Forms.Effect)
 - [PlatformEffect](xref:Xamarin.Forms.PlatformEffect`2)
-- [背景颜色效果（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-backgroundcoloreffect)
-- [焦点效果（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-focuseffect)
+- [背景颜色效果（示例）](/samples/xamarin/xamarin-forms-samples/effects-backgroundcoloreffect)
+- [焦点效果（示例）](/samples/xamarin/xamarin-forms-samples/effects-focuseffect)

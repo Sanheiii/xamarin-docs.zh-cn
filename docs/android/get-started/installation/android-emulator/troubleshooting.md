@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 08/27/2018
-ms.openlocfilehash: ff68666d9f0385b159b9ac9908ff997f53715308
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 34416145fcf66f28d80a35a7d4dbc9b2fc2c6351
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571930"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91454476"
 ---
 # <a name="android-emulator-troubleshooting"></a>Android Emulator 疑难解答
 
@@ -195,7 +195,7 @@ Enable-WindowsOptionalFeature -Online -FeatureName HypervisorPlatform -All
 
 完成这些命令后，请进行重启。 
 
-有关启用 Hyper-V 的详细信息（包括使用部署映像服务和管理工具启用 Hyper-V 的技术），请参阅[安装 Hyper-V](https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v)。
+有关启用 Hyper-V 的详细信息（包括使用部署映像服务和管理工具启用 Hyper-V 的技术），请参阅[安装 Hyper-V](/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v)。
 
 ### <a name="haxm-issues"></a>HAXM 问题
 

@@ -11,12 +11,12 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 - Firebase
-ms.openlocfilehash: 5a069595aa12852a4a861de9bac52eebd7247e48
-ms.sourcegitcommit: 14d67a2db82e67471584b1749e0d5b9ec0c0c09b
+ms.openlocfilehash: 721785fe2eeb35f0ef04d1a7854afe4039a66849
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88228620"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91561828"
 ---
 # <a name="send-and-receive-push-notifications-with-azure-notification-hubs-and-no-locxamarinforms"></a>使用 Azure 通知中心和 Xamarin.Forms 收发推送通知
 
@@ -279,7 +279,7 @@ void SendMessageToMainPage(string body)
 本地通知和 `Intent` 示例要求用户执行点击通知的操作。 用户最好在应用程序状态更改之前执行此操作。 但是，在某些情况下，你可能需要直接访问消息数据而不要求用户操作。 前面的示例还使用 `SendMessageToMainPage` 方法将消息直接发送到当前 `MainPage` 实例。 在生产环境中，如果对一种消息类型同时实现这两种方法，则当用户点击通知时，`MainPage` 对象会收到重复的消息。
 
 > [!NOTE]
-> Android 应用程序只有在后台或前台运行时才会收到推送通知。 要在主 `Activity` 未运行时收到推送通知，必须实现服务，这不在本示例的范围之内。 有关详细信息，请参阅[创建 Android 服务](/xamarin/android/app-fundamentals/services/)
+> Android 应用程序只有在后台或前台运行时才会收到推送通知。 要在主 `Activity` 未运行时收到推送通知，必须实现服务，这不在本示例的范围之内。 有关详细信息，请参阅[创建 Android 服务](../../../android/app-fundamentals/services/index.md)
 
 ### <a name="add-incoming-notifications-to-the-no-locxamarinforms-ui"></a>将传入通知添加到 Xamarin.Forms UI
 

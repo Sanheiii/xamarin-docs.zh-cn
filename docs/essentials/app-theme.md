@@ -9,14 +9,14 @@ ms.date: 01/06/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: eca052c82ae3333feb0437b8a4e24bc6b97b836d
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: c68f00b77f0b9f88d014334dc56e1e58ed057986
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84802509"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436887"
 ---
-# <a name="xamarinessentials-app-theme"></a>Xamarin.Essentials：应用主题
+# <a name="no-locxamarinessentials-app-theme"></a>Xamarin.Essentials：应用主题
 
 RequestedTheme API 属于 [`AppInfo`](app-information.md) 类，它提供了系统为正在运行的应用请求什么主题的信息。
 
@@ -70,7 +70,7 @@ Android 使用配置模式来指定要向用户请求的主题类型。 它可�
 
 UWP 应用程序将在 RUWP App.xaml 中的 RequestedTheme 下反映出你的设置。 如果将它设置为特定主题，则 Xamarin.Essentials 将始终返回此设置。 要使用操作系统的动态主题，请从应用程序中删除此节点，然后在应用运行时，它将返回用户在 Windows 设置中（“设置”>“个性化”>“颜色”>“选择默认应用模式”）设置的主题。
 
-有关详细信息，请参阅 [UWP RequestedTheme 文档](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.requestedtheme)。
+有关详细信息，请参阅 [UWP RequestedTheme 文档](/uwp/api/windows.ui.xaml.application.requestedtheme)。
 
 --------------
 

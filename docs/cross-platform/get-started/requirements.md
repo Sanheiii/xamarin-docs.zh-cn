@@ -6,12 +6,12 @@ ms.assetid: dd344d57-18e2-42a5-8c15-3f5be4123c72
 author: davidortinau
 ms.author: daortin
 ms.date: 10/16/2019
-ms.openlocfilehash: c4eaebc8d5f184b1108815c37e992fa97e67aa8f
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: e732e4f04aa5a219a267502bd1aca11ccb2b72f8
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79303677"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91458207"
 ---
 # <a name="system-requirements"></a>系统要求
 
@@ -70,7 +70,7 @@ Visual Studio 2019 和 Visual Studio 2017 安装程序支持自动安装 Xamarin
 
 ## <a name="installation-instructions"></a>安装说明
 
-可以随 [Visual Studio for Mac](https://docs.microsoft.com/visualstudio/mac/installation) 下载适用于 macOS 的最新版 Xamarin。 对于 Windows，请按照 [Visual Studio 安装说明](https://docs.microsoft.com/visualstudio/install/install-visual-studio)进行安装。
+可以随 [Visual Studio for Mac](/visualstudio/mac/installation) 下载适用于 macOS 的最新版 Xamarin。 对于 Windows，请按照 [Visual Studio 安装说明](/visualstudio/install/install-visual-studio)进行安装。
 
 [新增功能页面](~/whats-new/index.yml)上提供了当前产品版本的完整列表。 此页还链接到发行说明。
 

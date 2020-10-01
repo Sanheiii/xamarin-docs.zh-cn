@@ -10,14 +10,14 @@ ms.date: 08/16/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2c5ce10aa0a1137ad4e4832d5dc931c902b82810
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 24a9a351dbe6932b09add2ee7c3111256e013201
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84946203"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91560684"
 ---
-# <a name="xamarinforms-binding-fallbacks"></a>Xamarin.Forms 绑定回退
+# <a name="no-locxamarinforms-binding-fallbacks"></a>Xamarin.Forms 绑定回退
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
@@ -109,4 +109,4 @@ MonkeyDetail 页说明了设置 [`FallbackValue`](xref:Xamarin.Forms.BindingBase
 
 ## <a name="related-links"></a>相关链接
 
-- [数据绑定演示（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+- [数据绑定演示（示例）](/samples/xamarin/xamarin-forms-samples/databindingdemos)

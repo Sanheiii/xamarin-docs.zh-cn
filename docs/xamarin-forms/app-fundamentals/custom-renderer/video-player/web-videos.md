@@ -10,12 +10,12 @@ ms.date: 02/12/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b4269b768d6dd9a0eadbbe557f701f8a43b74c99
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 113265ffd26fcb1daf1cc85867e55f3e8ebd091f
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84133674"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91557941"
 ---
 # <a name="playing-a-web-video"></a>播放 Web 视频
 
@@ -452,7 +452,7 @@ namespace FormsVideoLibrary.UWP
 
 ## <a name="setting-a-url-source"></a>设置 URL 源
 
-通过在三个呈现器中实现这些属性，可以播放来自 URL 源的视频。 [**VideoPlayDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos) 程序中的“播放 Web 视频”页由以下 XAML 文件定义：
+通过在三个呈现器中实现这些属性，可以播放来自 URL 源的视频。 [**VideoPlayDemos**](/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos) 程序中的“播放 Web 视频”页由以下 XAML 文件定义：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -524,4 +524,4 @@ namespace FormsVideoLibrary.UWP
 
 ## <a name="related-links"></a>相关链接
 
-- [视频播放器演示（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
+- [视频播放器演示（示例）](/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)

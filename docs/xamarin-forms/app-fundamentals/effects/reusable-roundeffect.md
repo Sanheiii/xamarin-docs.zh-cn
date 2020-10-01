@@ -10,14 +10,14 @@ ms.date: 10/25/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: fc3776934a4c109b2527132b11c6c6a93b7d9f9e
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 47b459945aec4ef8f1c3fa9729efd82461aec0e0
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138848"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91561958"
 ---
-# <a name="xamarinforms-reusable-roundeffect"></a>Xamarin.Forms 可重用 RoundEffect
+# <a name="no-locxamarinforms-reusable-roundeffect"></a>Xamarin.Forms 可重用 RoundEffect
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-roundeffect/)
 
@@ -224,6 +224,6 @@ image.Effects.Add(new RoundEffect());
 
 ## <a name="related-links"></a>相关链接
 
-- [RoundEffect 示例应用程序](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-roundeffect/)
+- [RoundEffect 示例应用程序](/samples/xamarin/xamarin-forms-samples/effects-roundeffect/)
 - [效果简介](~/xamarin-forms/app-fundamentals/effects/introduction.md)
 - [创建效果](~/xamarin-forms/app-fundamentals/effects/creating.md)

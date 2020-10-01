@@ -10,14 +10,14 @@ ms.date: 05/21/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9abbe60865cbf5fb9082b5f4882c27fe095b36ac
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 88b2bd5a0fe6720a4e14e6327715690bfd74a185
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84946450"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556797"
 ---
-# <a name="xamarinforms-data-binding"></a>Xamarin.Forms 数据绑定
+# <a name="no-locxamarinforms-data-binding"></a>Xamarin.Forms 数据绑定
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
@@ -38,7 +38,7 @@ Xamarin.Forms 应用程序由一个或多个页面组成，每个页面通常包
 - 派生自另一个 `View`，且通常位于同一页面。
 - 或是代码文件中的对象。
 
-在演示程序中（如 [**DataBindingDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos) 示例中的程序），为了清楚简便起见，通常会显示两个 `View` 派生对象之间的数据绑定。 但是，相同的原则也可应用于 `View` 和其他对象之间的数据绑定。 使用模型-视图-视图模型 (MVVM) 架构生成应用程序时，具有基础数据的类通常称为 viewmodel。
+在演示程序中（如 [**DataBindingDemos**](/samples/xamarin/xamarin-forms-samples/databindingdemos) 示例中的程序），为了清楚简便起见，通常会显示两个 `View` 派生对象之间的数据绑定。 但是，相同的原则也可应用于 `View` 和其他对象之间的数据绑定。 使用模型-视图-视图模型 (MVVM) 架构生成应用程序时，具有基础数据的类通常称为 viewmodel。
 
 以下系列文章探讨了数据绑定：
 
@@ -84,6 +84,6 @@ Xamarin.Forms 应用程序由一个或多个页面组成，每个页面通常包
 
 ## <a name="related-links"></a>相关链接
 
-- [数据绑定演示（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+- [数据绑定演示（示例）](/samples/xamarin/xamarin-forms-samples/databindingdemos)
 - [Xamarin.Forms 书籍中的数据绑定章节](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)
 - [XAML 标记扩展](~/xamarin-forms/xaml/markup-extensions/index.md)

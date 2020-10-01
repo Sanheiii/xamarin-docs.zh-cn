@@ -13,14 +13,14 @@ ms.date: 11/27/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d1670506fa78b39825368fc91d2452a44ddf8f03
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 8bfa78ef334829ab228d691368ec44ac71d415ad
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939914"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91433510"
 ---
-# <a name="xamarinforms-quickstart-deep-dive"></a>Xamarin.Forms 快速入门深入探讨
+# <a name="no-locxamarinforms-quickstart-deep-dive"></a>Xamarin.Forms 快速入门深入探讨
 
 在 [Xamarin.Forms 快速入门](~/get-started/index.yml)中，生成了 Notes 应用程序。 本文对已生成的内容进行回顾，以深入了解有关 Xamarin.Forms 应用程序工作原理的基础知识。
 
@@ -39,7 +39,7 @@ Visual Studio 将代码组织为解决方案和项目。 解决方案是可以�
 - Notes.iOS - 此项目包含 iOS 特定代码，是 iOS 应用程序的入口点。
 - Notes.UWP - 此项目包含通用 Windows 平台特定代码，是 UWP 应用程序的入口点。
 
-## <a name="anatomy-of-a-xamarinforms-application"></a>Xamarin.Forms 应用程序的剖析
+## <a name="anatomy-of-a-no-locxamarinforms-application"></a>Xamarin.Forms 应用程序的剖析
 
 以下屏幕截图显示 Visual Studio 中 Notes .NET Standard 库项目的内容：
 
@@ -65,7 +65,7 @@ Visual Studio 将代码组织为解决方案和项目。 解决方案是可以�
 - Notes.Droid - 此项目包含 Android 特定代码，是 Android 应用程序的入口点。
 - Notes.iOS - 此项目包含 iOS 特定代码，是 iOS 应用程序的入口点。
 
-## <a name="anatomy-of-a-xamarinforms-application"></a>Xamarin.Forms 应用程序的剖析
+## <a name="anatomy-of-a-no-locxamarinforms-application"></a>Xamarin.Forms 应用程序的剖析
 
 以下屏幕截图显示 Visual Studio for Mac 中 Notes .NET Standard 库项目的内容：
 
@@ -540,8 +540,8 @@ Visual Studio for Mac 和 Visual Studio 均提供许多用于测试和部署应�
 - [数据绑定](~/xamarin-forms/app-fundamentals/data-binding/index.md)
 - [控件引用](~/xamarin-forms/user-interface/controls/index.md)
 - [XAML 标记扩展](~/xamarin-forms/xaml/markup-extensions/index.md)
-- [Xamarin.Forms 示例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms)
-- [入门示例](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms%20get%20started)
+- [Xamarin.Forms 示例](/samples/browse/?products=xamarin&term=Xamarin.Forms)
+- [入门示例](/samples/browse/?products=xamarin&term=Xamarin.Forms%2bget%2bstarted)
 - [Xamarin.Forms API 参考](xref:Xamarin.Forms)
 - [免费自学教程（视频）](https://university.xamarin.com/self-guided/)
 

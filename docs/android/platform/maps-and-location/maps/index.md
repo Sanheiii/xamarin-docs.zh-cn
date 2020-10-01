@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 06/25/2018
-ms.openlocfilehash: d877f415bb96024bb41edc2be9aec108ae248e88
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 11feb8e3e10e12bfb2c647182ec4ba953ab34e24
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73020030"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91456894"
 ---
 # <a name="how-to-use-google-maps-and-location-with-xamarinandroid"></a>如何在 Xamarin.Android 中使用 Google Maps 和位置
 
@@ -31,7 +31,7 @@ _本文讨论如何在 Xamarin.Android 中使用地图和位置。其中涵盖�
 
 ## <a name="related-links"></a>相关链接
 
-- [MapsAndLocationDemo_v3（示例）](https://docs.microsoft.com/samples/xamarin/monodroid-samples/mapsandlocationdemo-v3)
+- [MapsAndLocationDemo_v3（示例）](/samples/xamarin/monodroid-samples/mapsandlocationdemo-v3)
 - [活动生命周期](~/android/app-fundamentals/activity-lifecycle/index.md)
 - [获取 Google Maps API 密钥](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)
 - [意向列表：在 Android 设备上调用 Google 应用程序](https://developer.android.com/guide/appendix/g-app-intents.html)

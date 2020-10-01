@@ -6,12 +6,12 @@ ms.assetid: 420c5fdf-4610-4e71-9db5-fe894c961924
 author: davidortinau
 ms.author: daortin
 ms.date: 11/22/2016
-ms.openlocfilehash: 32dec6b8fcdd5387e138a7812d8c3e2074673111
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: f3de8f6bb5cc8cb717642ebc86cefe1a184f4a78
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939615"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91456621"
 ---
 # <a name="mobile-software-development-lifecycle"></a>移动软件开发生命周期
 
@@ -70,7 +70,7 @@ ms.locfileid: "86939615"
 
 #### <a name="ux-design"></a>UX 设计
 
-UX 通常通过线框或模型使用众多[设计工具包](https://docs.microsoft.com/windows/uwp/design/downloads/)之一来实现。 通过 UX 原型可以设计 UX，而不必担心实际 UI 设计：
+UX 通常通过线框或模型使用众多[设计工具包](/windows/uwp/design/downloads/)之一来实现。 通过 UX 原型可以设计 UX，而不必担心实际 UI 设计：
 
  [![UX 通常通过线框或模型使用 Balsamiq 等工具来实现](introduction-to-mobile-sdlc-images/balsamiq.png)](introduction-to-mobile-sdlc-images/balsamiq.png#lightbox)
 
@@ -78,7 +78,7 @@ UX 通常通过线框或模型使用众多[设计工具包](https://docs.microso
 
 1. **Apple** -  [人体学接口指南](https://developer.apple.com/ios/human-interface-guidelines/overview/themes/)
 1. **Android** –  [设计指南](https://developer.android.com/design/index.html)
-1. **UWP** - [UWP 设计基础知识](https://docs.microsoft.com/windows/uwp/design/basics/)
+1. **UWP** - [UWP 设计基础知识](/windows/uwp/design/basics/)
 
 例如，每个应用都提供一种工具以用于在应用程序中的各部分之间进行切换。 iOS 使用屏幕底部的选项卡栏，Android 使用屏幕顶部的选项卡栏，而 UWP 则使用[透视或选项卡](/windows/uwp/design/controls-and-patterns/pivot)视图。
 
@@ -153,7 +153,7 @@ Android 使用此信息来帮助在 Android OS 内运行的应用程序和组件
 
 #### <a name="uwp"></a>UWP
 
-UWP 应用程序通过 Microsoft Store 分发给用户。 开发人员提交其应用进行审批，此后它们会出现在应用商店中。 有关发布 Windows 应用的详细信息，请参阅 UWP 的[发布](https://docs.microsoft.com/windows/uwp/publish/)文档。
+UWP 应用程序通过 Microsoft Store 分发给用户。 开发人员提交其应用进行审批，此后它们会出现在应用商店中。 有关发布 Windows 应用的详细信息，请参阅 UWP 的[发布](/windows/uwp/publish/)文档。
 
 ## <a name="mobile-development-considerations"></a>移动开发注意事项
 
@@ -243,7 +243,7 @@ UWP 中的多任务具有两个部分：页面和应用程序的生命周期以�
 
 #### <a name="security-considerations"></a>安全注意事项
 
-有关 UWP 中的重要安全注意事项的信息，请参阅[安全](https://docs.microsoft.com/windows/uwp/security/)文档。
+有关 UWP 中的重要安全注意事项的信息，请参阅[安全](/windows/uwp/security/)文档。
 
 ## <a name="summary"></a>总结
 

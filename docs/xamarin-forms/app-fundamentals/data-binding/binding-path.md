@@ -1,6 +1,6 @@
 ---
-title: title:"Xamarin.Forms绑定路径”说明：“本文介绍如何使用 Xamarin.Forms 数据绑定通过 Binding 类的 Path 属性访问子属性和集合成员。”
-description: 'ms.prod: xamarin ms.assetid:3CF721A5-E157-468B-AD3A-DA0A45E58E8D ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:2018/01/05 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: Xamarin.Forms 绑定路径
+description: 本文介绍如何使用 Xamarin.Forms 数据绑定通过 Binding 类的 Path 属性访问子属性和集合成员。
 ms.prod: xamarin
 ms.assetid: 3CF721A5-E157-468B-AD3A-DA0A45E58E8D
 ms.technology: xamarin-forms
@@ -10,14 +10,14 @@ ms.date: 01/05/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a0ac8a568c3e8c46fa7e53112461aa0bff5684ae
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 154219f58c22005de0a0a2171aeedd04ec9f9ff9
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84570786"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91557954"
 ---
-# <a name="xamarinforms-binding-path"></a>Xamarin.Forms 绑定路径
+# <a name="no-locxamarinforms-binding-path"></a>Xamarin.Forms 绑定路径
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
@@ -168,5 +168,5 @@ ms.locfileid: "84570786"
 
 ## <a name="related-links"></a>相关链接
 
-- [数据绑定演示（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+- [数据绑定演示（示例）](/samples/xamarin/xamarin-forms-samples/databindingdemos)
 - [Xamarin.Forms 书籍中的数据绑定章节](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)

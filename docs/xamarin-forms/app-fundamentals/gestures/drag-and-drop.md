@@ -10,12 +10,12 @@ ms.date: 08/04/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2d929043a6b4cd5dd8b06318df0d7a347708fe6c
-ms.sourcegitcommit: c3329ab25d377907d8804cdd5e26dc84a274f39c
+ms.openlocfilehash: d3eb7edbb24c7e28ee375e1de85f6a7597ec63ac
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88130911"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91561010"
 ---
 # <a name="add-drag-and-drop-gesture-recognizers"></a>添加拖放手势识别器
 
@@ -312,4 +312,4 @@ void OnDrop(object sender, DropEventArgs e)
 
 ## <a name="related-links"></a>相关链接
 
-- [拖放手势（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-draganddropgesture/)
+- [拖放手势（示例）](/samples/xamarin/xamarin-forms-samples/workingwithgestures-draganddropgesture/)

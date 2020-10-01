@@ -10,12 +10,12 @@ ms.date: 04/06/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 7ecc094abf816f11dcb16d9eba7d715c8c4e4ab1
-ms.sourcegitcommit: a003b036f6fb83818e2ecc9c72a641e3aeb373bd
+ms.openlocfilehash: 3a085226da3c63f4f151bc657976bba384c02170
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88964792"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91561139"
 ---
 # <a name="reusable-effectbehavior"></a>可重用 EffectBehavior
 
@@ -35,7 +35,7 @@ ms.locfileid: "88964792"
 有关效果的更多信息，请参阅[效果](~/xamarin-forms/app-fundamentals/effects/index.md)。
 
 > [!NOTE]
-> `EffectBehavior` 是一个自定义类，它可以位于[效果行为示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-effectbehavior)中，但并不属于 Xamarin.Forms。
+> `EffectBehavior` 是一个自定义类，它可以位于[效果行为示例](/samples/xamarin/xamarin-forms-samples/behaviors-effectbehavior)中，但并不属于 Xamarin.Forms。
 
 ## <a name="creating-the-behavior"></a>创建行为
 
@@ -171,6 +171,6 @@ label.Behaviors.Add (new EffectBehavior {
 ## <a name="related-links"></a>相关链接
 
 - [效果](~/xamarin-forms/app-fundamentals/effects/index.md)
-- [影响行为（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-effectbehavior)
+- [影响行为（示例）](/samples/xamarin/xamarin-forms-samples/behaviors-effectbehavior)
 - [行为](xref:Xamarin.Forms.Behavior)
 - [行为&lt;&gt;](xref:Xamarin.Forms.Behavior`1)

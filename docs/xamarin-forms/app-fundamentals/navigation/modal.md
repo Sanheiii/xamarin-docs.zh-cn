@@ -10,14 +10,14 @@ ms.date: 12/01/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ea0d38946a773dc7571a08f999be5eb6500bfc9b
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 7ba5224c23eaed6b7c37312f8a765556d0263d9c
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86934493"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563024"
 ---
-# <a name="xamarinforms-modal-pages"></a>Xamarin.Forms 模式页面
+# <a name="no-locxamarinforms-modal-pages"></a>Xamarin.Forms 模式页面
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-modal)
 
@@ -256,5 +256,5 @@ public class DetailPageCS : ContentPage
 ## <a name="related-links"></a>相关链接
 
 - [页面导航](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf)
-- [模式（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-modal)
-- [PassingData（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-passingdata)
+- [模式（示例）](/samples/xamarin/xamarin-forms-samples/navigation-modal)
+- [PassingData（示例）](/samples/xamarin/xamarin-forms-samples/navigation-passingdata)

@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 04/03/2018
-ms.openlocfilehash: fbd9fff6e7b63e86f0bba38f22025c5ea288f7c2
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 96c9e750238bce35d5c8c12dd2ceba6be7ab8fcc
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73027992"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91454814"
 ---
 # <a name="profiling-android-apps"></a>分析 Android 应用
 
@@ -37,7 +37,7 @@ Android Studio 3.0 及更高版本含有 Android Profiler 工具。 可以使用
 
 ### <a name="launching-a-xamarin-android-app-in-android-profiler"></a>在 Android Profiler 中启动 Xamarin Android 应用
 
-下列步骤介绍如何在 Android Studio 的 Android Profiler 工具中启动 Xamarin Android 应用程序。 在下面的示例屏幕截图中，Xamarin 窗体 [XamagonXuzzle](https://docs.microsoft.com/samples/xamarin/mobile-samples/liveplayer-xamagonxuzzlelp/) 应用是使用 Android Profiler 生成和分析的：
+下列步骤介绍如何在 Android Studio 的 Android Profiler 工具中启动 Xamarin Android 应用程序。 在下面的示例屏幕截图中，Xamarin 窗体 [XamagonXuzzle](/samples/xamarin/mobile-samples/liveplayer-xamagonxuzzlelp/) 应用是使用 Android Profiler 生成和分析的：
 
 1. 在 Android 项目生成选项中，禁用“使用共享运行时”  。 这可确保 Android 应用程序包 (APK) 的生成不依赖于共享开发时间 Mono 运行时。
 

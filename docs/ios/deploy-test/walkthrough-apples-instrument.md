@@ -7,19 +7,19 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 6fa1357adc9cf2f545fbcdf3a30fef70280593bb
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 2458abc3363d847623a27a73626266dabe6a7a5c
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938016"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91437239"
 ---
 # <a name="walkthrough---using-apples-instruments-tool"></a>演练 - 使用 Apple Instruments 工具
 
 _本文介绍如何使用 Apple 的 Instruments 工具诊断通过 Xamarin 生成的 iOS 应用程序的内存问题。它演示了如何启动 Instruments、拍摄堆快照和分析内存增长情况。此外，还演示了如何使用 Instruments 显示和确定造成内存问题的确切代码行。_
 
 本页演示如何使用 **Xcode 的 Instruments 工具**诊断 iOS 应用程序中的内存问题。
-首先，下载 [MemoryDemo 示例](https://docs.microsoft.com/samples/xamarin/ios-samples/profiling-memorydemo)，并在 Visual Studio for Mac 中打开先前  解决方案。
+首先，下载 [MemoryDemo 示例](/samples/xamarin/ios-samples/profiling-memorydemo)，并在 Visual Studio for Mac 中打开先前  解决方案。
 
 ## <a name="diagnosing-the-memory-issues"></a>诊断内存问题
 
@@ -85,7 +85,7 @@ public override UICollectionViewCell GetCell (UICollectionView collectionView, N
 
 ![显示应用内存使用情况](walkthrough-apples-instrument-images/06-reduced-memory.png)
 
-在 Visual Studio for Mac 的随后解决方案中，[MemoryDemo 示例](https://docs.microsoft.com/samples/xamarin/ios-samples/profiling-memorydemo)中提供了改进的代码。
+在 Visual Studio for Mac 的随后解决方案中，[MemoryDemo 示例](/samples/xamarin/ios-samples/profiling-memorydemo)中提供了改进的代码。
 
 若要了解如何处理 Xamarin.iOS 方面的内存问题，可参考关于 [Xamarin.iOS 垃圾回收](https://c-sharx.net/2015-04-27-xamarin-ios-the-garbage-collector-and-me/)该社区博客。
 
@@ -97,5 +97,5 @@ public override UICollectionViewCell GetCell (UICollectionView collectionView, N
 
 ## <a name="related-links"></a>相关链接
 
-- [MemoryDemo 示例](https://docs.microsoft.com/samples/xamarin/ios-samples/profiling-memorydemo)
+- [MemoryDemo 示例](/samples/xamarin/ios-samples/profiling-memorydemo)
 - [Xamarin.iOS 垃圾回收（博客文章）](https://c-sharx.net/2015-04-27-xamarin-ios-the-garbage-collector-and-me/)

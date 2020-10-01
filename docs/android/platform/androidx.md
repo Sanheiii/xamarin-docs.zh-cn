@@ -5,12 +5,12 @@ ms.assetid: CC21BD28-EF67-4132-8C0D-CF25B78BA78B
 author: JonDouglas
 ms.author: jodou
 ms.date: 02/20/2020
-ms.openlocfilehash: ad6ea2f68fc01183f7ed42e85094f6be5fb3d9f9
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 05736fda26e5fd391d977481b340b3744f224c2f
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "77618910"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91454203"
 ---
 # <a name="androidx-with-xamarin"></a>在 Xamarin 中使用 AndroidX
 
@@ -37,7 +37,7 @@ AndroidX 包括以下功能：
 
 ## <a name="get-started"></a>入门
 
-开始使用 AndroidX 时，可以在 Android 项目中加入任何 [AndroidX NuGet 包](https://www.nuget.org/packages?q=Tags%3A%22AndroidX%22+Authors%3A%22Microsoft%22)。 详细了解如何在 [Visual Studio](https://docs.microsoft.com/nuget/quickstart/install-and-use-a-package-in-visual-studio) 或 [Visual Studio for Mac](https://docs.microsoft.com/nuget/quickstart/install-and-use-a-package-in-visual-studio-mac) 中安装和使用包
+开始使用 AndroidX 时，可以在 Android 项目中加入任何 [AndroidX NuGet 包](https://www.nuget.org/packages?q=Tags%3A%22AndroidX%22+Authors%3A%22Microsoft%22)。 详细了解如何在 [Visual Studio](/nuget/quickstart/install-and-use-a-package-in-visual-studio) 或 [Visual Studio for Mac](/nuget/quickstart/install-and-use-a-package-in-visual-studio-mac) 中安装和使用包
 
 ## <a name="behavior-changes"></a>行为变更
 

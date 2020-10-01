@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 04/26/2018
-ms.openlocfilehash: 4d9ef88f39914f8fa5e578577ee9f6977c2bc88e
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: c0d4b0d1a31be43d16fb69eba18c07815631f496
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73020267"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91453930"
 ---
 # <a name="fragments-walkthrough-ndash-landscape"></a>片段演练 &ndash; 横向
 
@@ -34,9 +34,9 @@ ms.locfileid: "73020267"
 
 ## <a name="1-create-an-alternate-layout"></a>1.创建备用布局
 
-当在 Android 设备上创建主活动时，Android 会基于设备的方向确定要加载的布局。 默认情况下，Android 会提供 Resources/layout/activity_main.axml  布局文件。 对于在横向模式下加载的设备，Android 会提供 Resources/layout-land/activity_main.axml  布局文件。 有关 [Android 资源](/xamarin/android/app-fundamentals/resources-in-android)的指南包含有关 Android 如何确定要为应用程序加载的资源文件的更多详细信息。
+当在 Android 设备上创建主活动时，Android 会基于设备的方向确定要加载的布局。 默认情况下，Android 会提供 Resources/layout/activity_main.axml  布局文件。 对于在横向模式下加载的设备，Android 会提供 Resources/layout-land/activity_main.axml  布局文件。 有关 [Android 资源](../../../app-fundamentals/resources-in-android/index.md)的指南包含有关 Android 如何确定要为应用程序加载的资源文件的更多详细信息。
 
-按照[备用布局](/xamarin/android/user-interface/android-designer/alternative-layout-views)指南中所述的步骤，创建面向横向  方向的备用布局。 这应将新的布局资源文件添加到项目 (Resources/layout/activity_main.axml)  ：
+按照[备用布局](../../../user-interface/android-designer/alternative-layout-views.md)指南中所述的步骤，创建面向横向  方向的备用布局。 这应将新的布局资源文件添加到项目 (Resources/layout/activity_main.axml)  ：
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 

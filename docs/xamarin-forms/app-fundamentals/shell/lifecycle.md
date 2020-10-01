@@ -10,14 +10,14 @@ ms.date: 07/25/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3a7a46187d861098b61f638a3fb460d890b081dd
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 1b2abf7925eabb79b1918a9b9fedb0ba7ecced38
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138718"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563154"
 ---
-# <a name="xamarinforms-shell-lifecycle"></a>Xamarin.Forms Shell 生命周期
+# <a name="no-locxamarinforms-shell-lifecycle"></a>Xamarin.Forms Shell 生命周期
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 
@@ -42,6 +42,6 @@ Shell 应用程序遵循 Xamarin.Forms 生命周期，当页面将出现在屏�
 
 ## <a name="related-links"></a>相关链接
 
-- [Xaminals（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
+- [Xaminals（示例）](/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 - [Xamarin.Forms 应用生命周期](~/xamarin-forms/app-fundamentals/app-lifecycle.md)
 - [Xamarin.Forms 模式页面](~/xamarin-forms/app-fundamentals/navigation/modal.md)

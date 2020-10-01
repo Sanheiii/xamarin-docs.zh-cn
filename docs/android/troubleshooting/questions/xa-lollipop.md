@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: 9e36189c771ed0c91a6030fd0ab615ab9af4dd52
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 27631d19ea157c1af08666b55a067e729b806434
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73026714"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91453631"
 ---
 # <a name="what-version-of-xamarinandroid-added-lollipop-support"></a>哪个版本的 Xamarin.Android 添加了 Lollipop 支持？
 
@@ -22,7 +22,7 @@ ms.locfileid: "73026714"
 - [Xamarin.Android 4.17](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/android/xamarin.android_4/xamarin.android_4.17/index.md) 添加了 Android L 预览版支持。
 - [Xamarin.Android 4.20](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/android/xamarin.android_4/xamarin.android_4.20/index.md) 添加了 Android Lollipop 支持。
 
-Xamarin 仅主动支持 Xamarin 工具的当前稳定版本。 对于较旧版本的工具，以下信息“按原样”提供。 有关 Xamarin 版本的最新信息，请查看[发行说明](https://docs.microsoft.com/xamarin/whats-new/#product-release-notes)。
+Xamarin 仅主动支持 Xamarin 工具的当前稳定版本。 对于较旧版本的工具，以下信息“按原样”提供。 有关 Xamarin 版本的最新信息，请查看[发行说明](/xamarin/android/release-notes/)。
 
 ## <a name="missing-androidjar-for-api-level-21-in-android-l-preview"></a>Android L 预览版中“缺少 API 21 级别的 android.jar”
 

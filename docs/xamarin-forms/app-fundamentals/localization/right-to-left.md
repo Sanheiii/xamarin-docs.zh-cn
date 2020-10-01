@@ -11,12 +11,12 @@ ms.date: 05/07/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 212674472706a36c66436a3955ab7b988f8e246b
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: fe27c00752723ac34d614c510f1305b197933715
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137548"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91558162"
 ---
 # <a name="right-to-left-localization"></a>从右到左本地化
 
@@ -77,7 +77,7 @@ this.FlowDirection = Device.FlowDirection;
 
 ![Info.plist 支持的语言](rtl-images/ios-locales.png "Info.plist 支持的语言")
 
-有关详细信息，请参阅[ iOS 中的本地化基础知识](https://docs.microsoft.com/xamarin/ios/app-fundamentals/localization/#localization-basics-in-ios)。
+有关详细信息，请参阅[ iOS 中的本地化基础知识](../../../ios/app-fundamentals/localization/index.md#localization-basics-in-ios)。
 
 然后可以通过将设备/模拟器上的语言和区域更改为 Info.plist 中指定的从右向左的区域设置，以测试从右到左的本地化。
 
@@ -197,4 +197,4 @@ Window.DecorView.LayoutDirection = LayoutDirection.Rtl;
 
 ## <a name="related-links"></a>相关链接
 
-- [TodoLocalizedRTL 示例应用](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todolocalizedrtl)
+- [TodoLocalizedRTL 示例应用](/samples/xamarin/xamarin-forms-samples/todolocalizedrtl)

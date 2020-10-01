@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: e955d4f96724bd5682e7d0e6db2c36fa1b7810f4
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: aaa67972afeffd10c038a145a5703e917647b0fb
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73027430"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91453865"
 ---
 # <a name="fingerprint-authentication-guidance"></a>指纹身份验证指南
 
@@ -31,12 +31,12 @@ ms.locfileid: "73027430"
 
 指纹身份验证是一种让 Xamarin.Android 应用程序快速验证用户的理想方法，使用户可以更轻松地与敏感功能（如应用内购买）交互。 本指南讨论了在 Xamarin.Android 应用程序中合并 Android 6.0 指纹 API 所需的概念和代码。
 
-首先，我们讨论了指纹 API `FingerprintManager`（和 `FingerprintManagerCompat`）本身。 我们研究了 `FingerprintManager.AuthenticationCallbacks` 抽象类必须如何由应用程序扩展，并用作指纹硬件和应用程序本身之间的媒介。 然后，我们探究了如何使用 Java `Cipher` 对象验证指纹扫描器结果的完整性。 最后，我们介绍了如何在设备上注册指纹，并使用 adb  在仿真器上模拟指纹刷，执行了一些简单测试。 
+首先，我们讨论了指纹 API `FingerprintManager`（和 `FingerprintManagerCompat`）本身。 我们研究了 `FingerprintManager.AuthenticationCallbacks` 抽象类必须如何由应用程序扩展，并用作指纹硬件和应用程序本身之间的媒介。 然后，我们探究了如何使用 Java `Cipher` 对象验证指纹扫描器结果的完整性。 最后，我们介绍了如何在设备上注册指纹，并使用 adb 在仿真器上模拟指纹刷，执行了一些简单测试。 
 
-如果你尚未了解这些内容，应查看本指南随附的[示例应用程序](https://github.com/xamarin/monodroid-samples/tree/master/FingerprintGuide)。 [指纹对话框示例](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-m-fingerprintdialog)已从 Java 移植到 Xamarin.Android，它还提供了另一个示例，说明如何将指纹身份验证添加到 Android 应用程序。
+如果你尚未了解这些内容，应查看本指南随附的[示例应用程序](https://github.com/xamarin/monodroid-samples/tree/master/FingerprintGuide)。 [指纹对话框示例](/samples/xamarin/monodroid-samples/android-m-fingerprintdialog)已从 Java 移植到 Xamarin.Android，它还提供了另一个示例，说明如何将指纹身份验证添加到 Android 应用程序。
 
 ## <a name="related-links"></a>相关链接
 
 - [指纹指南示例应用](https://github.com/xamarin/monodroid-samples/tree/master/FingerprintGuide)
-- [指纹对话框示例](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-m-fingerprintdialog)
+- [指纹对话框示例](/samples/xamarin/monodroid-samples/android-m-fingerprintdialog)
 - [指纹图标](https://raw.githubusercontent.com/xamarin/monodroid-samples/master/FingerprintGuide/FingerprintSampleApp/Resources/drawable-hdpi/ic_fp_40px.png)

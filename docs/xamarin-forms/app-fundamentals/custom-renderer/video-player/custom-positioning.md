@@ -10,12 +10,12 @@ ms.date: 02/12/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 97d32a03ee10e2f3b0a7442d1d70dab9236059b4
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 00b6617f754eb251eae0a7be9715deb840c33102
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84135078"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562738"
 ---
 # <a name="custom-video-positioning"></a>自定义视频定位
 
@@ -484,4 +484,4 @@ UWP [`MediaElement`](/uwp/api/Windows.UI.Xaml.Controls.MediaElement/) 的文档�
 
 ## <a name="related-links"></a>相关链接
 
-- [视频播放器演示（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
+- [视频播放器演示（示例）](/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)

@@ -10,12 +10,12 @@ ms.date: 03/10/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 0d6a18ec55b49da2b668ccc183646d5e4dde5849
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 8e8c52c03534ca5d8b653eed4d8fc2c8f39edf61
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937223"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562634"
 ---
 # <a name="hierarchical-navigation"></a>分层导航
 
@@ -307,7 +307,7 @@ async void OnLoginButtonClicked (object sender, EventArgs e)
 
 所有 Xamarin.Forms[`View`](xref:Xamarin.Forms.View) 都可以显示在 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 的导航栏中。 这是通过将 [`NavigationPage.TitleView`](xref:Xamarin.Forms.NavigationPage.TitleViewProperty) 附加属性设置为 `View` 来实现的。 此附加属性可以在任何 [`Page`](xref:Xamarin.Forms.Page) 上设置，当 `Page` 被推送到 `NavigationPage` 上后，`NavigationPage` 会遵守属性的值。
 
-下面的示例取自[标题视图示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-titleview)，演示如何从 XAML 中设置 [`NavigationPage.TitleView`](xref:Xamarin.Forms.NavigationPage.TitleViewProperty) 附加属性：
+下面的示例取自[标题视图示例](/samples/xamarin/xamarin-forms-samples/navigation-titleview)，演示如何从 XAML 中设置 [`NavigationPage.TitleView`](xref:Xamarin.Forms.NavigationPage.TitleViewProperty) 附加属性：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -359,9 +359,9 @@ public class TitleViewPage : ContentPage
 ## <a name="related-links"></a>相关链接
 
 - [页面导航](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf)
-- [分层（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-hierarchical)
-- [PassingData（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-passingdata)
-- [LoginFlow（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-loginflow)
-- [TitleView（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-titleview)
+- [分层（示例）](/samples/xamarin/xamarin-forms-samples/navigation-hierarchical)
+- [PassingData（示例）](/samples/xamarin/xamarin-forms-samples/navigation-passingdata)
+- [LoginFlow（示例）](/samples/xamarin/xamarin-forms-samples/navigation-loginflow)
+- [TitleView（示例）](/samples/xamarin/xamarin-forms-samples/navigation-titleview)
 - [如何在 Xamarin.Forms 视频中创建登录屏幕流](https://www.youtube.com/watch?v=qKQ7pyyG1fo)
 - [NavigationPage](xref:Xamarin.Forms.NavigationPage)

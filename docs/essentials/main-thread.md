@@ -9,14 +9,14 @@ ms.date: 08/20/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 82c54a72d0e0bc991644295f05136f89fd280d7f
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 0dc8981024105e24ef4dcd725284723060e7313c
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84802270"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91432318"
 ---
-# <a name="xamarinessentials-mainthread"></a>Xamarin.Essentials：MainThread
+# <a name="no-locxamarinessentials-mainthread"></a>Xamarin.Essentials：MainThread
 
 MainThread 类允许应用程序在主执行线程上运行代码，并确定当前是否在主线程上运行特定代码块。
 
@@ -63,7 +63,7 @@ MainThread.BeginInvokeOnMainThread(MyMainThreadCode);
 ```
 
 > [!NOTE]
-> Xamarin.Forms 具有一个名为 [`Device.BeginInvokeOnMainThread(Action)`](https://docs.microsoft.com/dotnet/api/xamarin.forms.device.begininvokeonmainthread) 的方法
+> Xamarin.Forms 具有一个名为 [`Device.BeginInvokeOnMainThread(Action)`](/dotnet/api/xamarin.forms.device.begininvokeonmainthread) 的方法
 > 该方法与 `MainThread.BeginInvokeOnMainThread(Action)` 执行相同操作。
 > 虽然可以在 Xamarin.Forms 应用中使用任何一种方法，但请考虑调用的代码是否需要在 Xamarin.Forms 上有任何其他依赖项。 如果不需要，则 `MainThread.BeginInvokeOnMainThread(Action)` 可能是更好的选择。
 

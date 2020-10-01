@@ -10,14 +10,14 @@ ms.date: 09/11/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3558352c9f43b8e301492077806bbb611e9b58cf
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 28dbbe6411983e1fd7986413ceac69a5543c4bb4
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86929306"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562569"
 ---
-# <a name="introduction-to-xamarinforms-data-templates"></a>Xamarin.Forms 数据模板简介
+# <a name="introduction-to-no-locxamarinforms-data-templates"></a>Xamarin.Forms 数据模板简介
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/templates-datatemplates)
 
@@ -140,5 +140,5 @@ public class Person
 ## <a name="related-links"></a>相关链接
 
 - [单元格外观](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md)
-- [数据模板（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/templates-datatemplates)
+- [数据模板（示例）](/samples/xamarin/xamarin-forms-samples/templates-datatemplates)
 - [DataTemplate](xref:Xamarin.Forms.DataTemplate)

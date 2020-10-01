@@ -9,14 +9,14 @@ ms.custom: video
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 061bc1cfe785ad080092ba21340f7d38bc499ed9
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: f4bb252448abe3c2987def143634d15b5cae194c
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84801941"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91433506"
 ---
-# <a name="xamarinessentials-secure-storage"></a>Xamarin.Essentials：安全存储
+# <a name="no-locxamarinessentials-secure-storage"></a>Xamarin.Essentials：安全存储
 
 SecureStorage 类有助于安全地存储简单的键/值对。
 
@@ -154,7 +154,7 @@ SecureStorage 使用[首选项](preferences.md) API，并遵循[首选项](prefe
 
 # <a name="uwp"></a>[UWP](#tab/uwp)
 
-[DataProtectionProvider](https://docs.microsoft.com/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider) 用于在 UWP 设备上对值进行安全地加密。
+[DataProtectionProvider](/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider) 用于在 UWP 设备上对值进行安全地加密。
 
 加密值存储在名为 [你的应用 ID].xamarinessentials 的容器内的 `ApplicationData.Current.LocalSettings` 中。
 

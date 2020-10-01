@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: 8a9a38c24af3e14cd6930cbb27717ba184dd0235
-ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
+ms.openlocfilehash: 3020bb588f79ce4faf471488c116516402642b73
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86996404"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91437285"
 ---
 # <a name="hello-ios-multiscreen--deep-dive"></a>深入了解 iOS 多屏显示
 
@@ -203,6 +203,6 @@ Phoneword 应用程序引入了多个本指南中未提及的概念。 这些概
 
 ## <a name="related-links"></a>相关链接
 
-- [Hello，iOS（示例）](https://docs.microsoft.com/samples/xamarin/ios-samples/hello-ios)
+- [Hello，iOS（示例）](/samples/xamarin/ios-samples/hello-ios)
 - [iOS 人机界面指南](https://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/Introduction/Introduction.html)
 - [iOS 预配门户](https://developer.apple.com/ios/manage/overview/index.action)

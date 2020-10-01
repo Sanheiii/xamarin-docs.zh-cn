@@ -10,12 +10,12 @@ ms.date: 02/08/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a414127c01d26db6bf7b462d6fc5a7f9ae44dddc
-ms.sourcegitcommit: 69bd0fdc698c9b0c0d73217776d7084f32ae88ae
+ms.openlocfilehash: e1d2a443a6005050c518e21e4e0f2df64c2aab0c
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90832274"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562621"
 ---
 # <a name="no-locxamarinforms-dual-screen"></a>Xamarin.Forms 双屏
 
@@ -49,7 +49,7 @@ Microsoft Surface Duo 等双屏设备有助于实现新的应用程序用户体�
 
 如果 `DualScreenInfo` 类或 `TwoPaneView` 布局未按预期工作，请仔细检查此页面上的设置说明。 省略或错误地配置 `Init` 方法或 `ConfigurationChanges` 属性值是导致错误的常见原因。
 
-查看 [Xamarin.Forms 双屏示例](https://docs.microsoft.com/dual-screen/xamarin/samples)，了解更多指南和参考实现。
+查看 [Xamarin.Forms 双屏示例](/dual-screen/xamarin/samples)，了解更多指南和参考实现。
 
 ## <a name="next-steps"></a>后续步骤
 
@@ -60,4 +60,4 @@ Microsoft Surface Duo 等双屏设备有助于实现新的应用程序用户体�
 - [DualScreenInfo 帮助程序类](dual-screen-info.md) - `DualScreenInfo` 类可用于确定你的视图位于哪个窗格中、视图的大小如何、设备的放置方向如何，以及铰链的角度等等。
 - [双屏触发器](triggers.md) -[`Xamarin.Forms.DualScreen`](xref:Xamarin.Forms.DualScreen) 命名空间包含两个状态触发器，它们在附加布局的视图模式或窗口发生改变时触发 [`VisualState`](xref:Xamarin.Forms.VisualState) 更改。
 
-有关详细信息，请参阅[双屏开发人员文档](https://docs.microsoft.com/dual-screen/)。
+有关详细信息，请参阅[双屏开发人员文档](/dual-screen/)。

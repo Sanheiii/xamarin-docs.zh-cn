@@ -10,12 +10,12 @@ ms.date: 04/06/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 55c987ab9f9a95eaeacf648af11c3518a1c27c2a
-ms.sourcegitcommit: a003b036f6fb83818e2ecc9c72a641e3aeb373bd
+ms.openlocfilehash: 6c8c43a877a102d9e16070da00813b00e7ef1c38
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88964644"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91561360"
 ---
 # <a name="attached-behaviors"></a>附加行为
 
@@ -134,4 +134,4 @@ NumericValidationBehavior.SetAttachBehavior (entry, false);
 
 ## <a name="related-links"></a>相关链接
 
-- [附加行为（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-attachednumericvalidationbehavior)
+- [附加行为（示例）](/samples/xamarin/xamarin-forms-samples/behaviors-attachednumericvalidationbehavior)

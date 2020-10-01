@@ -7,16 +7,16 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: 4a4b6ee7a123683a9d5a140c46c0b3542767ffa3
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: a3fd03ece3618172e68539e2a92e8924e85e2ce5
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73027514"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91453878"
 ---
 # <a name="fingerprint-authentication"></a>指纹身份验证
 
-本指南讨论如何将 Android 6.0 中引入的指纹身份验证添加到 Xamarin.Android 应用程序  。
+本指南讨论如何将 Android 6.0 中引入的指纹身份验证添加到 Xamarin.Android 应用程序。
 
 ## <a name="fingerprint-authentication-overview"></a>指纹身份验证概述
 
@@ -26,9 +26,9 @@ FingerprintManager API 适用于带指纹扫描仪的设备，FingerprintManager
 
 [FingerprintManager](https://developer.android.com/reference/android/hardware/fingerprint/FingerprintManager.html)（及其 Support Library 所对应的 [FingerprintManagerCompat](https://developer.android.com/reference/android/support/v4/hardware/fingerprint/FingerprintManagerCompat.html)）是使用指纹扫描硬件的主要类。 此类是针对系统级服务（管理与硬件本身的交互）的 Android SDK 包装器。 它负责启动指纹扫描仪并响应扫描程序的反馈。 此类的接口较简单，只包含三个成员：
 
-- `Authenticate` &ndash; 此方法将初始化硬件扫描仪并在后台启动服务，等待用户扫描其指纹  。
-- `EnrolledFingerprints` &ndash; 如果用户在设备中注册了一个或多个指纹，此属性将返回 `true` 。
-- `HardwareDetected` &ndash; 此属性用于确定设备是否支持指纹扫描  。
+- `Authenticate` &ndash; 此方法将初始化硬件扫描仪并在后台启动服务，等待用户扫描其指纹。
+- `EnrolledFingerprints` &ndash; 如果用户在设备中注册了一个或多个指纹，此属性将返回 `true`。
+- `HardwareDetected` &ndash; 此属性用于确定设备是否支持指纹扫描。
 
 Android 应用程序使用 `FingerprintManager.Authenticate` 方法启动指纹扫描仪。 以下代码片段举例说明如何使用 Support Library 兼容性 API 调用它：
 
@@ -43,7 +43,7 @@ fingerprintManager.Authenticate(FingerprintManager.CryptoObject crypto,
                                );
 ```
 
-本指南将讨论如何使用 `FingerprintManager` API 为 Android 应用程序增加指纹身份验证功能。 它将介绍如何实例化和创建 `CryptoObject` 以帮助保护指纹扫描仪的结果。 我们将讨论应用程序应如何子类化 `FingerprintManager.AuthenticationCallback` 并响应指纹扫描仪的反馈。 最后，我们将了解如何在 Android 设备或模拟器上注册指纹，以及如何使用 adb 模拟指纹扫描  。
+本指南将讨论如何使用 `FingerprintManager` API 为 Android 应用程序增加指纹身份验证功能。 它将介绍如何实例化和创建 `CryptoObject` 以帮助保护指纹扫描仪的结果。 我们将讨论应用程序应如何子类化 `FingerprintManager.AuthenticationCallback` 并响应指纹扫描仪的反馈。 最后，我们将了解如何在 Android 设备或模拟器上注册指纹，以及如何使用 adb 模拟指纹扫描。
 
 ## <a name="requirements"></a>要求
 
@@ -53,8 +53,8 @@ fingerprintManager.Authenticate(FingerprintManager.CryptoObject crypto,
 
 ## <a name="related-links"></a>相关链接
 
-- [指纹指南示例应用](https://docs.microsoft.com/samples/xamarin/monodroid-samples/fingerprintguide)
-- [指纹对话示例](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-m-fingerprintdialog)
+- [指纹指南示例应用](/samples/xamarin/monodroid-samples/fingerprintguide)
+- [指纹对话示例](/samples/xamarin/monodroid-samples/android-m-fingerprintdialog)
 - [在运行时请求权限](https://developer.android.com/training/permissions/requesting.html)
 - [android.hardware.fingerprint](https://developer.android.com/reference/android/hardware/fingerprint/package-summary.html)
 - [android.support.v4.hardware.fingerprint](https://developer.android.com/reference/android/support/v4/hardware/fingerprint/package-summary.html)

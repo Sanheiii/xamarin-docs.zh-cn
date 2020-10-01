@@ -8,14 +8,14 @@ ms.date: 03/26/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e86ebcd55f3a36da1ad5c7c13bb50e7fc9094010
-ms.sourcegitcommit: 898ba8e5140ae32a7df7e07c056aff65f6fe4260
+ms.openlocfilehash: c4437f05eddd6885f88fc57ddc108f4fc9f4376d
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86226802"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91433532"
 ---
-# <a name="xamarinessentials-web-authenticator"></a>Xamarin.Essentials：Web 验证器
+# <a name="no-locxamarinessentials-web-authenticator"></a>Xamarin.Essentials：Web 验证器
 
 使用 WebAuthenticator 类可以启动基于浏览器的流，以侦听对注册到应用的特定 URL 的回调。
 
@@ -23,7 +23,7 @@ ms.locfileid: "86226802"
 
 许多应用需要添加用户身份验证，这通常表示用户能够登录到其现有 Microsoft、Facebook、Google 帐户，以及现在的 Apple 登录帐户。
 
-[Microsoft 身份验证库 (MSAL)](https://docs.microsoft.com/azure/active-directory/develop/msal-overview) 提供了出色的统包解决方案，用于向应用添加身份验证。 客户端 NuGet 包甚至还支持 Xamarin 应用。
+[Microsoft 身份验证库 (MSAL)](/azure/active-directory/develop/msal-overview) 提供了出色的统包解决方案，用于向应用添加身份验证。 客户端 NuGet 包甚至还支持 Xamarin 应用。
 
 如果你有兴趣使用自己的 Web 服务进行身份验证，可以使用 WebAuthenticator 来实现客户端功能。
 
@@ -153,7 +153,7 @@ var accessToken = authResult?.AccessToken;
 
 根据 [Apple 的审核准则](https://developer.apple.com/app-store/review/guidelines/#sign-in-with-apple)，如果应用使用任何社交登录服务进行身份验证，则还必须提供“Apple 登录”选项。
 
-若要将“Apple 登录”添加到应用，首先需要[将应用配置为使用“Apple 登录”](https://docs.microsoft.com/xamarin/ios/platform/ios13/sign-in)。
+若要将“Apple 登录”添加到应用，首先需要[将应用配置为使用“Apple 登录”](../ios/platform/ios13/sign-in.md)。
 
 对于 iOS 13 和更高版本，需要调用 `AppleSignInAuthenticator.AuthenticateAsync()` 方法。 这会在后台使用本机 Apple 登录 API，以便用户可以在这些设备上获得最佳体验。 可以编写共享代码，以便在运行时使用正确的 API，如下所示：
 
@@ -190,7 +190,7 @@ var accessToken = r?.AccessToken;
 
 可以将 `WebAuthenticator` API 与任何 Web 后端服务一起使用。  要将它与 ASP.NET Core 应用一起使用，首先需要通过以下步骤配置 Web 应用：
 
-1. 在 ASP.NET Core Web 应用中设置所需的[外部社交验证提供程序](https://docs.microsoft.com/aspnet/core/security/authentication/social/?view=aspnetcore-3.1&tabs=visual-studio)。
+1. 在 ASP.NET Core Web 应用中设置所需的[外部社交验证提供程序](/aspnet/core/security/authentication/social/?tabs=visual-studio&view=aspnetcore-3.1)。
 2. 在 `.AddAuthentication()` 调用中设置 `CookieAuthenticationDefaults.AuthenticationScheme` 的默认身份验证方案。
 3. 在 Startup.cs `.AddAuthentication()` 调用中使用 `.AddCookie()`。
 4. 必须将所有提供程序配置为 `.SaveTokens = true;`。
