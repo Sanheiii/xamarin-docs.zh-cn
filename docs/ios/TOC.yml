@@ -599,7 +599,7 @@
         - name: Web 验证器
           href: ~/essentials/web-authenticator.md?context=xamarin/ios
         - name: Xamarin.Essentials 发行说明
-          href: 'https://docs.microsoft.com/xamarin/essentials/release-notes/'
+          href: /xamarin/essentials/release-notes/
         - name: 疑难解答
           href: ~/essentials/troubleshooting.md?context=xamarin/ios
     - name: 数据和云服务
@@ -1143,6 +1143,6 @@
             - name: 框架
               href: tvos/internals/frameworks.md
     - name: 发行说明
-      href: 'https://docs.microsoft.com/xamarin/ios/release-notes/'
+      href: /xamarin/ios/release-notes/
     - name: 示例
       href: samples/index.md

@@ -836,7 +836,7 @@ items:
         href: ~/essentials/platform-feature-support.md?context=xamarin/xamarin-forms
       - name: 加速计
         href: ~/essentials/accelerometer.md?context=xamarin/xamarin-forms
-      - name: App Actions
+      - name: 应用操作
         href: ~/essentials/app-actions.md?context=xamarin/xamarin-forms
       - name: 应用信息
         href: ~/essentials/app-information.md?context=xamarin/xamarin-forms
@@ -919,7 +919,7 @@ items:
       - name: Web 验证器
         href: ~/essentials/web-authenticator.md?context=xamarin/xamarin-forms
       - name: Xamarin.Essentials 发行说明
-        href: 'https://docs.microsoft.com/xamarin/essentials/release-notes/'
+        href: /xamarin/essentials/release-notes/
       - name: 疑难解答
         href: ~/essentials/troubleshooting.md?context=xamarin/xamarin-forms
   - name: 数据和 Azure 云服务
@@ -1033,7 +1033,7 @@ items:
           - name: '为何 Xamarin.Forms.Maps Android 项目失败，且随附“COMPILETODALVIK :意外顶级错误”？'
             href: troubleshooting/questions/maps-compiletodalvik-error.md
   - name: 发行说明
-    href: 'https://docs.microsoft.com/xamarin/xamarin-forms/release-notes/'
+    href: /xamarin/xamarin-forms/release-notes/
   - name: 示例
     href: samples/index.md
   - name: 使用 Xamarin.Forms 书籍创建移动应用
