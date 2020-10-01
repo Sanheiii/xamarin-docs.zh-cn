@@ -10,12 +10,12 @@ ms.date: 02/12/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 08bfb86f040bfbce834df5a5d98231afae92e78d
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: a4b092d90b3afa2197c1db576545d233eb6e208d
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84133754"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563505"
 ---
 # <a name="implementing-a-video-player"></a>实现视频播放器
 
@@ -23,7 +23,7 @@ ms.locfileid: "84133754"
 
 有时需要在 Xamarin.Forms 应用程序中播放视频文件。 本系列文章介绍如何为名为 `VideoPlayer` 的 Xamarin.Forms 类编写适用于 iOS、Android 和通用 Windows 平台 (UWP) 的自定义呈现器。
 
-在 [VideoPlayerDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos) 示例中，所有实现和支持 `VideoPlayer` 的文件都位于名为 `FormsVideoLibrary` 的文件夹中，并使用 `FormsVideoLibrary` 命名空间或以 `FormsVideoLibrary` 开头的命名空间进行标识。 通过这种组织结构和命名方式，可以轻松地将视频播放器文件复制到自己的 Xamarin.Forms 解决方案中。
+在 [VideoPlayerDemos](/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos) 示例中，所有实现和支持 `VideoPlayer` 的文件都位于名为 `FormsVideoLibrary` 的文件夹中，并使用 `FormsVideoLibrary` 命名空间或以 `FormsVideoLibrary` 开头的命名空间进行标识。 通过这种组织结构和命名方式，可以轻松地将视频播放器文件复制到自己的 Xamarin.Forms 解决方案中。
 
 `VideoPlayer` 可播放来自以下三类源的视频文件：
 
@@ -71,4 +71,4 @@ Internet 或许是视频播放器最常见的视频来源。 本文介绍如何�
 
 ## <a name="related-links"></a>相关链接
 
-- [视频播放器演示（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
+- [视频播放器演示（示例）](/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)

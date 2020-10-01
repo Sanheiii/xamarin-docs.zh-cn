@@ -1,6 +1,6 @@
 ---
-title: title:"Xamarin.Forms编译的绑定”说明：“本文介绍如何使用已编译的绑定来提升 Xamarin.Forms 应用程序中的数据绑定性能。”
-description: 'ms.prod: xamarin ms.assetid:ABE6B7F7-875E-4402-A1D2-845CE374402B ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:2019/09/18 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: Xamarin.Forms 编译的绑定
+description: 本文介绍如何使用已编译的绑定来提升 Xamarin.Forms 应用程序中的数据绑定性能。
 ms.prod: xamarin
 ms.assetid: ABE6B7F7-875E-4402-A1D2-845CE374402B
 ms.technology: xamarin-forms
@@ -10,14 +10,14 @@ ms.date: 09/18/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 094691796fed9653f2a2e468ccb1c33d1a408a49
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 1bc2ed53b12e6953033760b072d38353c65a6708
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571553"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563453"
 ---
-# <a name="xamarinforms-compiled-bindings"></a>Xamarin.Forms 编译的绑定
+# <a name="no-locxamarinforms-compiled-bindings"></a>Xamarin.Forms 编译的绑定
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
@@ -178,4 +178,4 @@ ms.locfileid: "84571553"
 
 ## <a name="related-links"></a>相关链接
 
-- [数据绑定演示（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+- [数据绑定演示（示例）](/samples/xamarin/xamarin-forms-samples/databindingdemos)

@@ -1,6 +1,6 @@
 ---
-title: 标题：“Xamarin.Forms 控件模板”说明：“Xamarin.Forms 控件模板定义 ContentView 派生的自定义控件和 ContentPage 派生的页面的可视结构。”
-description: 'ms.prod: xamarin ms.assetid:8B8E2360-6531-44A3-A7C8-9A8808DE9B86 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:2020/01/13 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: Xamarin.Forms 控件模板
+description: Xamarin.Forms 控件模板定义 ContentView 派生的自定义控件和 ContentPage 派生的页面的可视结构。
 ms.prod: xamarin
 ms.assetid: 8B8E2360-6531-44A3-A7C8-9A8808DE9B86
 ms.technology: xamarin-forms
@@ -10,14 +10,14 @@ ms.date: 01/13/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 44eebed2a49fbdda5504f9a09873f93466d0326c
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.openlocfilehash: 575169459433725ae3f3a7db675fc65caef1494e
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84132543"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563440"
 ---
-# <a name="xamarinforms-control-templates"></a>Xamarin.Forms 控件模板
+# <a name="no-locxamarinforms-control-templates"></a>Xamarin.Forms 控件模板
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/templates-controltemplatedemos)
 
@@ -637,7 +637,7 @@ public partial class AccessTemplateElementPage : HeaderFooterPage
 
 ## <a name="related-links"></a>相关链接
 
-- [ControlTemplateDemos（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/templates-controltemplatedemos)
+- [ControlTemplateDemos（示例）](/samples/xamarin/xamarin-forms-samples/templates-controltemplatedemos)
 - [Xamarin.Forms ContentView](~/xamarin-forms/user-interface/layouts/contentview.md)
 - [Xamarin.Forms 相对绑定](~/xamarin-forms/app-fundamentals/data-binding/relative-bindings.md)
 - [Xamarin.Forms 资源字典](~/xamarin-forms/xaml/resource-dictionaries.md)

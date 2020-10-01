@@ -10,12 +10,12 @@ ms.date: 02/12/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 00f1434a55fb815710bff26ac090a90bce5f41ee
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: ff9f44ad790f3acda1e855f3308942bb702e66ee
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84197526"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563895"
 ---
 # <a name="accessing-the-devices-video-library"></a>访问设备的视频库
 
@@ -191,7 +191,7 @@ namespace FormsVideoLibrary.Droid
 }
 ```
 
-添加到 `MainActivity` 对象的部分是 [VideoPlayerDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos) 解决方案中惟一的代码，在该方案中需更改常规应用程序代码以支持 `FormsVideoLibrary` 类。
+添加到 `MainActivity` 对象的部分是 [VideoPlayerDemos](/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos) 解决方案中惟一的代码，在该方案中需更改常规应用程序代码以支持 `FormsVideoLibrary` 类。
 
 ### <a name="the-uwp-video-picker"></a>UWP 视频选取器
 
@@ -232,7 +232,7 @@ namespace FormsVideoLibrary.UWP
 
 ## <a name="invoking-the-dependency-service"></a>调用依赖项服务
 
-[VideoPlayerDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos) 程序的“播放库视频”页面演示如何使用视频选取器依赖项服务 。 XAML 文件包含 `VideoPlayer` 实例和标记为“显示视频库”的 `Button`：
+[VideoPlayerDemos](/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos) 程序的“播放库视频”页面演示如何使用视频选取器依赖项服务 。 XAML 文件包含 `VideoPlayer` 实例和标记为“显示视频库”的 `Button`：
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -391,5 +391,5 @@ namespace FormsVideoLibrary.UWP
 
 ## <a name="related-links"></a>相关链接
 
-- [视频播放器演示（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
+- [视频播放器演示（示例）](/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
 - [从图片库中选取照片](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md)
