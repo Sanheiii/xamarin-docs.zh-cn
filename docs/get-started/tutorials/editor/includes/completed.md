@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 5c3d829038692635284c447e11ab08ad2afe6885
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: a99ce9ed5046c782a9cbdb09a6dec495900c3a32
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "71059553"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91451557"
 ---
 祝贺你完成了本教程的学习，在本教程中你学习了如何：
 
@@ -23,6 +23,6 @@ ms.locfileid: "71059553"
 
 ## <a name="related-links"></a>相关链接
 
-- [EditorTutorial（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-tutorials-editortutorial/)
+- [EditorTutorial（示例）](/samples/xamarin/xamarin-forms-samples/getstarted-tutorials-editortutorial/)
 - [Xamarin.Forms 编辑器（指南）](~/xamarin-forms/user-interface/text/editor.md)
 - [编辑器 API](xref:Xamarin.Forms.Editor)
