@@ -10,12 +10,12 @@ ms.date: 02/18/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e868eccf446ab22879a66e6e507d810b7e0e13d7
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 43702453d1defc3b5a63aba845231f514913d7c5
+ms.sourcegitcommit: 1649554b8c08369b713d20246154455c0ba7d1c0
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91559761"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91712561"
 ---
 # <a name="no-locxamarinforms-mediaelement"></a>Xamarin.Forms MediaElement
 
@@ -534,7 +534,7 @@ public class PositionSlider : Slider
 在此示例中， [`Slider`](xref:Xamarin.Forms.Slider) 数据将其 `Value` 属性绑定到 [`Volume`](xref:Xamarin.Forms.MediaElement.Volume) 的属性 [`MediaElement`](xref:Xamarin.Forms.MediaElement) 。 这是可能的，因为 `Volume` 属性使用 `TwoWay` 绑定。 因此，更改 `Value` 属性将导致 `Volume` 属性发生变化。
 
 > [!NOTE]
-> [`Volume`](xref:Xamarin.Forms.MediaElement.Volume)属性具有 vlidation 回调，可确保其值大于或等于0.0 且小于或等于1.0。
+> [`Volume`](xref:Xamarin.Forms.MediaElement.Volume)属性具有验证回调，可确保其值大于或等于0.0 且小于或等于1.0。
 
 有关使用的详细信息 [`Slider`](xref:Xamarin.Forms.Slider) ，请参阅[ Xamarin.Forms 滑块](~/xamarin-forms/user-interface/slider.md)
 
