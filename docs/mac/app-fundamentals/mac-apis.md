@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/02/2017
-ms.openlocfilehash: 67638a261cd9a6e8c356924d47ea4adb4eae6a80
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: efac76338af710e716decf47635652bf8de74910
+ms.sourcegitcommit: 6d347e1d7641ac1d2b389fb1dc7a6882a08f7c00
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91430986"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91851504"
 ---
 # <a name="macos-apis-for-xamarinmac-developers"></a>适用于 Xamarin 开发人员的 macOS Api
 
@@ -33,8 +33,8 @@ ms.locfileid: "91430986"
 - `-`前缀表示 (非静态) 方法中的实例。 + 表示它是类 (静态) 方法
 - `(BOOL)` 是 (在 c # 中为布尔值的返回类型 ) 
 - `canDragRowsWithIndexes` 名称的第一部分。
-- `(NSIndexSet *)rowIndexes` 是第一个参数，它的类型为。 第一个参数的格式为： `(Type) pararmName`
-- `atPoint:(NSPoint)mouseDownPoint` 是第二个参数及其类型。 第一个参数之后的每个参数都是以下格式： `selectorPart:(Type) pararmName`
+- `(NSIndexSet *)rowIndexes` 是第一个参数，它的类型为。 第一个参数的格式为： `(Type) paramName`
+- `atPoint:(NSPoint)mouseDownPoint` 是第二个参数及其类型。 第一个参数之后的每个参数都是以下格式： `selectorPart:(Type) paramName`
 - 此消息选择器的完整名称为： `canDragRowsWithIndexes:atPoint:` 。 请注意， `:` 最后是重要的。
 - 实际的 Xamarin c # 绑定为： `bool CanDragRows (NSIndexSet rowIndexes, PointF mouseDownPoint)`
 
@@ -45,7 +45,7 @@ ms.locfileid: "91430986"
 ```
 
 - 实例的 `v` `canDragRowsWithIndexes:atPoint` 选择器会通过两个参数传递， `set` 并 `point` 传入。
-- 在 c # 中，方法调用如下所示： `x.CanDragRows (set, point);`
+- 在 c # 中，方法调用如下所示： `v.CanDragRows (set, point);`
 
 <a name="finding_selector"></a>
 

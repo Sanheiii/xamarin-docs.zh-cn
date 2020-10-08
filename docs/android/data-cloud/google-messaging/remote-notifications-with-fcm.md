@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 07/31/2018
-ms.openlocfilehash: 702ca70e220d8e4d28a1a2ddc6be40daae052d58
-ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
+ms.openlocfilehash: 75edc03706908df365bfda05229a8081ef50a4ac
+ms.sourcegitcommit: db5173f26edbb94b0ec60ab9a708fa04478480f6
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91455817"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91853285"
 ---
 # <a name="remote-notifications-with-firebase-cloud-messaging"></a>使用 Firebase Cloud Messaging 发送远程通知
 
@@ -476,7 +476,7 @@ if (Intent.Extras != null)
 Log.Debug(TAG, "google app id: " + GetString(Resource.String.google_app_id));
 ```
 
-`google_app_id`记录到 "输出" 窗口中的值应与 `mobilesdk_app_id` **google-services.js上**的中记录的值匹配。
+`google_app_id`记录到 "输出" 窗口中的值应与 `mobilesdk_app_id` **google-services.js上**的中记录的值匹配。 在 `Resource.String.google_app_id` ** 上处理google-services.js**时，由 msbuild 生成。 
 
 ### <a name="send-a-message"></a>发送消息
 
@@ -772,7 +772,7 @@ FirebaseInstanceId.Instance.DeleteInstanceId();
 
 此方法调用将删除与之关联的实例 ID 和数据。 因此，将 FCM 数据定期发送到设备暂停。
 
-## <a name="troubleshooting"></a>疑难解答
+## <a name="troubleshooting"></a>故障排除
 
 以下描述了在将 Firebase Cloud 消息传递到 Xamarin 时可能会出现的问题和解决方法。
 

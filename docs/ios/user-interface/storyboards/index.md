@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: b70a4693f356fdf83ca2f7fee9615855a5569712
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: 65cc67516442ea2602812a3b1f6ff4f0c71abb05
+ms.sourcegitcommit: 6d347e1d7641ac1d2b389fb1dc7a6882a08f7c00
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91437029"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91851543"
 ---
 # <a name="introduction-to-storyboards-in-xamarinios"></a>Xamarin 中的情节提要简介
 
@@ -78,7 +78,7 @@ ms.locfileid: "91437029"
 
  iOS 8 引入了 [大小类](~/ios/user-interface/storyboards/unified-storyboards.md#size-classes) ，以允许 iOS 情节提要文件与所有可用的屏幕大小一起使用，使开发人员能够为所有 iOS 设备创建一个 UI。 默认情况下，所有新的 Xamarin iOS 应用程序都将使用大小类。 若要从较旧的项目使用大小类，请参阅 [统一情节提要指南简介](~/ios/user-interface/storyboards/unified-storyboards.md) 。
 
-使用大小类的任何应用程序也将使用新的 [*自适应 segue*](~/ios/user-interface/storyboards/unified-storyboards.md)。 使用大小类时，请记住，我们不会直接指定使用 iPhone 或 iPad 的天气。 换句话说，我们创建一个 UI，该 UI 始终外观相同，而不考虑它需要使用的实际空间。 自适应 Segue 通过判断环境，并确定如何以最佳方式呈现内容。 自适应 Segue 如下所示：
+使用大小类的任何应用程序也将使用新的 [*自适应 segue*](~/ios/user-interface/storyboards/unified-storyboards.md)。 使用大小类时，请记住，我们不会直接指定是否使用 iPhone 或 iPad。 换句话说，我们创建一个 UI，该 UI 始终外观相同，而不考虑它需要使用的实际空间。 自适应 Segue 通过判断环境，并确定如何以最佳方式呈现内容。 自适应 Segue 如下所示：
 
 [![自适应 Segue 下拉列表](images/adaptivesegue.png)](images/adaptivesegue.png#lightbox)
 
@@ -326,7 +326,7 @@ public partial class MainViewController : UIViewController
 
     [![轴线](images/passwordvc.png)](images/passwordvc.png#lightbox)
 
-2. 通过按 Ctrl 并将 *PinkButton* 拖到 *PinkViewController*上，然后选择 "在鼠标上 **推送** "，在 "跳到粉红色" 按钮和视图控制器之间创建 Segue。
+2. 通过从 *PinkButton* Ctrl-Dragging 到 *PinkViewController*，然后选择 "鼠标按 **下推送** "，在 "跳到粉红色" 按钮和视图控制器之间创建一个 Segue。
 
 3. 单击 Segue 并为其指定 *标识符* `SegueToPink` ：
 
