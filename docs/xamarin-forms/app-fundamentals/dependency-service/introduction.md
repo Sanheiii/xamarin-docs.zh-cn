@@ -10,14 +10,14 @@ ms.date: 06/12/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f4d43a0c9c4878733d65b170c27e744b397aa4d0
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 2d63ac91031fc4a2cc127272a075f15a8ea81f4e
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138354"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91555277"
 ---
-# <a name="xamarinforms-dependencyservice-introduction"></a>Xamarin.Forms DependencyService 简介
+# <a name="no-locxamarinforms-dependencyservice-introduction"></a>Xamarin.Forms DependencyService 简介
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/dependencyservice/)
 
@@ -32,7 +32,7 @@ ms.locfileid: "84138354"
 
 下图说明了如何在 Xamarin.Forms 应用程序中调用本机平台功能：
 
-![使用 Xamarin.Forms DependencyService 类执行服务定位概述](introduction-images/dependency-service.png "DependencyService 服务定位")
+![使用 Xamarin.FormsDependencyService 类执行服务定位概述](introduction-images/dependency-service.png "DependencyService 服务定位")
 
 ## <a name="create-an-interface"></a>创建接口
 
@@ -159,5 +159,5 @@ DeviceOrientation orientation = DependencyService.Get<IDeviceOrientationService>
 
 ## <a name="related-links"></a>相关链接
 
-- [DependencyService 演示（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/dependencyservice/)
+- [DependencyService 演示（示例）](/samples/xamarin/xamarin-forms-samples/dependencyservice/)
 - [Xamarin.Forms DependencyService 注册和解析](registration-and-resolution.md)

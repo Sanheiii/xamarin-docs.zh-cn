@@ -12,14 +12,14 @@ ms.date: 05/23/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: da56bde956a0ff7730ef6737e2802c3723d6d716
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: e6670faf921248c007c20307fddb6a34057c5202
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84133456"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436678"
 ---
-# <a name="build-your-first-xamarinforms-app"></a>生成第一个 Xamarin.Forms 应用
+# <a name="build-your-first-no-locxamarinforms-app"></a>生成第一个 Xamarin.Forms 应用
 
 观看此视频，然后按照视频中的步骤使用 Xamarin.Forms 创建第一个移动应用Xamarin.Forms。
 
@@ -120,7 +120,7 @@ ms.locfileid: "84133456"
 
 1. 选择“文件”>“新建”>“项目...”或按“创建新项目...”按钮，然后选择“Visual C#”>“跨平台”>“移动应用(Xamarin.Forms)”  ：
 
-    [![移动应用(Xamarin.Forms)](images/win/01-sml.png)](images/win/01.png#lightbox)
+    [![移动应用 (Xamarin.Forms)](images/win/01-sml.png)](images/win/01.png#lightbox)
 
 2. 请确保选中“Android”和“iOS”且勾选了“.NET Standard”代码共享策略  ：
 
@@ -210,7 +210,7 @@ ms.locfileid: "84133456"
 
 ::: zone-end
 
-可从[示例库](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-firstapp/)下载或在 [GitHub](https://github.com/xamarin/xamarin-forms-samples/tree/master/GetStarted/FirstApp) 上查看完整代码。
+可从[示例库](/samples/xamarin/xamarin-forms-samples/getstarted-firstapp/)下载或在 [GitHub](https://github.com/xamarin/xamarin-forms-samples/tree/master/GetStarted/FirstApp) 上查看完整代码。
 
 ## <a name="next-steps"></a>后续步骤
 

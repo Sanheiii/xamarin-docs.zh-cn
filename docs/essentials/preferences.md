@@ -9,14 +9,14 @@ ms.custom: video
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: acc0c48776c7a91e9e5a060928564bc6e0c1d775
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 60a5fbaa8386d0ecdc5d205b3262e05406cec4a6
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84801811"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556238"
 ---
-# <a name="xamarinessentials-preferences"></a>Xamarin.Essentials：首选项
+# <a name="no-locxamarinessentials-preferences"></a>Xamarin.Essentials：首选项
 
 Preferences 类帮助将应用程序首选项存储在键/值存储中。
 
@@ -62,7 +62,7 @@ Preferences.Remove("my_key");
 Preferences.Clear();
 ```
 
-除了这些方法外，每个方法都采用一个可选的 `sharedName`，可用于创建首选的其他容器。 查看下面的平台实现细节。
+上述方法还会采用一个可选的 `sharedName`，可用于创建首选的其他容器。 查看下面的平台实现细节。
 
 ## <a name="supported-data-types"></a>支持的数据类型
 
@@ -81,7 +81,7 @@ Preferences.Clear();
 首选项以本机方式存储，这样用户可将自己的设置集成到本机系统设置。 按照平台文档和示例说明与平台进行集成：
 
 * Apple：[实现 iOS 设置捆绑](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/UserDefaults/Preferences/Preferences.html)
-* [iOS 应用程序首选项示例](https://docs.microsoft.com/samples/xamarin/ios-samples/appprefs/)
+* [iOS 应用程序首选项示例](/samples/xamarin/ios-samples/appprefs/)
 * [watchOS 设置](https://developer.xamarin.com/guides/ios/watch/working-with/settings/)
 * Android：[设置屏幕入门](https://developer.android.com/guide/topics/ui/settings.html)
 
@@ -97,11 +97,11 @@ Preferences.Clear();
 
 # <a name="ios"></a>[iOS](#tab/ios)
 
-[NSUserDefaults](https://docs.microsoft.com/xamarin/ios/app-fundamentals/user-defaults) 用于将值存储在 iOS 设备上。 如果未指定 `sharedName`，则使用 `StandardUserDefaults`，否则此名称将用于创建具有用于 `NSUserDefaultsType.SuiteName` 的指定名称的新 `NSUserDefaults`。
+[NSUserDefaults](../ios/app-fundamentals/user-defaults.md) 用于将值存储在 iOS 设备上。 如果未指定 `sharedName`，则使用 `StandardUserDefaults`，否则此名称将用于创建具有用于 `NSUserDefaultsType.SuiteName` 的指定名称的新 `NSUserDefaults`。
 
 # <a name="uwp"></a>[UWP](#tab/uwp)
 
-[ApplicationDataContainer](https://docs.microsoft.com/uwp/api/windows.storage.applicationdatacontainer) 用于将值存储在设备上。 如果未指定 `sharedName`，则使用 `LocalSettings`，否则此名称将用于在 `LocalSettings` 内创建新容器。
+[ApplicationDataContainer](/uwp/api/windows.storage.applicationdatacontainer) 用于将值存储在设备上。 如果未指定 `sharedName`，则使用 `LocalSettings`，否则此名称将用于在 `LocalSettings` 内创建新容器。
 
 `LocalSettings` 还存在以下限制：每个设置的名称长度最多可为 255 个字符。 每个设置的大小最多可为 8K 字节，每个复合设置的大小最多可为 64K 字节。
 
@@ -109,11 +109,11 @@ Preferences.Clear();
 
 ## <a name="persistence"></a>持久性
 
-卸载应用程序将导致所有首选项被删除。 对此有一个例外，即面向使用[__自动备份__](https://developer.android.com/guide/topics/data/autobackup)的 Android 6.0（API 级别 23）或更高版本并在其上运行的应用。 此功能默认启用并且会保留应用数据，包括共享首选项（即 Preferences API 使用的内容）。 可以遵循 Google 的[文档](https://developer.android.com/guide/topics/data/autobackup)禁用此功能。
+卸载应用程序将导致所有首选项被删除，但应用面向使用[自动备份](https://developer.android.com/guide/topics/data/autobackup)的 Android 6.0（API 级别 23）或更高版本并在这些版本上运行时例外。 此功能默认启用并且会保留应用数据，包括共享首选项（即 Preferences API 使用的内容）。 可以遵循 Google 的[文档](https://developer.android.com/guide/topics/data/autobackup)禁用此功能。
 
 ## <a name="limitations"></a>限制
 
-当存储一个字符串时，此 API 用于存储少量文本。  如果尝试将其用于存储大量文本，则可能会导致性能欠佳。
+当存储一个字符串时，此 API 用于存储少量文本。 如果尝试将其用于存储大量文本，则可能会导致性能欠佳。
 
 ## <a name="api"></a>API
 

@@ -10,12 +10,12 @@ ms.date: 11/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 1f180173a42654c54c5686e423ba20d9586271ea
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: b2309d6ec6712be32f6e972fab130a542fbec857
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136703"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91557421"
 ---
 # <a name="summary-of-chapter-18-mvvm"></a>“第 18 章： MVVM
 
@@ -45,7 +45,7 @@ MVVM 应用程序有三层：
 
 ### <a name="a-viewmodel-clock"></a>视图模型时钟
 
-[Xamarin.FormsBook.Toolkit****](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit) 库中的 [`DateTimeViewModel`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/DateTimeViewModel.cs) 定义了类型为 `DateTime` 的属性，此属性以计时器为依据更改。 此类实现 `INotifyPropertyChanged`，每当 `DateTime` 属性更改时都会触发 `PropertyChanged` 事件。
+[Xamarin.FormsBook.Toolkit](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit) 库中的 [`DateTimeViewModel`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/DateTimeViewModel.cs) 定义了类型为 `DateTime` 的属性，此属性以计时器为依据更改。 此类实现 `INotifyPropertyChanged`，每当 `DateTime` 属性更改时都会触发 `PropertyChanged` 事件。
 
 [MvvmClock****](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter18/MvvmClock) 示例实例化此视图模型，并使用与视图模型的数据绑定来显示更新后的日期和时间信息。
 
@@ -55,13 +55,13 @@ MVVM 应用程序有三层：
 
 ### <a name="a-color-viewmodel"></a>颜色视图模型
 
-[Xamarin.FormsBook.Toolkit****](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit) 库中的 [`ColorViewModel`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ColorViewModel.cs) 集成了 RGB 和 HSL 颜色模型。 如 [HslSliders****](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter18/HslSliders) 示例所示：
+[Xamarin.FormsBook.Toolkit](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit) 库中的 [`ColorViewModel`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ColorViewModel.cs) 集成了 RGB 和 HSL 颜色模型。 如 [HslSliders****](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter18/HslSliders) 示例所示：
 
 [![TK 的三倍屏幕截图](images/ch18fg08-small.png "HSL 颜色模型")](images/ch18fg08-large.png#lightbox "HSL 颜色模型")
 
 ### <a name="streamlining-the-viewmodel"></a>简化视图模型
 
-可以使用自动获取调用属性名称的 [`CallerMemberName`](xref:System.Runtime.CompilerServices.CallerMemberNameAttribute) 特性来定义 `OnPropertyChanged` 方法，从而简化视图模型中的代码。 [Xamarin.FormsBook.Toolkit****](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit) 库中的 [`ViewModelBase`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ViewModelBase.cs) 类就是这样做的，并为视图模型提供了基类。
+可以使用自动获取调用属性名称的 [`CallerMemberName`](xref:System.Runtime.CompilerServices.CallerMemberNameAttribute) 特性来定义 `OnPropertyChanged` 方法，从而简化视图模型中的代码。 [Xamarin.FormsBook.Toolkit](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit) 库中的 [`ViewModelBase`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ViewModelBase.cs) 类就是这样做的，并为视图模型提供了基类。
 
 ## <a name="the-command-interface"></a>命令接口
 
@@ -90,7 +90,7 @@ MVVM 与数据绑定结合使用，数据绑定又与属性结合使用，因此
 
 ### <a name="a-calculator-almost"></a>接近真实的计算器
 
-[AddingMachine****](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter18/AddingMachine) 示例同时使用 `ICommand` 的 `Execute` 和 `CanExecute` 方法。 它使用 [Xamarin.FormsBook.Toolkit****](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/AdderViewModel.cs) 库中的 [`AdderViewModel`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/AdderViewModel.cs) 类。 视图模型包含六个类型为 `ICommand` 的属性。 这些是从 `Command` 的 [`Command` 构造函数](xref:Xamarin.Forms.Command.%23ctor(System.Action))和 [`Command` 构造函数](xref:Xamarin.Forms.Command.%23ctor(System.Action,System.Func{System.Boolean}))，以及 `Command<T>` 的 [`Command<T>` 构造函数](https://docs.microsoft.com/dotnet/api/xamarin.forms.command.-ctor?view=xamarin-forms#Xamarin_Forms_Command__ctor_System_Action_System_Object__System_Func_System_Object_System_Boolean__)初始化。 添加计算机的数字键全部绑定到使用 `Command<T>` 初始化的属性，`Execute` 和 `CanExecute` 的 `string` 参数标识特定键。
+[AddingMachine****](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter18/AddingMachine) 示例同时使用 `ICommand` 的 `Execute` 和 `CanExecute` 方法。 它使用 [Xamarin.FormsBook.Toolkit](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/AdderViewModel.cs) 库中的 [`AdderViewModel`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/AdderViewModel.cs) 类。 视图模型包含六个类型为 `ICommand` 的属性。 这些是从 `Command` 的 [`Command` 构造函数](xref:Xamarin.Forms.Command.%23ctor(System.Action))和 [`Command` 构造函数](xref:Xamarin.Forms.Command.%23ctor(System.Action,System.Func{System.Boolean}))，以及 `Command<T>` 的 [`Command<T>` 构造函数](/dotnet/api/xamarin.forms.command.-ctor?view=xamarin-forms#Xamarin_Forms_Command__ctor_System_Action_System_Object__System_Func_System_Object_System_Boolean__)初始化。 添加计算机的数字键全部绑定到使用 `Command<T>` 初始化的属性，`Execute` 和 `CanExecute` 的 `string` 参数标识特定键。
 
 ## <a name="viewmodels-and-the-application-lifecycle"></a>视图模型和应用程序生命周期
 

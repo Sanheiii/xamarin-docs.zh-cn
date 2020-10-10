@@ -1,21 +1,9 @@
 ---
-title: 实现视图
-description: 本文说明如何为 Xamarin.Forms 自定义控件创建自定义呈现器，用于显示设备摄像头的预览视频流。
-ms.prod: xamarin
-ms.assetid: 915E25E7-4A6B-4F34-B7B4-07D5F4B240F2
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 05/10/2018
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 8215454f80614c0c7cca79af5cf51e2dd96453ae
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
-ms.translationtype: HT
-ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86929475"
+title:“实现视图”说明：本文说明如何为 Xamarin.Forms 自定义控件创建自定义呈现器，用于显示设备摄像头的预览视频流。
+ms.prod: xamarin ms.assetid:915E25E7-4A6B-4F34-B7B4-07D5F4B240F2 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:2018/10/05 no-loc:
+- "Xamarin.Forms"
+- "Xamarin.Essentials"
+
 ---
 # <a name="implementing-a-view"></a>实现视图
 
@@ -331,4 +319,4 @@ namespace CustomRenderer.UWP
 
 ## <a name="related-links"></a>相关链接
 
-- [CustomRendererView（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-view)
+- [CustomRendererView（示例）](/samples/xamarin/xamarin-forms-samples/customrenderers-view)

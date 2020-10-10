@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 1f86227573fc5e9dc39d4781125c49a067e8967d
-ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
+ms.openlocfilehash: 35adaf4a5cf9ce103cb36320692ad8307b9d1354
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86997483"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91564116"
 ---
 # <a name="using-testflight-to-distribute-xamarinios-apps"></a>使用 TestFlight 来分发 Xamarin.iOS 应用
 
@@ -52,9 +52,9 @@ TestFlight 是 Apple 向 iOS 应用推出的 Beta 测试服务，仅可通过 [i
 3. 管理 Beta 测试：
     - 添加元数据。
     - 添加内部用户：
-      - 最多 25 位用户。
+      - 最多 100 位用户，每位用户最多可以在 30 个设备上进行测试。
     - 添加外部用户：
-      - 最多 1000 位用户。
+      - 最多 10000 位用户。
       - 需要 Beta 测试审核，这需要遵守 Apple 相关指南。
 4. 接收来自用户的反馈，采取相应操作，然后返回到步骤 2。
 
@@ -187,7 +187,7 @@ TestFlight 是 Apple 向 iOS 应用推出的 Beta 测试服务，仅可通过 [i
 - **律师** - 团队代理是将分配有法律角色的唯一管理用户。 它允许代理签署法律合同。
 - **技术员** - 技术用户可更改有关应用的大多数属性。 例如，编辑应用信息、上传二进制文件和发送应用进行审核。
 
-每个内部版本最多可与 25 名成员共享。
+每个内部版本最多可以与 100 个成员共享，其中的每位成员最多可在 30 个设备上进行测试。
 
 若要添加测试员，请浏览到 iTunes Connect 主屏幕上的“用户和角色”：
 
@@ -221,7 +221,7 @@ TestFlight 是 Apple 向 iOS 应用推出的 Beta 测试服务，仅可通过 [i
 
 为使应用通过审核，必须在“TestFlight Beta 版信息”页上输入必需的全部元数据。
 
-现可开始准备邀请并可通过“外部测试员”选项卡添加最多 2000 个外部测试员，方法是输入其电子邮件、名字和姓氏，如下面的屏幕截图所示。 所输入的电子邮件不需要是其 Apple ID；这只是他们将接收邀请的电子邮件。
+现可开始准备邀请并可通过“外部测试员”选项卡添加最多 10000 个外部测试员，方法是输入其电子邮件、名字和姓氏，如下面的屏幕截图所示。 所输入的电子邮件不需要是其 Apple ID；这只是他们将接收邀请的电子邮件。
 
 [![邀请测试员](testflight-images/add-external.png)](testflight-images/add-external.png#lightbox)
 

@@ -4,25 +4,56 @@ description: Xamarin.Essentials 中的 Browser 类允许应用程序在优化的
 ms.assetid: BABF40CC-8BEE-43FD-BE12-6301DF27DD33
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 04/02/2019
+ms.date: 09/24/2020
 ms.custom: video
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 997c6b66b5dba43eb440130f3f58d31a5a274815
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 0c38949e9c8c0a957a7afa37206683588ffbb4cf
+ms.sourcegitcommit: 3a15d9b29d65139b18dcf0871fe00cffb2a56357
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84802245"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91353403"
 ---
-# <a name="xamarinessentials-browser"></a>Xamarin.Essentials：浏览者
+# <a name="no-locxamarinessentials-browser"></a>Xamarin.Essentials：浏览者
 
 Browser 类允许应用程序在优化的系统首选浏览器或外部浏览器中打开 Web 链接。
 
 ## <a name="get-started"></a>入门
 
 [!include[](~/essentials/includes/get-started.md)]
+
+若要访问 Browser 功能，需要以下特定于平台的设置。
+
+# <a name="android"></a>[Android](#tab/android)
+
+如果项目的目标 Android 版本设置为 Android 11 (R API 30)，则必须使用与新的[包可见性要求](https://developer.android.com/preview/privacy/package-visibility)一起使用的查询来更新 Android 清单。
+
+打开 Properties 文件夹下的 AndroidManifest.xml 文件，并在“manifest”节点内添加以下代码  ：
+
+```xml
+<queries>
+  <intent>
+    <action android:name="android.intent.action.VIEW" />
+    <data android:scheme="http"/>
+  </intent>
+  <intent>
+    <action android:name="android.intent.action.VIEW" />
+    <data android:scheme="https"/>
+  </intent>
+</queries>
+```
+
+# <a name="ios"></a>[iOS](#tab/ios)
+
+无需其他设置。
+
+# <a name="uwp"></a>[UWP](#tab/uwp)
+
+无平台差异。
+
+-----
 
 ## <a name="using-browser"></a>使用 Browser
 

@@ -12,14 +12,14 @@ ms.date: 04/01/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8858a66d2caeea815bf06d5d2741bfc3623598f5
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 06cd68c56192664f6d11ec9f6adbe30f9ae5168c
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86933726"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91433471"
 ---
-# <a name="perform-navigation-in-a-multi-page-xamarinforms-application"></a>在多页 Xamarin.Forms 应用程序中执行导航
+# <a name="perform-navigation-in-a-multi-page-no-locxamarinforms-application"></a>在多页 Xamarin.Forms 应用程序中执行导航
 
 [![下载示例](~/media/shared/download.png) 下载示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-multipage/)
 
@@ -36,7 +36,7 @@ ms.locfileid: "86933726"
 
 ### <a name="prerequisites"></a>先决条件
 
-在尝试本快速入门之前，应成功完成[上一个快速入门](single-page.md)。 或者，下载[上一个快速入门示例](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-singlepage/)并将它用作本快速入门的起点。
+在尝试本快速入门之前，应成功完成[上一个快速入门](single-page.md)。 或者，下载[上一个快速入门示例](/samples/xamarin/xamarin-forms-samples/getstarted-notes-singlepage/)并将它用作本快速入门的起点。
 
 ::: zone pivot="windows"
 
@@ -86,7 +86,7 @@ ms.locfileid: "86933726"
 
 7. 在“解决方案资源管理器”中，右键单击“Notes”项目，并依次选择“添加”>“新建项...”  。在“添加新项”对话框中，选择“Visual C# 项”>“Xamarin.Forms”>“内容页”，将新文件命名为“NoteEntryPage”，然后单击“添加”按钮   ：
 
-    ![添加 Xamarin.Forms ContentPage](multi-page-images/vs/add-note-entry-page.png)
+    ![添加 Xamarin.FormsContentPage](multi-page-images/vs/add-note-entry-page.png)
 
     这会将名为 NoteEntryPage 的新页添加到项目的根文件夹中。 此页会是应用程序中的第二页。
 
@@ -369,7 +369,7 @@ ms.locfileid: "86933726"
 
 7. 在“Solution Pad”中，选择“Notes”项目，然后右键单击并选择“添加”>“新建文件...”  。在“新建文件”对话框中，选择“窗体”>“窗体 ContentPage Xaml”，将新文件命名为“NoteEntryPage”，然后单击“新建”按钮：
 
-    ![添加 Xamarin.Forms ContentPage](multi-page-images/vsmac/add-note-entry-page.png)
+    ![添加 Xamarin.FormsContentPage](multi-page-images/vsmac/add-note-entry-page.png)
 
     这会将名为 NoteEntryPage 的新页添加到项目的根文件夹中。 此页会是应用程序中的第二页。
 
@@ -620,5 +620,5 @@ ms.locfileid: "86933726"
 
 ## <a name="related-links"></a>相关链接
 
-- [便笺（示例）](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-multipage/)
+- [便笺（示例）](/samples/xamarin/xamarin-forms-samples/getstarted-notes-multipage/)
 - [Xamarin.Forms 快速入门深入探讨](deepdive.md)

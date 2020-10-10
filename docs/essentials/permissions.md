@@ -5,18 +5,18 @@ ms.assetid: 34062D84-3E55-4AF7-A688-8551068B1E57
 author: jamesmontemagno
 ms.author: jamont
 ms.custom: video
-ms.date: 01/06/2020
+ms.date: 09/22/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d594e627fed21c3c2a73770313fcae29695370c5
-ms.sourcegitcommit: a658de488a6da916145ed4aa016825565110e767
+ms.openlocfilehash: 12631abacc56edf88d375d4be89e71a9a4588d03
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86972553"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436377"
 ---
-# <a name="xamarinessentials-permissions"></a>Xamarin.Essentials：权限
+# <a name="no-locxamarinessentials-permissions"></a>Xamarin.Essentials：权限
 
 Permissions 类提供了检查和请求运行时权限的功能。
 
@@ -67,6 +67,13 @@ var status = await Permissions.RequestAsync<Permissions.LocationWhenInUse>();
 * Disabled - 此功能在设备上是禁用的
 * Granted - 用户已授予权限或权限已自动授予
 * Restricted - 处于受限制状态
+
+
+## <a name="explain-why-permission-is-needed"></a>说明为何需要权限
+
+![预发行版 API](~/media/shared/preview.png)
+
+最佳做法是说明应用程序需要特定权限的原因。 在 iOS 上，必须指定向用户显示的字符串。 Android 没有此功能，并且还将权限状态默认为“已禁用”。 这样则无法了解用户是否拒绝了权限，也无法了解是否是首次提示用户。 可使用 `ShouldShowRationale` 方法确定是否应显示说明性 UI。 该方法返回 `true` 时，则是因为过去用户已拒绝或禁用该权限。 调用此方法时，其他平台始终会返回 `false`。
 
 ## <a name="available-permissions"></a>可用权限
 
@@ -192,7 +199,7 @@ public class ReadWriteStoragePermission : Xamarin.Essentials.Permissions.BasePla
 await Permissions.RequestAsync<ReadWriteStoragePermission>();
 ```
 
-如果要从共享代码调用此 API，可创建一个接口，并使用[依赖项服务](https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/dependency-service/)来注册和获取该实现。
+如果要从共享代码调用此 API，可创建一个接口，并使用[依赖项服务](../xamarin-forms/app-fundamentals/dependency-service/index.md)来注册和获取该实现。
 
 ```csharp
 public interface IReadWritePermission
@@ -235,21 +242,21 @@ if (status != PermissionStatus.Granted)
 
 # <a name="android"></a>[Android](#tab/android)
 
-Permissions 必须在 Android 清单文件中设置匹配的属性。
+Permissions 必须在 Android 清单文件中设置匹配的属性。 权限状态默认为“已拒绝”。
 
-有关详细信息，请参阅 [Xamarin.Android 中的 Permissions](https://docs.microsoft.com/xamarin/android/app-fundamentals/permissions) 文档。
+有关详细信息，请参阅 [Xamarin.Android 中的 Permissions](../android/app-fundamentals/permissions.md) 文档。
 
 # <a name="ios"></a>[iOS](#tab/ios)
 
-Permissions 必须在 `Info.plist` 文件中有匹配字符串。 请求某个权限并遭拒后，如果再次请求该权限，将不再显示弹出窗口。 必须提示用户在 iOS 的“应用设置”屏幕中手动调整设置。
+Permissions 必须在 `Info.plist` 文件中有匹配字符串。 请求某个权限并遭拒后，如果再次请求该权限，将不再显示弹出窗口。 必须提示用户在 iOS 的“应用设置”屏幕中手动调整设置。 权限状态默认为“未知”。
 
-有关详细信息，请参阅 [iOS 安全和隐私功能](https://docs.microsoft.com/xamarin/ios/app-fundamentals/security-privacy)文档。
+有关详细信息，请参阅 [iOS 安全和隐私功能](../ios/app-fundamentals/security-privacy.md)文档。
 
 # <a name="uwp"></a>[UWP](#tab/uwp)
 
-Permissions 必须有在包清单中声明的匹配功能。
+Permissions 必须有在包清单中声明的匹配功能。 多数情况下，权限状态都默认为“未知”。
 
-有关详细信息，请参阅[应用功能声明](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations)文档。
+有关详细信息，请参阅[应用功能声明](/windows/uwp/packaging/app-capability-declarations)文档。
 
 --------------
 
