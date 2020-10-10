@@ -10,16 +10,19 @@ ms.date: 03/27/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 182256fd572a370a7b322898b1e24ade12e971fd
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 4221cd313ca8fbc3f3f9f886e3bd3f774c7472f7
+ms.sourcegitcommit: 27f33b0a83b9dc871ad9fb207a1c9960ef197d9e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84127338"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91897942"
 ---
 # <a name="use-design-time-data-with-the-xaml-previewer"></a>将设计时数据与 XAML 预览器结合使用
 
 _某些布局难以直观显示，无需数据。使用这些提示可充分利用 XAML 预览器中的数据密集型页面。_
+
+> [!NOTE]
+> 如果使用 Windows Presentation Foundation (WPF) 或 UWP，请参阅 [将设计时数据与桌面应用程序的 XAML 设计器配合使用](/visualstudio/xaml-tools/xaml-designtime-data)
 
 ## <a name="design-time-data-basics"></a>设计时数据基础
 
@@ -41,7 +44,7 @@ mc:Ignorable="d"
 
 [![使用标签中的文本设计时间数据](xaml-previewer-images/designtimedata-label-sm.png "使用文本标记设计时间数据")](xaml-previewer-images/designtimedata-label-lg.png#lightbox)
 
-在此示例中，如果没有 `d:Text` ，XAML 预览程序将不会显示标签。 相反，它会显示 "Name！" 其中，标签在运行时将包含实际数据。
+在此示例中，如果没有 `d:Text` ，XAML 预览程序将不会显示标签。 而是显示“Name!”， 其中，标签在运行时将包含实际数据。
 
 可以将 `d:` 与控件的任何特性一起使用， Xamarin.Forms 如颜色、字号和间距。 甚至可以将其添加到控件本身：
 
@@ -51,11 +54,11 @@ mc:Ignorable="d"
 
 [![使用按钮控件设计时间数据](xaml-previewer-images/designtimedata-controls-sm.png "使用按钮控件设计时间数据")](xaml-previewer-images/designtimedata-controls-lg.png#lightbox)
 
-在此示例中，按钮仅在设计时出现。 使用此方法可为[XAML 预览器不支持的自定义控件](render-custom-controls.md)放置中的占位符。
+在此示例中，按钮仅在设计时显示。 使用此方法可为 [XAML 预览器不支持的自定义控件](render-custom-controls.md)放置中的占位符。
 
 ## <a name="preview-images-at-design-time"></a>在设计时预览图像
 
-您可以为绑定到页面或动态加载的图像设置设计时间源。 在 Android 项目中，将你想要在 XAML 预览器中显示的图像添加到 **> 可绘制**文件夹的资源。 在 iOS 项目中，将图像添加到**Resources**文件夹。 然后，你可以在设计时在 XAML 预览器中显示该图像：
+您可以为绑定到页面或动态加载的图像设置设计时间源。 在 Android 项目中，将你想要在 XAML 预览器中显示的图像添加到 **> 可绘制** 文件夹的资源。 在 iOS 项目中，将图像添加到 **Resources** 文件夹。 然后，你可以在设计时在 XAML 预览器中显示该图像：
 
 ```xaml
 <Image Source={Binding ProfilePicture} d:Source="DesignTimePicture.jpg" />
@@ -91,7 +94,7 @@ Listview 是在移动应用中显示数据的一种常用方式。 但是，如�
 
 此示例将在 XAML 预览器中显示三个 TextCells 的 ListView。 您可以更改 `x:String` 为项目中现有的数据模型。
 
-您还可以创建一个数据对象数组。 例如， `Monkey` 可以将数据对象的公共属性构建为设计时数据：
+你也可以创建一个数据对象数组。 例如， `Monkey` 可以将数据对象的公共属性构建为设计时数据：
 
 ```csharp
 namespace Monkeys.Models
@@ -134,7 +137,7 @@ xmlns:models="clr-namespace:Monkeys.Models"
 
 ## <a name="alternative-hardcode-a-static-viewmodel"></a>替代方法：硬编码静态 ViewModel
 
-如果不想将设计时数据添加到各个控件，可以设置模拟数据存储以绑定到页面。 请参阅 James Montemagno 的[博客文章添加设计时数据](https://montemagno.com/xamarin-forms-design-time-data-tips-best-practices/)，了解如何绑定到 XAML 中的静态 ViewModel。
+如果不想将设计时数据添加到各个控件，可以设置模拟数据存储以绑定到页面。 请参阅 James Montemagno 的 [博客文章添加设计时数据](https://montemagno.com/xamarin-forms-design-time-data-tips-best-practices/) ，了解如何绑定到 XAML 中的静态 ViewModel。
 
 ## <a name="troubleshooting"></a>疑难解答
 
@@ -148,4 +151,4 @@ xmlns:models="clr-namespace:Monkeys.Models"
 
 ### <a name="the-xaml-previewer-stopped-working"></a>XAML 预览器已停止工作
 
-尝试关闭并重新打开 XAML 文件，并清除和重新生成项目。
+尝试关闭并重新打开 XAML 文件，清理并重新生成项目。
