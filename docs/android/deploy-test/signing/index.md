@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 07/02/2018
-ms.openlocfilehash: 66d2f66f0118e84778b25fc0e872099439510ce2
-ms.sourcegitcommit: 898ba8e5140ae32a7df7e07c056aff65f6fe4260
+ms.openlocfilehash: 44003e55ee88db727c26def56b3363dbf6c982e9
+ms.sourcegitcommit: 124d845f8d2768353e8b7fe1ab1d959a589367f7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86226841"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91872272"
 ---
 # <a name="signing-the-android-application-package"></a>对 Android 应用程序包进行签名
 
@@ -154,3 +154,8 @@ APK 已准备好从查找器进行复制并发送到其最终目标。 最好在
 ## <a name="next-steps"></a>后续步骤
 
 对要发行的应用程序包进行签名之后，必须发布它。 以下各部分介绍用于发布应用程序的几种方法。
+
+
+## <a name="related-links"></a>相关链接
+
+- [Android 生成密钥存储](https://developer.android.com/studio/publish/app-signing#generate-key)

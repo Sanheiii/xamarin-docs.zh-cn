@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: jondouglas
 ms.author: jodou
 ms.date: 02/13/2020
-ms.openlocfilehash: baeabf2cde7e0aabe3439d698e63636810069705
-ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
+ms.openlocfilehash: 4956e0dc4961065650fc9289884c24cd5b5f702c
+ms.sourcegitcommit: 6d347e1d7641ac1d2b389fb1dc7a6882a08f7c00
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91454606"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91851530"
 ---
 # <a name="hardware-acceleration-for-emulator-performance-hyper-v--haxm"></a>通过硬件加速提高仿真器性能 (Hyper-V & HAXM)
 
@@ -115,9 +115,11 @@ systeminfo
 
 创建虚拟设备时（参阅[使用 Android Device Manager 管理虚拟设备](~/android/get-started/installation/android-emulator/device-manager.md)），请确保选择基于 x86 的系统映像。 如果使用基于 ARM 的系统映像，虚拟设备将无法加速并且运行缓慢。
 
+现在应启用 Hyper-V，以便可以运行加速的 Android Emulator。
+
 ## <a name="accelerating-with-haxm"></a>使用 HAXM 加速
 
-若计算机不支持 Hyper-V，请使用 HAXM 加速 Android Emulator。 若要使用 HAXM，必须[禁用 Device Guard](~/android/get-started/installation/android-emulator/troubleshooting.md?tabs=vswin#disable-devguard)。
+如果计算机不支持 Hyper-V，你可以使用 HAXM 加速 Android Emulator。 若要使用 HAXM，必须[禁用 Device Guard](~/android/get-started/installation/android-emulator/troubleshooting.md?tabs=vswin#disable-devguard)。
 
 ### <a name="verifying-haxm-support"></a>验证 HAXM 支持
 
