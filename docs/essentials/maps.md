@@ -16,7 +16,7 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 06/18/2020
 ms.locfileid: "84802261"
 ---
-# <a name="xamarinessentials-map"></a>Xamarin.Essentials：映射
+# <a name="xamarinessentials-map"></a>Xamarin.Essentials：地图
 
 Map 类使应用程序可以将已安装的地图应用程序打开到特定位置或地标。
 
